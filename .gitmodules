@@ -1,0 +1,3 @@
+[submodule "themes/crab"]
+	path = themes/crab
+	url = https://github.com/thomasheller/crab
