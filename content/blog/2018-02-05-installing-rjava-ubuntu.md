@@ -6,6 +6,8 @@ tags:
 - null
 title: Installing rJava on Ubuntu
 url: /2018/02/05/installing-rjava-ubuntu/
+draft: false
+tags: ["R", "Ubuntu"]
 ---
 
 Installing the rJava package on Ubuntu is not quite as simple as most other R packages. Some quick notes on how to do it.

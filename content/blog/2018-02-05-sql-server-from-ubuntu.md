@@ -7,6 +7,8 @@ tags:
 - null
 title: SQL Server from Ubuntu
 url: /2018/02/05/sql-server-from-ubuntu/
+draft: false
+tags: ["SQL", "Ubuntu"]
 ---
 
 Setting up the requisites to access a SQL Server database from Ubuntu.
