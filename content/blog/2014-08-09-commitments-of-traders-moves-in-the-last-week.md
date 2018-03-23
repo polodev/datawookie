@@ -1,34 +1,35 @@
 ---
-id: 808
-title: 'Commitments of Traders: Moves in the Last Week'
-date: 2014-08-09T10:46:06+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - FOREX
-  - Trading
+- FOREX
+- Trading
+date: 2014-08-09T10:46:06Z
+excerpt_separator: <!-- more -->
+id: 808
 tags:
-  - Commitments of Traders
-  - COT
-  - FOREX
-  - ggplot2
-  - '#rstats'
+- Commitments of Traders
+- COT
+- FOREX
+- ggplot2
+- '#rstats'
+title: 'Commitments of Traders: Moves in the Last Week'
+url: /2014/08/09/commitments-of-traders-moves-in-the-last-week/
 ---
+
 In my [previous post](http://www.exegetic.biz/blog/2014/05/what-can-we-learn-from-the-commitments-of-traders-report/) I gave some background information on the Commitments of Traders report along with a selection of summary plots.
 
-<!-- more -->
+<!--more-->
 
 One of the more interesting pieces of information that one can glean from these reports is the shift in trading sentiment from week to week. Below is a plot reflecting the relative change in the number of long and short positions held by traders in each of the sectors (Commercial, Non-Commercial and Non-Reportable).
 
 The changes are normalised to the total number of positions (both long and short) held in the previous week. To illustrate how this works, consider the JPY.
 
-{% highlight r %}
+{{< highlight r >}}
 > tail(subset(OP, name == "JPY" & sector == "Commercial"), 2)
       name       date     sector   long   shrt
 11842  JPY 2014-05-13 Commercial 125523 -35537
 11845  JPY 2014-05-20 Commercial 117310 -48851
-{% endhighlight %}
+{{< / highlight >}}
 
 This indicates that the number of positions that are long relative to the JPY has decreased while the number of positions that are short on the JPY (given by a negative number) has increased. Both of these changes are consistent with the fact that traders are selling the JPY in favour of other currencies.
 

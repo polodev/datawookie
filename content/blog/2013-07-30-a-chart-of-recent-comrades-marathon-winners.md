@@ -1,22 +1,23 @@
 ---
-id: 357
-title: A Chart of Recent Comrades Marathon Winners
-date: 2013-07-30T15:54:54+00:00
 author: Andrew B. Collier
-layout: post
+date: 2013-07-30T15:54:54Z
 guid: http://www.exegetic.biz/blog/?p=357
+id: 357
 tags:
-  - Comrades Marathon
-  - '#rstats'
-  - scatter plot
+- Comrades Marathon
+- '#rstats'
+- scatter plot
+title: A Chart of Recent Comrades Marathon Winners
+url: /2013/07/30/a-chart-of-recent-comrades-marathon-winners/
 ---
+
 Continuing on my [quest to document the Comrades Marathon results](http://www.exegetic.biz/blog/tag/comrades-marathon/), today I have put together a chart showing the winners of both the men and ladies races since 1980. Click on the image below to see a larger version.
 
 <img src="{{ site.baseurl }}/static/img/2013/07/winners-scatterchart.png" >
 
 The analysis started off with the same data set that I was working with before, from which I extracted only the records for the winners.
 
-{% highlight r %}
+{{< highlight r >}}
 > winners = subset(results, gender.position == 1, select = c(year, name, gender, race.time))
 > head(winners)
      year               name gender race.time
@@ -26,11 +27,11 @@ The analysis started off with the same data set that I was working with before, 
 4055 1981 Isavel Roche-Kelly Female  06:44:35
 7643 1982      Bruce Fordyce   Male  05:34:22
 7873 1982        Cheryl Winn Female  07:04:59
-{% endhighlight %}
+{{< / highlight >}}
 
 I then added in a field which gives a count of the number of times each person won the race.
 
-{% highlight r %}
+{{< highlight r >}}
 > library(plyr)
 > winners = ddply(winners, .(name), function(df) {
 +     df = df[order(df$year),]
@@ -48,11 +49,11 @@ I then added in a field which gives a count of the number of times each person w
 13 1987 Bruce Fordyce   Male  05:37:01     7
 14 1988 Bruce Fordyce   Male  05:27:42     8
 15 1990 Bruce Fordyce   Male  05:40:25     9
-{% endhighlight %}
+{{< / highlight >}}
 
 The chart was generated as a scatter plot using ggplot2. The size of the points relates to the number of times each person won the race. The colour scale is as you might imagine: pink for the ladies and blue for the men.
   
-{% highlight r %}
+{{< highlight r >}}
 > library(ggplot2)
 > ggplot(winners, aes(x = year, y = name, color = gender)) +
 +     geom_point(aes(size = count), shape = 19, alpha = 0.75) +
@@ -67,7 +68,7 @@ The chart was generated as a scatter plot using ggplot2. The size of the points 
 +         panel.grid.major = element_line(linetype = "dotted", colour = "grey"),
 +         panel.grid.major.x = element_blank()
 +         )
-{% endhighlight %}
+{{< / highlight >}}
 
 Two of the key aspects of getting this to look just right were:
 

@@ -1,21 +1,22 @@
 ---
-id: 522
-title: Plotting Times of Discrete Events
-date: 2013-10-19T09:01:49+00:00
 author: Andrew B. Collier
-layout: post
+date: 2013-10-19T09:01:49Z
 excerpt_separator: <!-- more -->
+id: 522
 tags:
-  - Count Data
-  - Exponential Distribution
-  - ggplot2
-  - Poisson Process
-  - '#rstats'
-  - Spiral Plot
+- Count Data
+- Exponential Distribution
+- ggplot2
+- Poisson Process
+- '#rstats'
+- Spiral Plot
+title: Plotting Times of Discrete Events
+url: /2013/10/19/plotting-times-of-discrete-events/
 ---
+
 I recently enjoyed reading <blockquote>O’Hara, R. B., & Kotze, D. J. (2010). _Do not log-transform count data_. Methods in Ecology and Evolution, 1(2), 118–122. doi:10.1111/j.2041-210X.2010.00021.x.</blockquote>
 
-<!-- more -->
+<!--more-->
 
 The article prompted me to think about processes involving discrete events and how these might be presented graphically. I am not talking about counts (which are well represented by a histogram) but the individual events themselves. The problems here being that
 
@@ -34,11 +35,11 @@ Here time runs along the spiral and points indicate the times at which events oc
 
 I needed to calculate the arc length along the spiral. Since I was not concerned with the absolute length, I neglected the spiral's pitch, giving a function which depended only on angle.
 
-{% highlight r %}
+{{< highlight r >}}
 spiral.length <- function(phi) {
     phi * sqrt(1 + phi**2) + log(phi + sqrt(1 + phi**2))
 }
-{% endhighlight %}
+{{< / highlight >}}
 
 Then I could interpolate to find the correct location of the events.
 
@@ -48,7 +49,7 @@ Now the events, which are distributed uniformly in time, appear at uniform inter
 
 Here is the code to generate the spiral plot:
 
-{% highlight r %}
+{{< highlight r >}}
 spiral.plot <- function(t, nturn = 5, colour = "black") {
     npoint = nturn * 720
     #
@@ -77,7 +78,7 @@ spiral.plot <- function(t, nturn = 5, colour = "black") {
               panel.grid.major = element_blank(),
               panel.grid.minor = element_blank())
 }
-{% endhighlight %}
+{{< / highlight >}}
 
 It is unfortunate that I had to transform the data to Cartesian Coordinates in order to plot it. Although ggplot2 does has the capability to generate polar plots, it does not allow polar angles exceeding a single revolution. If anybody has other ideas on how to deal with this more elegantly, I would be very happy to hear from them.
 
@@ -87,14 +88,14 @@ The first enhancement I would apply to this plot would be to find a way of putti
 
 What about applying it to a more realistic scenario? If we simulate a radioactive decay process using the exponential distribution to yield a series of decay intervals, then these intervals can be accumulated to find the decay times.
 
-{% highlight r %}
+{{< highlight r >}}
 > Bq = 5
 >
 > delay = rexp(2000, Bq)
 > 
 > decay = data.frame(delay, time = cumsum(delay))
 > spiral.plot(decay$time, 20)
-{% endhighlight %}
+{{< / highlight >}}
 
 <img src="{{ site.baseurl }}/static/img/2013/10/spiral-plot-large.png">
 

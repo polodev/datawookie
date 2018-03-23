@@ -1,17 +1,18 @@
 ---
-id: 980
-title: 'Standard Bank: Striving for Mediocrity'
-date: 2014-10-07T15:32:44+00:00
 author: Andrew B. Collier
-layout: post
+date: 2014-10-07T15:32:44Z
 excerpt_separator: <!-- more -->
+id: 980
 tags:
-  - Market Research
-  - Standard Bank
+- Market Research
+- Standard Bank
+title: 'Standard Bank: Striving for Mediocrity'
+url: /2014/10/07/standard-bank-striving-for-mediocrity/
 ---
+
 Recently I was in my local Standard Bank branch. After finally reaching the front of the queue and being helped by a reasonably courteous young man, I was asked if I would mind filling out a survey. Sure. No problem. I had been in the bank for 30 minutes, I could probably afford another 30 seconds.
 
-<!-- more -->
+<!--more-->
 
 And then I was handed this abomination:
 

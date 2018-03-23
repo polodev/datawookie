@@ -1,22 +1,22 @@
 ---
-id: 2088
-title: '#MonthOfJulia Day 12: Parallel Processing'
-date: 2015-09-11T13:00:43+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=2088
-excerpt_separator: <!-- more -->
 categories:
-  - Julia
+- Julia
+date: 2015-09-11T13:00:43Z
+excerpt_separator: <!-- more -->
+guid: http://www.exegetic.biz/blog/?p=2088
+id: 2088
 tags:
-  - '#julialang'
-  - '#MonthOfJulia'
-  - Coroutine
-  - Julia
-  - parallel
+- '#julialang'
+- '#MonthOfJulia'
+- Coroutine
+- Julia
+- parallel
+title: '#MonthOfJulia Day 12: Parallel Processing'
+url: /2015/09/11/monthofjulia-day-12-parallel-processing/
 ---
 
-<!-- more -->
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2015/09/Julia-Logo-Parallel.png" >
 
@@ -34,7 +34,7 @@ Under these conditions each module may be made into a _coroutine_; that is, it m
 
 Coroutines are implemented using `produce()` and `consume()`. In a moment you'll see why those names are appropriate. To illustrate we'll define a function which generates elements from the [Lucas sequence](https://en.wikipedia.org/wiki/Lucas_number). For reference, the first few terms in the sequence are 2, 1, 3, 4, 7, ... If you know about Python's generators then you'll find the code below rather familiar.
   
-{% highlight julia %}
+{{< highlight julia >}}
 julia> function lucas_producer(n)
            a, b = (2, 1)
            for i = 1:n
@@ -43,20 +43,20 @@ julia> function lucas_producer(n)
            end
         end
 lucas_producer (generic function with 1 method)
-{% endhighlight %}
+{{< / highlight >}}
   
 This function is then wrapped in a `Task`, which has state `:runnable`.
   
-{% highlight julia %}
+{{< highlight julia >}}
 julia> lucas_task = Task(() -> lucas_producer(10))
 Task (runnable) @0x0000000005b5ee60
 julia> lucas_task.state
 :runnable
-{% endhighlight %}
+{{< / highlight >}}
   
 Now we're ready to start consuming data from the `Task`. Data elements can be retrieved individually or via a loop (in which case the `Task` acts like an iterable object and no `consume()` is required).
   
-{% highlight julia %}
+{{< highlight julia >}}
 julia> consume(lucas_task)
 2
 julia> consume(lucas_task)
@@ -73,7 +73,7 @@ julia> for n in lucas_task
 29
 47
 76
-{% endhighlight %}
+{{< / highlight >}}
   
 Between invocations the `Task` is effectively asleep. The task temporarily springs to life every time data is requested, before becoming dormant once more.
 
@@ -83,13 +83,13 @@ It's possible to simultaneously set up an arbitrary number of coroutine tasks.
 
 Coroutines don't really feel like "parallel" processing because they are not working simultaneously. However it's rather straightforward to get Julia to metaphorically juggle many balls at once. The first thing that you'll need to do is launch the interpreter with multiple worker processes.
   
-{% highlight text %}
+{{< highlight text >}}
 $ julia -p 4
-{% endhighlight %}
+{{< / highlight >}}
   
 There's always one more process than specified on the command line (we specified the number of worker processes; add one for the master process).
   
-{% highlight julia %}
+{{< highlight julia >}}
 julia> nprocs()
 5
 julia> workers() # Identifiers for the worker processes.
@@ -98,21 +98,21 @@ julia> workers() # Identifiers for the worker processes.
  3
  4
  5
-{% endhighlight %}
+{{< / highlight >}}
   
 We can launch a job on one of the workers using `remotecall()`.
   
-{% highlight julia %}
+{{< highlight julia >}}
 julia> W1 = workers()[1];
 julia> P1 = remotecall(W1, x -> factorial(x), 20)
 RemoteRef(2,1,6)
 julia> fetch(P1)
 2432902008176640000
-{% endhighlight %}
+{{< / highlight >}}
   
 `@spawn` and `@spawnat` are macros which launch jobs on individual workers. The `@everywhere` macro executes code across all processes (including the master).
   
-{% highlight julia %}
+{{< highlight julia >}}
 julia> @everywhere p = 5
 julia> @everywhere println(@sprintf(&quot;ID %d: %f %d&quot;, myid(), rand(), p))
 ID 1: 0.686332 5
@@ -120,13 +120,13 @@ ID 1: 0.686332 5
         From worker 5: ID 5: 0.136019 5
         From worker 2: ID 2: 0.145561 5
         From worker 3: ID 3: 0.670885 5
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Parallel Loop and Map
 
 To illustrate how easy it is to set up parallel loops, let's first consider a simple serial implementation of a Monte Carlo technique to estimate π.
   
-{% highlight julia %}
+{{< highlight julia >}}
 julia> function findpi(n)
            inside = 0
            for i = 1:n
@@ -138,11 +138,11 @@ julia> function findpi(n)
            4 * inside / n
        end
 findpi (generic function with 1 method)
-{% endhighlight %}
+{{< / highlight >}}
   
 The quality of the result as well as the execution time (and memory consumption!) depend directly on the number of samples.
   
-{% highlight julia %}
+{{< highlight julia >}}
 julia> @time findpi(10000)
 elapsed time: 0.051982841 seconds (1690648 bytes allocated, 81.54% gc time)
 3.14
@@ -152,11 +152,11 @@ elapsed time: 9.533291187 seconds (8800000096 bytes allocated, 42.97% gc time)
 julia> @time findpi(1000000000)
 elapsed time: 95.436185105 seconds (88000002112 bytes allocated, 43.14% gc time)
 3.141605352
-{% endhighlight %}
+{{< / highlight >}}
   
 The parallel version is implemented using the `@parallel` macro, which takes a reduction operator (in this case `+`) as its first argument.
   
-{% highlight julia %}
+{{< highlight julia >}}
 julia> function parallel_findpi(n)
            inside = @parallel (+) for i = 1:n
                x, y = rand(2)
@@ -165,11 +165,11 @@ julia> function parallel_findpi(n)
            4 * inside / n
        end
 parallel_findpi (generic function with 1 method)
-{% endhighlight %}
+{{< / highlight >}}
   
 There is some significant overhead associated with setting up the parallel jobs, so that the parallel version actually performs worse for a small number of samples. But when you run sufficient samples the speedup becomes readily apparent.
   
-{% highlight julia %}
+{{< highlight julia >}}
 julia> @time parallel_findpi(10000)
 elapsed time: 0.45212316 seconds (9731736 bytes allocated)
 3.1724
@@ -179,14 +179,14 @@ elapsed time: 3.870065625 seconds (154696 bytes allocated)
 julia> @time parallel_findpi(1000000000)
 elapsed time: 39.029650365 seconds (151080 bytes allocated)
 3.141653704
-{% endhighlight %}
+{{< / highlight >}}
   
 For reference, these results were achieved with 4 worker processes on a DELL laptop with the following CPU:
   
-{% highlight text %}
+{{< highlight text >}}
 root@propane: #lshw | grep product | head -n 1
           product: Intel(R) Core(TM) i7-4600M CPU @ 2.90GHz
-{% endhighlight %}
+{{< / highlight >}}
 
 More information on parallel computing facilities in Julia can be found in the [documentation](http://docs.julialang.org/en/stable/manual/parallel-computing/). As usual the code for today's Julia journey can be found on [github](https://github.com/DataWookie/MonthOfJulia).
 

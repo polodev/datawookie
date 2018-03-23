@@ -1,16 +1,16 @@
 ---
-title: "Restoring a Django Backup"
-date: 2018-02-23T10:00:00+00:00
 author: Andrew B. Collier
+date: 2018-02-23T10:00:00Z
 excerpt_separator: <!-- more -->
-layout: post
 tags:
-  - Django
+- Django
+title: Restoring a Django Backup
+url: /2018/02/23/django-restoring-backup/
 ---
 
 It took me a little while to figure out the correct sequence for restoring a Django backup. If you have borked your database, this is how to put it back together.
 
-<!-- more -->
+<!--more-->
 
 1. Drop the old database.
 2. Create a new database.

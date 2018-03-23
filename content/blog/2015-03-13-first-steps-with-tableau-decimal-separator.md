@@ -1,20 +1,21 @@
 ---
-id: 1202
-title: 'First Steps with Tableau: Decimal Separator'
-date: 2015-03-13T10:23:09+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Data Science
-  - Tableau
+- Data Science
+- Tableau
+date: 2015-03-13T10:23:09Z
+excerpt_separator: <!-- more -->
+id: 1202
 tags:
-  - locale
-  - Tableau
+- locale
+- Tableau
+title: 'First Steps with Tableau: Decimal Separator'
+url: /2015/03/13/first-steps-with-tableau-decimal-separator/
 ---
+
 I downloaded a trial version of Tableau today and tried it out on one of the data sets I am currently working with. The data are stored in XLSX. Both the spreadsheet and my locale have a period set as the decimal separator, yet when I imported the data into Tableau it used a comma as the decimal separator.
 
-<!-- more -->
+<!--more-->
 
 This confused me.
 

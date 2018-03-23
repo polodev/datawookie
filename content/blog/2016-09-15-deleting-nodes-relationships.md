@@ -1,16 +1,17 @@
 ---
-id: 4244
-title: Deleting All Nodes and Relationships
-date: 2016-09-15T15:00:55+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=4244
 categories:
-  - Neo4j
+- Neo4j
+date: 2016-09-15T15:00:55Z
+guid: http://www.exegetic.biz/blog/?p=4244
+id: 4244
 tags:
-  - Cypher
-  - Neo4j
+- Cypher
+- Neo4j
+title: Deleting All Nodes and Relationships
+url: /2016/09/15/deleting-nodes-relationships/
 ---
+
 Seems that I am doing this a lot: deleting my entire graph (all nodes and relationships) and rebuilding from scratch. I guess that this is part of the learning process.
 
 <img src="{{ site.baseurl }}/static/img/2016/09/sample-graph.png" >
@@ -21,40 +22,40 @@ A relationship is constrained to join a start node to an end node. Every relatio
 
 Delete all relationships using either
   
-{% highlight text %}
+{{< highlight text >}}
 $ START r = RELATIONSHIP(*) DELETE r;
-{% endhighlight %}
+{{< / highlight >}}
 or
-{% highlight text %}
+{{< highlight text >}}
 $ MATCH ()-[r]-() DELETE r;
-{% endhighlight %}
+{{< / highlight >}}
   
 Then delete the nodes with
   
-{% highlight text %}
+{{< highlight text >}}
 $ MATCH (n) DELETE n;
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Route 2: Detach and Delete
 
 Using `DETACH DELETE` it's possible to delete relationships and nodes at once.
   
-{% highlight text %}
+{{< highlight text >}}
 $ MATCH (n) DETACH DELETE n;
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Check
 
 Confirm that all nodes and relationships have gone.
   
-{% highlight text %}
+{{< highlight text >}}
 $ MATCH (n) RETURN COUNT(n);
 $ MATCH ()-[r]->() RETURN COUNT(r);
-{% endhighlight %}
+{{< / highlight >}}
   
 Or, alternatively:
   
-{% highlight text %}
+{{< highlight text >}}
 $ START n = NODE(*) return COUNT(n);  
 $ START r = RELATIONSHIP(*) return COUNT(r);
-{% endhighlight %}
+{{< / highlight >}}

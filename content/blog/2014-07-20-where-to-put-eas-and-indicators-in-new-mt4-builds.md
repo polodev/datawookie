@@ -1,19 +1,20 @@
 ---
-id: 889
-title: Where to Put EAs and Indicators in New MT4 Builds
-date: 2014-07-20T07:42:59+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Trading
+- Trading
+date: 2014-07-20T07:42:59Z
+excerpt_separator: <!-- more -->
+id: 889
 tags:
-  - Expert Advisor
-  - Indicator
-  - MetaTrader
-  - MQL4
+- Expert Advisor
+- Indicator
+- MetaTrader
+- MQL4
+title: Where to Put EAs and Indicators in New MT4 Builds
+url: /2014/07/20/where-to-put-eas-and-indicators-in-new-mt4-builds/
 ---
-If you are creating an EA or indicator from scratch, then the MetaTrader editor places the files in the correct location and the terminal is automatically able to find them. However, if the files originate from a third party then you will need to know where to insert them so that they show up in the terminal. For older builds of MetaTrader 4 the directory structure was fairly simple. <!-- more --> Everything was to be found in a folder under _Program Files_. Its contents looked like this:
+
+If you are creating an EA or indicator from scratch, then the MetaTrader editor places the files in the correct location and the terminal is automatically able to find them. However, if the files originate from a third party then you will need to know where to insert them so that they show up in the terminal. For older builds of MetaTrader 4 the directory structure was fairly simple. <!--more--> Everything was to be found in a folder under _Program Files_. Its contents looked like this:
 
 <img src="{{ site.baseurl }}/static/img/2014/07/MT4-old-folders-windows.png">
 

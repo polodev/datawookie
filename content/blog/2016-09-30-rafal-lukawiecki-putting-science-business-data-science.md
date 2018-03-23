@@ -1,18 +1,19 @@
 ---
-id: 4391
-title: 'Rafal Lukawiecki - Putting Science into the Business of Data Science'
-date: 2016-09-30T15:00:49+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=4391
 categories:
-  - Data Science
-  - Science
+- Data Science
+- Science
+date: 2016-09-30T15:00:49Z
+guid: http://www.exegetic.biz/blog/?p=4391
+id: 4391
 tags:
-  - Data Science
-  - Science
-  - Scientific Method
+- Data Science
+- Science
+- Scientific Method
+title: Rafal Lukawiecki - Putting Science into the Business of Data Science
+url: /2016/09/30/rafal-lukawiecki-putting-science-business-data-science/
 ---
+
 A talk by Rafal Lukawiecki at the [Microsoft Machine Learning & Data Science Summit (2016)](https://channel9.msdn.com/Events/Machine-Learning-and-Data-Sciences-Conference/Data-Science-Summit-2016).
 
 > Data science relies on the scientific method of reasoning to help make business decisions based on analytics. Let Rafal explain how his customers apply the trusted processes and the principles of hypothesis testing with machine learning and statistics towards solving their day-to-day, practical business problems. Rafal will speak from his 10 years of experience in data mining and statistics, using the Microsoft data platform for high-value customer identification, recommendation and gap analysis, customer paths and acquisition modelling, price optimization and other forms of advanced analytics. He will share how this work leads to measurable results that not only make his customers more successful but also keep the data scientist true to his principles. This session will also help you understand how to start and justify data science projects in ways that business decision makers find attractive, and how to do it all with the help of the Microsoft platform.

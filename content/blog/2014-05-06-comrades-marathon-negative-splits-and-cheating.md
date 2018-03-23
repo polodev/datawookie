@@ -1,20 +1,21 @@
 ---
-id: 729
-title: 'Comrades Marathon: Negative Splits and Cheating'
-date: 2014-05-06T10:17:51+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Running
+- Running
+date: 2014-05-06T10:17:51Z
+excerpt_separator: <!-- more -->
+id: 729
 tags:
-  - Comrades Marathon
-  - ggplot2
-  - '#rstats'
+- Comrades Marathon
+- ggplot2
+- '#rstats'
+title: 'Comrades Marathon: Negative Splits and Cheating'
+url: /2014/05/06/comrades-marathon-negative-splits-and-cheating/
 ---
+
 With this year's Comrades Marathon just less than a month away, I was reminded of a [story](http://www.iol.co.za/dailynews/news/comrades-cheats-bust-1.1645765#.U1oXdx8s05K) from earlier in the year. Mark Dowdeswell, a statistician at Wits University, found evidence of cheating by some middle and back of the pack Comrades runners. He identified a group of 20 athletes who had suspicious negative splits: they ran _much_ faster in the second half of the race. There was one runner in particular whose splits were just too good to be true. When the story was publicised, this particular runner claimed that it was a [conspiracy](http://www.iol.co.za/dailynews/news/it-s-a-plot-to-get-me-1.1646305#.U1oXgB8s05I).
 
-<!-- more -->
+<!--more-->
 
 This story emerged in February this year.
 
@@ -28,7 +29,7 @@ I have done some [previous analyses](http://www.exegetic.biz/blog/tag/comrades-m
 
 I started off by extracting a subset of the columns from my splits data.
 
-{% highlight r %}
+{{< highlight r >}}
 > split.ratio = splits[, c("year", "race.number", "key", "drummond.time", "race.time")]
 > tail(split.ratio)
           year race.number      key drummond.time race.time
@@ -38,11 +39,11 @@ I started off by extracting a subset of the columns from my splits data.
 2013-9954 2013        9954 4bd1ca76        307.62    669.23
 2013-9955 2013        9955 b2b9ed60        286.85    651.87
 2013-9964 2013        9964 6f14470d        242.20    573.78
-{% endhighlight %}
+{{< / highlight >}}
 
 The resulting records have fields for the year, athlete's race number, a unique key identifying the runner, and time taken (in minutes) to reach the little town of Drummond (the half way point at around the marathon distance) and the finish. We will only keep the complete records (valid entries for both half way and the full distance) and then add a new field.
 
-{% highlight r %}
+{{< highlight r >}}
 > # This is derived from (race.time - drummond.time) / drummond.time - 1
 > #
 > split.ratio = transform(split.ratio,
@@ -59,25 +60,25 @@ The resulting records have fields for the year, athlete's race number, a unique 
 > summary(split.ratio$ratio)
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 -0.5640  0.0934  0.1630  0.1870  0.2540  1.7400
-{% endhighlight %}
+{{< / highlight >}}
 
 The ratio field is a number between -1 and 1 which quantifies the time difference between first and second halves of the race. So, for example, if a runner took 4.5 hours for the first half and then 5.0 hours for the second half, his ratio would be 0.11111, indicating that he ran around 11% slower in the second half of the race.
 
-{% highlight r %}
+{{< highlight r >}}
 > 9.5 / 4.5 - 2
 [1] 0.11111
-{% endhighlight %}
+{{< / highlight >}}
 
 Conversely, if a runner took 5.0 hours for the first half and then finished the second half in 4.5 hours, his ratio would be -0.1, indicating that he ran about 10% faster in the second half.
 
-{% highlight r %}
+{{< highlight r >}}
 > 9.5 / 5.0 - 2
 [1] -0.1
-{% endhighlight %}
+{{< / highlight >}}
 
 Negative values of this ratio then indicate _negative splits_, while positive values are for _positive splits_ and a value of exactly zero would be for _even splits_ (same time for both halves of the race). Let's look at the two extremes.
 
-{% highlight r %}
+{{< highlight r >}}
 > head(split.ratio[order(split.ratio$ratio, decreasing = TRUE),])[, -2]
            year      key drummond.time race.time  ratio
 2009-37874 2009 2c5ad823        178.72    668.70 1.7417
@@ -86,11 +87,11 @@ Negative values of this ratio then indicate _negative splits_, while positive va
 2009-33945 2009 a1e79747        183.08    671.57 1.6681
 2009-57185 2009 fdc6a261        186.92    653.70 1.4973
 2011-56513 2011 df77e8bb        172.38    598.12 1.4697
-{% endhighlight %}
+{{< / highlight >}}
 
 Large (positive) values of the split ratio mean that a runner ran the second half much slower than the first half. Unless the time for the first half is unrealistic, then these are not suspicious: it is quite reasonable that a runner should go out really hard in the first half, get to half way in good time but then find that the wheels fall off in the second half of the race. Take, for example, the runner with key 2c5ad823, whose time for the first half was blisteringly fast (just less than three hours) but who slowed down a lot in the second half, only finishing the race in around 11 hours.
 
-{% highlight r %}
+{{< highlight r >}}
 > head(split.ratio[order(split.ratio$ratio),])[, -2]
            year      key drummond.time race.time    ratio
 2001-45410 2001 1a605ce5        340.32    488.82 -0.56364
@@ -99,7 +100,7 @@ Large (positive) values of the split ratio mean that a runner ran the second hal
 2000-8152  2000 18e59575        324.03    557.25 -0.28027
 2013-25058 2013 3c0ea3bc        368.12    636.50 -0.27093
 2012-48382 2012 7889f60a        336.85    592.57 -0.24086
-{% endhighlight %}
+{{< / highlight >}}
 
 At the other end of the spectrum we have runners with very low values of the split ratio, meaning that they ran the second half much faster than the first half. Take, for example, the runner with key 1a605ce5: she ran the first half in around five and a half hours but whipped through the second half in less than three hours. Seems a little odd, right?
 
@@ -115,7 +116,7 @@ We can see that only a very small fraction of the field achieves a negative spli
 
 If we categorise the runners broadly by the number of hours required to finish the race then we get a slightly different view of the data.
 
-{% highlight r %}
+{{< highlight r >}}
 > split.ratio = transform(split.ratio,
 +                         ihour = factor(floor(race.time / 60)))
 > levels(split.ratio$ihour) = sprintf("%s hour", levels(split.ratio$ihour))
@@ -129,7 +130,7 @@ If we categorise the runners broadly by the number of hours required to finish t
 5  9 hour -0.352379 1.46969
 6 10 hour -0.270929 1.67596
 7 11 hour -0.115299 1.74168
-{% endhighlight %}
+{{< / highlight >}}
 
 Runners who finish the race in less than 6 hours (in the "5 hour" bin above, which includes the race winner) have split ratios between -0.061526 and 0.24595. The 8 hour bin has ratios which range from -0.563642 to 1.43530. So there was a runner in this group who was twice as fast in the second half... The 9 and 10 hour bins also have some inordinately large negative splits.
 
@@ -143,14 +144,14 @@ Note that the density curve for the 5 hour bin extends slightly beyond the dashe
 
 We can quantify those proportions.
 
-{% highlight r %}
+{{< highlight r >}}
 > negsplit.ihour = with(split.ratio, table(ihour, ratio < 0))
 > negsplit.ihour = negsplit.ihour / rowSums(negsplit.ihour)
 > #
 > negsplit.ihour[,2] * 100
  5 hour  6 hour  7 hour  8 hour  9 hour 10 hour 11 hour 
 14.2857  2.8740  2.2335  3.0653  3.1862  3.8505  1.9485 
-{% endhighlight %}
+{{< / highlight >}}
 
 So, 14.3% of the runners in the 5 hour bin shave off some time in the second half of the race. In the other bins only around 2% to 3% of runners manage to achieve this feat.
 
@@ -160,7 +161,7 @@ Finally, before we dig into the details of some individual runners, let's see ho
 
 These data are more or less consistent between years. The median of the ratio is around 10% to 20%; the maximum is always roughly 100% or more; the minimum fluctuates rather wildly, extending from the credible -9.7% all the way down to the incredible -56.4%
 
-{% highlight r %}
+{{< highlight r >}}
 > ddply(split.ratio, .(year), summarize, median = median(ratio), min = min(ratio), max = max(ratio))
    year   median       min    max
 1  2000 0.163330 -0.310556 1.3282
@@ -177,7 +178,7 @@ These data are more or less consistent between years. The median of the ratio is
 12 2011 0.150365 -0.125141 1.4697
 13 2012 0.118362 -0.240859 1.1876
 14 2013 0.204870 -0.270929 1.1596
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Individual Runners
 
@@ -187,7 +188,7 @@ We are going to focus our attention on those runners with suspiciously large neg
 
 We extract only those records with ratios less than -15% and discard fields (like race number) to enforce a degree of anonymity. We will also add in a field to indicate how many times a runner appears in the list.
 
-{% highlight r %}
+{{< highlight r >}}
 > suspect = subset(split.ratio, ratio < RMIN)[, c("year", "key", "race.time", "ratio")]
 > (suspect = ddply(suspect, .(key), mutate, entries = length(ratio)))
    year      key race.time    ratio entries
@@ -213,7 +214,7 @@ We extract only those records with ratios less than -15% and discard fields (lik
 20 2000 ef35f2e6    569.48 -0.31056       1
 21 2000 efdaf288    611.33 -0.22502       1
 22 2005 fce308d5    638.98 -0.18083       1
-{% endhighlight %}
+{{< / highlight >}}
 
 That's interesting, only one runner (the same guy with key 3c0ea3bc) appears twice.
 

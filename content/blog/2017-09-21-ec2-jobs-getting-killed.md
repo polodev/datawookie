@@ -1,20 +1,20 @@
 ---
-title: 'Diagnosing Killed Jobs on EC2'
-date: 2017-09-21T08:30:00+00:00
 author: Andrew B. Collier
-excerpt_separator: <!-- more -->
-layout: post
 categories:
-  - Cloud
+- Cloud
+date: 2017-09-21T08:30:00Z
+excerpt_separator: <!-- more -->
 tags:
-  - AWS
-  - EC2
-  - Ubuntu
+- AWS
+- EC2
+- Ubuntu
+title: Diagnosing Killed Jobs on EC2
+url: /2017/09/21/ec2-jobs-getting-killed/
 ---
 
 I've got a long running optimisation problem on a EC2 instance. Yesterday it was mysteriously killed. I shrugged it off as an anomaly and restarted the job. However, this morning it was killed again. Definitely not a coincidence! So I investigated. This is what I found and how I am resolving the problem.
 
-<!-- more -->
+<!--more-->
 
 I had the job running on a `c4.2xlarge` instance with 8 vCPUs and 15 GiB of RAM. I'd also added 4 GiB of swap space. Seemed to be perfectly adequate.
 
@@ -22,15 +22,15 @@ I had the job running on a `c4.2xlarge` instance with 8 vCPUs and 15 GiB of RAM.
 
 The jobs died with a curt and rather uninformative message in the console:
 
-{% highlight bash %}
+{{< highlight bash >}}
 Killed
-{% endhighlight %}
+{{< / highlight >}}
 
 Hard to figure out the source of the problem. Luckily Ubuntu comes with a plethora of tools for debugging. I had a look at the output from `dmesg` and that immediately pointed me to the source of the problem.
 
 The `dmesg` output is included below. I've edited out some of the irrelevant details.
 
-{% highlight text %}
+{{< highlight text >}}
 [84123.043569] R invoked oom-killer: gfp_mask=0x24280ca, order=0, oom_score_adj=0
 [84123.043572] R cpuset=/ mems_allowed=0
 [84123.043577] CPU: 1 PID: 3026 Comm: R Not tainted 4.4.0-1013-aws #22-Ubuntu
@@ -58,11 +58,11 @@ The `dmesg` output is included below. I've edited out some of the irrelevant det
                 slab_reclaimable:8631 slab_unreclaimable:7256
                 mapped:815 shmem:293 pagetables:11188 bounce:0
                 free:32567 free_pcp:0 free_cma:0
-{% endhighlight %}
+{{< / highlight >}}
 
 That's the first sign that something is going horribly wrong: `R invoked oom-killer`. The [OOM Killer](https://linux-mm.org/OOM_Killer) is responsible for killing tasks when the system is running out of memory.
 
-{% highlight text %}
+{{< highlight text >}}
 [84123.043666] 15269 total pagecache pages
 [84123.043667] 14216 pages in swap cache
 [84123.043668] Swap cache stats: add 1550042, delete 1535826, find 198214/303678
@@ -73,13 +73,13 @@ That's the first sign that something is going horribly wrong: `R invoked oom-kil
 [84123.043672] 82279 pages reserved
 [84123.043672] 0 pages cma reserved
 [84123.043673] 0 pages hwpoisoned
-{% endhighlight %}
+{{< / highlight >}}
 
 Some high level information on memory allocation. Note that all of the swap space has been used!
 
 Then some details on memory allocation to individual processes.
 
-{% highlight text %}
+{{< highlight text >}}
 [84123.043674] [ pid ]   uid  tgid total_vm      rss nr_ptes nr_pmds swapents oom_score_adj name
 [84123.043678] [  457]     0   457    10968      260      22       3     1081             0 systemd-journal
 [84123.043680] [  492]     0   492    25742       44      17       3        2             0 lvmetad
@@ -116,16 +116,16 @@ Then some details on memory allocation to individual processes.
 [84123.043720] [ 3077]  1000  3077   306739   243239     563       4     1820             0 R
 [84123.043721] [ 3086]  1000  3086   306174   242549     563       4     1874             0 R
 [84123.043722] [ 3095]  1000  3095   281520   218083     518       4     1784             0 R
-{% endhighlight %}
+{{< / highlight >}}
 
 Note the final eight lines, which correspond to my optimisation job (it's running in parallel with seven worker threads). The biggest memory hog is PID 3026, which is the R master task.
 
 Then the final *coup de grâce*: killing PID 3026, which in turn took down the rest of the R tasks.
 
-{% highlight text %}
+{{< highlight text >}}
 [84123.043724] Out of memory: Kill process 3026 (R) score 649 or sacrifice child
 [84123.046405] Killed process 3026 (R) total-vm:14158732kB, anon-rss:8590380kB, file-rss:1620kB
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Fixing the Problem
 

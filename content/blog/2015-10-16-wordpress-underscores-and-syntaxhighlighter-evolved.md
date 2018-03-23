@@ -1,18 +1,19 @@
 ---
+author: Andrew B. Collier
+date: 2015-10-16T11:55:44Z
+excerpt_separator: <!-- more -->
 id: 2698
 title: 'WordPress: Underscores and SyntaxHighlighter Evolved'
-date: 2015-10-16T11:55:44+00:00
-author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
+url: /2015/10/16/wordpress-underscores-and-syntaxhighlighter-evolved/
 ---
+
 The underscores are invisible in the code that I'm displaying on WordPress using the SyntaxHighlighter Evolved. After a bit of research I found that this was due to the line height being set too small.
 
-<!-- more -->
+<!--more-->
 
 Fortunately there's a quick fix: in `wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css` just increase the value of `line-height`.
 
-{% highlight css %}
+{{< highlight css >}}
 .syntaxhighlighter textarea {
   -moz-border-radius: 0 0 0 0 !important;
   -webkit-border-radius: 0 0 0 0 !important;
@@ -47,4 +48,4 @@ Fortunately there's a quick fix: in `wp-content/plugins/syntaxhighlighter/syntax
   -o-box-shadow: none !important;
   box-shadow: none !important;
 }
-{% endhighlight %}
+{{< / highlight >}}

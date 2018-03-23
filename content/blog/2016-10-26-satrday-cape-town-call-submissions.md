@@ -1,22 +1,22 @@
 ---
-id: 4499
-title: 'satRday Cape Town: Call for Submissions'
-date: 2016-10-26T15:18:30+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=4499
-excerpt_separator: <!-- more -->
 categories:
-  - Data Science
+- Data Science
+date: 2016-10-26T15:18:30Z
+excerpt_separator: <!-- more -->
+guid: http://www.exegetic.biz/blog/?p=4499
+id: 4499
 tags:
-  - '#rstats'
-  - Cape Town
-  - satRday
+- '#rstats'
+- Cape Town
+- satRday
+title: 'satRday Cape Town: Call for Submissions'
+url: /2016/10/26/satrday-cape-town-call-submissions/
 ---
 
 [satRday Cape Town](http://satrdays.org/capetown2017/) will happen on 18 February 2017 at [Workshop 17](http://open.co.za/workshop17.html), Victoria & Alfred Waterfront, Cape Town, South Africa.
 
-<!-- more -->
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2016/10/satRday-Cape-Town-banner.png" >
 

@@ -1,16 +1,16 @@
 ---
-id: 3502
-title: 'R Saturday [satRday] in Cape Town'
-date: 2016-05-12T09:06:59+00:00
 author: Andrew B. Collier
-layout: post
+date: 2016-05-12T09:06:59Z
 excerpt_separator: <!-- more -->
+id: 3502
 tags:
-  - '#rstats'
-  - satRday
+- '#rstats'
+- satRday
+title: R Saturday [satRday] in Cape Town
+url: /2016/05/12/r-saturday-satrday-in-cape-town/
 ---
 
-<!-- more -->
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2016/05/cape-town-aerial-logo.jpg">
 

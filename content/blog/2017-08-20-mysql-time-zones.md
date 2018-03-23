@@ -1,25 +1,26 @@
 ---
-title: 'Setting Up Time Zones in MySQL'
-date: 2017-08-20T05:00:00+00:00
 author: Andrew B. Collier
+categories:
+- DB
+date: 2017-08-20T05:00:00Z
 excerpt_separator: <!-- more -->
-layout: post
-category: DB
 tags:
-  - MySQL
-  - Django
-  - 'Time Zone'
+- MySQL
+- Django
+- Time Zone
+title: Setting Up Time Zones in MySQL
+url: /2017/08/20/mysql-time-zones/
 ---
 
 I'm in the process of setting up a [Zinnia](https://github.com/Fantomas42/django-blog-zinnia) blog on one of my Django sites. After putting all of the necessary plumbing in place I got the following message on first visiting the blog URL:
 
-{% highlight text %}
+{{< highlight text >}}
 Database returned an invalid value in QuerySet.datetimes(). Are time zone definitions for your database and pytz installed?
-{% endhighlight %}
+{{< / highlight >}}
 
 The solution to this is to copy your system's time zone information across to the database.
 
-<!-- more -->
+<!--more-->
 
 ## Creating the Time Zone Tables
 
@@ -27,15 +28,15 @@ There's a MySQL tool to do precisely this: `mysql_tzinfo_to_sql`. You just need 
 
 The following command will read the contents of your system's zoneinfo database, transform it into SQL statements and execute them in MySQL. You'll need to provide the password for the `root` MySQL user.
 
-{% highlight bash %}
+{{< highlight bash >}}
 mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -u root -p mysql
-{% endhighlight %}
+{{< / highlight >}}
 
 You can just specify a single time zone, but it makes sense to me to simply load up the entire gamut.
 
 The result is a set of tables in the `mysql` database.
 
-{% highlight sql %}
+{{< highlight sql >}}
 mysql> SELECT * FROM time_zone LIMIT 10;
 +--------------+------------------+
 | Time_zone_id | Use_leap_seconds |
@@ -52,9 +53,9 @@ mysql> SELECT * FROM time_zone LIMIT 10;
 |           10 | N                |
 +--------------+------------------+
 10 rows in set (0.00 sec)
-{% endhighlight %}
+{{< / highlight >}}
 
-{% highlight sql %}
+{{< highlight sql >}}
 mysql> SELECT * FROM time_zone_name LIMIT 10;
 +--------------------+--------------+
 | Name               | Time_zone_id |
@@ -71,9 +72,9 @@ mysql> SELECT * FROM time_zone_name LIMIT 10;
 | Africa/Bissau      |           10 |
 +--------------------+--------------+
 10 rows in set (0.00 sec)
-{% endhighlight %}
+{{< / highlight >}}
 
-{% highlight sql %}
+{{< highlight sql >}}
 mysql> SELECT * FROM time_zone_transition LIMIT 10;
 +--------------+-----------------+--------------------+
 | Time_zone_id | Transition_time | Transition_type_id |
@@ -90,9 +91,9 @@ mysql> SELECT * FROM time_zone_transition LIMIT 10;
 |            2 |     -1483316400 |                  2 |
 +--------------+-----------------+--------------------+
 10 rows in set (0.00 sec)
-{% endhighlight %}
+{{< / highlight >}}
 
-{% highlight sql %}
+{{< highlight sql >}}
 mysql> SELECT * FROM time_zone_transition_type LIMIT 10;
 +--------------+--------------------+--------+--------+--------------+
 | Time_zone_id | Transition_type_id | Offset | Is_DST | Abbreviation |
@@ -109,13 +110,13 @@ mysql> SELECT * FROM time_zone_transition_type LIMIT 10;
 |            3 |                  4 |  10800 |      0 | EAT          |
 +--------------+--------------------+--------+--------+--------------+
 10 rows in set (0.00 sec)
-{% endhighlight %}
+{{< / highlight >}}
 
 ## MySQL Server Time Zone
 
 You can check the time zone that's configured for your MySQL server as follows:
 
-{% highlight sql %}
+{{< highlight sql >}}
 mysql> SELECT @@time_zone;
 +-------------+
 | @@time_zone |
@@ -123,24 +124,24 @@ mysql> SELECT @@time_zone;
 | SYSTEM      |
 +-------------+
 1 row in set (0.00 sec)
-{% endhighlight %}
+{{< / highlight >}}
 
 So my MySQL server is using the same time zone as the system. We can lock that down by configuring a specific time zone for MySQL. Add the following to the end of `/etc/mysql/my.cnf`.
 
-{% highlight text %}
+{{< highlight text >}}
 [mysqld]
 default-time-zone = 'UTC'
-{% endhighlight %}
+{{< / highlight >}}
 
 Now restart MySQL.
 
-{% highlight bash %}
+{{< highlight bash >}}
 sudo service mysql restart
-{% endhighlight %}
+{{< / highlight >}}
 
 And check for the server time zone.
 
-{% highlight sql %}
+{{< highlight sql >}}
 mysql> SELECT @@time_zone;
 +-------------+
 | @@time_zone |
@@ -148,6 +149,6 @@ mysql> SELECT @@time_zone;
 | UTC         |
 +-------------+
 1 row in set (0.00 sec)
-{% endhighlight %}
+{{< / highlight >}}
 
 Sorted.

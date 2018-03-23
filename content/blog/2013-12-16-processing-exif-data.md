@@ -1,42 +1,43 @@
 ---
-id: 600
-title: Processing EXIF Data
-date: 2013-12-16T05:13:48+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Photography
+- Photography
+date: 2013-12-16T05:13:48Z
+excerpt_separator: <!-- more -->
+id: 600
 tags:
-  - bash
-  - EXIF
-  - ggplot2
-  - heat map
-  - histogram
-  - '#rstats'
-  - shell
+- bash
+- EXIF
+- ggplot2
+- heat map
+- histogram
+- '#rstats'
+- shell
+title: Processing EXIF Data
+url: /2013/12/16/processing-exif-data/
 ---
+
 I got quite inspired by the [EXIF with R](http://timelyportfolio.blogspot.com/2013/11/exif-with-r-rcharts-catcorrjs-exiftool.html) post on the [Timely Portfolio](http://timelyportfolio.blogspot.com/) blog and decided to do a similar analysis with my photographic database.
 
-<!-- more -->
+<!--more-->
 
 # The Data
 
 The EXIF data were dumped using [exiftool](http://www.sno.phy.queensu.ca/~phil/exiftool/).
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ find 1995/ 20* -type f -print0 | xargs -0 exiftool -S -FileName -Orientation -ExposureTime \
     
 -FNumber -ExposureProgram -ISO -CreateDate -ShutterSpeedValue -ApertureValue -FocalLength \
     
 -MeasuredEV -FocusDistanceLower -FocusDistanceUpper | tee image-data.txt
-{% endhighlight %}
+{{< / highlight >}}
 
 This command uses some of the powerful features of the bash shell. If you are interested in seeing more about these, take a look at [shell-fu](http://www.shell-fu.org/ "shell-fu") and [commandfu](http://www.commandlinefu.com/commands/browse "commandlinefu").
 
 The resulting data were a lengthy series of records (one for each image file) that looked like this:
 
-{% highlight text %}
+{{< highlight text >}}
 ======== 2003/02/18/PICT0040.JPG
 FileName: PICT0040.JPG
 Orientation: Horizontal (normal)
@@ -59,7 +60,7 @@ FocalLength: 6.7 mm
 MeasuredEV: 14.91
 FocusDistanceLower: 0 m
 FocusDistanceUpper: inf
-{% endhighlight %}
+{{< / highlight >}}
 
 The data for each image begin at the "========" separator and the number of fields varies according to what information is available per image.
 
@@ -67,19 +68,19 @@ The data for each image begin at the "========" separator and the number of fiel
 
 The process of importing the data into R and transforming it into a workable structure took a little bit of work. Nothing too tricky though.
 
-{% highlight r %}
+{{< highlight r >}}
 > data = readLines("data/image-data.txt")
 > data = paste(data, collapse = "|")
 > data = strsplit(data, "======== ")[[1]]
 > data = strsplit(data, "|", fixed = TRUE)
 > data = data[sapply(data, length) > 0]
-{% endhighlight %}
+{{< / highlight >}}
 
 Basically, here I loaded all of the data using readLines() which gave me a vector of strings. I then concatenated all of those strings into a single very, very long string. I sliced this up into blocks using the separator string "======== " and then split the records in each block at the pipe symbol "|". Finally, I found that the results had a few empty elements which I simply discarded.
 
 The resulting data looked like this:
 
-{% highlight r %}
+{{< highlight r >}}
 > sample(data, 3)
 [[1]]
  [1] "2008/10/26/img_0570.jpg"          "FileName: img_0570.jpg"           "Model: Canon DIGITAL IXUS 60"    
@@ -101,11 +102,11 @@ The resulting data looked like this:
  [7] "ExposureProgram: Program AE"      "ISO: 800"                         "CreateDate: 2011:05:11 17:51:04" 
 [10] "ShutterSpeedValue: 1/512"         "ApertureValue: 9.5"               "FocalLength: 23.0 mm"            
 [13] "MeasuredEV: 12.62"                "FocusDistanceLower: 0.51 m"       "FocusDistanceUpper: 0.54 m"
-{% endhighlight %}
+{{< / highlight >}}
 
 The next step was to reformat the data in each of these records and consolidate into a data frame.
 
-{% highlight r %}
+{{< highlight r >}}
 > extract <- function(d) {
 +   # Remove file name (redundant since it is also in first named record)
 +   d <- d[-1]
@@ -126,11 +127,11 @@ The next step was to reformat the data in each of these records and consolidate 
 + }
 > 
 > data <- lapply(data, extract)
-{% endhighlight %}
+{{< / highlight >}}
 
 Note the use of the handy utility function setNames() which was used to avoid creating a temporary variable. The result is a list, each element of which is a sub-list with named fields. A typical element looks like
 
-{% highlight r %}
+{{< highlight r >}}
 > data[500]
 [[1]]
 [[1]]$FileName
@@ -165,19 +166,19 @@ Note the use of the handy utility function setNames() which was used to avoid cr
 
 [[1]]$FocalLength
 [1] "5.7 mm"
-{% endhighlight %}
+{{< / highlight >}}
 
 The next step was to concatenate all of these elements to form a single data frame. Normally I would do this using a combination of do.call() and rbind() but this will not work for the present case because the named lists for each of the images do not all contain the same set of fields. So, instead I used ldply(), which deals with this situation gracefully.
 
-{% highlight r %}
+{{< highlight r >}}
 > library(plyr)
 > #
 > data = ldply(data, function(d) {as.data.frame(d)})
-{% endhighlight %}
+{{< / highlight >}}
 
 The final data, after a few more minor manipulations, is formatted as a neat data frame.
 
-{% highlight r %}
+{{< highlight r >}}
 > tail(data)
           FileName          Model          CreateDate   Orientation ExposureTime FNumber ExposureProgram ISO
 30151 IMG_2513.JPG Canon EOS 500D 2013-10-05 13:40:27 Rotate 270 CW          125     5.6      Program AE 400
@@ -193,16 +194,16 @@ The final data, after a few more minor manipulations, is formatted as a neat dat
 30154          25               125           5.6      10.25               2.57               3.18
 30155          17               125           5.6      10.38               2.57               3.18
 30156          21               125           5.6      10.25               2.57               3.18
-{% endhighlight %}
+{{< / highlight >}}
 
 # Plots and Analysis
 
 There are quite a few photographs in the data.
 
-{% highlight r %}
+{{< highlight r >}}
 > dim(data)
 [1] 21031 14
-{% endhighlight %}
+{{< / highlight >}}
 
 The only sensible way to understand my photography habits is to produce some visualisations. The three elements in the [exposure triangle](http://digital-photography-school.com/learning-exposure-in-digital-photography) are ISO, [shutter speed](https://en.wikipedia.org/wiki/Shutter_speed) (or exposure time) and aperture (or [F-number](https://en.wikipedia.org/wiki/F-number)). I try to always shoot at the lowest ISO, so the two variables of interest are shutter speed and aperture.
 

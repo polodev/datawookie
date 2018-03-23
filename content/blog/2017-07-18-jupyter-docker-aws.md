@@ -1,15 +1,16 @@
 ---
-title: 'Deploying Jupyer on AWS using Docker'
-date: 2017-07-18T04:00:00+00:00
 author: Andrew B. Collier
+categories:
+- Cloud
+date: 2017-07-18T04:00:00Z
 excerpt_separator: <!-- more -->
-layout: post
-category: Cloud
 tags:
-  - Docker
-  - AWS
-  - EC2
-  - Jupyter
+- Docker
+- AWS
+- EC2
+- Jupyter
+title: Deploying Jupyer on AWS using Docker
+url: /2017/07/18/jupyter-docker-aws/
 ---
 
 <!--
@@ -23,7 +24,7 @@ Amazon's EC2 Container Services (ECS) is an orchestrated system for deploying Do
 
 <!-- <iframe width="853" height="480" src="https://www.youtube.com/embed/zBqjh61QcB4" frameborder="0" allowfullscreen></iframe> -->
 
-<!-- more -->
+<!--more-->
 
 I gave it a try and decided that I'd rather set it up from scratch in a simple EC2 instance. This is a record of my process.
 
@@ -44,9 +45,9 @@ During the launch process I also
 
 Once the launch process is complete you can connect to the instance using SSH and the PEM file that was created during the launch process.
 
-{% highlight bash %}
+{{< highlight bash >}}
 ssh -i ~/docker.pem ubuntu@ec2-34-201-235-59.compute-1.amazonaws.com
-{% endhighlight %}
+{{< / highlight >}}
 
 You'll connect as the `ubuntu` user.
 
@@ -54,24 +55,24 @@ You'll connect as the `ubuntu` user.
 
 The next step is to install Docker on the EC2 host. Start by adding the public key for the Docker repository.
 
-{% highlight bash %}
+{{< highlight bash >}}
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-{% endhighlight %}
+{{< / highlight >}}
 
 Then add the repository and update.
 
-{% highlight bash %}
+{{< highlight bash >}}
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 sudo apt-get update
-{% endhighlight %}
+{{< / highlight >}}
 
 Retrieve some information about the `docker-ce` package (this step is optional).
 
-{% highlight bash %}
+{{< highlight bash >}}
 apt-cache policy docker-ce
-{% endhighlight %}
+{{< / highlight >}}
 
-{% highlight text %}
+{{< highlight text >}}
 docker-ce:
   Installed: (none)
   Candidate: 17.06.0~ce-0~ubuntu
@@ -84,19 +85,19 @@ docker-ce:
         500 https://download.docker.com/linux/ubuntu xenial/stable amd64 Packages
      17.03.0~ce-0~ubuntu-xenial 500
         500 https://download.docker.com/linux/ubuntu xenial/stable amd64 Packages
-{% endhighlight %}
+{{< / highlight >}}
 
 Install the `docker-ce` package.
 
-{% highlight bash %}
+{{< highlight bash >}}
 sudo apt-get install -y docker-ce
-{% endhighlight %}
+{{< / highlight >}}
 
 Check that the `docker` service started successfully.
 
-{% highlight bash %}
+{{< highlight bash >}}
 sudo systemctl status docker
-{% endhighlight %}
+{{< / highlight >}}
 
 If everything went well then you should see that the service is loaded, active and running.
 
@@ -104,16 +105,16 @@ If everything went well then you should see that the service is loaded, active a
 
 If you try running any Docker commands as the `ubuntu` user you will be denied! You need to add this user to the `docker` group.
 
-{% highlight bash %}
+{{< highlight bash >}}
 sudo gpasswd -a ubuntu docker
-{% endhighlight %}
+{{< / highlight >}}
 
 You should logout and reconnect for the changes to take effect. Check that you are now able to run Docker commands.
 
-{% highlight bash %}
+{{< highlight bash >}}
 docker version
-{% endhighlight %}
-{% highlight text %}
+{{< / highlight >}}
+{{< highlight text >}}
 Client:
  Version:      17.06.0-ce
  API version:  1.30
@@ -130,45 +131,45 @@ Server:
  Built:        Fri Jun 23 21:19:04 2017
  OS/Arch:      linux/amd64
  Experimental: false
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Running the Jupyter Docker Image
 
 You are now able to run the [JupyterHub](https://github.com/jupyterhub/jupyterhub) Docker image.
 
-{% highlight bash %}
+{{< highlight bash >}}
 docker run -d --name jupyterhub jupyterhub/jupyterhub jupyterhub
-{% endhighlight %}
+{{< / highlight >}}
 
 Check that a `jupyterhub` container has been launched.
 
-{% highlight bash %}
+{{< highlight bash >}}
 docker ps
-{% endhighlight %}
+{{< / highlight >}}
 
-{% highlight text %}
+{{< highlight text >}}
 CONTAINER ID        IMAGE                   COMMAND             CREATED              STATUS              PORTS               NAMES
 240099f5bc8f        jupyterhub/jupyterhub   "jupyterhub"        About a minute ago   Up About a minute   8000/tcp            jupyterhub
-{% endhighlight %}
+{{< / highlight >}}
 
 However, this is not quite right yet. JupyterHub is listening on port 8000 and our Security Group only allows access on port 80. So we need to stop that container and make some tweaks.
 
-{% highlight bash %}
+{{< highlight bash >}}
 docker stop 240099f5bc8f
-{% endhighlight %}
+{{< / highlight >}}
 
 We'll restart it with the container port 8000 mapped to the host port 80.
 
-{% highlight bash %}
+{{< highlight bash >}}
 docker run -d -p 80:8000 jupyterhub/jupyterhub
-{% endhighlight %}
+{{< / highlight >}}
 
 The port mapping is confirmed in the output from `docker ps`.
 
-{% highlight text %}
+{{< highlight text >}}
 CONTAINER ID        IMAGE                   COMMAND             CREATED             STATUS              PORTS                  NAMES
 03ca8788b0c8        jupyterhub/jupyterhub   "jupyterhub"        5 seconds ago       Up 5 seconds        0.0.0.0:80->8000/tcp   fervent_ramanujan
-{% endhighlight %}
+{{< / highlight >}}
 
 You should now be able to visit <http://ec2-34-201-235-59.compute-1.amazonaws.com/> in your browser and find a Jupyter login dialog.
 

@@ -1,17 +1,18 @@
 ---
-id: 2932
-title: 2015 Data Science Salary Survey
-date: 2015-12-04T15:00:44+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=2932
 categories:
-  - Business
-  - Data Science
+- Business
+- Data Science
+date: 2015-12-04T15:00:44Z
+guid: http://www.exegetic.biz/blog/?p=2932
+id: 2932
 tags:
-  - Data Science
-  - '#rstats'
+- Data Science
+- '#rstats'
+title: 2015 Data Science Salary Survey
+url: /2015/12/04/2015-data-science-salary-survey/
 ---
+
 The recently published [2015 Data Science Salary Survey](https://www.oreilly.com/ideas/2015-data-science-salary-survey) conducted by O'Reilly takes a look at the salaries received, tools used and other interesting facts about Data Scientists around the World. It's based on a survey of over 600 respondents from a variety of industries. The entire report is well worth a read, but I've picked out some highlights below.
 
 The majority (67%) of the respondents in the survey were from the United States. They also demanded the highest median salaries across the globe. At the other end of the spectrum (and relevant to me personally), only 1% of the respondents were from Africa. These represented only one country: South Africa. The lowest salaries overall were recorded in Africa, while the lowest median salaries were found in Latin America.

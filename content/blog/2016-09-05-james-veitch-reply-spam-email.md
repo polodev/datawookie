@@ -1,18 +1,19 @@
 ---
-id: 4096
-title: 'James Veitch: When you reply to spam email'
-date: 2016-09-05T07:19:24+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=4096
-excerpt_separator: <!-- more -->
 categories:
-  - Technology
+- Technology
+date: 2016-09-05T07:19:24Z
+excerpt_separator: <!-- more -->
+guid: http://www.exegetic.biz/blog/?p=4096
+id: 4096
 tags:
-  - TED Talk
-  - Humour
+- TED Talk
+- Humour
+title: 'James Veitch: When you reply to spam email'
+url: /2016/09/05/james-veitch-reply-spam-email/
 ---
-<!-- more -->
+
+<!--more-->
 
 <iframe src="https://embed-ssl.ted.com/talks/james_veitch_this_is_what_happens_when_you_reply_to_spam_email.html" width="854" height="480" frameborder="0" scrolling="no" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 

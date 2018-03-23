@@ -1,21 +1,21 @@
 ---
-id: 2544
-title: 'Review: Data Mining with Rattle and R'
-date: 2015-10-07T12:30:09+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
 - Book Review
 - Review
+date: 2015-10-07T12:30:09Z
+excerpt_separator: <!-- more -->
+id: 2544
 tags:
 - Machine Learning
 - Predictive Analytics
 - '#rstats'
 - Rattle
+title: 'Review: Data Mining with Rattle and R'
+url: /2015/10/07/review-data-mining-with-rattle-and-r/
 ---
 
-<!-- more -->
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2015/10/data-mining-with-rattle-and-R.jpg">
 
@@ -73,7 +73,7 @@ There's an extensive set of references and a complete index.
 
 Since I enjoy being close to the raw, bleeding edge I re-installed the beta version of Rattle today and gave it a spin.
 
-{% highlight r %}
+{{< highlight r >}}
 > library(devtools)
 > devtools::install_bitbucket(&quot;kayontoga/rattle&quot;)
 > library(rattle)
@@ -81,7 +81,7 @@ Rattle: A free graphical interface for data mining with R.
 Version 4.0.0 Copyright (c) 2006-2015 Togaware Pty Ltd.
 Type 'rattle()' to shake, rattle, and roll your data.
 > rattle()
-{% endhighlight %}
+{{< / highlight >}}
 
 The GUI looks pretty sleek. I did have hassles with some of the functionality in the beta version, so if you are going to give this a try I'd advise you to just install the version available at <a href="http://cran.mirror.ac.za/">CRAN</a>.
 

@@ -1,21 +1,21 @@
 ---
-title: 'Quick Wordpress Install with Docker'
-date: 2017-09-22T11:00:00+00:00
 author: Andrew B. Collier
-excerpt_separator: <!-- more -->
-layout: post
 categories:
-  - Cloud
+- Cloud
+date: 2017-09-22T11:00:00Z
+excerpt_separator: <!-- more -->
 tags:
-  - Docker
-  - Wordpress
-  - Ubuntu
-  - MySQL
+- Docker
+- Wordpress
+- Ubuntu
+- MySQL
+title: Quick Wordpress Install with Docker
+url: /2017/09/22/wordpress-docker-ubuntu/
 ---
 
 I've just put together a [Wordpress](https://wordpress.com/) site for my older daughter. It's hosted on [DigitalOcean](https://www.digitalocean.com/) and all of the infrastructure is handled with Docker. This post describes the steps in the (easy) install process.
 
-<!-- more -->
+<!--more-->
 
 The first thing that you need to do is [install Docker]({{ site.baseurl }}{% post_url 2017-09-14-installing-docker-ubuntu %}). With that in place it's a simple matter to instantiate a couple of images and the whole thing is up an running.
 
@@ -26,32 +26,32 @@ The first thing that you need to do is [install Docker]({{ site.baseurl }}{% pos
 Wordpress stores content in a MySQL database. Since we want to persist that data beyond the lifespan of a Docker container we should store the data on the host.
 First create a folder for the database data.
 
-{% highlight bash %}
+{{< highlight bash >}}
 mkdir ~/mysql-data
-{% endhighlight %}
+{{< / highlight >}}
 
 Next create a (temporary) environment variable to store the MySQL `root` user password. This is not really necessary, but it made my life easier.
 
-{% highlight bash %}
+{{< highlight bash >}}
 MYSQL_ROOT_PASSWORD="Perc!oreggIn2"
-{% endhighlight %}
+{{< / highlight >}}
 
 Now launch an instance of the [MySQL Docker image](https://hub.docker.com/_/mysql/). Note that the folder created above is listed as a volume and linked to the folder `/var/lib/mysql` on the container.
 
-{% highlight bash %}
+{{< highlight bash >}}
 docker run --name mysql \
   -v ~/mysql-data:/var/lib/mysql \
   -e MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD \
   -d mysql:latest
-{% endhighlight %}
+{{< / highlight >}}
 
 Check that the container is up and running.
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ docker ps
 CONTAINER ID IMAGE            COMMAND                CREATED        STATUS        PORTS                NAMES
 7937133554d9 mysql:latest     "docker-entrypoint..." 15 minutes ago Up 15 minutes 3306/tcp             mysql
-{% endhighlight %}
+{{< / highlight >}}
 
 We see that it's listening on the (default) port 3306.
 
@@ -59,34 +59,34 @@ We see that it's listening on the (default) port 3306.
 
 Wordpress also stores content (templates, media etc.) in a folder. Again we want to persist this on the host, so we create a folder for the Wordpress content.
 
-{% highlight bash %}
+{{< highlight bash >}}
 mkdir ~/wp-content
-{% endhighlight %}
+{{< / highlight >}}
 
 Then launch the [Wordpress Docker image](https://hub.docker.com/_/wordpress/). The folder created above is listed as a volume and linked to the folder `/var/www/html/wp-content` on the container. This container is also linked to the `mysql` container.
 
-{% highlight bash %}
+{{< highlight bash >}}
 docker run --name wordpress \
   --link mysql:mysql \
   -p 8080:80 \
   -v ~/wp-content:/var/www/html/wp-content \
   -d wordpress:latest
-{% endhighlight %}
+{{< / highlight >}}
 
 Again we check that the container is up and running.
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ docker ps
 CONTAINER ID IMAGE            COMMAND                CREATED        STATUS        PORTS                NAMES
 707fcaad12e4 wordpress:latest "docker-entrypoint..." 20 minutes ago Up 20 minutes 0.0.0.0:8080->80/tcp wordpress
 7937133554d9 mysql:latest     "docker-entrypoint..." 25 minutes ago Up 25 minutes 3306/tcp             mysql
-{% endhighlight %}
+{{< / highlight >}}
 
 Looks good. At this point we can do a local test on the host. Since the site is not yet visible from the outside world we'll use `lynx` to open it.
 
-{% highlight bash %}
+{{< highlight bash >}}
 lynx http://localhost/
-{% endhighlight %}
+{{< / highlight >}}
 
 If you get something that looks like a (text mode) web page then you are in business.
 
@@ -96,7 +96,7 @@ If you get something that looks like a (text mode) web page then you are in busi
 
 Finally we need to expose the site to the outside world. I don't pretend to be particularly competent with [NGINX](https://nginx.org/en/), but the configuration below worked for me, exposing the site on port 80.
 
-{% highlight text %}
+{{< highlight text >}}
 upstream wordpress {
         server 127.0.0.1:8080 fail_timeout=0;
 }
@@ -116,7 +116,7 @@ server {
                 proxy_pass http://wordpress;
         }
 }
-{% endhighlight %}
+{{< / highlight >}}
 
 Restart NGINX and the site will be live.
 
@@ -124,9 +124,9 @@ Restart NGINX and the site will be live.
 
 I was so enthused by the ease of the above process (thank you, Docker!) that I decided to install a blog on another web site. In this case the main site is served on HTTPS. I didn't have the time to sort out SSL for the blog, so instead I put it on a separate sub-domain. All that was required was an extra entry in the NGINX `server` block.
 
-{% highlight text %}
+{{< highlight text >}}
         server_name blog.example.com;
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Conclusion
 

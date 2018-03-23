@@ -1,20 +1,21 @@
 ---
-id: 225
-title: Comrades Marathon Attrition Rate
-date: 2013-06-07T06:58:17+00:00
 author: Andrew B. Collier
-layout: post
+date: 2013-06-07T06:58:17Z
 excerpt_separator: <!-- more -->
+id: 225
 tags:
-  - Comrades Marathon
-  - mosaic plot
-  - '#rstats'
-  - spine plot
-  - Visualisation
+- Comrades Marathon
+- mosaic plot
+- '#rstats'
+- spine plot
+- Visualisation
+title: Comrades Marathon Attrition Rate
+url: /2013/06/07/comrades-marathon-2013-attrition-rate/
 ---
+
 It is a bit of a mission to get the complete data set for this year's [Comrades Marathon](http://www.comrades.com). The full results are easily accessible, but come as an HTML file. Embedded in this file are links to the splits for individual athletes. So with a bit of scripting wizardry it is also possible to download the HTML files for each of the individual athletes. Parsing all of these yields the complete result set, which is the starting point for this analysis.
 
-<!-- more -->
+<!--more-->
 
 The first interesting thing that I found was that according to the main results page there were 19907 entrants (this is also the number quoted in the <a href="http://comrades.runnersworld.co.za/2013-comrades-marathon-highlights/">2013 Comrades Marathon Highlights</a>). However, there were only detailed data for 19903 individual athletes. This immediately aroused my suspicions, so I had a look for duplicate race numbers and, guess what? Yup! There were four: 57234, 54243, 16266 and 25315. If you don't believe me, check out the results for yourself. Here are the relevant data:
 

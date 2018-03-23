@@ -1,13 +1,13 @@
 ---
-title: "Hello Durban, tell me how you're doing!"
-date: 2017-11-10T12:00:00+00:00
 author: Andrew B. Collier
-excerpt_separator: <!-- more -->
-layout: post
 categories:
-  - Conference
+- Conference
+date: 2017-11-10T12:00:00Z
+excerpt_separator: <!-- more -->
 tags:
-  - Talk
+- Talk
+title: Hello Durban, tell me how you're doing!
+url: /2017/11/10/abstract-hello-durban/
 ---
 
 {% comment %}

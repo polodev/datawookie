@@ -1,17 +1,18 @@
 ---
-id: 2911
-title: Installing XGBoost on Ubuntu
-date: 2015-12-09T15:00:14+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=2911
+date: 2015-12-09T15:00:14Z
 excerpt_separator: <!-- more -->
+guid: http://www.exegetic.biz/blog/?p=2911
+id: 2911
 tags:
-  - Python
-  - '#rstats'
-  - XGBoost
+- Python
+- '#rstats'
+- XGBoost
+title: Installing XGBoost on Ubuntu
+url: /2015/12/09/installing-xgboost-ubuntu/
 ---
-<!-- more -->
+
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2015/12/xgboost.png" >
 
@@ -21,10 +22,10 @@ tags:
 
 Installation in R is extremely simple.
 
-{% highlight r %}
+{{< highlight r >}}
 > install.packages('xgboost')
 > library(xgboost)
-{% endhighlight %}
+{{< / highlight >}}
   
 It's also supported as a model in [caret](http://topepo.github.io/caret/index.html), which is especially handy for feature selection and model parameter tuning.
 
@@ -32,34 +33,34 @@ It's also supported as a model in [caret](http://topepo.github.io/caret/index.ht
 
 This might be as simple as
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ pip install xgboost
-{% endhighlight %}
+{{< / highlight >}}
 
 If you run into trouble with that, try the alternative approach below.
 
 Download the latest version from the [github repository](https://github.com/dmlc/xgboost). The simplest way to do this is to grab the [archive](https://github.com/dmlc/xgboost/archive/0.47.tar.gz) of a recent release. Unpack the archive, then become root and then execute the following:
   
-{% highlight text %}
+{{< highlight text >}}
 # cd xgboost-master
 # make
 # cd python-package/
 # python setup.py install -user
-{% endhighlight %}
+{{< / highlight >}}
   
 And you're ready to roll:
   
-{% highlight python %}
+{{< highlight python >}}
 import xgboost
-{% endhighlight %}
+{{< / highlight >}}
 
 If you run into trouble during the process you might have to install a few other packages:
   
-{% highlight text %}
+{{< highlight text >}}
 # apt-get install g++ gfortran
 # apt-get install python-dev python-numpy python-scipy python-matplotlib python-pandas
 # apt-get install libatlas-base-dev
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Conclusion
 

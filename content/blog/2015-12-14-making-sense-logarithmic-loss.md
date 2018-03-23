@@ -1,20 +1,21 @@
 ---
-id: 2895
-title: Making Sense of Logarithmic Loss
-date: 2015-12-14T15:00:22+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=2895
 categories:
-  - Data Science
+- Data Science
+date: 2015-12-14T15:00:22Z
+guid: http://www.exegetic.biz/blog/?p=2895
+id: 2895
 tags:
-  - caret
-  - Log Loss
-  - Logarithmic Loss
-  - Machine Learning
-  - '#rstats'
-  - XGBoost
+- caret
+- Log Loss
+- Logarithmic Loss
+- Machine Learning
+- '#rstats'
+- XGBoost
+title: Making Sense of Logarithmic Loss
+url: /2015/12/14/making-sense-logarithmic-loss/
 ---
+
 Logarithmic Loss, or simply Log Loss, is a [classification loss function](https://en.wikipedia.org/wiki/Loss_functions_for_classification) often used as an evaluation metric in [kaggle](https://www.kaggle.com/wiki/MultiClassLogLoss) competitions. Since success in these competitions hinges on effectively minimising the Log Loss, it makes sense to have some understanding of how this metric is calculated and how it should be interpreted.
 
 Log Loss quantifies the accuracy of a classifier by penalising false classifications. Minimising the Log Loss is basically equivalent to maximising the accuracy of the classifier, but there is a subtle twist which we'll get to in a moment.
@@ -35,23 +36,23 @@ Note that for each instance only the term for the correct class actually contrib
 
 Let's consider a simple implementation of a Log Loss function:
 
-{% highlight r %}
+{{< highlight r >}}
 > LogLossBinary = function(actual, predicted, eps = 1e-15) {
 + predicted = pmin(pmax(predicted, eps), 1-eps)
 + - (sum(actual * log(predicted) + (1 - actual) * log(1 - predicted))) / length(actual)
 + }
-{% endhighlight %}
+{{< / highlight >}}
   
 Suppose that we are training a binary classifier and consider an instance which is known to belong to the target class. We'll have a look at the effect of various predictions for class membership probability.
 
-{% highlight r %}
+{{< highlight r >}}
 > LogLossBinary(1, c(0.5))  
 [1] 0.69315  
 > LogLossBinary(1, c(0.9))  
 [1] 0.10536  
 > LogLossBinary(1, c(0.1))  
 [1] 2.3026
-{% endhighlight %}
+{{< / highlight >}}
   
 In the first case the classification is neutral: it assigns equal probability to both classes, resulting in a Log Loss of 0.69315. In the second case the classifier is relatively confident in the first class. Since this is the correct classification the Log Loss is reduced to 0.10536. The third case is an equally confident classification, but this time for the wrong class. The resulting Log Loss escalates to 2.3026. Relative to the neutral classification, being confident in the wrong class resulted in a far greater change in Log Loss. Obviously the amount by which Log Loss can decrease is constrained, while increases are unbounded.
 

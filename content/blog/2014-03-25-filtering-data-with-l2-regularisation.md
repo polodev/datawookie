@@ -1,23 +1,24 @@
 ---
-id: 682
-title: Filtering Data with L2 Regularisation
-date: 2014-03-25T10:58:27+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Indicators
-  - Trading
+- Indicators
+- Trading
+date: 2014-03-25T10:58:27Z
+excerpt_separator: <!-- more -->
+id: 682
 tags:
-  - Algorithmic Trading
-  - FOREX
-  - optimisation
-  - '#rstats'
-  - regularisation
+- Algorithmic Trading
+- FOREX
+- optimisation
+- '#rstats'
+- regularisation
+title: Filtering Data with L2 Regularisation
+url: /2014/03/25/filtering-data-with-l2-regularisation/
 ---
+
 I have just finished reading [Momentum Strategies with L1 Filter](http://arxiv.org/abs/1403.4069) by Tung-Lam Dao. The smoothing results presented in this paper are interesting and I thought it would be cool to implement the L1 and L2 filtering schemes in R. We'll start with the L2 scheme here because it has an exact solution and I will follow up with the L1 scheme later on.
 
-<!-- more -->
+<!--more-->
 
 ## Formulation of the Problem
 
@@ -33,7 +34,7 @@ The regularisation parameter, $$ \lambda $$, balances the contributions of the f
 
 Implementing a function to perform the optimisation is pretty simple.
 
-{% highlight r %}
+{{< highlight r >}}
 > l2filter.optim <- function(x, lambda = 0.0) {
 +   objective <- function(y, lambda) {
 +     n <- length(x)
@@ -50,13 +51,13 @@ Implementing a function to perform the optimisation is pretty simple.
 +   #
 +   optim(x, objective, lambda = lambda, method = "BFGS")$par
 + }
-{% endhighlight %}
+{{< / highlight >}}
 
 It has a nested objective function. The BFGS method is specified for optim() because the Nelder and Mead optimisation scheme converged too slowly.
 
 First we'll try this out on some test data.
 
-{% highlight r %}
+{{< highlight r >}}
 > N <- 20
 > 
 > set.seed(1)
@@ -64,23 +65,23 @@ First we'll try this out on some test data.
 > (y <- 1:N + 10 * runif(N))
  [1]  3.6551  5.7212  8.7285 13.0821  7.0168 14.9839 16.4468 14.6080 15.2911 10.6179 13.0597
 [12] 13.7656 19.8702 17.8410 22.6984 20.9770 24.1762 27.9191 22.8004 27.7745
-{% endhighlight %}
+{{< / highlight >}}
 
 If we use $$ \lambda = 0$$ then regularisation has no effect and the objective function is minimised when $$ x_t = y_t $$. Not surprisingly, in this case the filtered signal is the same as the original signal.
 
-{% highlight r %}
+{{< highlight r >}}
 > l2filter.optim(y, 0)
  [1]  3.6551  5.7212  8.7285 13.0821  7.0168 14.9839 16.4468 14.6080 15.2911 10.6179 13.0597
 [12] 13.7656 19.8702 17.8410 22.6984 20.9770 24.1762 27.9191 22.8004 27.7745
-{% endhighlight %}
+{{< / highlight >}}
 
 If, on the other hand, we use a large value for the regularisation parameter then the filtered signal is significantly different.
 
-{% highlight r %}
+{{< highlight r >}}
 > l2filter.optim(y, 100)
  [1]  5.8563  7.0126  8.1579  9.2747 10.3484 11.3835 12.3677 13.3067 14.2269 15.1607 16.1463
 [12] 17.1989 18.3183 19.4873 20.6963 21.9274 23.1729 24.4203 25.6621 26.9082
-{% endhighlight %}
+{{< / highlight >}}
 
 A plot is the most sensible way to visualise the effects of $$ \lambda $$. Below the original data (circles) are plotted along with the filtered data for values of $$ \lambda $$ from 0.1 to 100. In the top panel, weak regularisation results in a filtered signal which is not too different from the original. At the other extreme, the bottom panel shows strong regularisation where the filtered signal is essentially a straight line (all curvature has been removed). The other two panels represent intermediate levels of regularisation and it is clear how the original signal is being smoothed to varying degrees.
 
@@ -90,7 +91,7 @@ A plot is the most sensible way to visualise the effects of $$ \lambda $$. Below
 
 As it happens there is an exact solution to the Hodrick-Prescott optimisation problem, which involves some simple matrix algebra. The core of the solution is a band matrix with a right bandwidth of 2. The non-zero elements on each row are 1, -2 and 1. The function below constructs this matrix in a rather naive way. However, it is simply for illustration: we will look at a better implementation using sparse matrices.
 
-{% highlight r %}
+{{< highlight r >}}
 l2filter.matrix <- function(x, lambda = 0.0) {
   n <- length(x)
   
@@ -104,19 +105,19 @@ l2filter.matrix <- function(x, lambda = 0.0) {
   
   c(solve(I + 2 * lambda * t(D) %*% D) %*% x)
 }
-{% endhighlight %}
+{{< / highlight >}}
 
 Applying this function to the same set of test data, we get results consistent with those from optimisation.
 
-{% highlight r %}
+{{< highlight r >}}
 > l2filter.matrix(y, 100)
  [1]  5.8563  7.0126  8.1579  9.2747 10.3484 11.3835 12.3677 13.3067 14.2269 15.1607 16.1463
 [12] 17.1989 18.3183 19.4873 20.6963 21.9274 23.1729 24.4203 25.6621 26.9082
-{% endhighlight %}
+{{< / highlight >}}
 
 In principle the matrix solution is much more efficient than the optimisation. However, an implementation using a dense matrix (as above) would not be feasible for a data series of any appreciable length due to memory constraints. A sparse matrix implementation does the trick though.
 
-{% highlight r %}
+{{< highlight r >}}
 library(Matrix)
 
 l2filter.sparse <- function(x, lambda = 0.0) {
@@ -129,21 +130,21 @@ l2filter.sparse <- function(x, lambda = 0.0) {
   
   (solve(I + 2 * lambda * t(D) %*% D) %*% x)[,1]
 }
-{% endhighlight %}
+{{< / highlight >}}
 
 Again we can check that this gives the right results.
 
-{% highlight r %}
+{{< highlight r >}}
 > l2filter.sparse(y, 100)
  [1]  5.8563  7.0126  8.1579  9.2747 10.3484 11.3835 12.3677 13.3067 14.2269 15.1607 16.1463
 [12] 17.1989 18.3183 19.4873 20.6963 21.9274 23.1729 24.4203 25.6621 26.9082
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Application: S&P500 Data
 
 So, let's take this out for a drive in the real world. We'll get out hands on some S&P500 data from Quandl.
 
-{% highlight r %}
+{{< highlight r >}}
 > library(Quandl)
 > 
 > Quandl.auth("xxxxxxxxxxxxxxxxxxxx")
@@ -151,7 +152,7 @@ So, let's take this out for a drive in the real world. We'll get out hands on so
 > SP500 = Quandl("YAHOO/INDEX_GSPC", start_date = "1994-01-01", end_date = "2014-01-01")
 > #
 > SP500 = SP500[, c(1, 5)]
-{% endhighlight %}
+{{< / highlight >}}
 
 Then systematically apply the filter with a range of regularisation parameters scaling from 0.1 to 100000 in multiples of 10. The results are plotted below. In each panel the grey data reflect the raw daily values for the S&P500 index. Superimposed on top of these are the results of filtering the signal using the specified regularisation parameter. As anticipated, larger values of $$ \lambda $$ result in a smoother curve since the filter is more heavily penalised for curvature in the filtered signal.
 

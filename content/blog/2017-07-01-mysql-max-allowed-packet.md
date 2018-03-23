@@ -1,13 +1,14 @@
 ---
-title: 'Increasing MySQL Packet Maximum Size'
-date: 2017-07-01T05:30:00+00:00
 author: Andrew B. Collier
+categories:
+- DB
+date: 2017-07-01T05:30:00Z
 excerpt_separator: <!-- more -->
-layout: post
-category: DB
 tags:
-  - MySQL
-  - Django
+- MySQL
+- Django
+title: Increasing MySQL Packet Maximum Size
+url: /2017/07/01/mysql-max-allowed-packet/
 ---
 
 In the process of uploading a massive CSV file to my Django application my session data are getting pretty big. As a the result I'm getting these errors:
@@ -17,9 +18,9 @@ In the process of uploading a massive CSV file to my Django application my sessi
 
 The second error is potentially unrelated.
 
-After some research it became apparent that the source of the problem is my `max_allowed_packet` setting. <!-- more --> A quick check to find the current value:
+After some research it became apparent that the source of the problem is my `max_allowed_packet` setting. <!--more--> A quick check to find the current value:
 
-{% highlight sql %}
+{{< highlight sql >}}
 mysql> SELECT @@max_allowed_packet;
 +----------------------+
 | @@max_allowed_packet |
@@ -27,24 +28,24 @@ mysql> SELECT @@max_allowed_packet;
 |             16777216 |
 +----------------------+
 1 row in set (0.00 sec)
-{% endhighlight %}
+{{< / highlight >}}
 
 That's 16 Mb, but evidently not enough! It's a simple matter to increase this limit. Just edit `/etc/mysql/my.cnf` (you'll have to be `root` to do that!) and add the following:
 
-{% highlight text %}
+{{< highlight text >}}
 [mysqld]
 max_allowed_packet = 32M
-{% endhighlight %}
+{{< / highlight >}}
 
 Then restart MySQL.
 
-{% highlight text %}
+{{< highlight text >}}
 # service mysql restart
-{% endhighlight %}
+{{< / highlight >}}
 
 Check that the limit has increased.
 
-{% highlight sql %}
+{{< highlight sql >}}
 mysql> SELECT @@max_allowed_packet;
 +----------------------+
 | @@max_allowed_packet |
@@ -52,6 +53,6 @@ mysql> SELECT @@max_allowed_packet;
 |             33554432 |
 +----------------------+
 1 row in set (0.00 sec)
-{% endhighlight %}
+{{< / highlight >}}
 
 That solved the problem for me. If the problem persists then you might need to increase the limit further.

@@ -1,19 +1,20 @@
 ---
-id: 3170
-title: 'MongoDB: Installing on Windows 7'
-date: 2016-01-13T13:10:41+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
 - Database
 - MongoDB
+date: 2016-01-13T13:10:41Z
+excerpt_separator: <!-- more -->
+id: 3170
 tags:
 - MongoDB
+title: 'MongoDB: Installing on Windows 7'
+url: /2016/01/13/installing-mongodb-3-2-on-windows-7/
 ---
+
 It's not my personal choice, but I have to spend a lot of my time working under Windows. Installing MongoDB under Ubuntu is a snap. Getting it going under Windows seems to require jumping through a few more hoops. Here are my notes. I hope that somebody will find them useful.
 
-<!-- more -->
+<!--more-->
 
 1. [Download](https://www.mongodb.org/downloads) the installation. This will be an MSI installer package with a name like `mongodb-win32-x86_64-2008plus-ssl-3.2.0-signed.msi`. 
 2. Run the installer with a deft double-click.
@@ -37,22 +38,22 @@ To make your installation a little more robust, you can also do the following:
 
 1. Create a configuration file at `C:\Program Files\MongoDB\Server\3.2\mongod.cfg`. For starters you could enter the following configuration directives:
 
-{% highlight text %}
+{{< highlight text >}}
 systemLog:
     destination: file
     path: c:\data\log\mongod.log
 storage:
     dbPath: c:\data\db
-{% endhighlight %}
+{{< / highlight >}}
 2. Install MongoDB as a service by running
-{% highlight text %}
+{{< highlight text >}}
 mongod.exe -config "C:\Program Files\MongoDB\Server\3.2\mongod.cfg" -install
-{% endhighlight %}
+{{< / highlight >}}
 3. The service can then be launched with
-{% highlight text %}
+{{< highlight text >}}
 net start MongoDB
-{% endhighlight %}
+{{< / highlight >}}
 And stopping the service is as simple as
-{% highlight text %}
+{{< highlight text >}}
 net stop MongoDB
-{% endhighlight %}
+{{< / highlight >}}

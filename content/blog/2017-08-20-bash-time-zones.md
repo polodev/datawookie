@@ -1,13 +1,14 @@
 ---
-title: 'Setting Up Time Zones in BASH'
-date: 2017-08-20T05:00:00+00:00
 author: Andrew B. Collier
+categories:
+- DB
+date: 2017-08-20T05:00:00Z
 excerpt_separator: <!-- more -->
-layout: post
-category: DB
 tags:
-  - BASH
-  - 'Time Zone'
+- BASH
+- Time Zone
+title: Setting Up Time Zones in BASH
+url: /2017/08/20/bash-time-zones/
 ---
 
 Ensuring that your account is configured to run with appropriate time zone information can make your life a lot easier.
@@ -16,13 +17,13 @@ Of course, if you administer your own system then you can simply set your system
 
 Why does this make sense? Well, suppose that you have remote users logging onto your system. It's very likely that a remote user will be operating in a different time zone and it'd be handy for them to have system time converted into their local time.
 
-<!-- more -->
+<!--more-->
 
 There's a handy utility for putting this in place: `tzselect`. It presents a couple of simple menus and then delivers a small chunk of code that you'd include in a user's `.profile` file to ensure that their time zone is configured correctly.
 
 Here's an example of selecting the time zone for South Africa.
 
-{% highlight text %}
+{{< highlight text >}}
 $ tzselect
 Please identify a location so that time zone rules can be set correctly.
 Please select a continent, ocean, "coord", or "TZ".
@@ -79,12 +80,12 @@ to the file '.profile' in your home directory; then log out and log in again.
 Here is that TZ value again, this time on standard output so that you
 can use the /usr/bin/tzselect command in shell scripts:
 Africa/Johannesburg
-{% endhighlight %}
+{{< / highlight >}}
 
 To configure my account with this time zone information, I'd simply add
 
-{% highlight bash %}
+{{< highlight bash >}}
 TZ='Africa/Johannesburg'; export TZ
-{% endhighlight %}
+{{< / highlight >}}
 
 to my `.profile` file. It would come into effect the next time I logged into the system.

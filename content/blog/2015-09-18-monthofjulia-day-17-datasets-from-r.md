@@ -1,20 +1,20 @@
 ---
-id: 2200
-title: '#MonthOfJulia Day 17: Datasets from R'
-date: 2015-09-18T15:56:43+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=2200
-excerpt_separator: <!-- more -->
 categories:
-  - Julia
+- Julia
+date: 2015-09-18T15:56:43Z
+excerpt_separator: <!-- more -->
+guid: http://www.exegetic.biz/blog/?p=2200
+id: 2200
 tags:
-  - '#MonthOfJulia'
-  - Julia
-  - '#rstats'
+- '#MonthOfJulia'
+- Julia
+- '#rstats'
+title: '#MonthOfJulia Day 17: Datasets from R'
+url: /2015/09/18/monthofjulia-day-17-datasets-from-r/
 ---
 
-<!-- more -->
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2015/09/Julia-Logo-RDatasets.png" >
 
@@ -22,13 +22,13 @@ R has an extensive range of builtin datasets, which are useful for experimenting
 
 As always, the first thing that we need to do is load the package.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> using RDatasets
-{% endhighlight %}
+{{< / highlight >}}
 
 We can get a list of the R packages which are supported by `RDatasets`.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> RDatasets.packages()
 33x2 DataFrame
 | Row | Package        | Title                                                                     |
@@ -66,11 +66,11 @@ julia> RDatasets.packages()
 | 31  | "sem"          | "Structural Equation Models"                                              |
 | 32  | "survival"     | "Survival Analysis"                                                       |
 | 33  | "vcd"          | "Visualizing Categorical Data"                                            |
-{% endhighlight %}
+{{< / highlight >}}
 
 Next we'll get a list of all datasets supported across all of those R packages. There are a lot of them! Also we see some specific statistics about the number of records and fields in each of them.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> sets = RDatasets.datasets();
 julia> size(sets)
 (733,5)
@@ -84,11 +84,11 @@ julia> head(sets)
 | 4   | "COUNT" | "badhealth" | "badhealth" | 1127 | 3       |
 | 5   | "COUNT" | "fasttrakg" | "fasttrakg" | 15   | 9       |
 | 6   | "COUNT" | "lbw"       | "lbw"       | 189  | 10      |
-{% endhighlight %}
+{{< / highlight >}}
 
 Or we can find out what datasets are available from a particular R package.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> RDatasets.datasets("vcd")
 31x5 DataFrame
 | Row | Package | Dataset           | Title                                      | Rows  | Columns |
@@ -124,11 +124,11 @@ julia> RDatasets.datasets("vcd")
 | 29  | "vcd"   | "VonBort"         | "Von Bortkiewicz Horse Kicks Data"         | 280   | 4       |
 | 30  | "vcd"   | "WeldonDice"      | "Weldon's Dice Data"                       | 11    | 2       |
 | 31  | "vcd"   | "WomenQueue"      | "Women in Queues"                          | 11    | 2       |
-{% endhighlight %}
+{{< / highlight >}}
 
 Finally, the most interesting bit: accessing data from a particular dataset. Below we load up the `women` dataset from the `vcd` package.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> women = dataset("datasets", "women")
 15x2 DataFrame
 | Row | Height | Weight |
@@ -148,7 +148,7 @@ julia> women = dataset("datasets", "women")
 | 13  | 70     | 154    |
 | 14  | 71     | 159    |
 | 15  | 72     | 164    |
-{% endhighlight %}
+{{< / highlight >}}
 
 From these data we learn that the average mass of American women of height 66 inches is around 139 pounds. If you are from a country which uses the Metric system (like me!) then these numbers might seem a little mysterious. Come back in a couple of days and we'll see how Julia can convert pounds and inches in metres and kilograms.
 

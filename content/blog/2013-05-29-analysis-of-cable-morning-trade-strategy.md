@@ -1,25 +1,26 @@
 ---
-id: 190
-title: Analysis of Cable Morning Trade Strategy
-date: 2013-05-29T11:20:38+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - FOREX
-  - Trading
+- FOREX
+- Trading
+date: 2013-05-29T11:20:38Z
+excerpt_separator: <!-- more -->
+id: 190
 tags:
-  - Algorithmic Trading
-  - EA
-  - Expert Advisor
-  - FOREX
-  - ggplot2
-  - MQL4
-  - '#rstats'
+- Algorithmic Trading
+- EA
+- Expert Advisor
+- FOREX
+- ggplot2
+- MQL4
+- '#rstats'
+title: Analysis of Cable Morning Trade Strategy
+url: /2013/05/29/analysis-of-cable-morning-trade-strategy/
 ---
+
 A couple of years ago I implemented an automated trading algorithm for a strategy called the "Cable Morning Trade". The basis of the strategy is the range of GBPUSD during the interval 05:00 to 09:00 London time. Two buy stop orders are placed 5 points above the highest high for this period; two sell stop orders are placed 5 points below the lowest low. All orders have a protective stop at 40 points. When either the buy or sell orders are filled, the other orders are cancelled. Of the filled orders, one exits at a profit equal to the stop loss, while the other is left to run until the close of the London session.
 
-<!-- more -->
+<!--more-->
 
 The strategy description claimed that it "loses 3 out of every 8 trades; wins make good money, losses are small". However, this promise was never filled in practice, which was rather disappointing: it sounded like a pretty solid strategy.
 

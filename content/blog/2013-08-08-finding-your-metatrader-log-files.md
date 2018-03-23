@@ -1,19 +1,20 @@
 ---
-id: 374
-title: Finding Your MetaTrader Log Files
-date: 2013-08-08T03:33:28+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=374
 categories:
-  - Expert Advisor
-  - FOREX
-  - Indicators
-  - Trading
+- Expert Advisor
+- FOREX
+- Indicators
+- Trading
+date: 2013-08-08T03:33:28Z
+guid: http://www.exegetic.biz/blog/?p=374
+id: 374
 tags:
-  - FOREX
-  - MetaTrader
+- FOREX
+- MetaTrader
+title: Finding Your MetaTrader Log Files
+url: /2013/08/08/finding-your-metatrader-log-files/
 ---
+
 Debugging an indicator or expert advisor (EA) can be a tricky business. Especially when you are doing the debugging remotely. So I write my MQL code to include copious amounts of debugging information to log files. The contents of these log files can be used to diagnose any problems. This articles tells you where you can find those files.
 
 <img src="{{ site.baseurl }}/static/img/2013/08/metatrader-folder-structure.png" >

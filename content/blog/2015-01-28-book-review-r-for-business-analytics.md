@@ -1,17 +1,18 @@
 ---
-id: 1100
-title: 'Book Review: R for Business Analytics'
-date: 2015-01-28T10:50:19+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=1100
 categories:
-  - Book Review
-  - Review
+- Book Review
+- Review
+date: 2015-01-28T10:50:19Z
+guid: http://www.exegetic.biz/blog/?p=1100
+id: 1100
 tags:
-  - Business Analytics
-  - '#rstats'
+- Business Analytics
+- '#rstats'
+title: 'Book Review: R for Business Analytics'
+url: /2015/01/28/book-review-r-for-business-analytics/
 ---
+
 The book [R for Business Analytics](http://www.springer.com/statistics/book/978-1-4614-4342-1) by Ajay Ohri sets out to look at "some of the most common tasks performed by business analysts and helps the user navigate the wealth of information in R and its 4000 packages." In my opinion it succeeds in covering an extensive range of topics but fails to provide anything of substantial use to its intended audience. At least, not anything that could not be uncovered by a brief internet search.
 
 <img src="{{ site.baseurl }}/static/img/2015/01/R-for-Business-Analytics.jpg" >

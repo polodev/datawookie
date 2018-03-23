@@ -1,18 +1,19 @@
 ---
-id: 823
-title: Concatenating a list of data frames
-date: 2014-06-06T13:16:20+00:00
 author: Andrew B. Collier
-layout: post
+date: 2014-06-06T13:16:20Z
 excerpt_separator: <!-- more -->
+id: 823
 tags:
-  - data.table
-  - plyr
-  - '#rstats'
+- data.table
+- plyr
+- '#rstats'
+title: Concatenating a list of data frames
+url: /2014/06/06/concatenating-a-list-of-data-frames/
 ---
+
 It's something that I do surprisingly often: concatenating a list of data frames into a single (possibly quite enormous) data frame. Until now my naive solution worked pretty well. However, today I needed to deal with a list of over 6 million elements. The result was hours of page thrashing before my R session finally surrendered. I suppose I should be happy that my hard disk survived.
 
-<!-- more -->
+<!--more-->
 
 I did a bit of research and found that there are a few solutions which are much (much!) more efficient.
 
@@ -20,7 +21,7 @@ I did a bit of research and found that there are a few solutions which are much 
 
 Let's create some test data: a list consisting of 100 000 elements, each of which is a small data frame.
 
-{% highlight r %}
+{{< highlight r >}}
 > data <- list()
 > 
 > N <- 100000
@@ -31,13 +32,13 @@ Let's create some test data: a list consisting of 100 000 elements, each of whic
 > data[[1]]
   index char        z
 1     1    t 0.221784
-{% endhighlight %}
+{{< / highlight >}}
 
 ## The Naive Solution
 
 My naive solution to the problem was to use a combination of `do.call()` and `rbind()`. It gets the job done.
 
-{% highlight r %}
+{{< highlight r >}}
 > head(do.call(rbind, data))
   index char          z
 1     1    h 0.56891292
@@ -46,13 +47,13 @@ My naive solution to the problem was to use a combination of `do.call()` and `rb
 4     4    h 0.04587779
 5     5    o 0.08608656
 6     6    l 0.26410506
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Alternative Solutions #1 and #2
 
 The plyr package presents two options.
 
-{% highlight r %}
+{{< highlight r >}}
 > library(plyr)
 > 
 > head(ldply(data, rbind))
@@ -71,7 +72,7 @@ The plyr package presents two options.
 4     4    h 0.04587779
 5     5    o 0.08608656
 6     6    l 0.26410506
-{% endhighlight %}
+{{< / highlight >}}
 
 Both of these also do the job nicely.
 
@@ -79,7 +80,7 @@ Both of these also do the job nicely.
 
 The revised package dplyr provides some alternative solutions.
 
-{% highlight r %}
+{{< highlight r >}}
 > library(dplyr)
 > 
 > head(rbind_all(data))
@@ -92,7 +93,7 @@ The revised package dplyr provides some alternative solutions.
 6     6    v 0.51332403
 Warning message:
 In rbind_all(data) : Unequal factor levels: coercing to character
-{% endhighlight %}
+{{< / highlight >}}
 
 A second function, `rbind_list()`, takes individual elements to be concatenated as arguments (rather than a single list).
 
@@ -102,7 +103,7 @@ A second function, `rbind_list()`, takes individual elements to be concatenated 
 
 Finally, a solution from the data.table package.
 
-{% highlight r %}
+{{< highlight r >}}
 > library(data.table)
 > 
 > head(rbindlist(data))
@@ -113,13 +114,13 @@ Finally, a solution from the data.table package.
 4:     4    h 0.04587779
 5:     5    o 0.08608656
 6:     6    l 0.26410506
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Benchmarking
 
 All of these alternatives produce the correct result. The solution of choice will be the fastest one (and the one causing the minimum of page thrashing!).
 
-{% highlight r %}
+{{< highlight r >}}
 > library(rbenchmark)
 > 
 > benchmark(do.call(rbind, data), ldply(data, rbind), rbind.fill(data), rbind_all(data), rbindlist(data))
@@ -129,7 +130,7 @@ All of these alternatives produce the correct result. The solution of choice wil
 3     rbind.fill(data)          100  4836.31  155.558   1936.55     0.37         NA        NA
 4      rbind_all(data)          100  1627.84   52.359    111.79     0.10         NA        NA
 5      rbindlist(data)          100    31.09    1.000     12.53     0.12         NA        NA
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Thoughts on Performance
 

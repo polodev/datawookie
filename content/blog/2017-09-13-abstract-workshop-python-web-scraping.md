@@ -1,18 +1,18 @@
 ---
-title: 'Web Scraping Workshop at PyCon 2017 (Cape Town)'
-date: 2017-09-13T09:30:00+00:00
 author: Andrew B. Collier
-excerpt_separator: <!-- more -->
-layout: post
 categories:
-  - Conference
+- Conference
+date: 2017-09-13T09:30:00Z
+excerpt_separator: <!-- more -->
 tags:
-  - Talk
+- Talk
+title: Web Scraping Workshop at PyCon 2017 (Cape Town)
+url: /2017/09/13/abstract-workshop-python-web-scraping/
 ---
 
 In a little under a month [PyCon 2017](https://za.pycon.org/) will be happening in Cape Town. I'm really looking forward to the conference and rather excited about giving a workshop on Web Scraping in Python. This is the abstract for the workshop.
 
-<!-- more -->
+<!--more-->
 
 <!--
 PITCH: Web scraping is a handy weapon for every developer to have in his arsenal. This is especially true now, where the ability to gather data from a variety of sources is becoming very important.

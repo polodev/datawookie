@@ -1,32 +1,33 @@
 ---
-id: 74
-title: 'Introducing R: Loading Data'
-date: 2013-05-12T07:48:29+00:00
 author: Andrew B. Collier
-layout: post
+date: 2013-05-12T07:48:29Z
 guid: http://www.exegetic.biz/blog/?p=74
+id: 74
 tags:
-  - '#rstats'
+- '#rstats'
+title: 'Introducing R: Loading Data'
+url: /2013/05/12/introducing-r-loading-data/
 ---
+
 I have just started preparing a series of talks aimed at introducing the use of R to a rather broad audience consisting of physicists, chemists, statisticians, biologists and computer scientists (plus a few other disciplines thrown in for good measure). I want to use a single consistent set of data throughout the talks. Finding something that would resonate with such a disparate set of people was quite a challenge. After playing around with a couple of options, I settled on using data for age, height and mass. These are things that we can all identify with. The next challenge was to actually find a suitable data set, which was surprisingly difficult. Eventually I stumbled upon the data from the National Health and Nutrition Examination Survey (NHANES), The data from the survey are available [here](http://www.icpsr.umich.edu/icpsrweb/DSDR/studies/25505). These data have been divided into a number of sets, each of which has been excellently curated and has a detailed codebook.
 
 I started with the Body Measurements data (DS12), which I downloaded in tab-delimited format. The first task was to load this into [R](http://www.r-project.org/).
 
-{% highlight r %}
+{{< highlight r >}}
 > DS0012 <- read.delim("data/DS0012/25505-0012-Data.tsv")
 > dim(DS0012)
 [1] 9762 65
-{% endhighlight %}
+{{< / highlight >}}
 
 So there are 9762 records, each of which has 65 fields. We will only retain a subset of those (sequence number, gender, age, mass and height). Although the field name for mass suggests that it might in fact be weight (BMXWT), it is actually mass in kilograms. Height is given in centimetres.
 
-{% highlight r %}
+{{< highlight r >}}
 > DS0012 = DS0012[,c("SEQN", "RIAGENDR", "RIDAGEYR", "BMXWT", "BMXHT")]
-{% endhighlight %}
+{{< / highlight >}}
 
 There is some missing data (mass and height fields), which we remove.
 
-{% highlight r %}
+{{< highlight r >}}
 > summary(DS0012)
       SEQN          RIAGENDR        RIDAGEYR         BMXWT            BMXHT
  Min.   :41475   Min.   :1.000   Min.   : 0.00   Min.   : 3.10    Min.   : 81.5
@@ -39,24 +40,24 @@ There is some missing data (mass and height fields), which we remove.
 > DS0012 = subset(DS0012, !(is.na(BMXWT) | is.na(BMXHT)))
 > dim(DS0012)
 [1] 8861 6
-{% endhighlight %}
+{{< / highlight >}}
 
 So, we lost around 10% of the original data, but at least what we are left with is clean. Next we change the column labels to something a little less cryptic and convert the units for height to metres
 
-{% highlight r %}
+{{< highlight r >}}
 > names(DS0012) <- c("id", "gender", "age", "mass", "height")
 > DS0012$height = DS0012$height / 100
-{% endhighlight %}
+{{< / highlight >}}
 
 Lastly we add in a derived column for [Body Mass Index (BMI)](http://en.wikipedia.org/wiki/Body_mass_index). There was already BMI data in the original data set, however, it is illustrative to calculate it again here.
 
-{% highlight r %}
+{{< highlight r >}}
 > DS0012 = transform(DS0012, BMI = mass / height**2)
-{% endhighlight %}
+{{< / highlight >}}
 
 This is what the final data look like:
 
-{% highlight r %}
+{{< highlight r >}}
 > head(DS0012)
      id gender age  mass height      BMI
 1 41475      2  62 138.9  1.547 58.03923
@@ -65,6 +66,6 @@ This is what the final data look like:
 5 41479      1  52  65.7  1.544 27.55946
 6 41480      1   6  27.0  1.227 17.93390
 7 41481      1  21  77.9  1.827 23.33782
-{% endhighlight %}
+{{< / highlight >}}
 
 Next installment: defining some meaningful categories.

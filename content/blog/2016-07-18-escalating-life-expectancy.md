@@ -1,29 +1,30 @@
 ---
-id: 3719
-title: Escalating Life Expectancy
-date: 2016-07-18T16:00:34+00:00
 author: Andrew B. Collier
-layout: post
+date: 2016-07-18T16:00:34Z
 excerpt_separator: <!-- more -->
+id: 3719
 tags:
-  - death statistics
-  - life expectancy
-  - '#rstats'
+- death statistics
+- life expectancy
+- '#rstats'
+title: Escalating Life Expectancy
+url: /2016/07/18/escalating-life-expectancy/
 ---
+
 I've added mortality data to the [lifespan](https://github.com/DataWookie/lifespan) package. A result that immediately emerges from these data is that average life expectancy is steadily climbing.
 
-<!-- more -->
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2016/07/death-average-age.png">
 
-{% highlight r %}
+{{< highlight r >}}
 > library(lifespan)
 > ggplot(deaths, aes(x = year, y = avgage)) +
 +   geom_boxplot(aes(group = year, fill = sex)) +
 +   facet_wrap(~ sex) +
 +   labs(x = "", y = "Average Age at Death") +
 +   theme_minimal() + theme(legend.title = element_blank())
-{% endhighlight %}
+{{< / highlight >}}
 
 The effect is more pronounced for men, rising from around 66.5 in 1994 to 70.0 in 2014. The corresponding values for women are 74.6 and 76.5 respectively. Good news for everyone.
 

@@ -1,18 +1,18 @@
 ---
-title: 'Route Asymmetry in Google Maps'
-date: 2017-08-23T04:00:00+00:00
 author: Andrew B. Collier
+date: 2017-08-23T04:00:00Z
 excerpt_separator: <!-- more -->
-layout: post
 tags:
-  - '#rstats'
-  - gmapsdistance
-  - Spatial
+- '#rstats'
+- gmapsdistance
+- Spatial
+title: Route Asymmetry in Google Maps
+url: /2017/08/23/map-route-direction-asymmetry/
 ---
 
 I have been retrieving some route information using [Rodrigo Azuero](https://twitter.com/razuero)'s [`gmapsdistance`](https://github.com/rodazuero/gmapsdistance) package and noted that there was some asymmetry in the results: the time and distance for the trip from A to B was not necessarily always the same as the time and distance for the trip from B to A. Although in retrospect this seems self-evident, it merited further investigation.
 
-<!-- more -->
+<!--more-->
 
 Let's consider two locations in my old neighbourhood:
 
@@ -21,20 +21,20 @@ Let's consider two locations in my old neighbourhood:
 
 To use those locations as the origin and destination arguments for `gmapsdistance()` we'll first need to do some minor encoding, replacing spaces with `+`.
 
-{% highlight r %}
+{{< highlight r >}}
 > A = gsub(" ", "+", "115 St Andrew's Drive, Durban North, 4051, South Africa")
 > B = gsub(" ", "+", "25 Gainsborough Drive, Athlone, Durban North, 4051, South Africa")
-{% endhighlight %}
+{{< / highlight >}}
 
 For reproducibility we'll stipulate a specific date and time (this only has any effect if you've provided a Google Maps API key, otherwise it will be silently ignored).
 
-{% highlight r %}
+{{< highlight r >}}
 > DEPARTURE = as.integer(as.POSIXct("2017-08-23 18:00:00"))
-{% endhighlight %}
+{{< / highlight >}}
 
 Now we can calculate the distances and times for trips in either direction. First look at the trip from A to B.
 
-{% highlight r %}
+{{< highlight r >}}
 > library(gmapsdistance)
 > gmapsdistance(A, B, departure = DEPARTURE, mode = "driving")
 $Time
@@ -45,11 +45,11 @@ $Distance
 
 $Status
 [1] "OK"
-{% endhighlight %}
+{{< / highlight >}}
 
 Then the trip in the opposite direction, from B to A.
 
-{% highlight r %}
+{{< highlight r >}}
 > gmapsdistance(B, A, departure = DEPARTURE, mode = "driving")
 $Time
 [1] 412
@@ -59,7 +59,7 @@ $Distance
 
 $Status
 [1] "OK"
-{% endhighlight %}
+{{< / highlight >}}
 
 We see that the distance in both cases is the same (which stands to reason if the same route was taken in both directions) but that the times are different: 6:45 (405 seconds) from A to B and 6:52 (412 seconds) from B to A.
 

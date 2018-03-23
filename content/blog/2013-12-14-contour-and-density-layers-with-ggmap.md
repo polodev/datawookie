@@ -1,22 +1,22 @@
 ---
-id: 628
-title: Contour and Density Layers with ggmap
-date: 2013-12-14T05:45:17+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=628
-excerpt_separator: <!-- more -->
 categories:
-  - Lightning
-  - Science
+- Lightning
+- Science
+date: 2013-12-14T05:45:17Z
+excerpt_separator: <!-- more -->
+guid: http://www.exegetic.biz/blog/?p=628
+id: 628
 tags:
-  - ggmap
-  - ggplot2
-  - Lightning
-  - '#rstats'
+- ggmap
+- ggplot2
+- Lightning
+- '#rstats'
+title: Contour and Density Layers with ggmap
+url: /2013/12/14/contour-and-density-layers-with-ggmap/
 ---
 
-<!-- more -->
+<!--more-->
 
 I am busy working on a project which uses data from the [World Wide Lightning Location Network](http://www.wwlln.net/ "WWLLN") (WWLLN). Specifically, I am trying to reproduce some of the results from
   
@@ -26,7 +26,7 @@ Orville, Richard E, Gary R. Huffines, John Nielsen-Gammon, Renyi Zhang, Brandon 
 
 This is what the data look like:
   
-{% highlight r %}
+{{< highlight r >}}
 > head(W)
      lat     lon    dist
 1 29.775 -94.649  68.706
@@ -37,23 +37,23 @@ This is what the data look like:
 6 29.898 -94.071 125.458
 > attributes(W)$ndays
 [1] 1096
-{% endhighlight %}
+{{< / highlight >}}
   
 I have already pre-processed the data quite extensively and use the geosphere package to add a column giving the distances from the centre of Houston to each lightning discharge. The ndays attribute indicates the number of days included in the data.
 
 I want to plot the density of lightning on a map of the area around Houston. The first step is to get the map data.
   
-{% highlight r %}
+{{< highlight r >}}
 > library(ggmap)
 >
 > houston = c(lon = -95.36, lat = 29.76)
 >
 > houston.map = get_map(location = houston, zoom = 8, color = "bw")
-{% endhighlight %}
+{{< / highlight >}}
 
 My initial attempt at creating the map used the following:
   
-{% highlight r %}
+{{< highlight r >}}
 > ggmap(houston.map, extent = "panel", maprange=FALSE) +
 +   geom_density2d(data = W, aes(x = lon, y = lat)) +
 +   stat_density2d(data = W, aes(x = lon, y = lat, fill = ..level.., alpha = ..level..),
@@ -61,7 +61,7 @@ My initial attempt at creating the map used the following:
 +   scale_fill_gradient(low = "green", high = "red") +
 +   scale_alpha(range = c(0.00, 0.25), guide = FALSE) +
 +   theme(legend.position = "none", axis.title = element_blank(), text = element_text(size = 12))
-{% endhighlight %}
+{{< / highlight >}}
 
 And this gave a rather pleasing result. But I was a little uneasy about those contours near the edges: there was no physical reason why they should be running more or less parallel to the boundaries of the plot.
 
@@ -69,7 +69,7 @@ And this gave a rather pleasing result. But I was a little uneasy about those co
 
 It turns out that my suspicions were well founded. After some fiddling around I found that if I changed the extent argument then I got to see the bigger picture.
   
-{% highlight r %}
+{{< highlight r >}}
 > ggmap(houston.map, extent = "normal", maprange=FALSE) %+% W + aes(x = lon, y = lat) +
 +   geom_density2d() +
 +   stat_density2d(aes(fill = ..level.., alpha = ..level..),
@@ -77,7 +77,7 @@ It turns out that my suspicions were well founded. After some fiddling around I 
 +   scale_fill_gradient(low = "green", high = "red") +
 +   scale_alpha(range = c(0.00, 0.25), guide = FALSE) +
 +   theme(legend.position = "none", axis.title = element_blank(), text = element_text(size = 12))
-{% endhighlight %}
+{{< / highlight >}}
   
 You will also note here a different syntax for feeding the data into ggplot. The resulting plot shows that in my initial plot the data were being truncated at the boundaries of the plot.
 
@@ -85,7 +85,7 @@ You will also note here a different syntax for feeding the data into ggplot. The
 
 Now at least I have more realistic densities and contours. But, of course, I didn't want all of that extra space around the map. Not a problem because we can crop the map once the contour and density layers have been added.
 
-{% highlight r %}
+{{< highlight r >}}
 > ggmap(houston.map, extent = "normal", maprange=FALSE) %+% W + aes(x = lon, y = lat) +
 +   geom_density2d() +
 +   stat_density2d(aes(fill = ..level.., alpha = ..level..),
@@ -96,7 +96,7 @@ Now at least I have more realistic densities and contours. But, of course, I did
 +   xlim=c(attr(houston.map, "bb")$ll.lon, attr(houston.map, "bb")$ur.lon),
 +   ylim=c(attr(houston.map, "bb")$ll.lat, attr(houston.map, "bb")$ur.lat)) +
 +   theme(legend.position = "none", axis.title = element_blank(), text = element_text(size = 12))
-{% endhighlight %}
+{{< / highlight >}}
 
 And this gives the final plot, which I think is very pleasing indeed!
 

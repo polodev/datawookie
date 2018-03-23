@@ -1,16 +1,17 @@
 ---
+author: Andrew B. Collier
+categories:
+- Writing
+date: 2015-04-13T09:00:26Z
+excerpt_separator: <!-- more -->
 id: 1216
 title: 'Encyclopaedia: Meteorites in Antarctica'
-date: 2015-04-13T09:00:26+00:00
-author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
-categories:
-  - Writing
+url: /2015/04/13/encyclopaedia-meteorites-in-antarctica/
 ---
+
 A contribution which I wrote for [Antarctica and the Arctic Circle: A Geographic Encyclopedia of the Earth's Polar Regions](http://www.amazon.com/gp/product/B00OD83J44/).
 
-<!-- more -->
+<!--more-->
 
 Interplanetary space is not a vacuum: it is teeming with objects of various sizes, from microscopic electrons and ions to large pieces of space debris. Some of these objects end up on earth. A meteoroid is a natural object with size between 10 μm and 1 m moving through space. Asteroids are bigger than meteoroids but smaller than a planet, and without their own atmosphere. Most meteoroids have a mass of less than a few grams, originating as fragments from asteroids, comets, and planets. They are often concentrated in a meteoroid stream, which is the debris left in the trail of a comet. A meteoroid or asteroid that enters the earth’s atmosphere produces a meteor (or shooting star), which is the visible trail formed as it falls through the atmosphere. When the earth passes through a meteoroid stream, a meteor shower is observed.
 

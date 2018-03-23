@@ -1,13 +1,14 @@
 ---
+author: Andrew B. Collier
+categories:
+- Statistics
+date: 2016-11-15T13:21:02Z
+guid: http://www.exegetic.biz/blog/?p=4565
 id: 4565
 title: Simple School Maths Problem
-date: 2016-11-15T13:21:02+00:00
-author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=4565
-categories:
-  - Statistics
+url: /2016/11/15/simple-school-maths-problem/
 ---
+
 A simple problem sent through to me by one of my running friends:
 
 > There are 6 red cards and 1 black card in a box. Busi and Khanha take turns to draw a card at random from the box, with Busi being the first one to draw. The first person who draws the black card will win the game (assume that the game can go on indefinitely). If the cards are drawn with replacement, determine the probability that Khanya will win, showing all working. 
@@ -30,30 +31,30 @@ The process continues…
 
 In the end the probability that Busi wins is
   
-{% highlight text %}
+{{< highlight text >}}
 1/7 + (6/7 * 6/7) * 1/7 + (6/7 * 6/7)^2 * 1/7 + (6/7 * 6/7)^3 * 1/7 + …
-{% endhighlight %}
+{{< / highlight >}}
   
 This is an infinite [geometric series](https://en.wikipedia.org/wiki/Geometric_series). We’ll simplify it a bit:
   
-{% highlight text %}
+{{< highlight text >}}
 1/7 * [1 + (6/7 * 6/7) + (6/7 * 6/7)^2 + (6/7 * 6/7)^3 + …]
 = 1/7 * [1 + r + r^2 + r^3 + …]
 = 1/7 * [1 / (1-r)]
 = 1/7 * [49/13]
 = 0.5384615
-{% endhighlight %}
+{{< / highlight >}}
   
 where r = 6/7 * 6/7 = 36/49.
 
 What about the probability that Khanha wins? By similar reasoning this is
   
-{% highlight text %}
+{{< highlight text >}}
 6/7 * 1/7 + (6/7 * 6/7) * 6/7 * 1/7 + (6/7 * 6/7)^2 * 6/7 * 1/7 + (6/7 * 6/7)^3 * 6/7 * 1/7 + …
 = 6/7 * 1/7 * [1 + (6/7 * 6/7) + (6/7 * 6/7)^2 + (6/7 * 6/7)^3 + …]
 = 6/49 * [49/13]
 = 0.4615385
-{% endhighlight %}
+{{< / highlight >}}
 
 Importantly those two probabilities sum to one: 0.5384615 + 0.4615385 = 1.
 

@@ -1,17 +1,17 @@
 ---
-id: 2824
-title: 'Evolution of First Names: Unisex Names and Nicknames'
-date: 2015-11-23T15:00:48+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Interesting Statistics
+- Interesting Statistics
+date: 2015-11-23T15:00:48Z
+excerpt_separator: <!-- more -->
+id: 2824
 tags:
-  - names
+- names
+title: 'Evolution of First Names: Unisex Names and Nicknames'
+url: /2015/11/23/evolution-of-first-names-unisex-names-and-nicknames/
 ---
 
-<!-- more -->
+<!--more-->
 
 In two previous installments we considered various aspects of the given name [data](http://www.ssa.gov/oact/babynames/limits.html) from 1880 to the present day compiled by the Social Security Administration. In this final article I'll take a look at unisex names and nicknames.
 

@@ -1,15 +1,16 @@
 ---
-title: 'RStudio Environment on DigitalOcean with Docker'
-date: 2017-07-11T04:00:00+00:00
 author: Andrew B. Collier
+categories:
+- R
+date: 2017-07-11T04:00:00Z
 excerpt_separator: <!-- more -->
-layout: post
-category: R
 tags:
-  - RStudio
-  - '#rstats'
-  - Docker
-  - DigitalOcean
+- RStudio
+- '#rstats'
+- Docker
+- DigitalOcean
+title: RStudio Environment on DigitalOcean with Docker
+url: /2017/07/11/rstudio-docker-digitalocean/
 ---
 
 {% comment %}
@@ -23,7 +24,7 @@ I'll be running a training course in a few weeks which will use RStudio as the m
 
 ![]({{ site.baseurl }}/static/img/logo/docker-logo.png)
 
-These are some notes about how I got this all set up using a Docker container on DigitalOcean. <!-- more --> This idea was inspired by [this article](https://itsalocke.com/r-training-environment/). I provide some additional details about the process.
+These are some notes about how I got this all set up using a Docker container on DigitalOcean. <!--more--> This idea was inspired by [this article](https://itsalocke.com/r-training-environment/). I provide some additional details about the process.
 
 <!-- https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-getting-started -->
 <!-- https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04 -->
@@ -39,26 +40,26 @@ I began by trying things out on my local machine. The first step was to install 
 
 Being my first serious foray into the world of Docker I spent some time getting familiar with the tools. First it makes sense to validate that Docker is correctly configured and operational. Check the version.
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ docker -v
 Docker version 17.06.0-ce, build 02c1d87
-{% endhighlight %}
+{{< / highlight >}}
 
 Check the current status of the Docker service. This should indicate that Docker is loaded, running and active.
 
-{% highlight text %}
+{{< highlight text >}}
 $ systemctl status docker
-{% endhighlight %}
+{{< / highlight >}}
 
 To see further system information about Docker:
 
-{% highlight text %}
+{{< highlight text >}}
 $ docker info
-{% endhighlight %}
+{{< / highlight >}}
 
 Finally run a quick test to ensure that Docker is able to download and launch images.
 
-{% highlight text %}
+{{< highlight text >}}
 $ docker run hello-world
 
 Hello from Docker!
@@ -80,35 +81,35 @@ Share images, automate workflows, and more with a free Docker ID:
 
 For more examples and ideas, visit:
  https://docs.docker.com/engine/userguide/
-{% endhighlight %}
+{{< / highlight >}}
 
 ## RStudio Container
 
 A selection of RStudio Docker containers are hosted by the [Rocker project](https://github.com/rocker-org/rocker). We'll install the [verse container](https://hub.docker.com/r/rocker/verse/) which contains base R, RStudio, tidyverse, devtools and some packages related to publishing.
 
-{% highlight text %}
+{{< highlight text >}}
 $ docker pull rocker/verse
-{% endhighlight %}
+{{< / highlight >}}
 
 That will download a load of content. Depending on the speed of your connection it might take a couple of minutes. Once the downloads are complete we can spin it up.
 
-{% highlight text %}
+{{< highlight text >}}
 $ docker run -d -p 80:8787 rocker/verse
-{% endhighlight %}
+{{< / highlight >}}
 
 Now point your browser at <http://localhost:80/>. You should see a login dialog. Login with username `rstudio` and password `rstudio`.
 
 Once you've satisfied yourself that the RStudio server is working properly, we'll shut it down. Check on the running Docker containers.
 
-{% highlight text %}
+{{< highlight text >}}
 $ docker ps
-{% endhighlight %}
+{{< / highlight >}}
 
 The ID in the output from the previous command is used to stop the container.
 
-{% highlight text %}
+{{< highlight text >}}
 $ docker stop 487487fc346d
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Creating a New Container Image
 
@@ -124,13 +125,13 @@ Check out the [best practices](https://docs.docker.com/engine/userguide/eng-imag
 
 We need to build the image before we can launch it. Navigate to the folder which contains the `Dockerfile` and then do the following:
 
-{% highlight text %}
+{{< highlight text >}}
 $ docker build -t rstudio:latest .
-{% endhighlight %}
+{{< / highlight >}}
 
 That will step through the instructions in the `Dockerfile`, building up the new image as a series of layers. We can get an idea of which components contributed the most to the resulting image.
 
-{% highlight text %}
+{{< highlight text >}}
 $ docker history rstudio:latest
 IMAGE               CREATED              CREATED BY                                      SIZE                COMMENT
 1206300d01f8        About a minute ago   /bin/sh -c R -e 'install.packages("RSeleni...   11.6MB              
@@ -157,13 +158,13 @@ a720b73666a2        4 hours ago          /bin/sh -c #(nop)  MAINTAINER Andrew Co
 <missing>           10 hours ago         /bin/sh -c #(nop)  LABEL org.label-schema....   0B                  
 <missing>           2 weeks ago          /bin/sh -c #(nop)  CMD ["bash"]                 0B                  
 <missing>           2 weeks ago          /bin/sh -c #(nop) ADD file:93a0dbb6973bc13...   100MB               
-{% endhighlight %}
+{{< / highlight >}}
 
 We can now test the new container.
 
-{% highlight text %}
+{{< highlight text >}}
 $ docker run -d -p 80:8787 --name rstudio rstudio:latest
-{% endhighlight %}
+{{< / highlight >}}
 
 Once you are satisfied that it works, stop the container.
 
@@ -181,9 +182,9 @@ Once you've logged in to your DigitalOcean account, create a new Droplet and cho
 
 Once the Droplet is live (give it a moment or two, even after it claims to be "Good to go!"), use the IP address from the DigitalOcean dashboard to make a SSH connection. You'll connect initially as the `root` user.
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ ssh -l root 104.236.93.95
-{% endhighlight %}
+{{< / highlight >}}
 
 ### Swap Space
 
@@ -193,31 +194,31 @@ Docker containers use the kernel, memory and swap from the host. So if you've cr
 
 Create a `docker` user and add it to the `docker` group.
 
-{% highlight text %}
+{{< highlight text >}}
 # useradd -g users -G docker -m -s /bin/bash docker
-{% endhighlight %}
+{{< / highlight >}}
 
 Add your SSH public key to `.ssh/authorized_keys` for the `docker` user. Terminate your `root` connection and reconnect as the `docker` user.
 
-{% highlight text %}
+{{< highlight text >}}
 $ ssh docker@104.236.73.164
 $ groups
 users docker
-{% endhighlight %}
+{{< / highlight >}}
 
 ### Build the Container
 
 Clone the [GitHub repository](https://github.com/DataWookie/docker-exegetic). Navigate to the folder which contains the RStudio `Dockerfile`. Now build the image on the Droplet.
 
-{% highlight text %}
+{{< highlight text >}}
 $ docker build -t rstudio:latest .
-{% endhighlight %}
+{{< / highlight >}}
 
 And then launch a container.
 
-{% highlight text %}
+{{< highlight text >}}
 $ docker run -d -p 80:8787 --name rstudio rstudio:latest
-{% endhighlight %}
+{{< / highlight >}}
 
 Connect to the Droplet using the IP address from the DigitalOcean dashboard.
 
@@ -233,26 +234,26 @@ Obviously the default credentials we've been using are a security hole. We'll ne
 
 To accomplish all of this we'll need to connect to the running Docker container. Again use `docker ps` to find the ID of the running container. Then connect a `bash` shell using `docker exec`, providing the container ID as the `-i` argument.
 
-{% highlight text %}
+{{< highlight text >}}
 $ docker exec -t -i df3a7a5af57e /bin/bash
-{% endhighlight %}
+{{< / highlight >}}
 
 Delete the `rstudio` user.
 
-{% highlight text %}
+{{< highlight text >}}
 root@df3a7a5af57e:/# userdel rstudio
-{% endhighlight %}
+{{< / highlight >}}
 
 Now create some new users using the `generate-users.sh` scripts packaged with the image. For example, to generate five new users:
 
-{% highlight text %}
+{{< highlight text >}}
 root@df3a7a5af57e:/# /usr/sbin/generate-users.sh 5
 U001,/kK160rx
 U002,hhNk7FJl
 U003,RaH4EJYP
 U004,YBpMcl6n
 U005,9Rcl8gye
-{% endhighlight %}
+{{< / highlight >}}
 
 This will create the user profiles and home folders. The usernames and passwords are dumped to the terminal in CSV formay. Record these and then assign a pair to each of the course delegates.
 

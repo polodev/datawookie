@@ -1,21 +1,21 @@
 ---
-id: 1579
-title: 'Flashes from the Ashes: Volcanic Lightning'
-date: 2015-07-03T12:32:39+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Lightning
-  - Science
-  - Volcano
+- Lightning
+- Science
+- Volcano
+date: 2015-07-03T12:32:39Z
+excerpt_separator: <!-- more -->
+id: 1579
 tags:
-  - Lightning
-  - Volcano
-  - Whistler
+- Lightning
+- Volcano
+- Whistler
+title: 'Flashes from the Ashes: Volcanic Lightning'
+url: /2015/07/03/flashes-from-the-ashes-volcanic-lightning/
 ---
 
-<!-- more -->
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2015/07/volcanic-lightning.png">
 

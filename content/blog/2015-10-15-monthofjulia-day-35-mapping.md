@@ -1,21 +1,21 @@
 ---
-id: 2482
-title: '#MonthOfJulia Day 35: Mapping'
-date: 2015-10-15T15:00:42+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=2482
-excerpt_separator: <!-- more -->
 categories:
-  - Julia
+- Julia
+date: 2015-10-15T15:00:42Z
+excerpt_separator: <!-- more -->
+guid: http://www.exegetic.biz/blog/?p=2482
+id: 2482
 tags:
-  - '#julialang'
-  - '#MonthOfJulia'
-  - Julia
-  - OpenStreetMap
+- '#julialang'
+- '#MonthOfJulia'
+- Julia
+- OpenStreetMap
+title: '#MonthOfJulia Day 35: Mapping'
+url: /2015/10/15/monthofjulia-day-35-mapping/
 ---
 
-<!-- more -->
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2015/09/Julia-Logo-OpenStreetMap.png" >
 
@@ -23,40 +23,40 @@ A lot of my data reflects events happening at different geographic locations (an
 
 We'll need to load up the Requests package to retrieve the map data and the OpenStreetMap package to manipulate and process those data.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> using Requests
 julia> using OpenStreetMap
-{% endhighlight %}
+{{< / highlight >}}
 
 As far as I can see the OpenStreetMap package doesn't implement functionality for downloading the map data. So we do this directly through an HTTP request. We'll specify a map area by giving the latitude and longitude of the bottom-left and top-right corners.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> const MAPFILE = "map.osm";
 julia> minLon = 30.8821;
 julia> maxLon = minLon + 0.05;
 julia> minLat = -29.8429;
 julia> maxLat = minLat + 0.05;
-{% endhighlight %}
+{{< / highlight >}}
 We then build the query URL using Julia's convenient string interpolation and execute a GET request against the OpenStreetMap API.
-{% highlight julia %}
+{{< highlight julia >}}
 julia> URL = "http://overpass-api.de/api/map?bbox=$(minLon),$(minLat),$(maxLon),$(maxLat)"
 "http://overpass-api.de/api/map?bbox=30.8821,-29.8429,30.932100000000002,-29.7929"
 julia> osm = get(URL)
 Response(200 OK, 10 headers, 1958494 bytes in body)
 julia> save(osm, MAPFILE)
 "map.osm"
-{% endhighlight %}
+{{< / highlight >}}
 
 Save the resulting data (it's just a large blob of XML) to a file. Feel free to open this file in an editor and browse around. Although there is currently no official schema for the OpenStreetMap XML, the [documentation](http://wiki.openstreetmap.org/wiki/OSM_XML) gives a solid overview of the format.
 
-{% highlight text %}
+{{< highlight text >}}
 $ file map.osm
 map.osm: OpenStreetMap XML data
-{% endhighlight %}
+{{< / highlight >}}
 
 We process the contents of the XML file using `getOSMData()`.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> nodes, highways, buildings, features = getOSMData(MAPFILE);
 julia> println("Number of nodes: $(length(nodes))")
 Number of nodes: 9360
@@ -66,11 +66,11 @@ julia> println("Number of buildings: $(length(buildings))")
 Number of buildings: 5
 julia> println("Number of features: $(length(features))")
 Number of features: 12
-{% endhighlight %}
+{{< / highlight >}}
 
 The call to `getOSMData()` returns all of the data required to build a map. Amongst these you'll find a dictionary of features broken down by `:class`, `:detail` and `:name`. It's always handy to know where the nearest Woolworths is, and this area has two of them.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> features
 Dict{Int64,OpenStreetMap.Feature} with 12 entries:
   1871785198 => OpenStreetMap.Feature("amenity","pharmacy","Clicks")
@@ -90,20 +90,20 @@ julia> fieldnames(OpenStreetMap.Feature)
  :class
  :detail
  :name
-{% endhighlight %}
+{{< / highlight >}}
 
 There are other dictionarys which list the highways and buildings in the area.
 
 Although we specified the latitudinal and longitudinal extremes of the map originally, we can retrieve these wrapped up in a data structure. Note that these values are given in Latitude-Longitude-Altitude (LLA) coordinates. There's functionality for transforming to other coordinate systems like East-North-Up (ENU).
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> bounds = getBounds(parseMapXML(MAPFILE))
 Geodesy.Bounds{Geodesy.LLA}(-29.8429,-29.7929,30.8821,30.9321)
-{% endhighlight %}
+{{< / highlight >}}
 
 We're ready to take a look at the map using `plotMap()`.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> const WIDTH = 800;
 julia> plotMap(nodes,
                highways = highways,
@@ -112,7 +112,7 @@ julia> plotMap(nodes,
                bounds = bounds,
                width = WIDTH,
                roadways = roads)
-{% endhighlight %}
+{{< / highlight >}}
 
 And here's what it looks like. There are ways to further customise the look and feel of the map.
 

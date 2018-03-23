@@ -1,21 +1,22 @@
 ---
-id: 713
-title: 'Earthquakes: Land / Ocean Distribution'
-date: 2014-04-13T10:22:54+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Earthquake
-  - Science
+- Earthquake
+- Science
+date: 2014-04-13T10:22:54Z
+excerpt_separator: <!-- more -->
+id: 713
 tags:
-  - Earthquake
-  - ggplot2
-  - '#rstats'
+- Earthquake
+- ggplot2
+- '#rstats'
+title: 'Earthquakes: Land / Ocean Distribution'
+url: /2014/04/13/earthquakes-land-ocean-distribution/
 ---
-The next stage in my earthquake analysis project is to partition the events into groups with epicentre over land or water. <!-- more --> Since our existing catalog contains the latitude and longitude for the epicentres, it was a relatively simple matter to pipe these into [gmtselect](http://www.soest.hawaii.edu/gmt/gmt/html/man/gmtselect.html "gmtselect") and label the events accordingly. The resulting data when sucked into R looks like this:
 
-{% highlight r %}
+The next stage in my earthquake analysis project is to partition the events into groups with epicentre over land or water. <!--more--> Since our existing catalog contains the latitude and longitude for the epicentres, it was a relatively simple matter to pipe these into [gmtselect](http://www.soest.hawaii.edu/gmt/gmt/html/man/gmtselect.html "gmtselect") and label the events accordingly. The resulting data when sucked into R looks like this:
+
+{{< highlight r >}}
 > land.ocean[sample(1:nrow(land.ocean), 10),]
                            id surface
 9776  pde20071224224102830_10   water
@@ -28,7 +29,7 @@ The next stage in my earthquake analysis project is to partition the events into
 18537 pde20070825220549600_10    land
 4428  pde20110214102127320_34   water
 16914 pde20110521220626390_37    land
-{% endhighlight %}
+{{< / highlight >}}
 
 These data were then merged into the existing catalog using the id field.
 

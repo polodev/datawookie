@@ -1,23 +1,23 @@
 ---
-id: 2706
-title: '#MonthOfJulia Day 37: Fourier Techniques'
-date: 2015-10-26T15:00:47+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=2706
-excerpt_separator: <!-- more -->
 categories:
-  - Julia
+- Julia
+date: 2015-10-26T15:00:47Z
+excerpt_separator: <!-- more -->
+guid: http://www.exegetic.biz/blog/?p=2706
+id: 2706
 tags:
-  - '#julialang'
-  - '#MonthOfJulia'
-  - FFT
-  - FFTW
-  - Fourier Transform
-  - Julia
+- '#julialang'
+- '#MonthOfJulia'
+- FFT
+- FFTW
+- Fourier Transform
+- Julia
+title: '#MonthOfJulia Day 37: Fourier Techniques'
+url: /2015/10/26/monthofjulia-day-37-fourier-techniques/
 ---
 
-<!-- more -->
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2015/10/Julia-Logo-Fourier.png" >
 
@@ -27,11 +27,11 @@ The [Fourier Transform](https://en.wikipedia.org/wiki/Fourier_transform) is ofte
 
 Let's start by looking at the Fourier Transform in one dimension. We'll create test data in the time domain using a wide [rectangle function](https://en.wikipedia.org/wiki/Rectangular_function).
   
-{% highlight julia %}
+{{< highlight julia >}}
 julia> f = [abs(x) <= 1 ? 1 : 0 for x in -5:0.1:5];
 julia> length(f)
 101
-{% endhighlight %}
+{{< / highlight >}}
   
 This is what the data look like:
 
@@ -39,14 +39,14 @@ This is what the data look like:
   
 We'll transform the data into the frequency domain using `fft()`.
   
-{% highlight julia %}
+{{< highlight julia >}}
 julia> F = fft(f);
 julia> typeof(F)
 Array{Complex{Float64},1}
 julia> length(F)
 101
 julia> F = fftshift(F);
-{% endhighlight %}
+{{< / highlight >}}
   
 The frequency domain data are an array of `Complex` type with the same length as the time domain data. Since each Complex number consists of two parts (real and imaginary) it seems that we have somehow doubled the information content of our signal. This is not true because half of the frequency domain data are redundant. The `fftshift()` function conveniently rearranges the data in the frequency domain so that the negative frequencies are on the left.
 
@@ -64,13 +64,13 @@ Let's make things a bit more interesting: we'll look at the analogous two-dimens
 
 Building the array of sinc data is easy using a list comprehension.
   
-{% highlight julia %}
+{{< highlight julia >}}
 julia> f = [(r = sqrt(x^2 + y^2); sinc(r)) for x in -6:0.125:6, y in -6:0.125:6];
 julia> typeof(f)
 Array{Float64,2}
 julia> size(f)
 (97,97)
-{% endhighlight %}
+{{< / highlight >}}
   
 It doesn't make sense to think about a two-dimensional function in the time domain. But the Fourier Transform is quite egalitarian: it's happy to work with a temporal signal or a spatial signal (or a signal in pretty much any other domain). So let's suppose that our two-dimensional data are in the spatial domain. This is what it looks like:
 
@@ -78,12 +78,12 @@ It doesn't make sense to think about a two-dimensional function in the time doma
 
 Generating the Fourier Transform is again a simple matter of applying `fft()`. No change in syntax: very nice indeed!
   
-{% highlight julia %}
+{{< highlight julia >}}
 julia> F = fft(f);
 julia> typeof(F)
 Array{Complex{Float64},2}
 julia> F = fftshift(F);
-{% endhighlight %}
+{{< / highlight >}}
   
 The power spectrum demonstrates that the result is the 2D analogue of the rectangle function.
 

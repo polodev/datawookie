@@ -1,20 +1,21 @@
 ---
-id: 620
-title: 'Amy Cuddy: Your body language shapes who you are...'
-date: 2013-11-27T14:00:06+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Science
+- Science
+date: 2013-11-27T14:00:06Z
+excerpt_separator: <!-- more -->
+id: 620
 tags:
-  - TED Talk
+- TED Talk
+title: 'Amy Cuddy: Your body language shapes who you are...'
+url: /2013/11/27/your-body-language-shapes-who-you-are/
 ---
+
 ... but be careful with your plots: they might be misinterpreted.
 
 Amy Cuddy gives a great [talk](http://www.ted.com/talks/amy_cuddy_your_body_language_shapes_who_you_are.html). Provided me with lots to think about and I will happily confess that I have struck a few power poses (but only after ensuring that I am quite alone)!
 
-<!-- more -->
+<!--more-->
 
 <div style="max-width:640"><div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://embed.ted.com/talks/amy_cuddy_your_body_language_shapes_who_you_are" width="640" height="360" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen></iframe></div></div>
 

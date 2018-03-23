@@ -1,24 +1,24 @@
 ---
-id: 3961
-title: Animated Mortality
-date: 2016-08-09T15:00:41+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=3961
-excerpt_separator: <!-- more -->
 categories:
-  - Statistics
-  - Visualisation
+- Statistics
+- Visualisation
+date: 2016-08-09T15:00:41Z
+excerpt_separator: <!-- more -->
+guid: http://www.exegetic.biz/blog/?p=3961
+id: 3961
 tags:
-  - '#rstats'
-  - animation
-  - ggplot2
-  - ImageMagick
-  - life expectancy
-  - mortality
+- '#rstats'
+- animation
+- ggplot2
+- ImageMagick
+- life expectancy
+- mortality
+title: Animated Mortality
+url: /2016/08/09/animated-mortality/
 ---
 
-<!-- more -->
+<!--more-->
 
 Kyle Walker's [pyramid plots](http://rpubs.com/walkerke/pyramids_ggplot2) gave me a serious case of visualisation envy. Here's something similar using the mortality data from the [lifespan](https://github.com/DataWookie/lifespan) package.
 

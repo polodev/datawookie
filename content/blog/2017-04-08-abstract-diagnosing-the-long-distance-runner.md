@@ -1,19 +1,19 @@
 ---
-title: 'Diagnosing the Long Distance Runner with Django, D3 and R'
-subtitle: 'Building @racently'
-date: 2017-04-08T09:30:00+00:00
 author: Andrew B. Collier
-excerpt_separator: <!-- more -->
-layout: post
 categories:
-  - Conference
+- Conference
+date: 2017-04-08T09:30:00Z
+excerpt_separator: <!-- more -->
+subtitle: Building @racently
 tags:
-  - Talk
+- Talk
+title: Diagnosing the Long Distance Runner with Django, D3 and R
+url: /2017/04/08/abstract-diagnosing-the-long-distance-runner/
 ---
 
 This was the talk that I presented at the [Bulgaria Web Summit]({{ site.baseurl }}{% post_url 2017-04-16-conference-bulgaria-web-summit %}).
 
-<!-- more -->
+<!--more-->
 
 <div class="talk">
   <div class="title">Diagnosing the Long Distance Runner with Django, D3 and R</div>

@@ -1,16 +1,17 @@
 ---
+author: Andrew B. Collier
+categories:
+- Writing
+date: 2015-04-06T09:00:22Z
+excerpt_separator: <!-- more -->
 id: 1215
 title: 'Encyclopaedia: Discovery Expedition'
-date: 2015-04-06T09:00:22+00:00
-author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
-categories:
-  - Writing
+url: /2015/04/06/encyclopaedia-discovery-expedition/
 ---
+
 A contribution which Claire and I wrote for [Antarctica and the Arctic Circle: A Geographic Encyclopedia of the Earth's Polar Regions](http://www.amazon.com/gp/product/B00OD83J44/).
 
-<!-- more -->
+<!--more-->
 
 The British National Antarctic Expedition, now known as the Discovery Expedition, took place between 1901 and 1904. During this time, other expeditions from Germany, Sweden, France, and Scotland also traveled to Antarctica. The Discovery Expedition was carried out under the auspices of the Royal Society and the Royal Geographical Society, and was intended to renew Great Britain’s involvement in the exploration of Antarctica.
 

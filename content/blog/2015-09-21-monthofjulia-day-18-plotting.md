@@ -1,25 +1,25 @@
 ---
-id: 1838
-title: '#MonthOfJulia Day 18: Plotting'
-date: 2015-09-21T16:00:12+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Julia
-  - Visualisation
+- Julia
+- Visualisation
+date: 2015-09-21T16:00:12Z
+excerpt_separator: <!-- more -->
+id: 1838
 tags:
-  - '#julialang'
-  - '#MonthOfJulia'
-  - Bokeh
-  - Gadfly
-  - Julia
-  - plot
-  - Plotly
-  - Pyplot
+- '#julialang'
+- '#MonthOfJulia'
+- Bokeh
+- Gadfly
+- Julia
+- plot
+- Plotly
+- Pyplot
+title: '#MonthOfJulia Day 18: Plotting'
+url: /2015/09/21/monthofjulia-day-18-plotting/
 ---
 
-<!-- more -->
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2015/09/Julia-Logo-Plotting.png">
 
@@ -33,34 +33,34 @@ Gadfly is the flavour of the month for plotting in Julia. It's based on the [Gra
 
 To start using Gadfly we'll first need to load the package. To enable generation of PNG, PS, and PDF output we'll also want the [`Cairo`](http://github.com/JuliaLang/Cairo.jl) package.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> using Gadfly
 julia> using Cairo
-{% endhighlight %}
+{{< / highlight >}}
 
 You can easily generate plots from data vectors or functions.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> plot(x = 1:100, y = cumsum(rand(100) - 0.5), Geom.point, Geom.smooth)
 julia> plot(x -> x^3 - 9x, -5, 5)
-{% endhighlight %}
+{{< / highlight >}}
 
 Gadfly plots are by default rendered onto a new tab in your browser. These plots are mildly interactive: you can zoom and pan across the plot area. You can also save plots directly to files of various formats.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> dampedsin = plot([x -> sin(x) / x], 0, 50)
 julia> draw(PNG("damped-sin.png", 800px, 400px), dampedsin)
-{% endhighlight %}
+{{< / highlight >}}
 
 <img src="{{ site.baseurl }}/static/img/2015/09/damped-sin.png">
 
 Let's load up some data from the `nlschools` dataset in R's `MASS` package and look at the relationship between language score test and IQ for pupils broken down according to whether or not they are in a mixed-grade class.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> using RDatasets
 julia> plot(dataset("MASS", "nlschools"), x="IQ", y="Lang", color="COMB",
             Geom.point, Geom.smooth(method=:lm), Guide.colorkey("Multi-Grade"))
-{% endhighlight %}
+{{< / highlight >}}
 
 <img src="{{ site.baseurl }}/static/img/2015/09/nlschools.png">
 
@@ -76,20 +76,20 @@ Bokeh is a visualisation library for Python. Bokeh, like D3, renders plots as Ja
 
 The first thing you'll need to do is install the Bokeh library. If you already have a working Python installation then this is easily done from the command line:
 
-{% highlight julia %}
+{{< highlight julia >}}
 $ pip install bokeh
-{% endhighlight %}
+{{< / highlight >}}
 
 Next load up the package and generate a simple plot.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> using Bokeh
 julia> autoopen(true);
 julia> x = linspace(0, pi);
 julia> y = cos(2 * x);
 julia> plot(x, y, title = "Cosine")
 Plot("Cosine" with 1 datacolumns)
-{% endhighlight %}
+{{< / highlight >}}
 
 The plot will be written to a file `bokeh_plot.html` in the working directory, which will in turn be opened by the browser. Use `plotfile()` to change the name of the file. The plot is interactive, with functionality to pan and zoom as well as resize the plot window.
 
@@ -99,21 +99,21 @@ The plot will be written to a file `bokeh_plot.html` in the working directory, w
 
 The [`Plotly`](https://plot.ly/julia/) package provides a complete interface to [plot.ly](https://plot.ly/), an online plotting service with interfaces for Python, R, MATLAB and now Julia. To get an idea of what's possible with plot.ly, check out their [feed](https://plot.ly/feed/). The first step towards making your own awesomeness with be loading the package.
 
-{% highlight julia %}
+{{< highlight julia >}}
 using Plotly
-{% endhighlight %}
+{{< / highlight >}}
 
 Next you should set up your plot.ly credentials using `Plotly.set_credentials_file()`. You only need to do this once because the values will be cached.
 
 Data series are stored in Julia dictionaries.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> p1 = ["x" => 1:10, "y" => rand(0:20, 10), "type" => "scatter", "mode" => "markers"];
 julia> p2 = ["x" => 1:10, "y" => rand(0:20, 10), "type" => "scatter", "mode" => "lines"];
 julia> p3 = ["x" => 1:10, "y" => rand(0:20, 10), "type" => "scatter", "mode" => "lines+markers"];
-{% endhighlight %}
+{{< / highlight >}}
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> Plotly.plot([p1, p2, p3], ["filename" => "basic-line", "fileopt" => "overwrite"])
 Dict{String,Any} with 5 entries:
   "error"    => ""
@@ -121,13 +121,13 @@ Dict{String,Any} with 5 entries:
   "warning"  => ""
   "filename" => "basic-line"
   "url"      => "https://plot.ly/~collierab/17"
-{% endhighlight %}
+{{< / highlight >}}
 
 You can either open the URL provided in the result dictionary or do it programatically:
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> Plotly.openurl(ans["url"])
-{% endhighlight %}
+{{< / highlight >}}
 
 <img src="{{ site.baseurl }}/static/img/2015/09/plotly-scatter.png">
 

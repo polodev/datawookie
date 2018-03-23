@@ -1,23 +1,23 @@
 ---
-id: 2459
-title: '#MonthOfJulia Day 32: Classification'
-date: 2015-10-09T15:00:56+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=2459
-excerpt_separator: <!-- more -->
 categories:
-  - Julia
+- Julia
+date: 2015-10-09T15:00:56Z
+excerpt_separator: <!-- more -->
+guid: http://www.exegetic.biz/blog/?p=2459
+id: 2459
 tags:
-  - '#julialang'
-  - '#MonthOfJulia'
-  - classification
-  - decision tree
-  - Julia
-  - Random Forest
+- '#julialang'
+- '#MonthOfJulia'
+- classification
+- decision tree
+- Julia
+- Random Forest
+title: '#MonthOfJulia Day 32: Classification'
+url: /2015/10/09/monthofjulia-day-32-classification/
 ---
 
-<!-- more -->
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2015/09/Julia-Logo-Classification.png" >
 
@@ -27,7 +27,7 @@ Yesterday we had a look at Julia's regression model capabilities. A natural coun
 
 Logistic regression lies on the border between the regression techniques we considered yesterday and the classification techniques we're looking at today. In effect though it's really a classification technique. We'll use some data generated in yesterday's post to illustrate. Specifically we'll look at the relationship between the Boolean field `valid` and the three numeric fields.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> head(points)
 6x4 DataFrame
 | Row | x        | y       | z       | valid |
@@ -38,14 +38,14 @@ julia> head(points)
 | 4   | 9.69646  | 35.5689 | 8.83644 | true  |
 | 5   | 4.02686  | 12.4154 | 2.75854 | false |
 | 6   | 6.89605  | 27.1884 | 6.10983 | true  |
-{% endhighlight %}
+{{< / highlight >}}
 
 To further refresh your memory, the plot below shows the relationship between `valid` and the variables `x` and `y`. We're going to attempt to capture this relationship in our model.
 <img src="{{ site.baseurl }}/static/img/2015/09/regression-synthetic-data.png" >
 
 Logistic regression is also applied with the `glm()` function from the GLM package. The call looks very similar to the one used for linear regression except that the error family is now `Binomial()` and we're using a logit link function.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> model = glm(valid ~ x + y + z, points, Binomial(), LogitLink())
 DataFrameRegressionModel{GeneralizedLinearModel{GlmResp{Array{Float64,1},Binomial,LogitLink},
                          DensePredChol{Float64,Cholesky{Float64}}},Float64}:
@@ -55,7 +55,7 @@ Coefficients:
 x            -0.260122  0.269059 -0.966786   0.3337
 y              1.36143  0.244123    5.5768    <1e-7
 z             0.723107   0.14739   4.90606    <1e-6
-{% endhighlight %}
+{{< / highlight >}}
 
 According to the model there is a significant relationship between `valid` and both `y` and `z` but not `x`. Looking at the plot above we can see that `x` does have an influence on `valid` (there is a gradual transition from false to true with increasing `x`), but that this effect is rather "fuzzy", hence the large p-value. By comparison there is a very clear and abrupt change in `valid` at `y` values of around 15. The effect of `y` is also about twice as strong as that of `z`. All of this makes sense in light of the way that the data were constructed.
 
@@ -63,7 +63,7 @@ According to the model there is a significant relationship between `valid` and b
 
 Now we'll look at another classification technique: [decision trees](https://en.wikipedia.org/wiki/Decision_tree). First load the required packages and then grab the [iris](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/iris.html) data.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> using MLBase, DecisionTree
 julia> using RDatasets, Distributions
 julia> iris = dataset("datasets", "iris");
@@ -76,25 +76,25 @@ julia> iris[1:5,:]
 | 3   | 4.7         | 3.2        | 1.3         | 0.2        | "setosa" |
 | 4   | 4.6         | 3.1        | 1.5         | 0.2        | "setosa" |
 | 5   | 5.0         | 3.6        | 1.4         | 0.2        | "setosa" |
-{% endhighlight %}
+{{< / highlight >}}
 
 We'll also define a Boolean variable to split the data into training and testing sets.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> train = rand(Bernoulli(0.75), nrow(iris)) .== 1;
-{% endhighlight %}
+{{< / highlight >}}
 
 We split the data into features and labels and then feed those into `build_tree()`. In this case we are building a classifier to identify whether or not a particular iris is of the versicolor variety.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> features = array(iris[:,1:4]);
 julia> labels = [n == "versicolor" ? 1 : 0 for n in iris[:Species]];
 julia> model = build_tree(labels[train], features[train,:]);
-{% endhighlight %}
+{{< / highlight >}}
 
 Let's have a look at the product of a labours.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> print_tree(model)
 Feature 3, Threshold 3.0
 L-> 0 : 36/36
@@ -113,13 +113,13 @@ R-> Feature 3, Threshold 4.8
                 R-> 1 : 1/1
             R-> 1 : 2/2
         R-> 0 : 29/29
-{% endhighlight %}
+{{< / highlight >}}
 
 The textual representation of the tree above breaks the decision process down into a number of branches where the model decides whether to go to the left (L) or right (R) branch according to whether or not the value of a given feature is above or below a threshold value. So, for example, on the third line of the output we must decide whether to move to the left or right depending on whether feature 3 (PetalLength) is less or greater than 4.8.
 
 We can then apply the decision tree model to the testing data and see how well it performs using standard metrics.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> predictions = apply_tree(model, features[!train,:]);
 julia> ROC = roc(labels[!train], convert(Array{Int32,1}, predictions))
 ROCNums{Int64}
@@ -133,7 +133,7 @@ julia> precision(ROC)
 1.0
 julia> recall(ROC)
 0.875
-{% endhighlight %}
+{{< / highlight >}}
 
 A true positive rate of 87.5% and true negative rate of 100% is not too bad at all!
 

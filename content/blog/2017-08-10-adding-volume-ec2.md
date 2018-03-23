@@ -1,18 +1,19 @@
 ---
-title: 'Adding a Volume to an Ubuntu EC2 Instance'
-date: 2017-08-10T03:00:00+00:00
 author: Andrew B. Collier
+categories:
+- Cloud
+date: 2017-08-10T03:00:00Z
 excerpt_separator: <!-- more -->
-layout: post
-category: Cloud
 tags:
-  - AWS
-  - EC2
+- AWS
+- EC2
+title: Adding a Volume to an Ubuntu EC2 Instance
+url: /2017/08/10/adding-volume-ec2/
 ---
 
 Some quick notes on adding a storage volume to an EC2 instance.
 
-<!-- more -->
+<!--more-->
 
 <!-- http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html -->
 <!-- http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/add-instance-store-volumes.html -->
@@ -39,9 +40,9 @@ A short while ago I put together a `m4.2xlarge` EC2 instance. My initial thought
 1. Connect to the EC2 instance using SSH.
 2. Check for the new volume. Note that it will probably have have a different device name from what you specified above.
 
-{% highlight bash %}
+{{< highlight bash >}}
 sudo lsblk
-{% endhighlight %}
+{{< / highlight >}}
 
 Suppose that the new volume shows up at `/dev/xvdf`.
 
@@ -51,23 +52,23 @@ What you do next depends on how you want to use the partition.
 
 First set up a swap area on the new partition.
 
-{% highlight bash %}
+{{< highlight bash >}}
 sudo mkswap /dev/xvdf
-{% endhighlight %}
+{{< / highlight >}}
 
 Then enable the partition for swapping.
 
-{% highlight bash %}
+{{< highlight bash >}}
 sudo swapon /dev/xvdf
-{% endhighlight %}
+{{< / highlight >}}
 
 ### File Partition
 
 Create a file system on the raw device.
 
-{% highlight bash %}
+{{< highlight bash >}}
 sudo mkfs -t ext4 /dev/xvdf
-{% endhighlight %}
+{{< / highlight >}}
 
 {:start="4"}
 4. Go ahead and mount `/dev/xvdf` at a suitable location in your file hierarchy.

@@ -1,22 +1,22 @@
 ---
-title: 'Analysis of Feedback from satRday [Cape Town] 2017'
-date: 2017-11-15T03:30:00+00:00
 author: Andrew B. Collier
-excerpt_separator: <!-- more -->
-layout: post
 categories:
-  - Conference
+- Conference
+date: 2017-11-15T03:30:00Z
+excerpt_separator: <!-- more -->
 tags:
-  - 'Cape Town'
-  - '#rstats'
-  - satRday
+- Cape Town
+- '#rstats'
+- satRday
+title: Analysis of Feedback from satRday [Cape Town] 2017
+url: /2017/11/15/feedback-satrday-2017/
 ---
 
 We recently announced the second [satRday (Cape Town)](http://capetown2018.satrdays.org) conference scheduled to take place on 17 March 2018. Obviously we want this to be bigger and better than this year's event, so we are paying careful attention to the feedback that we received from the [first event](http://capetown2017.satrdays.org).
 
 This is a quick analysis of the feedback. We sold 192 tickets and gave out 11 complimentaries to the event. There were 107 responses to the feedback survey, which means that we heard back from more than half of the people who attended, which is hopefully a representative sample.
 
-<!-- more -->
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2017/10/satrday-2017-img-1.jpg" width="47.5%">
 <img src="{{ site.baseurl }}/static/img/2017/10/satrday-2017-img-2.jpg" width="47.5%">

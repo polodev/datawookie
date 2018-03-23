@@ -1,23 +1,24 @@
 ---
-id: 884
-title: 'Comrades Marathon: A Race for Geriatrics?'
-date: 2014-07-22T17:11:49+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Running
+- Running
+date: 2014-07-22T17:11:49Z
+excerpt_separator: <!-- more -->
+id: 884
 tags:
-  - ANOVA
-  - Comrades Marathon
-  - ggplot2
-  - linear model
-  - lm
-  - '#rstats'
+- ANOVA
+- Comrades Marathon
+- ggplot2
+- linear model
+- lm
+- '#rstats'
+title: 'Comrades Marathon: A Race for Geriatrics?'
+url: /2014/07/22/comrades-marathon-a-race-for-geriatrics/
 ---
+
 It has been suggested that the average Comrades Marathon runner is gradually getting older. As an "average runner" myself, I will not deny that I am personally getting older. But, what I really mean is that the average age of _all_ runners taking part in this great event is gradually increasing. This is not just an idle hypothesis: it is supported by the data. If you're interested in the technical details of the analysis, these are included [at the end](#analysis), otherwise read on for the results.
 
-<!-- more -->
+<!--more-->
 
 ## Results {#results}
 
@@ -41,7 +42,7 @@ Is the aging Comrades Marathon field a problem and, if so, what can be done abou
 
 As before I have used the Comrades Marathon results from 1980 through to 2013. Since my [last post on this topic](http://www.exegetic.biz/blog/2014/06/twins-tripods-and-phantoms-at-the-comrades-marathon/) I have refactored these data, which now look like this:
 
-{% highlight r %}
+{{< highlight r >}}
 > head(results)
        key year age gender category   status  medal direction medal_count decade
 1  6a18da7 1980  39   Male   Senior Finished Bronze         D          20   1980
@@ -50,11 +51,11 @@ As before I have used the Comrades Marathon results from 1980 through to 2013. S
 4 58792c25 1980  24   Male   Senior Finished Silver         D          25   1980
 5 16fe5d63 1980  58   Male   Master Finished Bronze         D           9   1980
 6 541c273e 1980  43   Male  Veteran Finished Silver         D          18   1980
-{% endhighlight %}
+{{< / highlight >}}
 
 The first step in the analysis was to compile decadal and annual summary statistics using plyr.
 
-{% highlight r %}
+{{< highlight r >}}
 > decade.statistics = ddply(results, .(decade, gender), summarize,
 +                           median.age = median(age, na.rm = TRUE),
 +                           mean.age = mean(age, na.rm = TRUE))
@@ -78,20 +79,20 @@ The first step in the analysis was to compile decadal and annual summary statist
 4 1981   Male       34.0   34.528
 5 1982 Female       34.5   35.032
 6 1982   Male       34.0   34.729
-{% endhighlight %}
+{{< / highlight >}}
 
 The decadal data were used to generate the histograms. I then considered a selection of linear models applied to the annual data.
 
-{% highlight r %}
+{{< highlight r >}}
 > fit.1 <- lm(mean.age ~ year, data = year.statistics)
 > fit.2 <- lm(mean.age ~ year + year:gender, data = year.statistics)
 > fit.3 <- lm(mean.age ~ year + gender, data = year.statistics)
 > fit.4 <- lm(mean.age ~ year + year * gender, data = year.statistics)
-{% endhighlight %}
+{{< / highlight >}}
 
 The first model applies a simple linear relationship between average age and year. There is no discrimination between genders. The model summary (below) indicates that the average age increases by about 0.26 years annually. Both the intercept and slope coefficients are highly significant.
 
-{% highlight r %}
+{{< highlight r >}}
 > summary(fit.1)
 
 Call:
@@ -111,11 +112,11 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 Residual standard error: 0.74 on 66 degrees of freedom
 Multiple R-squared:  0.924,	Adjusted R-squared:  0.923 
 F-statistic:  801 on 1 and 66 DF,  p-value: <2e-16
-{% endhighlight %}
+{{< / highlight >}}
 
 The second model considers the effect on the slope of an interaction between year and gender. Here we see that the slope is slightly large for males than females. Although this interaction coefficient is statistically significant, it is extremely small relative to the slope coefficient itself. However, given that the value of the abscissa is around 2000, it still contributes roughly 0.6 extra years to the average age for men.
 
-{% highlight r %}
+{{< highlight r >}}
 > summary(fit.2)
 
 Call:
@@ -136,11 +137,11 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 Residual standard error: 0.68 on 65 degrees of freedom
 Multiple R-squared:  0.937,	Adjusted R-squared:  0.935 
 F-statistic:  481 on 2 and 65 DF,  p-value: <2e-16
-{% endhighlight %}
+{{< / highlight >}}
 
 The third model considers an offset on the intercept based on gender. Here, again, we see that the effect of gender is small, with the fit for males being shifted slightly upwards. Again, although this effect is statistically significant, it has only a small effect on the model. Note that the value of this coefficient (5.98e-01 years) is consistent with the effect of the interaction term (0.6 years for typical values of the abscissa) in the second model above.
 
-{% highlight r %}
+{{< highlight r >}}
 > summary(fit.3)
 
 Call:
@@ -161,11 +162,11 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 Residual standard error: 0.68 on 65 degrees of freedom
 Multiple R-squared:  0.937,	Adjusted R-squared:  0.935 
 F-statistic:  480 on 2 and 65 DF,  p-value: <2e-16
-{% endhighlight %}
+{{< / highlight >}}
 
 The fourth and final model considers both an interaction between year and gender as well as an offset of the intercept based on gender. Here we see that the data does not differ sufficiently on the basis of gender to support both of these effects, and neither of the resulting coefficients is statistically significant.
 
-{% highlight r %}
+{{< highlight r >}}
 > summary(fit.4)
 
 Call:
@@ -187,11 +188,11 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 Residual standard error: 0.679 on 64 degrees of freedom
 Multiple R-squared:  0.938,	Adjusted R-squared:  0.935 
 F-statistic:  322 on 3 and 64 DF,  p-value: <2e-16
-{% endhighlight %}
+{{< / highlight >}}
 
 On the basis of the above discussion, the fourth model can be immediately abandoned. But how do we choose between the three remaining models? An ANOVA indicates that the second model is a significant improvement over the first model. There is little to choose, however, between the second and third models. I find the second model more intuitive, since I would expect there to be a slight gender difference in the rate of aging, rather than a simple offset. We will thus adopt the second model, which indicates that the average age of runners increases by about 0.259 years annually, with the men aging slightly faster than the women.
 
-{% highlight r %}
+{{< highlight r >}}
 > anova(fit.1, fit.2, fit.3, fit.4)
 Analysis of Variance Table
 
@@ -206,11 +207,11 @@ Model 4: mean.age ~ year + year * gender
 4     64 29.5  1      0.62  1.36 0.24833    
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-{% endhighlight %}
+{{< / highlight >}}
 
 Lastly, I constructed a data frame based on the second model which gives both the model prediction and a 95% uncertainty interval. This was used to generate the second set of plots.
 
-{% highlight r %}
+{{< highlight r >}}
 fit.data <- data.frame(year = rep(1980:2020, each = 2), gender = c("Female", "Male"))
 fit.data <- cbind(fit.data, predict(fit.2, fit.data, level = 0.95, interval = "prediction"))
-{% endhighlight %}
+{{< / highlight >}}

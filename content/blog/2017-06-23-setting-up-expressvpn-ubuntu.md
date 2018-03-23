@@ -1,22 +1,23 @@
 ---
-title: 'Setting up ExpressVPN on Ubuntu'
-date: 2017-06-23T07:00:00+00:00
 author: Andrew B. Collier
+categories:
+- Linux
+date: 2017-06-23T07:00:00Z
 excerpt_separator: <!-- more -->
-layout: post
-category: Linux
 tags:
-  - Ubuntu
-  - VPN
-  - Security
-  - Networking
+- Ubuntu
+- VPN
+- Security
+- Networking
+title: Setting up ExpressVPN on Ubuntu
+url: /2017/06/23/setting-up-expressvpn-ubuntu/
 ---
 
 ![]({{ site.baseurl }}/static/img/2017/06/expressvpn-logo.jpg)
 
 I've been meaning to set up a VPN and this morning seemed like a good time to tick it off the bucket list. This is a quick outline of my experience, which included one minor hiccup.
 
-<!-- more -->
+<!--more-->
 
 ## Sign Up
 
@@ -26,11 +27,11 @@ There are a number of vendors to choose from, but based on a recommendation I ha
 
 Click the button to download the client. Then install.
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ ls -l *.deb
 -rw-rw-r-- 1 colliera colliera  9419912 Jun 24 07:07 expressvpn_1.2.0_amd64.deb
 $ sudo dpkg -i expressvpn_1.2.0_amd64.deb
-{% endhighlight %}
+{{< / highlight >}}
 
 The install went flawlessly for me.
 
@@ -38,18 +39,18 @@ The install went flawlessly for me.
 
 Next you need to apply the activation code from the web site.
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ expressvpn activate
 Enter activation code: 
 
 Activated.
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Connecting (First Attempt)
 
 At this point everything had gone very smoothly and I was feeling most optimistic. So I went ahead and tried to connect to a VPN server. By default a connection will be made to a suitable server based on your geographic location.
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ expressvpn connect
 Connecting to Smart Location...
 Connecting to UK - Berkshire...	87.5%
@@ -60,11 +61,11 @@ To connect, please try the following:
    - Check that your Internet connection is working and try to connect again.
    - Try connect to another VPN location.
    - Switch to another protocol
-{% endhighlight %}
+{{< / highlight >}}
 
 Well, that's no good! Luckily it's easy to get some diagnostics.
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ expressvpn diagnostics | tail
 Sat Jun 24 07:19:37 2017 OPTIONS IMPORT: route options modified
 Sat Jun 24 07:19:37 2017 OPTIONS IMPORT: --ip-win32 and/or --dhcp-option options modified
@@ -75,25 +76,25 @@ Sat Jun 24 07:19:37 2017 /sbin/ifconfig tun0 10.107.47.42 pointopoint 10.107.47.
 Sat Jun 24 07:19:37 2017 Linux ifconfig failed: could not execute external program
 Sat Jun 24 07:19:37 2017 Exiting due to fatal error
 Disconnected with error: vpn process terminated unexpectedly
-{% endhighlight %}
+{{< / highlight >}}
 
 That's unexpected: unable to execute `ifconfig`. I'm working on a fresh Ubuntu install, so evidently I haven't yet installed all of the usual tools. Easily remedied.
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ sudo apt install net-tools
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Connecting (Second Attempt)
 
 Let's try connecting again.
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ expressvpn connect
 Connecting to Smart Location...
 Connecting to UK - Berkshire...	100.0%
 
 Connected.
-{% endhighlight %}
+{{< / highlight >}}
 
 Bingo! Check your [IP address location](https://www.expressvpn.com/what-is-my-ip).
 
@@ -101,7 +102,7 @@ Bingo! Check your [IP address location](https://www.expressvpn.com/what-is-my-ip
 
 So I've automatically been connected to a VPN server in Berkshire. Let's disconnect and see what other server locations are available.
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ expressvpn disconnect
 $ expressvpn list | head
 ALIAS	COUNTRY					LOCATION			RECOMMENDED
@@ -127,18 +128,18 @@ bt1	Bhutan (BT)				Bhutan
 bnbr	Brunei Darussalam (BN)			Brunei
 $ expressvpn list | grep Africa
 za1	South Africa (ZA)			South Africa			Y
-{% endhighlight %}
+{{< / highlight >}}
 
 So there's a server located in South Africa. It's interesting to browse the full list of locations with ExpressVPN servers. Obviously the choice of server will be dictated by your reason for using the VPN. There's a handy [guide](https://www.expressvpn.com/support/troubleshooting/server-locations/) to the various considerations in choosing a server location.
 
 We'll connect to the South African server by specifying its alias.
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ expressvpn connect za1
 Connecting to South Africa...	100.0%
 
 Connected.
-{% endhighlight %}
+{{< / highlight >}}
 
 ![]({{ site.baseurl }}/static/img/2017/06/expressvpn-ip-pretoria.png)
 

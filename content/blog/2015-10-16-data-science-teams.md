@@ -1,16 +1,17 @@
 ---
-id: 2552
-title: Data Science Teams
-date: 2015-10-16T15:00:55+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=2552
 categories:
-  - Data Science
+- Data Science
+date: 2015-10-16T15:00:55Z
+guid: http://www.exegetic.biz/blog/?p=2552
+id: 2552
 tags:
-  - Data Science
-  - Team
+- Data Science
+- Team
+title: Data Science Teams
+url: /2015/10/16/data-science-teams/
 ---
+
 <blockquote>
 And even that insanely curious data scientist, if he or she insists on working alone, won’t be able to produce the most valuable insights. Those come from high-performing teams combining individuals who are individually curious and naturally creative, but also collaborative in their approach to the art and science of experimentation. A great data science team is like a jazz quartet, where individuals are always riffing off of one another, and each takes the music to a new and unexpected place.
   <cite>Josh Sullivan, <a href="https://hbr.org/2014/03/get-the-right-data-scientists-asking-the-wrong-questions">Get the Right Data Scientists Asking the "Wrong" Questions</a>, Harvard Business Review, 2014</cite>

@@ -1,21 +1,22 @@
 ---
-id: 539
-title: Percolation Threshold on a Square Lattice
-date: 2013-10-30T05:38:44+00:00
 author: Andrew B. Collier
-layout: post
+date: 2013-10-30T05:38:44Z
 excerpt_separator: <!-- more -->
+id: 539
 tags:
-  - ggplot2
-  - Lattice
-  - logistic
-  - parallel
-  - Percolation
-  - '#rstats'
+- ggplot2
+- Lattice
+- logistic
+- parallel
+- Percolation
+- '#rstats'
+title: Percolation Threshold on a Square Lattice
+url: /2013/10/30/percolation-threshold-on-a-square-lattice/
 ---
+
 Manfred Schroeder touches on the topic of [percolation](http://en.wikipedia.org/wiki/Percolation_theory) a number of times in his encyclopaedic book on fractals (Schroeder, M. (1991) [Fractals, Chaos, Power Laws: Minutes from an Infinite Paradise](http://www.amazon.com/gp/product/0486472043/). Percolation has numerous practical applications, the most interesting of which (from my perspective) is the flow of hot water through ground coffee! The problem of percolation can be posed as follows: suppose that a liquid is poured onto a solid block of some substance. If the substance is porous then it is possible for the liquid to seep through the pores and make it all the way to the bottom of the block. Whether or not this happens is determined by the connectivity of the pores within the substance. If it is extremely porous then it is very likely that there will be an open path of pores connecting the top to the bottom and the liquid will flow freely. If, on the other hand, the porosity is low then such a path may not exist. Evidently there is a critical porosity threshold which divides these two regimes.
 
-<!-- more -->
+<!--more-->
 
 This situation can be modelled on a regular lattice where each of the lattice sites is either occupied (with probability p) or vacant (with probability 1-p). This is known as the site percolation problem. The related bond percolation problem can be posed in terms of whether or not the edges between neighbouring sites are open or closed. As we will see there is a well defined range of p (centred on a threshold value p<sub>c</sub>) for which the probability of percolation decreases rapidly from one to zero.
 
@@ -25,7 +26,7 @@ The percolation problem has been studied on a menagerie of [lattice types](http:
 
 First we will load a few handy libraries and set up some constants.
 
-{% highlight r %}
+{{< highlight r >}}
 > library(ggplot2)
 > library(reshape2)
 > library(plyr)
@@ -33,11 +34,11 @@ First we will load a few handy libraries and set up some constants.
 > EMPTY    = 0
 > OCCUPIED = 1
 > FLOW     = 2
-{% endhighlight %}
+{{< / highlight >}}
 
 Next a function to generate and populate a lattice, which takes as arguments the width of the lattice and the occupation probability.
 
-{% highlight r %}
+{{< highlight r >}}
 > create.grid <- function(N, p) {
 +   grid = matrix(rbinom(N**2, 1, p), nrow = N)
 +   #
@@ -49,11 +50,11 @@ Next a function to generate and populate a lattice, which takes as arguments the
 > set.seed(1)
 > g1 = create.grid(12, 0.6)
 > g2 = create.grid(12, 0.4)
-{% endhighlight %}
+{{< / highlight >}}
 
 # Visualising the Lattice
 
-{% highlight r %}
+{{< highlight r >}}
 > g1
       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12]
  [1,]    1    0    1    0    0    0    1    0    1     0     0     1
@@ -68,11 +69,11 @@ Next a function to generate and populate a lattice, which takes as arguments the
 [10,]    1    1    1    0    1    0    0    0    1     1     1     0
 [11,]    1    0    0    1    0    1    1    0    1     1     1     1
 [12,]    1    1    0    1    1    0    1    0    1     0     1     1
-{% endhighlight %}
+{{< / highlight >}}
 
 In the text representation of the lattice the occuppied sites are represented by a 1, while a 0 indicates a vacant site.
 
-{% highlight r %}
+{{< highlight r >}}
 > visualise.grid <- function(g) {
 +   N = nrow(g)
 +   #
@@ -96,7 +97,7 @@ In the text representation of the lattice the occuppied sites are represented by
 > require(gridExtra)
 > 
 > grid.arrange(visualise.grid(g1), visualise.grid(g2), ncol = 2)
-{% endhighlight %}
+{{< / highlight >}}
 
 A graphical representation makes things a lot clearer.
 
@@ -106,7 +107,7 @@ A graphical representation makes things a lot clearer.
 
 Now we need to check for flow through the lattice. We will use a recursive depth first search. Everything goes into a single function. The first argument is the grid. The second and third (optional) arguments are the row and column indices for a particular cell in the grid. If the latter arguments are omitted then the function loops through each of the cells in the top row of the grid. If a particular cell is specified, and it is not already occupied, then it is marked as being part of a flow path. The function then recursively considers each of the nearest neighbour cells. 
 
-{% highlight r %}
+{{< highlight r >}}
 > flow <- function(g, i = NA, j = NA) {
 +   # -> Cycle through cells in top row
 +   #
@@ -132,13 +133,13 @@ Now we need to check for flow through the lattice. We will use a recursive depth
 +   
 +   g
 + }
-{% endhighlight %}
+{{< / highlight >}}
 
 The flow path can then be visualised.
 
-{% highlight r %}
+{{< highlight r >}}
 > grid.arrange(visualise.grid(flow(g1)), visualise.grid(flow(g2)), ncol = 2)
-{% endhighlight %}
+{{< / highlight >}}
 
 <img src="{{ site.baseurl }}/static/img/2013/10/grids-flow.png">
 
@@ -148,7 +149,7 @@ The grid on the left does not percolate while the one on the right does.
 
 Finally we can determine whether a given grid percolates by checking whether or not the flow makes it to the bottom of the grid.
 
-{% highlight r %}
+{{< highlight r >}}
 > # Check whether flow reaches to bottom of the lattice.
 > #
 > percolates <- function(g) {
@@ -163,48 +164,48 @@ Finally we can determine whether a given grid percolates by checking whether or 
 [1] FALSE
 > percolates(g2)
 [1] TRUE
-{% endhighlight %}
+{{< / highlight >}}
 
 # Finding the Percolation Threshold
 
 Finding the percolation threshold is a little numerically intensive, so it makes sense to take advantage of [parallel execution](http://www.exegetic.biz/blog/2013/08/the-wonders-of-foreach/).
 
-{% highlight r %}
+{{< highlight r >}}
 > library(foreach)
 > library(doMC)
 >
 > registerDoMC(cores=4)
-{% endhighlight %}
+{{< / highlight >}}
 
 We define some parameters for the calculation: the dimensions of the lattice and the number of replicates for each value of the occupation probability, p.
 
-{% highlight r %}
+{{< highlight r >}}
 > N = 25
 > REPLICATES = 1000
-{% endhighlight %}
+{{< / highlight >}}
 
 Although we will be considering the full range of possible values for p, it makes sense to focus our attention on those values closer to the threshold. For each value of p we randomly generate a number of grids and check whether or not each one percolates.
 
-{% highlight r %}
+{{< highlight r >}}
 > pseq = unique(c(seq(0, 0.2, 0.1), seq(0.2, 0.6, 0.0125), seq(0.6, 1, 0.1)))
 > #
 > perc.occp = foreach(p = pseq, .combine=rbind) %dopar% {
 +   data.frame(p, percolates = replicate(REPLICATES, percolates(create.grid(N, p))))
 + }
-{% endhighlight %}
+{{< / highlight >}}
 
 Summary statistics are then compiled to give the percolation probability as a function of p.
 
-{% highlight r %}
+{{< highlight r >}}
 > perc.summary = ddply(perc.occp, .(p), summarize,
 +   mean = mean(percolates),
 +   sd = sd(percolates) / sqrt(length(percolates))
 + )
-{% endhighlight %}
+{{< / highlight >}}
 
 A logistic model is fitted to these data and the threshold value for p is estimated.
 
-{% highlight r %}
+{{< highlight r >}}
 > logistic.fit = glm(mean ~ p, family=binomial(logit), data = perc.summary)
 > #
 > perc.summary$fit = logistic.fit$fitted
@@ -215,13 +216,13 @@ A logistic model is fitted to these data and the threshold value for p is estima
 > 1-pcrit
 (Intercept) 
     0.58974
-{% endhighlight %}
+{{< / highlight >}}
 
 That compares pretty well with the [reference results](http://en.wikipedia.org/wiki/Percolation_threshold) for the 4<sup>4</sup> square lattice.
 
 Finally, all of this is put together in a plot.
 
-{% highlight r %}
+{{< highlight r >}}
 > ggplot(perc.summary, aes(x = p, y = mean)) +
 +   geom_point(size = 3, shape = 21) +
 +   geom_line(aes(x = p, y = fit), linetype = 2) +
@@ -231,6 +232,6 @@ Finally, all of this is put together in a plot.
 +   scale_y_continuous(breaks = seq(0, 1, 0.2)) +
 +   ylab("Percolation Probability") +
 +   theme_classic()
-{% endhighlight %}
+{{< / highlight >}}
 
 <img src="{{ site.baseurl }}/static/img/2013/10/percolation-probability-threshold.png">

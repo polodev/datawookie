@@ -1,23 +1,24 @@
 ---
-id: 463
-title: Clustering the Words of William Shakespeare
-date: 2013-09-10T11:27:49+00:00
 author: Andrew B. Collier
-layout: post
+date: 2013-09-10T11:27:49Z
 excerpt_separator: <!-- more -->
+id: 463
 tags:
-  - cluster
-  - dendrogram
-  - '#rstats'
-  - text mining
+- cluster
+- dendrogram
+- '#rstats'
+- text mining
+title: Clustering the Words of William Shakespeare
+url: /2013/09/10/clustering-the-words-of-william-shakespeare/
 ---
+
 In my [previous post](http://www.exegetic.biz/blog/2013/09/text-mining-the-complete-works-of-william-shakespeare/)&nbsp;I used the tm package to do some simple text mining on the Complete Works of William Shakespeare. Today I am taking some of those results and using them to generate word clusters.
 
 # Preparing the Data
 
 I will start with the Term Document Matrix (TDM) consisting of 71 words commonly used by Shakespeare.
 
-{% highlight r %}
+{{< highlight r >}}
 > inspect(TDM.common[1:10,1:10])
 A term-document matrix (10 terms, 10 documents)
 
@@ -38,33 +39,33 @@ Terms     1 2  3  4  5  6  7  8 9 10
   enter   0 7 12 11 10 10 14 87 4  6
   exeunt  0 3  8  8  5  4  7 49 1  4
   exit    0 6  8  5  6  5  3 31 3  2
-{% endhighlight %}
+{{< / highlight >}}
 
 This matrix is first converted from a sparse data format into a conventional matrix.
 
-{% highlight r %}
+{{< highlight r >}}
 > TDM.dense <- as.matrix(TDM.common)
 > dim(TDM.dense)
 [1] 71 182
-{% endhighlight %}
+{{< / highlight >}}
 
 Next the TDM is normalised so that the rows sum to unity. Each entry in the normalised TDM then represents the number of times that a word occurs in a particular document relative to the number of occurrences across all of the documents.
 
-{% highlight r %}
+{{< highlight r >}}
 > TDM.scaled <- TDM.dense / rowSums(TDM.dense)
-{% endhighlight %}
+{{< / highlight >}}
 
 # Clustering
 
 We will be using a [hierarchical clustering](http://en.wikipedia.org/wiki/Hierarchical_clustering) technique which operates on a dissimilarity matrix. We will use the Euclidean distance between each of the rows in the TDM, where each row is treated as a vector in a space of 182 dimensions.
 
-{% highlight r %}
+{{< highlight r >}}
 > TDM.dist = dist(TDM.scaled)
-{% endhighlight %}
+{{< / highlight >}}
 
 Finally we perform agglomerative clustering using agnes() from the cluster package.
 
-{% highlight r %}
+{{< highlight r >}}
 > library(cluster)
 >
 > hclusters  hclusters
@@ -86,15 +87,15 @@ Height (summary):
 Available components:
 [1] "order"     "height"    "ac"        "merge"     "diss"      "call"
 [7] "method"    "order.lab"
-{% endhighlight %}
+{{< / highlight >}}
 
 # Plotting a Dendrogram
 
 Let's have a look at the results of our labours.
 
-{% highlight r %}
+{{< highlight r >}}
 plot(hclusters, which.plots = 2, main = "", sub = "", xlab = "")
-{% endhighlight %}
+{{< / highlight >}}
 
 <img src="{{ site.baseurl }}/static/img/2013/09/shakespeare-common-word-clusters.png">
 

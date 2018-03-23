@@ -1,16 +1,17 @@
 ---
+author: Andrew B. Collier
+categories:
+- Writing
+date: 2015-03-30T09:00:01Z
+excerpt_separator: <!-- more -->
 id: 1214
 title: 'Encyclopaedia: Geospace'
-date: 2015-03-30T09:00:01+00:00
-author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
-categories:
-  - Writing
+url: /2015/03/30/encyclopaedia-geospace/
 ---
+
 A contribution which I wrote for [Antarctica and the Arctic Circle: A Geographic Encyclopedia of the Earth's Polar Regions](http://www.amazon.com/gp/product/B00OD83J44/). As a side note, I am normally quite pedantic about "Earth" and "Sun" being capitalised but the editor of the Encyclopaedia evidently had different views on this point.
 
-<!-- more -->
+<!--more-->
 
 The space immediately around the earth, including the upper atmosphere, ionosphere, and magnetosphere, is known as geospace. This region is of considerable scientific interest since it is the environment inhabited by most artificial (communication, navigation, meteorological, etc.) satellites. In addition to in situ measurements, observations of geospace are commonly made at high latitudes because the earth’s magnetic field focuses phenomena from a large volume of space down onto a relatively small portion of the earth’s surface. Both the Arctic and Antarctic are suitable sites. However, the Antarctic continent provides a better environment for the construction of research facilities. A significant number of countries with bases in Antarctica are engaged in geospace research.
 

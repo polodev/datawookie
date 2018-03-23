@@ -1,21 +1,21 @@
 ---
-id: 2092
-title: '#MonthOfJulia Day 14: Data'
-date: 2015-09-15T13:00:23+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=2092
-excerpt_separator: <!-- more -->
 categories:
-  - Julia
+- Julia
+date: 2015-09-15T13:00:23Z
+excerpt_separator: <!-- more -->
+guid: http://www.exegetic.biz/blog/?p=2092
+id: 2092
 tags:
-  - '#julialang'
-  - '#MonthOfJulia'
-  - data.frame
-  - Julia
+- '#julialang'
+- '#MonthOfJulia'
+- data.frame
+- Julia
+title: '#MonthOfJulia Day 14: Data'
+url: /2015/09/15/monthofjulia-day-14-data/
 ---
 
-<!-- more -->
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2015/09/Julia-Logo-DataFrame.png" >
 
@@ -25,13 +25,13 @@ The `DataFrame` type in Julia is not dissimilar to the analogous types in R and 
 
 I'm assuming that you've already installed the [DataFrames](http://dataframesjl.readthedocs.org/en/latest/) package. If not, take a look at [yesterday's post](http://www.exegetic.biz/blog/2015/09/monthofjulia-day-13-packages/). The first step is then to load it up:
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> using DataFrames
-{% endhighlight %}
+{{< / highlight >}}
 
 Next we can start assembling our data. A `DataFrame` can be built up one field at a time (as is done in the example below) or by passing all of the data at once to the constructor.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> people = DataFrame();
 julia> people[:name] = ["Andrew", "Claire", "Bob", "Alice"];
 julia> people[:gender] = [0, 1, 0, 1];
@@ -44,11 +44,11 @@ julia> people
 | 2   | "Claire" | 1      | 35  |
 | 3   | "Bob"    | 0      | 27  |
 | 4   | "Alice"  | 1      | 32  |
-{% endhighlight %}
+{{< / highlight >}}
 
 `names()` and `eltypes()` provide a high level overview of the data, giving the names and data types respectively for each column.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> names(people)
 3-element Array{Symbol,1}:
  :name
@@ -59,13 +59,13 @@ julia> eltypes(people)
  ASCIIString
  Int64
  Int64
-{% endhighlight %}
+{{< / highlight >}}
 
 You can dig deeper with `describe()`, which gives a simple statistical summary of each column. It does essentially the same thing as `summary()` in R.
 
 Indexing operations allow you to access the data in various ways. There's also `head()` and `tail()`, which return the first and last few records in the data.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> people[:age]
 4-element DataArray{Int64,1}:
  43
@@ -85,11 +85,11 @@ julia> people[1,:]
 | Row | name     | gender | age |
 |-----|----------|--------|-----|
 | 1   | "Andrew" | 0      | 43  |
-{% endhighlight %}
+{{< / highlight >}}
 
 You can apply a range of operations to columns. Note, however, that there is a subtle difference in syntax: while `==` is the normal equality operator, `.==` is the element-wise equality operator which must be applied to columns in order to make element-by-element comparisons. A similar syntax pertains to other operators like `.<=` and `.>`.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> people[:gender] = ifelse(people[:gender] .== 1, 'F', 'M');
 julia> people
 4x3 DataFrame
@@ -111,11 +111,11 @@ julia> people[:age] .<= 40
  true
  true
  true
-{% endhighlight %}
+{{< / highlight >}}
 
 Of course you're not likely to construct any serious collection of data manually. It's more likely to come from a database or file. There are various ways to accomplish this. The simplest is reading from a delimited file.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> passwd = readtable("/etc/passwd", separator = ':', header = false);
 julia> names!(passwd, [symbol(i) for i in ["username", "passwd", "UID", "GID",
                                            "comment", "home", "shell"]]);
@@ -128,7 +128,7 @@ julia> passwd[1:5,:]
 | 3   | "bin"    | "x"    | 2   | 2     | "bin"    | "/bin"      | "/usr/sbin/nologin" |
 | 4   | "sys"    | "x"    | 3   | 3     | "sys"    | "/dev"      | "/usr/sbin/nologin" |
 | 5   | "sync"   | "x"    | 4   | 65534 | "sync"   | "/bin"      | "/bin/sync"         |
-{% endhighlight %}
+{{< / highlight >}}
 
 Note how `names!()` was used to alter the column names. There are other ways of loading data from a delimited text file that will handle column names more elegantly. We'll get to those in a few days time.
 
@@ -142,7 +142,7 @@ Data are seldom perfect and missing values are not uncommon. Now, you might use 
 
 A vector with missing data is created using the `@data` macro.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> using DataArrays
 julia> x = @data([1, 2, 3, 4, NA, 6])
 6-element DataArray{Int64,1}:
@@ -152,13 +152,13 @@ julia> x = @data([1, 2, 3, 4, NA, 6])
  4
  NA
  6
-{% endhighlight %}
+{{< / highlight >}}
 
 Functions `anyna()` and `allna()` can be used to test whether any or all of the elements of a vector are missing.
 
 Two ways of dealing with NAs are to either drop them or replace them with another value.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> dropna(x)
 5-element Array{Int64,1}:
  1
@@ -174,11 +174,11 @@ julia> convert(Array, x, -1)
  4
  -1
  6
-{% endhighlight %}
+{{< / highlight >}}
 
 Data frames have support for NAs already baked in.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> people[:age][2] = NA;
 julia> people
 4x3 DataFrame
@@ -192,7 +192,7 @@ julia> mean(people[:age])
 NA
 julia> mean(dropna(people[:age]))
 34.0
-{% endhighlight %}
+{{< / highlight >}}
 
 Note how `dropna()` was used to calculate the mean of the non-missing data.
 
@@ -202,7 +202,7 @@ Note how `dropna()` was used to calculate the mean of the non-missing data.
 
 The [`DataFramesMeta`](https://github.com/JuliaStats/DataFramesMeta.jl) package provides a handful of macros for applying metaprogramming techniques to data frames. For example:
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> using DataFramesMeta
 julia> @with(passwd, maximum(:UID))
 65534
@@ -214,7 +214,7 @@ julia> @select(people, :gender)
 | 2   | 'F'    |
 | 3   | 'M'    |
 | 4   | 'F'    |
-{% endhighlight %}
+{{< / highlight >}}
 
 Further examples can be found on the [github](https://github.com/DataWookie/MonthOfJulia) page for MonthOfJulia.
 

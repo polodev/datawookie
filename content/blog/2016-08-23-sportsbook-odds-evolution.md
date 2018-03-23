@@ -1,20 +1,20 @@
 ---
-id: 4072
-title: 'Sportsbook Betting (Part 3): Evolving Odds'
-date: 2016-08-23T15:00:49+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
 - Statistics
+date: 2016-08-23T15:00:49Z
+excerpt_separator: <!-- more -->
+id: 4072
 tags:
 - gambling
 - odds
 - probability
 - Sportsbook
+title: 'Sportsbook Betting (Part 3): Evolving Odds'
+url: /2016/08/23/sportsbook-odds-evolution/
 ---
 
-<!-- more -->
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2016/08/rio-2016-800m-women.jpg" >
 

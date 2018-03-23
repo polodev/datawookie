@@ -1,19 +1,19 @@
 ---
-id: 1288
-title: Creating Charts with Easel.ly
-date: 2015-03-31T09:00:15+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Charts
+- Charts
+date: 2015-03-31T09:00:15Z
+excerpt_separator: <!-- more -->
+id: 1288
 tags:
-  - Chart
-  - easel.ly
-  - Presentation
+- Chart
+- easel.ly
+- Presentation
+title: Creating Charts with Easel.ly
+url: /2015/03/31/creating-charts-with-easel-ly/
 ---
 
-<!-- more -->
+<!--more-->
 
 I finally got around to trying [easel.ly](http://www.easel.ly/) for creating charts. Initial impression: it's fun and easy to use. Without a Pro account your options are a little limited, but that should not stop you from creating interesting and useful charts. 
 

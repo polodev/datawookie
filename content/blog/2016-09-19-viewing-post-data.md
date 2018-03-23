@@ -1,18 +1,19 @@
 ---
-id: 4272
-title: View POST Data using Chrome Developer Tools
-date: 2016-09-19T15:00:38+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=4272
 categories:
-  - Web Scraping
+- Web Scraping
+date: 2016-09-19T15:00:38Z
+guid: http://www.exegetic.biz/blog/?p=4272
+id: 4272
 tags:
-  - Chrome
-  - Developer Tools
-  - POST
-  - Web Scraping
+- Chrome
+- Developer Tools
+- POST
+- Web Scraping
+title: View POST Data using Chrome Developer Tools
+url: /2016/09/19/viewing-post-data/
 ---
+
 When figuring out how to formulate the contents of a POST request it's often useful to see the "typical" fields submitted directly from a web form.
 
 1. Open [Developer Tools](https://developer.chrome.com/devtools) in Chrome. Select the `Network` tab (at the top). 

@@ -1,20 +1,20 @@
 ---
-id: 3744
-title: Life Expectancy by Country
-date: 2016-07-20T16:00:27+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Plotly
-  - Visualisation
+- Plotly
+- Visualisation
+date: 2016-07-20T16:00:27Z
+excerpt_separator: <!-- more -->
+id: 3744
 tags:
-  - life expectancy
-  - Plotly
-  - '#rstats'
+- life expectancy
+- Plotly
+- '#rstats'
+title: Life Expectancy by Country
+url: /2016/07/20/life-expectancy-country/
 ---
 
-<!-- more -->
+<!--more-->
 
 I was rather inspired by this plot on Wikipedia's [List of Countries by Life Expectancy](https://en.wikipedia.org/wiki/List_of_countries_by_life_expectancy).
 

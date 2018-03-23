@@ -1,15 +1,15 @@
 ---
-title: Mortality Rate by Age
-date: 2016-07-19T16:00:02+00:00
 author: Andrew B. Collier
-layout: post
+date: 2016-07-19T16:00:02Z
 excerpt_separator: <!-- more -->
 tags:
 - '#rstats'
 - mortality
+title: Mortality Rate by Age
+url: /2016/07/19/mortality-by-age/
 ---
 
-<!-- more -->
+<!--more-->
 
 Working further with the mortality data from <http://www.cdc.gov/>, I've added a breakdown of deaths by age and gender to the [lifespan package](https://github.com/DataWookie/lifespan) on GitHub.
 
@@ -17,7 +17,7 @@ Here's a summary plot:
 
 <img src="{{ site.baseurl }}/static/img/2016/07/deaths-by-age.png" >
 
-{% highlight r %}
+{{< highlight r >}}
 > library(lifespan)
 > NYEARS = length(unique(deaths$year))
 > ggplot(deathsage, aes(x = age, y = count / NYEARS / 1000)) +
@@ -27,7 +27,7 @@ Here's a summary plot:
 +   labs(x = &quot;Age&quot;, y = &quot;Deaths per Year [thousands]&quot;) +
 +   scale_x_continuous(breaks = seq(0, 150, 10), limits = c(0, 120)) +
 +   theme_minimal() + theme(legend.title = element_blank())
-{% endhighlight %}
+{{< / highlight >}}
 
 There are a few interesting observations to be made. We'll start with the most obvious:
 

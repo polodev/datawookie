@@ -1,22 +1,23 @@
 ---
-id: 1640
-title: Constructing a Word Cloud for ICML 2015
-date: 2015-07-10T21:30:20+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
 - Data Science
+date: 2015-07-10T21:30:20Z
+excerpt_separator: <!-- more -->
+id: 1640
 tags:
 - ICML
 - ICML2015
 - Machine Learning
 - '#rstats'
 - word cloud
+title: Constructing a Word Cloud for ICML 2015
+url: /2015/07/10/constructing-word-cloud-for-icml-2015/
 ---
+
 Word clouds have become a bit cliché, but I still think that they have a place in giving a high level overview of the content of a corpus. Here are the steps I took in putting together the word cloud for the International Conference on Machine Learning (2015).
 
-<!-- more -->
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2015/07/word-cloud.png">
 
@@ -27,7 +28,7 @@ Word clouds have become a bit cliché, but I still think that they have a place 
 5. Transform text to lower case then remove punctuation, digits and stop words using the tm package. 
 6. Compile the words for all of the documents into a single data.frame. 
 7. Using the dplyr package count the number of times that each word occurs across the entire corpus as well as the number of documents which contain that word. This is what the top end of the resulting data.frame looks like:
-{% highlight r %}
+{{< highlight r >}}
 > head(word.counts)
        word count doc
 1       can  6496 270
@@ -36,7 +37,7 @@ Word clouds have become a bit cliché, but I still think that they have a place 
 4      data  5687 254
 5     model  4956 242
 6       set  4040 269
-{% endhighlight %}
+{{< / highlight >}}
 8. Finally, construct a word cloud with the tagcloud package using the word count to weight the word size and the document count to determine grey scale.
 
 The first cloud above contains the top 300 words. The larger cloud below is the top 1000 words.

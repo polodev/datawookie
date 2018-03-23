@@ -1,29 +1,30 @@
 ---
-id: 564
-title: Introduction to Fractals
-date: 2013-11-04T05:37:45+00:00
 author: Andrew B. Collier
-layout: post
+date: 2013-11-04T05:37:45Z
 excerpt_separator: <!-- more -->
+id: 564
 tags:
-  - Cantor Set
-  - Fractal
-  - Mandelbrot Set
-  - '#rstats'
+- Cantor Set
+- Fractal
+- Mandelbrot Set
+- '#rstats'
+title: Introduction to Fractals
+url: /2013/11/04/introduction-to-fractals/
 ---
-A short while ago I was contracted to write a short piece entitled "Introduction to Fractals". The article can be found [here](http://162.243.184.248/wp-content/uploads/2013/11/fractals-introduction.pdf). Admittedly it is hard to do justice to the topic in less than 1000 words. <!-- more --> Both of the illustrations were created with R.
+
+A short while ago I was contracted to write a short piece entitled "Introduction to Fractals". The article can be found [here](http://162.243.184.248/wp-content/uploads/2013/11/fractals-introduction.pdf). Admittedly it is hard to do justice to the topic in less than 1000 words. <!--more--> Both of the illustrations were created with R.
 
 # Mandelbrot Set
 
 The [Mandelbrot Set](http://en.wikipedia.org/wiki/Mandelbrot_set) image was created using the Julia package.
 
-{% highlight r %}
+{{< highlight r >}}
 library(Julia)
-{% endhighlight %}
+{{< / highlight >}}
 
 First an image of the entire set showing a region that we will zoom in on later.
 
-{% highlight r %}
+{{< highlight r >}}
 npixel <- 2001
 #
 rshift = -0.75
@@ -49,13 +50,13 @@ axis(2, at = seq(-2, 2, 0.5))
 rect(-0.325, 0.75, 0.075, 1.15, border = "black", lwd = 2)
 points(c(0.5, 0), c(0, 1), pch = 19)
 text(c(0.5, 0), c(0, 1), labels = c("A", "B"), adj = c(1.55, -0.3))
-{% endhighlight %}
+{{< / highlight >}}
 
 [<img src="http://162.243.184.248/wp-content/uploads/2013/11/mandelbrot-full.png" alt="mandelbrot-full" width="800" height="800" class="aligncenter size-full wp-image-569" srcset="http://162.243.184.248/wp-content/uploads/2013/11/mandelbrot-full.png 800w, http://162.243.184.248/wp-content/uploads/2013/11/mandelbrot-full-150x150.png 150w, http://162.243.184.248/wp-content/uploads/2013/11/mandelbrot-full-300x300.png 300w, http://162.243.184.248/wp-content/uploads/2013/11/mandelbrot-full-768x768.png 768w" sizes="(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 984px) 61vw, (max-width: 1362px) 45vw, 600px" />](http://162.243.184.248/wp-content/uploads/2013/11/mandelbrot-full.png)
 
 Then the zoomed in region.
 
-{% highlight r %}
+{{< highlight r >}}
 npixel <- 2001;
 #
 rshift = -0.125
@@ -78,7 +79,7 @@ axis(1, at = seq(-2, 2, 0.05))
 axis(2, at = seq(-2, 2, 0.05))
 points(c(0.5, 0), c(0, 1), pch = 19)
 text(c(0.5, 0), c(0, 1), labels = c("A", "B"), adj = -0.75)
-{% endhighlight %}
+{{< / highlight >}}
 
 <img src="{{ site.baseurl }}/static/img/2013/11/mandelbrot-zoom.png">
 
@@ -86,7 +87,7 @@ text(c(0.5, 0), c(0, 1), labels = c("A", "B"), adj = -0.75)
 
 The [Cantor Set](http://en.wikipedia.org/wiki/Cantor_set) illustration was naturally created with a simple recursive algorithm.
 
-{% highlight r %}
+{{< highlight r >}}
 cantor.set <- function(x) {
     y = list()
     for (n in x) {
@@ -124,6 +125,6 @@ for (n in 1:7) {
         text(x = 0, y = n, 7 - n, adj = c(3, 0.5))
     }
 }
-{% endhighlight %}
+{{< / highlight >}}
 
 <img src="{{ site.baseurl }}/static/img/2013/11/cantor-set.png">

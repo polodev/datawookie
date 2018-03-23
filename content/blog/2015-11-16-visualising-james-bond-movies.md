@@ -1,13 +1,13 @@
 ---
+author: Andrew B. Collier
+date: 2015-11-16T06:30:21Z
+excerpt_separator: <!-- more -->
 id: 2888
 title: Visualising James Bond movies
-date: 2015-11-16T06:30:21+00:00
-author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
+url: /2015/11/16/visualising-james-bond-movies/
 ---
 
-<!-- more -->
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2015/11/bond-full.png">
 

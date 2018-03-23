@@ -1,14 +1,15 @@
 ---
+author: Andrew B. Collier
+date: 2015-07-13T14:00:42Z
+excerpt_separator: <!-- more -->
 id: 1593
 title: Lightning on your Twitter Feed
-date: 2015-07-13T14:00:42+00:00
-author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
+url: /2015/07/13/lightning-on-your-twitter-feed/
 ---
+
 As an aside for a Social Media Automation project I have constructed a bot which uses data from the [World Wide Lightning Location Network](http://wwlln.net/) (WWLLN) to construct daily animated maps of global lightning activity and post them on my Twitter feed. The bot runs remotely and autonomously on an EC2 instance.
 
-<!-- more -->
+<!--more-->
 
 The images below are two examples of the lightning animations. You might need to open them in a separate tab or window to get them to animate. WordPress funkiness, I believe! If you would like to see these daily, follow [@DataWookie](https://twitter.com/DataWookie).
 

@@ -1,13 +1,13 @@
 ---
-title: 'Installing NVIDIA Graphics Driver on Ubuntu'
-date: 2017-10-07T07:00:00+00:00
 author: Andrew B. Collier
-layout: post
+date: 2017-10-07T07:00:00Z
 excerpt_separator: <!-- more -->
 tags:
-  - Ubuntu
-  - NVIDIA
-  - GPU
+- Ubuntu
+- NVIDIA
+- GPU
+title: Installing NVIDIA Graphics Driver on Ubuntu
+url: /2017/10/07/ubuntu-nvidia/
 ---
 
 {% comment %}
@@ -16,24 +16,24 @@ https://linuxconfig.org/how-to-install-the-latest-nvidia-drivers-on-ubuntu-16-04
 
 Recipe for installing the NVIDIA binary drivers on Ubuntu.
 
-<!-- more -->
+<!--more-->
 
 ## Hardware Check
 
 First check your hardware: which graphics card do you have?
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ sudo lshw -numeric -C display | grep -E "(product|vendor)"
-{% endhighlight %}
+{{< / highlight >}}
 
 According to that I have a [GeForce 930MX](https://www.geforce.com/hardware/notebook-gpus/geforce-930mx) card.
 
-{% highlight text %}
+{{< highlight text >}}
        product: Intel Corporation [8086:5916]
        vendor: Intel Corporation [8086]
        product: GM108M [GeForce 930MX] [10DE:134E]
        vendor: NVIDIA Corporation [10DE]
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Driver Version
 
@@ -49,22 +49,22 @@ The next page will tell you what driver version you should be running. You can d
 
 First add the PPA.
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ sudo add-apt-repository ppa:graphics-drivers/ppa
 $ sudo apt update
-{% endhighlight %}
+{{< / highlight >}}
 
 Then download and install.
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ sudo apt-get install nvidia-384
-{% endhighlight %}
+{{< / highlight >}}
 
 After a reboot you'll be able to access the settings dialog.
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ nvidia-settings
-{% endhighlight %}
+{{< / highlight >}}
 
 ![]({{ site.baseurl }}/static/img/2017/10/nvidia-settings.png)
 

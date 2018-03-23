@@ -1,20 +1,21 @@
 ---
-id: 134
-title: 'Package party: Conditional Inference Trees'
-date: 2013-05-21T11:13:43+00:00
 author: Andrew B. Collier
-layout: post
+date: 2013-05-21T11:13:43Z
 excerpt_separator: <!-- more -->
+id: 134
 tags:
-  - classification
-  - Conditional Inference Tree
-  - decision tree
-  - party
-  - '#rstats'
+- classification
+- Conditional Inference Tree
+- decision tree
+- party
+- '#rstats'
+title: 'Package party: Conditional Inference Trees'
+url: /2013/05/21/package-party-conditional-inference-trees/
 ---
+
 I am going to be using the [party](http://cran.rstudio.com/web/packages/party/index.html) package for one of my projects, so I spent some time today familiarising myself with it. The details of the package are described in Hothorn, T., Hornik, K., & Zeileis, A. (1999). "party: A Laboratory for Recursive Partytioning" which is [available from CRAN](http://cran.r-project.org/web/packages/party/vignettes/party.pdf).
 
-<!-- more -->
+<!--more-->
 
 The main workhorse of the package is ctree, so that is where I will be focusing my attention. The online documentation for ctree is, to be honest, like much of the R documentation: somewhat dense. Or maybe it is just me being dense? Anyway, the examples provided do illustrate what ctree can do, but do not give too much in the way of explanation about just what it is doing. So I am going to try and unpack those examples in detail.
 
@@ -22,7 +23,7 @@ The main workhorse of the package is ctree, so that is where I will be focusing 
 
 The air quality data set looks like this.
 
-{% highlight r %}
+{{< highlight r >}}
 > head(airquality)
   Ozone Solar.R Wind Temp Month Day
 1    41     190  7.4   67     5   1
@@ -31,17 +32,17 @@ The air quality data set looks like this.
 4    18     313 11.5   62     5   4
 5    NA      NA 14.3   56     5   5
 6    28      NA 14.9   66     5   6
-{% endhighlight %}
+{{< / highlight >}}
 
 The first thing that we will do is remove all of the records with missing ozone data.
 
-{% highlight r %}
+{{< highlight r >}}
 > airq <- subset(airquality, !is.na(Ozone))
-{% endhighlight %}
+{{< / highlight >}}
 
 Next we use ctree to construct a model of ozone as a function of all other covariates.
 
-{% highlight r %}
+{{< highlight r >}}
 > air.ct <- ctree(Ozone ~ ., data = airq, controls = ctree_control(maxsurrogate = 3))
 > air.ct
 
@@ -64,13 +65,13 @@ Number of observations:  116
     8)*  weights = 30
   7) Wind > 10.3
     9)*  weights = 7
-{% endhighlight %}
+{{< / highlight >}}
 
 The textual description of the model gives a lot of detail, but it is a little difficult to get the big picture. A plot helps. This is essentially a [decision tree](http://en.wikipedia.org/wiki/Decision_tree) but with extra information in the terminal nodes.
 
-{% highlight r %}
+{{< highlight r >}}
 > plot(air.ct)
-{% endhighlight %}
+{{< / highlight >}}
 
 <img src="{{ site.baseurl }}/static/img/2013/05/ctree-airquality.png">
 
@@ -78,7 +79,7 @@ This tells us that the data has been divided up into five classes (in nodes labe
 
 We can look at the details of individual nodes in the tree, but this does not reveal much more information than was already given in the plot.
 
-{% highlight r %}
+{{< highlight r >}}
 > nodes(air.ct, 1)
 [[1]]
 1) Temp <= 82; criterion = 1, statistic = 56.086
@@ -104,11 +105,11 @@ We can look at the details of individual nodes in the tree, but this does not re
     5)*  weights = 48
   4) Temp > 77
     6)*  weights = 21
-{% endhighlight %}
+{{< / highlight >}}
 
 What about using this model on new data? First we construct a new data frame.
 
-{% highlight r %}
+{{< highlight r >}}
 > new.airq  new.airq
   Solar.R Wind Temp Month Day
 1       0    5   70     0   0
@@ -117,24 +118,24 @@ What about using this model on new data? First we construct a new data frame.
 4       0   12   80     0   0
 5       0    5   90     0   0
 6       0   12   90     0   0
-{% endhighlight %}
+{{< / highlight >}}
 
 Note that since the classification model does not depend on solar radiation, month or day, we do not need to specify meaningful values for them (they will not have any impact on the outcome of the model!). One of the characteristics of party is that it does not include in the model any covariates which appear to be independent of the response variable.
 
 It is very important to ensure that the column classes in the new data are precisely the same as those in the original training data. If you don't then prediction will fail.
 
-{% highlight r %}
+{{< highlight r >}}
 > sapply(airq[,-1], class)
   Solar.R      Wind      Temp     Month       Day
 "integer" "numeric" "integer" "integer" "integer"
 > sapply(new.airq, class)
   Solar.R      Wind      Temp     Month       Day
 "integer" "numeric" "integer" "integer" "integer"
-{% endhighlight %}
+{{< / highlight >}}
 
 Now we can predict the ozone levels and category node numbers for these new data. The measurement used above to discuss the plot (temperature 70, wind speed 12) appears on row 2 of these new data.
 
-{% highlight r %}
+{{< highlight r >}}
 > cbind(new.airq, predict(air.ct, newdata = new.airq))
   Solar.R Wind Temp Month Day    Ozone
 1       0    5   70     0   0 55.60000
@@ -145,11 +146,11 @@ Now we can predict the ozone levels and category node numbers for these new data
 6       0   12   90     0   0 48.71429
 > predict(air.ct, newdata = new.airq, type = "node")
 [1] 3 5 3 6 8 9
-{% endhighlight %}
+{{< / highlight >}}
 
 Finally we can use the model to generate the category node numbers for the original data and add that as a new column to the data frame.
 
-{% highlight r %}
+{{< highlight r >}}
 > airq$node = predict(air.ct, type = "node")
 > head(airq)
   Ozone Solar.R Wind Temp Month Day node
@@ -159,22 +160,22 @@ Finally we can use the model to generate the category node numbers for the origi
 4    18     313 11.5   62     5   4    5
 6    28      NA 14.9   66     5   6    5
 7    23     299  8.6   65     5   7    5
-{% endhighlight %}
+{{< / highlight >}}
 
 Like many things in R, you could have achieved this result by other means.
 
-{% highlight r %}
+{{< highlight r >}}
 > where(air.ct)
   [1] 5 5 5 5 5 5 5 5 3 5 5 5 5 5 5 5 5 5 5 5 5 5 5 6 3 5 6 9 9 6 5 5 5 5 5 8 8 6 8 9 8 8 8 8 5 6 6
  [48] 3 6 8 8 9 3 8 8 6 9 8 8 8 6 3 6 6 8 8 8 8 8 8 9 6 6 5 3 5 6 6 5 5 6 3 8 8 8 8 8 8 8 8 8 8 9 6
  [95] 6 5 5 6 5 3 5 5 3 5 5 5 6 5 5 6 5 5 3 5 5 5
-{% endhighlight %}
+{{< / highlight >}}
 
 # Irises
 
 The iris data set gives data on the dimensions of sepals and petals measured on 50 samples of three different species of iris (setosa, versicolor and virginica).
 
-{% highlight r %}
+{{< highlight r >}}
 > head(iris)
   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 1          5.1         3.5          1.4         0.2  setosa
@@ -183,14 +184,14 @@ The iris data set gives data on the dimensions of sepals and petals measured on 
 4          4.6         3.1          1.5         0.2  setosa
 5          5.0         3.6          1.4         0.2  setosa
 6          5.4         3.9          1.7         0.4  setosa
-{% endhighlight %}
+{{< / highlight >}}
 
 We will construct a model of iris species as a function of the other covariates.
 
-{% highlight r %}
+{{< highlight r >}}
 > iris.ct <- ctree(Species ~ .,data = iris)
 > plot(iris.ct)
-{% endhighlight %}
+{{< / highlight >}}
 
 The structure of the tree is essentially the same. Only the representation of the nodes differs because, whereas ozone was a continuous numerical variable, iris species is a categorical variable. The nodes are thus represented as bar plots. Node 2 is predominantly setosa, node 5 is mostly versicolor and node 7 is almost all viriginica. Node 6 is half versicolor and half virginica and corresponds to a category with long, narrow petals. It is interesting to note that the model depends only on the dimensions of the petals and not on those of the sepals.
 
@@ -198,18 +199,18 @@ The structure of the tree is essentially the same. Only the representation of th
 
 We can assess the quality of the model by constructing a [confusion matrix](http://en.wikipedia.org/wiki/Confusion_matrix). This shows that the model performs perfectly for setosa irises. For versicolor it also performs very well, only classifying one sample incorrectly as a virginica. For virginica it fails to correctly classify 5 samples. The model seems to perform well overall, however, this is based on the training data, so it is not really an objective assessment!
 
-{% highlight r %}
+{{< highlight r >}}
 > table(iris$Species, predict(iris.ct), dnn = c("Actual species", "Predicted species"))
               Predicted species
 Actual species setosa versicolor virginica
     setosa         50          0         0
     versicolor      0         49         1
     virginica       0          5        45
-{% endhighlight %}
+{{< / highlight >}}
 
 Finally, we can use the model to predict the species for new data.
 
-{% highlight r %}
+{{< highlight r >}}
 > new.iris  head(new.iris)
   Sepal.Length Sepal.Width Petal.Length Petal.Width
 1            0           0            1           1
@@ -222,13 +223,13 @@ Finally, we can use the model to predict the species for new data.
 Levels: setosa versicolor virginica
 > predict(iris.ct, newdata = new.iris, type = "node")
 [1] 2 7 6 5 7
-{% endhighlight %}
+{{< / highlight >}}
 
 # Mammography
 
 The mammography data details a study on the benefits of mammography.
 
-{% highlight r %}
+{{< highlight r >}}
 > head(mammoexp)
              ME             SYMPT PB HIST BSE            DECT
 1         Never          Disagree  7   No Yes Somewhat likely
@@ -237,13 +238,13 @@ The mammography data details a study on the benefits of mammography.
 4 Within a Year          Disagree 11   No Yes     Very likely
 5   Over a Year Strongly Disagree  7   No Yes     Very likely
 6         Never          Disagree  7   No Yes     Very likely
-{% endhighlight %}
+{{< / highlight >}}
 
 We will model the first field which indicates when last the sample had a mammogram.
 
-{% highlight r %}
+{{< highlight r >}}
 > plot(mammo.ct)
-{% endhighlight %}
+{{< / highlight >}}
 
 Again the nodes in the model appear in the form of a bar plot since they represent a categorical variable. The model classifies the data according to SYMPT and PB, where the former is an ordinal variable which reflects agreement with the statement "You do not need a mamogram unless you develop symptoms" and the latter is an indicator of the perceived benefit of mammography.
 
@@ -253,15 +254,15 @@ Again the nodes in the model appear in the form of a bar plot since they represe
 
 The GBSG2 data contains the data for the German Breast Cancer Study Group 2. Yes, I know, this is the second breast-related topic. It's not a preoccupation: it's in the documentation!
 
-{% highlight r %}
+{{< highlight r >}}
 > require(ipred)
 >
 > data("GBSG2", package = "ipred")
-{% endhighlight %}
+{{< / highlight >}}
 
 We will be focusing on the recurrence free survival time of the samples. This is [censored data](http://en.wikipedia.org/wiki/Censoring_(statistics)): for some of the samples the time to recurrence is known; for others there had been no recurrence at the time of the study.
 
-{% highlight r %}
+{{< highlight r >}}
 > survival = Surv(GBSG2$time, event = GBSG2$cens)
 > head(survival, 10)
  [1] 1814  2018   712  1807   772   448  2172+ 2161+  471  2014+
@@ -277,13 +278,13 @@ We will be focusing on the recurrence free survival time of the samples. This is
 8     no  65     Post    16     II      1     192     25 2161    0
 9     no  80     Post    39     II     30       0     59  471    1
 10    no  66     Post    18     II      7       0      3 2014    0
-{% endhighlight %}
+{{< / highlight >}}
 
 The samples for which recurrence time is not known are indicated by a "+" in the survival data. Next we construct the model and generate a plot.
 
-{% highlight r %}
+{{< highlight r >}}
 > GBSG2.ct plot(GBSG2.ct)
-{% endhighlight %}
+{{< / highlight >}}
 
 The model divides the data into four categories according to the values of three covariates: pnodes (number of positive nodes), horTh (hormonal therapy: yes or no) and progrec (progesterone receptor). The nodes reflect the distribution of survival times. For example, those samples with more than three positive nodes and progesterone receptor levels&nbsp;≤ 20 had the worst distribution of survival times. Those samples with fewer than 3 nodes and that did receive hormone therapy had significantly better survival times.
 

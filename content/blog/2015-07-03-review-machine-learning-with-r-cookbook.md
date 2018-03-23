@@ -1,19 +1,19 @@
 ---
-id: 1584
-title: 'Review: Machine Learning with R Cookbook'
-date: 2015-07-03T14:36:21+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Book Review
-  - Review
+- Book Review
+- Review
+date: 2015-07-03T14:36:21Z
+excerpt_separator: <!-- more -->
+id: 1584
 tags:
-  - Machine Learning
-  - '#rstats'
+- Machine Learning
+- '#rstats'
+title: 'Review: Machine Learning with R Cookbook'
+url: /2015/07/03/review-machine-learning-with-r-cookbook/
 ---
 
-<!-- more -->
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2015/07/Machine-Learning-With-R-Cookbook.png">
 

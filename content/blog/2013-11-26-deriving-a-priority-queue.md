@@ -1,26 +1,27 @@
 ---
-id: 613
-title: Deriving a Priority Queue from a Plain Vanilla Queue
-date: 2013-11-26T05:48:20+00:00
 author: Andrew B. Collier
-layout: post
+date: 2013-11-26T05:48:20Z
 excerpt_separator: <!-- more -->
+id: 613
 tags:
-  - priority queue
-  - queue
-  - '#rstats'
-  - Reference Class
-  - simulation
+- priority queue
+- queue
+- '#rstats'
+- Reference Class
+- simulation
+title: Deriving a Priority Queue from a Plain Vanilla Queue
+url: /2013/11/26/deriving-a-priority-queue/
 ---
+
 Following up on my recent post about [implementing a queue as a reference class](http://www.exegetic.biz/blog/2013/11/implementing-a-queue-as-a-reference-class/), I am going to derive a [Priority Queue](https://en.wikipedia.org/wiki/Priority_queue) class.
 
-<!-- more -->
+<!--more-->
 
 # Inheritance
 
 The syntax for Reference Class inheritance is quite intuitive.
 
-{% highlight r %}
+{{< highlight r >}}
 PriorityQueue <- setRefClass("PriorityQueue",
                              contains = "Queue",
                              fields = list(
@@ -45,7 +46,7 @@ PriorityQueue <- setRefClass("PriorityQueue",
                                  callSuper()
                                })
 )
-{% endhighlight %}
+{{< / highlight >}}
 
 We need to modify only two of the methods. The most important of these is insert(), which is where all of the important stuff happens! I've added an additional parameter, priority, which gives the relative importance of the item to be inserted (with larger values indicating greater importance). The items are sorted according to priority, where items of higher priority are shifted to the front of the queue. Amongst items which have the same priority, the order of insertion is retained. The pop() method also needs modification: when items are removed from the queue, the corresponding priority is also discarded.
 
@@ -53,18 +54,18 @@ We need to modify only two of the methods. The most important of these is insert
 
 We create an instance of the Priority Queue and then insert four items with varying levels of importance.
 
-{% highlight r %}
+{{< highlight r >}}
 > q4 <- PriorityQueue$new()
 >
 > q4$push("first", 1)
 > q4$push("second", 2)
 > q4$push("third", 1)
 > q4$push("fourth", 3)
-{% endhighlight %}
+{{< / highlight >}}
 
 According to the logic outlined above, the item "fourth" should move to the front of the queue since it has the highest priority. It will be followed by "second" which has next highest priority. Finally we have "first" and "second", which have the same priority and thus retain the order in which they were inserted.
 
-{% highlight r %}
+{{< highlight r >}}
 > q4$priorities
 [1] 3 2 1 1
 > q4$data
@@ -79,11 +80,11 @@ According to the logic outlined above, the item "fourth" should move to the fron
 
 [[4]]
 [1] "third"
-{% endhighlight %}
+{{< / highlight >}}
 
 Next we can start extracting items from the queue. As expected, item "fourth" comes out first, followed in turn by "second", "first" and "third". The methods which were inherited without modification work as expected.
 
-{% highlight r %}
+{{< highlight r >}}
 > q4$pop()
 [1] "fourth"
 > q4$priorities
@@ -102,6 +103,6 @@ Next we can start extracting items from the queue. As expected, item "fourth" co
 numeric(0)
 > q4$poll()
 NULL
-{% endhighlight %}
+{{< / highlight >}}
 
 This code is now published in the [liqueueR](https://github.com/DataWookie/liqueueR) package.

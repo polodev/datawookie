@@ -1,19 +1,20 @@
 ---
-id: 3779
-title: 'Conrad Wolfram: Teaching kids real math with computers'
-date: 2016-07-25T15:00:49+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Teaching
+- Teaching
+date: 2016-07-25T15:00:49Z
+excerpt_separator: <!-- more -->
+id: 3779
 tags:
-  - Teaching
-  - TED Talk
+- Teaching
+- TED Talk
+title: 'Conrad Wolfram: Teaching kids real math with computers'
+url: /2016/07/25/teaching-kids-real-math-computers/
 ---
+
 [Conrad Wolfram](https://twitter.com/conradwolfram) gives a thought provoking talk on a different way to teach Mathematics in schools.
 
-<!-- more -->
+<!--more-->
 
 <blockquote>
 We've had the biggest transformation of any ancient subject that I could ever imagine with computers. Calculating was typically the limiting step, and now often it isn't. So I think in terms of the fact that math has been liberated from calculating. But that math liberation didn't get into education yet. See, I think of calculating, in a sense, as the machinery of math. It's the chore. It's the thing you'd like to avoid if you can, like to get a machine to do. It's a means to an end, not an end in itself, and automation allows us to have that machinery.

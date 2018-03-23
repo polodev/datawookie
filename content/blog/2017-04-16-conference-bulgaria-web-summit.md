@@ -1,21 +1,21 @@
 ---
-title: 'Bulgaria Web Summit'
-date: 2017-04-16T08:00:00+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Conference
+- Conference
+date: 2017-04-16T08:00:00Z
+excerpt_separator: <!-- more -->
 tags:
-  - BWS
-  - #17bws
+- BWS
+- null
+title: Bulgaria Web Summit
+url: /2017/04/16/conference-bulgaria-web-summit/
 ---
 
 The [Bulgaria Web Summit](https://bulgariawebsummit.com/) happened on 7 and 8 April 2017 at the Inter Expo Center in Sofia, Bulgaria.
 
 ![]({{ site.baseurl }}/static/img/2017/04/logo-bulgaria-web-summit.png)
 
-<!-- more -->
+<!--more-->
 
 Thanks to [Alexander Todorov](https://www.youtube.com/user/alexxtodorov) the talk videos are now available. [Boyan Yordanov](https://twitter.com/specter_bg) has posted a great [review](https://medium.com/@boyanyordanov/bulgaria-web-summit-2017-recap-edf5cda7bbb5) of his experience of the conference.
 

@@ -1,19 +1,20 @@
 ---
-id: 3570
-title: 'Sportsbook Betting (Part 1): Odds'
-date: 2016-08-01T15:00:34+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
 - Statistics
+date: 2016-08-01T15:00:34Z
+excerpt_separator: <!-- more -->
+id: 3570
 tags:
 - '#rstats'
 - gambling
 - odds
 - probability
 - Sportsbook
+title: 'Sportsbook Betting (Part 1): Odds'
+url: /2016/08/01/sportsbook-odds/
 ---
+
 <!--
 References:
 
@@ -22,7 +23,7 @@ References:
 
 This series of articles was written as support material for Statistics exercises in a course that I'm teaching for [iXperience](http://ixperience.co.za/). In the series I'll be using illustrative examples for wagering on a variety of Sportsbook events including Horse Racing, Rugby and Tennis. The same principles can be applied across essentially all betting markets.
 
-<!-- more -->
+<!--more-->
 
 ## Odds
 
@@ -78,27 +79,27 @@ win    lose
 
 The Crusaders are playing the Hurricanes at the AMI Stadium. A bookmaker is offering 1/2 odds on the Crusaders and 2/1 odds on the Hurricanes. These fractional odds translate into decimal odds of 1.5 and 3.0 respectively. Based on these odds, the implied probabilities of either team winning are
 
-{% highlight r %}
+{{< highlight r >}}
 > (odds = c(Crusaders = 1.5, Hurricanes = 3))
  Crusaders Hurricanes 
        1.5        3.0 
 > (probability = 1 / odds)
  Crusaders Hurricanes 
    0.66667    0.33333 
-{% endhighlight %}
+{{< / highlight >}}
 
 The Crusaders are perceived as being twice as likely to win. Since they are clearly the favourites for this match it stands to reason that there would be more wagers placed on the Crusaders than on the Hurricanes. In fact, on the basis of the odds we would expect there to be roughly twice as much money placed on the Crusaders.
 
 A successful wager of 10 on the Crusaders would yield a net win of 5, while the same wager on the Hurricanes would stand to yield a net win of 20. If we include the initial stake then we get the corresponding gross payouts of 15 and 30.
 
-{% highlight r %}
+{{< highlight r >}}
 > (odds - 1) * 10                                          # Net win
 Crusaders Hurricanes 
 5         20 
 > odds * 10                                                # Gross Win
 Crusaders Hurricanes 
 15         30 
-{% endhighlight %}
+{{< / highlight >}}
 
 In keeping with the reasoning above, suppose that a total of 2000 was wagered on the Crusaders and 1000 was wagered on the Hurricanes. In the event of a win by the Crusaders the bookmaker would keep the 1000 wagered on the Hurricanes, but pay out 1000 on the Crusaders wagers, leaving no net profit. Similarly, if the Hurricanes won then the bookmaker would pocket the 2000 wagered on the Crusaders but pay out 2000 on the Hurricanes wagers, again leaving no net profit. The bookmaker's expected profit based on either outcome is zero. This does not represent a very lucrative scenario for a bookmaker. But, after all, this is a fair game.
 
@@ -106,7 +107,7 @@ From a punter's perspective, a wager on the Crusaders is more likely to be succe
 
 The expected outcome, which weights the payout by its likelihood, of a wager on either the Crusaders or the Hurricanes is zero.
 
-{% highlight r %}
+{{< highlight r >}}
 > (probability = c(win = 2, lose = 1) / 3)                 # Wager on Crusaders
 win    lose 
 0.66667 0.33333 
@@ -119,7 +120,7 @@ win    lose
 > payout = c(win = 2, lose = -1)
 > sum(probability * payout)
 [1] 0
-{% endhighlight %}
+{{< / highlight >}}
 
 Again this is because the odds represent a fair game.
 
@@ -133,14 +134,14 @@ The odds below are from an <a href="https://sport.netbet.co.uk/">online betting 
 
 We'll focus our attention on the overall winner, for which the decimal odds on Madison Keys are 1.83, while those on Venus Williams are 2.00.
 
-{% highlight r %}
+{{< highlight r >}}
 > (odds = c(Madison = 1.83, Venus = 2.00))
 Madison   Venus 
    1.83    2.00 
 > (probability = 1 / odds)
 Madison   Venus 
 0.54645 0.50000 
-{% endhighlight %}
+{{< / highlight >}}
 
 The first thing that you've observed is that the implied probabilities do not sum to 1. We'll return to this point in the <a href="http://www.exegetic.biz/blog/2016/08/sportsbook-bookmakers-odds/">next article</a>.
 
@@ -152,14 +153,14 @@ Let's look at another match. Below are the odds from the same <a href="https://s
 
 The odds for this game are profoundly different to those for the ladies match above.
 
-{% highlight r %}
+{{< highlight r >}}
 > (odds = c(Novak = 1.03, Radek = 16.00))
 Novak Radek 
  1.03 16.00 
 > (probability = 1 / odds)
   Novak   Radek 
 0.97087 0.06250 
-{% endhighlight %}
+{{< / highlight >}}
 
 Novak Djokovic is considered to be the almost certain winner. A wager on him thus has the potential to produce only 3% winnings. Radek Stepanek, on the other hand, is a rank outsider in this match. His perceived chance of winning is low. As a result, the potential returns should he win are large.
 

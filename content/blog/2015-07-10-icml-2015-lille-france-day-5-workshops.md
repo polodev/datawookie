@@ -1,20 +1,20 @@
 ---
-id: 1678
-title: 'ICML 2015 (Lille, France): Day 5 (Workshops)'
-date: 2015-07-10T19:10:37+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Conference Review
+- Conference Review
+date: 2015-07-10T19:10:37Z
+excerpt_separator: <!-- more -->
+id: 1678
 tags:
-  - ICML
-  - ICML2015
-  - Machine Learning
-  - Open Source
+- ICML
+- ICML2015
+- Machine Learning
+- Open Source
+title: 'ICML 2015 (Lille, France): Day 5 (Workshops)'
+url: /2015/07/10/icml-2015-lille-france-day-5-workshops/
 ---
 
-<!-- more -->
+<!--more-->
 
 On my final day at ICML I attended the [Workshop on Machine Learning Open Source Software: Open Ecosystems](http://mloss.org/workshop/icml15/). The topics included not only Open Source Software (OSS) for doing Machine Learning but also researchers publishing their work under an Open Source model. The latter is obviously good for Science!
 
@@ -37,9 +37,9 @@ The code is template based (similar to the [Armadillo C++ Linear Algebra Library
 
 mlpack comes with a simple command line tool which does Collaborative Filtering.
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ cf -i MovieLens-100k.csv -R 10 -q query.csv -a RegSVD -n 10
-{% endhighlight %}
+{{< / highlight >}}
 
 Of course, under the hood this tool is implemented using the mlpack library.
 

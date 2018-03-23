@@ -1,21 +1,22 @@
 ---
-id: 720
-title: R Interface to Myfxbook
-date: 2014-04-17T11:16:04+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
 - FOREX
 - Trading
+date: 2014-04-17T11:16:04Z
+excerpt_separator: <!-- more -->
+id: 720
 tags:
 - FOREX
 - Myfxbook
 - Object Oriented
 - '#rstats'
 - Reference Class
+title: R Interface to Myfxbook
+url: /2014/04/17/r-interface-to-myfxbook/
 ---
-[Myfxbook](https://www.myfxbook.com/ "Myfxbook") provides an interface to your FOREX trading accounts as well as an active trading community. <!-- more --> It has a broad range of functionality including
+
+[Myfxbook](https://www.myfxbook.com/ "Myfxbook") provides an interface to your FOREX trading accounts as well as an active trading community. <!--more--> It has a broad range of functionality including
 
 * a responsive interface to the FOREX market; 
 * tools for performing statistical analyses on your trades; 
@@ -28,7 +29,7 @@ There is an [API](http://www.myfxbook.com/api "Myfxbook API") which facilitates 
 
 The first thing we need to do is connect to Myfxbook. To do this we create an instance of the reference class. The class constructor takes an email address and password as arguments. The API returns a session identifier which is then retained as a data member in the class. For security reasons the email address and password are not retained.
 
-{% highlight r %}
+{{< highlight r >}}
 > fx <- myfxbook$new(email = "xxxxxx@xxxxxxx.xxx", password = "xxxxx", debug = FALSE)
 > fx
 Reference class object of class "myfxbook"
@@ -36,11 +37,11 @@ Field "debug":
 [1] FALSE
 Field "session":
 [1] "Xuq0yAJBOrCu9PfI2EWC186040"
-{% endhighlight %}
+{{< / highlight >}}
 
 We can get the details for the accounts which we have linked to the system. I have just hooked up a single demo account for the purposes of this article.
 
-{% highlight r %}
+{{< highlight r >}}
 > fx$my.accounts()
       id         name description accountId gain absGain daily monthly
 2 893887 Demo Account                625546    0       0     0       0
@@ -50,22 +51,22 @@ We can get the details for the accounts which we have linked to the system. I ha
 2 TRUE 04/15/2014 05:55 04/15/2014 02:45 04/14/2014 00:00        0     0
   commission currency profitFactor pips invitationUrl    server
 2          0      USD            0    0               Alpari UK
-{% endhighlight %}
+{{< / highlight >}}
 
 And we can also see the status of other accounts which we are watching.
 
-{% highlight r %}
+{{< highlight r >}}
 > fx$watched.accounts()
                name    gain drawdown  demo  change
 2  Asset management 2004.80    20.24 FALSE 2004.80
 21        berezhnoi 3708.64    42.01 FALSE 3708.64
 3  Forex Growth Bot  272.39    93.13 FALSE  243.41
 4        WallStreet  455.67    27.95 FALSE  455.67
-{% endhighlight %}
+{{< / highlight >}}
 
 There is an interface to the [community outlook](http://www.myfxbook.com/community/outlook) data, which gives an indication of the number and volume of trades as a function of currency pair.
 
-{% highlight r %}
+{{< highlight r >}}
 > outlook = fx$outlook()
 > dim(outlook)
 [1] 57 10
@@ -77,7 +78,7 @@ There is an interface to the [community outlook](http://www.myfxbook.com/communi
 4   GBPJPY              55             44      642.58     520.81          1376           1798           1163      167.0348     171.1947
 5   USDCAD              50             49     1176.98    1138.17          3631           4135           2315        1.0875       1.1046
 6   EURAUD              41             58      220.25     314.09           988            822            534        1.4332       1.4994
-{% endhighlight %}
+{{< / highlight >}}
 
 To get a feeling for the relative proportion of long and short trades across all currencies we can put together an informative plot. It requires a little leg work first though to get the data into a workable format:
 
@@ -87,7 +88,7 @@ To get a feeling for the relative proportion of long and short trades across all
 4. neaten up labels for long and short percentages; and 
 5. sort according to fraction of shorts.
 
-{% highlight r %}
+{{< highlight r >}}
 > outlook.percents = melt(outlook, id.vars = "name",
 +                         measure.vars = paste0(c("short", "long"), "Percentage"))
 > outlook.percents = ddply(outlook.percents, .(name), function(df) {
@@ -107,13 +108,13 @@ To get a feeling for the relative proportion of long and short trades across all
 +   scale_fill_brewer(name = "", palette="BuGn") +
 +   theme_classic() +
 +   theme(axis.text.x = element_text(angle = 45, vjust = 0.5))
-{% endhighlight %}
+{{< / highlight >}}
 
 <img src="{{ site.baseurl }}/static/img/2014/04/long-short-proportion-pairs.png">
 
 The outlook data can also be broken down by country for a single currency pair.
 
-{% highlight r %}
+{{< highlight r >}}
 > outlook = fx$outlook.country("EURUSD")
 > dim(outlook)
 [1] 159   6
@@ -125,7 +126,7 @@ The outlook data can also be broken down by country for a single currency pair.
 4       ANGUILLA   AI       0.00        0.00             0              0
 5         BHUTAN   BT       0.00        0.00             0              0
 6          JAPAN   JP      19.10       28.03            86            132
-{% endhighlight %}
+{{< / highlight >}}
 
 As before, making sense of this is aided by a visualisation. Below is a plot showing the number of long and short positions on EURUSD for a range of countries. We can see that overall the most trades have originated in Spain and Russia and that the majority of these positions are shorts.
 
@@ -133,7 +134,7 @@ As before, making sense of this is aided by a visualisation. Below is a plot sho
 
 We can also get a list of our open trades and pending orders.
 
-{% highlight r %}
+{{< highlight r >}}
 > fx$open.trades(893887)
           openTime symbol action openPrice     tp      sl profit pips  swap magic
 1 04/15/2014 05:46 EURUSD    Buy   1.38166 1.3867 1.37866  54.25 21.7 -0.13     0
@@ -144,7 +145,7 @@ We can also get a list of our open trades and pending orders.
 > fx$open.orders(893887)
           openTime symbol    action openPrice tp sl size.type size.value
 1 04/15/2014 05:47 USDJPY Buy Limit     101.3  0  0      lots       0.25
-{% endhighlight %}
+{{< / highlight >}}
 
 Here the argument is a Myfxbook account number, which is either found on your dashboard (see image below) or from the id field in the output from my.accounts() above.
 
@@ -152,24 +153,24 @@ Here the argument is a Myfxbook account number, which is either found on your da
 
 Daily changes in the account balance can also be retrieved.
 
-{% highlight r %}
+{{< highlight r >}}
 > fx$daily.gain(893887, "2014-04-01", "2014-04-17")
          date value profit
 2  04/14/2014   0.0   0.00
 21 04/15/2014  -1.1 -55.16
 22 04/16/2014   2.9 200.00
-{% endhighlight %}
+{{< / highlight >}}
 
 And full details of all transactions can be obtained as a history.
 
-{% highlight r %}
+{{< highlight r >}}
 > fx$history(893887)
           openTime        closeTime symbol  action openPrice closePrice      tp      sl pips  profit interest commission size.type size.value comment
 1 04/16/2014 08:04 04/16/2014 11:30 GBPUSD     Buy   1.67254    1.68054 1.68054 1.66554   80  200.00        0          0      lots       0.25    <NA>
 2 04/15/2014 08:03 04/15/2014 15:25 AUDUSD     Buy   0.93931    0.93731 0.94181 0.93731  -20  -50.00        0          0      lots       0.25    <NA>
 3 04/15/2014 13:28 04/15/2014 13:28 USDJPY     Buy 101.84000  101.82000 0.00000 0.00000   -2   -5.16        0          0      lots       0.25    <NA>
 4 04/14/2014 13:40 04/14/2014 13:40        Deposit   0.00000    0.00000      NA      NA    0 5000.00        0          0      lots            Deposit
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Conclusion
 

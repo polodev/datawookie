@@ -1,53 +1,54 @@
 ---
-id: 2318
-title: 'PhysicalConstants.jl: Julia Package of Physical Constants'
-date: 2015-09-21T15:00:04+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Julia
+- Julia
+date: 2015-09-21T15:00:04Z
+excerpt_separator: <!-- more -->
+id: 2318
 tags:
-  - '#julialang'
-  - Julia
+- '#julialang'
+- Julia
+title: 'PhysicalConstants.jl: Julia Package of Physical Constants'
+url: /2015/09/21/physicalconstants-jl-julia-package-of-physical-constants/
 ---
+
 PhysicalConstants is a Julia package which has the values of a range of physical constants. Currently MKS and CGS units are supported.
 
-<!-- more -->
+<!--more-->
 
 ## Installation
 
 The package can be installed directly from its [github repository](https://github.com/DataWookie/PhysicalConstants.jl):
 
-{% highlight julia %}
+{{< highlight julia >}}
 Pkg.clone("https://github.com/DataWookie/PhysicalConstants.jl")
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Usage
 
 Usage is pretty straightforward. Start off by loading the package.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> using PhysicalConstants
-{% endhighlight %}
+{{< / highlight >}}
 
 Now, for example, access Earth's gravitational acceleration in MKS units.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> PhysicalConstants.MKS.GravAccel
 9.80665
-{% endhighlight %}
+{{< / highlight >}}
   
 Or in CGS units.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> PhysicalConstants.CGS.GravAccel
 980.665
-{% endhighlight %}
+{{< / highlight >}}
   
 Or, finally, in Imperial units.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> PhysicalConstants.Imperial.GravAccel
 32.174049
-{% endhighlight %}
+{{< / highlight >}}

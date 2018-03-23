@@ -1,13 +1,11 @@
 ---
-id: 1060
-title: 'Downloading Options Data in R: An Update'
-date: 2015-01-14T05:30:16+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
 - Economics
 - Trading
+date: 2015-01-14T05:30:16Z
+excerpt_separator: <!-- more -->
+id: 1060
 tags:
 - expiration date
 - JSON
@@ -15,10 +13,13 @@ tags:
 - Options
 - '#rstats'
 - regular expression
+title: 'Downloading Options Data in R: An Update'
+url: /2015/01/14/download-option-chain-from-google-finance-in-r-an-update/
 ---
+
 I recently read an [article](http://mktstk.wordpress.com/2014/12/29/start-trading-like-a-quant-download-option-chains-from-google-finance-in-r/) which showed how to download Option Chain data from [Google Finance](https://www.google.com/finance) using R. Interestingly, that article appears to be a close adaption of [another article](http://www.drtomstarke.com/index.php/option-chains-from-google-finance-api) which does the same thing using Python.
 
-<!-- more -->
+<!--more-->
 
 While playing around with the code from these articles I noticed a couple of things that might benefit from minor tweaks. Before I look at those though, it's worthwhile pointing out that there already is a function in [quantmod](http://www.quantmod.com/) for retrieving Option Chain data from Yahoo! Finance. What I am doing here is thus more for my own personal edification (but hopefully you will find it interesting too!).
 
@@ -32,26 +33,26 @@ An [Option Chain](http://www.investopedia.com/terms/o/optionchain.asp) is just a
 
 First we need to load a few packages which facilitate the downloading, parsing and manipulation of the data.
 
-{% highlight r %}
+{{< highlight r >}}
 > library(RCurl)
 > library(jsonlite)
 > library(plyr)
-{% endhighlight %}
+{{< / highlight >}}
 
 We'll be retrieving the data in [JSON](http://json.org/) format. Somewhat disturbingly the JSON data from Google Finance does not appear to be fully compliant with the JSON standards because the keys are not quoted. We'll use a helper function which will run through the data and insert quotes around each of the keys. The original code for this function looped through a list of key names. This is a little inefficient and would also be problematic if additional keys were introduced. We'll get around that by using a different approach which avoids stipulating key names.
 
-{% highlight r %}
+{{< highlight r >}}
 > fixJSON <- function(json){
 +   gsub('([^,{:]+):', '"\\1":', json)
 + }
-{% endhighlight %}
+{{< / highlight >}}
 
 To make the download function more concise we'll also define two URL templates.
 
-{% highlight r %}
+{{< highlight r >}}
 > URL1 = 'http://www.google.com/finance/option_chain?q=%s%s&output=json'
 > URL2 = 'http://www.google.com/finance/option_chain?q=%s%s&output=json&expy=%d&expm=%d&expd=%d'
-{% endhighlight %}
+{{< / highlight >}}
 
 And finally the download function itself, which proceeds through the following steps for a specified ticker symbol:
 
@@ -59,7 +60,7 @@ And finally the download function itself, which proceeds through the following s
 * extracts expiration dates from the summary data and downloads the options data for each of those dates; 
 * concatenates these data into a single structure, neatens up the column names and selects a subset.
 
-{% highlight r %}
+{{< highlight r >}}
 > getOptionQuotes <- function(symbol, exchange = NA) {
 +   exchange = ifelse(is.na(exchange), "", paste0(exchange, ":"))
 +   #
@@ -101,21 +102,21 @@ And finally the download function itself, which proceeds through the following s
 +   #
 +   options[, c("symbol", "type", "expiry", "strike", "premium", "bid", "ask", "open.interest", "retrieved")]
 + }
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Results
 
 Let's give it a whirl. (The data below were retrieved on Saturday 10 January 2015).
 
-{% highlight r %}
+{{< highlight r >}}
 > AAPL = getOptionQuotes("AAPL")
 > nrow(AAPL)
 [1] 1442
-{% endhighlight %}
+{{< / highlight >}}
 
 This is what the resulting data look like, with all available expiration dates consolidated into a single table:
 
-{% highlight r %}
+{{< highlight r >}}
 > head(AAPL)
   symbol type     expiry strike premium   bid   ask open.interest           retrieved
 1   AAPL Call 2015-08-28     70   36.00 35.50 37.00             0 2015-08-22 10:03:19
@@ -132,7 +133,7 @@ This is what the resulting data look like, with all available expiration dates c
 1046   AAPL  Put 2017-01-20    185   73.55 77.75 81.15          1478 2015-08-22 10:03:30
 1047   AAPL  Put 2017-01-20    190   78.30 82.50 85.35          2306 2015-08-22 10:03:30
 1048   AAPL  Put 2017-01-20    195   88.50 87.35 90.25          7808 2015-08-22 10:03:30
-{% endhighlight %}
+{{< / highlight >}}
 
 There is a load of data there. To get an idea of what it looks like we can generate a couple of plots. Below is the Open Interest as a function of Strike Price across all expiration dates. The underlying price is indicated by the vertical dashed line. As one might expect, the majority of interest is associated with the next expiration date on 17 January 2015.
 

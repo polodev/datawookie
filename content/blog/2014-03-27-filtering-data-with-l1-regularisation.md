@@ -1,21 +1,22 @@
 ---
-id: 687
-title: Filtering Data with L1 Regularisation
-date: 2014-03-27T12:39:04+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Indicators
-  - Trading
+- Indicators
+- Trading
+date: 2014-03-27T12:39:04Z
+excerpt_separator: <!-- more -->
+id: 687
 tags:
-  - Algorithmic Trading
-  - FOREX
-  - optimisation
-  - '#rstats'
-  - regularisation
+- Algorithmic Trading
+- FOREX
+- optimisation
+- '#rstats'
+- regularisation
+title: Filtering Data with L1 Regularisation
+url: /2014/03/27/filtering-data-with-l1-regularisation/
 ---
-A few days ago I posted about [Filtering Data with L2 Regularisation](http://www.exegetic.biz/blog/2014/03/filtering-data-with-l2-regularisation/). Today I am going to explore the other filtering technique described in the [paper](http://arxiv.org/abs/1403.4069) by Tung-Lam Dao. <!-- more --> This is similar to the filter discussed in my previous post, but uses a slightly different objective function:
+
+A few days ago I posted about [Filtering Data with L2 Regularisation](http://www.exegetic.biz/blog/2014/03/filtering-data-with-l2-regularisation/). Today I am going to explore the other filtering technique described in the [paper](http://arxiv.org/abs/1403.4069) by Tung-Lam Dao. <!--more--> This is similar to the filter discussed in my previous post, but uses a slightly different objective function:
 
 $$ \frac{1}{2} \sum_{t=1}^n (y_t - x_t)^2 + \lambda \sum_{t=2}^{n-1} |x_{t-1} - 2 x_t + x_{t+1}| $$
 
@@ -25,7 +26,7 @@ where the regularisation term now employs the L1 "taxi cab" metric (rather than 
 
 The filter function is a slight adaption of the one I used previously.
 
-{% highlight r %}
+{{< highlight r >}}
 l1filter.optim <- function (x, lambda = 0.0) {
   objective <- function(y, lambda) {
     n <- length(x)
@@ -49,23 +50,23 @@ l1filter.optim <- function (x, lambda = 0.0) {
   
   return(fit$par)
 }
-{% endhighlight %}
+{{< / highlight >}}
 
 I changed optimisation method from BFGS to conjugate gradient (CG) because, upon testing, the latter required fewer evaluations of both the objective function and its gradient. I also played around with the various update types used with conjugate gradient and found that Beale–Sorenson provided better performance than either Fletcher–Reeves or Polak–Ribiere.
 
 A noisy sawtooth waveform serves well to demonstrate this filter.
 
-{% highlight r %}
+{{< highlight r >}}
 > y <- rep(0:10, 5)
 > #
 > # Add in some noise
 > #
 > y <- y + rnorm(length(y))
-{% endhighlight %}
+{{< / highlight >}}
 
 We systematically apply the L1 filter with a range of regularisation parameters extending from 1 to 10000 in multiples of 10.
 
-{% highlight r %}
+{{< highlight r >}}
 > lambda = c(0, 10**(0:4))
 > 
 > Y1 <- lapply(lambda, function(L) {l1filter.optim(y, L)})
@@ -83,11 +84,11 @@ We systematically apply the L1 filter with a range of regularisation parameters 
 4 4 3.56972      0 3.56972
 5 5 3.86495      0 3.86495
 6 6 7.40162      0 7.40162
-{% endhighlight %}
+{{< / highlight >}}
 
 And then use the L2 filter with the same regularisation parameters for comparison.
 
-{% highlight r %}
+{{< highlight r >}}
 > Y2 <- lapply(lambda, function(L) {l2filter.matrix(y, L)})
 > #
 > Y2 = do.call(cbind, Y2)
@@ -103,7 +104,7 @@ And then use the L2 filter with the same regularisation parameters for compariso
 4 4      0 3.56972
 5 5      0 3.86495
 6 6      0 7.40162
-{% endhighlight %}
+{{< / highlight >}}
 
 In the plot below the two filtered signals are compared to the raw data (points), with the L1 filtered data plotted as a solid line and the L2 filtered data as a dashed line.
 

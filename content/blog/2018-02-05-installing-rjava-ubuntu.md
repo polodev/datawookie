@@ -1,41 +1,32 @@
 ---
-title: "Installing rJava on Ubuntu"
-date: 2018-02-05T07:00:00+00:00
 author: Andrew B. Collier
+date: 2018-02-05T07:00:00Z
 excerpt_separator: <!-- more -->
-layout: post
 tags:
-  - #rstats
+- null
+title: Installing rJava on Ubuntu
+url: /2018/02/05/installing-rjava-ubuntu/
 ---
 
 Installing the rJava package on Ubuntu is not quite as simple as most other R packages. Some quick notes on how to do it.
 
-<!-- more -->
+<!--more-->
 
 1. Install the Java Runtime Environment (JRE).
-
-{% highlight text %}
+    {{< highlight text >}}
 sudo apt-get install -y default-jre
-{% endhighlight %}
-
-{:start="2"}
+{{< / highlight >}}
 2. Install the Java Development Kit (JDK).
-
-{% highlight text %}
+    {{< highlight text >}}
 sudo apt-get install -y default-jdk
-{% endhighlight %}
-
-{:start="3"}
+{{< / highlight >}}
 3. Update where R expects to find various Java files.
-
-{% highlight text %}
+    {{< highlight text >}}
 sudo R CMD javareconf
-{% endhighlight %}
-
-{:start="4"}
+{{< / highlight >}}
 4. Install the package.
-{% highlight r %}
+    {{< highlight r >}}
 > install.packages("rJava")
-{% endhighlight %}
+{{< / highlight >}}
 
 Sorted!

@@ -1,18 +1,19 @@
 ---
-id: 940
-title: Plotting Flows with riverplot
-date: 2014-08-14T12:58:53+00:00
 author: Andrew B. Collier
-layout: post
+date: 2014-08-14T12:58:53Z
 excerpt_separator: <!-- more -->
+id: 940
 tags:
-  - '#rstats'
-  - riverplot
-  - Sankey Plot
+- '#rstats'
+- riverplot
+- Sankey Plot
+title: Plotting Flows with riverplot
+url: /2014/08/14/plotting-flows-with-riverplot/
 ---
+
 I have been looking for an intuitive way to plot flows or connections between states in a process. An obvious choice is a [Sankey Plot](https://en.wikipedia.org/wiki/Sankey_diagram), but I could not find a satisfactory implementation in R... until I read the [riverplot](http://logfc.wordpress.com/2014/02/27/riverplot/) post by January Weiner. His riverplot package does precisely what I am need.
 
-<!-- more -->
+<!--more-->
 
 Getting your data into the right format is a slightly clunky procedure. However, my impression is that the package is still a work in progress and it's likely that this process will change in the future. For now though, here is an illustration of how a multi-level plot can be constructed.
 
@@ -22,7 +23,7 @@ The plan for this example is to have four nodes at each of six layers, with flow
 
 The edges data frame consists of records with a "from" node (N1) and a "to" node (N2) as well as a value for the flow between them. Here I systematically construct a grid of random flows and remove some records to break the symmetry.
 
-{% highlight r %}
+{{< highlight r >}}
 > edges = data.frame(N1 = paste0(rep(LETTERS[1:4], each = 4), rep(1:5, each = 16)),
 +                    N2 = paste0(rep(LETTERS[1:4], 4), rep(2:6, each = 16)),
 +                    Value = runif(80, min = 2, max = 5) * rep(c(1, 0.8, 0.6, 0.4, 0.3), each = 16),
@@ -37,11 +38,11 @@ The edges data frame consists of records with a "from" node (N1) and a "to" node
 7  B1 C2 2.8756
 9  C1 A2 4.5099
 10 C1 B2 4.1782
-{% endhighlight %}
+{{< / highlight >}}
 
 The names of the nodes are then extracted from the edge data frame. Horizontal and vertical locations for the nodes are calculated based on the labels. These locations are not strictly necessary because the package will work out sensible default values for you.
 
-{% highlight r %}
+{{< highlight r >}}
 > nodes = data.frame(ID = unique(c(edges$N1, edges$N2)), stringsAsFactors = FALSE)
 > #
 > nodes$x = as.integer(substr(nodes$ID, 2, 2))
@@ -56,11 +57,11 @@ C1 C1 1 2
 D1 D1 1 3
 A2 A2 2 0
 B2 B2 2 1
-{% endhighlight %}
+{{< / highlight >}}
 
 Finally we construct a list of styles which will be applied to each node. It's important to choose suitable colours and introduce transparency for overlaps (which is done here by pasting "60" onto the RGB strings).
 
-{% highlight r %}
+{{< highlight r >}}
 > library(RColorBrewer)
 > #
 > palette = paste0(brewer.pal(4, "Set1"), "60")
@@ -69,25 +70,25 @@ Finally we construct a list of styles which will be applied to each node. It's i
 +   list(col = palette[n+1], lty = 0, textcol = "black")
 + })
 > names(styles) = nodes$ID
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Constructing the riverplot Object
 
 Now we are in a position to construct the riverplot object. We do this by joining the node, edge and style data structures into a list and then adding "riverplot" to the list of class attributes.
 
-{% highlight r %}
+{{< highlight r >}}
 > library(riverplot)
 > 
 > rp <- list(nodes = nodes, edges = edges, styles = styles)
 > #
 > class(rp) <- c(class(rp), "riverplot")
-{% endhighlight %}
+{{< / highlight >}}
 
 Producing the plot is then simple.
 
-{% highlight r %}
+{{< highlight r >}}
 > plot(rp, plot_area = 0.95, yscale=0.06)
-{% endhighlight %}
+{{< / highlight >}}
 
 <img src="{{ site.baseurl }}/static/img/2014/08/riverplot-example.png">
 

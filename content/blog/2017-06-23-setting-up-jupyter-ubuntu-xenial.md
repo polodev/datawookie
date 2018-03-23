@@ -1,51 +1,52 @@
 ---
-title: 'Setting up Jupyter with Python 3 on Ubuntu'
-date: 2017-06-23T05:00:00+00:00
 author: Andrew B. Collier
+categories:
+- Python
+date: 2017-06-23T05:00:00Z
 excerpt_separator: <!-- more -->
-layout: post
-category: Python
 tags:
-  - Jupyter
-  - Linux
-  - Ubuntu
-  - 'Xenial Xerus'
+- Jupyter
+- Linux
+- Ubuntu
+- Xenial Xerus
+title: Setting up Jupyter with Python 3 on Ubuntu
+url: /2017/06/23/setting-up-jupyter-ubuntu-xenial/
 ---
 
 ![]({{ site.baseurl }}/static/img/2017/06/jupyter-test-notebook.png)
 
 A short note on how to set up Jupyter Notebooks with Python 3 on Ubuntu. The instructions are specific to Xenial Xerus (16.04) but are likely to be helpful elsewhere too.
 
-<!-- more -->
+<!--more-->
 
 ## Python Prerequisites
 
 Make sure that you have `python3` and `pip3` installed.
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ sudo apt install python3
 $ sudo apt install python3-pip
-{% endhighlight %}
+{{< / highlight >}}
 
 Also install the IPython shell.
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ sudo apt install ipython3
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Install Jupyter
 
 It's then a simple matter to install Jupyter.
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ pip3 install jupyter
-{% endhighlight %}
+{{< / highlight >}}
 
 That installed the executables into `~/.local/bin/`, which then needs to be added to the execution path.
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ export PATH=$PATH:~/.local/bin/
-{% endhighlight %}
+{{< / highlight >}}
 
 It's a good idea to add that to one of your startup scripts, probably `.bashrc`.
 
@@ -53,9 +54,9 @@ It's a good idea to add that to one of your startup scripts, probably `.bashrc`.
 
 At this stage you should be ready to roll.
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ jupyter notebook
-{% endhighlight %}
+{{< / highlight >}}
 
 That will open up a new Jupyter browser tab. From there you'll be able to browse to find existing notebooks or create a new notebook by pressing the `New` dropdown and selecting the notebook type.
 

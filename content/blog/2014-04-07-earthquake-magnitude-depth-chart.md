@@ -1,22 +1,23 @@
 ---
-id: 697
-title: 'Earthquakes: Magnitude / Depth Chart'
-date: 2014-04-07T12:19:58+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Earthquake
-  - Science
+- Earthquake
+- Science
+date: 2014-04-07T12:19:58Z
+excerpt_separator: <!-- more -->
+id: 697
 tags:
-  - Earthquake
-  - ggplot2
-  - Gutenberg–Richter law
-  - '#rstats'
+- Earthquake
+- ggplot2
+- Gutenberg–Richter law
+- '#rstats'
+title: 'Earthquakes: Magnitude / Depth Chart'
+url: /2014/04/07/earthquake-magnitude-depth-chart/
 ---
+
 I am working on a project related to secondary effects of earthquakes. To guide me in the analysis I need a chart showing the location, magnitude and depth of recent earthquakes. There are a host of such charts available already, but since I had the required data on hand, it seemed like a good idea to take a stab at it myself.
 
-<!-- more -->
+<!--more-->
 
 ## Getting the Data
 
@@ -24,7 +25,7 @@ The data was sourced from the [US Geological Survey](http://earthquake.usgs.gov/
 
 Loading the data into R is then simple. Some small transformations are required in order to interpret the time field in the data. I discarded a few columns which were not going to be useful, and added fields for the year and date of observation (for convenience alone: these data were already in the time field).
 
-{% highlight r %}
+{{< highlight r >}}
 > catalog <- read.csv(file.path("data", "earthquake-catalog.csv"), stringsAsFactors = FALSE)
 > #
 > catalog <- within(catalog, {
@@ -36,11 +37,11 @@ Loading the data into R is then simple. Some small transformations are required 
 + })
 >
 > catalog <- catalog[, c(12, 16, 17, 1, 2:5, 14)]
-{% endhighlight %}
+{{< / highlight >}}
 
 This is what the resulting data frame looks like:
 
-{% highlight r %}
+{{< highlight r >}}
 > head(catalog)
           id year       date                time latitude longitude depth mag                           place
 1 usc000lv53 2013 2013-12-31 2013-12-31 23:41:47  19.1673  120.0807 10.28 5.2  92km NW of Davila, Philippines
@@ -49,13 +50,13 @@ This is what the resulting data frame looks like:
 4 usc000luwe 2013 2013-12-31 2013-12-31 20:01:06  19.1181  120.2719 10.95 5.7 77km NNW of Burgos, Philippines
 5 usb000m2ub 2013 2013-12-31 2013-12-31 13:55:02 -17.6528 -173.6869 15.38 5.0      114km NNE of Neiafu, Tonga
 6 usc000lumu 2013 2013-12-31 2013-12-31 08:36:30 -15.6555 -172.9340 31.82 5.1       93km ENE of Hihifo, Tonga
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Making the Charts
 
 Time to generate those charts. There are lots of ways to make maps in R, I chose to use a generic option: ggplot2.
 
-{% highlight r %}
+{{< highlight r >}}
 > require(ggplot2)
 > require(maps)
 > require(grid)
@@ -78,7 +79,7 @@ Time to generate those charts. There are lots of ways to make maps in R, I chose
 +         legend.text = element_text(size = 6),
 +         legend.title = element_text(size = 8, face = "plain"),
 +         panel.background = element_rect(fill='#D6E7EF'))
-{% endhighlight %}
+{{< / highlight >}}
 
 The resulting plot gives the location of the earthquakes as points, with magnitudes indicated by the sizes of the points and depths given by their colour.
 
@@ -94,13 +95,13 @@ I made another chart showing the distribution of earthquakes broken down by year
 
 While we are taking a high level look at the data, it's interesting to see how the magnitudes are distributed. A logartihmic scale is necessary to make the frequencies visible over the full range of magnitudes.
 
-{% highlight r %}
+{{< highlight r >}}
 ggplot(catalog, aes(x = mag)) +
   xlab("Magnitude") + ylab("Number of Earthquakes") +
   stat_bin(drop = TRUE, binwidth = 0.25) +
   scale_y_log10(breaks = c(1, 10, 100, 1000)) +
   theme_classic()
-{% endhighlight %}
+{{< / highlight >}}
 
 <img src="{{ site.baseurl }}/static/img/2014/04/earthquake-magnitude-histogram.png">
 

@@ -1,23 +1,23 @@
 ---
-id: 2452
-title: '#MonthOfJulia Day 29: Distances'
-date: 2015-10-06T15:00:36+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=2452
-excerpt_separator: <!-- more -->
 categories:
-  - Julia
+- Julia
+date: 2015-10-06T15:00:36Z
+excerpt_separator: <!-- more -->
+guid: http://www.exegetic.biz/blog/?p=2452
+id: 2452
 tags:
-  - '#julialang'
-  - '#MonthOfJulia'
-  - distances
-  - Euclidean Distance
-  - Julia
-  - Manhattan Distance
+- '#julialang'
+- '#MonthOfJulia'
+- distances
+- Euclidean Distance
+- Julia
+- Manhattan Distance
+title: '#MonthOfJulia Day 29: Distances'
+url: /2015/10/06/monthofjulia-day-29-distances/
 ---
 
-<!-- more -->
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2015/09/Julia-Logo-Distances.png" >
 
@@ -25,29 +25,29 @@ Today we'll be looking at the [Distances](https://github.com/JuliaStats/Distance
 
 Note that there is a Distance package as well (singular!), which was deprecated in favour of the Distances package. So please install and load the latter.
   
-{% highlight julia %}
+{{< highlight julia >}}
 julia> using Distances
-{% endhighlight %}
+{{< / highlight >}}
 
 We'll start by finding the distance between a pair of vectors.
   
-{% highlight julia %}
+{{< highlight julia >}}
 julia> x = [1., 2., 3.];
 julia> y = [-1., 3., 5.];
-{% endhighlight %}
+{{< / highlight >}}
   
 A simple application of Pythagora's Theorem will tell you that the Euclidean distance between the tips of those vectors is 3. We can confirm our maths with Julia though. The general form of a distance calculation uses `evaluate()`, where the first argument is a distance type. Common distance metrics (like Euclidean distance) also come with convenience functions.
   
-{% highlight julia %}
+{{< highlight julia >}}
 julia> evaluate(Euclidean(), x, y)
 3.0
 julia> euclidean(x, y)
 3.0
-{% endhighlight %}
+{{< / highlight >}}
   
 We can just as easily calculate other metrics like the city block (or Manhattan), cosine or [Chebyshev](https://en.wikipedia.org/wiki/Chebyshev_distance) distances.
   
-{% highlight julia %}
+{{< highlight julia >}}
 julia> evaluate(Cityblock(), x, y)
 5.0
 julia> cityblock(x, y)
@@ -56,18 +56,18 @@ julia> evaluate(CosineDist(), x, y)
 0.09649209709474871
 julia> evaluate(Chebyshev(), x, y)
 2.0
-{% endhighlight %}
+{{< / highlight >}}
 
 Moving on to distances between the columns of matrices. Again we'll define a pair of matrices for illustration.
   
-{% highlight julia %}
+{{< highlight julia >}}
 julia> X = [0 1; 0 2; 0 3];
 julia> Y = [1 -1; 1 3; 1 5];
-{% endhighlight %}
+{{< / highlight >}}
   
 With `colwise()` distances are calculated between corresponding columns in the two matrices. If one of the matrices has only a single column (see the example with `Chebyshev()` below) then the distance is calculated between that column and all columns in the other matrix.
   
-{% highlight julia %}
+{{< highlight julia >}}
 julia> colwise(Euclidean(), X, Y)
 2-element Array{Float64,1}:
  1.73205
@@ -80,11 +80,11 @@ julia> colwise(Chebyshev(), X[:,1], Y)
 2-element Array{Float64,1}:
  1.0
  5.0
-{% endhighlight %}
+{{< / highlight >}}
   
 We also have the option of using `pairwise()` which gives the distances between all pairs of columns from the two matrices. This is precisely the distance matrix that we would use for a cluster analysis.
   
-{% highlight julia %}
+{{< highlight julia >}}
 julia> pairwise(Euclidean(), X, Y)
 2x2 Array{Float64,2}:
  1.73205 5.91608
@@ -101,13 +101,13 @@ julia> pairwise(WeightedEuclidean([1.0, 2.0, 3.0]), X, Y)
 2x2 Array{Float64,2}:
  2.44949 9.69536
  3.74166 4.24264
-{% endhighlight %}
+{{< / highlight >}}
   
 As you might have observed from the last example above, it's also possible to calculate weighted versions of some of the metrics.
 
 Finally a less contrived example. We'll look at the distances between observations in the [iris](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/iris.html) data set. We first need to extract only the numeric component of each record and then transpose the resulting matrix so that observations become columns (rather than rows).
   
-{% highlight julia %}
+{{< highlight julia >}}
 julia> using RDatasets
 julia> iris = dataset("datasets", "iris");
 julia> iris = convert(Array, iris[:,1:4]);
@@ -120,7 +120,7 @@ julia> dist_iris[1:5,1:5]
  0.509902 0.3 0.0 0.244949 0.509902
  0.648074 0.331662 0.244949 0.0 0.648074
  0.141421 0.608276 0.509902 0.648074 0.0
-{% endhighlight %}
+{{< / highlight >}}
   
 The full distance matrix is illustrated below as a heatmap using Plotly. Note how the clearly define blocks for each of the iris species setosa, versicolor, and virginica.
 

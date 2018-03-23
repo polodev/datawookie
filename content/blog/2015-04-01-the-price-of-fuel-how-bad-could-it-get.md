@@ -1,13 +1,11 @@
 ---
-id: 1094
-title: 'The Price of Fuel: How Bad Could It Get?'
-date: 2015-04-01T09:00:03+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
 - Data Science
 - Economics
+date: 2015-04-01T09:00:03Z
+excerpt_separator: <!-- more -->
+id: 1094
 tags:
 - Crude Oil
 - Diesel
@@ -15,10 +13,13 @@ tags:
 - Petrol
 - '#rstats'
 - South Africa
+title: 'The Price of Fuel: How Bad Could It Get?'
+url: /2015/04/01/the-price-of-fuel-how-bad-could-it-get/
 ---
+
 The cost of fuel in South Africa (and I imagine pretty much everywhere else) is a contentious topic. It varies from month to month and, although it is clearly related to the price of crude oil and the exchange rate, various other forces play an influential role.
 
-<!-- more -->
+<!--more-->
 
 According to the [Department of Energy](http://www.energy.gov.za/files/petroleum_frame.html) the majority of South Africa's fuel is refined from imported crude oil. The rest is synthetic fuel produced locally from coal and natural gas. The largest expense for a fuel refinery is for raw materials. So little wonder that the cost of fuel should be intimately linked to the price of crude oil. The price of crude oil on the international market is quoted in US Dollars (USD) per barrel, so that the exchange rate between the South African Rand and the US Dollar (ZAR/USD) also exerts a strong influence on the South African fuel price.
 
@@ -60,7 +61,7 @@ We'll put together three simple (and probably naive) linear models for the fuel 
 
 The first model assumes that the influences of exchange rate and crude oil price are independent. A moment's thought reveals that this cannot be a particularly good model, since the effects of these two quantities must be inextricably linked. However, as we will see, the model provides a relatively good fit to the data, but probably will not extrapolate effectively.
 
-{% highlight r %}
+{{< highlight r >}}
 > fit.1 <- lm(ULP_Inland_95 ~ DollarPerBarrel + ZARUSD, data = fuel.data)
 > summary(fit.1)
 
@@ -86,11 +87,11 @@ F-statistic: 702.9 on 2 and 105 DF,  p-value: < 2.2e-16
 
 > AIC(fit.1)
 [1] 237.5634
-{% endhighlight %}
+{{< / highlight >}}
 
 The second model considers both the independent (additive) effects of exchange rate and crude oil price as well as their joint (multiplicative) effect. The p-values in the summary output below indicate that only the multiplicative term is statistically significant. This provides a motivation for the third model.
 
-{% highlight r %}
+{{< highlight r >}}
 > fit.2 <- lm(ULP_Inland_95 ~ DollarPerBarrel * ZARUSD, data = fuel.data)
 > summary(fit.2)
 
@@ -117,11 +118,11 @@ F-statistic: 608.3 on 3 and 104 DF,  p-value: < 2.2e-16
 
 > AIC(fit.2)
 [1] 212.1551
-{% endhighlight %}
+{{< / highlight >}}
 
 The third and final model uses only the interaction between exchange rate and crude oil price. The summary output below indicates that for this model the coefficients associated with both the intercept and interaction terms are significant.
 
-{% highlight r %}
+{{< highlight r >}}
 > fit.3 <- lm(ULP_Inland_95 ~ DollarPerBarrel:ZARUSD, data = fuel.data)
 > summary(fit.3)
 
@@ -146,7 +147,7 @@ F-statistic:  1539 on 1 and 106 DF,  p-value: < 2.2e-16
 
 > AIC(fit.3)
 [1] 227.4323
-{% endhighlight %}
+{{< / highlight >}}
 
 Based on standard metrics all three of these models are reasonable approximations to the data. The principle of parsimony suggests that of Models 2 and 3 the latter should be preferred (especially in light of the fact that the coefficients for the extra terms in Model 2 are not significant).
 

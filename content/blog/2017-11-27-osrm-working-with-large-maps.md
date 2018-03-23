@@ -1,25 +1,25 @@
 ---
-title: 'Using Large Maps with OSRM'
-date: 2017-11-28T07:00:00+00:00
 author: Andrew B. Collier
-layout: post
+date: 2017-11-27T07:00:00Z
 excerpt_separator: <!-- more -->
 tags:
-  - OSRM
+- OSRM
+title: Using Large Maps with OSRM
+url: /2017/11/27/osrm-working-with-large-maps/
 ---
 
 How to deal with large data sets in OSRM? Some quick notes on processing monster PBF files and getting them ready to serve with OSRM.
 
-<!-- more -->
+<!--more-->
 
 ## Test Data
 
 To illustrate, let's download two sets of data which might be considered "large". These data are both for Noth America and represent the same information but in different formats.
 
-{% highlight bash %}
+{{< highlight bash >}}
 wget http://download.geofabrik.de/north-america-latest.osm.pbf
 wget http://download.geofabrik.de/north-america-latest.osm.bz2
-{% endhighlight %}
+{{< / highlight >}}
 
 The second of these files is a compressed XML file, which is what I have been routinely using before. However, as we will see shortly, the sheer size of this file makes it completely impractical!
 
@@ -31,9 +31,9 @@ So how to make use of the PDF file? Well, the PBF files (and the XML files too, 
 
 This operation is going to consume memory like a beast! So unless you 're running on a machine with a hefty chunk of RAM you'll need to ensure that you have plenty of [swap space]({{ site.baseurl }}{% post_url 2015-06-19-amazon-ec2-adding-swap %}) available. For reference I did this on an EC2 instance with 30 Gb RAM and added another 45 Gb of swap. It's possible that the swap was overkill but I didn't want memory allocation to be a problem on a long job.
 
-{% highlight bash %}
+{{< highlight bash >}}
 osrm-extract north-america-latest.osm.pbf
-{% endhighlight %}
+{{< / highlight >}}
 
 And, yes, it's also going to take some time. So get busy doing something else. Waiting will be frustrating.
 
@@ -41,9 +41,9 @@ And, yes, it's also going to take some time. So get busy doing something else. W
 
 When `osrm-extract` is done, the next step is to run `osrm-contract` on the results.
 
-{% highlight bash %}
+{{< highlight bash >}}
 osrm-contract north-america-latest.osrm
-{% endhighlight %}
+{{< / highlight >}}
 
 Again this is going chug away for a while. Go for a run. Make dinner. Knit.
 
@@ -53,8 +53,8 @@ On my 4 core EC2 instance that ran overnight. When it was done the processed fil
 
 At this stage you're ready to fire up the routing server.
 
-{% highlight bash %}
+{{< highlight bash >}}
 osrm-routed north-america-latest.osrm
-{% endhighlight %}
+{{< / highlight >}}
 
 Go head and start submitting requests on port 5000. Your lengthy labours will start paying off.

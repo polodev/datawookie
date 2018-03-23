@@ -1,21 +1,21 @@
 ---
-id: 2061
-title: '#MonthOfJulia Day 9: Input/Output'
-date: 2015-09-08T05:30:12+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=2061
-excerpt_separator: <!-- more -->
 categories:
-  - Julia
+- Julia
+date: 2015-09-08T05:30:12Z
+excerpt_separator: <!-- more -->
+guid: http://www.exegetic.biz/blog/?p=2061
+id: 2061
 tags:
-  - '#julialang'
-  - '#MonthOfJulia'
-  - IO
-  - Julia
+- '#julialang'
+- '#MonthOfJulia'
+- IO
+- Julia
+title: '#MonthOfJulia Day 9: Input/Output'
+url: /2015/09/08/monthofjulia-day-09-input-and-output/
 ---
 
-<!-- more -->
+<!--more-->
 
 Your code won't be terribly interesting without ways of getting data in and out. Ways to do that with Julia will be the subject of today's post.
 
@@ -25,38 +25,38 @@ Your code won't be terribly interesting without ways of getting data in and out.
 
 Direct output to the Julia terminal is done via `print()` and `println()`, where the latter appends a newline to the output.
   
-{% highlight julia %}
+{{< highlight julia >}}
 julia> print(3, " blind "); print("mice!\n")
 3 blind mice!
 julia> println("Hello World!")
 Hello World!
-{% endhighlight %}
+{{< / highlight >}}
   
 Terminal input is something that I never do, but it's certainly possible. `readline()` will read keyboard input until the first newline.
   
-{% highlight julia %}
+{{< highlight julia >}}
 julia> response = readline();
 Yo!
 julia> response
 "Yo!\n"
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Reading and Writing with a Stream
 
 Writing to a file is pretty standard. Below we create a suitable name for a temporary file, open a stream to that file, write some text to the stream and then close it.
   
-{% highlight julia %}
+{{< highlight julia >}}
 filename = tempname()
 fid = open(filename, "w")
 write(fid, "Some temporary text...")
 close(fid)
-{% endhighlight %}
+{{< / highlight >}}
   
 `print()` and `println()` can also be used in the same way as `write()` for sending data to a stream. `STDIN`, `STDOUT` and `STDERR` are three predefined constants for standard console streams.
 
 There are various approaches to reading data from files. One of which would be to use code similar to the example above. Another would be to do something like this (I've truncated the output because it really is not too interesting after a few lines):
   
-{% highlight julia %}
+{{< highlight julia >}}
 julia> open("/etc/passwd") do fid
            readlines(fid)
        end
@@ -66,7 +66,7 @@ julia> open("/etc/passwd") do fid
  "bin:x:2:2:bin:/bin:/usr/sbin/nologin\n"
  "sys:x:3:3:sys:/dev:/usr/sbin/nologin\n"
  "sync:x:4:65534:sync:/bin:/bin/sync\n"
-{% endhighlight %}
+{{< / highlight >}}
   
 Here `readlines()` returns the entire contents of the file as an array, where each element corresponds to a line of content. `readall()` would return everything in a single string. A somewhat different approach would be to use `eachline()` which creates an iterator allowing you to process each line of the file individually.
 
@@ -74,12 +74,12 @@ Here `readlines()` returns the entire contents of the file as an array, where ea
 
 Data can be read from a delimited file using `readdlm()`, where the delimiter is specified explicitly. For a simple Comma Separated Value (CSV) file it's more direct to simply use `readcsv()`.
   
-{% highlight julia %}
+{{< highlight julia >}}
 julia> passwd = readdlm("/etc/passwd", ':');
 julia> passwd[1,:]
 1x7 Array{Any,2}:
  "root" "x" 0.0 0.0 "root" "/root" "/bin/bash"
-{% endhighlight %}
+{{< / highlight >}}
   
 The analogues `writedlm()` and `writcecsv()` are used for writing delimited data.
 

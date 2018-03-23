@@ -1,13 +1,11 @@
 ---
-id: 1829
-title: '#MonthOfJulia Day 2: Development Environments'
-date: 2015-09-01T05:28:44+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=1829
-excerpt_separator: <!-- more -->
 categories:
 - Julia
+date: 2015-09-01T05:28:44Z
+excerpt_separator: <!-- more -->
+guid: http://www.exegetic.biz/blog/?p=1829
+id: 1829
 tags:
 - '#julialang'
 - '#MonthOfJulia'
@@ -15,9 +13,11 @@ tags:
 - Julia
 - Juno
 - RStudio
+title: '#MonthOfJulia Day 2: Development Environments'
+url: /2015/09/01/monthofjulia-day-02-development-environments/
 ---
 
-<!-- more -->
+<!--more-->
 
 The Julia REPL has a vast range of features. It's a pleasure to use and I'm perfectly happy to run Julia from the command line and edit code in gedit or vim. That's the way I operated with R before I discovered the beauty of RStudio. Let's have a look at the similar options for Julia.
 
@@ -53,13 +53,13 @@ Open the tutorial folder and then select the 00 - Start Tutorial notebook. It's 
 
 You can access the notebook functionality locally via the [IJulia](https://github.com/JuliaLang/IJulia.jl) package. As before, these instructions pertain to Ubuntu Linux. First you'll need to install IPython.
 
-{% highlight text %}
+{{< highlight text >}}
 $ sudo apt-get install ipython-notebook
-{% endhighlight %}
+{{< / highlight >}}
 
 Then install and load the IJulia package. Finally run the `notebook()` function, which will launch an IJulia notebook in your browser.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> Pkg.add("IJulia")
 julia> using IJulia
 julia> notebook()
@@ -70,20 +70,20 @@ julia> notebook()
 2015-08-03 07:35:33.021 [NotebookApp] The IPython Notebook is running at: http://localhost:8998/
 2015-08-03 07:35:33.021 [NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
 Created new window in existing browser session.
-{% endhighlight %}
+{{< / highlight >}}
 
 Alternatively you can use an IJulia notebook directly from the shell prompt.
 
-{% highlight julia %}
+{{< highlight julia >}}
 $ ipython notebook -profile julia
-{% endhighlight %}
+{{< / highlight >}}
 
 That's a little more direct than first running the Julia interpreter. For ease of use I created a shell alias.
 
-{% highlight julia %}
+{{< highlight julia >}}
 $ alias ijulia='ipython notebook -profile julia'
 $ ijulia
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Editor Support
 

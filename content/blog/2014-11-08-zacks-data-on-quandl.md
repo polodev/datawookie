@@ -1,17 +1,18 @@
 ---
-id: 1004
-title: Zacks Data on Quandl
-date: 2014-11-08T10:03:16+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=1004
 categories:
 - Trading
+date: 2014-11-08T10:03:16Z
+guid: http://www.exegetic.biz/blog/?p=1004
+id: 1004
 tags:
 - Quandl
 - '#rstats'
 - Trading
+title: Zacks Data on Quandl
+url: /2014/11/08/zacks-data-on-quandl/
 ---
+
 <img src="{{ site.baseurl }}/static/img/2014/11/zacks-logo.png">
 
 Data from Zacks Research have just been made available on Quandl. Registered Quandl users have free preview access to these data, which cover the following:
@@ -36,15 +37,15 @@ Browsing the data via the Quandl web site gives you a good appreciation of what 
 
 I am going to focus on accessing the data through R using the Quandl package.
 
-{% highlight r %}
+{{< highlight r >}}
 library(Quandl)
-{% endhighlight %}
+{{< / highlight >}}
 
 Obtaining the data is remarkably simple. First you need to authenticate yourself.
 
-{% highlight r %}
+{{< highlight r >}}
 > Quandl.auth("ZxixTxUxTxzxyxwxFxyx")
-{% endhighlight %}
+{{< / highlight >}}
 
 You will find your authorisation token under the Account Settings on the Quandl web site.
 
@@ -54,7 +55,7 @@ Grabbing the data is done via the Quandl() function, to which you need to provid
 
 Beneath the data set code you will also find a number of links which will popup the precise code fragment required for downloading the data in a variety of formats and on a selection of platforms (notable amongst these are R, Python and Matlab although there are interfaces for a variety of other platforms too).
 
-{% highlight r %}
+{{< highlight r >}}
 > # Annual estimates
 > #
 > Quandl("ZEE/HPQ_A", trim_start="2014-10-31", trim_end="2017-10-31")[,1:5]
@@ -74,13 +75,13 @@ Beneath the data set code you will also find a number of links which will popup 
 3 2015-04-30         0.95           0.95         1.00        0.91
 4 2015-01-31         0.92           0.92         1.00        0.85
 5 2014-10-31         1.05           1.05         1.07        1.03
-{% endhighlight %}
+{{< / highlight >}}
 
 Here we see a subset of the EPS data available for Hewlett Packard, giving the maximum and minimum as well as the mean and median projections of EPS at both annual and quarterly resolution.
 
 Next we'll look at a comparison of historical actual and estimated earnings.
 
-{% highlight r %}
+{{< highlight r >}}
 > Quandl("ZES/HPQ", trim_start="2011-11-21", trim_end="2014-08-20")[,1:6]
          DATE EPS_MEAN_EST EPS_ACT EPS_ACT_ADJ EPS_AMT_DIFF_SURP EPS_PCT_DIFF_SURP
 1  2014-08-20         0.89    0.89       -0.37              0.00              0.00
@@ -95,17 +96,17 @@ Next we'll look at a comparison of historical actual and estimated earnings.
 10 2012-05-23         0.91    0.98       -0.18              0.07              7.69
 11 2012-02-22         0.87    0.92       -0.18              0.05              5.75
 12 2011-11-21         1.13    1.17       -1.05              0.04              3.54
-{% endhighlight %}
+{{< / highlight >}}
 
 Looking at the last column gives the EPS surprise amount (difference between the actual and estimated EPS) as a percentage. It's clear that the estimates are generally rather good.
 
 The last thing that we are going to look at is dividend data.
 
-{% highlight r %}
+{{< highlight r >}}
 > Quandl("ZDIV/HPQ", trim_start="2014-11-07", trim_end="2014-11-07")[,1:6]
        AS_OF DIV_ANNOUNCE_DATE DIV_EX_DATE DIV_PAY_DATE DIV_REC_DATE DIV_AMT
 1 2014-11-07          20140717    20140908     20141001     20140910    0.16
-{% endhighlight %}
+{{< / highlight >}}
 
 Here we see that a $0.16 per share dividend was announced on 17 July 2014 and paid on 1 October 2014.
 

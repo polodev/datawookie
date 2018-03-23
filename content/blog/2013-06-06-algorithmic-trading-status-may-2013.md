@@ -1,18 +1,19 @@
 ---
-id: 210
-title: 'Algorithmic Trading Status [May 2013]'
-date: 2013-06-06T11:00:39+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - FOREX
-  - Trading
+- FOREX
+- Trading
+date: 2013-06-06T11:00:39Z
+excerpt_separator: <!-- more -->
+id: 210
 tags:
-  - EA
-  - Expert Advisor
-  - FOREX
+- EA
+- Expert Advisor
+- FOREX
+title: Algorithmic Trading Status [May 2013]
+url: /2013/06/06/algorithmic-trading-status-may-2013/
 ---
+
 Well, we can't expect every month to be a good one. [Last month's results](http://www.exegetic.biz/blog/2013/05/algorithmic-trading-in-april-2013/) from my automated trading were pretty encouraging. Things during May 2013 were not quite as rosy. However, looking at the big picture, it's not that bad. This month I will add in results from a second trading account. The monthly profit for each of these accounts since the beginning of the year is
 
 <table border="0" cellspacing="0">

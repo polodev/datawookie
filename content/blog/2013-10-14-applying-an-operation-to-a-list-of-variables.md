@@ -1,28 +1,29 @@
 ---
-id: 514
-title: Applying the Same Operation to a Number of Variables
-date: 2013-10-14T06:12:52+00:00
 author: Andrew B. Collier
-layout: post
+date: 2013-10-14T06:12:52Z
 excerpt_separator: <!-- more -->
+id: 514
 tags:
 - '#rstats'
+title: Applying the Same Operation to a Number of Variables
+url: /2013/10/14/applying-an-operation-to-a-list-of-variables/
 ---
+
 Just a quick note on a short hack that I cobbled together this morning. I have an analysis where I need to perform the same set of operations to a list of variables. In order to do this in a compact and robust way, I wanted to write a loop that would run through the variables and apply the operations to each of them in turn. This can be done using get() and assign().
 
 # Simple Illustration
 
 To illustrate the procedure, I will use the simple example of squaring the numerical values stored in three variables. First we initialise the variables.
 
-{% highlight r %}
+{{< highlight r >}}
 > x = 1
 > y = 2
 > z = 3
-{% endhighlight %}
+{{< / highlight >}}
 
 Then we loop over the variable names (as strings), creating a temporary copy of each one and applying the operation to the copy. Then the copy is assigned back to the original variable.
 
-{% highlight r %}
+{{< highlight r >}}
 > for (n in c("x", "y", "z")) {
 +   v = get(n)
 +   #
@@ -30,18 +31,18 @@ Then we loop over the variable names (as strings), creating a temporary copy of 
 +   #
 +   assign(n, v)
 + }
-{% endhighlight %}
+{{< / highlight >}}
 
 Finally we check that the operation has been executed as expected.
 
-{% highlight r %}
+{{< highlight r >}}
 > x
 [1] 1
 > y
 [1] 4
 > z
 [1] 9
-{% endhighlight %}
+{{< / highlight >}}
 
 This is perhaps a little wasteful in terms of resources (creating the temporary variables), but does the job. Obviously in practice you would only implement this sort of solution if there were either a large number of variables to be transformed or the transformation required a relatively complicated set of operations.
 

@@ -1,21 +1,22 @@
 ---
-id: 696
-title: Simulating Intricate Branching Patterns with DLA
-date: 2014-12-16T09:31:16+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Science
+- Science
+date: 2014-12-16T09:31:16Z
+excerpt_separator: <!-- more -->
+id: 696
 tags:
-  - Diffusion-Limited Aggregation
-  - DLA
-  - ggplot2
-  - '#rstats'
+- Diffusion-Limited Aggregation
+- DLA
+- ggplot2
+- '#rstats'
+title: Simulating Intricate Branching Patterns with DLA
+url: /2014/12/16/simulating-intricate-branching-patterns-with-dla/
 ---
+
 Manfred Schroeder's book [Fractals, Chaos, Power Laws: Minutes from an Infinite Paradise](http://www.amazon.com/gp/product/0486472043/) is a fruitful source of interesting topics and projects. He gives a thorough description of [Diffusion-Limited Aggregation](https://en.wikipedia.org/wiki/Diffusion-limited_aggregation) (DLA) as a technique for simulating physical processes which produce intricate branching structures. Examples, as illustrated below, include Lichtenberg Figures, dielectric breakdown, electrodeposition and Hele-Shaw flow.
 
-<!-- more -->
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2014/08/dla-post-illustration.png">
 
@@ -29,7 +30,7 @@ The objects which evolve from this process are intrinsically random, yet have se
 
 First we need to construct a grid. We will start small: a 20 by 20 grid filled with NA except for four seed locations at the centre.
 
-{% highlight r %}
+{{< highlight r >}}
 > # Dimensions of grid
 > W <- 20
 > grid <- matrix(NA, nrow = W, ncol = W)
@@ -56,11 +57,11 @@ First we need to construct a grid. We will start small: a 20 by 20 grid filled w
 [18,]   NA   NA   NA   NA   NA   NA   NA   NA   NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA
 [19,]   NA   NA   NA   NA   NA   NA   NA   NA   NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA
 [20,]   NA   NA   NA   NA   NA   NA   NA   NA   NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA
-{% endhighlight %}
+{{< / highlight >}}
 
 We need to generate two dimensional random walks. To do this I created a table of possible moves, from which individual steps could be sampled at random. The table presently only caters for the cells immediately above, below, left or right of the current cell. It would be a simple matter to extend the table to allow diagonal moves as well, but these more distant moves would need to be weighted accordingly.
 
-{% highlight r %}
+{{< highlight r >}}
 > moves <- data.frame(dx = c(0, 0, +1, -1), dy = c(+1, -1, 0, 0))
 > #
 > M = nrow(moves)
@@ -70,11 +71,11 @@ We need to generate two dimensional random walks. To do this I created a table o
 2  0 -1
 3  1  0
 4 -1  0
-{% endhighlight %}
+{{< / highlight >}}
 
 Next a function to transport a particle from its initial location until it either leaves the grid or adheres to the cluster at the origin. Again a possible refinement here would be to allow sticking to next-nearest neighbours as well 
 
-{% highlight r %}
+{{< highlight r >}}
 > diffuse <- function(p) {
 +   count = 0
 +   #
@@ -97,11 +98,11 @@ Next a function to transport a particle from its initial location until it eithe
 +   #
 +   return(c(p, count = count))
 + }
-{% endhighlight %}
+{{< / highlight >}}
 
 Finally we are ready to apply this procedure to a batch of particles.
 
-{% highlight r %}
+{{< highlight r >}}
 > library(foreach)
 >
 > # Number of particles per batch
@@ -120,11 +121,11 @@ Finally we are ready to apply this procedure to a batch of particles.
 > result = foreach(n = 1:PBATCH) %do% diffuse(particles[n,])
 > 
 > lapply(result, function(p) {if (length(p) == 3) grid[p$x, p$y] <<- p$count})
-{% endhighlight %}
+{{< / highlight >}}
 
 The resulting grid shows all of the locations where particles have adhered to the cluster. The number at each location is the diffusion time, which indicates the number of steps required for the particle to move from its initial location to its final resting place. The shape of the cluster is a little boring at present: essentially a circular disk centred on the origin. This is due to the size of the problem and we will need to have a much larger grid to produce more interesting structure.
 
-{% highlight r %}
+{{< highlight r >}}
 > grid
       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12] [,13] [,14] [,15] [,16] [,17] [,18] [,19] [,20]
  [1,]   NA   NA   NA   NA   NA   NA   NA   NA   NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA
@@ -147,7 +148,7 @@ The resulting grid shows all of the locations where particles have adhered to th
 [18,]   NA   NA   NA   NA   NA   NA   NA   NA   NA    18    20    NA    NA    NA    NA    NA    NA    NA    NA    NA
 [19,]   NA   NA   NA   NA   NA   NA   NA   NA   NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA
 [20,]   NA   NA   NA   NA   NA   NA   NA   NA   NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA
-{% endhighlight %}
+{{< / highlight >}}
 
 Taking a look at the distribution of diffusion times below we can see that there is a strong peak between 10 and 15. The majority of particles diffuse in less than 40 steps, while the longest diffusion time is 151 steps. The grid above shows that, as one would expect, smaller diffusion times are found close to the surface of the cluster, while longer times are embedded closer to the core.
 

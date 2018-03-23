@@ -1,23 +1,23 @@
 ---
-id: 472
-title: Clustering Lightning Discharges to Identify Storms
-date: 2013-09-13T07:09:59+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Science
+- Science
+date: 2013-09-13T07:09:59Z
+excerpt_separator: <!-- more -->
+id: 472
 tags:
-  - cluster
-  - dendrogram
-  - ggmap
-  - Lightning
-  - '#rstats'
+- cluster
+- dendrogram
+- ggmap
+- Lightning
+- '#rstats'
+title: Clustering Lightning Discharges to Identify Storms
+url: /2013/09/13/clustering-lightning-discharges-to-identify-storms/
 ---
 
 A [short talk](https://speakerdeck.com/exegetic/clustering-lightning-into-storms) that I gave at the LIGHTS 2013 Conference (Johannesburg, 12 September 2013). The slides are relatively devoid of text because I like the audience to hear the content rather than read it. The central message of the presentation is that clustering lightning discharges into storms is not a trivial task, but still a worthwhile challenge because it can lead to some very interesting science!
 
-<!-- more -->
+<!--more-->
 
 <script async class="speakerdeck-embed" data-id="71c2f290fdbb0130f6d8022f0de05eea" data-ratio="1.33507170795306" src="//speakerdeck.com/assets/embed.js"></script>
 

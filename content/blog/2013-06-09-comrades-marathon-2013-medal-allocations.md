@@ -1,17 +1,17 @@
 ---
-id: 240
-title: Medal Allocations at the Comrades Marathon
-date: 2013-06-09T17:53:59+00:00
 author: Andrew B. Collier
-layout: post
+date: 2013-06-09T17:53:59Z
 excerpt_separator: <!-- more -->
+id: 240
 tags:
-  - Comrades Marathon
-  - '#rstats'
-  - Visualisation
+- Comrades Marathon
+- '#rstats'
+- Visualisation
+title: Medal Allocations at the Comrades Marathon
+url: /2013/06/09/comrades-marathon-2013-medal-allocations/
 ---
 
-<!-- more -->
+<!--more-->
 
 Following up on my [previous post](http://www.exegetic.biz/blog/2013/06/comrades-marathon-2013-attrition-rate/) regarding attrition rates at Comrades Marathon 2013, here are the [statistics](http://www.exegetic.biz/) I have gathered for medal allocations. For reference, the medals are allocated as follows:
 

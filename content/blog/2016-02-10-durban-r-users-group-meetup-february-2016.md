@@ -1,18 +1,18 @@
 ---
-id: 3291
-title: 'Durban R Users Group Meetup: 24 February 2016 @ The Green Door'
-date: 2016-02-10T06:47:10+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - R User Group
+- R User Group
+date: 2016-02-10T06:47:10Z
+excerpt_separator: <!-- more -->
+id: 3291
 tags:
-  - Durban R User Group
-  - Meetup
+- Durban R User Group
+- Meetup
+title: 'Durban R Users Group Meetup: 24 February 2016 @ The Green Door'
+url: /2016/02/10/durban-r-users-group-meetup-february-2016/
 ---
 
-<!-- more -->
+<!--more-->
 
 We're kicking off the inaugural meeting of the Durban R Users Group&nbsp;with a live video presentation by [Andrie de Vries](https://twitter.com/revoandrie) (Senior Programme Manager, R Community Projects at Microsoft / Revolution Analytics). Andrie will be talking about "Demonstration of using R in the cloud together with Azure Machine Learning". If you've kept up with Microsoft's recent contributions to R then you'll know that this is going to be an interesting talk.
 

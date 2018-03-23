@@ -1,16 +1,17 @@
 ---
-id: 4009
-title: "Anthony Goldbloom: The jobs we'll lose to machines"
-date: 2016-08-22T15:00:49+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=4009
+date: 2016-08-22T15:00:49Z
 excerpt_separator: <!-- more -->
+guid: http://www.exegetic.biz/blog/?p=4009
+id: 4009
 tags:
-  - Machine Learning
-  - TED Talk
+- Machine Learning
+- TED Talk
+title: 'Anthony Goldbloom: The jobs we''ll lose to machines'
+url: /2016/08/22/anthony-goldbloom-jobs-well-lose-machines/
 ---
-<!-- more -->
+
+<!--more-->
 
 <iframe src="https://embed-ssl.ted.com/talks/anthony_goldbloom_the_jobs_we_ll_lose_to_machines_and_the_ones_we_won_t.html" width="854" height="480" frameborder="0" scrolling="no" allowfullscreen="allowfullscreen"></iframe>
 

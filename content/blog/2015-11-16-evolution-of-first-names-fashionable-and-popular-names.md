@@ -1,18 +1,19 @@
 ---
-id: 2823
-title: 'Evolution of First Names: Fashionable and Popular Names'
-date: 2015-11-16T15:00:10+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Interesting Statistics
+- Interesting Statistics
+date: 2015-11-16T15:00:10Z
+excerpt_separator: <!-- more -->
+id: 2823
 tags:
-  - names
+- names
+title: 'Evolution of First Names: Fashionable and Popular Names'
+url: /2015/11/16/evolution-of-first-names-fashionable-and-popular-names/
 ---
+
 [Last week](http://wp.me/p3pzmk-Jq) I took a high level look at the trends in children's names over the last century. Today I'll dig a little deeper and examine the ebb and flow in popularity of some specific names.
 
-<!-- more -->
+<!--more-->
 
 It has recently been suggested that a given name can be used to infer a range of personal characteristics including [gender](http://www.aaai.org/ocs/index.php/SSS/SSS13/paper/view/5744/5908), [age](http://fivethirtyeight.com/features/how-to-tell-someones-age-when-all-you-know-is-her-name/) and ethnicity. This is certainly not unreasonable. Estimating age from a given name is in some cases quite reliable, since names go in and out of fashion, and their prevalence thus varies with time.
 

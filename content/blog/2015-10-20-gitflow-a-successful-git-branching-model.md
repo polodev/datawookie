@@ -1,18 +1,18 @@
 ---
-id: 2724
-title: 'Gitflow: A successful Git branching model'
-date: 2015-10-20T08:02:36+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Version Control
+- Version Control
+date: 2015-10-20T08:02:36Z
+excerpt_separator: <!-- more -->
+id: 2724
 tags:
-  - Git
-  - Gitflow
+- Git
+- Gitflow
+title: 'Gitflow: A successful Git branching model'
+url: /2015/10/20/gitflow-a-successful-git-branching-model/
 ---
 
-<!-- more -->
+<!--more-->
 
 Starting to apply [Gitflow](http://nvie.com/posts/a-successful-git-branching-model/). It'll require a bit of discipline, but I can see that this will help a lot with project structure. Thanks for the pointer, [@rlnel](https://twitter.com/rlnel).
 

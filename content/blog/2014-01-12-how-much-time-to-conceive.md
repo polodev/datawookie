@@ -1,18 +1,19 @@
 ---
-id: 652
-title: How Much Time to Conceive?
-date: 2014-01-12T16:33:27+00:00
 author: Andrew B. Collier
-layout: post
+date: 2014-01-12T16:33:27Z
 excerpt_separator: <!-- more -->
+id: 652
 tags:
 - Conception
 - ggplot2
 - '#rstats'
+title: How Much Time to Conceive?
+url: /2014/01/12/how-much-time-to-conceive/
 ---
+
 This morning my wife presented me with a rather interesting statistic: a healthy couple has a 25% chance of conception every month [1], and that this should result in a 75% to 85% chance of conception after a year. This sounded rather interesting and it occurred to me that it really can't be that simple. There are surely a lot of variables which influence this probability. Certainly age should be a factor and, after a short search, I found some more age-specific information which indicated that for a woman in her thirties, the probability is only around 15% [2,3].
 
-<!-- more -->
+<!--more-->
 
 I suspect that one of the most important questions that people ask when they make the decision to have a child is: how long is it going to take us to get pregnant? The probabilities mentioned above should provide an answer to this question. But these probabilities are estimates at best (albeit, no doubt, educated estimates!) and are associated with some not insignificant uncertainties. So, how important is the value of the monthly probability in determining the time to conception?
 
@@ -20,38 +21,38 @@ I suspect that one of the most important questions that people ask when they mak
 
 First let's take a look at what these probabilities mean. If we adopt the first probability mentioned above, then every month there will be a 25% chance of conception. To be clear, this is the probability of conception in any one month regardless of how long a couple has been trying. A process with a simple success or failure outcome like this is known as a [Bernoulli trial](https://en.wikipedia.org/wiki/Bernoulli_trial).
 
-{% highlight r %}
+{{< highlight r >}}
 > P1 = 0.25
 > 1 - P1
 [1] 0.75
-{% endhighlight %}
+{{< / highlight >}}
 
 So, after the first month there is a 75% chance that conception will not have occurred. This seems pretty clear for the first month, but what about the second month? Well, all else being equal, the probability of conceiving in the second month should be just the same as that in the first month: 25%. However, this does not take into account the fact that the first month was not successful. The probability of only conceiving during the second month is the product of two probabilities: the probability of not conceiving in the first month and the probability of conceiving in any one month.
 
-{% highlight r %}
+{{< highlight r >}}
 > (P2 = (1 - P1) * P1)
 [1] 0.1875
 > (1 - P1) * (1 - P1)
 [1] 0.5625
-{% endhighlight %}
+{{< / highlight >}}
 
 There is thus a 18.75% chance of only conceiving during the second month and a 56.25% chance of still not being pregnant by the end of the second month. However, the total probability of having conceived in either the first or second months has improved:
 
-{% highlight r %}
+{{< highlight r >}}
 > P1 + P2
 [1] 0.4375
-{% endhighlight %}
+{{< / highlight >}}
 
 We can take this a step further: what about the third month? Here we need to take into account the probability of not conceiving in either of the first two months.
 
-{% highlight r %}
+{{< highlight r >}}
 > (P3 = (1 - P1) \* (1 - P1) \* P1)
 [1] 0.14062
 > P1 + P2 + P3
 [1] 0.57812
 > (1 - P1) \* (1 - P1) \* (1 - P1)
 [1] 0.42188
-{% endhighlight %}
+{{< / highlight >}}
 
 The probability of only falling pregnant in the third month is thus just over 14%, but the chance of conception in any one of the first three months has risen to just less than 58%. So, already, the odds are looking pretty good.
 
@@ -63,7 +64,7 @@ We could extend this process indefinitely, but there is a simpler way. What we a
 
 The Negative binomial distribution describes the number of failures before a success in a Bernoulli experiment.
 
-{% highlight r %}
+{{< highlight r >}}
 > # Success in the first month (0 failures)
 > #
 > dnbinom(0, size = 1, prob = 0.25)
@@ -78,11 +79,11 @@ The Negative binomial distribution describes the number of failures before a suc
 > #
 > dnbinom(2, size = 1, prob = 0.25)
 [1] 0.14062
-{% endhighlight %}
+{{< / highlight >}}
 
 You'll see that these probabilities agree perfectly with those calculated somewhat more laboriously above. Now, with very little pain, we can calculate the probability of falling pregnant in any given month. Let's consider a two year period.
 
-{% highlight r %}
+{{< highlight r >}}
 > NMONTH = 24
 > 
 > pbase = 0.25
@@ -92,11 +93,11 @@ You'll see that these probabilities agree perfectly with those calculated somewh
 [8] 0.03337097 0.02502823 0.01877117 0.01407838 0.01055878 0.00791909 0.00593932
 [15] 0.00445449 0.00334087 0.00250565 0.00187924 0.00140943 0.00105707 0.00079280
 [22] 0.00059460 0.00044595 0.00033446 0.00025085
-{% endhighlight %}
+{{< / highlight >}}
 
 This gives the probabilities for each of 25 successive months. We want to accumulate these values as well to get the total probability of falling pregnant within a given time period.
 
-{% highlight r %}
+{{< highlight r >}}
 > pregnant <- transform(data.frame(months = 0:NMONTH, ptry),
 +                       psum = cumsum(ptry))
 > pregnant
@@ -126,13 +127,13 @@ months       ptry    psum
 23     22 0.00044595 0.99866
 24     23 0.00033446 0.99900
 25     24 0.00025085 0.99925
-{% endhighlight %}
+{{< / highlight >}}
 
 Here the ptry column gives the probability for any particular month and the psum column gives the total probability up to and including that month. After two years the probability is very close to one: almost certain success!
 
 This seems like a good time for a plot.
 
-{% highlight r %}
+{{< highlight r >}}
 > ggplot(pregnant, aes(x = months)) +
 +   geom_line(aes(y = ptry)) +
 +   geom_line(aes(y = psum), linetype = "dashed") +
@@ -141,7 +142,7 @@ This seems like a good time for a plot.
 +   scale_y_continuous(labels = percent) +
 +   scale_x_continuous(breaks = seq(0, NMONTH, 3)) +
 +   theme_classic()
-{% endhighlight %}
+{{< / highlight >}}
 
 <img src="{{ site.baseurl }}/static/img/2014/01/probability-month.png">
 
@@ -149,7 +150,7 @@ Here the solid line is the probability of conception in a particular month and t
 
 First we will construct data corresponding to increasing probabilities in steps of 2.5% all the way up to 50%. This upper boundary is extremely optimistic and likely to apply in practice to only a very small fraction of couples!
 
-{% highlight r %}
+{{< highlight r >}}
 > pbase = seq(0, 0.5, 0.025)[-1]
 >
 > pregnant <- data.frame(pbase = rep(pbase, each = NMONTH+1), months = 0:NMONTH)
@@ -158,11 +159,11 @@ First we will construct data corresponding to increasing probabilities in steps 
 >
 > pregnant = ddply(pregnant, .(pbase, months), summarize,
 +                  psum = sum(dnbinom(0:months, size = 1, prob = pbase)))
-{% endhighlight %}
+{{< / highlight >}}
 
 Now we can take these data and produce a visualisation.
 
-{% highlight r %}
+{{< highlight r >}}
 > library(ggplot2)
 > library(scales)
 > library(RColorBrewer)
@@ -183,7 +184,7 @@ Now we can take these data and produce a visualisation.
 +   geom_hline(yintercept = 0.25, linetype = "dashed") +
 +   ylab("Probability") + xlab("Months") +
 +   theme_classic()
-{% endhighlight %}
+{{< / highlight >}}
 
 <img src="{{ site.baseurl }}/static/img/2014/01/probability-month-variable.png">
 

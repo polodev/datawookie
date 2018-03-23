@@ -1,22 +1,23 @@
 ---
-id: 994
-title: Creating More Effective Graphs
-date: 2014-11-04T12:25:08+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Visualisation
+- Visualisation
+date: 2014-11-04T12:25:08Z
+excerpt_separator: <!-- more -->
+id: 994
 tags:
-  - ggplot2
-  - graph
-  - plot
-  - '#rstats'
-  - Visualisation
+- ggplot2
+- graph
+- plot
+- '#rstats'
+- Visualisation
+title: Creating More Effective Graphs
+url: /2014/11/04/creating-more-effective-graphs/
 ---
+
 A few years ago I ordered a copy of the 2005 edition of [Creating More Effective Graphs](http://www.amazon.com/gp/product/0985911123/) by [Naomi Robbins](http://www.nbr-graphs.com/ "Naomi Robbins"). Somewhat shamefully I admit that the book got buried beneath a deluge of papers and other books and never received the attention it was due. Having recently discovered the [R Graph Catalog](http://www.showmeshiny.com/r-graph-catalog/ "R Graph Catalog"), which implements many of the plots from the book using ggplot2, I had to dig it out and give it some serious attention.
 
-<!-- more -->
+<!--more-->
 
 Both the book and web site are excellent resources if you are looking for informative ways to present your data.
 
@@ -30,7 +31,7 @@ This plot is broadly consistent with the data from the Public Data archive on Go
 
 I like the xkcd style plot though and here's the code for generating it, loosely derived from the code on the web site.
 
-{% highlight r %}
+{{< highlight r >}}
 > library(ggplot2)
 > library(xkcd)
 > 
@@ -53,4 +54,4 @@ I like the xkcd style plot though and here's the code for generating it, loosely
 + 	theme(legend.position = "none") +
 + 	ylab("Life Expectancy") +
 + 	xkcdaxis(c(1952, 2010), c(20, 83))
-{% endhighlight %}
+{{< / highlight >}}

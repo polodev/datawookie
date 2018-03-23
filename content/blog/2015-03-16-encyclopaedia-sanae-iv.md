@@ -1,13 +1,14 @@
 ---
+author: Andrew B. Collier
+categories:
+- Writing
+date: 2015-03-16T09:00:57Z
+guid: http://www.exegetic.biz/blog/?p=1208
 id: 1208
 title: 'Encyclopaedia: SANAE IV'
-date: 2015-03-16T09:00:57+00:00
-author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=1208
-categories:
-  - Writing
+url: /2015/03/16/encyclopaedia-sanae-iv/
 ---
+
 A contribution which I wrote for [Antarctica and the Arctic Circle: A Geographic Encyclopedia of the Earth's Polar Regions](http://www.amazon.com/gp/product/B00OD83J44/).
 
 <img src="{{ site.baseurl }}/static/img/2015/03/sanae-iv-A.jpg">

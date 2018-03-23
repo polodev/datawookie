@@ -1,18 +1,19 @@
 ---
-id: 812
-title: 'Comrades Marathon Pacing Chart: Down Run'
-date: 2014-05-28T16:24:19+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=812
 categories:
-  - Running
+- Running
+date: 2014-05-28T16:24:19Z
+guid: http://www.exegetic.biz/blog/?p=812
+id: 812
 tags:
-  - Comrades Marathon
-  - Excel
-  - Pacing Chart
-  - Spreadsheet
+- Comrades Marathon
+- Excel
+- Pacing Chart
+- Spreadsheet
+title: 'Comrades Marathon Pacing Chart: Down Run'
+url: /2014/05/28/personalised-comrades-marathon-pacing-chart/
 ---
+
 Although I have been thinking vaguely about my _Plan A_ goal of a Bill Rowan medal at the Comrades Marathon this year, I have not really put a rigorous pacing plan in place. I know from previous experience that I am likely to be quite a bit slower towards the end of the race. I also know that I am going to lose a few minutes at the start. So how fast does this mean I need to run in order to get from Pietermaritzburg to Durban in under 9 hours?
 
 Well, suppose that it takes me 3 minutes from the gun to get across the starting line. And, furthermore, assume that I will be running around 5% slower towards the end of the race. To still get to Durban under 9 hours I would need to run at roughly 5:52 per km at the beginning and gradually ease back to about 6:11 per km towards the end.

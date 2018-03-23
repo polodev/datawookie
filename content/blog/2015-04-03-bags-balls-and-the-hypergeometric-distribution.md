@@ -1,22 +1,22 @@
 ---
-id: 1302
-title: Bags, Balls and the Hypergeometric Distribution
-date: 2015-04-03T09:00:24+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
 - Data Science
 - Interesting Statistics
+date: 2015-04-03T09:00:24Z
+excerpt_separator: <!-- more -->
+id: 1302
 tags:
 - Binomial confidence interval
 - Hypergeometric distribution
 - '#rstats'
 - Statistics
 - Urn
+title: Bags, Balls and the Hypergeometric Distribution
+url: /2015/04/03/bags-balls-and-the-hypergeometric-distribution/
 ---
 
-<!-- more -->
+<!--more-->
 
 A friend came to me with a question. The original question was a little complicated, but in essence it could be explained in terms of the familiar [urn problem](http://en.wikipedia.org/wiki/Urn_problem). So, here's the problem: you have an urn with 50 white balls and 9 black balls. The black balls are individually numbered. Balls are drawn from the urn without replacement. What is the probability that
 
@@ -29,40 +29,40 @@ My colleague thought that this would be an _extremely_ rare event. My intuition 
 
 First we'll set up the parameters for the problem.
 
-{% highlight r %}
+{{< highlight r >}}
 > NBALLS = 59
 > NWHITE = 50
 > NBLACK = NBALLS - NWHITE
-{% endhighlight %}
+{{< / highlight >}}
 
 We can calculate the probabilities for each of the events independently. Let's start with Event 2 since it's simpler: the probability of selecting a particular ball from the urn.
 
-{% highlight r %}
+{{< highlight r >}}
 > P2 = 1 / NBALLS
 > P2
 [1] 0.01694915
-{% endhighlight %}
+{{< / highlight >}}
 
 The probability of Event 1 is a little more complicated. The [Hypergeometric distribution](http://en.wikipedia.org/wiki/Hypergeometric_distribution) describes the probability of achieving a specific number of successes in a specific number of draws from a finite population without replacement. It's precisely the distribution that we are after! We want to know the probability of drawing all of the white balls and all but one of the black balls, so that the last ball remaining is black.
 
-{% highlight r %}
+{{< highlight r >}}
 > P1 = dhyper(NWHITE, NWHITE, NBLACK, NBALLS-1)
 > P1
 [1] 0.1525424
-{% endhighlight %}
+{{< / highlight >}}
 
 I think that's where my intuition let me down, because my feeling was that this number should have been smaller. The joint probability for the two events is then around 0.26%.
 
-{% highlight r %}
+{{< highlight r >}}
 > P1 * P2
 [1] 0.002585464
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Simulation Approach
 
 Feeling a little uncomfortable with the theoretical result and suspecting that I might have done something rash with the Hypergeometric distribution, I decided to validate the result with a simulation.
 
-{% highlight r %}
+{{< highlight r >}}
 > BAG <- c(rep(NA, NWHITE), 1:NBLACK)
 > 
 > NSIM <- 1000000
@@ -83,14 +83,14 @@ Feeling a little uncomfortable with the theoretical result and suspecting that I
 > # NA -> either of these balls is white
 > #
 > hits <- ifelse(is.na(hits), FALSE, hits)
-{% endhighlight %}
+{{< / highlight >}}
 
 I also wanted to generate [Binomial confidence intervals](http://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval) for the simulated result.
 
-{% highlight r %}
+{{< highlight r >}}
 > library(binom)
 > stats <- binom.confint(x = cumsum(hits), n = 1:NSIM, methods = "wilson")
-{% endhighlight %}
+{{< / highlight >}}
 
 The simulated results are plotted below with the theoretical result indicated by the dashed line. The pale blue ribbon indicates the range of the 95% confidence interval.
 
@@ -100,7 +100,7 @@ Looks like both theory and simulation confirm that my intuition was wrong. I'd p
 
 Postscript: after the excitement of the Hypergeometric distribution had subsided, it occurred to me that the symmetry of the problem allowed for a simpler solution. The probability of Event 1 is actually the same as the probability of drawing any one of the black balls _first_ out of a full urn. Don't believe me?
 
-{% highlight r %}
+{{< highlight r >}}
 > NBLACK / NBALLS
 [1] 0.1525424
-{% endhighlight %}
+{{< / highlight >}}

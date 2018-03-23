@@ -1,25 +1,25 @@
 ---
-title: 'Creating an Amazon Machine Image'
-date: 2017-12-04T03:00:00+00:00
 author: Andrew B. Collier
-layout: post
+date: 2017-12-04T03:00:00Z
 excerpt_separator: <!-- more -->
 tags:
-  - Cloud
-  - AWS
+- Cloud
+- AWS
+title: Creating an Amazon Machine Image
+url: /2017/12/04/creating-amazon-machine-image/
 ---
 
 Creating an Amazon Machine Image (AMI) makes it quick and simple to rebuild a specific EC2 setup. This post illustrates the process by creating an AMI with `ethminer` and NVIDIA GPU drivers. Of course you'd never use this for mining Ether because the hardware costs are still too high!
 
-<!-- more -->
+<!--more-->
 
 ## Spin Up an Instance
 
 First we'll need to create an EC2 instance. We'll request a `g2.2xlarge` spot instance with the Ubuntu 16.04 base AMI. Once the request has been fulfilled and the instance is active we can connect via SSH.
 
-{% highlight text %}
+{{< highlight text >}}
 $ ssh ubuntu@ec2-34-224-101-229.compute-1.amazonaws.com
-{% endhighlight %}
+{{< / highlight >}}
 
 Now the fun begins.
 
@@ -27,15 +27,15 @@ Now the fun begins.
 
 Update the APT cache.
 
-{% highlight text %}
+{{< highlight text >}}
 $ sudo apt-get update -y
-{% endhighlight %}
+{{< / highlight >}}
 
 Install `make`, `gcc` and the kernel header files. We'll need these to build the NVIDIA driver.
 
-{% highlight text %}
+{{< highlight text >}}
 $ sudo apt-get install -y make gcc linux-headers-$(uname -r)
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Installing NVIDIA Driver
 
@@ -44,27 +44,27 @@ You can install these drivers from a PPA?
 
 Don't we have a post about installing these drivers already? I think it noted that there was a problem suspending laptop afterwards.
 
-{% highlight bash %}
+{{< highlight bash >}}
 sudo apt-get install nvidia-cuda-dev nvidia-cuda-toolkit nvidia-nsight
-{% endhighlight %}
+{{< / highlight >}}
 {% endcomment %}
 
 Download the NVIDIA drivers and run the installer.
 
-{% highlight text %}
+{{< highlight text >}}
 $ wget http://us.download.nvidia.com/XFree86/Linux-x86_64/367.106/NVIDIA-Linux-x86_64-367.106.run
 $ sudo /bin/bash ./NVIDIA-Linux-x86_64-367.106.run
-{% endhighlight %}
+{{< / highlight >}}
 
 Accept the license conditions. There will be a couple of warnings, which you can safely ignore. Choose to run `nvidia-xconfig`. When the installer has finished, reboot.
 
-{% highlight text %}
+{{< highlight text >}}
 $ sudo reboot
-{% endhighlight %}
+{{< / highlight >}}
 
 Obviously your connection will be broken during the reboot, so reconnect. Check that the drivers are installed and a GPU detected.
 
-{% highlight text %}
+{{< highlight text >}}
 $ nvidia-smi -q | head
 
 ==============NVSMI LOG==============
@@ -76,7 +76,7 @@ Attached GPUs                       : 1
 GPU 0000:00:03.0
     Product Name                    : GRID K520
     Product Brand                   : Grid
-{% endhighlight %}
+{{< / highlight >}}
 
 Looks good!
 
@@ -84,24 +84,24 @@ Looks good!
 
 Next we'll install `ethminer`. We could build it from source, but there's a precompiled binary available too, so let's go with that.
 
-{% highlight text %}
+{{< highlight text >}}
 $ wget https://github.com/ethereum-mining/ethminer/releases/download/v0.12.0/ethminer-0.12.0-Linux.tar.gz
-{% endhighlight %}
+{{< / highlight >}}
 
 Unpack and move the binary into a location on the execution path.
 
-{% highlight text %}
+{{< highlight text >}}
 $ tar -zxvf ethminer-0.12.0-Linux.tar.gz
 $ sudo mv bin/ethminer /usr/local/bin/
-{% endhighlight %}
+{{< / highlight >}}
 
 Check that it works.
 
-{% highlight text %}
+{{< highlight text >}}
 $ ethminer --version
 ethminer version 0.12.0
 Build: Linux/g++/Release
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Clean Up
 

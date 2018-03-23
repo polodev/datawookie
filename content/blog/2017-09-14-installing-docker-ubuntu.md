@@ -1,60 +1,60 @@
 ---
-title: 'Installing Docker on Ubuntu'
-date: 2017-09-14T05:00:00+00:00
 author: Andrew B. Collier
-excerpt_separator: <!-- more -->
-layout: post
 categories:
-  - Cloud
+- Cloud
+date: 2017-09-14T05:00:00Z
+excerpt_separator: <!-- more -->
 tags:
-  - Docker
-  - Ubuntu
-  - EC2
+- Docker
+- Ubuntu
+- EC2
+title: Installing Docker on Ubuntu
+url: /2017/09/14/installing-docker-ubuntu/
 ---
 
 This procedure works on both my laptop and a fresh EC2 instance.
 
-<!-- more -->
+<!--more-->
 
 1. Add the GPG key for Docker.
 
-{% highlight bash %}
+{{< highlight bash >}}
 curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg | sudo apt-key add -
-{% endhighlight %}
+{{< / highlight >}}
 
 {:start="2"}
 2. Add the details of the Docker repository.
 
-{% highlight bash %}
+{{< highlight bash >}}
 OSNAME=$(. /etc/os-release; echo "$ID")
 OSVERS=$(lsb_release -cs)
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/$OSNAME $OSVERS stable"
-{% endhighlight %}
+{{< / highlight >}}
 
 {:start="3"}
 3. Update the package index.
 
-{% highlight bash %}
+{{< highlight bash >}}
 sudo apt update
-{% endhighlight %}
+{{< / highlight >}}
 
 {:start="4"}
 4. Install the Community Edition package.
 
-{% highlight bash %}
+{{< highlight bash >}}
 sudo apt install docker-ce
-{% endhighlight %}
+{{< / highlight >}}
 
 {:start="5"}
 5. Test it.
 
-{% highlight bash %}
+{{< highlight bash >}}
 sudo docker run hello-world
-{% endhighlight %}
+{{< / highlight >}}
 
 The output from the test should look something like this:
 
-{% highlight text %}
+{{< highlight text >}}
 Unable to find image 'hello-world:latest' locally
 latest: Pulling from library/hello-world
 5b0f327be733: Pull complete 
@@ -80,13 +80,13 @@ Share images, automate workflows, and more with a free Docker ID:
 
 For more examples and ideas, visit:
  https://docs.docker.com/engine/userguide/
-{% endhighlight %}
+{{< / highlight >}}
 
 Note that the `docker` command currently requires superuser privileges. To allow `docker` for mere mortals, add their accounts to the `docker` group.
 
-{% highlight bash %}
+{{< highlight bash >}}
 sudo gpasswd -a ubuntu docker
-{% endhighlight %}
+{{< / highlight >}}
 
 On that user's next login the `docker` group will be added to their profile and they will be able to launch `docker` jobs.
 

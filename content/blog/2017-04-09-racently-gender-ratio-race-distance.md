@@ -1,16 +1,16 @@
 ---
-title: 'Relationship between Race Distance and Gender Ratio'
-date: 2017-04-09T09:00:00+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Running
+- Running
+date: 2017-04-09T09:00:00Z
+excerpt_separator: <!-- more -->
 tags:
-  - '#rstats'
+- '#rstats'
+title: Relationship between Race Distance and Gender Ratio
+url: /2017/04/09/racently-gender-ratio-race-distance/
 ---
 
-<!-- more -->
+<!--more-->
 
 In an article entitled "[Could women outrun men in ultramarathon races?](http://journals.lww.com/acsm-msse/pages/articleviewer.aspx?year=1997&issue=02000&article=00013&type=abstract)", Jenefer Bam and her collaborators explored the hypothesis that running performance of men and women converge with increasing race distance, and suggested that women have superior fatigue resistance.
 

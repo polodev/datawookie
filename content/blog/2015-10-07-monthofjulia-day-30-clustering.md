@@ -1,39 +1,39 @@
 ---
-id: 2135
-title: '#MonthOfJulia Day 30: Clustering'
-date: 2015-10-07T15:00:00+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Julia
+- Julia
+date: 2015-10-07T15:00:00Z
+excerpt_separator: <!-- more -->
+id: 2135
 tags:
-  - '#julialang'
-  - '#MonthOfJulia'
-  - cluster
-  - DBSCAN
-  - Julia
-  - k-means clustering
-  - k-medoids clustering
+- '#julialang'
+- '#MonthOfJulia'
+- cluster
+- DBSCAN
+- Julia
+- k-means clustering
+- k-medoids clustering
+title: '#MonthOfJulia Day 30: Clustering'
+url: /2015/10/07/monthofjulia-day-30-clustering/
 ---
 
-<!-- more -->
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2015/09/Julia-Logo-Clustering.png">
 
 Today we're going to look at the [Clustering](https://github.com/JuliaStats/Clustering.jl) package, the documentation for which can be found [here](http://clusteringjl.readthedocs.org/en/latest/). As usual, the first step is loading the package.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> using Clustering
-{% endhighlight %}
+{{< / highlight >}}
 
 We'll use the RDatasets package to select the [xclara](https://stat.ethz.ch/R-manual/R-devel/library/cluster/html/xclara.html) data and rename the columns in the resulting data frame.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> using RDatasets
 julia> xclara = dataset("cluster", "xclara");
 julia> names!(xclara, [symbol(i) for i in ["x", "y"]]);
-{% endhighlight %}
+{{< / highlight >}}
 
 Using Gadfly to generate a plot we can clearly see that there are three well defined clusters in the data.
 
@@ -41,26 +41,26 @@ Using Gadfly to generate a plot we can clearly see that there are three well def
 
 Next we need to transform the data into an Array and then transpose it so that each point lies in a separate column (remember that this is key to calculating distances!).
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> xclara = convert(Array, xclara);
 julia> xclara = xclara';
-{% endhighlight %}
+{{< / highlight >}}
 
 Before we can run the clustering algorithm we need to identify seed points which act as the starting locations for clusters. There are a number of options for doing this. We're simply going to choose three points in the data at random. How did we arrive at three starting points (as opposed to, say, six)? Well, in this case it was simply visual inspection: there appear to be three clear clusters in the data. When the data are more complicated (or have higher dimensionality) then choosing the number of clusters becomes a little more tricky.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> initseeds(:rand, xclara, 3)
 3-element Array{Int64,1}:
  2858
   980
  2800
-{% endhighlight %}
+{{< / highlight >}}
 
 Now we're ready to run the clustering algorithm. We'll start with [k-means clustering](https://en.wikipedia.org/wiki/K-means_clustering).
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> xclara_kmeans = kmeans(xclara, 3);
-{% endhighlight %}
+{{< / highlight >}}
 
 A quick plot will confirm that it has recognised the three clusters that we intuitively identified in the data.
 
@@ -68,7 +68,7 @@ A quick plot will confirm that it has recognised the three clusters that we intu
 
 We can have a look at the cluster centers, the number of points assigned to each cluster and (a subset of) the cluster assignments.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> xclara_kmeans.centers
 2x3 Array{Float64,2}:
   9.47805   69.9242  40.6836
@@ -90,17 +90,17 @@ julia> xclara_kmeans.assignments[1:10]
  2
  2
  2
-{% endhighlight %}
+{{< / highlight >}}
 
 The k-means algorithm is limited to using the Euclidean metric to calculate the distance between points. An alternative, [k-medoids clustering](https://en.wikipedia.org/wiki/K-medoids), is also supported in the Clustering package. The `kmedoids()` function accepts a distance matrix (from an arbitrary metric) as it's first argument, allowing for a far greater degree of flexibility.
 
 The final algorithm implemented by Clustering is [DBSCAN](http://en.wikipedia.org/wiki/DBSCAN), which is a density based clustering algorithm. In addition to a distance matrix, `dbscan()` also requires neighbourhood radius and the minimum number of points per cluster.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> using Distances
 julia> dclara = pairwise(SqEuclidean(), xclara);
 julia> xclara_dbscan = dbscan(dclara, 10, 40);
-{% endhighlight %}
+{{< / highlight >}}
 
 As is apparent from the plot below, DBSCAN results in a dramatically different set of clusters. The loosely packed blue points on the periphery of each of the three clusters have been identified as noise by the DBSCAN algorithm. Only the high density cores of these clusters are now separately identified.
 

@@ -1,13 +1,13 @@
 ---
+author: Andrew B. Collier
+date: 2016-03-19T04:31:59Z
+excerpt_separator: <!-- more -->
 id: 3390
 title: Discount on Packt Books
-date: 2016-03-19T04:31:59+00:00
-author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
+url: /2016/03/19/offer-on-packt-books/
 ---
 
-<!-- more -->
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2016/03/packt-discount-20160318.png" >
 

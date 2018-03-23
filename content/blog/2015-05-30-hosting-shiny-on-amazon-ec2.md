@@ -1,18 +1,16 @@
 ---
-id: 1466
-title: Hosting Shiny on Amazon EC2
-date: 2015-05-30T11:41:36+00:00
 author: Andrew B. Collier
-layout: post
+date: 2015-05-30T11:41:36Z
 excerpt_separator: <!-- more -->
+id: 1466
 tags:
-  - AWS
-  - EC2
-  - '#rstats'
-  - Shiny
+- AWS
+- EC2
+- '#rstats'
+- Shiny
+title: Hosting Shiny on Amazon EC2
+url: /2015/05/30/hosting-shiny-on-amazon-ec2/
 ---
-
-
 
 <!--
 NEW INFORMATION:
@@ -22,7 +20,7 @@ https://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean/
 
 I recently finished some work on a Shiny application which incorporated a Random Forest model. The model was stored in a RData file and loaded by server.R during initialisation. This worked fine when tested locally but when I tried to deploy the application on [shinyapps.io](https://www.shinyapps.io/) I ran into a problem: evidently you can only upload server.R and ui.R files. Nothing else.
 
-<!-- more -->
+<!--more-->
 
 Bummer.
 
@@ -68,9 +66,9 @@ At any later time the status of your running instance(s) can be inspected from t
 
 Now in order to install R and Shiny we need to login to our instance via SSH. In the command below you would need to substitute the name of your key file and also the Public DNS of your instance as the host name (the latter is available from the EC2 Dashboard).
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ ssh -i AWS-key.pem ubuntu@ec2-57-29-93-35.us-west-2.compute.amazonaws.com
-{% endhighlight %}
+{{< / highlight >}}
 
 More detailed information on SSH access can be found [here](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html).
 
@@ -78,11 +76,11 @@ More detailed information on SSH access can be found [here](http://docs.aws.amaz
 
 Once you have the SSH connection up and running, execute the following on your remote instance:
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ sudo apt-get update  
 $ sudo apt-get install r-base  
 $ sudo apt-get install r-base-dev
-{% endhighlight %}
+{{< / highlight >}}
 
 More in depth information on running R on AWS can be found [here](http://blogs.aws.amazon.com/bigdata/post/Tx3IJSB6BMHWZE5/Running-R-on-AWS).
 
@@ -90,16 +88,16 @@ More in depth information on running R on AWS can be found [here](http://blogs.a
 
 To install the Shiny R package, execute the following on your remote instance:
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ sudo su - -c "R -e \"install.packages('shiny', repos = 'http://cran.rstudio.com/')\""
-{% endhighlight %}
+{{< / highlight >}}
 
 Next you need to install the Shiny server. Take a look at the [Shiny Server download page](https://www.rstudio.com/products/shiny/download-server/) to get the URL for the latest version of the package.
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ wget https://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.5.6.875-amd64.deb
 $ sudo dpkg -i shiny-server-1.5.6.875-amd64.deb
-{% endhighlight %}
+{{< / highlight >}}
   
 During the installation a directory `/srv/shiny-server/` will have been created, where your applications will be stored. Configuration options are given in `/etc/shiny-server/shiny-server.conf`.
 
@@ -111,14 +109,14 @@ Transfer your applications across to the remote instance using sftp or scp. Then
 
 The structure of the `/srv/shiny-server/` should be something like this:
 
-{% highlight text %}
+{{< highlight text >}}
 $ tree /srv/shiny-server/
 .
 ├── index.html -> /opt/shiny-server/samples/welcome.html
 ├── medal-predictions
 │   └── app.R
 └── sample-apps -> /opt/shiny-server/samples/sample-apps
-{% endhighlight %}
+{{< / highlight >}}
 
 Every application folder should have a `app.R` file.
 

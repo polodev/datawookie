@@ -1,12 +1,10 @@
 ---
-id: 1428
-title: 'Recent Common Ancestors: Simple Model'
-date: 2015-05-15T11:35:53+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
 - Science
+date: 2015-05-15T11:35:53Z
+excerpt_separator: <!-- more -->
+id: 1428
 tags:
 - boxplot
 - genealogical
@@ -16,10 +14,13 @@ tags:
 - model
 - '#rstats'
 - simulation
+title: 'Recent Common Ancestors: Simple Model'
+url: /2015/05/15/recent-common-ancestors/
 ---
+
 An interesting paper ([Modelling the recent common ancestry of all living humans](http://www.nature.com/nature/journal/v431/n7008/full/nature02842.html), Nature, 431, 562–566, 2004) by Rohde, Olson and Chang concludes with the words:
 
-<!-- more -->
+<!--more-->
 
 <blockquote>
 Further work is needed to determine the effect of this common ancestry on patterns of genetic variation in structured populations. But to the extent that ancestry is considered in genealogical rather than genetic terms, our findings suggest a remarkable proposition: no matter the languages we speak or the colour of our skin, we share ancestors who planted rice on the banks of the Yangtze, who first domesticated horses on the steppes of the Ukraine, who hunted giant sloths in the forests of North and South America, and who laboured to build the Great Pyramid of Khufu.
@@ -41,7 +42,7 @@ At first sight this appears to be an extremely crude and abstract model. However
 
 First we'll need a couple of helper functions to neatly generate labels for generations (G) and individuals (I).
 
-{% highlight r %}
+{{< highlight r >}}
 > label.individuals <- function(N) {
 +   paste("I", str_pad(1:N, 2, pad = "0"), sep = "")
 + }
@@ -52,13 +53,13 @@ First we'll need a couple of helper functions to neatly generate labels for gene
 > 
 > make.generation(3, 5)
 [1] "G05/I01" "G05/I02" "G05/I03"
-{% endhighlight %}
+{{< / highlight >}}
 
 Each indivual is identified by a label of the form "G05/I01", which gives the generation number and also the specific identifier within that generation.
 
 Next we'll have a function to generate the random links between individuals in successive generations. The function will take two arguments: the number of individuals per generation and the number of ancestor generations (those prior to the "current" generation).
 
-{% highlight r %}
+{{< highlight r >}}
 > # N - number of people per generation
 > # G - number of ancestor generations (there will be G+1 generations!)
 > #
@@ -85,13 +86,13 @@ Next we'll have a function to generate the random links between individuals in s
 8  G02/I01  G01/I01
 9  G02/I01  G01/I02
 10 G02/I02  G01/I02
-{% endhighlight %}
+{{< / highlight >}}
 
 So, for example, the data generated above links the child node G00/I01 (individual 1 in generation 0) to two parent nodes, G01/I02 and G01/I01 (individuals 1 and 2 in generation 1).
 
 Finally we'll wrap all of that up in a graph-like object.
 
-{% highlight r %}
+{{< highlight r >}}
 > library(igraph)
 > generate.nodes <- function(N, G) {
 +   lapply(0:G, function(g) make.generation(N, g))
@@ -114,7 +115,7 @@ Finally we'll wrap all of that up in a graph-like object.
 +   #
 +   net
 + }
-{% endhighlight %}
+{{< / highlight >}}
 
 Let's give it a whirl on a graph consisting of 10 ancestor generations (11 generations including the current generation) and 8 individuals per generation. The result is plotted below with the oldest generation (G10) at the top and the current generation (G00) at the bottom. The edges indicate parent/progeny links.
 
@@ -122,17 +123,17 @@ Let's give it a whirl on a graph consisting of 10 ancestor generations (11 gener
 
 Okay, so it looks like all of the infrastructure is in place. Now we need to put together the functionality for analysing the relationships between generations. We are really only interested in how any one of the ancestor generations relates to the current generation, which makes things a little simpler. First we write a function to calculate the number of steps from an arbitrary node (identified by label) to each of the nodes in the current generation. This is simplified by the fact that igraph already has a shortest.path() function.
 
-{% highlight r %}
+{{< highlight r >}}
 > generation.descendants <- function(net, node) {
 +   present.generation <- first(net$generations)
 +   #
 +   shortest.paths(net, v = node, to = present.generation, mode = "out")
 + }
-{% endhighlight %}
+{{< / highlight >}}
 
 Next a pair of helper functions which indicate whether a particular node is a CA of all nodes in the current generation or if it has gone extinct. Node G03/I08 in the above graph is an example of an extinct node since it has no child nodes.
 
-{% highlight r %}
+{{< highlight r >}}
 > common.ancestor <- function(net, node) {
 +   all(is.finite(generation.descendants(net, node)))
 + }
@@ -140,11 +141,11 @@ Next a pair of helper functions which indicate whether a particular node is a CA
 > extinct <- function(net, node) {
 +   all(is.infinite(generation.descendants(net, node)))
 + }
-{% endhighlight %}
+{{< / highlight >}}
 
 Let's test those. We'll generate another small graph for the test.
 
-{% highlight r %}
+{{< highlight r >}}
 > set.seed(1)
 > #
 > net <- generate.graph(3, 5)
@@ -172,11 +173,11 @@ G02/I03       2     Inf       2
 G03/I01     Inf     Inf     Inf
 > extinct(net, "G03/I01")
 [1] TRUE
-{% endhighlight %}
+{{< / highlight >}}
 
 It would also be handy to have a function which gives the distance from every node in a particular generation to each of the nodes in the current generation.
 
-{% highlight r %}
+{{< highlight r >}}
 > generation.distance <- function(net, g) {
 +   current.generation <- net$generations[[g+1]]
 +   #
@@ -187,13 +188,13 @@ It would also be handy to have a function which gives the distance from every no
 G03/I01     Inf     Inf     Inf
 G03/I02       3       3       3
 G03/I03       3       3       3
-{% endhighlight %}
+{{< / highlight >}}
 
 So here we see that G03/I02 and G03/I03 are both ancestors of each of the individuals in the current generation, while G03/I01 has gone extinct.
 
 Finally we can pull all of this together with a single function that classifies individuals in previous generations according to whether they are an ancestor of at least one but not all of the current generation; a common ancestor of all of the current generation; or extinct.
 
-{% highlight r %}
+{{< highlight r >}}
 > classify.generation <- function(net, g) {
 +   factor(apply(generation.distance(net, g), 1, function(p) {
 +     ifelse(all(is.infinite(p)), 1, ifelse(all(is.finite(p)), 2, 0))
@@ -203,7 +204,7 @@ Finally we can pull all of this together with a single function that classifies 
 G03/I01 G03/I02 G03/I03 
 extinct  common  common 
 Levels: ancestor extinct common
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Results {#results}
 

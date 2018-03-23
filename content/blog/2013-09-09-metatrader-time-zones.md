@@ -1,18 +1,19 @@
 ---
-id: 460
-title: MetaTrader Time Zones
-date: 2013-09-09T14:43:38+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - FOREX
-  - Trading
+- FOREX
+- Trading
+date: 2013-09-09T14:43:38Z
+excerpt_separator: <!-- more -->
+id: 460
 tags:
-  - MetaTrader
-  - MQL4
-  - time zone
+- MetaTrader
+- MQL4
+- time zone
+title: MetaTrader Time Zones
+url: /2013/09/09/metatrader-time-zones/
 ---
+
 Time zones on MetaTrader can be slightly confusing. There are two important time zones:
 
 * the time zone of the broker's server and
@@ -20,7 +21,7 @@ Time zones on MetaTrader can be slightly confusing. There are two important time
 
 And these need not be the same.
 
-<!-- more -->
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2013/09/Workspace-2_050.png">
 

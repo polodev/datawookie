@@ -1,20 +1,21 @@
 ---
-id: 321
-title: Comrades Marathon Inference Trees
-date: 2013-07-19T07:55:11+00:00
 author: Andrew B. Collier
-layout: post
+date: 2013-07-19T07:55:11Z
 excerpt_separator: <!-- more -->
+id: 321
 tags:
-  - Comrades Marathon
-  - Conditional Inference Tree
-  - '#rstats'
+- Comrades Marathon
+- Conditional Inference Tree
+- '#rstats'
+title: Comrades Marathon Inference Trees
+url: /2013/07/19/comrades-marathon-inference-trees/
 ---
+
 Following up on my [previous posts](http://www.exegetic.biz/blog/tag/comrades-marathon/)&nbsp;regarding the results of the [Comrades Marathon](http://www.comrades.com/), I was planning on putting together a set of models which would predict likelihood to finish and probable finishing time. Along the way I got distracted by something else that is just as interesting and which produces results which readily yield to qualitative interpretation: Conditional Inference Trees as implemented in the R package [party](http://www.inside-r.org/packages/cran/party/docs/ctree).
 
 Just to recall what the data look like:
 
-{% highlight r %}
+{{< highlight r >}}
 > head(splits.2013)
            gender age.category drummond.time race.time   status       medal
 2013-10014   Male        50-59      5.510833        NA      DNF        <NA>
@@ -23,13 +24,13 @@ Just to recall what the data look like:
 2013-10031   Male        20-29      4.910833  10.94833 Finished      Bronze
 2013-10047   Male        50-59      5.076944  10.72778 Finished      Bronze
 2013-10049   Male        50-59      5.729444        NA      DNF        <NA>
-{% endhighlight %}
+{{< / highlight >}}
 
 Here the drummond.time and finish.time fields are expressed in decimal hours and correspond to the time taken to reach the half-way mark and the finish respectively. The status field indicates whether a runner finished the race or did not finish (DNF).
 
 I am going to consider two models. The first will look at the probability of finishing and the second will look at the distribution of medals. The features which will be used to predict these outcomes will be gender, age category and half-way time at Drummond. To build the first model, first load the party library and then call ctree.
 
-{% highlight r %}
+{{< highlight r >}}
 > library(party)
 > tree.status = ctree(status ~ gender + age.category + drummond.time, data = splits.2013,
 +                     control = ctree_control(minsplit = 750))
@@ -90,13 +91,13 @@ Number of observations:  13917
         32)*  weights = 475 
     29) drummond.time > 5.940556
       33)*  weights = 694 
-{% endhighlight %}
+{{< / highlight >}}
 
 There is a deluge of information in the textual representation of the model. Making sense of this is a lot easier with a plot.
 
-{% highlight r %}
+{{< highlight r >}}
 > plot(tree.status)
-{% endhighlight %}
+{{< / highlight >}}
 
 The image below is a little small. You will want to click on it to bring up a larger version.
 
@@ -108,15 +109,15 @@ Rummaging around in this tree, there is a lot of interesting information to be f
 
 Constructing a model for medal allocation is done in a similar fashion.
 
-{% highlight r %}
+{{< highlight r >}}
 > splits.2013.finishers = subset(splits.2013, status == "Finished" & !is.na(medal))
 > #
 > levels(splits.2013.finishers$medal) <- c("G", "WH", "S", "BR", "B", "VC")
-{% endhighlight %}
+{{< / highlight >}}
 
 Here I first extracted the subset of runners who finished the race (and for whom I have information on the medal allocated). Then, to make the plotting a little easier, the names of the levels in the medal factor are changed to a more compact representation.
 
-{% highlight r %}
+{{< highlight r >}}
 > tree.medal = ctree(medal ~ gender + age.category + drummond.time, data = splits.2013.finishers,
 +                    control = ctree_control(minsplit = 750))
 > tree.medal
@@ -182,13 +183,13 @@ Number of observations:  10221
           36)*  weights = 277 
       33) drummond.time > 5.409722
         37)*  weights = 1763 
-{% endhighlight %}
+{{< / highlight >}}
 
 Apologies for the bit of information overload. A plot brings out the salient information though.
 
-{% highlight r %}
+{{< highlight r >}}
 > plot(tree.medal)
-{% endhighlight %}
+{{< / highlight >}}
 
 Again you will want to click on the image below to make it legible.
 

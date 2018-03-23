@@ -1,19 +1,19 @@
 ---
-title: 'Creating a S3 Bucket'
-date: 2017-09-14T05:00:00+00:00
 author: Andrew B. Collier
-excerpt_separator: <!-- more -->
-layout: post
 categories:
-  - Cloud
+- Cloud
+date: 2017-09-14T05:00:00Z
+excerpt_separator: <!-- more -->
 tags:
-  - AWS
-  - S3
+- AWS
+- S3
+title: Creating a S3 Bucket
+url: /2017/09/14/creating-s3-bucket/
 ---
 
 There are many good reasons to use S3 (Simple Storage Service) storage. This is a quick overview of how to create a S3 bucket.
 
-<!-- more -->
+<!--more-->
 
 ## Creating the S3 Bucket
 

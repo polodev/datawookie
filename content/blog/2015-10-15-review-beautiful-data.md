@@ -1,21 +1,21 @@
 ---
-id: 2059
-title: 'Review: Beautiful Data'
-date: 2015-10-15T16:00:39+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
 - Book Review
 - Review
+date: 2015-10-15T16:00:39Z
+excerpt_separator: <!-- more -->
+id: 2059
 tags:
 - '#rlang'
 - '#rstats'
 - Data
 - Python
+title: 'Review: Beautiful Data'
+url: /2015/10/15/review-beautiful-data/
 ---
 
-<!-- more -->
+<!--more-->
 
 I've just finished reading [Beautiful Data](http://shop.oreilly.com/product/9780596157128.do) (published by O'Reilly in 2009), a collection of essays edited by Toby Segaran and Jeff Hammerbacher. The 20 essays from 39 contributors address a diverse array of topics relating to data and how it's collected, analysed and interpreted.
 
@@ -57,9 +57,9 @@ Coco Krumme provides a somewhat dissenting view, writing about the limitations o
 14. _Natural Language Corpus Data_   
 This is probably the most technical chapter in the book. Peter Norvig gives a tutorial on Natural Language Processing (NLP) with sample code in Python. He certainly provides enough information to get you up and running with NLP. He also points out a number of potential gotchas and ways to get around them. 
 15. _Life in Data: The Story of DNA_
-{% highlight c %}
+{{< highlight c >}}
 char(3*10^9) human_genome;
-{% endhighlight %}
+{{< / highlight >}}
 I'm not sure why, but that snippet of code really amused me. Great way of capturing an obscure biological fact in a form which resonates with my inner geek.
 
 {:start="16"}

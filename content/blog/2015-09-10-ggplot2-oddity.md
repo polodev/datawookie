@@ -1,20 +1,20 @@
 ---
-id: 2144
-title: A ggplot2 oddity
-date: 2015-09-10T12:32:20+00:00
 author: Andrew B. Collier
-layout: post
+date: 2015-09-10T12:32:20Z
 excerpt_separator: <!-- more -->
+id: 2144
 tags:
-  - '#rstats'
-  - ggplot2
+- '#rstats'
+- ggplot2
+title: A ggplot2 oddity
+url: /2015/09/10/ggplot2-oddity/
 ---
 
-<!-- more -->
+<!--more-->
 
 I uncovered something a little perplexing today. It helped me waste 20 minutes or so. Well, I wasted some time trying to understand the problem, but I learned something in the process. Here's the situation (reduced to a very simple use case): I have some data and a function which calls `ggplot()`.
 
-{% highlight r %}
+{{< highlight r >}}
 > points <- data.frame(x = 1:10, y = 1:10)
 > 
 > library(ggplot2)
@@ -23,27 +23,27 @@ I uncovered something a little perplexing today. It helped me waste 20 minutes o
 + 	ggplot(points, aes(x = x, y = y)) + geom_point()
 + }
 > make.plot()
-{% endhighlight %}
+{{< / highlight >}}
 
 That works perfectly. But suppose I define a local variable within the function and I use it to transform the plotted data.
 
-{% highlight r %}
+{{< highlight r >}}
 > make.plot = function() {
 + 	p = 5
 + 	ggplot(points, aes(x = x, y = y / p)) + geom_point()
 + }
 > make.plot()
 Error in eval(expr, envir, enclos) : object 'p' not found
-{% endhighlight %}
+{{< / highlight >}}
 
 Whoops! That breaks. The problem is that `ggplot()` is looking in the global environment for the variable in question. It does not see the local environment. Thanks to some [helpful posts](http://stackoverflow.com/questions/5106782/use-of-ggplot-within-another-function-in-r) on stackoverflow, I have a solution: simply pass the local environment into the `ggplot()` call.
 
-{% highlight r %}
+{{< highlight r >}}
 > make.plot = function() {
 + 	p = 5
 + 	ggplot(points, aes(x = x, y = y / p), environment = environment()) + geom_point()
 + }
 > make.plot()
-{% endhighlight %}
+{{< / highlight >}}
   
 Works like a charm.

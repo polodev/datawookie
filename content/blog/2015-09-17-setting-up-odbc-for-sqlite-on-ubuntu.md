@@ -1,30 +1,31 @@
 ---
-id: 2248
-title: Setting up ODBC for SQLite on Ubuntu
-date: 2015-09-17T05:39:01+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Linux
-  - SQL
+- Linux
+- SQL
+date: 2015-09-17T05:39:01Z
+excerpt_separator: <!-- more -->
+id: 2248
 tags:
-  - ODBC
-  - SQL
-  - SQLite
-  - Ubuntu
+- ODBC
+- SQL
+- SQLite
+- Ubuntu
+title: Setting up ODBC for SQLite on Ubuntu
+url: /2015/09/17/setting-up-odbc-for-sqlite-on-ubuntu/
 ---
+
 First install the SQLiteODBC and unixODBC packages. Have a quick look at the documentation for [unixODBC](http://www.unixodbc.org/odbcinst.html) and [SQLiteODBC](http://ch-werner.de/sqliteodbc/html/index.html).
 
-<!-- more -->
+<!--more-->
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ sudo apt-get install libsqliteodbc unixodbc
-{% endhighlight %}
+{{< / highlight >}}
 
 After the install you'll have a a `/etc/odbcinst.ini` file which will look something like this:
 
-{% highlight text %}
+{{< highlight text >}}
 [SQLite]
 Description=SQLite ODBC Driver
 Driver=libsqliteodbc.so
@@ -36,23 +37,23 @@ Description=SQLite3 ODBC Driver
 Driver=libsqlite3odbc.so
 Setup=libsqlite3odbc.so
 UsageCount=1
-{% endhighlight %}
+{{< / highlight >}}
 
 Next you need to set up a [DSN](https://en.wikipedia.org/wiki/Data_source_name) entry for your SQLite database. You'll edit your `~/.odbc.ini` file to resemble this:
 
-{% highlight text %}
+{{< highlight text >}}
 [passwd]
 Description = Password Database
 Driver = SQLite3
 Database = /home/colliera/passwd.sqlite
 Timeout = 2000
-{% endhighlight %}
+{{< / highlight >}}
 
 Obviously the name, description and path for your database file will differ.
 
 Right, we're ready to use `isql` to open the database and execute queries.
 
-{% highlight sql %}
+{{< highlight sql >}}
 $ isql -m20 passwd
 +---------------------------------------+
 | Connected!                            |
@@ -79,4 +80,4 @@ SQL> select username, UID, GID from passwd limit 10;
 +---------------------+---------------------+---------------------+
 SQLRowCount returns 0
 10 rows fetched
-{% endhighlight %}
+{{< / highlight >}}

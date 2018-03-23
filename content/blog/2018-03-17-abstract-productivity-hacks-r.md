@@ -1,13 +1,13 @@
 ---
-title: 'Productivity Hacks for R'
-date: 2018-03-17T05:30:00+00:00
 author: Andrew B. Collier
-excerpt_separator: <!-- more -->
-layout: post
 categories:
-  - Conference
+- Conference
+date: 2018-03-17T05:30:00Z
+excerpt_separator: <!-- more -->
 tags:
-  - Talk
+- Talk
+title: Productivity Hacks for R
+url: /2018/03/17/abstract-productivity-hacks-r/
 ---
 
 <div class="talk">

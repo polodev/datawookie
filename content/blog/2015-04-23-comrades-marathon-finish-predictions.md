@@ -1,21 +1,21 @@
 ---
-id: 1353
-title: Comrades Marathon Finish Predictions
-date: 2015-04-23T12:06:49+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Running
+- Running
+date: 2015-04-23T12:06:49Z
+excerpt_separator: <!-- more -->
+id: 1353
 tags:
-  - Comrades Marathon
-  - linear model
-  - Power Laws
-  - prediction
-  - '#rstats'
+- Comrades Marathon
+- linear model
+- Power Laws
+- prediction
+- '#rstats'
+title: Comrades Marathon Finish Predictions
+url: /2015/04/23/comrades-marathon-finish-predictions/
 ---
 
-<!-- more -->
+<!--more-->
 
 _* If you see a bunch of <font color="red">[Math Processing Error]</font> errors, you might want to try opening the page in a different browser. I have had some trouble with MathJax and Internet Explorer. Yet another reason to never use Windows._
 
@@ -47,7 +47,7 @@ I compiled my data for the last three years based on the records kept by my trus
 
 At first glance it looks like you could fit a straight line through those points. And you can, indeed, make a pretty decent linear fit.
 
-{% highlight r %}
+{{< highlight r >}}
 > fit <- lm(TimeHours ~ Distance, data = training)
 > 
 > summary(fit)
@@ -69,7 +69,7 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 Residual standard error: 0.1394 on 442 degrees of freedom
 Multiple R-squared:  0.9687,	Adjusted R-squared:  0.9686 
 F-statistic: 1.367e+04 on 1 and 442 DF,  p-value: < 2.2e-16
-{% endhighlight %}
+{{< / highlight >}}
 
 However, applying a logarithmic transform to both axes gives a more uniform distribution of the data, which also now looks more linear.
 
@@ -98,7 +98,7 @@ which is Riegel's formula with an unspecified value for the exponent. We'll call
 
 How do we get a value for the fatigue factor? Well, by fitting the data, of course!
 
-{% highlight r %}
+{{< highlight r >}}
 > fit <- lm(log(TimeHours) ~ log(Distance), data = training)
 > 
 > summary(fit)
@@ -120,7 +120,7 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 Residual standard error: 0.09424 on 442 degrees of freedom
 Multiple R-squared:  0.9729,	Adjusted R-squared:  0.9728 
 F-statistic: 1.584e+04 on 1 and 442 DF,  p-value: < 2.2e-16
-{% endhighlight %}
+{{< / highlight >}}
 
 The fitted value for the exponent is 1.05 (rounding up), which is pretty close to the value in Riegel's formula. The fitted model is included in the logarithmic plot above as the solid line, with the 95% prediction confidence interval indicated by the coloured ribbon. The linear plot below shows the data points used for training the model, the fit and confidence interval as well as dotted lines for constant paces ranging from 04:00 per km to 07:00 per km.
 
@@ -128,12 +128,12 @@ The fitted value for the exponent is 1.05 (rounding up), which is pretty close t
 
 Our model also provides us with an indication of the uncertainty in the fitted exponent: the 95% confidence interval extends from 1.029 to 1.062.
 
-{% highlight r %}
+{{< highlight r >}}
 > confint(fit)
                   2.5 %    97.5 %
 (Intercept)   -2.558264 -2.487074
 log(Distance)  1.029142  1.061794
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Estimating the Fatigue Factor
 
@@ -147,7 +147,7 @@ To get around this problem, I employed a bootstrap technique, creating a large n
 
 According to this analysis, my personal fatigue factor is around 1.07 (the median value indicated by the dashed line in the plot above). The Shapiro-Wilk test suggests that the data is sufficiently non-Normal to justify a non-parameteric estimate of the 95% confidence interval for the fatigue factor, which runs from 1.03 to 1.11.
 
-{% highlight r %}
+{{< highlight r >}}
 > shapiro.test(fatigue.factor)
 
 	Shapiro-Wilk normality test
@@ -160,7 +160,7 @@ W = 0.9824, p-value = 1.435e-12
 > quantile(fatigue.factor, c(0.025, 0.975))
     2.5%    97.5% 
 1.030617 1.107044 
-{% endhighlight %}
+{{< / highlight >}}
 
 Riegel's analysis also lead to a range of values for the fatigue factor. As can be seen from the table below (extracted from his paper), the values range from 1.01 for Nordic skiing to 1.14 for roller skating. Values for running range from 1.05 to 1.08 depending on age group and gender.
 

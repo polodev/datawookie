@@ -1,23 +1,23 @@
 ---
-id: 3790
-title: "Calculating Pi using Buffon's Needle"
-date: 2016-07-26T15:00:18+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=3790
-excerpt_separator: <!-- more -->
 categories:
-  - Statistics
+- Statistics
+date: 2016-07-26T15:00:18Z
+excerpt_separator: <!-- more -->
+guid: http://www.exegetic.biz/blog/?p=3790
+id: 3790
 tags:
-  - '#rstats'
-  - "Buffon's Needle"
+- '#rstats'
+- Buffon's Needle
+title: Calculating Pi using Buffon's Needle
+url: /2016/07/26/calculating-pi-using-buffons-needle/
 ---
 
-<!-- more -->
+<!--more-->
 
 I put together this example to illustrate some general R programming principles for my Data Science class at [iXperience](http://ixperience.co.za/). The idea is to use [Buffon's Needle](https://en.wikipedia.org/wiki/Buffon%27s_needle) to generate a stochastic estimate for pi.
 
-{% highlight r %}
+{{< highlight r >}}
 > #' Exploit symmetry to limit range of centre position and angle.
 > #'
 > #' @param l needle length.
@@ -50,7 +50,7 @@ I put together this example to illustrate some general R programming principles 
 + n = 1:N,
 + pi = 2 \* L / T / cumsum(cross) \* (1:N)
 + ) %>% subset(is.finite(pi))
-{% endhighlight %}
+{{< / highlight >}}
 
 Here are the results (click on the image for an interactive version). The orange line is the reference value and the blue line represents the results of the computation.
 

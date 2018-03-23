@@ -1,20 +1,21 @@
 ---
-id: 3980
-title: 'PLOS Subject Keywords: Gathering Data'
-date: 2016-08-24T15:00:40+00:00
 author: Andrew B. Collier
-layout: post
+date: 2016-08-24T15:00:40Z
 excerpt_separator: <!-- more -->
+id: 3980
 tags:
 - '#rstats'
 - Association Rules
 - Collaborative Filtering
 - PLOS
 - rplos
+title: 'PLOS Subject Keywords: Gathering Data'
+url: /2016/08/24/plos-subjects-gathering-data/
 ---
+
 I'm putting together a couple of articles on Collaborative Filtering and Association Rules. Naturally, the first step is finding suitable data for illustrative purposes.
 
-<!-- more -->
+<!--more-->
 
 There are a number of standard data sources for these kinds of analyses:
 
@@ -52,25 +53,25 @@ We're going to retrieve a load of data from PLOS. But, just to set the scene, le
 
 We'll be using the [rplos](https://cran.r-project.org/web/packages/rplos/index.html) package to access data via the PLOS API. A search through the PLOS catalog is initiated using `searchplos()`. To access the article above we'd just specify the appropriate DOI using the `q` (query) argument, while the fields in the result are determined by the `fl` argument.
 
-{% highlight r %}
+{{< highlight r >}}
 > library(rplos)
 > partridge <- searchplos(q = "id:10.1371/journal.pone.0159765",
 +                         fl = 'id,author,publication_date,subject,journal')$data
-{% endhighlight %}
+{{< / highlight >}}
 
 The journal, publication date and author data are easy to consume.
 
-{% highlight r %}
+{{< highlight r >}}
 > partridge$id
 [1] "10.1371/journal.pone.0159765"
 > partridge[, 3:5]
    journal     publication_date                                       author
 1 PLOS ONE 2016-08-10T00:00:00Z Jesús Nadal; Carolina Ponz; Antoni Margalida
-{% endhighlight %}
+{{< / highlight >}}
 
 The subject keywords are conflated into a single string, making them more difficult to digest.
 
-{% highlight r %}
+{{< highlight r >}}
 > partridge$subject %>% cat
 /Biology and life sciences/Population biology/Population dynamics;
 /Ecology and environmental sciences/Conservation science;
@@ -81,7 +82,7 @@ The subject keywords are conflated into a single string, making them more diffic
 /Biology and life sciences/Population biology/Population metrics/Population density;
 /Biology and life sciences/Organisms/Animals/Vertebrates/Amniotes/Birds;
 /Biology and life sciences/Organisms/Animals/Vertebrates/Amniotes/Birds/Fowl/Gamefowl/Partridges
-{% endhighlight %}
+{{< / highlight >}}
 
 Here's an extract from the [documentation about subject keywords](http://journals.plos.org/plosone/s/help-using-this-site#loc-subject-areas) which helps make sense of that.
 
@@ -91,7 +92,7 @@ The Subject Area terms are related to each other with a system of broader/narrow
 
 We'll use the most specific terms in each of the subjects. It'd be handy to have a function to extract these systematically from a bunch of articles.
 
-{% highlight r %}
+{{< highlight r >}}
 > library(dplyr)
 > 
 > options(stringsAsFactors = FALSE)
@@ -102,11 +103,11 @@ We'll use the most specific terms in each of the subjects. It'd be handy to have
 +     summarise(count = n()) %>%
 +     ungroup
 + }
-{% endhighlight %}
+{{< / highlight >}}
 
 So, for the article above we get the following subjects:
 
-{% highlight r %}
+{{< highlight r >}}
 > split.subject(partridge$subject)
 # A tibble: 8 x 2
                subject count
@@ -119,7 +120,7 @@ So, for the article above we get the following subjects:
 6            Predation     2
 7                 Rain     1
 8              Weather     1
-{% endhighlight %}
+{{< / highlight >}}
 
 Those tie up well with what we saw on the home page for the article. We see that all of the terms except Predation appear only once. There are two entries for Predation, one in category "Ecology and environmental sciences" and the other in "Biology and life sciences". We can't really interpret these entries as ratings. They should rather be thought of as interactions. At some stage we might transform them into Boolean values, but for the moment we'll leave them as interaction counts.
 
@@ -132,14 +133,14 @@ Some data is collected explicitly, perhaps by asking people to rate things, and 
 
 We'll need a lot more data to do anything meaningful. So let's use the same infrastructure to grab a few thousand articles.
 
-{% highlight r %}
+{{< highlight r >}}
 > dim(articles)
 [1] 185984      5
-{% endhighlight %}
+{{< / highlight >}}
 
 Parsing the `subject` column and aggregating the results we get a data frame with counts of the number of times a particular subject keyword is associated with each article.
 
-{% highlight r %}
+{{< highlight r >}}
 > subjects <- lapply(1:nrow(articles), function(n) {
 +   cbind(doi = articles$id[n],
 +         journal = articles$journal[n],
@@ -149,11 +150,11 @@ Parsing the `subject` column and aggregating the results we get a data frame wit
 + )
 > dim(subjects)
 [1] 1433963       4
-{% endhighlight %}
+{{< / highlight >}}
 
 Here are the specific data for the article above:
 
-{% highlight r %}
+{{< highlight r >}}
 > subset(subjects, doi == "10.1371/journal.pone.0159765")
                                  doi  journal              subject count
 1425105 10.1371/journal.pone.0159765 PLOS ONE                Birds     1
@@ -164,7 +165,7 @@ Here are the specific data for the article above:
 1425110 10.1371/journal.pone.0159765 PLOS ONE            Predation     2
 1425111 10.1371/journal.pone.0159765 PLOS ONE                 Rain     1
 1425112 10.1371/journal.pone.0159765 PLOS ONE              Weather     1
-{% endhighlight %}
+{{< / highlight >}}
 
 Note that we've delayed the conversion of the `subject` column into a factor until all of the required levels were known. 
 

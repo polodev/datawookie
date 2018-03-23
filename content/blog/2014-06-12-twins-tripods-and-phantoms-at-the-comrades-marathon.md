@@ -1,19 +1,20 @@
 ---
-id: 832
-title: Twins, Tripods and Phantoms at the Comrades Marathon
-date: 2014-06-12T12:33:34+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Running
+- Running
+date: 2014-06-12T12:33:34Z
+excerpt_separator: <!-- more -->
+id: 832
 tags:
-  - Comrades Marathon
-  - '#rstats'
+- Comrades Marathon
+- '#rstats'
+title: Twins, Tripods and Phantoms at the Comrades Marathon
+url: /2014/06/12/twins-tripods-and-phantoms-at-the-comrades-marathon/
 ---
+
 Having picked up a viral infection days before this year's Comrades Marathon, on 1 June I was left with time on my hands and somewhat desperate for any distraction. So I spent some time looking at my archive of Comrades data and considering some new questions. For example, what are the chances of two runners passing through halfway and the finish line at exactly the same time? How likely is it that three runners achieve the same feat?
 
-<!-- more -->
+<!--more-->
 
 My data for the 2013 up run gives times with one second precision, so these questions could be answered if I relaxed the constraints from "exactly the same time" to "within one second of each other". We'll call such simultaneous pairs of runners "twins" and simultaneous threesomes will be known as "tripods". How many twins are there? How many tripods? The answers are somewhat surprising. What's even more surprising is another category: "phantoms".
 
@@ -23,7 +24,7 @@ If you are not interested in the details of the analysis (and I'm guessing that 
 
 The first step is to subset the data, leaving a data frame containing only the times at halfway and the finish, indexed by a unique runner key.
 
-{% highlight r %}
+{{< highlight r >}}
 > simultaneous = subset(splits,
 +                      year == 2013 & !is.na(medal))[, c("key", "drummond.time", "race.time")]
 > simultaneous = simultaneous[complete.cases(simultaneous),]
@@ -38,11 +39,11 @@ ab59fc97        304.62    643.67
 89d3e09b        270.32    646.78
 fc728816        211.27    492.95
 7b761740        274.60    584.37
-{% endhighlight %}
+{{< / highlight >}}
 
 Next we calculate the "distance" (this is a distance in time and not in space) between runners, which is effectively the squared difference between the halfway and finish times for each pair of runners. This yields a rather large matrix with rows and columns labelled by runner key. These data are then transformed into a format where each row represents a pair of runners.
 
-{% highlight r %}
+{{< highlight r >}}
 > simultaneous = dist(simultaneous)
 > library(reshape2)
 > simultaneous = melt(as.matrix(simultaneous))
@@ -54,17 +55,17 @@ Next we calculate the "distance" (this is a distance in time and not in space) b
 4 89d3e09b 4bdcb291  82.408
 5 fc728816 4bdcb291 244.992
 6 7b761740 4bdcb291 135.910
-{% endhighlight %}
+{{< / highlight >}}
 
 We can immediately see that there are some redundant entries. We need to remove the matrix diagonal (obviously the times match when a runner is compared to himself!) and keep only one half of the matrix.
 
-{% highlight r %}
+{{< highlight r >}}
 > simultaneous = subset(simultaneous, as.character(Var1) < as.character(Var2))
-{% endhighlight %}
+{{< / highlight >}}
 
 Finally we retain only the records for those pairs of runners who crossed both mats simultaneously (in retrospect, this could have been done earlier!).
 
-{% highlight r %}
+{{< highlight r >}}
 > simultaneous = subset(simultaneous, value == 0)
 > head(simultaneous)
             Var1     Var2 value
@@ -74,11 +75,11 @@ Finally we retain only the records for those pairs of runners who crossed both m
 2464116 5f18d86f 9a1697ff     0
 2467712 63033429 9a1697ff     0
 3538608 54a92b96 f574be97     0
-{% endhighlight %}
+{{< / highlight >}}
 
 We can then merge in the data for race numbers and names, leaving us with an (anonymised) data set that looks like this:
 
-{% highlight r %}
+{{< highlight r >}}
 > simultaneous = simultaneous[order(simultaneous$race.time),]
 > head(simultaneous)[, c(4, 6, 8)]
     race.number.x race.number.y race.time
@@ -96,7 +97,7 @@ We can then merge in the data for race numbers and names, leaving us with an (an
 38         53354         53352  11:56:56
 28         19268         59916  11:57:49
 20         22499         40754  11:58:26
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Twins {#twins}
 

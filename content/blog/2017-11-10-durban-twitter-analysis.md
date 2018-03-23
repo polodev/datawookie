@@ -1,12 +1,12 @@
 ---
-title: "Durban Twitter Analysis"
-date: 2017-11-10T12:00:00+00:00
 author: Andrew B. Collier
+date: 2017-11-10T12:00:00Z
 excerpt_separator: <!-- more -->
-layout: post
 tags:
-  - '#rstats'
-  - Sentiment
+- '#rstats'
+- Sentiment
+title: Durban Twitter Analysis
+url: /2017/11/10/durban-twitter-analysis/
 ---
 
 I was invited to give a talk at [Digifest](http://digifest.dut.ac.za/) (Durban University of Technology) on 10 November 2017. Looking at the other speakers and talks on the programme I realised that my normal range of topics would not be suitable. I needed to do something more in line with their mission to "celebrate the creative spirit through multimedia projects from disciplines such as visual and performing arts" and to promote "collaboration across art, science and technology". Definitely outside my current domain, but consistent with many of the things that I have been aspiring to.
@@ -15,7 +15,7 @@ To be honest, I was pleased to be invited, but when I sat down to consider what 
 
 But I am loathe to turn down an opportunity to speak. So I made a plan. In retrospect it was not a terribly good plan. But it was workable. I decided to speak about gauging sentiment relating to the city of Durban using data from Twitter. You can find my talk outline [here]({{ site.baseurl }}{% post_url 2017-11-10-abstract-hello-durban %}). This post touches on some of my results.
 
-<!-- more -->
+<!--more-->
 
 ## Data Acquisition
 

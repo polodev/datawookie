@@ -1,19 +1,19 @@
 ---
-id: 1811
-title: '#MonthOfJulia Day 1: Installation and Orientation'
-date: 2015-08-31T07:32:57+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Julia
+- Julia
+date: 2015-08-31T07:32:57Z
+excerpt_separator: <!-- more -->
+id: 1811
 tags:
-  - '#julialang'
-  - '#MonthOfJulia'
-  - Julia
+- '#julialang'
+- '#MonthOfJulia'
+- Julia
+title: '#MonthOfJulia Day 1: Installation and Orientation'
+url: /2015/08/31/monthofjulia-day-01-installation-and-orientation/
 ---
 
-<!-- more -->
+<!--more-->
 
 As a long-term R user I've found that there are few tasks (analytical or otherwise) that R cannot immediately handle. Or be made to handle after a bit of hacking! However, I'm always interested in learning new tools. A month or so ago I attended a talk entitled _Julia's Approach to Open Source Machine Learning_ by [John Myles White](https://twitter.com/johnmyleswhite) at ICML in Lille, France. What John told us about Julia was impressive and intriguing. I felt compelled to take a closer look. Like most research tasks, my first stop was the [Wikipedia entry](https://en.wikipedia.org/wiki/Julia_(programming_language)), which was suitably informative.
 
@@ -66,25 +66,25 @@ The Julia [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_l
 
 If you're like me then you'll want to put your code into script files. Julia scripts normally have a ".jl" extension and are executed in the interpreter either by specifying the script name on the command line like this:
 
-{% highlight text %}
+{{< highlight text >}}
 $ julia test-script.jl
-{% endhighlight %}
+{{< / highlight >}}
 
 or from within the interpreter using
 
-{% highlight text %}
+{{< highlight text >}}
 julia> include('test-script.jl')
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Keeping Up to Date
 
 To ensure that you have the most recent released version of Julia (not necessarily available through the default Ubuntu repositories), you can add specific PPAs.
 
-{% highlight text %}
+{{< highlight text >}}
 $ sudo add-apt-repository ppa:staticfloat/juliareleases
 $ sudo add-apt-repository ppa:staticfloat/julia-deps
 $ sudo apt-get update
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Code Samples
 

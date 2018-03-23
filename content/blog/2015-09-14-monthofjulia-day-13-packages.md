@@ -1,21 +1,21 @@
 ---
-id: 1825
-title: '#MonthOfJulia Day 13: Packages'
-date: 2015-09-14T13:00:17+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=1825
-excerpt_separator: <!-- more -->
 categories:
-  - Julia
+- Julia
+date: 2015-09-14T13:00:17Z
+excerpt_separator: <!-- more -->
+guid: http://www.exegetic.biz/blog/?p=1825
+id: 1825
 tags:
-  - '#julialang'
-  - '#MonthOfJulia'
-  - Julia
-  - Packages
+- '#julialang'
+- '#MonthOfJulia'
+- Julia
+- Packages
+title: '#MonthOfJulia Day 13: Packages'
+url: /2015/09/14/monthofjulia-day-13-packages/
 ---
 
-<!-- more -->
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2015/08/Julia-Logo-Packages.png" >
 
@@ -29,23 +29,23 @@ Package management is handled via `Pkg`. `Pkg.dir()` will tell you where the ins
 
 Installing a new package is done with `Pkg.add()`. Any dependencies are handled automatically during the install process.
   
-{% highlight julia %}
+{{< highlight julia >}}
 julia> Pkg.add("VennEuler")
 INFO: Cloning cache of VennEuler from git://github.com/HarlanH/VennEuler.jl.git
 INFO: Installing VennEuler v0.0.1
 INFO: Building NLopt
 INFO: Building Cairo
 INFO: Package database updated
-{% endhighlight %}
+{{< / highlight >}}
 
 `Pkg.available()` generates a complete list of all available packages while `Pkg.installed()` or `Pkg.status()` can be used to find the versions of installed packages.
   
-{% highlight julia %}
+{{< highlight julia >}}
 julia> Pkg.installed()["VennEuler"]
 v"0.0.1"
 julia> Pkg.installed("VennEuler")
 v"0.0.1"
-{% endhighlight %}
+{{< / highlight >}}
 
 `Pkg.pin()` will fix a package at a specific version (no updates will be applied). `Pkg.free()` releases the effects of `Pkg.pin()`.
 
@@ -53,7 +53,7 @@ v"0.0.1"
 
 The `using` directive loads the functions exported by a package into the global namespace. You can get a view of the capabilities of a package by typing its name followed by a period and then hitting the Tab key. Alternatively, `names()` will give a list of symbols exported by a package.
   
-{% highlight julia %}
+{{< highlight julia >}}
 julia> using VennEuler
 julia> names(VennEuler)
 9-element Array{Symbol,1}:
@@ -66,6 +66,6 @@ julia> names(VennEuler)
  :make_euler_object
  :EulerSpec
  :random_state
-{% endhighlight %}
+{{< / highlight >}}
 
 The package manager provides a host of other functionality which you can read about [here](http://julia.readthedocs.org/en/latest/manual/packages/). Check out the videos below to find out more about Julia's package ecosystem. From tomorrow I'll start looking at specific packages. To get yourself prepared for that, why not go ahead and install the following packages: [Cpp](http://github.com/timholy/Cpp.jl), [PyCall](http://github.com/stevengj/PyCall.jl), [DataArrays](http://github.com/JuliaStats/DataArrays.jl), [DataFrames](http://github.com/JuliaStats/DataFrames.jl) and [RCall](http://github.com/JuliaStats/RCall.jl).

@@ -1,25 +1,25 @@
 ---
-id: 3793
-title: Building a Life Table
-date: 2016-07-28T15:00:26+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=3793
-excerpt_separator: <!-- more -->
 categories:
-  - Statistics
+- Statistics
+date: 2016-07-28T15:00:26Z
+excerpt_separator: <!-- more -->
+guid: http://www.exegetic.biz/blog/?p=3793
+id: 3793
 tags:
-  - '#rstats'
-  - death statistics
-  - life table
-  - mortality
+- '#rstats'
+- death statistics
+- life table
+- mortality
+title: Building a Life Table
+url: /2016/07/28/building-life-table/
 ---
 
-<!-- more -->
+<!--more-->
 
 After writing my previous post, [Mortality by Year and Age](http://www.exegetic.biz/blog/2016/07/mortality-year-age/), I've become progressively more interested in the mortality data. Perhaps those actuaries are onto something? I found [this report](http://apps.who.int/iris/handle/10665/62916), which has a wealth of pertinent information. On p. 13 the report gives details on constructing a [Life Table](https://en.wikipedia.org/wiki/Life_table), which is one of the fundamental tools in Actuarial Science. The [lifespan package](https://github.com/DataWookie/lifespan) has all of the data required to construct a Life Table, so I created a `lifetable` data frame which has those data broken down by gender.
 
-{% highlight r %}
+{{< highlight r >}}
 > library(lifespan)
 > subset(lifetable, sex == "M") %>% head
   x sex     lx      dx         qx
@@ -37,7 +37,7 @@ After writing my previous post, [Mortality by Year and Age](http://www.exegetic.
 136 3   F  99214  84.746 0.00085418
 137 4   F  99129  62.055 0.00062600
 138 5   F  99067  54.475 0.00054988
-{% endhighlight %}
+{{< / highlight >}}
 
 The columns in the data above should be interpreted as follows:
 
@@ -51,19 +51,19 @@ A plot gives a high level overview of the data. Below `lx` is plotted as a funct
 
 Using these data we can also calculate some related conditional probabilities. For example, what is the probability that a person aged 70 will live for at least another 5 years?
 
-{% highlight r %}
+{{< highlight r >}}
 > survival(70, 5)
       F       M
 0.87916 0.80709
-{% endhighlight %}
+{{< / highlight >}}
 
 Another example, what is the probability that a person aged 70 will live for at least another 5 years but then die in the 10 years after that?
 
-{% highlight r %}
+{{< highlight r >}}
 > survival(70, 5, 10)
       F       M
 0.37472 0.46714
-{% endhighlight %}
+{{< / highlight >}}
 
 Interesting stuff! Everything indicates that in terms of longevity, females have the upper hand.
 
@@ -75,11 +75,11 @@ Somebody made the following witty comment on LinkedIn in response to my previous
 
 Well, yes and no. In an absolute sense your risk of dying after the age of 100 is relatively low. But the reason for this is that the probability of you actually making it to the age of 100 is low. If, however, you do manage to achieve this monumental age, then your risk of dying is rather high.
 
-{% highlight r %}
+{{< highlight r >}}
 > survival(100)
       F       M
 0.65813 0.60958
-{% endhighlight %}
+{{< / highlight >}}
 
 So men aged 100 have 39% probability of dying before reaching the age of 101, while the probability for women is 34%.
 

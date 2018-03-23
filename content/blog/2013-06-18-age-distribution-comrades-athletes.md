@@ -1,21 +1,22 @@
 ---
-id: 252
-title: Age Distribution of Comrades Marathon Athletes
-date: 2013-06-18T11:06:48+00:00
 author: Andrew B. Collier
-layout: post
+date: 2013-06-18T11:06:48Z
 excerpt_separator: <!-- more -->
+id: 252
 tags:
-  - Comrades Marathon
-  - histogram
-  - mosaic plot
-  - spine plot
+- Comrades Marathon
+- histogram
+- mosaic plot
+- spine plot
+title: Age Distribution of Comrades Marathon Athletes
+url: /2013/06/18/age-distribution-comrades-athletes/
 ---
+
 I can clearly remember watching the end of the 1989 Comrades Marathon on television and seeing Wally Hayward coming in just before the final gun, completing the epic race at the age of 80! I was in awe.
 
 Since I have been delving into the Comrades Marathon data, this got me thinking about the typical age distribution of athletes taking part. The plot below indicates the ages of athletes who finished the race, going all the way back to 1984. You can clearly spot the two years when Wally Hayward ran (1988 and 1989). My data indicates that he was only 79 on the day of the 1989 Comrades Marathon, but I am not going to quibble over a year and I am more than happy to accept that he was 80!
 
-<!-- more -->
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2013/06/age-year-boxplot.png">
 

@@ -1,17 +1,18 @@
 ---
-id: 4421
-title: Talks about Bots
-date: 2016-10-04T15:00:56+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=4421
 categories:
-  - Machine Learning
+- Machine Learning
+date: 2016-10-04T15:00:56Z
+guid: http://www.exegetic.biz/blog/?p=4421
+id: 4421
 tags:
-  - Bot
-  - conversation agent
-  - UX
+- Bot
+- conversation agent
+- UX
+title: Talks about Bots
+url: /2016/10/04/talks-about-bots/
 ---
+
 Seth Juarez and Matt Winkler having an informal chat about bots.
 
 <iframe src="https://channel9.msdn.com/Events/Machine-Learning-and-Data-Sciences-Conference/Data-Science-Summit-2016/Microsoft-Data-Science-Summit-Talking-about-Bots/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>

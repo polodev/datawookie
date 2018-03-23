@@ -1,23 +1,24 @@
 ---
-id: 3004
-title: "Kaggle: Santa's Stolen Sleigh"
-date: 2016-01-22T15:00:43+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
 - Data Science
+date: 2016-01-22T15:00:43Z
+excerpt_separator: <!-- more -->
+id: 3004
 tags:
 - Data Science
 - Kaggle
 - Plotly
 - '#rstats'
+title: 'Kaggle: Santa''s Stolen Sleigh'
+url: /2016/01/22/kaggle-santas-stolen-sleigh/
 ---
+
 This morning I read Wendy Kan's interesting post on [Creating Santa's Stolen Sleigh](http://blog.kaggle.com/2016/01/19/creating-santas-stolen-sleigh-kaggles-annual-optimization-competition/). I hadn't really thought too much about the process of constructing an optimisation competition, but Wendy gave some interesting insights on the considerations involved in designing a competition which was both fun and challenging but still computationally feasible without military grade hardware.
 
 This seems like an opportune time to jot down some of my personal notes and also take a look at the results. I know that this sort of discussion is normally the prerogative of the winners and I trust that my ramblings won't be viewed as presumptuous.
 
-<!-- more -->
+<!--more-->
 
 [Santa's Stolen Sleigh](https://www.kaggle.com/c/santas-stolen-sleigh) closed on 8 January 2016. At the top of the leaderboard:
 
@@ -59,11 +60,11 @@ An obvious approach to the problem was to cluster the gifts according to their p
 
 I could, however, readily calculate the distance between each gift and its nearest neighbour, the distribution of which is displayed below. The majority of gifts are located less than 20 km from their nearest neighbour. Some are much closer, within a few hundred metres of each other. Others are significantly more distant. The summary data below indicates that the most isolated location is 2783 km from its nearest neighbour. Obviously the horizontal axis of the plot has been aggressively truncated!
 
-{% highlight r %}
+{{< highlight r >}}
 > summary(gifts$dist_nearest)
      Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
    0.1424   11.6500   18.1300   19.6200   25.9400 2783.0000
-{% endhighlight %}
+{{< / highlight >}}
 
 <img src="{{ site.baseurl }}/static/img/2015/12/hist-distance-to-nearest.png">
 
@@ -75,7 +76,7 @@ Let's look at the most isolated locations. The red points on the map below indic
 
 My first approach to solving the problem involved a simple clustering scheme. My gut feel was that in a tight cluster of gifts it would be important to deliver the heaviest ones first. I tried applying this simple heuristic to my clusters and the results were not particularly good. I then used a Genetic Algorithm (GA) to optimise the order of delivery within each cluster. The table below shows gifts allocated to two distinct trips (identified by TripId) with the order of delivery determined by the GA. These data confirmed that the best strategy was not simply to deliver the heaviest gifts first. Useful (and obvious in retrospect!).
 
-{% highlight r %}
+{{< highlight r >}}
    GiftId TripId Latitude  Longitude    Weight
 1   72834      1 52.08236  -99.84075 19.450129
 2   31544      1 51.99433  -99.66718 16.401965
@@ -93,7 +94,7 @@ My first approach to solving the problem involved a simple clustering scheme. My
 14  40247      2 51.18464 -100.77533  9.352351
 15  77396      2 51.27686 -100.77209  2.605262
 16   2600      2 50.82170  -99.46544  1.000000
-{% endhighlight %}
+{{< / highlight >}}
 
 My submission based on simple clustering with GA optimisation was fairly decent but nothing to tweet about.
 

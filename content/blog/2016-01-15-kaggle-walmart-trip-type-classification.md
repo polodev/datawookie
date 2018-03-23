@@ -1,21 +1,22 @@
 ---
-id: 2904
-title: 'Kaggle: Walmart Trip Type Classification'
-date: 2016-01-15T15:00:12+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
 - Data Science
+date: 2016-01-15T15:00:12Z
+excerpt_separator: <!-- more -->
+id: 2904
 tags:
 - Data Science
 - Kaggle
 - Plotly
 - '#rstats'
+title: 'Kaggle: Walmart Trip Type Classification'
+url: /2016/01/15/kaggle-walmart-trip-type-classification/
 ---
+
 [Walmart Trip Type Classification](https://www.kaggle.com/c/walmart-recruiting-trip-type-classification) was my first real foray into the world of [Kaggle](https://www.kaggle.com/) and I'm hooked. I previously dabbled in [What's Cooking](https://www.kaggle.com/c/whats-cooking) but that was as part of a team and the team didn't work out particularly well. As a learning experience the competition was second to none. My final entry put me at position 155 out of 1061 entries which, although not a stellar performance by any means, is just inside the top 15% and I'm pretty happy with that. Below are a few notes on the competition.
 
-<!-- more -->
+<!--more-->
 
 Before I get started, congratulations to the competitors at the top of the leaderboard! You guys killed it.
 
@@ -65,7 +66,7 @@ Enough about my attempts, let's scope the leaderboard.
 
 I discovered something interesting while trolling the bottom end of the leaderboard page: you can download statistics for all competition entries. The data are presented as a CSV file. Here's the head.
 
-{% highlight text %}
+{{< highlight text >}}
 TeamId,TeamName,SubmissionDate,Score
 230879,HulkBulk,"2015-10-26 18:58:32",34.53878
 230879,HulkBulk,"2015-10-26 19:49:31",10.42797
@@ -76,7 +77,7 @@ TeamId,TeamName,SubmissionDate,Score
 230942,NxGTR,"2015-10-26 22:06:44",34.53878
 230945,Chippy,"2015-10-26 22:14:40",3.44965
 230940,"Paul H","2015-10-26 22:16:57",32.29692
-{% endhighlight %}
+{{< / highlight >}}
 
 Let's first look at the distribution of best and worst scores per competitor. The histogram below shows a peak in both best and worst scores around the "All Zeros Benchmark" at 34.53878. The majority of the field ultimately achieved best scores below 5.
 
@@ -84,7 +85,7 @@ Let's first look at the distribution of best and worst scores per competitor. Th
 
 Scrutinising the distribution of best scores reveals a peak between 0.6 and 0.7. Only a small fraction of the competitors (6.3%) managed to push below the 0.6 boundary, leaving the elite few (0.6%) with final scores below 0.5.
 
-{% highlight r %}
+{{< highlight r >}}
         group count percent
        (fctr) (int)   (dbl)
 1  (0.45,0.5]     6  0.5655
@@ -97,7 +98,7 @@ Scrutinising the distribution of best scores reveals a peak between 0.6 and 0.7.
 8  (0.8,0.85]    31  2.9218
 9  (0.85,0.9]    46  4.3355
 10 (0.9,0.95]    21  1.9793
-{% endhighlight %}
+{{< / highlight >}}
 
 The scatter plot below shows the relationship between best and worst scores broken down by competitor.
 

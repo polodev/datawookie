@@ -1,18 +1,19 @@
 ---
+author: Andrew B. Collier
+categories:
+- Writing
+date: 2015-03-23T09:00:14Z
+excerpt_separator: <!-- more -->
 id: 1213
 title: 'Encyclopaedia: Scottish National Antarctic Expedition'
-date: 2015-03-23T09:00:14+00:00
-author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
-categories:
-  - Writing
+url: /2015/03/23/encyclopaedia-scottish-national-antarctic-expedition/
 ---
+
 A contribution which Claire and I wrote for [Antarctica and the Arctic Circle: A Geographic Encyclopedia of the Earth's Polar Regions](http://www.amazon.com/gp/product/B00OD83J44/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00OD83J44&linkCode=as2&tag=exegetanalyt-20&linkId=2TV5WJPYICQMVBVQ)
 
 <img src="http://ir-na.amazon-adsystem.com/e/ir?t=exegetanalyt-20&#038;l=as2&#038;o=1&#038;a=B00OD83J44" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />.
 
-<!-- more -->
+<!--more-->
 
 The Scottish National Antarctic Expedition explored and performed scientific work in Antarctica between 1902 and 1904. This expedition was novel because it was organized and led by a natural scientist, and science was thus a priority. William Bruce (1867–1921) was a former medical student with an interest in the natural sciences, particularly oceanography. He had his first taste of the Antarctic on a whaling voyage in 1892 and subsequently went on several trips to the Arctic. Bruce had applied to join the Discovery Expedition and, after receiving no response, proposed a second ship for this expedition. This proposal was rejected. As a result, he set about obtaining private funding for an independent Scottish expedition.
 

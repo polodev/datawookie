@@ -1,17 +1,18 @@
 ---
-id: 1596
-title: 'ICML 2015 (Lille, France): Day 1 (Tutorials)'
-date: 2015-07-07T19:08:02+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=1596
 categories:
-  - Conference Review
+- Conference Review
+date: 2015-07-07T19:08:02Z
+guid: http://www.exegetic.biz/blog/?p=1596
+id: 1596
 tags:
-  - ICML
-  - ICML2015
-  - Machine Learning
+- ICML
+- ICML2015
+- Machine Learning
+title: 'ICML 2015 (Lille, France): Day 1 (Tutorials)'
+url: /2015/07/07/icml-2015-lille-france-day-1/
 ---
+
 Started the day with a run through the early morning streets of Lille. This city seems to wake up late because it was still nice and quiet well after sunrise. Followed by a valiant attempt to sample everything on the buffet breakfast. I'll know where to focus my attention tomorrow.
 
 ## ICML2015

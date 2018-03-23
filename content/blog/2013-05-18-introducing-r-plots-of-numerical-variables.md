@@ -1,25 +1,26 @@
 ---
-id: 95
-title: 'Introducing R: Plotting numerical variables'
-date: 2013-05-18T10:38:33+00:00
 author: Andrew B. Collier
-layout: post
+date: 2013-05-18T10:38:33Z
 excerpt_separator: <!-- more -->
+id: 95
 tags:
-  - ggplot2
-  - hexbin
-  - histogram
-  - '#rstats'
-  - scatter plot
-  - Visualisation
+- ggplot2
+- hexbin
+- histogram
+- '#rstats'
+- scatter plot
+- Visualisation
+title: 'Introducing R: Plotting numerical variables'
+url: /2013/05/18/introducing-r-plots-of-numerical-variables/
 ---
-In the [previous installment](http://www.exegetic.biz/blog/2013/05/introducing-r-descriptive-statistics/) we generated some simple descriptive statistics for the National Health and Nutrition Examination Survey data. Now we are going to move on to an area in which R really excels: making plots and visualisations. <!-- more --> There are a variety of systems for plotting in R, but we will start off with base graphics.
+
+In the [previous installment](http://www.exegetic.biz/blog/2013/05/introducing-r-descriptive-statistics/) we generated some simple descriptive statistics for the National Health and Nutrition Examination Survey data. Now we are going to move on to an area in which R really excels: making plots and visualisations. <!--more--> There are a variety of systems for plotting in R, but we will start off with base graphics.
 
 First, make a simple scatter plot of mass against height.
 
-{% highlight r %}  
+{{< highlight r >}}  
 plot(DS0012$height, DS0012$mass, ylab = "mass [kg]", xlab = "height [m]")
-{% endhighlight %}
+{{< / highlight >}}
 
 This clearly shows the relationship between these two variables, however, there is a high degree of overplotting.
 
@@ -27,10 +28,10 @@ This clearly shows the relationship between these two variables, however, there 
 
 We can improve the overplotting situation by making the points solid but partially transparent.
 
-{% highlight r %}
+{{< highlight r >}}
 plot(DS0012$height, DS0012$mass, ylab = "mass [kg]", xlab = "height [m]",
 pch = 19, col = rgb(0, 0, 0, 0.05))
-{% endhighlight %}
+{{< / highlight >}}
 
 That's much better: now we can see more structure in the data.
 
@@ -38,12 +39,12 @@ That's much better: now we can see more structure in the data.
 
 Now let's look at the distribution of the BMI data using a [histogram](http://en.wikipedia.org/wiki/Histogram).
 
-{% highlight r %}
+{{< highlight r >}}
 hist(DS0012$BMI, main = "Distribution of Body Mass Index", col = "lightblue",
 xlab = "BMI", prob = TRUE)
 lines(density(DS0012$BMI))
 abline(v = mean(DS0012$BMI), lty = "dashed", col = "red")
-{% endhighlight %}
+{{< / highlight >}}
 
 I have thrown in a few bells and whistles here: a [kernel density estimate](http://en.wikipedia.org/wiki/Kernel_density_estimation) of the underlying distribution and a vertical dashed line at the mean value of BMI.
 
@@ -51,11 +52,11 @@ I have thrown in a few bells and whistles here: a [kernel density estimate](http
 
 Hexagon binning produces a two dimensional analog of the histogram which can be used to further improve on the visualisation of the mass versus height data above. One option is to use the hexbin package. However, in this case I prefer the output from the ggplot2 package.
 
-{% highlight r %}
+{{< highlight r >}}
 library(ggplot2)
 ggplot(DS0012, aes(x=height,y=mass)) + geom_hex(bins=20) + xlab("height [m]") +
 ylab("mass [kg]")
-{% endhighlight %}
+{{< / highlight >}}
 
 The syntax for ggplot2 is quite different to that of the base R graphics. It takes quite a lot of getting used to, but it is well worth the effort because it is extremely powerful. The appearance of the ggplot2 output is also rather novel.
 

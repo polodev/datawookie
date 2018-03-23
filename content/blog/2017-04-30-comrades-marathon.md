@@ -1,14 +1,14 @@
 ---
-title: 'Comrades Marathon 2017'
-date: 2017-04-30T08:00:00+00:00
 author: Andrew B. Collier
-layout: post
+date: 2017-04-30T08:00:00Z
 excerpt_separator: <!-- more -->
+title: Comrades Marathon 2017
+url: /2017/04/30/comrades-marathon/
 ---
 
 <img src="{{ site.baseurl }}/static/img/2017/04/comrades-nothing-will-seem-impossible.png" width="100%">
 
-<!-- more -->
+<!--more-->
 
 ## Route Map
 

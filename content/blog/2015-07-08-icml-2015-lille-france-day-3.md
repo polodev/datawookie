@@ -1,17 +1,18 @@
 ---
-id: 1625
-title: 'ICML 2015 (Lille, France): Day 3'
-date: 2015-07-08T16:42:10+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=1625
 categories:
-  - Conference Review
+- Conference Review
+date: 2015-07-08T16:42:10Z
+guid: http://www.exegetic.biz/blog/?p=1625
+id: 1625
 tags:
-  - ICML
-  - ICML2015
-  - Machine Learning
+- ICML
+- ICML2015
+- Machine Learning
+title: 'ICML 2015 (Lille, France): Day 3'
+url: /2015/07/08/icml-2015-lille-france-day-3/
 ---
+
 Selected scribblings from the third day at the International Conference for Machine Learning (ICML 2015) in Lille, France. I'm going out on a limb with some of this, since the more talks I attend, the more acutely aware I become of my limited knowledge of the cutting edge of Machine Learning. Caveat emptor.
 
 ## Adaptive Belief Propagation (Georgios Papachristoudis, John Fisher)

@@ -1,21 +1,21 @@
 ---
-id: 2610
-title: '#MonthOfJulia Day 36: Markdown'
-date: 2015-10-19T15:00:58+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=2610
-excerpt_separator: <!-- more -->
 categories:
-  - Julia
+- Julia
+date: 2015-10-19T15:00:58Z
+excerpt_separator: <!-- more -->
+guid: http://www.exegetic.biz/blog/?p=2610
+id: 2610
 tags:
-  - '#julialang'
-  - '#MonthOfJulia'
-  - Julia
-  - markdown
+- '#julialang'
+- '#MonthOfJulia'
+- Julia
+- markdown
+title: '#MonthOfJulia Day 36: Markdown'
+url: /2015/10/19/monthofjulia-day-36-markdown/
 ---
 
-<!-- more -->
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2015/10/Julia-Logo-Markdown.png" >
 
@@ -23,15 +23,15 @@ tags:
 
 In the latest stable version of Julia support for markdown is provided in the Base package.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> using Base.Markdown
 julia> import Base.Markdown: MD, Paragraph, Header, Italic, Bold, LineBreak, plain, term, html,
                              Table, Code, LaTeX, writemime
-{% endhighlight %}
+{{< / highlight >}}
 
 Markdown is stored in objects of type `Base.Markdown.MD`. As you'll see below, there are at least two ways to construct markdown objects: either directly from a string (using markdown syntax) or programmatically (using a selection of formatting functions).
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> d1 = md"foo \*italic foo\* \*\*bold foo\*\* \`code foo\`";
 julia> d2 = MD(Paragraph(["foo ", Italic("italic foo"), " ", Bold("bold foo"), " ",
                Code("code foo")]));
@@ -39,7 +39,7 @@ julia> typeof(d1)
 Base.Markdown.MD
 julia> d1 == d2
 true
-{% endhighlight %}
+{{< / highlight >}}
 
 You'll find that `Base.Markdown.MD` objects are rendered with appropriate formatting in your console.
 
@@ -47,16 +47,16 @@ You'll find that `Base.Markdown.MD` objects are rendered with appropriate format
 
 Functions `html()` and `latex()` convert `Base.Markdown.MD` objects into other formats. Another way of rendering markdown elements is with `writemime()`, where the output is determined by specifying a [MIME type](https://en.wikipedia.org/wiki/MIME).
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> html(d1)
 "<p>foo <em>italic foo</em> <strong>bold foo</strong> <code>code foo</code></p>\n"
 julia> latex(d1)
 "foo \\emph{italic foo} \\textbf{bold foo} \\texttt{code foo}\n"
-{% endhighlight %}
+{{< / highlight >}}
 
 Markdown has support for section headers, both ordered and unordered lists, tables, code fragments and block quotes.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> d3 = md"""# Chapter Title
        ## Section Title
        ### Subsection Title""";
@@ -65,11 +65,11 @@ julia> d3 |> html
 "<h1>Chapter Title</h1>\n<h2>Section Title</h2>\n<h3>Subsection Title</h3>\n"
 julia> latex(d4)
 "\\subsection{Section Title}\n"
-{% endhighlight %}
+{{< / highlight >}}
 
 Most Julia packages come with a `README.md` markdown file which provides an overview of the package. The `readme()` function gives you direct access to these files' contents.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> readme("Quandl")
   Quandl.jl
   ============
@@ -81,15 +81,15 @@ julia> readme("Quandl")
   
   See the Quandl API Help Page for further details about the Quandl API. This package
   closely follows the nomenclature used by that documentation.
-{% endhighlight %}
+{{< / highlight >}}
 We can also use `parse_file()` to treat the contents of a file as markdown.
-{% highlight julia %}
+{{< highlight julia >}}
 julia> d6 = Markdown.parse_file(joinpath(homedir(), ".julia/v0.4/NaNMath/README.md"));
-{% endhighlight %}
+{{< / highlight >}}
 
 This is rendered below as LaTeX.
 
-{% highlight latex %}
+{{< highlight latex >}}
 \section{NaNMath}
 Implementations of basic math functions which return \texttt{NaN} instead of throwing a
 \texttt{DomainError}.
@@ -120,7 +120,7 @@ nm.sum([1., 2., NaN]) # result: 3.0
 \caption{Build Status}
 \end{figure}
 }
-{% endhighlight %}
+{{< / highlight >}}
 
 And here it is as HTML.
 

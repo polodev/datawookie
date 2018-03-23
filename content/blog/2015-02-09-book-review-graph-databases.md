@@ -1,17 +1,18 @@
 ---
-id: 1146
-title: 'Book Review: Graph Databases'
-date: 2015-02-09T09:00:31+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=1146
 categories:
-  - Book Review
-  - Review
+- Book Review
+- Review
+date: 2015-02-09T09:00:31Z
+guid: http://www.exegetic.biz/blog/?p=1146
+id: 1146
 tags:
-  - Graph Database
-  - Neo4j
+- Graph Database
+- Neo4j
+title: 'Book Review: Graph Databases'
+url: /2015/02/09/book-review-graph-databases/
 ---
+
 The book [Graph Databases](http://www.amazon.com/gp/product/1449356265/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1449356265&linkCode=as2&tag=exegetanalyt-20&linkId=WNKLQVLL5LJOJF3K) <img src="http://ir-na.amazon-adsystem.com/e/ir?t=exegetanalyt-20&#038;l=as2&#038;o=1&#038;a=1449356265" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />by Ian Robinson, Jim Webber and Emil Eifrem gives an engaging overview of Graph Databases, describing typical use cases and illustrating the syntax used to construct and query them.
 
 <img src="{{ site.baseurl }}/static/img/2015/02/graph-databases-cover.jpg" >

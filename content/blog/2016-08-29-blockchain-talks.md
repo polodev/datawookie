@@ -1,16 +1,17 @@
 ---
-id: 4110
-title: Talks about the Blockchain
-date: 2016-08-29T15:00:43+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=4110
 categories:
-  - Technology
+- Technology
+date: 2016-08-29T15:00:43Z
+guid: http://www.exegetic.biz/blog/?p=4110
+id: 4110
 tags:
-  - Blockchain
-  - TED Talk
+- Blockchain
+- TED Talk
+title: Talks about the Blockchain
+url: /2016/08/29/blockchain-talks/
 ---
+
 Finally educating myself about the [blockchain](https://en.wikipedia.org/wiki/Blockchain_(database)). These videos are a good place to start.
 
 ## Don Tapscott: How the blockchain is changing money and business

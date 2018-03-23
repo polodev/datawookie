@@ -1,16 +1,17 @@
 ---
-id: 4061
-title: Garmin ANT on Ubuntu
-date: 2016-08-22T15:00:53+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=4061
 categories:
-  - Running
-  - Ubuntu
+- Running
+- Ubuntu
+date: 2016-08-22T15:00:53Z
+guid: http://www.exegetic.biz/blog/?p=4061
+id: 4061
 tags:
-  - Garmin
+- Garmin
+title: Garmin ANT on Ubuntu
+url: /2016/08/22/garmin-ant-on-ubuntu/
 ---
+
 I finally got tired of booting up Windows to download data from my Garmin 910XT. I tried to get my old Ubuntu 15.04 system to recognise my ANT stick but failed. Now that I have a stable Ubuntu 16.04 system the time seems ripe.
 
 <img src="{{ site.baseurl }}/static/img/2016/08/garmin-tux.jpg" width="100%">
@@ -22,9 +23,9 @@ Install `openant`, a Python library for downloading and uploading files from ANT
 1. Download the zip file from [https://github.com/Tigge/openant](https://github.com/Tigge/openant/archive/master.zip). 
 2. Unpack the archive and install using
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ sudo python setup.py install
-{% endhighlight %}
+{{< / highlight >}}
 
 ## antfs-cli
         
@@ -33,9 +34,9 @@ Install `antfs-cli`, which implements a Command Line Interface to ANT-FS.
 1. Download the zip file from [https://github.com/Tigge/antfs-cli/](https://github.com/Tigge/antfs-cli/archive/master.zip). 
 2. Unpack the archive and install using
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ sudo python setup.py install
-{% endhighlight %}
+{{< / highlight >}}
 
 3. This will automatically install `pyusb` if necessary. </ol>
 
@@ -43,31 +44,31 @@ $ sudo python setup.py install
 
 Connect your ANT stick and check that it is recognised by your system.
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ lsusb | grep Dynastream
 Bus 003 Device 030: ID 0fcf:1008 Dynastream Innovations, Inc. ANTUSB2 Stick
-{% endhighlight %}
+{{< / highlight >}}
 
 The two hexadecimal numbers following `ID` in the output above are then used to load the appropriate kernel module.
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ sudo modprobe usbserial vendor=0x0fcf product=0x1008
-{% endhighlight %}
+{{< / highlight >}}
 
 You can also check that the corresponding device has been created.
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ ls -l /dev/ttyANT2
 lrwxrwxrwx 1 root root 15 Aug 21 11:33 /dev/ttyANT2 -> bus/usb/003/030
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Pair and Enjoy
 
 If the above has gone smoothly then you are ready to grab data from your device. Turn it on and...
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ antfs-cli --pair
-{% endhighlight %}
+{{< / highlight >}}
 
 You should find the resulting FIT files under a path like `~/.config/antfs-cli/3860872045/activities`. The numeric folder name is uniquely linked to your advice, so that part of the path with differ.
 

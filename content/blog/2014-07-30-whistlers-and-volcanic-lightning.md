@@ -1,22 +1,23 @@
 ---
-id: 919
-title: Whistlers and Volcanic Lightning
-date: 2014-07-30T12:42:41+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Lightning
-  - Science
-  - Volcano
+- Lightning
+- Science
+- Volcano
+date: 2014-07-30T12:42:41Z
+excerpt_separator: <!-- more -->
+id: 919
 tags:
-  - Lightning
-  - Volcano
-  - Whistler
+- Lightning
+- Volcano
+- Whistler
+title: Whistlers and Volcanic Lightning
+url: /2014/07/30/whistlers-and-volcanic-lightning/
 ---
+
 A paper authored with my very talented student, Claire Antel, entitled "[Investigating Dunedin whistlers using volcanic lightning](http://onlinelibrary.wiley.com/doi/10.1002/2014GL060332/abstract)" has just been published in Geophysical Research Letters. The paper looks at electromagnetic signals ("whistlers") received at Dunedin, New Zealand, caused by lightning over volcanoes thousands of km away near the Aleutian Chain.
 
-<!-- more -->
+<!--more-->
 
 ## Abstract
 

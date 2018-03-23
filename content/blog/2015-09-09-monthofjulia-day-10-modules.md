@@ -1,21 +1,21 @@
 ---
-id: 2071
-title: '#MonthOfJulia Day 10: Modules'
-date: 2015-09-09T13:00:13+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=2071
-excerpt_separator: <!-- more -->
 categories:
-  - Julia
+- Julia
+date: 2015-09-09T13:00:13Z
+excerpt_separator: <!-- more -->
+guid: http://www.exegetic.biz/blog/?p=2071
+id: 2071
 tags:
-  - '#julialang'
-  - '#MonthOfJulia'
-  - Julia
-  - Module
+- '#julialang'
+- '#MonthOfJulia'
+- Julia
+- Module
+title: '#MonthOfJulia Day 10: Modules'
+url: /2015/09/09/monthofjulia-day-10-modules/
 ---
 
-<!-- more -->
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2015/09/Julia-Logo-Module.png" >
 
@@ -28,7 +28,7 @@ Modules in Julia are separate global variable workspaces. Modules allow you to c
 
 To illustrate the concept, let's define two new modules:
   
-{% highlight julia %}
+{{< highlight julia >}}
 julia> module AfrikaansModule
        __init__() = println("Initialising the Afrikaans module.")
        greeting() = "Goeie môre!"
@@ -40,36 +40,36 @@ julia> module ZuluModule
        greeting() = "Sawubona!"
        bonappetit() = "Thokoleza ukudla"
        end
-{% endhighlight %}
+{{< / highlight >}}
   
 If an `__init__()` function is present in the module then it's executed when the module is defined. Is it my imagination or does the syntax for that function have an uncanny resemblance to something in another popular scripting language?
 
 The greeting() function in the above modules does not exist in the global namespace (which is why the first function call below fails). But you can access functions from either of the modules by explicitly giving the module name as a prefix.
   
-{% highlight julia %}
+{{< highlight julia >}}
 julia> greeting()
 ERROR: greeting not defined
 julia> AfrikaansModule.greeting()
 "Goeie môre!"
 julia> ZuluModule.greeting()
 "Sawubona!"
-{% endhighlight %}
+{{< / highlight >}}
 
 The Afrikaans module exports the greeting() function, which becomes available in the global namespace once the module has been loaded.
   
-{% highlight julia %}
+{{< highlight julia >}}
 julia> using AfrikaansModule
 julia> greeting()
 "Goeie môre!"
-{% endhighlight %}
+{{< / highlight >}}
 
 But it's still possible to import into the global namespace functions which have not been exported.
   
-{% highlight julia %}  
+{{< highlight julia >}}  
 julia> import ZuluModule.bonappetit
 julia> bonappetit()
 "Thokoleza ukudla"
-{% endhighlight %}
+{{< / highlight >}}
 
 In addition to functions, modules can obviously also encapsulate variables.
 

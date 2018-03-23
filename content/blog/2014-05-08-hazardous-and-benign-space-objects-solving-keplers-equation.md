@@ -1,22 +1,23 @@
 ---
-id: 739
-title: "Hazardous and Benign Space Objects: Solving Kepler's Equation"
-date: 2014-05-08T11:45:17+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Science
-  - Space
+- Science
+- Space
+date: 2014-05-08T11:45:17Z
+excerpt_separator: <!-- more -->
+id: 739
 tags:
-  - ggplot2
-  - Meteor
-  - Near Earth Object
-  - '#rstats'
+- ggplot2
+- Meteor
+- Near Earth Object
+- '#rstats'
+title: 'Hazardous and Benign Space Objects: Solving Kepler''s Equation'
+url: /2014/05/08/hazardous-and-benign-space-objects-solving-keplers-equation/
 ---
+
 Following on from my [previous post](http://www.exegetic.biz/blog/2014/04/hazardous-and-benign-space-objects-getting-the-data/) about Near Earth Objects, today we are going to solve [Kepler's Equation](http://en.wikipedia.org/wiki/Kepler%27s_equation) to find the eccentric anomaly, which is the next step towards plotting the positions of these NEOs relative to Earth.
 
-<!-- more -->
+<!--more-->
 
 ## The Eccentric, True and Mean Anomalies
 
@@ -36,7 +37,7 @@ This is a transcendental equation, meaning that it does not have an analytical s
 
 Recall that our NEO orbital data look like this:
 
-{% highlight r %}
+{{< highlight r >}}
 >> head(orbits)
              Object Epoch        a         e          i         w     Node         M     q     Q    P    H     MOID class hazard
 1  100004 (1983 VA) 56800 2.595899 0.6997035 0.28425360 0.2105033 1.349791 1.4094981 0.7795 4.41 4.18 16.4 0.176375   APO  FALSE
@@ -45,11 +46,11 @@ Recall that our NEO orbital data look like this:
 4  100926 (1998 MQ) 56800 1.782705 0.4077730 0.42286374 2.4205309 3.859910 3.4286821 1.0558 2.51 2.38 16.7 0.128731   AMO  FALSE
 5  101869 (1999 MM) 56800 1.624303 0.6107117 0.08316718 4.6884786 1.938777 0.7584286 0.6323 2.62 2.07 19.3 0.001741   APO   TRUE
 6 101873 (1999 NC5) 56800 2.029466 0.3933192 0.79884961 5.1531708 2.248914 5.6545349 1.2312 2.83 2.89 16.3 0.437678   AMO  FALSE
-{% endhighlight %}
+{{< / highlight >}}
 
 We are going to use the Newton-Raphson method via nleqslv() to solve Kepler's Equation for each record.
 
-{% highlight r %}
+{{< highlight r >}}
 > library(nleqslv)
 > library(plyr)
 > 
@@ -71,13 +72,13 @@ We are going to use the Newton-Raphson method via nleqslv() to solve Kepler's Eq
 4         (1985 WA) 5.814292
 5         (1986 NA) 2.591137
 6        (1987 SF3) 5.268315
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Plotting the Results
 
 We will plot the resulting relationship between the mean and eccentric anomalies using colour to indicate eccentricity.
 
-{% highlight r %}
+{{< highlight r >}}
 library(ggplot2)
 library(scales)
 
@@ -90,7 +91,7 @@ ggplot(orbits, aes(x = M / pi * 180, y = E / pi * 180, colour = e)) +
   scale_x_continuous(labels = degrees, breaks = seq(0, 360, 90)) +
   scale_y_continuous(labels = degrees, breaks = seq(0, 360, 90)) +
   theme_classic()
-{% endhighlight %}
+{{< / highlight >}}
 
 <img src="{{ site.baseurl }}/static/img/2014/04/mean-eccentric-anomaly.png">
 
@@ -100,9 +101,9 @@ As one would expect, when the eccentricity is zero (a circular orbit) the relati
 
 Now it is a simple matter to get the true anomaly as well.
 
-{% highlight r %}
+{{< highlight r >}}
 > orbits = transform(orbits, theta = 2 \* atan2(sqrt(1 + e) \* sin (E/2), sqrt(1 - e) * cos (E/2)))
-{% endhighlight %}
+{{< / highlight >}}
 
 <img src="{{ site.baseurl }}/static/img/2014/04/eccentric-true-anomaly.png">
 

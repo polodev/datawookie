@@ -1,20 +1,20 @@
 ---
-id: 3019
-title: 'Review: Mastering Python Scientific Computing'
-date: 2016-01-11T15:00:04+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
 - Book Review
 - Python
 - Review
+date: 2016-01-11T15:00:04Z
+excerpt_separator: <!-- more -->
+id: 3019
 tags:
 - Python
 - Scientific Computing
+title: 'Review: Mastering Python Scientific Computing'
+url: /2016/01/11/review-mastering-python-scientific-computing/
 ---
 
-<!-- more -->
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2015/12/mastering-python-scientific-computing-cover.png">
 

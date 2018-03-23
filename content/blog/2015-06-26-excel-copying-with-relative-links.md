@@ -1,15 +1,15 @@
 ---
-id: 1573
-title: 'Excel: Copying with Relative Links'
-date: 2015-06-26T12:25:51+00:00
 author: Andrew B. Collier
-layout: post
+date: 2015-06-26T12:25:51Z
 excerpt_separator: <!-- more -->
+id: 1573
 tags:
-  - Excel
+- Excel
+title: 'Excel: Copying with Relative Links'
+url: /2015/06/26/excel-copying-with-relative-links/
 ---
 
-<!-- more -->
+<!--more-->
 
 Copying a range of cells but keeping the targets for relative links? Doesn't quite work as you expected. Or hoped.
 

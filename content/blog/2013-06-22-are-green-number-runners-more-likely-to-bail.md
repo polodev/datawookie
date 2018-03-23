@@ -1,17 +1,18 @@
 ---
-id: 270
-title: Are Green Number Runners More Likely to Bail?
-date: 2013-06-22T15:07:44+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Interesting Statistics
+- Interesting Statistics
+date: 2013-06-22T15:07:44Z
+excerpt_separator: <!-- more -->
+id: 270
 tags:
-  - bar plot
-  - Comrades Marathon
-  - '#rstats'
+- bar plot
+- Comrades Marathon
+- '#rstats'
+title: Are Green Number Runners More Likely to Bail?
+url: /2013/06/22/are-green-number-runners-more-likely-to-bail/
 ---
+
 Comrades Marathon runners are awarded a permanent green race number once they have completed 10 journeys between Durban and Pietermaritzburg. For many runners, once they have completed the race a few times, achieving a green number becomes a possibility. And once the idea takes hold, it can become something of a compulsion. I can testify to this: I am thoroughly compelled! For runners with this goal in mind, every finish is one step closer to a green number. They are slowly chipping away, year after year and the idea of bailing is anathema. However, once the green number is in the bag, does the imperative to complete the race fade?
 
 I am going to explore the hypothesis that runners with green numbers are more likely to bail.
@@ -28,7 +29,7 @@ The analysis above has a serious problem: consider those runners with one medal.
 
 Compiling these data takes a little work, but nothing too taxing. Let's consider an anonymous (but real) runner whose Comrades Marathon history looks like this:
 
-{% highlight r %}
+{{< highlight r >}}
 year   status medal.count
 1985 Finished           1
 1986 Finished           2
@@ -50,22 +51,22 @@ year   status medal.count
 2011      DNS           9
 2012      DNS           9
 2013      DNS           9
-{% endhighlight %}
+{{< / highlight >}}
 
 What we want is a table that shows how many times he ran with a given number of medals. So, for our anonymous hero, this would be:
 
-{% highlight r %}
+{{< highlight r >}}
            0 1 2 3 4 5 6 7 8 9
   Finished 1 1 1 1 1 1 1 1 1 0
   DNF      0 0 0 0 0 0 0 3 0 3
   DNS      0 0 0 0 0 0 0 0 0 5
-{% endhighlight %}
+{{< / highlight >}}
 
 Things went well for the first seven years. On the first year he had no medal (column 0) but he finished (so there is a 1 in the first row). The same applies for columns 1 to 6. Then on year 7 he finished, gaining his seventh medal (hence the 1 in the first row of column 6: he already had 6 medals when he ran this time!). However, for the next three years (when he already had 7 medals) he got a DNF (hence the 3 in the second row of column 7). On his fourth attempt he got medal number 8 (giving the 1 in the first row of column 7: he already had 7 medals when he ran this time!). And the following year he got medal number 9. Then he suffered a string of 3 DNFs (the 3 in the second row of column 9), followed by a series of 5 DNSs (the 5 in the third row of column 9). To illustrate the proportions, when he had 7 medals he got DNS 0% (0/4) of the time, DNF 75% (3/4) of the time and finished 25% (1/4) of the time.
 
 Those are the data for a single athlete. To make a compelling case it is necessary to compile the same statistics for many, many runners. So I generated the analogous table for all athletes who ran the race between 1984 and 2013. A melted and abridged version of the resulting data look like this:
 
-{% highlight r %}
+{{< highlight r >}}
      status medal.count number proportion
 1  Finished           0  78051 0.83386039
 2       DNF           0  11102 0.11860858
@@ -108,7 +109,7 @@ Those are the data for a single athlete. To make a compelling case it is necessa
 91 Finished          30     59 0.83098592
 92      DNF          30      9 0.12676056
 93      DNS          30      3 0.04225352
-{% endhighlight %}
+{{< / highlight >}}
 
 The important information here is the proportion of DNF entries for each medal count. We can see that 11.8% (0.11860858) of runners DNF on the first time that they ran. Similarly, of those runners who had already completed the race once (so they had one medal in the bag), 11.7% (0.11739666) did not finish. Of those who ran again after just achieving a green number, 10.8% (0.10827034) were DNF. It will be easier to make sense of all this in a plot.
 
@@ -125,7 +126,7 @@ What conclusions can we draw from this? The second point seems to indicate a gro
 
 Are the differences in the proportion of DNFs statistically significant?
 
-{% highlight r %}
+{{< highlight r >}}
   31-sample test for equality of proportions without continuity correction
 
 data:  medal.table[2, 1:31] out of colSums(medal.table[, 1:31])
@@ -140,11 +141,11 @@ sample estimates:
 0.10071942 0.10404624 0.09890110 0.09684685 0.14473684 0.10833333 0.14358974 0.07284768 0.14285714 0.16379310
    prop 31
 0.12676056
-{% endhighlight %}
+{{< / highlight >}}
 
 The miniscule p-value from the proportion test indicates that there definitely is a significant difference in the proportion of DNFs across the entire data set (for those with between 0 and 30 medals). But it does not tell us anything about which of the proportions are responsible for this difference. We can get some information about this from a pairwise proportion test. Here is the abridged output.
 
-{% highlight r %}
+{{< highlight r >}}
   Pairwise comparisons using Pairwise comparison of proportions
 
 data:  medal.table[2, 1:31] out of colSums(medal.table[, 1:31])
@@ -166,7 +167,7 @@ data:  medal.table[2, 1:31] out of colSums(medal.table[, 1:31])
 14 1.000   1.000   1.000   1.000   1.000   1.000   1.000   1.000 1.000 1.000 1.000 1.000 1.000 1.000 -     -
 15 1.000   1.000   1.000   1.000   1.000   1.000   1.000   1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 -
 16 1.000   1.000   1.000   1.000   1.000   1.000   1.000   1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
-{% endhighlight %}
+{{< / highlight >}}
 
 For between 0 and 6 medals there is no significant difference (p-value is roughly 1). The DNF proportion for those with 7 medals does start to differ from those with 4 medals or fewer, but the p-values are not significant. When we get to athletes who have 8 medals there is a significant difference in the proportion of DNFs all the way from those with 0 medals to those with 6 medals. However, the proportion of DNFs for those with 9 medals is not significantly different from any of the other categories. Finally, the DNF proportion for those athletes who already have 10 medals does not differ significantly from the athletes with any number of fewer medals.
 
@@ -174,7 +175,7 @@ So, no, it does not seem that runners with green numbers are more likely to bail
 
 Oh, and one last thing: as I mentioned before, the analysis above is based on the period 1984 to 2013. There are some serious issues with the data in the earlier years. Here is a breakdown of the number of runners in each of the categories across the years:
 
-{% highlight r %}
+{{< highlight r >}}
        Finished   DNF   DNS
   1984     7105     2     0
   1985     8192  1907     1
@@ -206,7 +207,7 @@ Oh, and one last thing: as I mentioned before, the analysis above is based on th
   2011    11058  2023  6506
   2012    11889  1739  5916
   2013    10278  3643  5986
-{% endhighlight %}
+{{< / highlight >}}
 
 Certainly something is deeply wrong in 1984! In the early years it does not make any sense to discriminate between DNF and DNS since there were no independent records kept: we simply know whether or not an athlete finished. The introduction of the ChampionChip timing devices improved the quality of the data dramatically. These chips have been [used by all Comrades Marathon runners since 1997](http://www.runnersworld.co.za/motivation/20-running-breakthroughs-from-the-last-20-years/) although there is a delayed effect on the quality of the data.
 

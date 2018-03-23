@@ -1,16 +1,17 @@
 ---
-id: 261
-title: The Green Number Effect
-date: 2013-06-18T14:25:48+00:00
 author: Andrew B. Collier
-layout: post
+date: 2013-06-18T14:25:48Z
 excerpt_separator: <!-- more -->
+id: 261
 tags:
-  - Comrades Marathon
-  - histogram
-  - '#rstats'
+- Comrades Marathon
+- histogram
+- '#rstats'
+title: The Green Number Effect
+url: /2013/06/18/the-green-number-effect/
 ---
-Following up on a suggestion from my [previous post](http://www.exegetic.biz/blog/2013/06/age-distribution-comrades-athletes/), here are the statistics for medal count versus age. <!-- more --> Every point on the plot is the number (see colour legend on right) of athletes who have achieved a given number of medals by a particular age.
+
+Following up on a suggestion from my [previous post](http://www.exegetic.biz/blog/2013/06/age-distribution-comrades-athletes/), here are the statistics for medal count versus age. <!--more--> Every point on the plot is the number (see colour legend on right) of athletes who have achieved a given number of medals by a particular age.
 
 <img src="{{ site.baseurl }}/static/img/2013/06/medal-count-age.png">
 

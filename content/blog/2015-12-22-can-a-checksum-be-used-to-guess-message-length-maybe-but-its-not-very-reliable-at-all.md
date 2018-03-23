@@ -1,32 +1,33 @@
 ---
-id: 3022
-title: 'Using Checksum to Guess Message Length: Not a Good Idea!'
-date: 2015-12-22T15:00:25+00:00
 author: Andrew B. Collier
-layout: post
+date: 2015-12-22T15:00:25Z
 excerpt_separator: <!-- more -->
+id: 3022
 tags:
-  - Binomial confidence interval
-  - '#rstats'
-  - simulation
+- Binomial confidence interval
+- '#rstats'
+- simulation
+title: 'Using Checksum to Guess Message Length: Not a Good Idea!'
+url: /2015/12/22/can-a-checksum-be-used-to-guess-message-length-maybe-but-its-not-very-reliable-at-all/
 ---
+
 A question posed by one of my colleagues: can a checksum be used to guess message length? My immediate response was negative and, as it turns out, a simple simulation supported this knee-jerk reaction.
 
-<!-- more -->
+<!--more-->
 
 Here's the situation: a piece of software has been written to process a stream of messages. Each message is a sequence of bytes, where the length of the sequence varies, and is terminated by a checksum byte, which is calculated as the [cumulative bitwise XOR](https://en.wikipedia.org/wiki/Bitwise_operation#XOR) of the message bytes. There is no header information specifying the length of the sequence. Is it possible to use the checksum byte to locate the end of each message?
 
 It seems like this might just be feasible. But there's a problem: a coincidental match would cause a premature end to a message. To illustrate this point, let's look at an example. Consider a message composed of the following series of bytes:
 
-{% highlight r %}
+{{< highlight r >}}
 154 59 161 111 127 182 227 37 8 170 194
-{% endhighlight %}
+{{< / highlight >}}
   
 Now look at the checksums generated from the message as each new byte arrives.
 
-{% highlight r %}
+{{< highlight r >}}
 154 161 0 111 16 166 69 96 104 194
-{% endhighlight %}
+{{< / highlight >}}
   
 The first byte in the message is 154, so the checksum is just 154. The second byte in the message is 59, which doesn't match the checksum so we proceed to recalculate the checksum for the first two bytes, which is now 161. The third byte in the message is 161, which just happens to match the checksum! If we were using the checksum to determine the message length then we'd (wrongly) conclude that the message had come to an end.
 

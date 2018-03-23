@@ -1,15 +1,16 @@
 ---
-id: 4441
-title: 'fast-neural-style: Real-Time Style Transfer'
-date: 2016-10-07T15:00:33+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=4441
 categories:
-  - Machine Learning
+- Machine Learning
+date: 2016-10-07T15:00:33Z
+guid: http://www.exegetic.biz/blog/?p=4441
+id: 4441
 tags:
-  - Neural Network
+- Neural Network
+title: 'fast-neural-style: Real-Time Style Transfer'
+url: /2016/10/07/fast-neural-style-real-time-style-transfer/
 ---
+
 I followed up a reference to [fast-neural-style](https://github.com/jcjohnson/fast-neural-style) from Twitter and spent a glorious hour experimenting with this code. Very cool stuff indeed. It's documented in [Perceptual Losses for Real-Time Style Transfer and Super-Resolution](http://cs.stanford.edu/people/jcjohns/eccv16/) by Justin Johnson, Alexandre Alahi and Fei-Fei Li.
 
 The basic idea is to use feed-forward convolutional neural networks to generate image transformations. The networks are trained using perceptual loss functions and effectively apply style transfer.

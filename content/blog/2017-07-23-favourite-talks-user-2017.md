@@ -1,19 +1,20 @@
 ---
-title: 'Favourite Talks from useR 2017'
-date: 2017-07-23T04:00:00+00:00
 author: Andrew B. Collier
+categories:
+- Talks
+date: 2017-07-23T04:00:00Z
 excerpt_separator: <!-- more -->
-layout: post
-category: Talks
 tags:
-  - '#rstats'
-  - QGIS
-  - Web Scraping
-  - Teaching
-  - Docker
+- '#rstats'
+- QGIS
+- Web Scraping
+- Teaching
+- Docker
+title: Favourite Talks from useR 2017
+url: /2017/07/23/favourite-talks-user-2017/
 ---
 
-<!-- more -->
+<!--more-->
 
 ## Geospatial
 

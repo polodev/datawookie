@@ -1,19 +1,19 @@
 ---
-id: 2756
-title: 'Data Scientists: Respect in the Workplace?'
-date: 2015-10-26T10:36:15+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Data Science
+- Data Science
+date: 2015-10-26T10:36:15Z
+excerpt_separator: <!-- more -->
+id: 2756
 tags:
-  - Data Science
+- Data Science
+title: 'Data Scientists: Respect in the Workplace?'
+url: /2015/10/26/data-scientists-respect-in-the-workplace/
 ---
 
 Data Scientists are often among the best educated and most experienced on a team. Are you getting the respect you deserve?
 
-<!-- more -->
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2015/10/respect.png">
 

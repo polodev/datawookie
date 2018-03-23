@@ -1,17 +1,18 @@
 ---
-id: 3299
-title: Automating R scripts under Windows
-date: 2016-02-11T07:33:16+00:00
 author: Andrew B. Collier
-layout: post
+date: 2016-02-11T07:33:16Z
 excerpt_separator: <!-- more -->
+id: 3299
 tags:
-  - automation
-  - Windows
+- automation
+- Windows
+title: Automating R scripts under Windows
+url: /2016/02/11/automating-r-scripts-under-windows/
 ---
+
 Setting up an automated job under Linux is a cinch thanks to [cron](https://en.wikipedia.org/wiki/Cron). Doing the same under Windows is a little more tricky, but still eminently doable.
 
-<!-- more -->
+<!--more-->
 
 I found this tutorial helpful:
 
@@ -19,8 +20,8 @@ I found this tutorial helpful:
 
 That got me 99% of the way there. I wrote a batch file to trigger the script. The critical element was changing to the correct location before invoking R.
 
-{% highlight shell %}
+{{< highlight shell >}}
 @echo off
 cd "C:\Users\AndrewCo\Projects\"
 R CMD BATCH script.R
-{% endhighlight %}
+{{< / highlight >}}

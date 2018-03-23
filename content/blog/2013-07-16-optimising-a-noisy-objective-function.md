@@ -1,21 +1,22 @@
 ---
-id: 295
-title: Optimising a Noisy Objective Function
-date: 2013-07-16T17:07:21+00:00
 author: Andrew B. Collier
-layout: post
+date: 2013-07-16T17:07:21Z
 excerpt_separator: <!-- more -->
+id: 295
 tags:
-  - differential evolution
-  - nelder-mead
-  - optimisation
-  - particle swarm optimisation
-  - '#rstats'
-  - simulated annealing
+- differential evolution
+- nelder-mead
+- optimisation
+- particle swarm optimisation
+- '#rstats'
+- simulated annealing
+title: Optimising a Noisy Objective Function
+url: /2013/07/16/optimising-a-noisy-objective-function/
 ---
+
 I am busy with a project where I need to calibrate the [Heston Model](http://en.wikipedia.org/wiki/Heston_model)&nbsp;to some Asian options data. The model has been implemented as a function which executes a [Monte Carlo](https://en.wikipedia.org/wiki/Monte_Carlo_method)&nbsp;(MC) simulation. As a result, the objective function is rather noisy. There are a number of algorithms for dealing with this sort of problem, and here I simply give a brief overview of some of them.
 
-<!-- more -->
+<!--more-->
 
 ## The Objective Function (with constraint)
 
@@ -25,7 +26,7 @@ $$ f(x, y, z) = x^2 + y^2 + (z - \pi)^2 $$
 
 where solutions will be confined to the first octant (so that x, y and z are all greater than or equal to 0) and subject to the constraint that the product of x and y is greater than or equal to 1. It is clear that the optimum should occur when both x and y are 1 and z equates to pi. However, to make things more interesting, I will evaluate pi using a simple MC method. The objective function is implemented as
 
-{% highlight r %}
+{{< highlight r >}}
 obj.func <- function(x) {
     if (x[1] * x[2] < 1) {
         return(Inf)
@@ -41,7 +42,7 @@ obj.func <- function(x) {
     #
     return(x[1]**2 + x[2]**2 + (x[3] - pi.estimate)**2)
 }
-{% endhighlight %}
+{{< / highlight >}}
 
 Here the constraint on x and y is enforced at the beginning: if the constraint is violated then the objective function returns a value of positive infinity. This has two consequences:
 
@@ -56,7 +57,7 @@ The global parameter N determines the number of iterations in the MC calculation
 
 The obvious choice for optimisation is [Differential Evolution](http://en.wikipedia.org/wiki/Differential_evolution) (DE), which is a member of the class of probabilistic [metaheuristics](http://en.wikipedia.org/wiki/Metaheuristic). It works by using a population of candidate solutions, from which new candidates are generated on every iteration. Only the fittest candidates are retained, so that the population gradually migrates towards the optimum. DE does not make any assumptions about the form of the function being optimised. It is thus applicable to scenarios in which the objective function is noisy, stochastic or not differentiable. DE does not guarantee that it will reach the global optimum, but given enough time it should get pretty close!
 
-{% highlight r %}
+{{< highlight r >}}
 > library(DEoptim)
 
 > N = 10000
@@ -91,11 +92,11 @@ best value    :  2
 after         :  200 generations
 fn evaluated  :  402 times
 *************************************
-{% endhighlight %}
+{{< / highlight >}}
 
 Here the algorithm stopped when it reached the maximum number of iterations. The value obtained for pi is rather respectable, as are the final values for x and y. During the earlier iterations the best fit parameters change fairly rapidly, but towards the end they remain rather static. These results were obtained with the default strategy. Next we will try an alternative strategy:
 
-{% highlight r %}
+{{< highlight r >}}
 > R1 = DEoptim(obj.func, lower = c(0, 0, 2), upper = c(5, 5, 5),
 +              control = DEoptim.control(trace = 10, strategy = 6))
 Iteration: 10 bestvalit: 2.407872 bestmemit:    1.107492    0.998561    2.747204
@@ -126,11 +127,11 @@ best value    :  2.00034
 after         :  200 generations
 fn evaluated  :  402 times
 *************************************
-{% endhighlight %}
+{{< / highlight >}}
 
 The final estimate of pi is not as good, but this might be due either to the change in strategy or the random nature of DE. The algorithm again terminates when it reaches the maximum number of iterations. Let's see what happens if we increase the allowed number of iterations.
 
-{% highlight r %}
+{{< highlight r >}}
 > R2 = DEoptim(obj.func, lower = c(0, 0, 2), upper = c(5, 5, 5),
 +              control = DEoptim.control(trace = 500, strategy = 6, itermax = 10000))
 Iteration: 500 bestvalit: 2.000033 bestmemit:    0.999426    1.000589    3.158359
@@ -161,13 +162,13 @@ best value    :  2
 after         :  10000 generations
 fn evaluated  :  20002 times
 *************************************
-{% endhighlight %}
+{{< / highlight >}}
 
 Now that is interesting: it seems that by doing more iterations, the final estimate for pi actually gets worse! Not what one would immediately expect... and certainly not the kind of behaviour that one would anticipate from a deterministic objective function. However, this is simply the nature of the beast when optimising in the presence of noise: inevitably you will find sets of parameters which, when combined with noise, will produce progressively lower values for the objective function.
 
 The algorithm still has not converged, but terminated when it reached the maximum number of iterations. To impose a convergence criterion we need to set both the reltol and steptol parameters. The algorithm will converge when the output from the objective function does not change by the specified relative tolerance. This criterion is only applied after steptol number of iterations.
 
-{% highlight r %}
+{{< highlight r >}}
 > R3 = DEoptim(obj.func, lower = c(0, 0, 2), upper = c(5, 5, 5),
 +              control = DEoptim.control(trace = 10, strategy = 6, itermax = 10000,
 +                                        steptol = 50, reltol = 1e-10))
@@ -212,13 +213,13 @@ best value    :  2.00009
 after         :  335 generations
 fn evaluated  :  672 times
 *************************************
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Simulated Annealing
 
 [Simulated Annealing](http://en.wikipedia.org/wiki/Simulated_annealing) (SA) is an alternative optimisation technique, which is also a probabilistic metaheuristic. SA gradually converges on the global optimum by moving probabilistically between states, where the distance between states slowly declines as the algorithm progresses. In contrast to DE, which considers a population of candidate solutions, SA only evolves a single state. SA is implemented in R as an option in the optim() function.
 
-{% highlight r %}
+{{< highlight r >}}
 > R4 = optim(c(2, 2, 4), obj.func, method = "SANN", control = list(maxit = 1000000, reltol = 1e-6))
 > R4
 $par
@@ -236,7 +237,7 @@ $convergence
 
 $message
 NULL
-{% endhighlight %}
+{{< / highlight >}}
 
 By default optim() should stop after 10000 iterations, however, I pushed this up by a factor of 100. Despite the large number of iterations, the final set of parameters attained is not particularly good. This, again, is due to the noisy objective function. Every time that the objective function is called it uses a new set of random numbers, so that the objective surface is never fixed. Even calling it with the same set of parameters results in a different outcome! The effects of this are more pronounced for SA (as opposed to DE) due to the fact that it only tracks a single state.
 
@@ -244,7 +245,7 @@ By default optim() should stop after 10000 iterations, however, I pushed this up
 
 [Particle Swarm Optimisation](http://en.wikipedia.org/wiki/Particle_swarm) is quite similar to DE in the sense that it uses a population of particles which move around the optimisation domain. Again this is a metaheuristic.
 
-{% highlight r %}
+{{< highlight r >}}
 > R5 = psoptim(rep(NA, 3), obj.func, lower = c(0, 0, 2), upper = c(5, 5, 5),
 +              control = list(abstol = 2 + 1e-3))
 >
@@ -264,13 +265,13 @@ $convergence
 
 $message
 [1] "Converged"
-{% endhighlight %}
+{{< / highlight >}}
 
 ## The Objective Function (without constraint)
 
 There are other methods that will work with a noisy objective function. However, they do not function with the internally imposed constraint. To see how these work we need to remove the constraint code. We will simplify the constraint by asserting that both x and y are greater than or equal to 1 (but this is done in the optimiser and not in the objective function). This is a slightly different problem but has the same solution.
 
-{% highlight r %}
+{{< highlight r >}}
 obj.func <- function(x) {
     r <- sqrt(runif(N, -1, 1)**2 + runif(N, -1, 1)**2)
     #
@@ -278,13 +279,13 @@ obj.func <- function(x) {
     #
     return(x[1]**2 + x[2]**2 + (x[3] - pi.estimate)**2)
 }
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Derivative-Free Nelder-Mead
 
 This method is described in Kelley, C. T. (1999). Iterative Methods for Optimization. SIAM.
 
-{% highlight r %}
+{{< highlight r >}}
 > library(dfoptim)
 
 > R6 = nmkb(c(2, 2, 4), obj.func, lower = c(1, 1, 2), upper = c(5, 5, 5))
@@ -294,7 +295,7 @@ This method is described in Kelley, C. T. (1999). Iterative Methods for Optimiza
 [1] 153
 > R6$message
 [1] "Successful convergence"
-{% endhighlight %}
+{{< / highlight >}}
 
 This converges on a reasonable solution without using too many function evaluations. So it is relatively quick! The final set of parameters could probably be improved by tweaking some of the optional arguments to nmkb(). The result might be used as an initial solution for a more intensive optimisation.
 
@@ -302,14 +303,14 @@ This converges on a reasonable solution without using too many function evaluati
 
 This method has the capability to simultaneously optimise multiple objective functions. Although this is not applied here, it is certainly a very useful feature!
 
-{% highlight r %}
+{{< highlight r >}}
 > library(mopsocd)
 
 > R7 = mopsocd(obj.func, varcnt = 3, fncnt = 1, lowerbound = c(1, 1, 2), upperbound = c(5, 5, 5),
                opt = 0)
 > R7$paramvalues
 [1] 1.00000 1.00000 3.14839
-{% endhighlight %}
+{{< / highlight >}}
 
 mopsocd() actually provides the option of applying a constraint as a separate function. I could not, however, get this to work effectively with this example.
 

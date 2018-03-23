@@ -1,11 +1,11 @@
 ---
-title: 'A Timeline History of R'
-date: 2017-08-05T01:00:00+00:00
 author: Andrew B. Collier
+date: 2017-08-05T01:00:00Z
 excerpt_separator: <!-- more -->
-layout: post
 tags:
-  - '#rstats'
+- '#rstats'
+title: A Timeline History of R
+url: /2017/08/05/history-of-r/
 ---
 
 A record of some more or less important events in the history of [R](https://www.r-project.org/).
@@ -57,7 +57,7 @@ This is a work in progress. The information is cobbled together from a range of 
     - [R/Finance](http://www.rinfinance.com/) (Chicago, IL, USA)
     - The R Journal ([8/1](https://journal.r-project.org/archive/2016-1/) and [8/2](https://journal.r-project.org/archive/2016-2/))
     - A new [logo](https://www.r-project.org/logo) for R
-<!-- more -->
+<!--more-->
 - 2015:
 	- [R Consortium](https://www.r-consortium.org/) founded
 	- <kbd>R-3.2.3</kbd> "Wooden Christmas-Tree" (2015-12-10)

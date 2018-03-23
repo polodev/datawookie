@@ -1,21 +1,21 @@
 ---
-id: 3510
-title: satRday in Cape Town
-date: 2016-05-26T15:03:50+00:00
 author: Andrew B. Collier
-layout: post
+date: 2016-05-26T15:03:50Z
 excerpt_separator: <!-- more -->
+id: 3510
 tags:
-  - Cape Town
-  - '#rstats'
-  - satRday
+- Cape Town
+- '#rstats'
+- satRday
+title: satRday in Cape Town
+url: /2016/05/26/satrday-cape-town/
 ---
 
 We are planning to host one of the three inaugural [satRday](https://github.com/stephlocke/RSaturday-proposal) conferences in Cape Town during 2017. The \[R Consortium\](https://www.r-consortium.org/) has committed to funding three of these events: one will be in Hungary, another will be somewhere in the USA and the third will be at an international destination. At present Cape Town is dicing it out with Monterrey (Mexico) for the third location. We just need your [votes](http://app.doopoll.co/poll/ZznsEGPnmbFafim2c) to make Cape Town's plans a reality.
 
 <img src="{{ site.baseurl }}/static/img/2016/05/cape-town-aerial-logo.jpg">
 
-<!-- more -->
+<!--more-->
 
 The satRday will probably happen in late February or early March 2017. This is the end of southern hemisphere Summer and the Cape is at its best, with glorious weather and the peak Summer tourist rush over. You could easily factor satRday into a vacation in sunny South Africa.
 

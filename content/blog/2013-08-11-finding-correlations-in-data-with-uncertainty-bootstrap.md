@@ -1,25 +1,26 @@
 ---
-id: 379
-title: 'Finding Correlations in Data with Uncertainty: Bootstrap Solution'
-date: 2013-08-11T09:50:49+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Science
+- Science
+date: 2013-08-11T09:50:49Z
+excerpt_separator: <!-- more -->
+id: 379
 tags:
-  - bootstrap
-  - correlation
-  - ggplot2
-  - '#rstats'
-  - scatter plot
-  - uncertainty
+- bootstrap
+- correlation
+- ggplot2
+- '#rstats'
+- scatter plot
+- uncertainty
+title: 'Finding Correlations in Data with Uncertainty: Bootstrap Solution'
+url: /2013/08/11/finding-correlations-in-data-with-uncertainty-bootstrap/
 ---
+
 A week or so ago a colleague of mine asked if I knew how to calculate correlations for data with uncertainties. Now, if we are going to be honest, then all data should have some level of experimental or measurement error. However, I suspect that in the majority of cases these uncertainties are ignored when considering correlations. To what degree are uncertainties important? A moment's thought would suggest that if the uncertainties are large enough then they should have a rather significant effect on correlation, or more properly, the uncertainty measure associated with the correlation. So, what is the best (or at least correct) way to proceed? Somewhat surprisingly a quick Google search did not turn up anything too helpful.
 
 Let's make this problem a little more concrete. My colleague's data are plotted below. The independent variable is assumed to be well known but the dependent variable has measurement error. For each value of the independent variable multiple measurements of the dependent variable have been made. The average (mu) and standard deviation (sigma) of these measurements have then been recorded. There is a systematic trend in the measurement uncertainties, with larger error bars generally occurring for larger values of the independent variable (although there are some obvious exceptions!).
 
-{% highlight r %}
+{{< highlight r >}}
   > head(original)
   mu.x sigma.x  mu.y sigma.y
 1 93.7       0 56.80    83.5
@@ -37,13 +38,13 @@ Let's make this problem a little more concrete. My colleague's data are plotted 
 +     xlab("x") + ylab("y") +
 +     theme_bw() +
 +     scale_x_log10()
-{% endhighlight %}
+{{< / highlight >}}
 
 <img src="{{ site.baseurl }}/static/img/2013/08/original-with-errorbars.png">
 
 Now since I can't publish those data, we will need to construct a synthetic data set in order to explore this issue.
 
-{% highlight r %}
+{{< highlight r >}}
 > set.seed(1)
 >
 > N <- 100
@@ -57,13 +58,13 @@ Now since I can't publish those data, we will need to construct a synthetic data
 4 0.9082078       0 -0.2211553 0.46155184
 5 0.2016819       0  1.6347056 0.37521653
 6 0.8983897       0  2.8787896 0.99109922
-{% endhighlight %}
+{{< / highlight >}}
 
 <img src="{{ site.baseurl }}/static/img/2013/08/synthetic-with-errorbars.png">
 
 The direct approach to calculating the correlation would be to just use the average values for each measurement.
 
-{% highlight r %}
+{{< highlight r >}}
 > attach(synthetic)
 >
 > cor.test(mu.x, mu.y)
@@ -81,13 +82,13 @@ sample estimates:
 
 >
 > detach(synthetic)
-{% endhighlight %}
+{{< / highlight >}}
 
 This looks eminently reasonable: a correlation coefficient of 0.351 (significant at the 1% level) and a 95% confidence interval extending from 0.166 to 0.512.
 
 We can assess the influence of the uncertainties by performing a bootstrap calculation. Let's keep things simple to start with, using only the mean values.
 
-{% highlight r %}
+{{< highlight r >}}
   > cor.mu <- function(df, n) {
 +     df = df[n,]
 +     x <- df$mu.x
@@ -118,13 +119,13 @@ Intervals :
 Level      Normal              Basic              Percentile     
 95%   ( 0.1731,  0.5315 )   ( 0.1827,  0.5394 )   ( 0.1630,  0.5196 )  
 Calculations and Intervals on Original Scale
-{% endhighlight %}
+{{< / highlight >}}
 
 Note that we are still only using the measurement means! The new bootstrap values for the correlation coefficient and its confidence interval are in good agreement with the direct results above. But that is no surprise because nothing has really changed. Yet.
 
 Next we will adapt the bootstrap function so that it generates data by random sampling from normal distributions with means and standard deviations extracted from the data.
 
-{% highlight r %}
+{{< highlight r >}}
 > cor.mu.sigma <- function(df, n) {
 +     df = df[n,]
 +     x <- rnorm(nrow(df), mean = df$mu.x, sd = df$sigma.x)
@@ -144,11 +145,11 @@ boot(data = synthetic, statistic = cor.mu.sigma, R = 1e+05)
 Bootstrap Statistics :
      original     bias    std. error
 t1* 0.2699615 0.03208843  0.09144613
-{% endhighlight %}
+{{< / highlight >}}
 
 The bootstrap estimate of the correlation, 0.270, is quite different to the direct and simple bootstrap results. However, we now also have access to the bootstrap confidence intervals which take into account the uncertainty in the observations.
 
-{% highlight r %}
+{{< highlight r >}}
 > boot.ci(boot.cor.mu.sigma, type = c("norm", "basic", "perc"))
 BOOTSTRAP CONFIDENCE INTERVAL CALCULATIONS
 Based on 100000 bootstrap replicates
@@ -161,13 +162,13 @@ Intervals :
 Level      Normal              Basic              Percentile     
 95%   ( 0.0586,  0.4171 )   ( 0.0672,  0.4232 )   ( 0.1167,  0.4727 )  
 Calculations and Intervals on Original Scale
-{% endhighlight %}
+{{< / highlight >}}
 
 The 95% confidence interval for the correlation, taking into account uncertainties in the measurements, extends from 0.059 to 0.417. The correlation is still significant at the 5% level, but barely so!
 
 Returning now to the original data and applying the same analysis. First we go the direct route.
 
-{% highlight r %}
+{{< highlight r >}}
 > attach(original)
 > 
 > cor.test(mu.x, mu.y)
@@ -185,11 +186,11 @@ sample estimates:
 
 > 
 > detach(original)
-{% endhighlight %}
+{{< / highlight >}}
 
 Next we look at the bootstrap approach.
 
-{% highlight r %}
+{{< highlight r >}}
  > (boot.cor.mu.sigma = boot(original, cor.mu.sigma, R = 100000))
 
 ORDINARY NONPARAMETRIC BOOTSTRAP
@@ -200,19 +201,19 @@ boot(data = original, statistic = cor.mu.sigma, R = 1e+05)
 Bootstrap Statistics :
 WARNING: All values of t1* are NA
 There were 50 or more warnings (use warnings() to see the first 50)
-{% endhighlight %}
+{{< / highlight >}}
 
 Hmmmm. That's no good: it breaks because there is a single record which has missing data for sigma.
 
-{% highlight r %}
+{{< highlight r >}}
 > original[rowSums(is.na(original)) > 0,]
    mu.x sigma.x mu.y sigma.y
 80 52.2       0 47.6     NaN
-{% endhighlight %}
+{{< / highlight >}}
 
 To deal with this small hitch we make a change to the bootstrap function to include only complete observations.
 
-{% highlight r %}
+{{< highlight r >}}
 > cor.mu.sigma <- function(df, n) {
 +     df = df[n,]
 +     x <- rnorm(nrow(df), mean = df$mu.x, sd = df$sigma.x)
@@ -232,11 +233,11 @@ Bootstrap Statistics :
      original     bias    std. error
 t1* 0.1938031 0.01834959  0.08378789
 There were 50 or more warnings (use warnings() to see the first 50)
-{% endhighlight %}
+{{< / highlight >}}
 
 The warnings are generated because rnorm() is still producing NAs. Maybe a better approach would have been to only pass complete observations to boot() using complete.cases(). The bootstrap estimate of the correlation is quite different from what we obtained using the direct method!
 
-{% highlight r %}
+{{< highlight r >}}
 > boot.ci(boot.cor.mu.sigma, type = c("norm", "basic", "perc"))
 BOOTSTRAP CONFIDENCE INTERVAL CALCULATIONS
 Based on 100000 bootstrap replicates
@@ -251,7 +252,7 @@ Level      Normal              Basic              Percentile
 Calculations and Intervals on Original Scale
 >
 > plot(boot.cor.mu.sigma)
-{% endhighlight %}
+{{< / highlight >}}
 
 <img src="{{ site.baseurl }}/static/img/2013/08/original-bootstrap.png">
 

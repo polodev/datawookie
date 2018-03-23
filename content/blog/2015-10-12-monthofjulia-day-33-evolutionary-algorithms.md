@@ -1,21 +1,21 @@
 ---
-id: 1895
-title: '#MonthOfJulia Day 33: Evolutionary Algorithms'
-date: 2015-10-12T15:00:20+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
 - Julia
+date: 2015-10-12T15:00:20Z
+excerpt_separator: <!-- more -->
+id: 1895
 tags:
 - '#julialang'
 - '#MonthOfJulia'
 - Evolutionary Computing
 - Genetic Algorithm
 - Julia
+title: '#MonthOfJulia Day 33: Evolutionary Algorithms'
+url: /2015/10/12/monthofjulia-day-33-evolutionary-algorithms/
 ---
 
-<!-- more -->
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2015/09/Julia-Logo-Evolutionary.png">
 
@@ -28,20 +28,20 @@ I used a GA to optimize seating assignments at my wedding reception. 80 guests o
 
 Let's get the package loaded up and then we'll be ready to begin.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> using Evolutionary
-{% endhighlight %}
+{{< / highlight >}}
 
 We'll be using a genetic algorithm to solve the [knapsack problem](https://en.wikipedia.org/wiki/Knapsack_problem). We first need to set up an objective function, which in turn requires data giving the utility and mass of each item we might consider putting in our knapsack. Suppose we have nine potential items with the following characteristics:
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> utility = [10, 20, 15, 2, 30, 10, 30, 45, 50];
 julia> mass = [1, 5, 10, 1, 7, 5, 1, 2, 10];
-{% endhighlight %}
+{{< / highlight >}}
 
 To get an idea of their relative worth we can look at the utility per unit mass.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> utility ./ mass
 9-element Array{Float64,1}:
  10.0
@@ -53,13 +53,13 @@ julia> utility ./ mass
  30.0
  22.5
   5.0
-{% endhighlight %}
+{{< / highlight >}}
 
 Evidently item 7 has the highest utility/mass ratio, followed by item 8. So these two items are quite likely to be included in an optimal solution.
 
 The objective function is simply the total utility for a set of selected items. We impose a penalty on the total mass of the knapsack by setting the total utility to zero if our knapsack becomes too heavy (the maximum permissible mass is set to 20).
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> function summass(n::Vector{Bool})
           sum(mass .* n)
         end
@@ -68,22 +68,22 @@ julia> function objective(n::Vector{Bool})
           (summass(n) <= 20) ? sum(utility .* n) : 0
         end
 objective (generic function with 1 method)
-{% endhighlight %}
+{{< / highlight >}}
 
 We'll give those a whirl just to check that they make sense. Suppose our knapsack holds items 3 and 9.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> summass([false, false, true, false, false, false, false, false, true])
 20
 julia> objective([false, false, true, false, false, false, false, false, true])
 65
-{% endhighlight %}
+{{< / highlight >}}
 
 Looks about right. Note that we want to _maximise_ the objective function (total utility) subject to the mass constraints of the knapsack.
 
 We're ready to run the genetic algorithm. Note that `ga()` takes as it's first argument a function which it will _minimise_. We therefore give it the reciprocal of the objective function.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> best, invbestfit, generations, tolerance, history = ga(
            x -> 1 / objective(x),                 # Function to MINIMISE
            9, # Length of chromosome
@@ -110,32 +110,32 @@ julia> best
   true
   true
   true
-{% endhighlight %}
+{{< / highlight >}}
 
 The optimal solution consists of items 1, 2, 4, 7, 8 and 9. Note that items 7 and 8 (with the highest utility per unit mass) are included. We can check up on the mass constraint and total utility for the optimal solution.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> summass(best)
 20
 julia> objective(best)
 157
 julia> 1 / invbestfit
 157.0
-{% endhighlight %}
+{{< / highlight >}}
 
 Examining the debug output from `ga()` is rather illuminating (set the `debug` and `verbose` parameters to `true`). You'll want to limit the population size and number of iterations when you do this though, otherwise the information deluge can get a little out of hand. The output shows how each member of the population is initialised with the same set of values. The last field on each line is the corresponding value of the objective function.
 
-{% highlight julia %}
+{{< highlight julia >}}
 INIT 1: Bool[true,true,false,true,false,true,true,false,false] : 71.99999999999885
 INIT 2: Bool[true,true,false,true,false,true,true,false,false] : 71.99999999999885
 INIT 3: Bool[true,true,false,true,false,true,true,false,false] : 71.99999999999885
 INIT 4: Bool[true,true,false,true,false,true,true,false,false] : 71.99999999999885
 INIT 5: Bool[true,true,false,true,false,true,true,false,false] : 71.99999999999885
-{% endhighlight %}
+{{< / highlight >}}
 
 Each subsequent iteration dumps output like this:
 
-{% highlight julia %}
+{{< highlight julia >}}
 BEST: [1,2,4,3,5]
 MATE 2+4>: Bool[true,true,false,true,true,true,true,false,false] : Bool[true,true,false,true,false,false,true,true,true]
 MATE >2+4: Bool[true,true,false,true,true,true,true,true,true] : Bool[true,true,false,true,false,false,true,false,false]
@@ -155,7 +155,7 @@ FIT 4: 156.99999999999451
 FIT 5: 101.9999999999977
 BEST: 0.006369426751592357: Bool[true,true,false,true,false,false,true,true,true], G: 8
 BEST: [4,3,5,2,1]
-{% endhighlight %}
+{{< / highlight >}}
 
 We start with a list of the members from the preceding iteration in order of descending fitness (so member 1 has the highest fitness to start with). MATE records detail crossover interactions between pairs of members. These are followed by MUTATED records which specify which members undergo random mutation. ELITE records show which members are promoted unchanged to the following generation (these will always be selected from the fittest of the previous generation). Next we have the FIT records which give the fitness of each of the members of the new population (after crossover, mutation and elitism have been applied). Here we can see that the new member 1 has violated the total mass constraint and thus has a fitness of zero. Two BEST records follow. The first gives details of the single best member from the new generation. Somewhat disconcertingly the first number in this record is the reciprocal of fitness. The second BEST record again rates the members of the new generation in terms of descending fitness.
 

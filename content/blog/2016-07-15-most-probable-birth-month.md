@@ -1,28 +1,29 @@
 ---
-id: 3657
-title: Most Probable Birth Month
-date: 2016-07-15T04:49:11+00:00
 author: Andrew B. Collier
-layout: post
+date: 2016-07-15T04:49:11Z
 excerpt_separator: <!-- more -->
+id: 3657
 tags:
-  - birth statistics
-  - '#rstats'
+- birth statistics
+- '#rstats'
+title: Most Probable Birth Month
+url: /2016/07/15/most-probable-birth-month/
 ---
+
 In a [previous post](http://www.exegetic.biz/blog/2016/07/major-league-baseball-birth-months/) I showed that the data from [www.baseball-reference.com](http://www.baseball-reference.com/) support Malcolm Gladwell's contention that more professional baseball players are born in August than any other month. Although this might be explained by the 31 July cutoff for admission to baseball leagues, it was suggested that it could also be linked to a [larger proportion of babies being born in August](http://www.livescience.com/32728-baby-month-is-almost-here-.html).
 
-<!-- more -->
+<!--more-->
 
 In order to explore this idea I gathered data from <http://www.cdc.gov/> for births in the USA between 1994 and 2014. These data as well as the baseball data have been published as a R package [here](https://github.com/DataWookie/lifespan). Install using
 
-{% highlight r %}
+{{< highlight r >}}
 > devtools::install_github("DataWookie/lifespan")
 > library(lifespan)
-{% endhighlight %}
+{{< / highlight >}}
 
 Let's explore the hypothesis regarding non-uniform birth months.
 
-{% highlight r %}
+{{< highlight r >}}
 > library(dplyr)
 > group_by(births, month) %>% summarise(count = sum(count))
 Source: local data frame [12 x 2]
@@ -41,11 +42,11 @@ Source: local data frame [12 x 2]
 10    Oct 7220646
 11    Nov 6813037
 12    Dec 7079453
-{% endhighlight %}
+{{< / highlight >}}
   
 There is definitely significant non-uniformity:
 
-{% highlight r %}
+{{< highlight r >}}
 > chisq.test(.Last.value$count, p = c(31, 28.25, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31),
              rescale.p = TRUE)
 
@@ -53,7 +54,7 @@ There is definitely significant non-uniformity:
 
 data:  .Last.value$count
 X-squared = 77600, df = 11, p-value <2e-16
-{% endhighlight %}
+{{< / highlight >}}
   
 We can dig into that a little deeper and see the total number of births between 1994 and 2014 broken down by month. The aggregate for August is certainly higher than any other month, but only marginally larger than that for July.
 
@@ -65,7 +66,7 @@ Delving still deeper we find that the monthly counts exhibit significant variati
   
 Specifically, August in 2006 and 2007 appear to have been bumper births months. Interesting!
 
-{% highlight r %}
+{{< highlight r >}}
 > group_by(births, year, month) %>% summarise(count = sum(count)) %>% ungroup() %>%
 +   arrange(desc(count))
 Source: local data frame [252 x 3]
@@ -83,6 +84,6 @@ Source: local data frame [252 x 3]
 9   2009    Jul 369117
 10  2008    Sep 368660
 ..   ...    ...    ...
-{% endhighlight %}
+{{< / highlight >}}
 
 Of course, a peak in overall births in August does not mean that there's a direct causative link to the peak in professional baseball players' births. But the contribution cannot be ignored.

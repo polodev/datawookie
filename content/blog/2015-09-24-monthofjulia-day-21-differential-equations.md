@@ -1,25 +1,25 @@
 ---
-id: 2277
-title: '#MonthOfJulia Day 21: Differential Equations'
-date: 2015-09-24T16:00:13+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=2277
-excerpt_separator: <!-- more -->
 categories:
-  - Julia
+- Julia
+date: 2015-09-24T16:00:13Z
+excerpt_separator: <!-- more -->
+guid: http://www.exegetic.biz/blog/?p=2277
+id: 2277
 tags:
-  - '#julialang'
-  - '#MonthOfJulia'
-  - Differential Equation
-  - Gadfly
-  - Julia
-  - ODE
-  - Oscillator
-  - sundials
+- '#julialang'
+- '#MonthOfJulia'
+- Differential Equation
+- Gadfly
+- Julia
+- ODE
+- Oscillator
+- sundials
+title: '#MonthOfJulia Day 21: Differential Equations'
+url: /2015/09/24/monthofjulia-day-21-differential-equations/
 ---
 
-<!-- more -->
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2015/09/Julia-Logo-Pendulum.png" >
 
@@ -29,16 +29,16 @@ tags:
 
 The [`Sundials`](https://github.com/julialang/sundials.jl) package is based on a [library](https://computation.llnl.gov/casc/sundials/main.html) which implements a number of solvers for differential equations. First off you'll need to install that library. In Ubuntu this is straightforward using the package manager. Alternatively you can [download](http://computation.llnl.gov/casc/sundials/download/download.php) the source distribution.
 
-{% highlight text %}
+{{< highlight text >}}
 $ sudo apt-get install libsundials-serial-dev
-{% endhighlight %}
+{{< / highlight >}}
 
 Next install the Julia package and load it.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> Pkg.add("Sundials")
 julia> using Sundials
-{% endhighlight %}
+{{< / highlight >}}
 
 To demonstrate we'll look at a standard "textbook" problem: a damped harmonic oscillator (mass on a spring with friction). This is a second order differential equation with general form
 
@@ -56,24 +56,24 @@ $$
 
 We'll write a function for those relationships and assign specific values to $$ a $$ and $$ b $$.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> function oscillator(t, y, ydot)
            ydot[1] = y[2]
            ydot[2] = - 3 * y[1] - y[2] / 10
        end
 oscillator (generic function with 2 methods)
-{% endhighlight %}
+{{< / highlight >}}
 
 Next the initial conditions and time steps for the solution.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> initial = [1.0, 0.0];                        # Initial conditions
 julia> t = float([0:0.125:30]);                     # Time steps
-{% endhighlight %}
+{{< / highlight >}}
 
 And finally use `cvode()` to integrate the system.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> xv = Sundials.cvode(oscillator, initial, t);
 julia> xv[1:5,:]
 5x2 Array{Float64,2}:
@@ -82,7 +82,7 @@ julia> xv[1:5,:]
  0.908531 -0.717827
  0.799076 -1.02841
  0.65381 -1.28741
-{% endhighlight %}
+{{< / highlight >}}
 
 The results for the first few time steps look reasonable: the displacement (left column) is decreasing and the velocity (right column) is becoming progressively more negative. To be sure that the solution has the correct form, have a look at the [Gadfly](http://wp.me/p3pzmk-tE) plot below. The displacement (black) and velocity (blue) curves are 90° out of phase, as expected, and both gradually decay with time due to damping. Looks about right to me!
 
@@ -92,26 +92,26 @@ The results for the first few time steps look reasonable: the displacement (left
 
 The [`ODE`](https://github.com/JuliaLang/ODE.jl) package provides a selection of solvers, all of which are implemented with a consistent interface (which differs a bit from Sundials).
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> using ODE
-{% endhighlight %}
+{{< / highlight >}}
 
 Again we need to define a function to characterise our differential equations. The form of the function is a little different with the ODE package: rather than passing the derivative vector by reference, it's simply returned as the result. I've consider the same problem as above, but to spice things up I added a sinusoidal driving force.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> function oscillator(t, y)
            [y[2]; - a * y[1] - y[2] / 10 + sin(t)]
        end
 oscillator (generic function with 2 methods)
-{% endhighlight %}
+{{< / highlight >}}
 
 We'll solve this with `ode23()`, which is a second order adaptive solver with third order error control. Because it's adaptive we don't need to explicitly specify all of the time steps, just the minimum and maximum.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> a = 1; # Resonant
 julia> T, xv = ode23(oscillator, initial, [0.; 40]);
 julia> xv = hcat(xv...).'; # Vector{Vector{Float}} -> Matrix{Float}
-{% endhighlight %}
+{{< / highlight >}}
 
 The results are plotted below. Driving the oscillator at the resonant frequency causes the amplitude of oscillation to grow with time as energy is transferred to the oscillating mass.
 
@@ -119,9 +119,9 @@ The results are plotted below. Driving the oscillator at the resonant frequency 
 
 If we move the oscillator away from resonance the behavior becomes rather interesting.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> a = 3; # Far from resonance
-{% endhighlight %}
+{{< / highlight >}}
 
 Now, because the oscillation and the driving force aren't synchronised (and there's a non-rational relationship between their frequencies) the displacement and velocity appear to change irregularly with time.
 
@@ -133,7 +133,7 @@ How about a [double pendulum](https://en.wikipedia.org/wiki/Double_pendulum) (a 
 
 First we set up the first order equations of motion. The details of this system are explained in the video below.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> function pendulum(t, y)
            Y = [
            6 * (2 * y[3] - 3 * cos(y[1] - y[2]) * y[4]) / (16 - 9 * cos(y[1] - y[2])^2);
@@ -147,14 +147,14 @@ julia> function pendulum(t, y)
            ]
        end
 pendulum (generic function with 1 method)
-{% endhighlight %}
+{{< / highlight >}}
 
 Define initial conditions and let it run...
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> initial = [pi / 4, 0, 0, 0]; # Initial conditions -> deterministic behaviour
 T, xv = ode23(pendulum, initial, [0.; 40]);
-{% endhighlight %}
+{{< / highlight >}}
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/fZKrUgm9R1o" frameborder="0" allowfullscreen></iframe>
 
@@ -166,9 +166,9 @@ Below are two plots which show the results. The first is a time series showing t
 
 Next we'll look at a different set of initial conditions. This time both masses are initially located above the primary vertex of the pendulum. This represents an initial configuration with much more potential energy.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> initial = [3/4 * pi, pi, 0, 0]; # Initial conditions -> chaotic behaviour
-{% endhighlight %}
+{{< / highlight >}}
 
 The same pair of plots now illustrate much more interesting behaviour. Note the larger range of angles, θ<sub>2</sub>, achieved by the second bob. With these initial conditions the pendulum is sufficiently energetic for it to "flip over". Look at the video below to get an idea of what this looks like with a real pendulum.
 

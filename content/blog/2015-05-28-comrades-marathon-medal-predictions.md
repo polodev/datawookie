@@ -1,21 +1,21 @@
 ---
-id: 1454
-title: Comrades Marathon Medal Predictions
-date: 2015-05-28T07:52:49+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
 - Running
+date: 2015-05-28T07:52:49Z
+excerpt_separator: <!-- more -->
+id: 1454
 tags:
 - Comrades Marathon
 - Conditional Inference Tree
 - '#rstats'
 - Random Forest
 - Shiny
+title: Comrades Marathon Medal Predictions
+url: /2015/05/28/comrades-marathon-medal-predictions/
 ---
 
-<!-- more -->
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2015/05/IMG_5239.png">
 

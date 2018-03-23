@@ -1,62 +1,63 @@
 ---
-title: 'Installing Spark on Ubuntu'
-date: 2017-07-04T09:30:00+00:00
 author: Andrew B. Collier
+categories:
+- Linux
+date: 2017-07-04T09:30:00Z
 excerpt_separator: <!-- more -->
-layout: post
-category: Linux
 tags:
-  - Ubuntu
-  - Spark
+- Ubuntu
+- Spark
+title: Installing Spark on Ubuntu
+url: /2017/07/04/installing-spark-ubuntu/
 ---
 
 I'm busy experimenting with Spark. This is what I did to set up a local cluster on my Ubuntu machine. Before you embark on this you should first [set up Hadoop]({{ site.baseurl }}{% post_url 2017-07-04-installing-hadoop-ubuntu %}).
 
 
-<!-- more -->
+<!--more-->
 
 <!-- http://spark.apache.org/docs/latest/spark-standalone.html -->
 
 1. Download the latest release of Spark [here](https://spark.apache.org/downloads.html).
 2. Unpack the archive.
-{% highlight bash %}
+{{< highlight bash >}}
 $ tar -xvf spark-2.1.1-bin-hadoop2.7.tgz
-{% endhighlight %}
+{{< / highlight >}}
 {:start="3"}
 3. Move the resulting folder and create a symbolic link so that you can have multiple versions of Spark installed.
-{% highlight bash %}
+{{< highlight bash >}}
 $ sudo mv spark-2.1.1-bin-hadoop2.7 /usr/local/
 $ sudo ln -s /usr/local/spark-2.1.1-bin-hadoop2.7/ /usr/local/spark
 $ cd /usr/local/spark
-{% endhighlight %}
+{{< / highlight >}}
 Also add `SPARK_HOME` to your environment.
-{% highlight bash %}
+{{< highlight bash >}}
 $ export SPARK_HOME=/usr/local/spark
-{% endhighlight %}
+{{< / highlight >}}
 {:start="4"}
 4. Start a standalone master server.
-{% highlight bash %}
+{{< highlight bash >}}
 $ $SPARK_HOME/sbin/start-master.sh
-{% endhighlight %}
+{{< / highlight >}}
 At this point you can browse to <http://127.0.0.1:8080/> to view the status screen.
 
 ![]({{ site.baseurl }}/static/img/2017/07/ubuntu-spark-master-interface.png)
 
 {:start="5"}
 5. Start a worker process.
-{% highlight bash %}
+{{< highlight bash >}}
 $ $SPARK_HOME/sbin/start-slave.sh spark://ethane:7077
-{% endhighlight %}
+{{< / highlight >}}
 To get this to work I had to make an entry for my machine in `/etc/hosts`:
-{% highlight text %}
+{{< highlight text >}}
 127.0.0.1 ethane
-{% endhighlight %}
+{{< / highlight >}}
 {:start="6"}
 6. Test out the Spark shell.
-{% highlight bash %}
+{{< highlight bash >}}
 $ $SPARK_HOME/bin/spark-shell
-{% endhighlight %}
-{% highlight text %}
+{{< / highlight >}}
+{{< highlight text >}}
 Welcome to
       ____              __
      / __/__  ___ _____/ /__
@@ -72,19 +73,19 @@ scala> println("Spark shell is running")
 Spark shell is running
 
 scala> 
-{% endhighlight %}
+{{< / highlight >}}
 You'll note that this exposes the native [Scala](https://www.scala-lang.org/) interface to Spark.
 
 To get this to work properly it might be necessary to first set up the path to the Hadoop libraries.
-{% highlight bash %}
+{{< highlight bash >}}
 $ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/hadoop/lib/native
-{% endhighlight %}
+{{< / highlight >}}
 {:start="7"}
 7. Maybe Scala is not your cup of tea and you'd prefer to use Python. No problem!
-{% highlight bash %}
+{{< highlight bash >}}
 $ $SPARK_HOME/bin/pyspark
-{% endhighlight %}
-{% highlight text %}
+{{< / highlight >}}
+{{< highlight text >}}
 Welcome to
       ____              __
      / __/__  ___ _____/ /__
@@ -95,15 +96,15 @@ Welcome to
 Using Python version 2.7.13 (default, Jan 19 2017 14:48:08)
 SparkSession available as 'spark'.
 >>> 
-{% endhighlight %}
+{{< / highlight >}}
 Of course you'll probably want to interact with Python via a Jupyter Notebook, in which case take a look at [this]({{ site.baseurl }}{% post_url 2017-07-04-pyspark-in-jupyter-notebooks %}).
 
 {:start="8"}
 8. Finally, if you prefer to work with R, that's also catered for.
-{% highlight bash %}
+{{< highlight bash >}}
 $ $SPARK_HOME/bin/sparkR
-{% endhighlight %}
-{% highlight text %}
+{{< / highlight >}}
+{{< highlight text >}}
  Welcome to
     ____              __ 
    / __/__  ___ _____/ /__ 
@@ -116,11 +117,11 @@ $ $SPARK_HOME/bin/sparkR
 > spark
 Java ref type org.apache.spark.sql.SparkSession id 1 
 > 
-{% endhighlight %}
+{{< / highlight >}}
 This is a light-weight interface to Spark from R. To find out more about sparkR, check out the documentation [here](http://spark.apache.org/docs/latest/sparkr.html). For a more user friendly experience you might want to look at [sparklyr](http://spark.rstudio.com/).
 {:start="9"}
 9. When you are done you can shut down the slave and master Spark processes.
-{% highlight bash %}
+{{< highlight bash >}}
 $ $SPARK_HOME/sbin/stop-slave.sh
 $ $SPARK_HOME/sbin/stop-master.sh
-{% endhighlight %}
+{{< / highlight >}}

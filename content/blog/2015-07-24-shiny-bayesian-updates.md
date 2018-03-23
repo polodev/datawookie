@@ -1,17 +1,18 @@
 ---
-id: 1724
-title: Shiny Bayesian Updates
-date: 2015-07-24T12:13:15+00:00
 author: Andrew B. Collier
-layout: post
+date: 2015-07-24T12:13:15Z
 excerpt_separator: <!-- more -->
+id: 1724
 tags:
 - Bayesian Statistics
 - '#rstats'
+title: Shiny Bayesian Updates
+url: /2015/07/24/shiny-bayesian-updates/
 ---
+
 Reading [Bayesian Computation with R](http://www.springer.com/us/book/9780387922973) by Jim Albert (Springer, 2009) inspired a fit of enthusiasm. Admittedly, I was on a plane coming back from Amsterdam and looking for distractions. I decided to put together a Shiny app to illustrate successive Bayesian updates. I had not yet seen anything that did this to my satisfaction. I like to think that my results come pretty close.
 
-<!-- more -->
+<!--more-->
 
 You can find the app [here](https://datawookie.shinyapps.io/Bayesian-Beta/). Below is a screenshot.
 

@@ -1,20 +1,21 @@
 ---
-id: 4234
-title: Running Cypher Queries from File on Windows
-date: 2016-09-14T15:00:07+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=4234
-excerpt_separator: <!-- more -->
 categories:
-  - Neo4j
+- Neo4j
+date: 2016-09-14T15:00:07Z
+excerpt_separator: <!-- more -->
+guid: http://www.exegetic.biz/blog/?p=4234
+id: 4234
 tags:
-  - Cypher
-  - Neo4j
+- Cypher
+- Neo4j
+title: Running Cypher Queries from File on Windows
+url: /2016/09/14/running-cypher-queries-file-windows/
 ---
+
 Recent packages of Neo4j for Windows do not include `neo4j-shell`. The Neo4j browser will only accept one statement at a time, making scripts consisting of multiple Cypher commands a problem.
 
-<!-- more -->
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2016/09/lazywebcypher.png" >
 

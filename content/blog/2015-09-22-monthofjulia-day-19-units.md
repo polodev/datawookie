@@ -1,22 +1,22 @@
 ---
-id: 2203
-title: '#MonthOfJulia Day 19: Units'
-date: 2015-09-22T16:00:07+00:00
 author: Andrew B. Collier
-layout: post
-guid: http://www.exegetic.biz/blog/?p=2203
-excerpt_separator: <!-- more -->
 categories:
-  - Julia
+- Julia
+date: 2015-09-22T16:00:07Z
+excerpt_separator: <!-- more -->
+guid: http://www.exegetic.biz/blog/?p=2203
+id: 2203
 tags:
-  - '#julialang'
-  - '#MonthOfJulia'
-  - Julia
-  - SI
-  - Units
+- '#julialang'
+- '#MonthOfJulia'
+- Julia
+- SI
+- Units
+title: '#MonthOfJulia Day 19: Units'
+url: /2015/09/22/monthofjulia-day-19-units/
 ---
 
-<!-- more -->
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2015/09/Julia-Logo-SIUnits.png" >
 
@@ -31,27 +31,27 @@ It is natural for man to relate the units of distance by which he travels to the
 
 The `SIUnits`[](https://github.com/Keno/SIUnits.jl) package provides unit-checked operations for quantities expressed in [SI units](https://en.wikipedia.org/wiki/International_System_of_Units).
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> using SIUnits
 julia> using SIUnits.ShortUnits
-{% endhighlight %}
+{{< / highlight >}}
 
 It supports both long and short forms of units and all the expected arithmetic operations.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> 1KiloGram + 2kg
 3 kg
 julia> 4Meter - 2m
 2 m
 julia> 4m / 2s
 2.0 m s⁻¹
-{% endhighlight %}
+{{< / highlight >}}
 
 Note that it only recognises the American spelling of "meter" and not the (IMHO correct) "metre"! But this is a small matter. And I don't want to engage in any religious wars.
 
 Speaking of small matters, it's possible to define new units of measure. Below we'll define the [micron](https://en.wikipedia.org/wiki/Micrometre) and [Angstrom](https://en.wikipedia.org/wiki/Angstrom) along with their conversion functions.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> import Base.convert
 julia> Micron = SIUnits.NonSIUnit{typeof(Meter),:µm}()
 µm
@@ -61,18 +61,18 @@ julia> Angstrom = SIUnits.NonSIUnit{typeof(Meter),:Å}()
 Å
 julia> convert(::Type{SIUnits.SIQuantity},::typeof(Angstrom)) = Nano/10*Meter
 convert (generic function with 462 methods)
-{% endhighlight %}
+{{< / highlight >}}
 
 And now we can freely use these new units in computations.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> 5Micron
 5 µm
 julia> 1Micron + 1m
 1000001//1000000 m
 julia> 5200Angstrom # Green light
 5200 Å
-{% endhighlight %}
+{{< / highlight >}}
 
 Read on below to find out about the `Physical` package.
 
@@ -84,37 +84,37 @@ The `Physical` package is documented [here](https://github.com/ggggggggg/Physica
 
 Let's kick off by loading the package.
 
-{% highlight julia %}
+{{< highlight julia >}}
 using Physical
-{% endhighlight %}
+{{< / highlight >}}
 
 There's a lot of functionality available, but we are going to focus on just one thing: converting pounds and inches into kilograms and metres. First we define a pair of derived units. To do this, of course, we need to know the appropriate conversion factors!
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> Inch = DerivedUnit("in", 0.0254*Meter)
 1 in 
 julia> Pound = DerivedUnit("lb", 0.45359237*Kilogram)
 1 lb 
-{% endhighlight %}
+{{< / highlight >}}
 
 We can then freely change the average heights and weights that we saw earlier from Imperial to Metric units.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> asbase(66Inch)
 1.6764 m 
 julia> asbase(139Pound)
 63.04933943 kg 
-{% endhighlight %}
+{{< / highlight >}}
 
 On a related note I've just put together a package of [physical constants](https://github.com/DataWookie/PhysicalConstants.jl) for Julia.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> using PhysicalConstants
 julia> PhysicalConstants.MKS.SpeedOfLight
 2.99792458e8
 julia> PhysicalConstants.MKS.Teaspoon
 4.92892159375e-6
-{% endhighlight %}
+{{< / highlight >}}
 
 Did you know that a teaspoon was 4.92892 millilitres? There I was, wallowing in my ignorance, thinking that it was 5 millilitres. Pfffft. Silly me. There are
 

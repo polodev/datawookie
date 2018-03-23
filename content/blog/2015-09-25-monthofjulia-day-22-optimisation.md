@@ -1,20 +1,20 @@
 ---
-id: 2173
-title: '#MonthOfJulia Day 22: Optimisation'
-date: 2015-09-25T15:00:19+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Julia
+- Julia
+date: 2015-09-25T15:00:19Z
+excerpt_separator: <!-- more -->
+id: 2173
 tags:
-  - '#julialang'
-  - '#MonthOfJulia'
-  - Julia
-  - optimisation
+- '#julialang'
+- '#MonthOfJulia'
+- Julia
+- optimisation
+title: '#MonthOfJulia Day 22: Optimisation'
+url: /2015/09/25/monthofjulia-day-22-optimisation/
 ---
 
-<!-- more -->
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2015/09/Julia-Logo-Optimisation.png">
 
@@ -34,13 +34,13 @@ $$ (x, y) = (3, 2). $$
 
 As usual the first step is to load the required package.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> using Optim
-{% endhighlight %}
+{{< / highlight >}}
 
 Then we set up the objective function along with its gradient and Hessian functions.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> function himmelblau(x::Vector)
            (x[1]^2 + x[2] - 11)^2 + (x[1] + x[2]^2 - 7)^2
        end
@@ -57,11 +57,11 @@ julia> function himmelblau_hessian!(x::Vector, hessian::Matrix)
            hessian[2, 2] = 4 \* (x[1] + x[2]^2 - 7) + 8 \* x[2]^2 + 2
        end
 himmelblau_hessian! (generic function with 1 method)
-{% endhighlight %}
+{{< / highlight >}}
 
 There are a number of algorithms at our disposal. We'll start with the [Nelder Mead](https://en.wikipedia.org/wiki/Nelder%E2%80%93Mead_method) method which only uses the objective function itself. I am very happy with the detailed output provided by the `optimize()` function and clearly it converges on a result which is very close to what we expected.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> optimize(himmelblau, [2.5, 2.5], method = :nelder_mead)
 Results of Optimization Algorithm
  * Algorithm: Nelder-Mead
@@ -76,11 +76,11 @@ Results of Optimization Algorithm
    * Exceeded Maximum Number of Iterations: false
  * Objective Function Calls: 69
  * Gradient Call: 0
-{% endhighlight %}
+{{< / highlight >}}
 
 Next we'll look at the [limited-memory version](https://en.wikipedia.org/wiki/Limited-memory_BFGS) of the [BFGS algorithm](https://en.wikipedia.org/wiki/Broyden%E2%80%93Fletcher%E2%80%93Goldfarb%E2%80%93Shanno_algorithm). This can be applied either with or without an explicit gradient function. In this case we'll provide the gradient function defined above. Again we converge on the right result, but this time with far fewer iterations required.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> optimize(himmelblau, himmelblau_gradient!, [2.5, 2.5], method = :l_bfgs)
 Results of Optimization Algorithm
  * Algorithm: L-BFGS
@@ -95,11 +95,11 @@ Results of Optimization Algorithm
    * Exceeded Maximum Number of Iterations: false
  * Objective Function Calls: 25
  * Gradient Call: 25
-{% endhighlight %}
+{{< / highlight >}}
 
 Finally we'll try out [Newton's method](https://en.wikipedia.org/wiki/Newton%27s_method_in_optimization), where we'll provide both gradient and Hessian functions. The result is spot on and we've shaved off one iteration. Very nice indeed!
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> optimize(himmelblau, himmelblau_gradient!, himmelblau_hessian!, [2.5, 2.5],
 method = :newton)
 Results of Optimization Algorithm
@@ -115,7 +115,7 @@ Results of Optimization Algorithm
    * Exceeded Maximum Number of Iterations: false
  * Objective Function Calls: 19
  * Gradient Call: 19
-{% endhighlight %}
+{{< / highlight >}}
 
 There is also a [Simulated Annealing](https://en.wikipedia.org/wiki/Simulated_annealing) solver in the Optim package.
 
@@ -135,13 +135,13 @@ $$ \beta \leq \pi/2. $$
 
 Before we load the NLopt package, it's a good idea to restart your Julia session to flush out any remnants of the Optim package.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> using NLopt
-{% endhighlight %}
+{{< / highlight >}}
 
 We'll need to write the objective function and a generalised constraint function.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> count = 0;
 julia> function objective(x::Vector, grad::Vector)
 			if length(grad) > 0
@@ -164,11 +164,11 @@ julia> function constraint(x::Vector, grad::Vector, a, b, c)
 			a * x[1] + b * x[2] - c
 		end
 constraint (generic function with 1 method)
-{% endhighlight %}
+{{< / highlight >}}
 
 The [COBYLA](https://en.wikipedia.org/wiki/COBYLA) (Constrained Optimization BY Linear Approximations) algorithm is a local optimiser which doesn't use the gradient function.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> opt = Opt(:LN_COBYLA, 2); 						# Algorithm and dimension of problem
 julia> ndims(opt)
 2
@@ -176,22 +176,22 @@ julia> algorithm(opt)
 :LN_COBYLA
 julia> algorithm_name(opt) 								# Text description of algorithm
 "COBYLA (Constrained Optimization BY Linear Approximations) (local, no-derivative)"
-{% endhighlight %}
+{{< / highlight >}}
 
 We impose generous upper and lower bounds on the solution space and use two inequality constraints. Either `min_objective!()` or `max_objective!()` is used to specify the objective function and whether or not it is a minimisation or maximisation problem. Constraints can be either inequalities using `inequality_constraint!()` or equalities using `equality_constraint!()`.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> lower_bounds!(opt, [0., 0.])
 julia> upper_bounds!(opt, [pi, pi])
 julia> xtol_rel!(opt, 1e-6)
 julia> max_objective!(opt, objective)
 julia> inequality_constraint!(opt, (x, g) -> constraint(x, g, 2, -1, 0), 1e-8)
 julia> inequality_constraint!(opt, (x, g) -> constraint(x, g, 0, 2, pi), 1e-8)
-{% endhighlight %}
+{{< / highlight >}}
 
 After making an initial guess we let the algorithm loose. I've purged some of the output to spare you from the floating point deluge.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> initial = [0, 0]; 								# Initial guess
 julia> (maxf, maxx, ret) = optimize(opt, initial)
 Iteration 1: [0.0,0.0]
@@ -219,29 +219,29 @@ Iteration 68: [0.42053365382801033,0.8410673076560207]
 (0.27216552697496077,[0.420534,0.841067],:XTOL_REACHED)
 julia> println("got $maxf at $maxx after $count iterations.")
 got 0.27216552697496077 at [0.42053365382801033,0.8410673076560207] after 68 iterations.
-{% endhighlight %}
+{{< / highlight >}}
 
 It takes a number of iterations to converge, but arrives at a solution which seems eminently reasonable (and which satisfies both of the constraints).
 
 Next we'll use the MMA (Method of Moving Asymptotes) gradient-based algorithm.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> opt = Opt(:LD_MMA, 2);
-{% endhighlight %}
+{{< / highlight >}}
 
 We remove the second inequality constraint and simply confine the solution space appropriately. This is definitely a more efficient approach!
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> lower_bounds!(opt, [0., 0.])
 julia> upper_bounds!(opt, [pi, pi / 2])
 julia> xtol_rel!(opt, 1e-6)
 julia> max_objective!(opt, objective)
 julia> inequality_constraint!(opt, (x, g) -> constraint(x, g, 2, -1, 0), 1e-8)
-{% endhighlight %}
+{{< / highlight >}}
 
 This algorithm converges more rapidly (because it takes advantage of the gradient function!) and we arrive at the same result.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> (maxf, maxx, ret) = optimize(opt, initial)
 Iteration 1: [0.0,0.0]
 Iteration 2: [0.046935706114911574,0.12952531487499092]
@@ -265,7 +265,7 @@ Iteration 19: [0.42053433035398824,0.8410686525997696]
 (0.27216552944315736,[0.420534,0.841069],:XTOL_REACHED)
 julia> println("got $maxf at $maxx after $count iterations.")
 got 0.27216552944315736 at [0.42053433035398824,0.8410686525997696] after 19 iterations.
-{% endhighlight %}
+{{< / highlight >}}
 
 I'm rather impressed. Both of these packages provide convenient interfaces and I could solve my test problems without too much effort. Have a look at the videos below for more about optimisation in Julia and check out [github](https://github.com/DataWookie/MonthOfJulia) for the complete code for today's examples. We'll kick off next week with a quick look at some alternative data structures.
 

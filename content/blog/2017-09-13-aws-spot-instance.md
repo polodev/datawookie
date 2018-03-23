@@ -1,19 +1,19 @@
 ---
-title: 'Creating an AWS Spot Instance'
-date: 2017-09-13T08:30:00+00:00
 author: Andrew B. Collier
-excerpt_separator: <!-- more -->
-layout: post
 categories:
-  - Cloud
+- Cloud
+date: 2017-09-13T08:30:00Z
+excerpt_separator: <!-- more -->
 tags:
-  - AWS
-  - EC2
+- AWS
+- EC2
+title: Creating an AWS Spot Instance
+url: /2017/09/13/aws-spot-instance/
 ---
 
 EC2 Spot Instances can provide very affordable computing on EC2 by allowing access to unused capacity at significant discounts.
 
-<!-- more -->
+<!--more-->
 
 Allocation of spot instances is managed by a bidding system. You stipulate the maximum spot price that you are willing to pay and an instance will be launched when the spot price is less than your maximum. The instance will run until you stop it or the spot price exceeds your maximum.
 
@@ -33,7 +33,7 @@ The spot price does spike up to the on-demand price from time to time, but it's 
 
 This sounds pretty good. How does one get started?
 
-<!-- more -->
+<!--more-->
 
 ## Requesting a Spot Instance
 

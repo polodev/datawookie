@@ -1,20 +1,20 @@
 ---
-id: 2613
-title: '#MonthOfJulia Day 38: Imaging'
-date: 2015-10-30T15:00:44+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Julia
+- Julia
+date: 2015-10-30T15:00:44Z
+excerpt_separator: <!-- more -->
+id: 2613
 tags:
-  - '#julialang'
-  - '#MonthOfJulia'
-  - Image
-  - Julia
+- '#julialang'
+- '#MonthOfJulia'
+- Image
+- Julia
+title: '#MonthOfJulia Day 38: Imaging'
+url: /2015/10/30/monthofjulia-day-38-imaging/
 ---
 
-<!-- more -->
+<!--more-->
 
 <img src="{{ site.baseurl }}/static/img/2015/10/Julia-Logo-Imaging.png">
 
@@ -24,7 +24,7 @@ Julia has a few packages aimed at image processing. We'll start by looking at th
 
 The TestImages package currently provides 25 sample images, which form a convenient basis for experimentation.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> using TestImages
 julia> readdir(joinpath(homedir(), ".julia/v0.4/TestImages/images/"))
 25-element Array{ByteString,1}:
@@ -53,21 +53,21 @@ julia> readdir(joinpath(homedir(), ".julia/v0.4/TestImages/images/"))
  "walkbridge.tif"
  "woman_blonde.tif"
  "woman_darkhair.tif"
-{% endhighlight %}
+{{< / highlight >}}
 
 We'll load the archetypal test image (the November 1972 Playboy centerfold of [Lena Söderberg](https://en.wikipedia.org/wiki/Lenna)).
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> lena = testimage("lena_color_256.tif");
-{% endhighlight %}
+{{< / highlight >}}
 
 Of course, now that we've loaded that image, we'll want to take a look at it. To do that we'll need the ImageView package.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> using ImageView
 julia> view(lena)
 (ImageCanvas,ImageSlice2d: zoom = Graphics.BoundingBox(0.0,256.0,0.0,256.0))
-{% endhighlight %}
+{{< / highlight >}}
 
 You can optionally specify the pixel spacing as a parameter to `view()`, which then ensures that the aspect ratio of the image is conserved on resizing. There are various other bobs and whistles associated with `view()`: you can click-and-drag within the image to zoom in on a particular region; various simple transformations (flipping and rotation) are possible; images can be annotated and multiple images can be arranged on a canvas for simultaneous viewing.
 
@@ -77,7 +77,7 @@ You can optionally specify the pixel spacing as a parameter to `view()`, which t
 
 Outside of the test images, an arbitrary image file can be loaded using `imread()` from the Images package. Naturally, there are also functions for writing images, `imwrite()` and `writemime()`.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> using Images
 julia> earth = imread(joinpath(homedir(), ".julia/v0.4/TestImages/images/earth_apollo17.jpg"))
 RGB Images.Image with:
@@ -86,25 +86,25 @@ RGB Images.Image with:
     IMcs: sRGB
     spatialorder: x y
     pixelspacing: 1 1
-{% endhighlight %}
+{{< / highlight >}}
 
 The default representation for the `Image` object tells us its dimensions, storage type and colour space. The spatial order indicates that the image data are stored using row major ordering. It's also possible to specify physical units for the pixel spacing, which is particularly important if you are analysing images where absolute scale matters (for example, medical imaging). There are convenience methods for a few image properties.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> colorspace(earth)
 "RGB"
 julia> height(earth)
 3002
 julia> width(earth)
 3000
-{% endhighlight %}
+{{< / highlight >}}
 
 We can examine individual pixels within the image using the indexing operator.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> earth[1,1]
 RGB{U8}(0.047,0.008,0.0)
-{% endhighlight %}
+{{< / highlight >}}
 
 Each pixel is of type `RGB` (defined in the `Colors` package), which encapsulates a tuple giving the proportion of red, green and blue for that pixel. The underlying image data can also be accessed via the `data()` method.
 
@@ -112,7 +112,7 @@ Each pixel is of type `RGB` (defined in the `Colors` package), which encapsulate
 
 The image can be split into its component colour channels using `separate()`.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> earth_rgb = separate(earth)
 RGB Images.Image with:
   data: 3002x3000x3 Array{FixedPointNumbers.UfixedBase{UInt8,8},3}
@@ -122,7 +122,7 @@ RGB Images.Image with:
     colordim: 3
     spatialorder: y x
     pixelspacing: 1 1
-{% endhighlight %}
+{{< / highlight >}}
 
 Note that the result is a three-dimensional `Array`. The spatial order has also changed, which means that the data are now represented using column major ordering. The data are thus effectively transposed.
 
@@ -130,11 +130,11 @@ Note that the result is a three-dimensional `Array`. The spatial order has also 
 
 Kernel-based filtering can be applied using `imfilter()` or `imfilter_fft()`, where the latter is better suited to larger kernels. There's a variety of helper functions for constructing kernels, like `imaverage()` and `gaussian2d()`.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> lena_smooth = imfilter(lena, imaverage([3, 3]));
 julia> lena_very_smooth = imfilter_fft(lena, ones(10, 10) / 100);
 julia> lena_gauss_smooth = imfilter_gaussian(lena, [1, 2]);
-{% endhighlight %}
+{{< / highlight >}}
 
 The effects of the above smoothing operations can be seen below, with the original image on the left, followed by the 3-by-3 and 10-by-10 boxcar filtered versions and finally the Gaussian filtered image.
 
@@ -142,11 +142,11 @@ The effects of the above smoothing operations can be seen below, with the origin
 
 The `imgradients()` function calculates gradients across the image. You can choose from a set of methods for calculating the gradient. The morphological [dilation](https://en.wikipedia.org/wiki/Dilation_(morphology)) and [erosion](https://en.wikipedia.org/wiki/Erosion_(morphology)) operations are available via `dilate()` and `erode()`.
 
-{% highlight julia %}
+{{< highlight julia >}}
 julia> (lena_sobel_x, lena_sobel_y) = imgradients(lena, "sobel");
 julia> lena_dilate = dilate(lena);
 julia> lena_erode = erode(lena);
-{% endhighlight %}
+{{< / highlight >}}
 
 Below are the two components of the image gradient calculated using the [Sobel operator](https://en.wikipedia.org/wiki/Sobel_operator) followed by the results of `dilate()` and `erode()`.
 

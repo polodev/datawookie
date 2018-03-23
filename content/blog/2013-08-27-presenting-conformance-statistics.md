@@ -1,19 +1,20 @@
 ---
-id: 421
-title: Presenting Conformance Statistics
-date: 2013-08-27T11:33:12+00:00
 author: Andrew B. Collier
-layout: post
+date: 2013-08-27T11:33:12Z
 excerpt_separator: <!-- more -->
+id: 421
 tags:
-  - heat map
-  - melt
-  - plyr
-  - '#rstats'
-  - reshape2
-  - subset
-  - transform
+- heat map
+- melt
+- plyr
+- '#rstats'
+- reshape2
+- subset
+- transform
+title: Presenting Conformance Statistics
+url: /2013/08/27/presenting-conformance-statistics/
 ---
+
 A client came to me with some conformance data. She was having a hard time making sense of it in a spreadsheet. I had a look at a couple of ways of presenting it that would bring out the important points.
 
 # The Data
@@ -22,7 +23,7 @@ The data came as a spreadsheet with multiple sheets. Each of the sheets had a sl
 
 After some preliminary manipulation, this is what the data looked like:
 
-{% highlight r %}
+{{< highlight r >}}
 > dim(P)
 [1] 1487   17
 > names(P)
@@ -39,7 +40,7 @@ After some preliminary manipulation, this is what the data looked like:
 4 2011-01-11      E41              0              1     0               0           0
 5 2011-01-12      E42              0              1     0               0           0
 6 2011-01-17      E01              0              1     0               0           0
-{% endhighlight %}
+{{< / highlight >}}
 
 Each record indicates the number of incidents per date and employee for each of 15 different manufacturing problems. The names of the employees have been anonymised to protect their dignities.
 
@@ -49,7 +50,7 @@ My initial instructions were something to the effect of "Don't worry about the d
 
 I first had a look at the number of incidences of each problem per employee.
 
-{% highlight r %}
+{{< highlight r >}}
  > library(reshape2)
 > library(plyr)
 >
@@ -71,13 +72,13 @@ I first had a look at the number of incidences of each problem per employee.
 67      E26 Sorting Colour     1 2011  Monday
 68      E26 Sorting Colour     1 2011  Monday
 70      E01 Sorting Colour     1 2011 Tuesday
-{% endhighlight %}
+{{< / highlight >}}
 
 To produce the tiled plot that I was after, I first had to transform the data into a [tidy](http://vita.had.co.nz/papers/tidy-data.pdf)&nbsp;format. To do this I used melt() from the reshape2 library. I then derived year and day of week (DOW) columns from the date column and deleted the latter.
 
 Next I used ddply() from the plyr package to consolidate the counts by employee, problem and year.
 
-{% highlight r %}
+{{< highlight r >}}
 > problem.table = ddply(Q, .(employee, problem, year), summarise, count = sum(value))
 > head(problem.table)
   employee        problem year count
@@ -87,11 +88,11 @@ Next I used ddply() from the plyr package to consolidate the counts by employee,
 4      E01 Extra Material 2011    50
 5      E01 Extra Material 2012    58
 6      E01 Extra Material 2013    13
-{% endhighlight %}
+{{< / highlight >}}
 
 Time to make a quick plot to check that everything is on track.
 
-{% highlight r %}
+{{< highlight r >}}
 > library(ggplot2)
 > ggplot(problem.table, aes(x = problem, y = employee, fill = count)) +
 +     geom_tile(colour = "white") +
@@ -101,7 +102,7 @@ Time to make a quick plot to check that everything is on track.
 +     scale_fill_gradient(high="#FF0000" , low="#0000FF") +
 +     theme(panel.background = element_blank(), axis.text.x = element_text(angle = 45, hjust = 1)) +
 +     theme(legend.position = "none")
-{% endhighlight %}
+{{< / highlight >}}
 
 <img src="{{ site.baseurl }}/static/img/2013/08/heatmap-employee-problem-unsorted.png">
 
@@ -109,7 +110,7 @@ That's not too bad. Three panels, one for each year. Employee names on the y-axi
 
 But it's all a little disorderly. It might make more sense it we sorted the employees and problems according to the number of issues. First generate counts per employee and per problem. Then sort and extract ordered names. Finally use the ordered names when generating factors.
 
-{% highlight r %}
+{{< highlight r >}}
 > CEMPLOYEE = with(problem.table, tapply(count, employee, sum))
 > CPROBLEM  = with(problem.table, tapply(count, problem, sum))
 > #
@@ -120,7 +121,7 @@ But it's all a little disorderly. It might make more sense it we sorted the empl
 +                          employee = factor(employee, levels = FEMPLOYEE),
 +                          problem  = factor(problem,  levels = FPROBLEM)
 +                          )
-{% endhighlight %}
+{{< / highlight >}}
 
 The new plot is much more orderly.
 
@@ -134,9 +135,9 @@ Although I had been told to ignore the date information, I suspected that there 
 
 Using ddply() again, I consolidated the counts by day of week, employee and year.
 
-{% highlight r %}
+{{< highlight r >}}
 > problem.table = ddply(Q, .(DOW, employee, year), summarise, count = sum(value))
-{% endhighlight %}
+{{< / highlight >}}
 
 Then generated a similar plot.
 

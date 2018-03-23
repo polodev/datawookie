@@ -1,17 +1,17 @@
 ---
-title: 'Hosting a Plumber API on AWS'
-date: 2017-09-14T09:00:00+00:00
 author: Andrew B. Collier
-excerpt_separator: <!-- more -->
-layout: post
 categories:
-  - Cloud
+- Cloud
+date: 2017-09-14T09:00:00Z
+excerpt_separator: <!-- more -->
 tags:
 - AWS
 - EC2
 - '#rstats'
 - Rx
 - plumber
+title: Hosting a Plumber API on AWS
+url: /2017/09/14/plumber-api-on-aws/
 ---
 
 <!-- Other notes on hosting at https://www.rplumber.io/docs/hosting.html. -->
@@ -20,7 +20,7 @@ tags:
 
 I've been putting together a small proof-of-concept API using R and [plumber](https://github.com/trestletech/plumber). It works flawlessly on my local machine and I was planning on deploying it on an EC2 instance to demo it for a client. However, I ran into a snag: despite opening the required port in my Security Group I was not able to access the API. This is what I needed to do to get it working.
 
-<!-- more -->
+<!--more-->
 
 <div style="clear: both;"></div>
 
@@ -30,11 +30,11 @@ I spun up an EC2 instance and applied a very liberal Security Group: access allo
 
 I installed R and all of the required dependencies and the started the API.
 
-{% highlight r %}
+{{< highlight r >}}
 > library(plumber)
 > r <- plumb("api.R")
 > r$run(port = 8000)
-{% endhighlight %}
+{{< / highlight >}}
 
 Everything looking good so far.
 
@@ -46,11 +46,11 @@ Next I tried to access it using the browser from my local machine.
 
 Not good. I checked to see if I could access it using `telnet`.
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ telnet ec2-54-172-17-150.compute-1.amazonaws.com 8000
 Trying 54.172.17.150...
 telnet: Unable to connect to remote host: Connection refused
-{% endhighlight %}
+{{< / highlight >}}
 
 Same story. Time to do some research.
 
@@ -60,7 +60,7 @@ A combination of Google and StackOverflow (as usual) came to the rescue.
 
 First I checked for any firewall rules that might be blocking the port.
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ sudo iptables -L
 Chain INPUT (policy ACCEPT)
 target     prot opt source               destination         
@@ -70,14 +70,14 @@ target     prot opt source               destination
 
 Chain OUTPUT (policy ACCEPT)
 target     prot opt source               destination   
-{% endhighlight %}
+{{< / highlight >}}
 
 Nothing untoward there. Next I checked what ports were being listened on.
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ netstat -an | grep 8000
 tcp        0      0 127.0.0.1:8000          0.0.0.0:*               LISTEN     
-{% endhighlight %}
+{{< / highlight >}}
 
 Aha! So something is listening on port 8000 but only on the loopback interface. That's probably the problem.
 
@@ -85,18 +85,18 @@ Aha! So something is listening on port 8000 but only on the loopback interface. 
 
 I had to rummage through the `plumber` source on GitHub to find this, but it turns out that you can specify a `host` parameter as well.
 
-{% highlight r %}
+{{< highlight r >}}
 > library(plumber)
 > r <- plumb("api.R")
 > r$run(host = "0.0.0.0", port = 8000)
-{% endhighlight %}
+{{< / highlight >}}
 
 Let's check those ports again.
 
-{% highlight bash %}
+{{< highlight bash >}}
 ubuntu@ip-172-31-59-224:~$ netstat -an | grep 8000
 tcp        0      0 0.0.0.0:8000            0.0.0.0:*               LISTEN      
-{% endhighlight %}
+{{< / highlight >}}
 
 The API should now be visible outside of `localhost`.
 

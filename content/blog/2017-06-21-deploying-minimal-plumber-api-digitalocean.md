@@ -1,17 +1,18 @@
 ---
-title: 'Deploying a Minimal API using plumber on DigitalOcean'
-date: 2017-06-21T09:45:00+00:00
 author: Andrew B. Collier
+categories:
+- R
+date: 2017-06-21T09:45:00Z
 excerpt_separator: <!-- more -->
-layout: post
-category: R
 tags:
-  - plumber
-  - DigitalOcean
-  - API
+- plumber
+- DigitalOcean
+- API
+title: Deploying a Minimal API using plumber on DigitalOcean
+url: /2017/06/21/deploying-minimal-plumber-api-digitalocean/
 ---
 
-<!-- more -->
+<!--more-->
 
 <!-- https://plumber.trestletech.com/docs/digitalocean/ -->
 
@@ -21,29 +22,29 @@ Some quick notes on deploying an API (generated with plumber) on DigitalOcean.
 
 On your local machine install a couple of packages from GitHub.
 
-{% highlight r %}
+{{< highlight r >}}
 > devtools::install_github("trestletech/plumber")
 > devtools::install_github("sckott/analogsea")
-{% endhighlight %}
+{{< / highlight >}}
 
 In RStudio open a new script and create a single, simple API endpoint which will return today's date. Create a new folder (I'll call mine `api`) and save the script in that folder as `plumber.R`.
 
-{% highlight r %}
+{{< highlight r >}}
 #* @get /
 function() {
   Sys.Date()
 }
-{% endhighlight %}
+{{< / highlight >}}
 
 Then in the RStudio console, start the API on port 8000.
 
-{% highlight r %}
+{{< highlight r >}}
 > library(plumber)
 > r <- plumb("api/plumber.R")
 > r$run(port = 8000)
 Starting server to listen on port 8000
 Running the swagger UI at http://127.0.0.1:8000/__swagger__/
-{% endhighlight %}
+{{< / highlight >}}
 
 You should then be able to access two endpoints via your browser:
 
@@ -68,7 +69,7 @@ Creat an account on [DigitalOcean](https://www.digitalocean.com/).
 
 The process of setting up a Droplet on DigitalOcean is made very simple with some functionality from `plumber`.
 
-{% highlight r %}
+{{< highlight r >}}
 > id <- do_provision()
 > id
 <droplet>AppropriatedNuisance (52452158)
@@ -78,7 +79,7 @@ The process of setting up a Droplet on DigitalOcean is made very simple with som
   Image:     16.04.2 x64
   Size:      512mb
   Volumes:
-{% endhighlight %}
+{{< / highlight >}}
 
 This will do a number of things:
 
@@ -100,7 +101,7 @@ You can destroy this instance now from the dashboard. We just wanted to check th
 
 Now we are going to create another instance, but this time without the example API.
 
-{% highlight r %}
+{{< highlight r >}}
 > id <- plumber::do_provision(unstable = TRUE, example = FALSE)
 > analogsea::droplets()
 $racently
@@ -112,7 +113,7 @@ $BolderCommissioner
   Image:     16.04.2 x64
   Size:      512mb
   Volumes:   
-{% endhighlight %}
+{{< / highlight >}}
 
 Here we see another way to get information on your instances using `analogsea::droplets()`.
 
@@ -120,9 +121,9 @@ Here we see another way to get information on your instances using `analogsea::d
 
 It's now a simple matter to deploy our date API to this instance.
 
-{% highlight r %}
+{{< highlight r >}}
 > do_deploy_api(id, "date", "./api/", 8000)
-{% endhighlight %}
+{{< / highlight >}}
 
 ![]({{ site.baseurl }}/static/img/2017/06/plumber-date-deployed.png)
 

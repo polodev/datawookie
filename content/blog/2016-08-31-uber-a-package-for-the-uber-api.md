@@ -1,15 +1,16 @@
 ---
-id: 4102
-title: 'ubeR: A Package for the Uber API'
-date: 2016-08-31T06:00:51+00:00
 author: Andrew B. Collier
-layout: post
+date: 2016-08-31T06:00:51Z
 guid: http://www.exegetic.biz/blog/?p=4102
+id: 4102
 tags:
 - '#rstats'
 - API
 - Uber
+title: 'ubeR: A Package for the Uber API'
+url: /2016/08/31/uber-a-package-for-the-uber-api/
 ---
+
 Uber exposes an extensive API for interacting with their service. [ubeR](https://github.com/DataWookie/ubeR) is a R package for working with that API which Arthur Wu and I put together during a Hackathon at iXperience.
 
 <img class="style-svg" alt="alt-text" src="https://cdn.rawgit.com/DataWookie/ubeR/master/uber-logo.svg" />
@@ -18,10 +19,10 @@ Uber exposes an extensive API for interacting with their service. [ubeR](https:/
 
 The package is currently hosted on GitHub. Installation is simple using the `devtools` package.
 
-{% highlight r %}
+{{< highlight r >}}
 > devtools::install_github("DataWookie/ubeR")
 > library(ubeR)
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Authentication
 
@@ -31,18 +32,18 @@ To work with the API you'll need to [create a new application](https://developer
 * Enable the `profile`, `places`, `ride_widgets`, `history_lite` and `history` scopes. </ul> 
 With the resulting Client ID and Client Secret you'll be ready to authenticate. I've stored mine as environment variables but you can just hard code them into the script for starters.
 
-{% highlight r %}
+{{< highlight r >}}
 > UBER_CLIENTID = Sys.getenv("UBER_CLIENTID")
 > UBER_CLIENTSECRET = Sys.getenv("UBER_CLIENTSECRET")
 >
 > uber_oauth(UBER_CLIENTID, UBER_CLIENTSECRET)
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Identity
 
 We can immediately use `uber_me()` to retrieve information about the authenticated user.
 
-{% highlight r %}
+{{< highlight r >}}
 > identity <- uber_me()
 > names(identity)
 [1] "picture"         "first_name"      "last_name"       "uuid"            "rider_id"       
@@ -51,7 +52,7 @@ We can immediately use `uber_me()` to retrieve information about the authenticat
 [1] "Andrew"
 > identity$picture
 [1] "https://d1w2poirtb3as9.cloudfront.net/default.jpeg"
-{% endhighlight %}
+{{< / highlight >}}
 
 Clearly I haven't made enough effort in personalising my Uber account.
 
@@ -61,7 +62,7 @@ Clearly I haven't made enough effort in personalising my Uber account.
 
 Uber allows you to specify predefined locations for "home" and "work". These are accessible via `uber_places_get()`.
 
-{% highlight r %}
+{{< highlight r >}}
 > uber_places_get("home")
 $address
 [1] "St Andrews Dr, Durban North, 4051, South Africa"
@@ -69,7 +70,7 @@ $address
 > uber_places_get("work")
 $address
 [1] "Dock Rd, V & A Waterfront, Cape Town, 8002, South Africa"
-{% endhighlight %}
+{{< / highlight >}}
 
 These addresses can be modified using `uber_places_put()`.
 
@@ -77,16 +78,16 @@ These addresses can be modified using `uber_places_put()`.
 
 You can access data for recent rides using `uber_history()`.
 
-{% highlight r %}
+{{< highlight r >}}
 > history <- uber_history(50, 0)
 > names(history)
  [1] "status"       "distance"     "request_time" "start_time"   "end_time"     "request_id"  
  [7] "product_id"   "latitude"     "display_name" "longitude"
-{% endhighlight %}
+{{< / highlight >}}
 
 The response includes a wide range of fields, we'll just pick out just a few of them for closer inspection.
 
-{% highlight r %}
+{{< highlight r >}}
 > head(history)[, c(2, 4:5, 9)]
   distance          start_time            end_time  display_name
 1   1.3140 2016-08-15 17:35:24 2016-08-15 17:48:54 New York City
@@ -95,13 +96,13 @@ The response includes a wide range of fields, we'll just pick out just a few of 
 4   3.2354 2016-08-10 19:28:41 2016-08-10 19:38:07     Cape Town
 5   7.3413 2016-08-10 16:37:30 2016-08-10 17:21:16     Cape Town
 6   4.3294 2016-08-10 13:38:49 2016-08-10 13:59:00     Cape Town
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Product Descriptions
 
 We can get a list of cars near to a specified location using `uber_products()`.
 
-{% highlight r %}
+{{< highlight r >}}
 > cars <- uber_products(latitude = -33.925278, longitude = 18.423889)
 > names(cars)
 [1] "capacity"          "product_id"        "price_details"     "image"            
@@ -112,11 +113,11 @@ We can get a list of cars near to a specified location using `uber_products()`.
 1        4 91901472-f30d-4614-8ba7-9fcc937cebf5             uberX
 2        6 419f6bdc-7307-4ea8-9bb0-2c7d852b616a            uberXL
 3        4 1dd39914-a689-4b27-a59d-a74e9be559a4         UberBLACK
-{% endhighlight %}
+{{< / highlight >}}
 
 Information for a particular car can also be accessed.
 
-{% highlight r %}
+{{< highlight r >}}
 > product <- uber_products(product_id = "91901472-f30d-4614-8ba7-9fcc937cebf5")
 > names(product)
 [1] "capacity"          "product_id"        "price_details"     "image"            
@@ -146,7 +147,7 @@ $cancellation_fee
 
 $currency_code
 [1] "ZAR"
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Estimates
 
@@ -154,7 +155,7 @@ It's good to have a rough idea of how much a ride is going to cost you. What abo
 
 <img src="{{ site.baseurl }}/static/img/2016/08/old-biscuit-mill.png">
 
-{% highlight r %}
+{{< highlight r >}}
 > estimate <- uber_requests_estimate(start_latitude = -33.899656, start_longitude = 18.407663,
 +                                    end_latitude = -33.927443, end_longitude = 18.457557)
 > estimate$trip
@@ -174,11 +175,11 @@ $distance_estimate
 1        5.00           5.00    Base Fare       5.00                1           ZAR
 2       56.12    42.15-56.12     Distance      42.15                1           ZAR
 3        8.30      6.23-8.30         Time       6.23                1           ZAR
-{% endhighlight %}
+{{< / highlight >}}
 
 Not quite sure why the API is returning the distance in such obscure units. (Note to self: convert those to metric equivalent in next release!) The data above are based on the car nearest to the start location. What about prices for a selection of other cars?
 
-{% highlight r %}
+{{< highlight r >}}
 > estimate <- uber_estimate_price(start_latitude = -33.899656, start_longitude = 18.407663,
 +                     end_latitude = -33.927443, end_longitude = 18.457557)
 > names(estimate)
@@ -190,17 +191,17 @@ Not quite sure why the API is returning the distance in such obscure units. (Not
 1                  uberX  ZAR53-69
 2                 uberXL  ZAR68-84
 3              uberBLACK ZAR97-125
-{% endhighlight %}
+{{< / highlight >}}
 
 The time of arrival for each of those cars can be accessed via `uber_estimate_time()`.
 
-{% highlight r %}
+{{< highlight r >}}
 > uber_estimate_time(start_latitude = -33.899656, start_longitude = 18.407663)
   localized_display_name estimate display_name                           product_id
 1                  uberX      180        uberX 91901472-f30d-4614-8ba7-9fcc937cebf5
 2                 uberXL      420       uberXL 419f6bdc-7307-4ea8-9bb0-2c7d852b616a
 3              uberBLACK      300    uberBLACK 1dd39914-a689-4b27-a59d-a74e9be559a4
-{% endhighlight %}
+{{< / highlight >}}
 
 So, for example, the uberXL would be expected to arrive in 7 minutes, while the uberX would pick you up in only 3 minutes.
 
@@ -210,14 +211,14 @@ It's also possible to request a ride. At present these requests are directed to 
 
 A new ride is requested using `uber_requests()`.
 
-{% highlight r %}
+{{< highlight r >}}
 > ride <- uber_requests(start_address = "37 Beach Road, Mouille Point, Cape Town",
 +                       end_address = "100 St Georges Mall, Cape Town City Centre, Cape Town")
-{% endhighlight %}
+{{< / highlight >}}
 
 Let's find out the details of the result.
 
-{% highlight r %}
+{{< highlight r >}}
 > names(ride)
  [1] "status"           "destination"      "product_id"       "request_id"
  [5] "driver"           "pickup"           "eta"              "location"
@@ -234,13 +235,13 @@ $latitude
 
 $longitude
 [1] 18.42
-{% endhighlight %}
+{{< / highlight >}}
 
 Information about the currently requested ride can be accessed using `uber_requests_current()`. If we decide to walk instead, then it's also possible to cancel the pickup.
 
-{% highlight r %}
+{{< highlight r >}}
 > uber_requests_current_delete()
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Future
 

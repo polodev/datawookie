@@ -1,14 +1,14 @@
 ---
-title: "Ethereum: DIY Tools for Smart Contracts"
-date: 2018-01-19T03:30:00+00:00
 author: Andrew B. Collier
-excerpt_separator: <!-- more -->
-layout: post
 categories:
-  - Blockchain
+- Blockchain
+date: 2018-01-19T03:30:00Z
+excerpt_separator: <!-- more -->
 tags:
-  - Ethereum
-  - Solidity
+- Ethereum
+- Solidity
+title: 'Ethereum: DIY Tools for Smart Contracts'
+url: /2018/01/19/ethereum-diy-smart-contract/
 ---
 
 What tools do you need to start working with Ethereum smart contracts?
@@ -19,7 +19,7 @@ However at some stage you'll probably want to put together a local Ethereum deve
 
 Since I'm just feeling my way into this new domain, I'm not sure to what degree all of these are necessary. I do know for sure, that Truffle and `testrpc` are crucial.
 
-<!-- more -->
+<!--more-->
 
 ## Preliminaries
 
@@ -43,23 +43,23 @@ The third of these is the most popular and actively developed.
 
 1. Add the Ethereum PPA.
 
-{% highlight text %}
+{{< highlight text >}}
 $ sudo apt-get install software-properties-common
 $ sudo add-apt-repository -y ppa:ethereum/ethereum
 $ sudo apt-get update
-{% endhighlight %}
+{{< / highlight >}}
 
 {:start="2"}
 2. Install Geth.
 
-{% highlight text %}
+{{< highlight text >}}
 $ sudo apt-get install -y ethereum
-{% endhighlight %}
+{{< / highlight >}}
 
 {:start="3"}
 3. Check the version.
 
-{% highlight text %}
+{{< highlight text >}}
 $ geth version
 Geth
 Version: 1.7.3-stable
@@ -71,7 +71,7 @@ Go Version: go1.9
 Operating System: linux
 GOPATH=
 GOROOT=/usr/lib/go-1.9
-{% endhighlight %}
+{{< / highlight >}}
 
 New releases come out every few weeks, so it's not a bad idea to update from time to time.
 
@@ -81,7 +81,7 @@ This is a good time to [synchronise with the blockchain]({{ site.baseurl }}{% po
 
 Alternatively, if you prefer to keep things in containers, there's also a Docker image.
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ docker run ethereum/client-go:stable version
 Geth
 Version: 1.7.3-stable
@@ -93,7 +93,7 @@ Go Version: go1.9.2
 Operating System: linux
 GOPATH=
 GOROOT=/usr/local/go
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Solidity Compiler
 
@@ -111,27 +111,27 @@ On a Ubuntu machine there are a few options for installing the Solidity compiler
 
 1. Install from the PPA we added above.
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ sudo apt-get install solc
-{% endhighlight %}
+{{< / highlight >}}
 
 {:start="2"}
 2. Check the version.
 
-{% highlight text %}
+{{< highlight text >}}
 $ solc --version
 solc, the solidity compiler commandline interface
 Version: 0.4.19+commit.c4cbbb05.Linux.g++
-{% endhighlight %}
+{{< / highlight >}}
 
 ### Install the Docker Image
 
 You can also take the Docker route.
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ docker run ethereum/solc:stable --version
 Version: 0.4.19+commit.c4cbbb05.Linux.g++
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Ganache Testing Client
 
@@ -143,23 +143,23 @@ The Ethereum ecosystem is evolving rapidly. The TestRPC testing client has becom
 
 If your version of Node is an antique then you'll need to update. First check which version you currently have.
 
-{% highlight text %}
+{{< highlight text >}}
 $ node --version
 v6.12.2
-{% endhighlight %}
+{{< / highlight >}}
 
 If that's less than 6.11.15 then run [the following](https://github.com/nodesource/distributions#installation-instructions) to update.
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 $ sudo apt-get install -y nodejs
-{% endhighlight %}
+{{< / highlight >}}
 
 ### Install with NPM
 
-{% highlight text %}
+{{< highlight text >}}
 $ sudo npm install -g ganache-cli
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Truffle
 
@@ -167,9 +167,9 @@ $ sudo npm install -g ganache-cli
 
 ### Install with NPM
 
-{% highlight bash %}
+{{< highlight bash >}}
 $ sudo npm install -g truffle@4.0.1
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Conclusion
 

@@ -1,26 +1,27 @@
 ---
-id: 3246
-title: 'flipsideR: Support for ASX Option Chain Data'
-date: 2016-02-08T15:00:48+00:00
 author: Andrew B. Collier
-layout: post
+date: 2016-02-08T15:00:48Z
 excerpt_separator: <!-- more -->
+id: 3246
 tags:
-- 'Option Chain'
+- Option Chain
 - '#rstats'
+title: 'flipsideR: Support for ASX Option Chain Data'
+url: /2016/02/08/flipsider-support-for-asx/
 ---
+
 I [previously](http://www.exegetic.biz/blog/2015/01/download-option-chain-from-google-finance-in-r-an-update/) wrote about some ad hoc R code for downloading Option Chain data from Google Finance. I finally wrapped it up into a package called flipsideR, which is now available via [GitHub](https://github.com/DataWookie/flipsideR). Since I last wrote on this topic I've also added support for downloading option data from the [Australian Securities Exchange](http://www.asx.com.au/) (ASX).
 
-<!-- more -->
+<!--more-->
 
 ## Installation
 
 Installation is straightforward using devtools.
 
-{% highlight r %}
+{{< highlight r >}}
 > library(devtools)
 > install_github('DataWookie/flipsideR')
-{% endhighlight %}
+{{< / highlight >}}
 
 You're ready to roll!
 
@@ -28,7 +29,7 @@ You're ready to roll!
 
 As I mentioned previously, there's already functionality in [quantmod](http://www.quantmod.com/) for retrieving option chain data.
 
-{% highlight r %}
+{{< highlight r >}}
 > library(quantmod)
 > AAPL = getOptionChain('AAPL')
 > head(AAPL$calls)
@@ -48,7 +49,7 @@ AAPL160205P00083000   83.0 0.01 -0.06 0.01 0.05  102  625
 AAPL160205P00085000   85.0 0.03 -0.07 0.03 0.04 1390 2999
 AAPL160205P00085500   85.5 0.05 -0.15 0.02 0.06   10  248
 > detach('package:quantmod', unload = TRUE)
-{% endhighlight %}
+{{< / highlight >}}
 
 The data that you'll get with flipsideR is pretty similar. The major differences are:
 
@@ -57,7 +58,7 @@ The data that you'll get with flipsideR is pretty similar. The major differences
 
 Let's grab the AAPL data using flipsideR.
 
-{% highlight r %}
+{{< highlight r >}}
 > library(flipsideR)
 > AAPL = getOptionChain('AAPL')   
 > head(AAPL)
@@ -76,18 +77,18 @@ Let's grab the AAPL data using flipsideR.
 1228   AAPL  Put 2018-01-19    170   73.35 72.50 77.00     NA          3022 2016-01-31 06:03:46
 1229   AAPL  Put 2018-01-19    175   66.55 77.30 81.35     NA            68 2016-01-31 06:03:46
 1230   AAPL  Put 2018-01-19    180   88.00 82.00 86.80     NA          1074 2016-01-31 06:03:46
-{% endhighlight %}
+{{< / highlight >}}
 
 The AAPL data were retrieved from the default exchange, NASDAQ. However, it's also possible to specify an alternative exchange. For example, CVX data from the NYSE.
 
-{% highlight r %}
+{{< highlight r >}}
 > CVX = getOptionChain('CVX', 'NYSE')
-{% endhighlight %}
+{{< / highlight >}}
 
 Finally, it's also now possible to grab data from ASX.
 
-{% highlight r %}
+{{< highlight r >}}
 > OZL = getOptionChain('OZL', 'ASX')
-{% endhighlight %}
+{{< / highlight >}}
 
 <iframe width="100%" height="400" frameborder="0" scrolling="no" src="https://plot.ly/~collierab/453.embed"></iframe>

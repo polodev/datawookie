@@ -1,25 +1,26 @@
 ---
-id: 175
-title: xkcd Style Bubble Plot
-date: 2013-05-23T12:12:40+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Economics
+- Economics
+date: 2013-05-23T12:12:40Z
+excerpt_separator: <!-- more -->
+id: 175
 tags:
-  - ggplot2
-  - '#rstats'
-  - scatter plot
-  - Visualisation
+- ggplot2
+- '#rstats'
+- scatter plot
+- Visualisation
+title: xkcd Style Bubble Plot
+url: /2013/05/23/xkcd-style-bubble-plot/
 ---
+
 A [package](http://cran.r-project.org/web/packages/xkcd/index.html) was recently released to generate plots in the style of [xkcd](http://xkcd.com/) using R. Being a big fan of the cartoon, I could not resist trying it out. So I set out to produce something like one of [Hans Rosling's](http://en.wikipedia.org/wiki/Hans_Rosling) bubble plots.
 
-<!-- more -->
+<!--more-->
 
 First I needed some data. Spoilt for choice. I scraped some [population data broken down by country](http://en.wikipedia.org/wiki/List_of_countries_by_population) and retained only the country and population fields.
 
-{% highlight r %}
+{{< highlight r >}}
 
 population.url = "http://en.wikipedia.org/wiki/List\_of\_countries\_by\_population"
 
@@ -29,11 +30,11 @@ library(XML)
 
 population = readHTMLTable("data/wiki-population.html", which = 2, trim = TRUE)
 
-{% endhighlight %}
+{{< / highlight >}}
 
 After a bit of tidying up, this was ready to use.
 
-{% highlight r %}
+{{< highlight r >}}
 > head(population)
          region population
 1         China 1354040000
@@ -42,20 +43,20 @@ After a bit of tidying up, this was ready to use.
 4     Indonesia  237641326
 5        Brazil  193946886
 6      Pakistan  183122000
-{% endhighlight %}
+{{< / highlight >}}
 
 Next I got my hands on some [Gross Domestic Product (GDP)](http://en.wikipedia.org/wiki/GDP) data from the [World Bank](http://data.worldbank.org/indicator/NY.GDP.MKTP.CD). These data came as a spreadsheet which could be sucked into R with little effort.
 
-{% highlight r %}
+{{< highlight r >}}
 library(xlsx)
 GDP = read.xlsx("data/NY.GDP.MKTP.CD\_Indicator\_MetaData\_en\_EXCEL.xls", 1, stringsAsFactors = FALSE)
-{% endhighlight %}
+{{< / highlight >}}
 
 I simply retained the entries for 2011, which had few missing values.
 
 Education spending data are also available from the [World Bank](http://data.worldbank.org/indicator/SE.XPD.TOTL.GD.ZS). These data are a little more patchy, so I kept the most recent value for each country. This required a little fancy footwork.
 
-{% highlight r %}
+{{< highlight r >}}
 XPD = read.xlsx("data/SE.XPD.TOTL.GD.ZS_Indicator_MetaData_en_EXCEL.xls", 1,
                 stringsAsFactors = FALSE)
 
@@ -78,11 +79,11 @@ last.not.na After the requisite tidying, these two sets of data were also ready.
 4     East Asia & Pacific (developing only)  4.442010
 5                                 Euro area  5.910550
 6 Europe & Central Asia (all income levels)  5.478525
-{% endhighlight %}
+{{< / highlight >}}
 
 Finally I aggregated the three sets of data and removed any rows which were missing either GDP or education statistics. Since there was a range of many orders of magnitude in both the population and GDP data, I took logarithms of these columns.
 
-{% highlight r %}
+{{< highlight r >}}
 > head(data)
                region code population       GDP education
 1         Afghanistan  AFG   7.406542 10.282776   1.72998
@@ -91,7 +92,7 @@ Finally I aggregated the three sets of data and removed any rows which were miss
 6              Angola  AGO   7.314063 11.018416   3.47644
 7 Antigua and Barbuda  ATG   4.935986  9.048565   2.53790
 8           Argentina  ARG   7.603329 11.649378   5.78195
-{% endhighlight %}
+{{< / highlight >}}
 
 Then came the fun bit: putting the plot together. There is a great document "An introduction to the xkcd package" by Emilio Torres Manzanera which got me up to speed. And here is the result. Click on the image below to see it at higher resolution. Interesting that small countries like our neighbour, Lesotho, are spending a large fraction of their GDP on education. Also I must confess to having been previously completely unaware of the existence of [Tuvalu](https://en.wikipedia.org/wiki/Tuvalu) (TUV), which is the fourth smallest country in the world (and the smallest country in my data).
 

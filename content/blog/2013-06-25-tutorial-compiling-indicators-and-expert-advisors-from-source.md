@@ -1,26 +1,27 @@
 ---
-id: 281
-title: 'Tutorial: Compiling Indicators and Expert Advisors from Source'
-date: 2013-06-25T06:41:10+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Expert Advisor
-  - FOREX
-  - Indicators
-  - Trading
+- Expert Advisor
+- FOREX
+- Indicators
+- Trading
+date: 2013-06-25T06:41:10Z
+excerpt_separator: <!-- more -->
+id: 281
 tags:
-  - EA
-  - Expert Advisor
-  - FOREX
-  - Indicator
-  - MetaTrader
-  - MQL4
+- EA
+- Expert Advisor
+- FOREX
+- Indicator
+- MetaTrader
+- MQL4
+title: 'Tutorial: Compiling Indicators and Expert Advisors from Source'
+url: /2013/06/25/tutorial-compiling-indicators-and-expert-advisors-from-source/
 ---
+
 When you receive the code for an expert advisor or indidator which we have developed for you, it will come in a package consisting of include files (with a .mqh extension) and source code files (with a .mq4 extension). So, what do you do with them?
 
-<!-- more -->
+<!--more-->
 
 ## Why You Need to Have the Source Files
 
@@ -42,15 +43,15 @@ The first thing that you need to do is move these files to the correct directori
 
 How do you differentiate between expert advisor and indicator .mq4 files? Quite simple: the latter will have either
 
-{% highlight text %}
+{{< highlight text >}}
 #property indicator_separate_window
-{% endhighlight %}
+{{< / highlight >}}
 
 or
 
-{% highlight text %}  
+{{< highlight text >}}  
 #property indicator_chart_window
-{% endhighlight %}
+{{< / highlight >}}
 
 near to the top of the file.
 

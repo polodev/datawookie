@@ -1,33 +1,33 @@
 ---
-title: 'Retrieving Kaggle Data from the Command Line'
-date: 2017-08-21T11:00:00+00:00
 author: Andrew B. Collier
+date: 2017-08-21T11:00:00Z
 excerpt_separator: <!-- more -->
-layout: post
 tags:
-  - Kaggle
-  - AWS
-  - EC2
-  - CLI
+- Kaggle
+- AWS
+- EC2
+- CLI
+title: Retrieving Kaggle Data from the Command Line
+url: /2017/08/21/kaggle-cli/
 ---
 
 We've been building some models for Kaggle competitions using an EC2 instance for compute. I initially downloaded the data locally and then pushed it onto EC2 using SCP. But there had to be a more efficient way to do this, especially given the blazing fast bandwidth available on AWS.
 
 Enter [kaggle-cli](https://github.com/floydwch/kaggle-cli).
 
-<!-- more -->
+<!--more-->
 
 ## Installation
 
 Installation is very simple.
 
-{% highlight bash %}
+{{< highlight bash >}}
 sudo pip install kaggle-cli
-{% endhighlight %}
+{{< / highlight >}}
 
 This will expose the `kg` shell command. You can use it interactively or via an selection of command line arguments.
 
-{% highlight text %}
+{{< highlight text >}}
 usage: kg [--version] [-v | -q] [--log-file LOG_FILE] [-h] [--debug]
 
 An unofficial Kaggle command line tool.
@@ -48,13 +48,13 @@ Commands:
   help           print detailed help for another command
   submissions    List recent submissions.
   submit         Submit an entry to a specific competition.
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Downloading Data
 
 We'd use the `download` command to get the data for a particular competition.
 
-{% highlight text %}
+{{< highlight text >}}
 usage: kg download [-h] [-c COMPETITION] [-u USERNAME] [-p PASSWORD]
                    [-f FILENAME]
 
@@ -70,15 +70,15 @@ optional arguments:
                         password
   -f FILENAME, --filename FILENAME
                         filename
-{% endhighlight %}
+{{< / highlight >}}
 
 The minimum requirements for this to work are a username, password and competition identifier. You get the latter by simply visiting the competition page on [Kaggle](https://www.kaggle.com/) and grabbing the last part of the URL.
 
 So, for instance, to get the data for the recently closed [Instacart Market Basket Analysis](https://www.kaggle.com/c/instacart-market-basket-analysis) you do something like this:
 
-{% highlight bash %}
+{{< highlight bash >}}
 kg download -u 'dvader@dstar.gov' -p '6%puZ$9_' -c 'instacart-market-basket-analysis'
-{% endhighlight %}
+{{< / highlight >}}
 
 You can use the `-f` switch to grab just a single data file.
 

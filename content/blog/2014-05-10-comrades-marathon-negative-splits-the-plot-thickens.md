@@ -1,24 +1,25 @@
 ---
-id: 756
-title: 'Comrades Marathon Negative Splits: The Plot Thickens'
-date: 2014-05-10T15:05:55+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Running
+- Running
+date: 2014-05-10T15:05:55Z
+excerpt_separator: <!-- more -->
+id: 756
 tags:
-  - Comrades Marathon
-  - ggplot2
-  - '#rstats'
+- Comrades Marathon
+- ggplot2
+- '#rstats'
+title: 'Comrades Marathon Negative Splits: The Plot Thickens'
+url: /2014/05/10/comrades-marathon-negative-splits-the-plot-thickens/
 ---
+
 I have been thinking a little more about those [mysterious negative splits](http://www.exegetic.biz/blog/2014/05/comrades-marathon-negative-splits-and-cheating/). Not too surprisingly, this thinking happened while I was out running along the Durban beachfront this morning.
 
-<!-- more -->
+<!--more-->
 
 Let's have a look at the ten most extreme negative splits from Comrades Marathon 2013:
 
-{% highlight r %}
+{{< highlight r >}}
 > split.ratio.2013 = subset(split.ratio, year == 2013)
 > #
 > split.ratio.2013 = head(split.ratio.2013[order(split.ratio.2013$ratio),], 10)
@@ -36,7 +37,7 @@ Let's have a look at the ten most extreme negative splits from Comrades Marathon
 8  2013 e445f2d1        340.15    647.20 -0.097310
 9  2013 fed967de        338.67    647.77 -0.087303
 10 2013 553aeb62        364.02    697.90 -0.082780
-{% endhighlight %}
+{{< / highlight >}}
 
 Below are the splits data for these runners (in the same order as the table above).
 

@@ -1,21 +1,22 @@
 ---
-id: 772
-title: Race Statistics for Comrades Marathon Novice Runners
-date: 2014-05-16T05:22:05+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
 - Running
+date: 2014-05-16T05:22:05Z
+excerpt_separator: <!-- more -->
+id: 772
 tags:
 - Comrades Marathon
 - ggplot2
 - '#rstats'
 - Ultramarathon
+title: Race Statistics for Comrades Marathon Novice Runners
+url: /2014/05/16/race-statistics-for-comrades-marathon-novice-runners/
 ---
+
 Most novice Comrades Marathon runners finish the race on their first attempt and the majority of them walk (shuffle, crawl?) away with Bronze medals.
 
-<!-- more -->
+<!--more-->
 
 ## What is a Novice?
 
@@ -31,7 +32,7 @@ For the purposes of this article I will be adopting the first definition. This i
 
 I'll be using the same data sets that I have discussed in [previous articles](http://www.exegetic.biz/blog/tag/comrades-marathon/). Before we focus on the data for the novices we'll start by just retaining the fields of interest.
 
-{% highlight r %}
+{{< highlight r >}}
 > novices = results[, c("key", "year", "category", "gender", "medal", "medal.count", "status", "ftime")]
 > head(novices)
        key year     category gender       medal medal.count   status   ftime
@@ -41,11 +42,11 @@ I'll be using the same data sets that I have discussed in [previous articles](ht
 4 10007cb6 2005 Ages 26 - 39   Male      Bronze           1 Finished  9.1589
 5 10007cb6 2006 Ages 30 - 39   Male  Bill Rowan           2 Finished  8.2564
 6 10007cb6 2007 Ages 30 - 39   Male  Bill Rowan           3 Finished  8.0344
-{% endhighlight %}
+{{< / highlight >}}
 
 To satisfy our definition of novice we'll need to exclude the "did not start" (DNS) records.
 
-{% highlight r %}
+{{< highlight r >}}
 > novices = subset(novices, status != "DNS")
 > head(novices)
        key year     category gender       medal medal.count   status   ftime
@@ -55,25 +56,25 @@ To satisfy our definition of novice we'll need to exclude the "did not start" (D
 5 10007cb6 2006 Ages 30 - 39   Male  Bill Rowan           2 Finished  8.2564
 6 10007cb6 2007 Ages 30 - 39   Male  Bill Rowan           3 Finished  8.0344
 7 10007cb6 2008 Ages 30 - 39   Male  Bill Rowan           4 Finished  8.8514
-{% endhighlight %}
+{{< / highlight >}}
 
 Some runners do not finish the race on their first attempt but they bravely come back to run the race again. We will retain only the first record for each runner, because the second time they attempt the race they are (according to our definition) no longer novices since already have some race experience.
 
-{% highlight r %}
+{{< highlight r >}}
 > novices <- novices[order(novices$year),]
 > novices <- novices[which(!duplicated(novices$key)),]
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Percentage of Novice Finishers
 
 I suppose that the foremost question going through the minds of many Comrades novices is "Will I finish?".
 
-{% highlight r %}
+{{< highlight r >}}
 > table(novices$status) / nrow(novices) * 100
 
 Finished      DNF 
   80.035   19.965 
-{% endhighlight %}
+{{< / highlight >}}
 
 Well, there's some good news: around 80% of all novices finish the race. Those are quite compelling odds. Of course, a number of factors can influence the success of each individual, but if you have done the training and you run sensibly, then the odds are in your favour.
 
@@ -81,12 +82,12 @@ Well, there's some good news: around 80% of all novices finish the race. Those a
 
 What medal is a novice most likely to receive?
 
-{% highlight r %}
+{{< highlight r >}}
 > table(novices$medal) / nrow(subset(novices, !is.na(medal))) * 100
 
          Gold Wally Hayward        Silver    Bill Rowan        Bronze   Vic Clapham 
     0.0829671     0.0051854     4.0264976     5.6469490    79.4708254    10.7675754
-{% endhighlight %}
+{{< / highlight >}}
 
 The vast majority (again around 80%) claim a Bronze medal. There are also a significant proportion (just over 10%) who miss the eleven hour cutoff and get a Vic Clapham medal. Around 6% of novices achieve a Bill Rowan medal and a surprisingly large fraction, just over 4%, manage to finish in a Silver medal time of under seven and a half hours. There are very few Wally Hayward and Gold medals won by novices. The odds for a novice Gold medal are around one in 1200, all else being equal (which it very definitely isn't!).
 

@@ -1,20 +1,21 @@
 ---
-id: 2816
-title: 'Evolution of First Names: Changes over the Last Century'
-date: 2015-11-09T15:00:32+00:00
 author: Andrew B. Collier
-layout: post
-excerpt_separator: <!-- more -->
 categories:
-  - Interesting Statistics
+- Interesting Statistics
+date: 2015-11-09T15:00:32Z
+excerpt_separator: <!-- more -->
+id: 2816
 tags:
-  - names
+- names
+title: 'Evolution of First Names: Changes over the Last Century'
+url: /2015/11/09/evolution-of-first-names-changes-over-the-last-century/
 ---
+
 In light of recent developments, a bit of work that I did almost two years ago has become rather relevant.
 
 <img src="{{ site.baseurl }}/static/img/2015/11/baby-collier.jpg">
 
-<!-- more -->
+<!--more-->
 
 In a chapter of [Freakonomics](https://en.wikipedia.org/wiki/Freakonomics) entitled “Would a Roshanda by Any Other Name Smell as Sweet?”, Steven Levitt and Stephen Dubner consider the influence a given name can have on a child's future, from their performance at school to career opportunities and beyond. Many parents believe that the name they choose for their child will have a significant effect on their future, and there is certainly data to support this idea. However, there is also evidence to the contrary. Levitt and Dubner cite the real example of two brothers named Winner and Loser. Loser turned out to be a success, while Winner was appreciably less fortunate. It is probably reasonable to conclude that a given name is only one of many factors contributing to a child's destiny!
 

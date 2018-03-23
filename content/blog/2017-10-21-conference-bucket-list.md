@@ -1,18 +1,18 @@
 ---
-title: 'Speaking Bucket List'
-date: 2017-10-21T08:30:00+00:00
 author: Andrew B. Collier
-excerpt_separator: <!-- more -->
-layout: post
 categories:
-  - Conference
+- Conference
+date: 2017-10-21T08:30:00Z
+excerpt_separator: <!-- more -->
 tags:
-  - Talk
+- Talk
+title: Speaking Bucket List
+url: /2017/10/21/conference-bucket-list/
 ---
 
 A list of conferences and meetups I'd like to speak at in the next few years.
 
-<!-- more -->
+<!--more-->
 
 ## International
 
