@@ -1,7 +1,10 @@
 languageCode = "en-us"
 title = "Crab"
-theme = "crab"
+theme = "wookie"
 baseurl = "https://example.com"
+
+pygmentsCodeFences = true
+pygmentsUseClasses = true
 
 [params]
 description = "A clean Hugo theme for websites"
