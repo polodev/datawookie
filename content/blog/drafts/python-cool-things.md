@@ -1,0 +1,4 @@
+## List Comprehensions
+
+## Ternary Operator
+
