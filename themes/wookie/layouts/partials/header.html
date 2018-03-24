@@ -4,16 +4,16 @@
     <title>{{ .Title }} - {{ .Site.Title }}</title>
     <link rel="stylesheet" href="{{ .Site.BaseURL }}css/wookie.css">
     <link rel="stylesheet" href="{{ .Site.BaseURL }}css/syntax.css">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
     {{ .Hugo.Generator }}
-
-
 
     {{ if isset .Site.Params "mathjax"}}
     <script type="text/javascript" src="{{ .Site.Params.mathjax }}">
     </script>
     {{end}}
 
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
   </head>
   <body>
 
