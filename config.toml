@@ -1,7 +1,11 @@
 languageCode = "en-us"
-title = "Crab"
+title = "datawookie"
 theme = "wookie"
 baseurl = "https://example.com"
+
+# Limit number of entries in RSS feeds.
+#
+rssLimit = 20
 
 pygmentsCodeFences = true
 pygmentsUseClasses = true
@@ -13,8 +17,6 @@ description = "A clean Hugo theme for websites"
 
 # mathjax = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
 ## Uncomment if you want mathjax enabled. The above cdn source is taken from https://gohugo.io/content-management/formats/#mathjax-with-hugo   
-
-
 
 [permalinks]
 blog  = "/blog/:year/:month/:title/"
@@ -71,36 +73,15 @@ identifier = "features"
 
 [[menu.main]]
 weight = 3
-name = "Another item"
-url = "/another/"
+name = "Resume"
+url = "/resume/"
 
 [[menu.main]]
 weight = 4
-name = "More items"
-url = "/more/"
-identifier = "more"
-  [[menu.main]]
-  parent = "more"
-  weight = 1
-  name = "Some more menu"
-  url = "/more/some-more-menu/"
-  [[menu.main]]
-  parent = "more"
-  weight = 2
-  name = "items to show"
-  url = "/more/items-to-show/"
-  [[menu.main]]
-  parent = "more"
-  weight = 3
-  name = "the nested menus feature"
-  url = "/more/the-nested-menus-feature/"
-
-[[menu.main]]
-weight = 5
 name = "Blog"
 url = "/blog/"
 
 [[menu.main]]
-weight = 6
+weight = 5
 name = "Contact"
 url = "/contact/"
