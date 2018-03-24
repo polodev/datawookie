@@ -1,0 +1,19 @@
+{{ partial "header.html" . }}
+
+{{ if hasPrefix .URL "/tags/" }}
+
+<section id="main">
+  <div>
+    <ul>
+    {{ range .Data.Pages }}
+      <li>
+        {{ .Date.Format "2006-01-02" }} - <a href="{{ .Permalink }}">{{ .Title }}</a>
+      </li>
+    {{ end }}
+    </ul>
+  </div>
+</section>
+
+{{ end }}
+
+{{ partial "footer.html" . }}
