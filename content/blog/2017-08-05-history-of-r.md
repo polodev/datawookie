@@ -1,9 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2017-08-05T01:00:00Z
-excerpt_separator: <!-- more -->
-tags:
-- '#rstats'
+tags: ["R"]
 title: A Timeline History of R
 url: /2017/08/05/history-of-r/
 ---
@@ -11,6 +9,8 @@ url: /2017/08/05/history-of-r/
 A record of some more or less important events in the history of [R](https://www.r-project.org/).
 
 This is a work in progress. The information is cobbled together from a range of sources. If you have pertinent items to add, please let me know via the comments.
+
+<!--more-->
 
 <!--
     https://support.rstudio.com/hc/en-us/articles/200716783-RStudio-Release-History
@@ -22,6 +22,7 @@ This is a work in progress. The information is cobbled together from a range of 
 	- [useR!](http://www.user2019.fr/) (Toulouse, France)
 - 2018:
     - <kbd>R-3.4.4</kbd> "Someone to Lean On" (2018-03-15)
+    - <kbd class="bg-primary">RStudio-1.1.442</kbd> (2018-03-12)
     - <kbd class="bg-primary">RStudio-1.1.423</kbd> (2018-02-07)
     - <kbd class="bg-primary">RStudio-1.1.419</kbd> (2018-01-24)
     - [eRum](http://2018.erum.io/) (Budapest, Hungary)
