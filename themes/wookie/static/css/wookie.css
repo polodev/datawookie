@@ -49,7 +49,7 @@ a:hover {
 
 nav {
   clear: both;
-  margin-top: 3em;
+  /*margin-top: 3em;*/
 }
 
 nav ul {
@@ -255,13 +255,5 @@ table.experience td.duration {
   nav ul.second li a,
   nav ul.third li a {
     padding: 0.75em 1em;
-  }
-
-  #summary {
-    display: block;
-    position: absolute;
-    top: 0px;
-    left: 608px;
-    width: 342px;
   }
 }

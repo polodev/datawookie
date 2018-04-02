@@ -18,17 +18,17 @@
   </head>
   <body>
     <div class="container">
-      <div id="header">
-        <div id="site-logo">
-          {{ if isset .Site.Params "logoimage" }}
-            <img src="{{ .Site.BaseURL }}{{ .Site.Params.logoimage }}">
-          {{ else }}
-            <img src="{{ .Site.BaseURL }}img/crab-logo.png">
-          {{ end }}
-        </div>
-      	<div id="site-title"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></div>
-      	<div id="site-slogan">{{ .Site.Params.Description }}</div>
-      </div>
-      {{ partial "menu.html" .Site.Menus.main }}
+      {{ partial "navbar.html" .Site.Menus.main }}
       <div id="content">
+        <div id="header">
+          <div id="site-logo">
+            {{ if isset .Site.Params "logoimage" }}
+              <img src="{{ .Site.BaseURL }}{{ .Site.Params.logoimage }}">
+            {{ else }}
+              <img src="{{ .Site.BaseURL }}img/crab-logo.png">
+            {{ end }}
+          </div>
+          <div id="site-title"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></div>
+          <div id="site-slogan">{{ .Site.Params.Description }}</div>
+        </div>
         <div id="article">
