@@ -1,5 +1,5 @@
 ---
-layout: main
+layout: resume
 title: Andrew B. Collier
 ---
 
