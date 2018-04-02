@@ -1,10 +1,12 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
 @import url('https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i|Open+Sans:400,400i,600,600i,700,700i');
 
 html,
 body {
   background: #fff;
   color: #333;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
   font-size: 14px;
 }
 
@@ -160,6 +162,10 @@ img.left {
   margin: 0 1em 1em 0;
 }
 
+table {
+  border-collapse: collapse;
+}
+
 #footer {
   clear: both;
   padding-top: 2em;
@@ -185,6 +191,10 @@ ul.pagination {
 .pagination .disabled a:hover {
   color: #555;
   text-decoration: none;
+}
+
+.experience .duration {
+  padding-left: 10px;
 }
 
 @media (min-width: 768px) {
