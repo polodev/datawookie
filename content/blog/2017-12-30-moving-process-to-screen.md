@@ -2,8 +2,7 @@
 author: Andrew B. Collier
 date: 2017-12-30T04:00:00Z
 excerpt_separator: <!-- more -->
-tags:
-- Ubuntu
+tags: ["Linux"]
 title: Moving a Running Process to screen
 url: /2017/12/30/moving-process-to-screen/
 ---
@@ -16,8 +15,6 @@ So, is it possible to transfer the running process to `screen`? (Or, equally, to
 
 <!--more-->
 
-## Create a Long Running Job
-
 For illustration purposes, let's kick off a long running job.
 
 {{< highlight text >}}
@@ -26,58 +23,32 @@ $ tail -f /var/log/syslog
 
 That should start logging text to the terminal.
 
-## Find the Process ID
-
 Now we need to find out the PID for that process.
 
 1. Suspend the process using <kbd>Ctrl</kbd>-<kbd>z</kbd>.
-
-{{< highlight text >}}
+    {{< highlight text >}}
 [1]+  Stopped                 tail -f /var/log/syslog
 {{< / highlight >}}
-
-{:start="2"}
 2. Find the PID using `jobs`.
-
-{{< highlight text >}}
+    {{< highlight text >}}
 $ jobs -l
 [1]+ 20562 Stopped                 tail -f /var/log/syslog
 {{< / highlight >}}
-
-Right, so the PID is 20562.
-
-## Transfer Process to screen
-
-At this point we need to get around a small wrinkle, circumventing a minor security measure.
-
-{:start="3"}
-3. Enable `ptrace`.
-
-{{< highlight text >}}
+3. Right, so the PID is 20562. At this point we need to get around a small wrinkle, circumventing a minor security measure. Enable `ptrace`.
+    {{< highlight text >}}
 $ echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
 {{< / highlight >}}
-
-{:start="4"}
 4. Start a `screen` session.
-
-{{< highlight text >}}
+    {{< highlight text >}}
 $ screen
 {{< / highlight >}}
-
-{:start="5"}
 5. Use `reptyr` to reparent the process.
-
-{{< highlight text >}}
+    {{< highlight text >}}
 $ reptyr 20562
 {{< / highlight >}}
-
-The suspended process will be resumed.
-
-{:start="6"}
-6. Disconnect from the `screen` session.
+6. The suspended process will have resumed. Disconnect from the `screen` session.
 7. Disable `ptrace`.
-
-{{< highlight text >}}
+    {{< highlight text >}}
 $ echo 1 | sudo tee /proc/sys/kernel/yama/ptrace_scope
 {{< / highlight >}}
 

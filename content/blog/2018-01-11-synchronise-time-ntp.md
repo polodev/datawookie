@@ -1,11 +1,8 @@
 ---
 author: Andrew B. Collier
-categories:
-- Linux
 date: 2018-01-11T04:30:00Z
 excerpt_separator: <!-- more -->
-tags:
-- NTP
+tags: ["NTP"]
 title: 'NTP: Synchronise Your Watches'
 url: /2018/01/11/synchronise-time-ntp/
 ---
@@ -55,7 +52,7 @@ pool ntp.ubuntu.com
 
 You can find out about local servers by visiting the [NTP Pool Project](http://www.pool.ntp.org/en/) and selecting first your continent and then country.
 
-![]({{ site.baseurl }}/static/img/2018/01/pool-ntp-south-africa.png)
+![](/img/2018/01/pool-ntp-south-africa.png)
 
 ## Check
 
@@ -76,4 +73,4 @@ ntp_adjtime() returns code 0 (OK)
 
 Alternatively, head back to <https://time.is/> to confirm your clock's accuracy.
 
-![]({{ site.baseurl }}/static/img/2018/01/time-is.png)
+![](/img/2018/01/time-is.png)

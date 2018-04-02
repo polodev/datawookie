@@ -1,12 +1,8 @@
 ---
 author: Andrew B. Collier
-categories:
-- Blockchain
 date: 2018-01-19T03:30:00Z
 excerpt_separator: <!-- more -->
-tags:
-- Ethereum
-- Solidity
+tags: ["Ethereum"]
 title: 'Ethereum: DIY Tools for Smart Contracts'
 url: /2018/01/19/ethereum-diy-smart-contract/
 ---
@@ -174,7 +170,3 @@ $ sudo npm install -g truffle@4.0.1
 ## Conclusion
 
 That's pretty much everything you need to start writing smart contracts.
-
-{% comment %}
-You'll probably want to incorporate those smart contracts into decentralised applications. You can find out about getting that set up [here]({{ site.baseurl }}{% post_url 2017-12-20-ethereum-diy-decentralised-applications %}).
-{% endcomment %}

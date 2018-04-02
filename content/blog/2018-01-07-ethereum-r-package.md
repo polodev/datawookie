@@ -1,11 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2018-01-07T08:00:00Z
-excerpt_separator: <!-- more -->
-tags:
-- Blockchain
-- Ethereum
-- null
+tags: ["Ethereum"]
 title: An Ethereum Package for R
 url: /2018/01/07/ethereum-r-package/
 ---
@@ -14,7 +10,7 @@ Bitcoin has become synonymous with "cryptocurrency". [Ethereum](https://www.ethe
 
 This post introduces the new [ether](https://github.com/DataWookie/ether) package for interacting with the Ethereum network from R. 
 
-![]({{ site.baseurl }}/static/img/2017/12/etherscan-transactions-addresses.png)
+![](/img/2017/12/etherscan-transactions-addresses.png)
 
 <!--more-->
 
@@ -94,7 +90,7 @@ Ethereum operations have an associated execution fee which is expressed in units
 [1] 20
 {{< / highlight >}}
 
-![]({{ site.baseurl }}/static/img/2017/12/etherscan-network-state.png)
+![](/img/2017/12/etherscan-network-state.png)
 
 What's the number of the most recent block?
 
@@ -176,7 +172,7 @@ We can delve into the details of a block.
 [1] "2017-12-02 09:38:00 UTC"
 {{< / highlight >}}
 
-![]({{ site.baseurl }}/static/img/2017/12/etherscan-block-details.png)
+![](/img/2017/12/etherscan-block-details.png)
 
 Look at the table of transactions.
 

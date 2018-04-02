@@ -1,11 +1,7 @@
 ---
 author: Andrew B. Collier
-categories:
-- Blockchain
 date: 2018-01-19T03:30:00Z
-excerpt_separator: <!-- more -->
-tags:
-- Ethereum
+tags: ["Ethereum"]
 title: 'Ethereum: Running a Node'
 url: /2018/01/19/ethereum-running-node/
 ---
@@ -54,9 +50,9 @@ These indicate that for each block we are retrieving headers, receipts and state
 
 Let's take a quick look at some statistics about the size of the blockchain.
 
-![]({{ site.baseurl }}/static/img/2018/01/etherscan-transactions.svg)
-![]({{ site.baseurl }}/static/img/2018/01/etherscan-block-size.svg)
-![]({{ site.baseurl }}/static/img/2018/01/etherscan-data-size.svg)
+![](/img/2018/01/etherscan-transactions.svg)
+![](/img/2018/01/etherscan-block-size.svg)
+![](/img/2018/01/etherscan-data-size.svg)
 
 The data requirements for hosting a node are rather intense and it's growing quickly.
 
@@ -135,7 +131,7 @@ Account #0: {446874e0587f65d9ea88cbce6cc54d972c235e9b}
 
 This is a list of the accounts controlled by the node. Just the single account for the moment. We can immediately check that the account has been created on the blockchain by vising [Etherscan](https://etherscan.io/address/0x446874e0587f65d9ea88cbce6cc54d972c235e9b).
 
-![]({{ site.baseurl }}/static/img/2018/01/etherscan-new-account.png)
+![](/img/2018/01/etherscan-new-account.png)
 
 ## Interacting with the Blockchain: Remote Connection
 

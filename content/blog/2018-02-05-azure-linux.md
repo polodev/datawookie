@@ -1,12 +1,7 @@
 ---
 author: Andrew B. Collier
-categories:
-- Cloud
 date: 2018-02-05T07:00:00Z
-excerpt_separator: <!-- more -->
-tags:
-- Azure
-- Linux
+tags: ["Azure", "Linux"]
 title: Linux VM on Azure
 url: /2018/02/05/azure-linux/
 ---
@@ -23,7 +18,7 @@ From the menu bar on the left of the Dashboard select New and then Compute.
 
 Select the Ubuntu Server 16.04 LTS option (you might want to pop up the associated [Quickstart tutorial](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/) too).
 
-![]({{ site.baseurl }}/static/img/2018/02/azure-new-service.png)
+![](/img/2018/02/azure-new-service.png)
 
 ### Basics
 
@@ -36,7 +31,7 @@ From the Basics configuration
 - either create a new resource group or use an existing one;
 - choose a location which makes sense (geographical proximity is good).
 
-![]({{ site.baseurl }}/static/img/2018/02/azure-basics.png)
+![](/img/2018/02/azure-basics.png)
 
 ### Size
 
@@ -54,13 +49,13 @@ Some of the low end options are
 
 Select a machine that fits your budget and hardware requirements.
 
-![]({{ site.baseurl }}/static/img/2018/02/azure-size.png)
+![](/img/2018/02/azure-size.png)
 
 ### Settings
 
 You can probably just go with the defaults here.
 
-![]({{ site.baseurl }}/static/img/2018/02/azure-settings.png)
+![](/img/2018/02/azure-settings.png)
 
 ### Summary
 
