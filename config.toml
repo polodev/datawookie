@@ -29,7 +29,7 @@ url = "/"
 
 [[menu.main]]
 weight = 2
-name = "Resume"
+name = "Résumé"
 url = "/resume/"
 
 [[menu.main]]
