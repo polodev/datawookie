@@ -11,12 +11,10 @@ pygmentsCodeFences = true
 pygmentsUseClasses = true
 
 [params]
-description = "A clean Hugo theme for websites"
+description = ""
+author = "Andrew B. Collier"
 # logoimage = "images/logo.jpg"
 # copyright = "foo"
-
-# mathjax = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
-## Uncomment if you want mathjax enabled. The above cdn source is taken from https://gohugo.io/content-management/formats/#mathjax-with-hugo   
 
 [permalinks]
 blog  = "/blog/:year/:month/:title/"
@@ -30,16 +28,16 @@ name = "Home"
 url = "/"
 
 [[menu.main]]
-weight = 3
+weight = 2
 name = "Resume"
 url = "/resume/"
 
 [[menu.main]]
-weight = 4
+weight = 3
 name = "Blog"
 url = "/blog/"
 
 [[menu.main]]
-weight = 5
+weight = 4
 name = "Contact"
 url = "/contact/"
