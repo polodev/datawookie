@@ -5,15 +5,16 @@ title: Andrew B. Collier
 
 <h2 class="resume">Experience</h2>
 
-<table>
-<tr><th><a href="http://www.exegetic.biz/">Exegetic Analytics</a></th><th>Founder &amp; Consulting Data Scientist</th><td class="duration">2008 - present</td></tr>
-<tr><th><a href="https://www.toptal.com/">Toptal</a></th><th>Freelance Data Scientist</th><td class="duration">2016 - present</td></tr>
-<tr><th><a href="http://www.ixperience.co.za">iXperience</a></th><th>Head Teacher (Data Science)</th><td class="duration">2017</td></tr>
-<tr><th><a href="http://capetown2017.satrdays.org/">#satRdayCapeTown</a></th><th>Conference Organiser</th><td class="duration">2017</td></tr>
-<tr><th><a href="http://www.derivco.com/">Derivco</a></th><th>Senior Data Scientist</th><td class="duration">2013 - 2017</td></tr>
-<tr><th><a href="http://www.ixperience.co.za">iXperience</a></th><th>Head Teacher (Data Science)</th><td class="duration">2016</td></tr>
-<tr><th><a href="https://birkeland.uib.no/">University of Bergen</a> (Norway)</th><th>Researcher</th><td class="duration">2013 - 2014</td></tr>
-<tr><th><a href="http://scp.ukzn.ac.za/">University of KwaZulu-Natal</a> (UKZN)</th><th>Honorary Senior Lecturer</th><td class="duration">2004 - 2015</td></tr>
+<table class="experience">
+<tr><th><a href="http://www.exegetic.biz/">Exegetic Analytics</a></th><th class="position">Founder &amp; Consulting Data Scientist</th><td class="duration">2008 - present</td></tr>
+<tr><th><a href="http://capetown2018.satrdays.org/">#satRdayCapeTown</a></th><th class="position">Conference Organiser</th><td class="duration">2018</td></tr>
+<tr><th><a href="https://www.toptal.com/">Toptal</a></th><th class="position">Freelance Data Scientist</th><td class="duration">2016 - present</td></tr>
+<tr><th><a href="http://www.ixperience.co.za">iXperience</a></th><th class="position">Head Teacher (Data Science)</th><td class="duration">2017</td></tr>
+<tr><th><a href="http://capetown2017.satrdays.org/">#satRdayCapeTown</a></th><th class="position">Conference Organiser</th><td class="duration">2017</td></tr>
+<tr><th><a href="http://www.derivco.com/">Derivco</a></th><th class="position">Senior Data Scientist</th><td class="duration">2013 - 2017</td></tr>
+<tr><th><a href="http://www.ixperience.co.za">iXperience</a></th><th class="position">Head Teacher (Data Science)</th><td class="duration">2016</td></tr>
+<tr><th><a href="https://birkeland.uib.no/">University of Bergen</a> (Norway)</th><th class="position">Researcher</th><td class="duration">2013 - 2014</td></tr>
+<tr><th><a href="http://scp.ukzn.ac.za/">University of KwaZulu-Natal</a> (UKZN)</th><th class="position">Honorary Senior Lecturer</th><td class="duration">2004 - 2015</td></tr>
 <!--
 Could add: * List of students supervised.
 -->
