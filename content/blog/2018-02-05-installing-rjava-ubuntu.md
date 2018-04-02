@@ -2,8 +2,6 @@
 author: Andrew B. Collier
 date: 2018-02-05T07:00:00Z
 excerpt_separator: <!-- more -->
-tags:
-- null
 title: Installing rJava on Ubuntu
 url: /2018/02/05/installing-rjava-ubuntu/
 draft: false
