@@ -1,9 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2018-02-23T10:00:00Z
-excerpt_separator: <!-- more -->
-tags:
-- Django
+tags: ["Django"]
 title: Restoring a Django Backup
 url: /2018/02/23/django-restoring-backup/
 ---

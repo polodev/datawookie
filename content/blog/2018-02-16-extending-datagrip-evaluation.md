@@ -1,10 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2018-02-16T10:00:00Z
-excerpt_separator: <!-- more -->
-tags:
-- Ubuntu
-- SQL
+tags: ["SQL", "Ubuntu"]
 title: Extending DataGrip Evaluation
 url: /2018/02/16/extending-datagrip-evaluation/
 ---
