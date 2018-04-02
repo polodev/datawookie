@@ -5,10 +5,7 @@ body {
   background: #fff;
   color: #333;
   font-family: 'Open Sans', sans-serif;
-}
-
-#container {
-  margin: auto;
+  font-size: 14px;
 }
 
 #header {
@@ -95,10 +92,6 @@ hr {
   margin-top: 2em;
 }
 
-#article {
-  margin-top: 2em;
-}
-
 h1,
 h2,
 h3,
@@ -107,6 +100,10 @@ h5,
 h6 {
   font-family: 'Lora', serif;
   font-weight: 400;
+}
+
+h2.resume {
+  border-bottom: 1px solid #ccc;
 }
 
 ol {
@@ -194,10 +191,6 @@ ul.pagination {
 }
 
 @media (min-width: 992px) {
-  #container {
-    width: 950px;
-  }
-
   nav ul li a {
     display: block;
     font-size: 90%;
@@ -243,11 +236,6 @@ ul.pagination {
   nav ul.second li a,
   nav ul.third li a {
     padding: 0.75em 1em;
-  }
-
-  #article {
-    width: 576px;
-    position: relative;
   }
 
   #summary {
