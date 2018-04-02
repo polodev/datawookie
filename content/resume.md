@@ -6,25 +6,25 @@ title: Andrew B. Collier
 <h2 class="resume">Experience</h2>
 
 <table class="experience">
-<tr><th><a href="http://www.exegetic.biz/">Exegetic Analytics</a></th><th class="position">Founder &amp; Consulting Data Scientist</th><td class="duration">2008 - present</td></tr>
-<tr><th><a href="http://capetown2018.satrdays.org/">#satRdayCapeTown</a></th><th class="position">Conference Organiser</th><td class="duration">2018</td></tr>
-<tr><th><a href="https://www.toptal.com/">Toptal</a></th><th class="position">Freelance Data Scientist</th><td class="duration">2016 - present</td></tr>
-<tr><th><a href="http://www.ixperience.co.za">iXperience</a></th><th class="position">Head Teacher (Data Science)</th><td class="duration">2017</td></tr>
-<tr><th><a href="http://capetown2017.satrdays.org/">#satRdayCapeTown</a></th><th class="position">Conference Organiser</th><td class="duration">2017</td></tr>
-<tr><th><a href="http://www.derivco.com/">Derivco</a></th><th class="position">Senior Data Scientist</th><td class="duration">2013 - 2017</td></tr>
-<tr><th><a href="http://www.ixperience.co.za">iXperience</a></th><th class="position">Head Teacher (Data Science)</th><td class="duration">2016</td></tr>
-<tr><th><a href="https://birkeland.uib.no/">University of Bergen</a> (Norway)</th><th class="position">Researcher</th><td class="duration">2013 - 2014</td></tr>
-<tr><th><a href="http://scp.ukzn.ac.za/">University of KwaZulu-Natal</a> (UKZN)</th><th class="position">Honorary Senior Lecturer</th><td class="duration">2004 - 2015</td></tr>
+<tr><td><a href="http://www.exegetic.biz/">Exegetic Analytics</a></td><td class="position">Founder & Consulting Data Scientist</td><td class="duration">2008 - present</td></tr>
+<tr><td><a href="http://capetown2018.satrdays.org/">#satRdayCapeTown</a></td><td class="position">Conference Organiser</td><td class="duration">2018</td></tr>
+<tr><td><a href="https://www.toptal.com/">Toptal</a></td><td class="position">Freelance Data Scientist</td><td class="duration">2016 - present</td></tr>
+<tr><td><a href="http://www.ixperience.co.za">iXperience</a></td><td class="position">Head Teacher (Data Science)</td><td class="duration">2017</td></tr>
+<tr><td><a href="http://capetown2017.satrdays.org/">#satRdayCapeTown</a></td><td class="position">Conference Organiser</td><td class="duration">2017</td></tr>
+<tr><td><a href="http://www.derivco.com/">Derivco</a></td><td class="position">Senior Data Scientist</td><td class="duration">2013 - 2017</td></tr>
+<tr><td><a href="http://www.ixperience.co.za">iXperience</a></td><td class="position">Head Teacher (Data Science)</td><td class="duration">2016</td></tr>
+<tr><td><a href="https://birkeland.uib.no/">University of Bergen</a> (Norway)</td><td class="position">Researcher</td><td class="duration">2013 - 2014</td></tr>
+<tr><td><a href="http://scp.ukzn.ac.za/">University of KwaZulu-Natal</a> (UKZN)</td><td class="position">Honorary Senior Lecturer</td><td class="duration">2004 - 2015</td></tr>
 <!--
 Could add: * List of students supervised.
 -->
-<tr><th><a href="http://www.sansa.org.za/">South African National Space Agency</a></th><th>Senior Researcher</th><td class="duration">2010 - 2013</td></tr>
-<tr><th>Hermanus Magnetic Observatory (HMO)</th><th>Postdoctoral Researcher</th><td class="duration">2006 - 2010</td></tr>
-<tr><th>University of Natal</th><th>Antarctic Research Fellow</th><td class="duration">2001 - 2004</td></tr>
-<tr><th><a href="https://www.sckcen.be/">SCK&middot;CEN</a> (Belgium)</th><th>Scientist</th><td class="duration">2000 - 2001</td></tr>
-<tr><th>Blue Star Consultants (Netherlands)</th><th>Consultant</th><td class="duration">1999 - 2000</td></tr>
-<tr><th><a href="http://www.necsa.co.za/">Atomic Energy Corporation</a></th><th>Scientist</th><td class="duration">1995 - 1999</td></tr>
-<tr><th><a href="https://www.environment.gov.za/">Department of Environmental Affairs</a></th><th>Antarctic Expedition Member</th><td class="duration">1994 - 1995</td></tr>
+<tr><td><a href="http://www.sansa.org.za/">South African National Space Agency</a></td><td class="position">Senior Researcher</td><td class="duration">2010 - 2013</td></tr>
+<tr><td>Hermanus Magnetic Observatory (HMO)</td><td class="position">Postdoctoral Researcher</td><td class="duration">2006 - 2010</td></tr>
+<tr><td>University of Natal</td><td class="position">Antarctic Research Fellow</td><td class="duration">2001 - 2004</td></tr>
+<tr><td><a href="https://www.sckcen.be/">SCK&middot;CEN</a> (Belgium)</td><td class="position">Scientist</td><td class="duration">2000 - 2001</td></tr>
+<tr><td>Blue Star Consultants (Netherlands)</td><td class="position">Consultant</td><td class="duration">1999 - 2000</td></tr>
+<tr><td><a href="http://www.necsa.co.za/">Atomic Energy Corporation</a></td><td class="position">Scientist</td><td class="duration">1995 - 1999</td></tr>
+<tr><td><a href="https://www.environment.gov.za/">Department of Environmental Affairs</a></td><td class="position">Antarctic Expedition Member</td><td class="duration">1994 - 1995</td></tr>
 </table>
 
 <p>More details on each of these positions can be found on <a target="_blank" href="http://www.linkedin.com/in/datawookie">LinkedIn</a>.</p>
