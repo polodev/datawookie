@@ -1,7 +1,7 @@
 languageCode = "en-us"
 title = "datawookie"
 theme = "wookie"
-baseurl = "https://example.com"
+baseurl = "https://datawookie.netlify.com/"
 
 # Limit number of entries in RSS feeds.
 #
