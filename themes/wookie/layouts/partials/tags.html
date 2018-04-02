@@ -1,5 +1,6 @@
-<p class="tags">
-  Tags: {{ range . }}
-  <a href="{{ "/tags/" | absURL }}{{ . | urlize | lower }}">{{ . }}</a>
+<span class="tags">
+  <i class="fa fa-tags" style="vertical-align: middle; line-height: inherit;"></i>
+  {{ range . }}
+  <a href="{{ "/tags/" | absURL }}{{ . | urlize | lower }}" class="btn btn-warning btn-sm">{{ . }}</a>
   {{ end }}
-</p>
+</span>

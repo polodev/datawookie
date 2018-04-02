@@ -2,16 +2,18 @@
 {{ if hasPrefix .URL "/blog/" }}
   {{ range sort .Paginator.Pages }}
     <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-    <p class="timestamp">{{ .Date.Format "2006-01-02" }}</p>
+    <p>
+      <span class="timestamp">{{ .Date.Format "2006-01-02" }}</span>
+      {{ if .Params.tags }}
+        &nbsp;&nbsp;&nbsp;{{ partial "tags" .Params.tags }}
+      {{ end }}
+    </p>
     <div class="content">
     {{ .Summary | plainify | safeHTML }}
     {{ if .Truncated }}
       ... <a href="{{ .Permalink }}">Read more &raquo;</a>
     {{ end }}
     </div>
-    {{ if .Params.tags }}
-      {{ partial "tags" .Params.tags }}
-    {{ end }}
   {{ end }}
   {{ partial "pagination.html" . }}
 {{ end }}
