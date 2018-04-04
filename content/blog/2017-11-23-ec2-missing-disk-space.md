@@ -1,12 +1,7 @@
 ---
 author: Andrew B. Collier
-categories:
-- Cloud
+categories: ["AWS"]
 date: 2017-11-23T07:30:00Z
-excerpt_separator: <!-- more -->
-tags:
-- AWS
-- EC2
 title: EC2 Missing Disk Space
 url: /2017/11/23/ec2-missing-disk-space/
 ---

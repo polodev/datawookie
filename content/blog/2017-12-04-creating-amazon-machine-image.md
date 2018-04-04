@@ -1,10 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2017-12-04T03:00:00Z
-excerpt_separator: <!-- more -->
-tags:
-- Cloud
-- AWS
+tags: ["AWS"]
 title: Creating an Amazon Machine Image
 url: /2017/12/04/creating-amazon-machine-image/
 ---
@@ -39,7 +36,7 @@ $ sudo apt-get install -y make gcc linux-headers-$(uname -r)
 
 ## Installing NVIDIA Driver
 
-{% comment %}
+{{< comment >}}
 You can install these drivers from a PPA?
 
 Don't we have a post about installing these drivers already? I think it noted that there was a problem suspending laptop afterwards.
@@ -47,7 +44,7 @@ Don't we have a post about installing these drivers already? I think it noted th
 {{< highlight bash >}}
 sudo apt-get install nvidia-cuda-dev nvidia-cuda-toolkit nvidia-nsight
 {{< / highlight >}}
-{% endcomment %}
+{{< /comment >}}
 
 Download the NVIDIA drivers and run the installer.
 
@@ -115,14 +112,12 @@ The process of creating an AMI takes place on the EC2 dashboard, so head back th
 2. From the Actions dropdown, select Image and then Create Image.
 3. Give it a suitable name and description.
 
-![]({{ site.baseurl }}/static/img/2017/12/aws-ec2-create-image.png)
+	![](/img/2017/12/aws-ec2-create-image.png)
 
-{:start="4"}
 4. Press <kbd class="bg-primary">Create Image</kbd>.
 
-![]({{ site.baseurl }}/static/img/2017/12/aws-ec2-pending-image.png)
-
-{:start="5"}
+	![](/img/2017/12/aws-ec2-pending-image.png)
+	
 5. Select AMIs from the menu on the left. The newly created AMI should now be listed.
 6. At this stage you can safely terminate the instance we've been working on.
 

@@ -1,9 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2017-11-27T07:00:00Z
-excerpt_separator: <!-- more -->
-tags:
-- OSRM
+tags: ["OSRM"]
 title: Using Large Maps with OSRM
 url: /2017/11/27/osrm-working-with-large-maps/
 ---
@@ -19,7 +17,7 @@ To illustrate, let's download two sets of data which might be considered "large"
 {{< highlight bash >}}
 wget http://download.geofabrik.de/north-america-latest.osm.pbf
 wget http://download.geofabrik.de/north-america-latest.osm.bz2
-{{< / highlight >}}
+{{< /highlight >}}
 
 The second of these files is a compressed XML file, which is what I have been routinely using before. However, as we will see shortly, the sheer size of this file makes it completely impractical!
 
@@ -33,7 +31,7 @@ This operation is going to consume memory like a beast! So unless you 're runnin
 
 {{< highlight bash >}}
 osrm-extract north-america-latest.osm.pbf
-{{< / highlight >}}
+{{< /highlight >}}
 
 And, yes, it's also going to take some time. So get busy doing something else. Waiting will be frustrating.
 
@@ -43,7 +41,7 @@ When `osrm-extract` is done, the next step is to run `osrm-contract` on the resu
 
 {{< highlight bash >}}
 osrm-contract north-america-latest.osrm
-{{< / highlight >}}
+{{< /highlight >}}
 
 Again this is going chug away for a while. Go for a run. Make dinner. Knit.
 
@@ -55,6 +53,6 @@ At this stage you're ready to fire up the routing server.
 
 {{< highlight bash >}}
 osrm-routed north-america-latest.osrm
-{{< / highlight >}}
+{{< /highlight >}}
 
 Go head and start submitting requests on port 5000. Your lengthy labours will start paying off.
