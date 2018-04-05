@@ -30,7 +30,7 @@ julia> methods(GeographicLocation)
 # 2 methods for generic function "GeographicLocation":
 GeographicLocation(latitude::Float64,longitude::Float64,altitude::Float64)
 GeographicLocation(latitude,longitude,altitude)
-{{< / highlight >}}
+{{< /highlight >}}
   
 Creating instances of this new type is simply a matter of calling the constructor. The second instance below clones the type of the first instance. I don't believe I've seen that being done with another language. (That's not to say that it's not possible elsewhere! I just haven't seen it.)
   
@@ -41,7 +41,7 @@ julia> typeof(g1) # Interrogate type
 GeographicLocation (constructor with 3 methods)
 julia> g2 = typeof(g1)(5, 25, 165) # Create another object of the same type.
 GeographicLocation(5.0,25.0,165.0)
-{{< / highlight >}}
+{{< /highlight >}}
   
 We can list, access and modify instance attributes.
   
@@ -57,7 +57,7 @@ julia> g1.longitude
 30.0
 julia> g1.latitude = -25 # Attributes are mutable
 -25.0
-{{< / highlight >}}
+{{< /highlight >}}
 
 Additional "outer" constructors can provide alternative ways to instantiate the type.
   
@@ -66,7 +66,7 @@ julia> GeographicLocation(lat::Real, lon::Real) = GeographicLocation(lat, lon, 0
 GeographicLocation (constructor with 3 methods)
 julia> g3 = GeographicLocation(-30, 30)
 GeographicLocation(-30.0,30.0,0.0)
-{{< / highlight >}}
+{{< /highlight >}}
 
 Of course, we can have collections of composite types. In fact, these composite types have essentially all of the rights and privileges of the built in types.
   
@@ -76,7 +76,7 @@ julia> locations = [g1, g2, g3]
  GeographicLocation(-25.0,30.0,15.0)
  GeographicLocation(5.0,25.0,165.0)
  GeographicLocation(-30.0,30.0,0.0)
-{{< / highlight >}}
+{{< /highlight >}}
 
 The `GeographicLocation` type declared above is a "concrete" type because it has attributes and can be instantiated. You cannot derive subtypes from a concrete type. You can, however, declare an abstract type which acts as a place holder in the type hierarchy. As opposed to concrete types, an abstract type cannot be instantiated but it can have subtypes.
   
@@ -88,10 +88,10 @@ julia> Mammal() # You can't instantiate an abstract type!
 ERROR: type cannot be constructed
 julia> Cow()
 Cow()
-{{< / highlight >}}
+{{< /highlight >}}
 
 The `immutable` keyword will create a type where the attributes cannot be modified after instantiation.
 
 Additional ramblings and examples of composite types can be found on [github](https://github.com/DataWookie/MonthOfJulia). Also I've just received an advance copy of [Julia in Action](https://www.manning.com/books/julia-in-action) by Chris von Csefalvay which I'll be reviewing over the next week or so.
 
-<img src="{{ site.baseurl }}/static/img/2015/09/Learn_Julia_meap.jpg" >
+<img src="/img/2015/09/Learn_Julia_meap.jpg" >

@@ -20,7 +20,7 @@ In a [previous post](http://www.exegetic.biz/blog/2016/08/plos-subjects-gatherin
 * Section 14.2 of [The Elements of Statistical Learning](http://statweb.stanford.edu/~tibs/ElemStatLearn/) (2009) by Hastie, Tibshirani and Friedman; and 
 * [Introduction to arules](https://cran.r-project.org/web/packages/arules/vignettes/arules.pdf) by Hahsler, Grün, Hornik and Buchta.
 
-<img src="{{ site.baseurl }}/static/img/2016/08/association-rule-image.png">
+<img src="/img/2016/08/association-rule-image.png">
 
 ## Terminology
 
@@ -49,7 +49,7 @@ The arules package derives Association Rules from a Transaction Matrix. The form
 4 10.1371/journal.pbio.0000007 PLOS Biology   Endangered species     2
 5 10.1371/journal.pbio.0000007 PLOS Biology        Plant fossils     2
 6 10.1371/journal.pbio.0000007 PLOS Biology    Pleistocene epoch     1
-{{< / highlight >}}
+{{< /highlight >}}
 
 For the purposes of the arules package the `ngCMatrix` needs to have items (in this case case subjects) as rows and transactions (in this case articles) as columns.
 
@@ -66,7 +66,7 @@ For the purposes of the arules package the `ngCMatrix` needs to have items (in t
 [1] "ngCMatrix"
 attr(,"package")
 [1] "Matrix"
-{{< / highlight >}}
+{{< /highlight >}}
 
 There are 185984 articles and 9357 subjects. Next we coerce this into a Transactions Matrix.
 
@@ -78,7 +78,7 @@ There are 185984 articles and 9357 subjects. Next we coerce this into a Transact
 [1] "transactions"
 attr(,"package")
 [1] "arules"
-{{< / highlight >}}
+{{< /highlight >}}
 
 Here's some summary information. We see that the vast majority of articles are associated with eight subjects.
 
@@ -113,7 +113,7 @@ includes extended transaction information - examples:
 1 10.1371/annotation/008b05a8-229b-4aca-94ae-91e6dd5ca5ba
 2 10.1371/annotation/00a3b22e-36a9-4d51-89e5-1e6561e7a1e9
 3 10.1371/annotation/00d17a45-7b78-4fd5-9a9a-0f2e49b04eee
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Generating Rules (Default Settings)
 
@@ -140,7 +140,7 @@ creating transaction tree ... done [0.01s].
 checking subsets of size 1 done [0.00s].
 writing ... [0 rule(s)] done [0.00s].
 creating S4 object  ... done [0.01s].
-{{< / highlight >}}
+{{< /highlight >}}
 
 Zero rules! Well, that's a little disappointing. But not entirely surprising: the default minimum thresholds on support (0.1) and confidence (0.8) are rather conservative. (I'll explain what support and confidence mean shortly.) We'll relax them in order to at least generate a decent selection of rules.
 
@@ -169,7 +169,7 @@ creating transaction tree ... done [0.10s].
 checking subsets of size 1 2 3 4 done [0.04s].
 writing ... [35 rule(s)] done [0.00s].
 creating S4 object  ... done [0.04s].
-{{< / highlight >}}
+{{< /highlight >}}
 
 Below is some summary information on those rules. We see that the largest rule length (total number of items on lhs and rhs of rule) is only 3.
 
@@ -196,7 +196,7 @@ summary of quality measures:
 mining info:
             data ntransactions support confidence
  subjects.matrix        185984   0.002       0.75
-{{< / highlight >}}
+{{< /highlight >}}
 
 This seems like a good time to peruse the rules themselves. To see the details we need to use `inspect()`.
 
@@ -238,7 +238,7 @@ This seems like a good time to peruse the rules themselves. To see the details w
 33 {Cytokines,Cytotoxic T cells}           => {T cells}                                  0.0028981 0.96078     27.6055
 34 {Enzyme-linked immunoassays,Vaccines}   => {Antibodies}                               0.0026293 0.77619     34.6185
 35 {Gene regulation,Microarrays}           => {Gene expression}                          0.0041885 0.89437      9.3349
-{{< / highlight >}}
+{{< /highlight >}}
 
 Each of the rules consists of two itemsets, a lhs and a rhs, with the implication that if the lhs itemset is selected then so too is the rhs itemset.
 
@@ -260,7 +260,7 @@ The five rules below are those with the highest support. The rule {Cytotoxic T c
 23 {Malarial parasites}             => {Malaria}            0.0051617 0.79668    74.8332
 22 {Multiple alignment calculation} => {Sequence alignment} 0.0050811 0.85987    30.8255
 35 {Gene regulation,Microarrays}    => {Gene expression}    0.0041885 0.89437     9.3349
-{{< / highlight >}}
+{{< /highlight >}}
 
 Support does not directly indicate the strength of the rule, just how often the components of the rule are present in the data. However, having a decent level of support for a rule is important because it indicates what proportion of the data contributed to deriving that rule. Obviously if a rule is based on only a few transactions then it is not likely to be very robust.
 
@@ -278,7 +278,7 @@ The five rules below are those with the highest confidence. For example, we see 
 1  {Memory T cells}                    => {T cells}                       0.0021292 0.98020     28.163
 32 {Cytotoxic T cells,Immune response} => {T cells}                       0.0033121 0.96100     27.612
 33 {Cytokines,Cytotoxic T cells}       => {T cells}                       0.0028981 0.96078     27.606
-{{< / highlight >}}
+{{< /highlight >}}
 
 ### Lift
 
@@ -294,7 +294,7 @@ A lift of 1 indicates that the antecedent and consequent are independent. In the
 8  {Face recognition}           => {Face}               0.0021400 0.77282    191.39
 14 {Prostate gland}             => {Prostate cancer}    0.0030218 0.79603    130.79
 29 {Malaria,Parasitic diseases} => {Malarial parasites} 0.0030863 0.82117    126.74
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Rule Selection
 
@@ -321,14 +321,14 @@ creating transaction tree ... done [0.13s].
 checking subsets of size 1 2 3 4 done [0.07s].
 writing ... [984 rule(s)] done [0.00s].
 creating S4 object  ... done [0.04s].
-{{< / highlight >}}
+{{< /highlight >}}
 
 You can use the `subset()` function to focus on particular rules of interest. What other subjects are commonly associated with "HIV"?
 
 {{< highlight r >}}
 > subset(rules, subset = lhs %in% "HIV")
 set of 19 rules 
-{{< / highlight >}}
+{{< /highlight >}}
 
 So there is quite a selection of them. We can narrow that down by focusing on those which have a relatively high level of confidence.
 
@@ -339,7 +339,7 @@ So there is quite a selection of them. We can narrow that down by focusing on th
 685 {HIV,Tuberculosis diagnosis and management} => {Tuberculosis}   0.0010646 0.92958    90.802
 694 {HIV,HIV epidemiology}                      => {HIV infections} 0.0020432 0.53221    58.709
 844 {Cytotoxic T cells,HIV}                     => {T cells}        0.0010108 0.97917    28.134
-{{< / highlight >}}
+{{< /highlight >}}
 
 Selection criteria are applied in `subset()` using the operators `%in%` (does item appear in itemset?), `%pin%` (like `%in%` but with partial matching) and `%ain%` (match all items specified) to operate on lhs and rhs. Arithmetic comparisons are used on the rule metrics.
 
@@ -350,7 +350,7 @@ Here's another example which indicates that articles with subject "Dementia" wil
     lhs           rhs                    support   confidence lift  
 101 {Dementia} => {Alzheimer disease}    0.0011022 0.53385    67.681
 102 {Dementia} => {Cognitive impairment} 0.0011399 0.55208    55.502
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Symmetry
 
@@ -363,7 +363,7 @@ It might have occurred to you that these rules should be symmetric: if X &rarr; 
 166 {Fungal genomics} => {Fungal genetics} 0.0010646 0.37079    135.482
 167 {Fungal genetics} => {Fungi}           0.0016453 0.60118     94.195
 168 {Fungi}           => {Fungal genetics} 0.0016453 0.25779     94.195
-{{< / highlight >}}
+{{< /highlight >}}
 
 The rules {Fungal genetics} &rarr; {Fungi} and {Fungi} &rarr; {Fungal genetics} form one symmetric pair. Note that the support and lift are the same for both rules, but that the first rule has a higher confidence than the second. This is due to different supports for the antecedent in each case. Whereas "Fungal genetics" is a subject for 509 articles, "Fungi" appears as a subject for 1187 articles. The corresponding values of support are 0.0027368 and 0.0063823 respectively. Since "Fungi" is more than twice as common, the confidence in the second rule is diminished significantly. This emphasises the fact that rules with the highest confidence are those for which the support for the antecedent is almost as high as the support for the rule itself.
 

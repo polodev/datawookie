@@ -37,7 +37,7 @@ After writing my previous post, [Mortality by Year and Age](http://www.exegetic.
 136 3   F  99214  84.746 0.00085418
 137 4   F  99129  62.055 0.00062600
 138 5   F  99067  54.475 0.00054988
-{{< / highlight >}}
+{{< /highlight >}}
 
 The columns in the data above should be interpreted as follows:
 
@@ -47,7 +47,7 @@ The columns in the data above should be interpreted as follows:
 
 A plot gives a high level overview of the data. Below `lx` is plotted as a function of age. Click on the image to access an interactive [Plotly](https://plot.ly/~collierab/463/life-table/) version. The cohort size has been renormalised so that `lx` is expressed as a percent. It's readily apparent that the attrition rate is much higher for males than females, and that very few people survive beyond the age of 105.
 
-[<img src="{{ site.baseurl }}/static/img/2016/07/life-table.png" >](https://plot.ly/~collierab/463/life-table/)
+[<img src="/img/2016/07/life-table.png" >](https://plot.ly/~collierab/463/life-table/)
 
 Using these data we can also calculate some related conditional probabilities. For example, what is the probability that a person aged 70 will live for at least another 5 years?
 
@@ -55,7 +55,7 @@ Using these data we can also calculate some related conditional probabilities. F
 > survival(70, 5)
       F       M
 0.87916 0.80709
-{{< / highlight >}}
+{{< /highlight >}}
 
 Another example, what is the probability that a person aged 70 will live for at least another 5 years but then die in the 10 years after that?
 
@@ -63,7 +63,7 @@ Another example, what is the probability that a person aged 70 will live for at 
 > survival(70, 5, 10)
       F       M
 0.37472 0.46714
-{{< / highlight >}}
+{{< /highlight >}}
 
 Interesting stuff! Everything indicates that in terms of longevity, females have the upper hand.
 
@@ -79,7 +79,7 @@ Well, yes and no. In an absolute sense your risk of dying after the age of 100 i
 > survival(100)
       F       M
 0.65813 0.60958
-{{< / highlight >}}
+{{< /highlight >}}
 
 So men aged 100 have 39% probability of dying before reaching the age of 101, while the probability for women is 34%.
 

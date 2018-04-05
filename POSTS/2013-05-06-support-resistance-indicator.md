@@ -19,7 +19,7 @@ I was recently browsing through the variety of of [MetaTrader](http://www.metatr
 
 Sample output from v1.2 of my support-resistance indicator is shown below for the weekly chart of GBPUSD.
 
-<img src="{{ site.baseurl }}/static/img/2013/05/support-resistance-GBPUSD-W1.png" >
+<img src="/img/2013/05/support-resistance-GBPUSD-W1.png" >
 
 I am pretty happy with this as a starting point. At present it caters for
 

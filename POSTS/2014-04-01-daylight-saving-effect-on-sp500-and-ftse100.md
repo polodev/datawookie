@@ -60,7 +60,7 @@ The first thing that we need is the set of dates for the DST transitions. These 
 6 28 March 1920   25 October 1920
 7  3 April 1921    3 October 1921
 
-{{< / highlight >}}
+{{< /highlight >}}
 
 These dates are the Sundays on which the transitions took place. We are interested in the effect on the following day, so we advance them by one day.
 
@@ -79,7 +79,7 @@ These dates are the Sundays on which the transitions took place. We are interest
 5 1919-03-31 1919-09-30
 6 1920-03-29 1920-10-26
 7 1921-04-04 1921-10-04
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Grabbing Data on Market Indices
 
@@ -125,7 +125,7 @@ We will take a look at the effect in the British and American stock market, usin
 4 1984-04-06 -0.00535293
 5 1984-04-09  0.00036486
 6 1984-04-10  0.00793289
-{{< / highlight >}}
+{{< /highlight >}}
 
 We now have two data structures, one for each index. To make the analysis easier, we will consolidate these into a single structure.
 
@@ -146,7 +146,7 @@ We now have two data structures, one for each index. To make the analysis easier
 4 1950 1950-01-09  0.0058893      NA
 5 1950 1950-01-10 -0.0029274      NA
 6 1950 1950-01-11  0.0035232      NA
-{{< / highlight >}}
+{{< /highlight >}}
 
 The missing values for FTSE100 are because our data for this index only begin in 1984. The data are not currently in a "tidy" format, but that is easily remedied.
 
@@ -164,7 +164,7 @@ The missing values for FTSE100 are because our data for this index only begin in
 4 1950 1950-01-09 SP500  0.0058893
 5 1950 1950-01-10 SP500 -0.0029274
 6 1950 1950-01-11 SP500  0.0035232
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Plotting Indices
 
@@ -177,9 +177,9 @@ Let's take a global look at the distribution of the returns.
 +   scale_x_continuous(labels = percent_format()) +
 +   facet_wrap(~ index, ncol = 1) +
 +   theme_classic()
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2014/03/histogram-returns.png">
+<img src="/img/2014/03/histogram-returns.png">
 
 That's not terribly illuminating. The distributions both look more or less symmetric around 0%. There are fewer counts for the FTSE100 because the data does not go as far back as the S&P500. The scale on the x-axis hints that there are some large outliers, but they are rare and don't even show up on the histograms.
 
@@ -191,9 +191,9 @@ That's not terribly illuminating. The distributions both look more or less symme
 +   scale_y_continuous(labels = percent_format()) +
 +   facet_wrap(~ index, ncol = 1) +
 +   theme_classic()
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2014/03/boxplot-returns-year.png">
+<img src="/img/2014/03/boxplot-returns-year.png">
 
 Now that's a lot more interesting. We can see that the level of variability changes appreciably from year to year. 1987 and 2008 are particularly volatile years. And the massive negative return in 1987 is the Black Monday event of 19 October 1987.
 
@@ -219,7 +219,7 @@ Okay, let's focus our attention on the returns for the DST transitions. First we
 4 1951 1951-04-16 began   SP500 -0.0022635
 5 1952 1952-04-21 began   SP500  0.0080851
 6 1952 1952-04-21 began FTSE100         NA
-{{< / highlight >}}
+{{< /highlight >}}
 
 We are going to make comparisons of the returns on the DST transition days to the average returns for the corresponding year. So we gather the summary parameters for each of the indices, grouped by year.
 
@@ -238,7 +238,7 @@ We are going to make comparisons of the returns on the DST transition days to th
 4 1951 FTSE100        NaN        NA
 5 1952   SP500 0.00045787 0.0049775
 6 1952 FTSE100        NaN        NA
-{{< / highlight >}}
+{{< /highlight >}}
 
 Next we merge these back into the DST data and form a new standardised variable for the returns.
 
@@ -257,7 +257,7 @@ Next we merge these back into the DST data and form a new standardised variable 
 4 1950   SP500 1950-10-23 DST ended  0.0000000 0.00086731 0.009405 -0.092218
 5 1951 FTSE100 1951-04-16 DST began         NA        NaN       NA        NA
 6 1951 FTSE100 1951-10-22 DST ended         NA        NaN       NA        NA
-{{< / highlight >}}
+{{< /highlight >}}
 
 Finally we are ready to make a plot.
 
@@ -272,9 +272,9 @@ Finally we are ready to make a plot.
 +   scale_x_continuous(limits = c(-6, 3)) +
 +   facet_grid(type ~ index) +
 +   theme_classic()
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2014/03/histogram-returns-index-type.png">
+<img src="/img/2014/03/histogram-returns-index-type.png">
 
 For each index there are two panels, the top one indicates the distribution of standardised returns for the beginning of DST and the lower one for the end of DST. It's interesting to note that there is a sharp peak at zero for both indices at the beginning of DST. This peak is absent at the end of DST.
 
@@ -307,7 +307,7 @@ The density curves all indicate that the distributions are negatively skewed. Th
 22 2001 FTSE100 2001-10-29 DST ended -0.0197934 -0.00061135 0.0132487 -1.44785
 23 1995 FTSE100 1995-10-23 DST ended -0.0056034  0.00075429 0.0061787 -1.02897
 24 1993 FTSE100 1993-10-25 DST ended -0.0044389  0.00074358 0.0062907 -0.82383
-{{< / highlight >}}
+{{< /highlight >}}
 
 So, for both indices the large outliers at the end of DST occurred on 1987-10-26 and 1997-10-27. These dates agree with the outlier dates identified by Pinegar [2].
 
@@ -322,7 +322,7 @@ The skewed distributions only result in an appreciable shift in the median (indi
 2   SP500 DST ended 0.017311    0.019783
 3 FTSE100 DST began 0.637718    0.823729
 4 FTSE100 DST ended 0.723530    0.717209
-{{< / highlight >}}
+{{< /highlight >}}
 
 The resulting p-values agree with the qualitative analysis: there is only a significant difference (at the 5% level) for S&P500 at the end of DST (agreeing with [1]).
 
@@ -330,7 +330,7 @@ The resulting p-values agree with the qualitative analysis: there is only a sign
 
 As it happens, we have just had a Spring DST transition. Below are the data for the S&P500 and FTSE100 indices for the last two trading days, retrieved from Yahoo! Finance.
 
-<img src="{{ site.baseurl }}/static/img/2014/04/indices-010414.png">
+<img src="/img/2014/04/indices-010414.png">
 
 Let's have a look at the returns.
 
@@ -339,7 +339,7 @@ Let's have a look at the returns.
 [1]          NA 0.007924118
 > fractional.returns(c(6615.60, 6598.40))
 [1]           NA -0.002599915
-{{< / highlight >}}
+{{< /highlight >}}
 
 That's interesting: the S&P500 index experienced a positive return, while the return on the FTSE100 was negative. We know from the analysis above that the return associated with the DST transition can go either way. We also know that the significant effect on the S&P500 is observed for the Autumn rather than Spring transition, so the results from the weekend are not surprising.
 

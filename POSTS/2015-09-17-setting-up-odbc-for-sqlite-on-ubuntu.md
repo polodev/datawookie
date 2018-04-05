@@ -21,7 +21,7 @@ First install the SQLiteODBC and unixODBC packages. Have a quick look at the doc
 
 {{< highlight bash >}}
 $ sudo apt-get install libsqliteodbc unixodbc
-{{< / highlight >}}
+{{< /highlight >}}
 
 After the install you'll have a a `/etc/odbcinst.ini` file which will look something like this:
 
@@ -37,7 +37,7 @@ Description=SQLite3 ODBC Driver
 Driver=libsqlite3odbc.so
 Setup=libsqlite3odbc.so
 UsageCount=1
-{{< / highlight >}}
+{{< /highlight >}}
 
 Next you need to set up a [DSN](https://en.wikipedia.org/wiki/Data_source_name) entry for your SQLite database. You'll edit your `~/.odbc.ini` file to resemble this:
 
@@ -47,7 +47,7 @@ Description = Password Database
 Driver = SQLite3
 Database = /home/colliera/passwd.sqlite
 Timeout = 2000
-{{< / highlight >}}
+{{< /highlight >}}
 
 Obviously the name, description and path for your database file will differ.
 
@@ -80,4 +80,4 @@ SQL> select username, UID, GID from passwd limit 10;
 +---------------------+---------------------+---------------------+
 SQLRowCount returns 0
 10 rows fetched
-{{< / highlight >}}
+{{< /highlight >}}

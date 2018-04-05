@@ -17,13 +17,13 @@ I started with the Body Measurements data (DS12), which I downloaded in tab-deli
 > DS0012 <- read.delim("data/DS0012/25505-0012-Data.tsv")
 > dim(DS0012)
 [1] 9762 65
-{{< / highlight >}}
+{{< /highlight >}}
 
 So there are 9762 records, each of which has 65 fields. We will only retain a subset of those (sequence number, gender, age, mass and height). Although the field name for mass suggests that it might in fact be weight (BMXWT), it is actually mass in kilograms. Height is given in centimetres.
 
 {{< highlight r >}}
 > DS0012 = DS0012[,c("SEQN", "RIAGENDR", "RIDAGEYR", "BMXWT", "BMXHT")]
-{{< / highlight >}}
+{{< /highlight >}}
 
 There is some missing data (mass and height fields), which we remove.
 
@@ -40,20 +40,20 @@ There is some missing data (mass and height fields), which we remove.
 > DS0012 = subset(DS0012, !(is.na(BMXWT) | is.na(BMXHT)))
 > dim(DS0012)
 [1] 8861 6
-{{< / highlight >}}
+{{< /highlight >}}
 
 So, we lost around 10% of the original data, but at least what we are left with is clean. Next we change the column labels to something a little less cryptic and convert the units for height to metres
 
 {{< highlight r >}}
 > names(DS0012) <- c("id", "gender", "age", "mass", "height")
 > DS0012$height = DS0012$height / 100
-{{< / highlight >}}
+{{< /highlight >}}
 
 Lastly we add in a derived column for [Body Mass Index (BMI)](http://en.wikipedia.org/wiki/Body_mass_index). There was already BMI data in the original data set, however, it is illustrative to calculate it again here.
 
 {{< highlight r >}}
 > DS0012 = transform(DS0012, BMI = mass / height**2)
-{{< / highlight >}}
+{{< /highlight >}}
 
 This is what the final data look like:
 
@@ -66,6 +66,6 @@ This is what the final data look like:
 5 41479      1  52  65.7  1.544 27.55946
 6 41480      1   6  27.0  1.227 17.93390
 7 41481      1  21  77.9  1.827 23.33782
-{{< / highlight >}}
+{{< /highlight >}}
 
 Next installment: defining some meaningful categories.

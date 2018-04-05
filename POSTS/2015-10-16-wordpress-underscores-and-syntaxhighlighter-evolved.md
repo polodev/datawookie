@@ -48,4 +48,4 @@ Fortunately there's a quick fix: in `wp-content/plugins/syntaxhighlighter/syntax
   -o-box-shadow: none !important;
   box-shadow: none !important;
 }
-{{< / highlight >}}
+{{< /highlight >}}

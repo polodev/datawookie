@@ -23,7 +23,7 @@ Following on from my [previous post](http://www.exegetic.biz/blog/2014/04/hazard
 
 The relationship between the eccentric and true anomalies are depicted in the figure below (courtesy of Wikipedia). We are thinking about the object located at P, which is moving along an elliptical orbit (the red curve). The true anomaly, $$ \theta $$, is the angular position of P measured around the focus of the orbit (the location of the Sun in this case) relative to the direction of periapsis (the extension to the right of the line CF). The eccentric anomaly, E, is measured relative to the same line, but the angle is taken at the centre of the ellipse. The mean anomaly, M, does not have a direct geometric interpretation. Although it has a value between 0 and $$ 2\pi $$, it is not an angle. The mean anomaly relates position and time via Kepler's Second Law, and is proportional to the area swept out by the line FP.
 
-[<img src="{{ site.baseurl }}/static/img/2014/04/Eccentric_and_true_anomaly.png">](http://en.wikipedia.org/wiki/File:Eccentric_and_true_anomaly.PNG)
+[<img src="/img/2014/04/Eccentric_and_true_anomaly.png">](http://en.wikipedia.org/wiki/File:Eccentric_and_true_anomaly.PNG)
 
 ## Kepler's Equation
 
@@ -46,7 +46,7 @@ Recall that our NEO orbital data look like this:
 4  100926 (1998 MQ) 56800 1.782705 0.4077730 0.42286374 2.4205309 3.859910 3.4286821 1.0558 2.51 2.38 16.7 0.128731   AMO  FALSE
 5  101869 (1999 MM) 56800 1.624303 0.6107117 0.08316718 4.6884786 1.938777 0.7584286 0.6323 2.62 2.07 19.3 0.001741   APO   TRUE
 6 101873 (1999 NC5) 56800 2.029466 0.3933192 0.79884961 5.1531708 2.248914 5.6545349 1.2312 2.83 2.89 16.3 0.437678   AMO  FALSE
-{{< / highlight >}}
+{{< /highlight >}}
 
 We are going to use the Newton-Raphson method via nleqslv() to solve Kepler's Equation for each record.
 
@@ -72,7 +72,7 @@ We are going to use the Newton-Raphson method via nleqslv() to solve Kepler's Eq
 4         (1985 WA) 5.814292
 5         (1986 NA) 2.591137
 6        (1987 SF3) 5.268315
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Plotting the Results
 
@@ -91,9 +91,9 @@ ggplot(orbits, aes(x = M / pi * 180, y = E / pi * 180, colour = e)) +
   scale_x_continuous(labels = degrees, breaks = seq(0, 360, 90)) +
   scale_y_continuous(labels = degrees, breaks = seq(0, 360, 90)) +
   theme_classic()
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2014/04/mean-eccentric-anomaly.png">
+<img src="/img/2014/04/mean-eccentric-anomaly.png">
 
 As one would expect, when the eccentricity is zero (a circular orbit) the relationship between the two anomalies is linear.
 
@@ -103,9 +103,9 @@ Now it is a simple matter to get the true anomaly as well.
 
 {{< highlight r >}}
 > orbits = transform(orbits, theta = 2 \* atan2(sqrt(1 + e) \* sin (E/2), sqrt(1 - e) * cos (E/2)))
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2014/04/eccentric-true-anomaly.png">
+<img src="/img/2014/04/eccentric-true-anomaly.png">
 
 ## The Next Step
 

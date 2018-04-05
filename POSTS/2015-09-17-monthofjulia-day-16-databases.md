@@ -21,7 +21,7 @@ url: /2015/09/17/monthofjulia-day-16-databases/
 
 <!--more-->
 
-<img src="{{ site.baseurl }}/static/img/2015/09/Julia-Logo-Database.png">
+<img src="/img/2015/09/Julia-Logo-Database.png">
 
 [Yesterday](http://www.exegetic.biz/blog/2015/09/monthofjulia-day-15-time-series/) we looked at how time series data can be sucked into Julia from [Quandl](https://www.quandl.com/). What happens if your data are sitting in a database? No problem, Julia can handle that too. There are a number of database packages available. I'll be focusing on [`SQLite`](https://github.com/quinnj/SQLite.jl) and [`ODBC`](https://github.com/quinnj/ODBC.jl), but it might be worthwhile checking out [`JDBC`](https://github.com/aviks/JDBC.jl), [`LevelDB`](https://github.com/jerryzhenleicai/LevelDB.jl) and [`LMDB`](https://github.com/wildart/LMDB.jl) too.
 
@@ -33,7 +33,7 @@ The first step towards using SQLite from Julia is to load the package.
 
 {{< highlight julia >}}
 julia> using SQLite
-{{< / highlight >}}
+{{< /highlight >}}
 
 Next, for illustrative purposes, we'll create a database (which exists as a single file in the working directory) and add a table which we'll populate directly from a delimited file.
 
@@ -46,7 +46,7 @@ julia> create(db, "passwd", readdlm("/etc/passwd", ':'), ["username", "password"
 | Row | "Rows Affected" |
 |-----|-----------------|
 | 1   | 0               |
-{{< / highlight >}}
+{{< /highlight >}}
 
 Then the interesting bit: we execute a simple query.
 
@@ -65,13 +65,13 @@ julia> query(db, "SELECT username, homedir FROM passwd LIMIT 10;")
 | 8   | "lp"       | "/var/spool/lpd"  |
 | 9   | "mail"     | "/var/mail"       |
 | 10  | "news"     | "/var/spool/news" |
-{{< / highlight >}}
+{{< /highlight >}}
 
 Most of the expected SQL operations are supported by SQLite (check the [documentation](https://www.sqlite.org/docs.html)) and hence also by the Julia interface. When we're done we close the database connection.
 
 {{< highlight julia >}}
 julia> close(db)
-{{< / highlight >}}
+{{< /highlight >}}
 
 Of course, the database we created in Julia is now available through the shell too.
 
@@ -90,7 +90,7 @@ sqlite> pragma table_info(passwd);
 5|homedir|TEXT|0||0
 6|shell|TEXT|0||0
 sqlite>
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## ODBC
 
@@ -98,7 +98,7 @@ If you need to access an enterprise DB (for example, Oracle, PostgreSQL, MySQL, 
 
 {{< highlight julia >}}
 julia> using ODBC
-{{< / highlight >}}
+{{< /highlight >}}
 
 First we'll check which drivers are available for ODBC (just SQLite in my case) and what [data source names](https://en.wikipedia.org/wiki/Data_source_name) (DSNs) are registered.
 
@@ -107,7 +107,7 @@ julia> listdrivers()
 (String["SQLite","SQLite3"],String["Description=SQLite ODBC Driver\0Driver=libsqliteodbc.so\0Setup=libsqliteodbc.so\0UsageCount=1\0","Description=SQLite3 ODBC Driver\0Driver=libsqlite3odbc.so\0Setup=libsqlite3odbc.so\0UsageCount=1\0"])
 julia> listdsns()
 (String["passwd"],String["SQLite3"])
-{{< / highlight >}}
+{{< /highlight >}}
 
 We see that there is a DSN available for the `passwd` database. So we create a connection:
 
@@ -118,14 +118,14 @@ ODBC Connection Object
 Connection Data Source: passwd
 passwd Connection Number: 1
 Contains resultset(s)? No
-{{< / highlight >}}
+{{< /highlight >}}
 
 At this point I'd like to execute a query. However, somewhat disappointingly, this doesn't work. No error message but also no results. I've logged an [issue](https://github.com/quinnj/ODBC.jl/issues/96) with the package maintainer, so hopefully this will be resolved soon.
 
 {{< highlight julia >}}
 julia> query("SELECT * FROM passwd LIMIT 5;", db)
 0x0 DataFrame
-{{< / highlight >}}
+{{< /highlight >}}
 
 What's promising though is that I can still retrieve the metadata for that query.
 
@@ -146,13 +146,13 @@ Rows: 0
 | 5   | "comment"  | ("SQL_LONGVARCHAR",-1) | 65536 | 0      | 1        |
 | 6   | "homedir"  | ("SQL_LONGVARCHAR",-1) | 65536 | 0      | 1        |
 | 7   | "shell"    | ("SQL_LONGVARCHAR",-1) | 65536 | 0      | 1        |
-{{< / highlight >}}
+{{< /highlight >}}
 
 Again, when we're done, we close the database connection.
 
 {{< highlight julia >}}
 julia> disconnect(db)
-{{< / highlight >}}
+{{< /highlight >}}
 
 We're now covered a number of means for getting data into Julia. Over the next few days we'll be looking at Julia's capabilities for analysing data. Stay tuned. In the meantime you can check out the code for today (and previous days) on [github](https://github.com/DataWookie/MonthOfJulia). Also take a look at the talk below.
 

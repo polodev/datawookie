@@ -21,7 +21,7 @@ The cutoff date for almost all nonschool baseball leagues in the United States i
 A quick analysis to confirm Gladwell's assertion above. Used data scraped from [www.baseball-reference.com](http://www.baseball-reference.com/). Here's the evidence:
 
 <figure>
-  <img src="{{ site.baseurl }}/static/img/2016/07/baseball-birthdays.png">
+  <img src="/img/2016/07/baseball-birthdays.png">
   <figcaption class="wp-caption-text">Distribution of birth months for Major League Baseball players.</figcaption>
 </figure>
 
@@ -34,7 +34,7 @@ We can make a quick check to see whether the non-uniformity is statistically sig
 
 data:  table(baseball$month)
 X-squared = 135, df = 11, p-value <2e-16
-{{< / highlight >}}
+{{< /highlight >}}
 
 Yup, it appears to be highly significant.
 
@@ -47,6 +47,6 @@ Obviously the length of the months should make a small difference on the number 
 
 data:  table(baseball$month)
 X-squared = 115, df = 11, p-value <2e-16
-{{< / highlight >}}
+{{< /highlight >}}
 
 Looks like the outcome is the same: there is a significant non-uniformity in the birth months of Major League Baseball players.

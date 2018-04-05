@@ -38,9 +38,9 @@ Let's make this problem a little more concrete. My colleague's data are plotted 
 +     xlab("x") + ylab("y") +
 +     theme_bw() +
 +     scale_x_log10()
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2013/08/original-with-errorbars.png">
+<img src="/img/2013/08/original-with-errorbars.png">
 
 Now since I can't publish those data, we will need to construct a synthetic data set in order to explore this issue.
 
@@ -58,9 +58,9 @@ Now since I can't publish those data, we will need to construct a synthetic data
 4 0.9082078       0 -0.2211553 0.46155184
 5 0.2016819       0  1.6347056 0.37521653
 6 0.8983897       0  2.8787896 0.99109922
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2013/08/synthetic-with-errorbars.png">
+<img src="/img/2013/08/synthetic-with-errorbars.png">
 
 The direct approach to calculating the correlation would be to just use the average values for each measurement.
 
@@ -82,7 +82,7 @@ sample estimates:
 
 >
 > detach(synthetic)
-{{< / highlight >}}
+{{< /highlight >}}
 
 This looks eminently reasonable: a correlation coefficient of 0.351 (significant at the 1% level) and a 95% confidence interval extending from 0.166 to 0.512.
 
@@ -119,7 +119,7 @@ Intervals :
 Level      Normal              Basic              Percentile     
 95%   ( 0.1731,  0.5315 )   ( 0.1827,  0.5394 )   ( 0.1630,  0.5196 )  
 Calculations and Intervals on Original Scale
-{{< / highlight >}}
+{{< /highlight >}}
 
 Note that we are still only using the measurement means! The new bootstrap values for the correlation coefficient and its confidence interval are in good agreement with the direct results above. But that is no surprise because nothing has really changed. Yet.
 
@@ -145,7 +145,7 @@ boot(data = synthetic, statistic = cor.mu.sigma, R = 1e+05)
 Bootstrap Statistics :
      original     bias    std. error
 t1* 0.2699615 0.03208843  0.09144613
-{{< / highlight >}}
+{{< /highlight >}}
 
 The bootstrap estimate of the correlation, 0.270, is quite different to the direct and simple bootstrap results. However, we now also have access to the bootstrap confidence intervals which take into account the uncertainty in the observations.
 
@@ -162,7 +162,7 @@ Intervals :
 Level      Normal              Basic              Percentile     
 95%   ( 0.0586,  0.4171 )   ( 0.0672,  0.4232 )   ( 0.1167,  0.4727 )  
 Calculations and Intervals on Original Scale
-{{< / highlight >}}
+{{< /highlight >}}
 
 The 95% confidence interval for the correlation, taking into account uncertainties in the measurements, extends from 0.059 to 0.417. The correlation is still significant at the 5% level, but barely so!
 
@@ -186,7 +186,7 @@ sample estimates:
 
 > 
 > detach(original)
-{{< / highlight >}}
+{{< /highlight >}}
 
 Next we look at the bootstrap approach.
 
@@ -201,7 +201,7 @@ boot(data = original, statistic = cor.mu.sigma, R = 1e+05)
 Bootstrap Statistics :
 WARNING: All values of t1* are NA
 There were 50 or more warnings (use warnings() to see the first 50)
-{{< / highlight >}}
+{{< /highlight >}}
 
 Hmmmm. That's no good: it breaks because there is a single record which has missing data for sigma.
 
@@ -209,7 +209,7 @@ Hmmmm. That's no good: it breaks because there is a single record which has miss
 > original[rowSums(is.na(original)) > 0,]
    mu.x sigma.x mu.y sigma.y
 80 52.2       0 47.6     NaN
-{{< / highlight >}}
+{{< /highlight >}}
 
 To deal with this small hitch we make a change to the bootstrap function to include only complete observations.
 
@@ -233,7 +233,7 @@ Bootstrap Statistics :
      original     bias    std. error
 t1* 0.1938031 0.01834959  0.08378789
 There were 50 or more warnings (use warnings() to see the first 50)
-{{< / highlight >}}
+{{< /highlight >}}
 
 The warnings are generated because rnorm() is still producing NAs. Maybe a better approach would have been to only pass complete observations to boot() using complete.cases(). The bootstrap estimate of the correlation is quite different from what we obtained using the direct method!
 
@@ -252,9 +252,9 @@ Level      Normal              Basic              Percentile
 Calculations and Intervals on Original Scale
 >
 > plot(boot.cor.mu.sigma)
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2013/08/original-bootstrap.png">
+<img src="/img/2013/08/original-bootstrap.png">
 
 The bootstrap 95% confidence interval for the correlation does not include zero, but it comes rather close! We can still conclude that the correlation is significant, although it might be a mistake to place too much faith in it.
 

@@ -35,15 +35,15 @@ teacher   F  M
               F        M
 Claire 9.539227  9.55096
 Jane   9.961180 10.05199
-{{< / highlight >}}
+{{< /highlight >}}
 
 Claire is teaching 90 children, almost two thirds of which are boys. Jane is only teaching 60 children with almost the opposite gender ratio. The distribution of ages is reflected in the plot below. There is clearly a wider range of ages in the children taught by Jane and their median ages are higher than those taught by Claire.
 
-<img src="{{ site.baseurl }}/static/img/2013/05/age-gender.png">
+<img src="/img/2013/05/age-gender.png">
 
 The distribution of the aggregate result of the questions (expressed as a %) are given below. It appears that for both teachers the girls fare better than the boys.
 
-<img src="{{ site.baseurl }}/static/img/2013/05/grade-gender.png">
+<img src="/img/2013/05/grade-gender.png">
 
 If we make a simple comparison of the average grade for children taught by Claire and Jane, then it seems like Jane might be onto something: her average is about 5% higher than Claire's.
 
@@ -51,7 +51,7 @@ If we make a simple comparison of the average grade for children taught by Clair
 > tapply(pupils$grades, pupils$teacher, mean)
   Claire     Jane
 57.17778 62.45000
-{{< / highlight >}}
+{{< /highlight >}}
 
 But that is not the full story: if we break down the averages by gender and teacher then the results are less convincing: boys do slightly better under Jane's regime, while girls do slightly worse.
 
@@ -60,7 +60,7 @@ But that is not the full story: if we break down the averages by gender and teac
     Claire     Jane
 F 70.81250 69.27027
 M 49.65517 51.47826
-{{< / highlight >}}
+{{< /highlight >}}
 
 Let's apply the tried and tested t-test to see if there is a significant difference between the average grades.
 
@@ -77,7 +77,7 @@ alternative hypothesis: true difference in means is not equal to 0
 sample estimates:
 mean of x mean of y
  57.17778  62.45000
-{{< / highlight >}}
+{{< /highlight >}}
 
 This indicates that the difference in the mean grade for children taught by Claire and Jane is significant at the 5% level (p-value = 0.02537). So perhaps Jane is right. However, contradictory performance of the two genders taken separately should cause us to think carefully about this result. Perhaps the fact that Jane is teaching a larger proportion of girls is having an effect? Or maybe the older children in Jane's class are skewing the statistics?
 
@@ -85,7 +85,7 @@ This is where MatchIt comes into play. First we add a dichotomous treatment vari
 
 {{< highlight r >}}
 pupils$treatment = ifelse(pupils$teacher == "Jane", 1, 0)
-{{< / highlight >}}
+{{< /highlight >}}
 
 The resulting data is then fed into the matching routine.
 
@@ -102,7 +102,7 @@ All            90      60
 Matched        60      60
 Unmatched      30       0
 Discarded       0       0
-{{< / highlight >}}
+{{< /highlight >}}
 
 We see that in the original (unmatched) data there were 90 records in the control (Claire) group and only 60 in the treated (Jane) group. After matching there are 60 records in each group. The remaining 30 records are unmatched. We then extract the matched records.
 
@@ -118,7 +118,7 @@ teacher   F  M
               F         M
 Claire 9.584322  9.672314
 Jane   9.961180 10.051985
-{{< / highlight >}}
+{{< /highlight >}}
 
 The gender and age disparities between the control and treated group have not been removed but they are now much improved. What influence does this have on a comparison of the grades?
 
@@ -135,7 +135,7 @@ alternative hypothesis: true difference in means is not equal to 0
 sample estimates:
 mean of x mean of y
     60.05     62.45
-{{< / highlight >}}
+{{< /highlight >}}
 
 The difference in average grade is no longer significant. So perhaps Jane has not really discovered anything revolutionary after all. The initial difference in results was probably due to the imbalance between the gender ratios in the control and treatment groups. Certainly the data indicate that there is a marked difference in performance between the girls and boys!
 
@@ -161,6 +161,6 @@ In addition: Warning messages:
   no non-missing arguments to min; returning Inf
 6: In min(pscore[treat == 1]) :
   no non-missing arguments to min; returning Inf
-{{< / highlight >}}
+{{< /highlight >}}
   
 

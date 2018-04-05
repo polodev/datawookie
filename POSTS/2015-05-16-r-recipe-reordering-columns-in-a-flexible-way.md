@@ -22,7 +22,7 @@ Suppose you have a data frame with a number of columns.
 [1] "OpenDate" "CloseDate" "Symbol" "Action" "Lots" "SL" "TP" "OpenPrice"
 [9] "ClosePrice" "Commission" "Swap" "Pips" "Profit" "Gain" "Duration" "Trader"
 [17] "System"
-{{< / highlight >}}
+{{< /highlight >}}
 
 You want to put the Trader and System columns first but you also want to do this in a flexible way. One approach would be to specify column numbers.
 
@@ -32,7 +32,7 @@ You want to put the Trader and System columns first but you also want to do this
 [1] "Trader" "System" "OpenDate" "CloseDate" "Symbol" "Action" "Lots" "SL"
 [9] "TP" "OpenPrice" "ClosePrice" "Commission" "Swap" "Pips" "Profit" "Gain"
 [17] "Duration"
-{{< / highlight >}}
+{{< /highlight >}}
 
 This does the job but it's not very flexible. After all, the number of columns might change. Rather do it by specifying column names.
 
@@ -44,4 +44,4 @@ This does the job but it's not very flexible. After all, the number of columns m
 [1] "Trader" "System" "OpenDate" "CloseDate" "Symbol" "Action" "Lots" "SL"
 [9] "TP" "OpenPrice" "ClosePrice" "Commission" "Swap" "Pips" "Profit" "Gain"
 [17] "Duration"
-{{< / highlight >}}
+{{< /highlight >}}

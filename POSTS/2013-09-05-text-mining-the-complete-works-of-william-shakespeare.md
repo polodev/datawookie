@@ -28,7 +28,7 @@ The first order of business was getting my hands on all that text. Fortunately i
 > shakespeare = readLines(TEXTFILE)
 > length(shakespeare)
 [1] 124787
-{{< / highlight >}}
+{{< /highlight >}}
 
 That's quite a solid chunk of data: 124787 lines. Let's take a closer look.
 
@@ -44,7 +44,7 @@ That's quite a solid chunk of data: 124787 lines. Let's take a closer look.
 [1] "http://www.gutenberg.org/2/4/6/8/24689"    ""
 [3] "An alternative method of locating eBooks:" "http://www.gutenberg.org/GUTINDEX.ALL"
 [5] ""                                          "*** END: FULL LICENSE ***"
-{{< / highlight >}}
+{{< /highlight >}}
 
 There seems to be some header and footer text. We will want to get rid of that! Using a text editor I checked to see how many lines were occupied with metadata and then removed them before concatenating all of the lines into a single long, long, long string.
 
@@ -55,7 +55,7 @@ There seems to be some header and footer text. We will want to get rid of that! 
 > shakespeare = paste(shakespeare, collapse = " ")
 > nchar(shakespeare)
 [1] 5436541
-{{< / highlight >}}
+{{< /highlight >}}
 
 While I had the text open in the editor I noticed that sections in the document were separated by the following text:
 
@@ -68,7 +68,7 @@ DISTRIBUTED SO LONG AS SUCH COPIES (1) ARE FOR YOUR OR OTHERS
 PERSONAL USE ONLY, AND (2) ARE NOT DISTRIBUTED OR USED
 COMMERCIALLY.  PROHIBITED COMMERCIAL DISTRIBUTION INCLUDES BY ANY
 SERVICE THAT CHARGES FOR DOWNLOAD TIME OR FOR MEMBERSHIP.>>
-{{< / highlight >}}
+{{< /highlight >}}
 
 Obviously that is going to taint the analysis. But it also serves as a convenient marker to divide that long, long, long string into separate documents.
 
@@ -76,7 +76,7 @@ Obviously that is going to taint the analysis. But it also serves as a convenien
 > shakespeare = strsplit(shakespeare, "<<[^>]*>>")[[1]]
 > length(shakespeare)
 [1] 218
-{{< / highlight >}}
+{{< /highlight >}}
 
 This left me with a list of 218 documents. On further inspection, some of them appeared to be a little on the short side (in my limited experience, the bard is not known for brevity). As it turns out, the short documents were the [dramatis personae](http://en.wikipedia.org/wiki/Dramatis_person%C3%A6) for his plays. I removed them as well.
 
@@ -89,7 +89,7 @@ This left me with a list of 218 documents. On further inspection, some of them a
 > shakespeare = shakespeare[-dramatis.personae]
 > length(shakespeare)
 [1] 182
-{{< / highlight >}}
+{{< /highlight >}}
 
 Down to 182 documents, each of which is a complete work.
 
@@ -108,7 +108,7 @@ Available tags are:
   create_date creator 
 Available variables in the data frame are:
   MetaID
-{{< / highlight >}}
+{{< /highlight >}}
 
 There is a lot of information in those documents which is not particularly useful for text mining. So before proceeding any further, we will clean things up a bit. First we convert all of the text to lowercase and then remove punctuation, numbers and common English stopwords. Possibly the list of English stop words is not entirely appropriate for Shakespearean English, but it is a reasonable starting point.
 
@@ -117,7 +117,7 @@ There is a lot of information in those documents which is not particularly usefu
 > doc.corpus <- tm_map(doc.corpus, removePunctuation)
 > doc.corpus <- tm_map(doc.corpus, removeNumbers)
 > doc.corpus <- tm_map(doc.corpus, removeWords, stopwords("english"))
-{{< / highlight >}}
+{{< /highlight >}}
 
 Next we perform [stemming](http://en.wikipedia.org/wiki/Word_stem), which removes affixes from words (so, for example, "run", "runs" and "running" all become "run").
 
@@ -125,13 +125,13 @@ Next we perform [stemming](http://en.wikipedia.org/wiki/Word_stem), which remove
 > library(SnowballC)
 >
 > doc.corpus <- tm_map(doc.corpus, stemDocument)
-{{< / highlight >}}
+{{< /highlight >}}
 
 All of these transformations have resulted in a lot of whitespace, which is then removed.
 
 {{< highlight r >}}
 > doc.corpus <- tm_map(doc.corpus, stripWhitespace)
-{{< / highlight >}}
+{{< /highlight >}}
 
 If we have a look at what's left, we find that it's just the lowercase, stripped down version of the text (which I have truncated here).
 
@@ -153,7 +153,7 @@ Available variables in the data frame are:
  sue menecr ignor beg often harm wise powr deni us good find profit lose prayer pompey shall well
  peopl love sea mine power crescent augur hope say will come th full mark antoni egypt sit dinner
  will make war without door caesar get money lose heart lepidus flatter flatterd neither love either
-{{< / highlight >}}
+{{< /highlight >}}
 
 This is where things start to get interesting. Next we create a [Term Document Matrix](http://en.wikipedia.org/wiki/Document-term_matrix) (TDM) which reflects the number of times each word in the corpus is found in each of the documents.
 
@@ -186,7 +186,7 @@ Terms       1 2 3 4 5 6 7 8 9 10
   abatfowl  0 0 0 0 0 0 0 0 0  0
   abbess    0 0 0 0 0 0 0 0 0  0
   abbey     0 0 0 0 0 0 0 0 0  0
-{{< / highlight >}}
+{{< /highlight >}}
 
 The extract from the TDM shows, for example, that the word "abandond" occurred once in document number 2 but was not present in any of the other first ten documents. We could have generated the transpose of the DTM as well.
 
@@ -212,7 +212,7 @@ Docs aaron abaissiez abandon abandond abas abashd abat abatfowl abbess abbey
   8      0         0       0        0    0      0    0        0      0     0
   9      0         0       0        0    0      0    0        0      0     0
   10     0         0       0        0    0      0    0        0      0     0
-{{< / highlight >}}
+{{< /highlight >}}
 
 Which of these proves to be most convenient will depend on the relative number of documents and terms in your data.
 
@@ -222,7 +222,7 @@ Now we can start asking questions like: what are the most frequently occurring t
 > findFreqTerms(TDM, 2000)
  [1] "come"  "enter" "good"  "king"  "let"   "lord"  "love"  "make"  "man"   "now"   "shall" "sir"   "thee"
 [14] "thi"   "thou"  "well"  "will"
-{{< / highlight >}}
+{{< /highlight >}}
 
 Each of these words occurred more that 2000 times.
 
@@ -232,7 +232,7 @@ What about associations between words? Let's have a look at what other words had
 > findAssocs(TDM, "love", 0.8)
 beauti    eye
   0.83   0.80
-{{< / highlight >}}
+{{< /highlight >}}
 
 Well that's not too surprising!
 
@@ -244,7 +244,7 @@ From our first look at the TDM we know that there are many terms which do not oc
 [1] 18651   182
 > dim(TDM.common)
 [1]  71 182
-{{< / highlight >}}
+{{< /highlight >}}
 
 From the 18651 terms that we started with, we are now left with a TDM which considers on 71 commonly occurring terms.
 
@@ -269,7 +269,7 @@ Terms     1 2  3  4  5  6  7  8 9 10
   enter   0 7 12 11 10 10 14 87 4  6
   exeunt  0 3  8  8  5  4  7 49 1  4
   exit    0 6  8  5  6  5  3 31 3  2
-{{< / highlight >}}
+{{< /highlight >}}
 
 Finally we are going to put together a visualisation. The TDM is stored as a [sparse matrix](http://en.wikipedia.org/wiki/Sparse_matrix). This was an apt representation for the initial TDM, but the reduced TDM containing only frequently occurring words is probably better stored as a normal matrix. We'll make the conversion and see.
 
@@ -283,7 +283,7 @@ Finally we are going to put together a visualisation. The TDM is stored as a [sp
 207872 bytes
 > object.size(TDM.dense)
 112888 bytes
-{{< / highlight >}}
+{{< /highlight >}}
 
 So, as it turns out the sparse representation was actually wasting space! (This will generally not be true though: it will only apply for a matrix consisting of just the common terms).
 
@@ -296,9 +296,9 @@ There are numerous options for visualising these data, of which we will look at 
 > palette <- brewer.pal(9,"BuGn")[-(1:4)]
 >
 > wordcloud(rownames(TDM.dense), rowSums(TDM.dense), min.freq = 1, color = palette)
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2013/09/shakespeare-word-cloud.png">
+<img src="/img/2013/09/shakespeare-word-cloud.png">
 
 To produce the other plot we first need to convert the data into a tidier format.
 
@@ -314,7 +314,7 @@ To produce the other plot we first need to convert the data into a tidier format
 4  call    1    17
 5   can    1    44
 6  come    1    19
-{{< / highlight >}}
+{{< /highlight >}}
 
 It's then an easy matter to use ggplot2 to make up an attractive heat map.
 
@@ -327,9 +327,9 @@ It's then an easy matter to use ggplot2 to make up an attractive heat map.
 +     ylab("") +
 +     theme(panel.background = element_blank()) +
 +     theme(axis.text.x = element_blank(), axis.ticks.x = element_blank())
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2013/09/shakespeare-common-tdm.png">
+<img src="/img/2013/09/shakespeare-common-tdm.png">
 
 The colour scale indicates the number of times that each of the terms cropped up in each of the documents. I applied a logarithmic transform to the counts since there was a very large disparity in the numbers across terms and documents. The grey tiles correspond to terms which are not found in the corresponding document.
 

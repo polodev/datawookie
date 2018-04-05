@@ -15,7 +15,7 @@ url: /2016/07/22/mortality-year-age/
 
 Taking another look at the data from the [lifespan](https://github.com/DataWookie/lifespan) package. Plot below shows the evolution of mortality in the US as a function of year and age.
 
-<img src="{{ site.baseurl }}/static/img/2016/07/deaths-year-age.png" >
+<img src="/img/2016/07/deaths-year-age.png" >
 
 {{< highlight r >}}
 > library(lifespan)
@@ -28,7 +28,7 @@ Taking another look at the data from the [lifespan](https://github.com/DataWooki
 +   facet_wrap(~ sex) +
 +   theme_minimal() +
 +   theme(panel.grid = element_blank())
-{{< / highlight >}}
+{{< /highlight >}}
 
 Also, based on a suggestion from [@robjohnnoble](https://twitter.com/robjohnnoble), population data have been included in the package.
 
@@ -41,4 +41,4 @@ Also, based on a suggestion from [@robjohnnoble](https://twitter.com/robjohnnobl
 115 2014 317.68
 116 2015 320.22
 117 2016 322.48
-{{< / highlight >}}
+{{< /highlight >}}

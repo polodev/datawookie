@@ -24,7 +24,7 @@ $ sudo ln -s /opt/processing-2.2.1/processing /usr/local/bin/processing2
 
 Press the dropdown in the top right corner.
 
-![]({{ site.baseurl }}/static/img/2017/10/processing-2-mode-manager.png)
+![](/img/2017/10/processing-2-mode-manager.png)
 
 Install the following modes:
 

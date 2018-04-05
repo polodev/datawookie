@@ -27,7 +27,7 @@ A short while ago I put together a `m4.2xlarge` EC2 instance. My initial thought
 2. Press the <kbd class="bg-primary">Create Volume</kbd> button.
 3. Choose the size of the volume and the Availability Zone. The latter must be the same as that of the EC2 instance to which the volume will be attached.
 
-![]({{ site.baseurl }}/static/img/2017/08/aws-ec2-create-volume.png)
+![](/img/2017/08/aws-ec2-create-volume.png)
 
 {:start="4"}
 4. Press the <kbd class="bg-primary">Create</kbd> button.
@@ -42,7 +42,7 @@ A short while ago I put together a `m4.2xlarge` EC2 instance. My initial thought
 
 {{< highlight bash >}}
 sudo lsblk
-{{< / highlight >}}
+{{< /highlight >}}
 
 Suppose that the new volume shows up at `/dev/xvdf`.
 
@@ -54,13 +54,13 @@ First set up a swap area on the new partition.
 
 {{< highlight bash >}}
 sudo mkswap /dev/xvdf
-{{< / highlight >}}
+{{< /highlight >}}
 
 Then enable the partition for swapping.
 
 {{< highlight bash >}}
 sudo swapon /dev/xvdf
-{{< / highlight >}}
+{{< /highlight >}}
 
 ### File Partition
 
@@ -68,7 +68,7 @@ Create a file system on the raw device.
 
 {{< highlight bash >}}
 sudo mkfs -t ext4 /dev/xvdf
-{{< / highlight >}}
+{{< /highlight >}}
 
 {:start="4"}
 4. Go ahead and mount `/dev/xvdf` at a suitable location in your file hierarchy.

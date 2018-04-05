@@ -10,13 +10,13 @@ tags:
   - Talk
 ---
 
-{% comment %}
+{{< comment >}}
 https://somethingaboutmaps.wordpress.com/2016/12/12/a-practicarto-archive/
 
 https://blog.socialcops.com/academy/resources/7-techniques-to-visualize-geospatial-data/
 
 https://cran.r-project.org/doc/contrib/intro-spatial-rl.pdf
-{% endcomment %}
+{{< /comment >}}
 
 <div class="talk">
 	<div class="title">

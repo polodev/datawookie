@@ -23,7 +23,7 @@ Let's look at the synthetic data first.
 > wtd.cor(synthetic$mu.x, synthetic$mu.y, weight = 1 / synthetic$sigma.y**2)
       correlation    std.err  t.value    p.value
 V1.V1   0.1945633 0.09908485 1.963603 0.05240988
-{{< / highlight >}}
+{{< /highlight >}}
 
 This is in excellent agreement with the bootstrap results. Now the original experimental data.
 
@@ -31,6 +31,6 @@ This is in excellent agreement with the bootstrap results. Now the original expe
 > wtd.cor(original$mu.x, original$mu.y, weight = 1 / original$sigma.y**2)
       correlation    std.err  t.value      p.value
 V1.V1   0.2407686 0.04606181 5.227076 2.656016e-07
-{{< / highlight >}}
+{{< /highlight >}}
 
 Here the agreement with the bootstrap result is not as good. I'm not quite sure why, but suspect that it might have something to do with the fact that the original data are quite severely skewed so that assumptions about normality would probably be voilated.

@@ -22,7 +22,7 @@ Enabling remote access is simple.
 1. Shut down your running Neo4j server. 
 2. Press the Options button, which will bring up a dialog like this:
 
-<img src="{{ site.baseurl }}/static/img/2016/09/neo4j-options.png" >
+<img src="/img/2016/09/neo4j-options.png" >
 
 3. Press the top Edit button, which will open the `neo4j.conf` file in an editor. 
 4. Browse to the HTTP Connector section and add a `dbms.connector.http.address` entry.
@@ -35,7 +35,7 @@ dbms.connector.http.enabled=true
 #
 # dbms.connector.http.address=0.0.0.0:#{default.http.port}
 dbms.connector.http.address=0.0.0.0:7474
-{{< / highlight >}}
+{{< /highlight >}}
 
 Your server will now be available to other machines via port 7474. From the local machine it'll still be at `http://localhost:7474/`.
 

@@ -31,7 +31,7 @@ Specify your AWS Access Key ID and Secret Access Key.
 
 {{< highlight bash >}}
 $ aws configure
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## SSH Key
 
@@ -39,7 +39,7 @@ You'll need a SSH key to connect to your remote resources.
 
 {{< highlight bash >}}
 $ aws ec2 create-key-pair --key-name datawookie-sydney | jq -r .KeyMaterial >~/.ssh/datawookie-sydney.pem
-{{< / highlight >}}
+{{< /highlight >}}
 
 The result from `aws ec2 create-key-pair` is a JSON document, from which we extract the value for `KeyMaterial` using the command-line JSON processor `jq`.
 
@@ -47,7 +47,7 @@ Apply restrictive access permissions to the resulting PEM file.
 
 {{< highlight bash >}}
 $ chmod 0400 ~/.ssh/datawookie-sydney.pem
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Security Group
 
@@ -58,7 +58,7 @@ $ aws ec2 create-security-group --group-name general --description "SSH / HTTP /
 {
     "GroupId": "sg-933cf8f5"
 }
-{{< / highlight >}}
+{{< /highlight >}}
 
 Add some rules for inbound connections. Here we allow ports 22 (SSH), 80 (HTTP) and 443 (HTTPS).
 
@@ -66,13 +66,13 @@ Add some rules for inbound connections. Here we allow ports 22 (SSH), 80 (HTTP) 
 $ aws ec2 authorize-security-group-ingress --group-name general --protocol tcp --port 22 --cidr 0.0.0.0/0
 $ aws ec2 authorize-security-group-ingress --group-name general --protocol tcp --port 80 --cidr 0.0.0.0/0
 $ aws ec2 authorize-security-group-ingress --group-name general --protocol tcp --port 443 --cidr 0.0.0.0/0
-{{< / highlight >}}
+{{< /highlight >}}
 
 Then check if everything is configured as expected. In light of the volume and complexity of the output of this command you might find it expedient to simply use the AWS Management Console.
 
 {{< highlight bash >}}
 $ aws ec2 describe-security-groups
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Environment Variables
 
@@ -84,7 +84,7 @@ Specify the region in which the resources are going to be deployed.
 
 {{< highlight bash >}}
 $ export REGION="ap-southeast-2"
-{{< / highlight >}}
+{{< /highlight >}}
 
 ### Keyfile
 
@@ -92,7 +92,7 @@ The name assigned to your SSH key.
 
 {{< highlight bash >}}
 $ export KEYNAME="datawookie-sydney"
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Elastic Compute Cloud (EC2)
 
@@ -104,7 +104,7 @@ $ aws ec2 run-instances --image-id ami-e2021d81 \
                         --count 1 \
                         --instance-type t2.micro \
                         --key-name $KEYNAME
-{{< / highlight >}}
+{{< /highlight >}}
 
 Provided that the above command executed without error, you should have a running EC2 instance. Check out the Instances tab on the AWS Management Console. You can now connect to the remote instance using SSH.
 
@@ -140,7 +140,7 @@ aws emr create-cluster \
     "Args": ["--toree","--ds-packages","--jupyterhub","--jupyterhub-port","8001","--password","jupyter"],
     "Name": "Jupyter Notebook"
   }]'
-{{< / highlight >}}
+{{< /highlight >}}
 
 The `--password` parameter sets up the JupyerHub password for the `hadoop` user.
 
@@ -170,7 +170,7 @@ Storage on S3 is divided into containers called "buckets". Creating a bucket is 
 
 {{< highlight bash >}}
 $ aws s3 mb s3://datawookie-bucket
-{{< / highlight >}}
+{{< /highlight >}}
 
 ### Copying Files to a Bucket
 
@@ -179,7 +179,7 @@ Local files can be copied across to a S3 bucket using `aws s3 cp`. You can restr
 {{< highlight bash >}}
 $ aws s3 cp iris.csv s3://datawookie-bucket
 upload: ./iris.csv to s3://datawookie-bucket/iris.csv
-{{< / highlight >}}
+{{< /highlight >}}
 
 The commands `aws s3 mv` and `aws s3 rm` are analogous to their UNIX equivalents, moving and deleting files on S3.
 
@@ -192,14 +192,14 @@ You can get a list of available buckets using `aws s3 ls`.
 {{< highlight bash >}}
 $ aws s3 ls
 2017-09-01 13:22:58 datawookie-bucket
-{{< / highlight >}}
+{{< /highlight >}}
 
 If you provide the URL for a particular bucket then you can also see its contents.
 
 {{< highlight bash >}}
 $ aws s3 ls s3://datawookie-bucket
 2017-09-01 13:29:07       3716 iris.csv
-{{< / highlight >}}
+{{< /highlight >}}
 
 ### Destroying a S3 Bucket
 
@@ -207,7 +207,7 @@ When you're done with your bucket you can destroy it with `aws s3 rb`. The `--fo
 
 {{< highlight bash >}}
 $ aws s3 rb s3://datawookie-bucket --force
-{{< / highlight >}}
+{{< /highlight >}}
 
 ### S3 and Static Web Sites
 

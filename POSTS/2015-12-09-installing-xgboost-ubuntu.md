@@ -14,7 +14,7 @@ url: /2015/12/09/installing-xgboost-ubuntu/
 
 <!--more-->
 
-<img src="{{ site.baseurl }}/static/img/2015/12/xgboost.png" >
+<img src="/img/2015/12/xgboost.png" >
 
 [XGBoost](https://github.com/dmlc/xgboost) is the flavour of the moment for serious competitors on [kaggle](https://www.kaggle.com/). It was developed by [Tianqi Chen](https://www.kaggle.com/tqchen) and provides a particularly efficient implementation of the [Gradient Boosting](https://en.wikipedia.org/wiki/Gradient_boosting) algorithm. Although there is a [CLI](https://en.wikipedia.org/wiki/Command-line_interface) implementation of XGBoost you'll probably be more interested in using it from either R or Python. Below are instructions for getting it installed for each of these languages. It's pretty painless.
 
@@ -25,7 +25,7 @@ Installation in R is extremely simple.
 {{< highlight r >}}
 > install.packages('xgboost')
 > library(xgboost)
-{{< / highlight >}}
+{{< /highlight >}}
   
 It's also supported as a model in [caret](http://topepo.github.io/caret/index.html), which is especially handy for feature selection and model parameter tuning.
 
@@ -35,7 +35,7 @@ This might be as simple as
 
 {{< highlight bash >}}
 $ pip install xgboost
-{{< / highlight >}}
+{{< /highlight >}}
 
 If you run into trouble with that, try the alternative approach below.
 
@@ -46,13 +46,13 @@ Download the latest version from the [github repository](https://github.com/dmlc
 # make
 # cd python-package/
 # python setup.py install -user
-{{< / highlight >}}
+{{< /highlight >}}
   
 And you're ready to roll:
   
 {{< highlight python >}}
 import xgboost
-{{< / highlight >}}
+{{< /highlight >}}
 
 If you run into trouble during the process you might have to install a few other packages:
   
@@ -60,7 +60,7 @@ If you run into trouble during the process you might have to install a few other
 # apt-get install g++ gfortran
 # apt-get install python-dev python-numpy python-scipy python-matplotlib python-pandas
 # apt-get install libatlas-base-dev
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Conclusion
 

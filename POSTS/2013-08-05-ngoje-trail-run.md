@@ -9,4 +9,4 @@ url: /2013/08/05/ngoje-trail-run/
 
 Team [Pro-Print](http://www.proprint.co.za/)/[Exegetic](http://www.exegetic.biz) at the early morning start of the 45 km Ngoje Trail run near Eshowe on 3 August 2013.
 
-<img src="{{ site.baseurl }}/static/img/2013/08/2013-08-03-06.32.02.jpg" >
+<img src="/img/2013/08/2013-08-03-06.32.02.jpg" >

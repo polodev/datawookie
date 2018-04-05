@@ -80,12 +80,12 @@ to the file '.profile' in your home directory; then log out and log in again.
 Here is that TZ value again, this time on standard output so that you
 can use the /usr/bin/tzselect command in shell scripts:
 Africa/Johannesburg
-{{< / highlight >}}
+{{< /highlight >}}
 
 To configure my account with this time zone information, I'd simply add
 
 {{< highlight bash >}}
 TZ='Africa/Johannesburg'; export TZ
-{{< / highlight >}}
+{{< /highlight >}}
 
 to my `.profile` file. It would come into effect the next time I logged into the system.

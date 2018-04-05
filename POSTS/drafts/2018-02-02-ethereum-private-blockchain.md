@@ -9,9 +9,9 @@ tags:
   - Ethereum
 ---
 
-{% comment %}
+{{< comment >}}
 https://www.ethereum.org/cli
-{% endcomment %}
+{{< /comment >}}
 
 <!-- more -->
 

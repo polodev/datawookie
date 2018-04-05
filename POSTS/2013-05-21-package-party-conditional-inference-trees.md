@@ -32,13 +32,13 @@ The air quality data set looks like this.
 4    18     313 11.5   62     5   4
 5    NA      NA 14.3   56     5   5
 6    28      NA 14.9   66     5   6
-{{< / highlight >}}
+{{< /highlight >}}
 
 The first thing that we will do is remove all of the records with missing ozone data.
 
 {{< highlight r >}}
 > airq <- subset(airquality, !is.na(Ozone))
-{{< / highlight >}}
+{{< /highlight >}}
 
 Next we use ctree to construct a model of ozone as a function of all other covariates.
 
@@ -65,15 +65,15 @@ Number of observations:  116
     8)*  weights = 30
   7) Wind > 10.3
     9)*  weights = 7
-{{< / highlight >}}
+{{< /highlight >}}
 
 The textual description of the model gives a lot of detail, but it is a little difficult to get the big picture. A plot helps. This is essentially a [decision tree](http://en.wikipedia.org/wiki/Decision_tree) but with extra information in the terminal nodes.
 
 {{< highlight r >}}
 > plot(air.ct)
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2013/05/ctree-airquality.png">
+<img src="/img/2013/05/ctree-airquality.png">
 
 This tells us that the data has been divided up into five classes (in nodes labelled 3, 5, 6, 8 and 9). Let's consider a measurement with temperature of 70 and wind speed of 12. At the highest level the data is divided into two categories according to temperature: either&nbsp;≤ 82 or&nbsp;> 82. Our measurement follows the left branch (temperature&nbsp;≤ 82). The next division is made according to wind speed, giving two categories according to whether the speed is&nbsp;≤ 6.9 or&nbsp;> 6.9. Our measurement follows the right branch (speed&nbsp;> 6.9). Then we encounter the final division, which once again depends on temperature and has two categories:&nbsp;either&nbsp;≤ 77 or&nbsp;> 77. Our measurement has temperature&nbsp;≤ 77, so it gets classified in node 5. Looking at the boxplot for ozone in node 5, this suggests that we would expect the conditions for our measurement to be associated with a relatively low level of ozone.
 
@@ -105,7 +105,7 @@ We can look at the details of individual nodes in the tree, but this does not re
     5)*  weights = 48
   4) Temp > 77
     6)*  weights = 21
-{{< / highlight >}}
+{{< /highlight >}}
 
 What about using this model on new data? First we construct a new data frame.
 
@@ -118,7 +118,7 @@ What about using this model on new data? First we construct a new data frame.
 4       0   12   80     0   0
 5       0    5   90     0   0
 6       0   12   90     0   0
-{{< / highlight >}}
+{{< /highlight >}}
 
 Note that since the classification model does not depend on solar radiation, month or day, we do not need to specify meaningful values for them (they will not have any impact on the outcome of the model!). One of the characteristics of party is that it does not include in the model any covariates which appear to be independent of the response variable.
 
@@ -131,7 +131,7 @@ It is very important to ensure that the column classes in the new data are preci
 > sapply(new.airq, class)
   Solar.R      Wind      Temp     Month       Day
 "integer" "numeric" "integer" "integer" "integer"
-{{< / highlight >}}
+{{< /highlight >}}
 
 Now we can predict the ozone levels and category node numbers for these new data. The measurement used above to discuss the plot (temperature 70, wind speed 12) appears on row 2 of these new data.
 
@@ -146,7 +146,7 @@ Now we can predict the ozone levels and category node numbers for these new data
 6       0   12   90     0   0 48.71429
 > predict(air.ct, newdata = new.airq, type = "node")
 [1] 3 5 3 6 8 9
-{{< / highlight >}}
+{{< /highlight >}}
 
 Finally we can use the model to generate the category node numbers for the original data and add that as a new column to the data frame.
 
@@ -160,7 +160,7 @@ Finally we can use the model to generate the category node numbers for the origi
 4    18     313 11.5   62     5   4    5
 6    28      NA 14.9   66     5   6    5
 7    23     299  8.6   65     5   7    5
-{{< / highlight >}}
+{{< /highlight >}}
 
 Like many things in R, you could have achieved this result by other means.
 
@@ -169,7 +169,7 @@ Like many things in R, you could have achieved this result by other means.
   [1] 5 5 5 5 5 5 5 5 3 5 5 5 5 5 5 5 5 5 5 5 5 5 5 6 3 5 6 9 9 6 5 5 5 5 5 8 8 6 8 9 8 8 8 8 5 6 6
  [48] 3 6 8 8 9 3 8 8 6 9 8 8 8 6 3 6 6 8 8 8 8 8 8 9 6 6 5 3 5 6 6 5 5 6 3 8 8 8 8 8 8 8 8 8 8 9 6
  [95] 6 5 5 6 5 3 5 5 3 5 5 5 6 5 5 6 5 5 3 5 5 5
-{{< / highlight >}}
+{{< /highlight >}}
 
 # Irises
 
@@ -184,18 +184,18 @@ The iris data set gives data on the dimensions of sepals and petals measured on 
 4          4.6         3.1          1.5         0.2  setosa
 5          5.0         3.6          1.4         0.2  setosa
 6          5.4         3.9          1.7         0.4  setosa
-{{< / highlight >}}
+{{< /highlight >}}
 
 We will construct a model of iris species as a function of the other covariates.
 
 {{< highlight r >}}
 > iris.ct <- ctree(Species ~ .,data = iris)
 > plot(iris.ct)
-{{< / highlight >}}
+{{< /highlight >}}
 
 The structure of the tree is essentially the same. Only the representation of the nodes differs because, whereas ozone was a continuous numerical variable, iris species is a categorical variable. The nodes are thus represented as bar plots. Node 2 is predominantly setosa, node 5 is mostly versicolor and node 7 is almost all viriginica. Node 6 is half versicolor and half virginica and corresponds to a category with long, narrow petals. It is interesting to note that the model depends only on the dimensions of the petals and not on those of the sepals.
 
-<img src="{{ site.baseurl }}/static/img/2013/05/ctree-iris.png">
+<img src="/img/2013/05/ctree-iris.png">
 
 We can assess the quality of the model by constructing a [confusion matrix](http://en.wikipedia.org/wiki/Confusion_matrix). This shows that the model performs perfectly for setosa irises. For versicolor it also performs very well, only classifying one sample incorrectly as a virginica. For virginica it fails to correctly classify 5 samples. The model seems to perform well overall, however, this is based on the training data, so it is not really an objective assessment!
 
@@ -206,7 +206,7 @@ Actual species setosa versicolor virginica
     setosa         50          0         0
     versicolor      0         49         1
     virginica       0          5        45
-{{< / highlight >}}
+{{< /highlight >}}
 
 Finally, we can use the model to predict the species for new data.
 
@@ -223,7 +223,7 @@ Finally, we can use the model to predict the species for new data.
 Levels: setosa versicolor virginica
 > predict(iris.ct, newdata = new.iris, type = "node")
 [1] 2 7 6 5 7
-{{< / highlight >}}
+{{< /highlight >}}
 
 # Mammography
 
@@ -238,17 +238,17 @@ The mammography data details a study on the benefits of mammography.
 4 Within a Year          Disagree 11   No Yes     Very likely
 5   Over a Year Strongly Disagree  7   No Yes     Very likely
 6         Never          Disagree  7   No Yes     Very likely
-{{< / highlight >}}
+{{< /highlight >}}
 
 We will model the first field which indicates when last the sample had a mammogram.
 
 {{< highlight r >}}
 > plot(mammo.ct)
-{{< / highlight >}}
+{{< /highlight >}}
 
 Again the nodes in the model appear in the form of a bar plot since they represent a categorical variable. The model classifies the data according to SYMPT and PB, where the former is an ordinal variable which reflects agreement with the statement "You do not need a mamogram unless you develop symptoms" and the latter is an indicator of the perceived benefit of mammography.
 
-<img src="{{ site.baseurl }}/static/img/2013/05/ctree-mammo.png">
+<img src="/img/2013/05/ctree-mammo.png">
 
 # German Breast Cancer Study Group
 
@@ -258,7 +258,7 @@ The GBSG2 data contains the data for the German Breast Cancer Study Group 2. Yes
 > require(ipred)
 >
 > data("GBSG2", package = "ipred")
-{{< / highlight >}}
+{{< /highlight >}}
 
 We will be focusing on the recurrence free survival time of the samples. This is [censored data](http://en.wikipedia.org/wiki/Censoring_(statistics)): for some of the samples the time to recurrence is known; for others there had been no recurrence at the time of the study.
 
@@ -278,16 +278,16 @@ We will be focusing on the recurrence free survival time of the samples. This is
 8     no  65     Post    16     II      1     192     25 2161    0
 9     no  80     Post    39     II     30       0     59  471    1
 10    no  66     Post    18     II      7       0      3 2014    0
-{{< / highlight >}}
+{{< /highlight >}}
 
 The samples for which recurrence time is not known are indicated by a "+" in the survival data. Next we construct the model and generate a plot.
 
 {{< highlight r >}}
 > GBSG2.ct plot(GBSG2.ct)
-{{< / highlight >}}
+{{< /highlight >}}
 
 The model divides the data into four categories according to the values of three covariates: pnodes (number of positive nodes), horTh (hormonal therapy: yes or no) and progrec (progesterone receptor). The nodes reflect the distribution of survival times. For example, those samples with more than three positive nodes and progesterone receptor levels&nbsp;≤ 20 had the worst distribution of survival times. Those samples with fewer than 3 nodes and that did receive hormone therapy had significantly better survival times.
 
-<img src="{{ site.baseurl }}/static/img/2013/05/ctree-GBSG2.png">
+<img src="/img/2013/05/ctree-GBSG2.png">
 
 I hope that you have found this informative. I know that I have learned a lot while putting it together.

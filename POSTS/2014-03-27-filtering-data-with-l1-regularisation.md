@@ -50,7 +50,7 @@ l1filter.optim <- function (x, lambda = 0.0) {
   
   return(fit$par)
 }
-{{< / highlight >}}
+{{< /highlight >}}
 
 I changed optimisation method from BFGS to conjugate gradient (CG) because, upon testing, the latter required fewer evaluations of both the objective function and its gradient. I also played around with the various update types used with conjugate gradient and found that Beale–Sorenson provided better performance than either Fletcher–Reeves or Polak–Ribiere.
 
@@ -62,7 +62,7 @@ A noisy sawtooth waveform serves well to demonstrate this filter.
 > # Add in some noise
 > #
 > y <- y + rnorm(length(y))
-{{< / highlight >}}
+{{< /highlight >}}
 
 We systematically apply the L1 filter with a range of regularisation parameters extending from 1 to 10000 in multiples of 10.
 
@@ -84,7 +84,7 @@ We systematically apply the L1 filter with a range of regularisation parameters 
 4 4 3.56972      0 3.56972
 5 5 3.86495      0 3.86495
 6 6 7.40162      0 7.40162
-{{< / highlight >}}
+{{< /highlight >}}
 
 And then use the L2 filter with the same regularisation parameters for comparison.
 
@@ -104,11 +104,11 @@ And then use the L2 filter with the same regularisation parameters for compariso
 4 4      0 3.56972
 5 5      0 3.86495
 6 6      0 7.40162
-{{< / highlight >}}
+{{< /highlight >}}
 
 In the plot below the two filtered signals are compared to the raw data (points), with the L1 filtered data plotted as a solid line and the L2 filtered data as a dashed line.
 
-<img src="{{ site.baseurl }}/static/img/2014/03/illustration-L1-optimisation.png">
+<img src="/img/2014/03/illustration-L1-optimisation.png">
 
 Without regularisation ($$ \lambda = 0 $$) the filtered signals are identical to the raw data. As the strength of regularisation increases, the difference between the L1 and L2 filtered data emerges. While the L2 filter tends to produce a smooth curve, the L1 filter attempts to approximate the raw data by a series of straight line segments. The degree of regularisation determines the number of segments (or equivalently, the number of breaks between segments). With strong regularisation (bottom panel), the L2 filter has completely smoothed out any variation in the raw data, while the L1 filter retains a good approximation to the original (noise free) signal.
 

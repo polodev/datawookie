@@ -18,7 +18,7 @@ Manfred Schroeder's book [Fractals, Chaos, Power Laws: Minutes from an Infinite 
 
 <!--more-->
 
-<img src="{{ site.baseurl }}/static/img/2014/08/dla-post-illustration.png">
+<img src="/img/2014/08/dla-post-illustration.png">
 
 ## Diffusion-Limited Aggregation
 
@@ -57,7 +57,7 @@ First we need to construct a grid. We will start small: a 20 by 20 grid filled w
 [18,]   NA   NA   NA   NA   NA   NA   NA   NA   NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA
 [19,]   NA   NA   NA   NA   NA   NA   NA   NA   NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA
 [20,]   NA   NA   NA   NA   NA   NA   NA   NA   NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA
-{{< / highlight >}}
+{{< /highlight >}}
 
 We need to generate two dimensional random walks. To do this I created a table of possible moves, from which individual steps could be sampled at random. The table presently only caters for the cells immediately above, below, left or right of the current cell. It would be a simple matter to extend the table to allow diagonal moves as well, but these more distant moves would need to be weighted accordingly.
 
@@ -71,7 +71,7 @@ We need to generate two dimensional random walks. To do this I created a table o
 2  0 -1
 3  1  0
 4 -1  0
-{{< / highlight >}}
+{{< /highlight >}}
 
 Next a function to transport a particle from its initial location until it either leaves the grid or adheres to the cluster at the origin. Again a possible refinement here would be to allow sticking to next-nearest neighbours as well 
 
@@ -98,7 +98,7 @@ Next a function to transport a particle from its initial location until it eithe
 +   #
 +   return(c(p, count = count))
 + }
-{{< / highlight >}}
+{{< /highlight >}}
 
 Finally we are ready to apply this procedure to a batch of particles.
 
@@ -121,7 +121,7 @@ Finally we are ready to apply this procedure to a batch of particles.
 > result = foreach(n = 1:PBATCH) %do% diffuse(particles[n,])
 > 
 > lapply(result, function(p) {if (length(p) == 3) grid[p$x, p$y] <<- p$count})
-{{< / highlight >}}
+{{< /highlight >}}
 
 The resulting grid shows all of the locations where particles have adhered to the cluster. The number at each location is the diffusion time, which indicates the number of steps required for the particle to move from its initial location to its final resting place. The shape of the cluster is a little boring at present: essentially a circular disk centred on the origin. This is due to the size of the problem and we will need to have a much larger grid to produce more interesting structure.
 
@@ -148,17 +148,17 @@ The resulting grid shows all of the locations where particles have adhered to th
 [18,]   NA   NA   NA   NA   NA   NA   NA   NA   NA    18    20    NA    NA    NA    NA    NA    NA    NA    NA    NA
 [19,]   NA   NA   NA   NA   NA   NA   NA   NA   NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA
 [20,]   NA   NA   NA   NA   NA   NA   NA   NA   NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA    NA
-{{< / highlight >}}
+{{< /highlight >}}
 
 Taking a look at the distribution of diffusion times below we can see that there is a strong peak between 10 and 15. The majority of particles diffuse in less than 40 steps, while the longest diffusion time is 151 steps. The grid above shows that, as one would expect, smaller diffusion times are found close to the surface of the cluster, while longer times are embedded closer to the core.
 
-<img src="{{ site.baseurl }}/static/img/2014/08/dla-big-steps-hist-sample.png">
+<img src="/img/2014/08/dla-big-steps-hist-sample.png">
 
 ## Scaling it Up
 
 To produce a more interesting cluster we need to scale the grid size up considerably. But this also means that the run time escalates enormously. So, to make this even remotely tractable, I had to parallelise the algorithm. I did this using the SNOW package and ran it on an MPI cluster. The changes to the code are trivial, involving only the creation and initialisation of the cluster and changing %do% to %dopar% in the foreach() loop.
 
-<img src="{{ site.baseurl }}/static/img/2014/12/dla-big.png">
+<img src="/img/2014/12/dla-big.png">
 
 ## Conclusion
 

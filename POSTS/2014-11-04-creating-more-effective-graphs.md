@@ -23,11 +23,11 @@ Both the book and web site are excellent resources if you are looking for inform
 
 Being a big fan of [xkcd](http://xkcd.com/ "xkcd"), I rather enjoyed the example plot in xkcd style (which I don't think is covered in the book...). The code provided on the web site is used as the basis for the plot below.
 
-<img src="{{ site.baseurl }}/static/img/2014/11/life-expectancy.png">
+<img src="/img/2014/11/life-expectancy.png">
 
 This plot is broadly consistent with the data from the Public Data archive on Google, but the effects of smoothing in the xkcd style plot can be clearly seen. Is this really important? Well, I suppose that depends on the objective of the plot. If it's just to inform (and look funky in the process), then the xkcd plot is perfectly fine. If you are looking for something more precise, then a more conventional plot without smoothing would be more appropriate.
 
-<img src="{{ site.baseurl }}/static/img/2014/11/life-expectancy-google.png">
+<img src="/img/2014/11/life-expectancy-google.png">
 
 I like the xkcd style plot though and here's the code for generating it, loosely derived from the code on the web site.
 
@@ -54,4 +54,4 @@ I like the xkcd style plot though and here's the code for generating it, loosely
 + 	theme(legend.position = "none") +
 + 	ylab("Life Expectancy") +
 + 	xkcdaxis(c(1952, 2010), c(20, 83))
-{{< / highlight >}}
+{{< /highlight >}}

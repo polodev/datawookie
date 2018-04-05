@@ -23,7 +23,7 @@ I uncovered something a little perplexing today. It helped me waste 20 minutes o
 + 	ggplot(points, aes(x = x, y = y)) + geom_point()
 + }
 > make.plot()
-{{< / highlight >}}
+{{< /highlight >}}
 
 That works perfectly. But suppose I define a local variable within the function and I use it to transform the plotted data.
 
@@ -34,7 +34,7 @@ That works perfectly. But suppose I define a local variable within the function 
 + }
 > make.plot()
 Error in eval(expr, envir, enclos) : object 'p' not found
-{{< / highlight >}}
+{{< /highlight >}}
 
 Whoops! That breaks. The problem is that `ggplot()` is looking in the global environment for the variable in question. It does not see the local environment. Thanks to some [helpful posts](http://stackoverflow.com/questions/5106782/use-of-ggplot-within-another-function-in-r) on stackoverflow, I have a solution: simply pass the local environment into the `ggplot()` call.
 
@@ -44,6 +44,6 @@ Whoops! That breaks. The problem is that `ggplot()` is looking in the global env
 + 	ggplot(points, aes(x = x, y = y / p), environment = environment()) + geom_point()
 + }
 > make.plot()
-{{< / highlight >}}
+{{< /highlight >}}
   
 Works like a charm.

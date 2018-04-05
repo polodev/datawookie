@@ -27,7 +27,7 @@ The Julia REPL has a vast range of features. It's a pleasure to use and I'm perf
 
 When you start Juno for the first time it opens a tutorial file called, not surprisingly, Tutorial.jl. It would be worth your while to take the few minutes required to work your way through this. The image below shows some of the tutorial content.
 
-<img src="{{ site.baseurl }}/static/img/2015/08/julia-juno-session-1.jpg" >
+<img src="/img/2015/08/julia-juno-session-1.jpg" >
 
 Useful features:
 
@@ -45,17 +45,17 @@ You can run Julia code directly in your browser using the IJulia notebooks at [J
 
 Sign in using your Google identity. Everybody has one of those, right?
 
-<img src="{{ site.baseurl }}/static/img/2015/08/julia-juliabox.jpg" >
+<img src="/img/2015/08/julia-juliabox.jpg" >
 
 Open the tutorial folder and then select the 00 - Start Tutorial notebook. It's worthwhile browsing through the other parts of the tutorial too, which cover topics like plotting and metaprogramming.
 
-<img src="{{ site.baseurl }}/static/img/2015/08/julia-ijulia-notebook.jpg" >
+<img src="/img/2015/08/julia-ijulia-notebook.jpg" >
 
 You can access the notebook functionality locally via the [IJulia](https://github.com/JuliaLang/IJulia.jl) package. As before, these instructions pertain to Ubuntu Linux. First you'll need to install IPython.
 
 {{< highlight text >}}
 $ sudo apt-get install ipython-notebook
-{{< / highlight >}}
+{{< /highlight >}}
 
 Then install and load the IJulia package. Finally run the `notebook()` function, which will launch an IJulia notebook in your browser.
 
@@ -70,20 +70,20 @@ julia> notebook()
 2015-08-03 07:35:33.021 [NotebookApp] The IPython Notebook is running at: http://localhost:8998/
 2015-08-03 07:35:33.021 [NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
 Created new window in existing browser session.
-{{< / highlight >}}
+{{< /highlight >}}
 
 Alternatively you can use an IJulia notebook directly from the shell prompt.
 
 {{< highlight julia >}}
 $ ipython notebook -profile julia
-{{< / highlight >}}
+{{< /highlight >}}
 
 That's a little more direct than first running the Julia interpreter. For ease of use I created a shell alias.
 
 {{< highlight julia >}}
 $ alias ijulia='ipython notebook -profile julia'
 $ ijulia
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Editor Support
 

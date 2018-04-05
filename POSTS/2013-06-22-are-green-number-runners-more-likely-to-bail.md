@@ -23,7 +23,7 @@ On the face of it, this seems to make sense: there is a natural selection effect
 
 But, unfortunately, it is not quite that simple.
 
-<img src="{{ site.baseurl }}/static/img/2013/06/status-proportion-medal-count.png">
+<img src="/img/2013/06/status-proportion-medal-count.png">
 
 The analysis above has a serious problem: consider those runners with one medal. We are comparing the number of finishers (those that have just received that medal) to non-finishers (who already have a medal!). So we are not really comparing apples with apples! What we really should be working with are the number of finishers who had _i-1_ medals before the race and the number of non-finishers who had _i_ medals.
 
@@ -51,7 +51,7 @@ year   status medal.count
 2011      DNS           9
 2012      DNS           9
 2013      DNS           9
-{{< / highlight >}}
+{{< /highlight >}}
 
 What we want is a table that shows how many times he ran with a given number of medals. So, for our anonymous hero, this would be:
 
@@ -60,7 +60,7 @@ What we want is a table that shows how many times he ran with a given number of 
   Finished 1 1 1 1 1 1 1 1 1 0
   DNF      0 0 0 0 0 0 0 3 0 3
   DNS      0 0 0 0 0 0 0 0 0 5
-{{< / highlight >}}
+{{< /highlight >}}
 
 Things went well for the first seven years. On the first year he had no medal (column 0) but he finished (so there is a 1 in the first row). The same applies for columns 1 to 6. Then on year 7 he finished, gaining his seventh medal (hence the 1 in the first row of column 6: he already had 6 medals when he ran this time!). However, for the next three years (when he already had 7 medals) he got a DNF (hence the 3 in the second row of column 7). On his fourth attempt he got medal number 8 (giving the 1 in the first row of column 7: he already had 7 medals when he ran this time!). And the following year he got medal number 9. Then he suffered a string of 3 DNFs (the 3 in the second row of column 9), followed by a series of 5 DNSs (the 5 in the third row of column 9). To illustrate the proportions, when he had 7 medals he got DNS 0% (0/4) of the time, DNF 75% (3/4) of the time and finished 25% (1/4) of the time.
 
@@ -109,11 +109,11 @@ Those are the data for a single athlete. To make a compelling case it is necessa
 91 Finished          30     59 0.83098592
 92      DNF          30      9 0.12676056
 93      DNS          30      3 0.04225352
-{{< / highlight >}}
+{{< /highlight >}}
 
 The important information here is the proportion of DNF entries for each medal count. We can see that 11.8% (0.11860858) of runners DNF on the first time that they ran. Similarly, of those runners who had already completed the race once (so they had one medal in the bag), 11.7% (0.11739666) did not finish. Of those who ran again after just achieving a green number, 10.8% (0.10827034) were DNF. It will be easier to make sense of all this in a plot.
 
-<img src="{{ site.baseurl }}/static/img/2013/06/status-proportion-medal-count-corrected.png">
+<img src="/img/2013/06/status-proportion-medal-count-corrected.png">
 
 Wow! Now that is interesting. Just to be sure that everything is clear about this plot: every column reflects the proportions of finishers, DNFs and DNSs who **already had** a given number of medals. There are a number of intriguing things about these data:
 
@@ -141,7 +141,7 @@ sample estimates:
 0.10071942 0.10404624 0.09890110 0.09684685 0.14473684 0.10833333 0.14358974 0.07284768 0.14285714 0.16379310
    prop 31
 0.12676056
-{{< / highlight >}}
+{{< /highlight >}}
 
 The miniscule p-value from the proportion test indicates that there definitely is a significant difference in the proportion of DNFs across the entire data set (for those with between 0 and 30 medals). But it does not tell us anything about which of the proportions are responsible for this difference. We can get some information about this from a pairwise proportion test. Here is the abridged output.
 
@@ -167,7 +167,7 @@ data:  medal.table[2, 1:31] out of colSums(medal.table[, 1:31])
 14 1.000   1.000   1.000   1.000   1.000   1.000   1.000   1.000 1.000 1.000 1.000 1.000 1.000 1.000 -     -
 15 1.000   1.000   1.000   1.000   1.000   1.000   1.000   1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 -
 16 1.000   1.000   1.000   1.000   1.000   1.000   1.000   1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
-{{< / highlight >}}
+{{< /highlight >}}
 
 For between 0 and 6 medals there is no significant difference (p-value is roughly 1). The DNF proportion for those with 7 medals does start to differ from those with 4 medals or fewer, but the p-values are not significant. When we get to athletes who have 8 medals there is a significant difference in the proportion of DNFs all the way from those with 0 medals to those with 6 medals. However, the proportion of DNFs for those with 9 medals is not significantly different from any of the other categories. Finally, the DNF proportion for those athletes who already have 10 medals does not differ significantly from the athletes with any number of fewer medals.
 
@@ -207,7 +207,7 @@ Oh, and one last thing: as I mentioned before, the analysis above is based on th
   2011    11058  2023  6506
   2012    11889  1739  5916
   2013    10278  3643  5986
-{{< / highlight >}}
+{{< /highlight >}}
 
 Certainly something is deeply wrong in 1984! In the early years it does not make any sense to discriminate between DNF and DNS since there were no independent records kept: we simply know whether or not an athlete finished. The introduction of the ChampionChip timing devices improved the quality of the data dramatically. These chips have been [used by all Comrades Marathon runners since 1997](http://www.runnersworld.co.za/motivation/20-running-breakthroughs-from-the-last-20-years/) although there is a delayed effect on the quality of the data.
 

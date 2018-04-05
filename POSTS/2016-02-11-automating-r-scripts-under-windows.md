@@ -24,4 +24,4 @@ That got me 99% of the way there. I wrote a batch file to trigger the script. Th
 @echo off
 cd "C:\Users\AndrewCo\Projects\"
 R CMD BATCH script.R
-{{< / highlight >}}
+{{< /highlight >}}

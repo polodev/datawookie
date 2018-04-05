@@ -16,7 +16,7 @@ First we'll need to create an EC2 instance. We'll request a `g2.2xlarge` spot in
 
 {{< highlight text >}}
 $ ssh ubuntu@ec2-34-224-101-229.compute-1.amazonaws.com
-{{< / highlight >}}
+{{< /highlight >}}
 
 Now the fun begins.
 
@@ -26,13 +26,13 @@ Update the APT cache.
 
 {{< highlight text >}}
 $ sudo apt-get update -y
-{{< / highlight >}}
+{{< /highlight >}}
 
 Install `make`, `gcc` and the kernel header files. We'll need these to build the NVIDIA driver.
 
 {{< highlight text >}}
 $ sudo apt-get install -y make gcc linux-headers-$(uname -r)
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Installing NVIDIA Driver
 
@@ -43,7 +43,7 @@ Don't we have a post about installing these drivers already? I think it noted th
 
 {{< highlight bash >}}
 sudo apt-get install nvidia-cuda-dev nvidia-cuda-toolkit nvidia-nsight
-{{< / highlight >}}
+{{< /highlight >}}
 {{< /comment >}}
 
 Download the NVIDIA drivers and run the installer.
@@ -51,13 +51,13 @@ Download the NVIDIA drivers and run the installer.
 {{< highlight text >}}
 $ wget http://us.download.nvidia.com/XFree86/Linux-x86_64/367.106/NVIDIA-Linux-x86_64-367.106.run
 $ sudo /bin/bash ./NVIDIA-Linux-x86_64-367.106.run
-{{< / highlight >}}
+{{< /highlight >}}
 
 Accept the license conditions. There will be a couple of warnings, which you can safely ignore. Choose to run `nvidia-xconfig`. When the installer has finished, reboot.
 
 {{< highlight text >}}
 $ sudo reboot
-{{< / highlight >}}
+{{< /highlight >}}
 
 Obviously your connection will be broken during the reboot, so reconnect. Check that the drivers are installed and a GPU detected.
 
@@ -73,7 +73,7 @@ Attached GPUs                       : 1
 GPU 0000:00:03.0
     Product Name                    : GRID K520
     Product Brand                   : Grid
-{{< / highlight >}}
+{{< /highlight >}}
 
 Looks good!
 
@@ -83,14 +83,14 @@ Next we'll install `ethminer`. We could build it from source, but there's a prec
 
 {{< highlight text >}}
 $ wget https://github.com/ethereum-mining/ethminer/releases/download/v0.12.0/ethminer-0.12.0-Linux.tar.gz
-{{< / highlight >}}
+{{< /highlight >}}
 
 Unpack and move the binary into a location on the execution path.
 
 {{< highlight text >}}
 $ tar -zxvf ethminer-0.12.0-Linux.tar.gz
 $ sudo mv bin/ethminer /usr/local/bin/
-{{< / highlight >}}
+{{< /highlight >}}
 
 Check that it works.
 
@@ -98,7 +98,7 @@ Check that it works.
 $ ethminer --version
 ethminer version 0.12.0
 Build: Linux/g++/Release
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Clean Up
 
@@ -123,7 +123,7 @@ The process of creating an AMI takes place on the EC2 dashboard, so head back th
 
 You can now easily create new EC2 instances provisioned with this freshly minted AMI.
 
-![]({{ site.baseurl }}/static/img/2017/12/aws-ec2-select-image.png)
+![](/img/2017/12/aws-ec2-select-image.png)
 
 ## Going Public
 

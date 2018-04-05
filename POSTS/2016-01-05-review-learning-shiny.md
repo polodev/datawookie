@@ -17,7 +17,7 @@ I was asked to review [_Learning Shiny_](https://www.packtpub.com/application-de
 
 <!--more-->
 
-<img src="{{ site.baseurl }}/static/img/2015/12/learning-shiny-cover.png">
+<img src="/img/2015/12/learning-shiny-cover.png">
 
 The book states its objective as:
 

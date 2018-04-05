@@ -24,7 +24,7 @@ Scotia departed from Scotland on November 2, 1902, reaching the Falkland Islands
 Toward the end of November 1903, the ice holding the Scotia broke up, and she departed again for the Falkland Islands and hence to Buenos Aires for provisions and repairs. A small party was left at Ormond House. Bruce persuaded the Argentinean government to support the observations being made on Laurie Island, handing Ormond House over to them. The building was renamed Orcadas Base. The Scotia returned to Laurie Island before once again sailing south to the Weddell Sea. After proceeding unimpeded for some time, she encountered heavy pack ice and shortly afterward the ice shelf. Sailing along the ice shelf they sighted land, which Bruce named Coats Land. The Scotia got to 74° S before gathering ice forced her to again turn northward. She then proceeded to Cape Town via Gough Island, where scientific specimens were collected. From Cape Town she sailed home, arriving on July 21, 1904.
 
 <figure>
-[<img src="{{ site.baseurl }}/static/img/2015/03/orcadas-base.jpg">](http://www.culturademontania.com.ar/Noticias/22-febrero-dia-antartida-argentina.htm)
+[<img src="/img/2015/03/orcadas-base.jpg">](http://www.culturademontania.com.ar/Noticias/22-febrero-dia-antartida-argentina.htm)
 <figcaption class="wp-caption-text">Orcadas Base on Laurie Island. Image courtesy of http://www.culturademontania.com.ar/.</figcaption>
 </figure>
 

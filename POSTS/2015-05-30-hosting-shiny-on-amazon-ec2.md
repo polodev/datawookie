@@ -32,35 +32,35 @@ Before embarking on this adventure it might be worthwhile reading some of the ma
 
 The first step is to create an account at [aws.amazon.com](http://aws.amazon.com). After you've logged into your account you should see a console like the one below. Select the **EC2** link under _Compute_.
 
-<img src="{{ site.baseurl }}/static/img/2015/05/AWS-Management-Console-002.bmp.png">
+<img src="/img/2015/05/AWS-Management-Console-002.bmp.png">
 
 Next, from the EC2 Dashboard select **Launch Instance**.
 
-<img src="{{ site.baseurl }}/static/img/2015/05/EC2-Management-Console-003.bmp.png">
+<img src="/img/2015/05/EC2-Management-Console-003.bmp.png">
 
 Step 1: There is an extensive range of machine images to choose from, but we will select the **Ubuntu Server**.
 
-<img src="{{ site.baseurl }}/static/img/2015/05/EC2-Management-Console-004.bmp.png">
+<img src="/img/2015/05/EC2-Management-Console-004.bmp.png">
 
 Step 2: Select the default option. Same applies for Step 3, Step 4 and Step 5.
 
-<img src="{{ site.baseurl }}/static/img/2015/05/EC2-Management-Console-005.bmp.png">
+<img src="/img/2015/05/EC2-Management-Console-005.bmp.png">
 
 Step 6: Choose the security settings shown below. SSH access should be restricted to your local machine alone. When you are done, select **Review & Launch**. Further information on access control can be found [here](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/authorizing-access-to-an-instance.html).
 
-<img src="{{ site.baseurl }}/static/img/2015/05/EC2-Management-Console-007.bmp.png">
+<img src="/img/2015/05/EC2-Management-Console-007.bmp.png">
 
 Step 7: Create a new key pair. Download the key and store it somewhere safe! Now press **Launch Instances**.
 
-<img src="{{ site.baseurl }}/static/img/2015/05/EC2-Management-Console-008.bmp.png">
+<img src="/img/2015/05/EC2-Management-Console-008.bmp.png">
 
 The launch status of your instance will then be confirmed.
 
-<img src="{{ site.baseurl }}/static/img/2015/05/EC2-Management-Console-009.bmp.png">
+<img src="/img/2015/05/EC2-Management-Console-009.bmp.png">
 
 At any later time the status of your running instance(s) can be inspected from the EC2 dashboard.
 
-<img src="{{ site.baseurl }}/static/img/2015/05/EC2-Management-Console-010.bmp.png">
+<img src="/img/2015/05/EC2-Management-Console-010.bmp.png">
 
 ## SSH Connection
 
@@ -68,7 +68,7 @@ Now in order to install R and Shiny we need to login to our instance via SSH. In
 
 {{< highlight bash >}}
 $ ssh -i AWS-key.pem ubuntu@ec2-57-29-93-35.us-west-2.compute.amazonaws.com
-{{< / highlight >}}
+{{< /highlight >}}
 
 More detailed information on SSH access can be found [here](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html).
 
@@ -80,7 +80,7 @@ Once you have the SSH connection up and running, execute the following on your r
 $ sudo apt-get update  
 $ sudo apt-get install r-base  
 $ sudo apt-get install r-base-dev
-{{< / highlight >}}
+{{< /highlight >}}
 
 More in depth information on running R on AWS can be found [here](http://blogs.aws.amazon.com/bigdata/post/Tx3IJSB6BMHWZE5/Running-R-on-AWS).
 
@@ -90,14 +90,14 @@ To install the Shiny R package, execute the following on your remote instance:
 
 {{< highlight bash >}}
 $ sudo su - -c "R -e \"install.packages('shiny', repos = 'http://cran.rstudio.com/')\""
-{{< / highlight >}}
+{{< /highlight >}}
 
 Next you need to install the Shiny server. Take a look at the [Shiny Server download page](https://www.rstudio.com/products/shiny/download-server/) to get the URL for the latest version of the package.
 
 {{< highlight bash >}}
 $ wget https://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.5.6.875-amd64.deb
 $ sudo dpkg -i shiny-server-1.5.6.875-amd64.deb
-{{< / highlight >}}
+{{< /highlight >}}
   
 During the installation a directory `/srv/shiny-server/` will have been created, where your applications will be stored. Configuration options are given in `/etc/shiny-server/shiny-server.conf`.
 
@@ -116,7 +116,7 @@ $ tree /srv/shiny-server/
 ├── medal-predictions
 │   └── app.R
 └── sample-apps -> /opt/shiny-server/samples/sample-apps
-{{< / highlight >}}
+{{< /highlight >}}
 
 Every application folder should have a `app.R` file.
 

@@ -9,9 +9,9 @@ tags:
   - Ethereum
 ---
 
-{% comment %}
+{{< comment >}}
 https://ethereumdev.io/deploy-truffle-smart-contracts-live-network/
-{% endcomment %}
+{{< /comment >}}
 
 In order to deploy a contract onto the live Ethereum blockchain you'll need to have
 

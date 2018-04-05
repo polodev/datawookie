@@ -45,7 +45,7 @@ julia> typeof(y) # Type of the Array itself
 Array{Any,1}
 julia> eltype(y) # Type of the elements in the Array
 Any
-{{< / highlight >}}
+{{< /highlight >}}
   
 Type promotion is applied to an array with mixed content (like the second example above, which contains an integer, a string and a character), elevating the element type to a common ancestor, which in the example is `Any`.
 
@@ -72,7 +72,7 @@ julia> x[2:4] = [1, 5, 9] # Slicing with assignment
  1
  5
  9
-{{< / highlight >}}
+{{< /highlight >}}
 
 An `Array` can be treated like a stack or queue, where additional items can be popped from or pushed onto the "end" of the collection. Functions `shift!()` and `unshift!()` do analogous operations to the "front" of the collection.
   
@@ -96,7 +96,7 @@ julia> append!(x, 1:3) # Append one array to the end of another array.
   1
   2
   3
-{{< / highlight >}}
+{{< /highlight >}}
 
 What about a 2D array (or matrix)? Not too many surprises here. With reference to the examples above we can see that a 1D array is effectively a column vector.
 
@@ -120,7 +120,7 @@ julia> M[1:end,1]
 julia> M[1,:] # : is the same as 1:end
 1x3 Array{Int64,2}:
  1 2 3
-{{< / highlight >}}
+{{< /highlight >}}
 
 Collections are copied by reference. A shallow copy can be created with `copy()`. If you want a truly distinct collection of objects you need to use `deepcopy()`.
 
@@ -131,7 +131,7 @@ julia> a, b, x, text = 1, 2, 3.5, "Hello"
 (1,2,3.5,"Hello")
 julia> a, b = b, a # I never get tired of this!
 (1,2)
-{{< / highlight >}}
+{{< /highlight >}}
   
 A dictionary is just a collection of key-value pairs.
   
@@ -143,7 +143,7 @@ Dict{Any,Any} with 3 entries:
   1        => "zap!"
 julia> stuff["number"]
 43
-{{< / highlight >}}
+{{< /highlight >}}
   
 Sets are unordered collections which are not indexed and do not allow duplicates.
   
@@ -158,6 +158,6 @@ julia> intersect(S1, S2)
 Set{Int64}({4,3,5})
 julia> setdiff(S2, S1)
 Set{Any}({7,6})
-{{< / highlight >}}
+{{< /highlight >}}
 
 We'll see more about collections when we look at Julia's functional programming capabilities, which will be in the next but one installment. In the meantime you can find the full code for today's flirtation with Julia on [github](https://github.com/DataWookie/MonthOfJulia).

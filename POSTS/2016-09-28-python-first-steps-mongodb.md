@@ -17,7 +17,7 @@ I'm busy working my way through Kyle Banker's [MongoDB in Action](https://www.ma
 
 <!--more-->
 
-<img src="{{ site.baseurl }}/static/img/2016/09/mongodb-logo.png" >
+<img src="/img/2016/09/mongodb-logo.png" >
 
 ## MongoDB Installation
 
@@ -25,7 +25,7 @@ If you haven't already installed [MongoDB](https://www.mongodb.com/), now is the
 
 {{< highlight bash >}}
 $ sudo apt install mongodb
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Python Package Installation
 
@@ -33,7 +33,7 @@ Next install [PyMongo](https://github.com/mongodb/mongo-python-driver), the Pyth
 
 {{< highlight bash >}}
 $ pip3 install pymongo
-{{< / highlight >}}
+{{< /highlight >}}
 
 Check that the install was successful.
 
@@ -41,7 +41,7 @@ Check that the install was successful.
 >>> import pymongo
 >>> pymongo.version
 '3.3.0'
-{{< / highlight >}}
+{{< /highlight >}}
 
 Detailed documentation for PyMongo can be found [here](https://api.mongodb.com/python/current/).
 
@@ -51,7 +51,7 @@ To start interacting with the MongoDB server we need to instantiate a `MongoClie
 
 {{< highlight python >}}
 >>> client = pymongo.MongoClient()
-{{< / highlight >}}
+{{< /highlight >}}
 
 This will connect to `localhost` using the default port. Alternative values for host and port can be specified.
 
@@ -61,7 +61,7 @@ Next we connect to a particular database called `test`. If the database does not
 
 {{< highlight python >}}
 >>> db = client.test
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Create a Collection
 
@@ -71,7 +71,7 @@ A database will hold one or more collections of documents. We'll create a `users
 >>> users = db.users
 >>> users
 Collection(Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True), 'test'), 'users')
-{{< / highlight >}}
+{{< /highlight >}}
 
 As mentioned in the documentation, MongoDB is lazy about the creation of databases and collections. Neither the database nor collection is actually created until data are written to them.
 
@@ -86,14 +86,14 @@ Documents are represented as dictionaries in Python. We'll create a couple of li
 {{< highlight python >}}
 >>> smith = {"last_name": "Smith", "age": 30}
 >>> jones = {"last_name": "Jones", "age": 40}
-{{< / highlight >}}
+{{< /highlight >}}
 
 We use the `insert_one()` method to store each document in the collection.
 
 {{< highlight python >}}
 >>> users.insert_one(smith)
 <pymongo.results.InsertOneResult object at 0x7f57d36d9678>
-{{< / highlight >}}
+{{< /highlight >}}
 
 Each document is allocated a unique identifier which can be accessed via the `inserted_id` attribute.
 
@@ -101,7 +101,7 @@ Each document is allocated a unique identifier which can be accessed via the `in
 >>> jones_id = users.insert_one(jones).inserted_id
 >>> jones_id
 ObjectId('57ea4adfad4b2a1378640b42')
-{{< / highlight >}}
+{{< /highlight >}}
 
 Although these identifiers look pretty random, there is actually a wel defined structure. The first 8 characters (4 bytes) are a timestamp, followed by a 6 character machine identifier then a 4 character process identifier and finally a 6 character counter.
 
@@ -110,7 +110,7 @@ We can verify that the collection has been created.
 {{< highlight python >}}
 >>> db.collection_names()
 ['users', 'system.indexes']
-{{< / highlight >}}
+{{< /highlight >}}
 
 There's also an `insert_many()` method which can be used to simultaneously insert multiple documents.
 
@@ -123,7 +123,7 @@ The `find_one()` method can be used to search the collection. As its name implie
 {'_id': ObjectId('57ea4acfad4b2a1378640b41'), 'age': 30, 'last_name': 'Smith'}
 >>> users.find_one({"_id": jones_id})
 {'_id': ObjectId('57ea4adfad4b2a1378640b42'), 'age': 40, 'last_name': 'Jones'}
-{{< / highlight >}}
+{{< /highlight >}}
 
 A more general query can be made using the `find()` method which, rather than returning a document, returns a cursor which can be used to iterate over the results. With our minimal collection this doesn't seem very useful, but a cursor really comes into its own with a massive collection.
 
@@ -132,7 +132,7 @@ A more general query can be made using the `find()` method which, rather than re
 <pymongo.cursor.Cursor object at 0x7f57d77fe3c8>
 >>> users.find({"age": {"$gt": 20}})
 <pymongo.cursor.Cursor object at 0x7f57d77fe8d0>
-{{< / highlight >}}
+{{< /highlight >}}
 
 A cursor is an iterable and can be used to neatly access the query results.
 
@@ -143,7 +143,7 @@ A cursor is an iterable and can be used to neatly access the query results.
 ...  
 'Smith'
 'Jones'
-{{< / highlight >}}
+{{< /highlight >}}
 
 Operations like `count()` and `sort()` can be applied to the results returned by `find()`.
 
@@ -154,7 +154,7 @@ The `update()` method is used to modify existing documents. A compound document 
 {{< highlight python >}}
 >>> users.update({"last_name": "Smith"}, {"$set": {"city": "Durban"}})
 {'updatedExisting': True, 'nModified': 1, 'n': 1, 'ok': 1}
-{{< / highlight >}}
+{{< /highlight >}}
 
 The example above uses the `$set` modifier. There are a number of [other modifiers](https://docs.mongodb.com/manual/reference/operator/update/#id1) available like `$inc`, `$mul`, `$rename` and `$unset`.
 
@@ -167,7 +167,7 @@ Deleting records happens via the `remove()` method with an argument which specif
 {{< highlight python >}}
 >>> users.remove({"age": {"$gte": 40}})
 {'n': 1, 'ok': 1}
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Conclusion
 

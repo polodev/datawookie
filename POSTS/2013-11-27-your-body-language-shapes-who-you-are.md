@@ -21,6 +21,6 @@ Amy Cuddy gives a great [talk](http://www.ted.com/talks/amy_cuddy_your_body_lang
 
 There is just one thing that troubles me about the talk. The plot below.
 
-<img src="{{ site.baseurl }}/static/img/2013/11/amy-cuddy-plot.png">
+<img src="/img/2013/11/amy-cuddy-plot.png">
 
 The choice of the scale on the y-axis gives the impression that risk tolerance in the Low Power group is roughly 30% of that in the High Power group. This strongly supports her hypothesis. However, careful inspection reveals that the correct ratio is actually around 70%. It might be unintentional, but in my opinion, a plot of ratio scale data should always have axes which go all the way to zero!

@@ -42,7 +42,7 @@ obj.func <- function(x) {
     #
     return(x[1]**2 + x[2]**2 + (x[3] - pi.estimate)**2)
 }
-{{< / highlight >}}
+{{< /highlight >}}
 
 Here the constraint on x and y is enforced at the beginning: if the constraint is violated then the objective function returns a value of positive infinity. This has two consequences:
 
@@ -51,7 +51,7 @@ Here the constraint on x and y is enforced at the beginning: if the constraint i
 
 The global parameter N determines the number of iterations in the MC calculation. Obviously, increasing N results in a less noisy estimate of pi. The effect of N can be seen in the boxplot below, where the objective function was repeatedly evaluated with input parameters x = y = 1 and z = pi. For N = 10, 100 or 1000 there is a significant degree of variability between samples. However, with N = 10000 or larger the values are quite stable. We will use N = 10000 since it will result in a relatively good value for pi but still capture some variability.
 
-<img src="{{ site.baseurl }}/static/img/2013/07/objective-function-boxplot.png">
+<img src="/img/2013/07/objective-function-boxplot.png">
 
 ## Differential Evolution
 
@@ -92,7 +92,7 @@ best value    :  2
 after         :  200 generations
 fn evaluated  :  402 times
 *************************************
-{{< / highlight >}}
+{{< /highlight >}}
 
 Here the algorithm stopped when it reached the maximum number of iterations. The value obtained for pi is rather respectable, as are the final values for x and y. During the earlier iterations the best fit parameters change fairly rapidly, but towards the end they remain rather static. These results were obtained with the default strategy. Next we will try an alternative strategy:
 
@@ -127,7 +127,7 @@ best value    :  2.00034
 after         :  200 generations
 fn evaluated  :  402 times
 *************************************
-{{< / highlight >}}
+{{< /highlight >}}
 
 The final estimate of pi is not as good, but this might be due either to the change in strategy or the random nature of DE. The algorithm again terminates when it reaches the maximum number of iterations. Let's see what happens if we increase the allowed number of iterations.
 
@@ -162,7 +162,7 @@ best value    :  2
 after         :  10000 generations
 fn evaluated  :  20002 times
 *************************************
-{{< / highlight >}}
+{{< /highlight >}}
 
 Now that is interesting: it seems that by doing more iterations, the final estimate for pi actually gets worse! Not what one would immediately expect... and certainly not the kind of behaviour that one would anticipate from a deterministic objective function. However, this is simply the nature of the beast when optimising in the presence of noise: inevitably you will find sets of parameters which, when combined with noise, will produce progressively lower values for the objective function.
 
@@ -213,7 +213,7 @@ best value    :  2.00009
 after         :  335 generations
 fn evaluated  :  672 times
 *************************************
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Simulated Annealing
 
@@ -237,7 +237,7 @@ $convergence
 
 $message
 NULL
-{{< / highlight >}}
+{{< /highlight >}}
 
 By default optim() should stop after 10000 iterations, however, I pushed this up by a factor of 100. Despite the large number of iterations, the final set of parameters attained is not particularly good. This, again, is due to the noisy objective function. Every time that the objective function is called it uses a new set of random numbers, so that the objective surface is never fixed. Even calling it with the same set of parameters results in a different outcome! The effects of this are more pronounced for SA (as opposed to DE) due to the fact that it only tracks a single state.
 
@@ -265,7 +265,7 @@ $convergence
 
 $message
 [1] "Converged"
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## The Objective Function (without constraint)
 
@@ -279,7 +279,7 @@ obj.func <- function(x) {
     #
     return(x[1]**2 + x[2]**2 + (x[3] - pi.estimate)**2)
 }
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Derivative-Free Nelder-Mead
 
@@ -295,7 +295,7 @@ This method is described in Kelley, C. T. (1999). Iterative Methods for Optimiza
 [1] 153
 > R6$message
 [1] "Successful convergence"
-{{< / highlight >}}
+{{< /highlight >}}
 
 This converges on a reasonable solution without using too many function evaluations. So it is relatively quick! The final set of parameters could probably be improved by tweaking some of the optional arguments to nmkb(). The result might be used as an initial solution for a more intensive optimisation.
 
@@ -310,7 +310,7 @@ This method has the capability to simultaneously optimise multiple objective fun
                opt = 0)
 > R7$paramvalues
 [1] 1.00000 1.00000 3.14839
-{{< / highlight >}}
+{{< /highlight >}}
 
 mopsocd() actually provides the option of applying a constraint as a separate function. I could not, however, get this to work effectively with this example.
 

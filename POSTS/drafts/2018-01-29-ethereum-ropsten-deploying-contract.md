@@ -9,12 +9,12 @@ tags:
   - Ethereum
 ---
 
-{% comment %}
+{{< comment >}}
 This illustrates how to deploy a contract onto the Ropsten (test) blockchain:
 
   - https://medium.com/@mvmurthy/full-stack-hello-world-voting-ethereum-dapp-tutorial-part-2-30b3d335aa1f
   - https://medium.com/@mvmurthy/full-stack-hello-world-voting-ethereum-dapp-tutorial-part-3-331c2712c9df
-{% endcomment %}
+{{< /comment >}}
 
 This will set up a local node on the Ropsten test network.
 
@@ -82,4 +82,4 @@ Saving successful migration to network...
 Saving artifacts...
 {% endhighlight %}
 
-![]({{ site.baseurl }}/static/img/2017/12/ropsten-account-contract-deployed.png)
+![](/img/2017/12/ropsten-account-contract-deployed.png)

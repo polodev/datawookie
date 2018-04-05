@@ -34,7 +34,7 @@ The first step was to parse the HTML. As usual, I am going to do my analysis in 
 > # Select required table
 > #
 > orbits = orbits[[12]]
-{{< / highlight >}}
+{{< /highlight >}}
 
 Somewhat surprisingly I could not get the "which" argument for readHTMLTable() to work, so I simply parsed all of the tables in the file and then selected the one that I wanted after the fact.
 
@@ -42,27 +42,27 @@ Next I had to clean up the column names, which were contaminated by an obscure c
 
 {{< highlight r >}}
 > names(orbits) <- sub("Â", "", sub("\\(.*\\)", "", names(orbits)))
-{{< / highlight >}}
+{{< /highlight >}}
 
 The first and last columns turned out to be redundant, so they were removed.
 
 {{< highlight r >}}
 > orbits[,16] = NULL
 > orbits[,14] = NULL
-{{< / highlight >}}
+{{< /highlight >}}
 
 The data in the first column was also contaminated with the same obscure character...
 
 {{< highlight r >}}
 > orbits[,1] = str_trim(gsub("Â", "", orbits[,1]))
-{{< / highlight >}}
+{{< /highlight >}}
 
 Then I converted some columns from strings to numbers and others from degrees to radians.
 
 {{< highlight r >}}
 > for (n in 3:13) orbits[,n] = as.numeric(orbits[,n])
 > for (n in 5:8) orbits[,n] = orbits[,n] / 180 * pi
-{{< / highlight >}}
+{{< /highlight >}}
 
 And, lastly, split the class column to separate out the hazard data.
 
@@ -73,7 +73,7 @@ And, lastly, split the class column to separate out the hazard data.
 > orbits$hazard = factor(orbits$hazard, levels = c(FALSE, TRUE))
 > #
 > orbits$class = sub("\\*", "", orbits$class)
-{{< / highlight >}}
+{{< /highlight >}}
 
 The resulting data looked like this:
 
@@ -86,7 +86,7 @@ The resulting data looked like this:
 4 137924 (2000 BD19) 56800 0.87645 0.89507 0.448742 5.66019 5.82491 5.72942 0.0920 1.66 0.82 17.2 0.090637   ATE  FALSE
 5   374158 (2004 UL) 56800 1.26636 0.92668 0.414790 2.60992 0.69126 3.68361 0.0928 2.44 1.43 18.8 0.018523   APO   TRUE
 6        (2007 EP88) 56800 0.83731 0.88583 0.362511 0.82035 5.73542 4.42276 0.0956 1.58 0.77 18.5 0.142221   ATE  FALSE
-{{< / highlight >}}
+{{< /highlight >}}
 
 The salient columns are:
 
@@ -104,7 +104,7 @@ The salient columns are:
 
 The class field specifies whether an object is a IEO (Interior Earth Object), AMO (Amor: orbit must be outside the orbit of Earth and not cross Earth's orbit; but coming within 0.30 AU of Earth's orbit), APO (Apollo: semi-major axes greater than 1 AU but perihelion distances less than Earth's aphelion distance; Earth-crossing orbits) or ATE (Aten: semi-major axes less than 1 AU and aphelion greater than 0.983 AU). Finally, the hazard field indicates whether or not an object is potentially hazardous to Earth. Many of these parameters are illustrated in the illustration below (courtesy of Wikipedia).
 
-[<img src="{{ site.baseurl }}/static/img/2014/04/500px-Orbit1.svg_.png">](http://en.wikipedia.org/wiki/File:Orbit1.svg)
+[<img src="/img/2014/04/500px-Orbit1.svg_.png">](http://en.wikipedia.org/wiki/File:Orbit1.svg)
 
 ## Summary Statistics
 
@@ -115,7 +115,7 @@ How are the 10808 objects distributed across the various classes?
 
  AMO  APO  ATE  IEO 
 4102 5857  835   14 
-{{< / highlight >}}
+{{< /highlight >}}
 
 Which class has the most hazardous objects?
 
@@ -127,13 +127,13 @@ class FALSE TRUE
   APO  4614 1243
   ATE   698  137
   IEO    10    4
-{{< / highlight >}}
+{{< /highlight >}}
 
 So, most of the things that we need to worry about are Apollo asteroids. The meteor which detonated over Chelyabinsk on 15 February 2013 was one of these.
 
 The absolute magnitude data (which indicates the brightness of an object) can be used to get an idea of size.
 
-<img src="{{ site.baseurl }}/static/img/2014/04/histogram-v-magnitude.png">
+<img src="/img/2014/04/histogram-v-magnitude.png">
 
 Those objects with an absolute magnitude less than around 17 have a diameter of 1 km across or more. Those with a magnitude of 25 or more are about 50 m in diameter. You might have noticed that there is something a little odd about these magnitudes. Wouldn't you expect a larger object to reflect more light and thus have a _higher_ magnitude? Well, the magnitude scale is a curious beast: it seems to go in the "wrong" direction. A larger magnitude indicates a dimmer object and vice versa. Also, it is a logarithmic scale, so that, for example, an object with magnitude of 6 is around 2.5 times brighter than an object with a magnitude of 7, which in turn is about 2.5 times brighter than an magnitude 8 object.
 
@@ -149,9 +149,9 @@ Those objects with an absolute magnitude less than around 17 have a diameter of 
 +   scale_x_log10() + scale_y_log10() +
 +   xlab("a [AU]") + ylab("Period [year]") +
 +   theme_classic()
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2014/04/kepler-third-law.png">
+<img src="/img/2014/04/kepler-third-law.png">
 
 That looks pretty spot on... not too surprising though, because Kepler's Third Law was probably used to derive either the period of the semi-major axis! A linear fit confirms the ratio of exponents is 1.5.
 
@@ -164,7 +164,7 @@ lm(formula = log10(P) ~ log10(a), data = orbits)
 Coefficients:
 (Intercept)     log10(a)  
    1.29e-05     1.50e+00 
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Orbital Parameters and Hazard
 
@@ -175,9 +175,9 @@ Coefficients:
 +   geom_histogram(binwidth = 0.05, fill = "lightblue", colour = "black") +
 +   xlab("Eccentricity") + ylab("") +
 +   theme_classic()
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2014/04/histogram-eccentricity.png">
+<img src="/img/2014/04/histogram-eccentricity.png">
 
 The eccentricity histogram above shows that there are few objects on circular orbits. There are also few objects with extremely elliptical orbits. The majority have an eccentricity somewhere around 0.5.
 
@@ -191,13 +191,13 @@ We can make these data more illuminating by including the length of the semi-maj
 +   facet_wrap(~ hazard, nrow = 1) +
 +   xlab("Eccentricity") + ylab("Semi-Major Axis [AU]") +
 +   theme_classic()
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2014/04/points-eccentricity-sma-class-hazard.png">
+<img src="/img/2014/04/points-eccentricity-sma-class-hazard.png">
 
 Here we can see that the orbital parameters for the four different classes are well differentiated and that we should be able to easily classify a new object. There does not seem to be a clear distinction between objects which are or are not potentially hazardous. Why is that? Objects are considered hazardous if (i) they are likely to make a close approach to the Earth and (ii) are large enough to cause significant devastation. Effectively an object is defined as hazardous if it has a MOID of 0.05 AU (approximately 20 times the distance between the Earth and the Moon) or less and absolute magnitude less than 22 (approximately 150 m in diameter). This distinction is clarified in the plot below.
 
-<img src="{{ site.baseurl }}/static/img/2014/04/points-magnitude-moid-hazard.png">
+<img src="/img/2014/04/points-magnitude-moid-hazard.png">
 
 ## Conclusion
 

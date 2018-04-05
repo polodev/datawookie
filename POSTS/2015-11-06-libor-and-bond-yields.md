@@ -30,7 +30,7 @@ I've just been looking at the historical relationship between the [London Interb
 +   yield_5y = as.numeric(xml.field('BC_5YEAR')),
 +   yield_10y = as.numeric(xml.field('BC_10YEAR'))
 + )
-{{< / highlight >}}
+{{< /highlight >}}
 
 Once I had a data frame for each time series, the next step was to convert them each to [xts](https://cran.r-project.org/web/packages/xts/index.html) objects. With the data in xts format it was a simple matter to enforce temporal overlap and merge the data into a single time series object. The final step in the analysis was to calculate the linear coefficient, or beta, for a least squares fit of LIBOR on bond yield. This was to be done with both a 1 month and a 1 year moving window. Both of these could be achieved quite easily using `rollapply()` from the [zoo](https://cran.r-project.org/web/packages/zoo/index.html) package.
 

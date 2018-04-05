@@ -20,7 +20,7 @@ The [Mandelbrot Set](http://en.wikipedia.org/wiki/Mandelbrot_set) image was crea
 
 {{< highlight r >}}
 library(Julia)
-{{< / highlight >}}
+{{< /highlight >}}
 
 First an image of the entire set showing a region that we will zoom in on later.
 
@@ -50,7 +50,7 @@ axis(2, at = seq(-2, 2, 0.5))
 rect(-0.325, 0.75, 0.075, 1.15, border = "black", lwd = 2)
 points(c(0.5, 0), c(0, 1), pch = 19)
 text(c(0.5, 0), c(0, 1), labels = c("A", "B"), adj = c(1.55, -0.3))
-{{< / highlight >}}
+{{< /highlight >}}
 
 [<img src="http://162.243.184.248/wp-content/uploads/2013/11/mandelbrot-full.png" alt="mandelbrot-full" width="800" height="800" class="aligncenter size-full wp-image-569" srcset="http://162.243.184.248/wp-content/uploads/2013/11/mandelbrot-full.png 800w, http://162.243.184.248/wp-content/uploads/2013/11/mandelbrot-full-150x150.png 150w, http://162.243.184.248/wp-content/uploads/2013/11/mandelbrot-full-300x300.png 300w, http://162.243.184.248/wp-content/uploads/2013/11/mandelbrot-full-768x768.png 768w" sizes="(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 984px) 61vw, (max-width: 1362px) 45vw, 600px" />](http://162.243.184.248/wp-content/uploads/2013/11/mandelbrot-full.png)
 
@@ -79,9 +79,9 @@ axis(1, at = seq(-2, 2, 0.05))
 axis(2, at = seq(-2, 2, 0.05))
 points(c(0.5, 0), c(0, 1), pch = 19)
 text(c(0.5, 0), c(0, 1), labels = c("A", "B"), adj = -0.75)
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2013/11/mandelbrot-zoom.png">
+<img src="/img/2013/11/mandelbrot-zoom.png">
 
 # Cantor Set
 
@@ -125,6 +125,6 @@ for (n in 1:7) {
         text(x = 0, y = n, 7 - n, adj = c(3, 0.5))
     }
 }
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2013/11/cantor-set.png">
+<img src="/img/2013/11/cantor-set.png">

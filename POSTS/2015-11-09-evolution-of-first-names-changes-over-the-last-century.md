@@ -13,7 +13,7 @@ url: /2015/11/09/evolution-of-first-names-changes-over-the-last-century/
 
 In light of recent developments, a bit of work that I did almost two years ago has become rather relevant.
 
-<img src="{{ site.baseurl }}/static/img/2015/11/baby-collier.jpg">
+<img src="/img/2015/11/baby-collier.jpg">
 
 <!--more-->
 
@@ -25,7 +25,7 @@ Levitt and Dubner also considered the distinctive naming patterns among black an
 
 We will start by taking a high-level look at the number of given names. At the end of the nineteenth century there were only around 4000 different given names in use around the United States. By 2012 this number had escalated to more than 33 000. The plots below show how the number of given names has changed with time. The trend towards greater variety is readily apparent. However, this trend is by no means uniform. There was a dramatic increase around the outbreak of World War I, followed by a decade (roughly 1920 to 1930) during which the number of names being used actually declined. After that there has been a steady increase in the number of names, reaching a peak in 2008 when 20 430 and 14 598 different names were given to girls and boys respectively. Since then there has been a steady decline in name diversity.
 
-<img src="{{ site.baseurl }}/static/img/2015/11/count-gender-year.png">
+<img src="/img/2015/11/count-gender-year.png">
 
 If one compares the number of names (left panel) to the number of births (right panel), then something interesting emerges: the explosion of names around World War I is mirrored by a sudden increase in the number of births. However, the next peak in births, following the end of World War II, was not accompanied by a significant increase in the variety of names. Possibly these “Baby Boomers” were more or less satisfied with the range of names already in use.
 
@@ -33,17 +33,17 @@ Note that the number of births could be placed in a different context by normali
 
 Interestingly, there is almost always a greater variety of girls' names. The histogram below shows the distribution of the ratio of girls' names to boys' names calculated on an annual basis. It is clear that for only a handful of years have a greater variety of names been assigned to boys than girls. On average (dashed vertical line) there are 42% more girls' names in use.
 
-<img src="{{ site.baseurl }}/static/img/2015/11/gender-name-ratio.png">
+<img src="/img/2015/11/gender-name-ratio.png">
 
 Is it reasonable to assume that these patterns apply uniformly across the entire United States? Let's have a look. If we break the number of names in use down according to state then the data look like this:
 
-<img src="{{ site.baseurl }}/static/img/2015/11/name-year-gender-heatmap.png">
+<img src="/img/2015/11/name-year-gender-heatmap.png">
 
 The upward trend in the variety of names seems to be driven by only a few states. California, Texas and New York make the largest contributions to the growth. Some states, like Alabama, North Dakota and Wyoming, have experienced very little growth at all. Interestingly, these states are among the most conservative states according to a [survey](http://www.theblaze.com/stories/2013/02/01/here-are-the-most-conservative-liberal-states/) by Gallup. That makes some sense: they are probably rather concerned about tradition and preserving their heritage. However, the converse does not appear to hold: the states with the most rapid growth in names are not high on the liberal end of the spectrum. Ideology is evidently not the only factor fueling the growth in names.
 
 The gender ratio has also evolved dramatically over time. The choropleth below shows how the ratio of girls' names to boys' name has changed over time for each of the continental states.
 
-<img src="{{ site.baseurl }}/static/img/2015/11/choropleth-ratio-anim.gif">
+<img src="/img/2015/11/choropleth-ratio-anim.gif">
 
 Nevada is the most dynamic, with the balance swinging regularly back and forth between the genders. The number of girls' names is consistently dominant across most states for an extended period between around 1950 and 1990. After this, boys' names gain the ascendancy is some states. This is particularly evident in North and South Dakota, Idaho, Montana and Wyoming. California and Texas, in addition to having an enormous range of names, also appear to use a far greater variety of girls' names.
 

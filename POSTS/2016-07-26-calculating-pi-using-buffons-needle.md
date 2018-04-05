@@ -50,8 +50,8 @@ I put together this example to illustrate some general R programming principles 
 + n = 1:N,
 + pi = 2 \* L / T / cumsum(cross) \* (1:N)
 + ) %>% subset(is.finite(pi))
-{{< / highlight >}}
+{{< /highlight >}}
 
 Here are the results (click on the image for an interactive version). The orange line is the reference value and the blue line represents the results of the computation.
 
-[<img src="{{ site.baseurl }}/static/img/2016/07/buffon-needle-pi.png" >](https://plot.ly/~collierab/461/estimating-pi-using-buffons-needle/)
+[<img src="/img/2016/07/buffon-needle-pi.png" >](https://plot.ly/~collierab/461/estimating-pi-using-buffons-needle/)

@@ -23,7 +23,7 @@ And these need not be the same.
 
 <!--more-->
 
-<img src="{{ site.baseurl }}/static/img/2013/09/Workspace-2_050.png">
+<img src="/img/2013/09/Workspace-2_050.png">
 
 To distinguish between the two, open up any M1 chart. The time of the most recent candle on this chart is the time on the broker's server. You can find the time zone of the server by comparing this time to [Greenwich Mean Time](http://wwp.greenwichmeantime.com/) (GMT). Similarly, you can find your local time zone by comparing the time on your computer to GMT.
 

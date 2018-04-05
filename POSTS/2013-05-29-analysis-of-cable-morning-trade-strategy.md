@@ -30,18 +30,18 @@ So this got me thinking: maybe the conditions for this strategy no longer apply.
 
 First let's look at the GBPUSD. The distribution of the range and motion are plotted as a function of GMT below. There is no real evidence of a diurnal pattern except for a slight increase in the afternoon to evening (12:00 GMT to 19:00 GMT). Now this corresponds to the New York rather than the London session. An interesting start. So, perhaps London was the dominant session for the GBPUSD at the time that the strategy was devised, but that it has now shifted to the New York session?
 
-<img src="{{ site.baseurl }}/static/img/2013/05/boxplot-GBPUSD.png">
+<img src="/img/2013/05/boxplot-GBPUSD.png">
 
 Next consider the analogous data for the EURUSD. Here it is apparent that there is a much higher level of diurnal variation, with both the range and the motion of the EURUSD being active between 05:00 GMT and 15:00 GMT.
 
-<img src="{{ site.baseurl }}/static/img/2013/05/boxplot-EURUSD.png">
+<img src="/img/2013/05/boxplot-EURUSD.png">
 
 Perhaps some of the details have been hidden by the diurnal aggregation? The markets also exhibit a hebdomadal variability. To evaluate the effect of both diurnal and day of week variations, I generated heat maps for the range as a function of GMT and day of week. The GBPUSD data confirm the conclusions above: not too much happening during the beginning of the London session, with things picking up around the open of the New York session. This pattern persists on all days of the week but it is perhaps slightly weaker on Mondays and Fridays.
 
-<img src="{{ site.baseurl }}/static/img/2013/05/heatmap-GBPUSD.png">
+<img src="/img/2013/05/heatmap-GBPUSD.png">
 
 The heatmap for EURUSD also agrees with the analysis above: activity is highest between 05:00 GMT and 15:00 GMT, but there is evidence of both an "early" and a "later" period.
 
-<img src="{{ site.baseurl }}/static/img/2013/05/heatmap-EURUSD.png">
+<img src="/img/2013/05/heatmap-EURUSD.png">
 
 What does all of this say about the future of the Cable Morning Trade? Well, as applied to GBPUSD I would probably need to move the trading hours to later in the day. However, the stronger diurnal pattern on the EURUSD suggests that it might actually be a better candidate for this strategy. I will test this in practice and report back.

@@ -11,7 +11,7 @@ The blog post [How old is the oldest person you know?](http://freakonometrics.hy
 
 <!--more-->
 
-<img src="{{ site.baseurl }}/static/img/2013/07/OldestPerson.jpg">
+<img src="/img/2013/07/OldestPerson.jpg">
 
 Arthur Charpentier showed that the campaign data could be modelled by a transformed [Weibull Distribution](http://en.wikipedia.org/wiki/Weibull_distribution), which is commonly used in extreme value theory. However, applying such a model treats everyone in the population as exactly the same. This is generally the approach adopted in standard statistics. However, we can probably do a lot better. It stands to reason that personal circumstances should have a significant influence over the age distribution of your acquaintances. A teenager, for example, is likely to know many other teenagers but far fewer elderly people. The elderly people who he does know are probably family. In contrast, an octogenarian is likely to know more elderly people than teenagers. And the elderly people that he knows are probably not family.
 

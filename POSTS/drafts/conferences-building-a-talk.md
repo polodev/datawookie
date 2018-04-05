@@ -61,6 +61,15 @@ TALK ABOUT CORE CONCEPT IN SIMON SINEK'S BOOK "START WITH WHY".
 
 Something that you should try to clarify for your audience as soon as possible is "Why?". Why should they be giving you their undivided attention? Why are you standing up front? Why are you talking about this particular topic?
 
+## Go in with a Bang!
+
+It's important to kick off your talk in such a way that you grab the audience's attention. There are a couple of ways to do this, but here are some ideas that work well for me:
+
+- *Make it personal*. Relate a story that should resonate personally with the audience. You literally want to "hit them where they live". Make it immediately apparent that the content of this talk will be relevant to them.
+- *Novelty*. Do or say something unexpected.
+- *Challenge the Status Quo*. Make a statement which contradicts conventional wisdom.
+- *Humour*. This isn't for everyone, but if you can start with something funny you will immediately win over the audience.
+
 ## Content is King
 
 ## Context is Queen

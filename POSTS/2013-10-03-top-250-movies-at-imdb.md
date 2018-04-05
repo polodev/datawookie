@@ -34,7 +34,7 @@ We will use the XML library to retrieve the page from IMDb and parse out the app
 4   4.    8.9                   Pulp Fiction (1994)   825,063
 5   5.    8.9 The Good, the Bad and the Ugly (1966)   319,222
 6   6.    8.9                The Dark Knight (2008) 1,039,499
-{{< / highlight >}}
+{{< /highlight >}}
 
 The output reflects the content of the rating table exactly. However, the rank column is redundant since the same information is captured by the row labels. We can remove this column to make the data more concise.
 
@@ -49,7 +49,7 @@ The output reflects the content of the rating table exactly. However, the rank c
 4    8.9                   Pulp Fiction (1994)   825,063
 5    8.9 The Good, the Bad and the Ugly (1966)   319,222
 6    8.9                The Dark Knight (2008) 1,039,499
-{{< / highlight >}}
+{{< /highlight >}}
 
 There are still a few issues with the data:
 
@@ -79,13 +79,13 @@ All of these problems are easily fixed though.
 4 1994                   Pulp Fiction  825063    8.9
 5 1966 The Good, the Bad and the Ugly  319222    8.9
 6 2008                The Dark Knight 1039499    8.9
-{{< / highlight >}}
+{{< /highlight >}}
 
 I am happy to see that [The Good, the Bad and the Ugly](http://www.imdb.com/title/tt0060196/) rates at number 5. This is one of my favourite movies! Clearly I am not alone.
 
 Finally, to gain a little perspective on the relationship between the release year, votes and rating we can put together a simple bubble plot.
 
-<img src="{{ site.baseurl }}/static/img/2013/10/bubble-plot-movies.png">
+<img src="/img/2013/10/bubble-plot-movies.png">
 
 {{< highlight r >}}
 > library(ggplot2)
@@ -94,6 +94,6 @@ Finally, to gain a little perspective on the relationship between the release ye
 +   geom_point(aes(size = Votes), alpha = 0.5, position = "jitter", color = "darkgreen") +
 +   scale_size(range = c(3, 15)) +
 +   theme_classic()
-{{< / highlight >}}
+{{< /highlight >}}
 
 When I have some more time on my hands I am going to use the IMDb API to grab some additional information on each of these movies and see if anything interesting emerges from the larger data set.

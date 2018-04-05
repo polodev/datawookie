@@ -17,7 +17,7 @@ url: /2015/05/28/comrades-marathon-medal-predictions/
 
 <!--more-->
 
-<img src="{{ site.baseurl }}/static/img/2015/05/IMG_5239.png">
+<img src="/img/2015/05/IMG_5239.png">
 
 With only a few days to go until race day, most [Comrades Marathon](http://www.comrades.com/) athletes will focusing on resting, getting enough sleep, hydrating, eating and giving a wide berth to anybody who looks even remotely ill.
 
@@ -28,7 +28,7 @@ For the more performance oriented among them (and, let's face it, that's most ru
 In the process I have put together a small application which will make medal predictions based on recent race times.
 
 <a href="https://datawookie.shinyapps.io/Comrades-Medal-Predictions/" target="_blank">
-  <img src="{{ site.baseurl }}/static/img/2015/05/medal-prediction-interface.png">
+  <img src="/img/2015/05/medal-prediction-interface.png">
 </a>
 
 I'm not going to delve too deeply into the details, but if you really don't have the patience, feel free to [skip forward](#results) to the results or click on the image above, which will take you to the application. If you have trouble accessing the application it's probable that you are sitting behind a firewall that is blocking it. Try again from home.
@@ -39,7 +39,7 @@ The data for this analysis were compiled from a variety of sources. I scraped th
 
 The distribution of the data is broken down below as a function of gender, Comrades Marathon medal and other distances for which I have data. For instance, I have data for 45 female runners who got a Bronze medal and for whom a 32 km race time was available.
 
-<img src="{{ site.baseurl }}/static/img/2015/05/medal-race-distance-count.png">
+<img src="/img/2015/05/medal-race-distance-count.png">
 
 Unfortunately the data are pretty sparse for Gold, Wally Hayward and Silver medalists, especially for females. I'll be collecting more data over the coming months and the coverage in these areas should improve. Athletes that are contenders for these medals should have a pretty good idea of what their likely prospects are anyway, so the model is not likely to be awfully interesting for them. This model is intended more for runners who are aiming at a Bill Rowan, Bronze or Vic Clapham medal.
 
@@ -47,7 +47,7 @@ Unfortunately the data are pretty sparse for Gold, Wally Hayward and Silver meda
 
 The first step in the modelling process was to build a decision tree. Primarily this was to check whether it was feasible to predict a medal class based on race times for other distances (I'm happy to say that it was!). The secondary motivation was to assess what the most important variables were. The resulting tree is plotted below. Open this plot in a new window so that you can zoom in on the details. As far as the labels on the tree are concerned, "min" stands for "minimum" time over the corresponding distance and times (labels on the branches) are given in decimal hours.
 
-<img src="{{ site.baseurl }}/static/img/2015/05/medal-ctree.png">
+<img src="/img/2015/05/medal-ctree.png">
 
 The first thing to observe is that the most important predictor is 56 km race time. This dominates the first few levels in the tree hierachy. Of slightly lesser importance is 42.2 km race time, followed by 25 km race time. It's interesting to note that 32 km and 10 km results does no feature at all in the tree, probably due to the relative scarcity of results over these distances in the data.
 
@@ -74,10 +74,10 @@ To make this a little more accessible I bundled the model up in a [Shiny](http:/
 
 Let's have a quick look at some sample predictions. Suppose that you are a male athlete who has recent times of 00:45, 01:45, 04:00 and 05:00 for 10, 21.1, 42.2 and 56 km races respectively, then according to the model you have a 77% probability of getting a Bronze medal and around 11% chance of getting either a Bill Rowan or Vic Clapham medal. There's a small chance (less than 1%) that you might be in the running for a Silver medal.
 
-<img src="{{ site.baseurl }}/static/img/2015/05/medal-predictions-bog-standard.png">
+<img src="/img/2015/05/medal-predictions-bog-standard.png">
 
 What about a male runner who recently ran 03:20 for 56 km? There is around 20% chance that he would get a Gold medal. Failing that he would most likely (60% chance) get a Silver.
 
-<img src="{{ site.baseurl }}/static/img/2015/05/medal-predictions-gold-male.png">
+<img src="/img/2015/05/medal-predictions-gold-male.png">
 
 If you happen to have race results for the last few years that I could incorporate into the model, please get in touch. I'm keen to collaborate on improving this tool.

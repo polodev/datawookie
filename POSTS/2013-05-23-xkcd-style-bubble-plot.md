@@ -30,7 +30,7 @@ library(XML)
 
 population = readHTMLTable("data/wiki-population.html", which = 2, trim = TRUE)
 
-{{< / highlight >}}
+{{< /highlight >}}
 
 After a bit of tidying up, this was ready to use.
 
@@ -43,14 +43,14 @@ After a bit of tidying up, this was ready to use.
 4     Indonesia  237641326
 5        Brazil  193946886
 6      Pakistan  183122000
-{{< / highlight >}}
+{{< /highlight >}}
 
 Next I got my hands on some [Gross Domestic Product (GDP)](http://en.wikipedia.org/wiki/GDP) data from the [World Bank](http://data.worldbank.org/indicator/NY.GDP.MKTP.CD). These data came as a spreadsheet which could be sucked into R with little effort.
 
 {{< highlight r >}}
 library(xlsx)
 GDP = read.xlsx("data/NY.GDP.MKTP.CD\_Indicator\_MetaData\_en\_EXCEL.xls", 1, stringsAsFactors = FALSE)
-{{< / highlight >}}
+{{< /highlight >}}
 
 I simply retained the entries for 2011, which had few missing values.
 
@@ -79,7 +79,7 @@ last.not.na After the requisite tidying, these two sets of data were also ready.
 4     East Asia & Pacific (developing only)  4.442010
 5                                 Euro area  5.910550
 6 Europe & Central Asia (all income levels)  5.478525
-{{< / highlight >}}
+{{< /highlight >}}
 
 Finally I aggregated the three sets of data and removed any rows which were missing either GDP or education statistics. Since there was a range of many orders of magnitude in both the population and GDP data, I took logarithms of these columns.
 
@@ -92,8 +92,8 @@ Finally I aggregated the three sets of data and removed any rows which were miss
 6              Angola  AGO   7.314063 11.018416   3.47644
 7 Antigua and Barbuda  ATG   4.935986  9.048565   2.53790
 8           Argentina  ARG   7.603329 11.649378   5.78195
-{{< / highlight >}}
+{{< /highlight >}}
 
 Then came the fun bit: putting the plot together. There is a great document "An introduction to the xkcd package" by Emilio Torres Manzanera which got me up to speed. And here is the result. Click on the image below to see it at higher resolution. Interesting that small countries like our neighbour, Lesotho, are spending a large fraction of their GDP on education. Also I must confess to having been previously completely unaware of the existence of [Tuvalu](https://en.wikipedia.org/wiki/Tuvalu) (TUV), which is the fourth smallest country in the world (and the smallest country in my data).
 
-<img src="{{ site.baseurl }}/static/img/2013/05/GDP-education-population1.png">
+<img src="/img/2013/05/GDP-education-population1.png">

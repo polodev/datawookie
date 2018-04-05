@@ -20,7 +20,7 @@ The obvious tool for the job was the crontab. I wrote an entry which triggered e
 
 {{< highlight bash >}}
 df | grep remote || sshfs username@laptop:/home/username ~/remote/
-{{< / highlight >}}
+{{< /highlight >}}
 
 The details of this command are straight forward: first run df and check whether the directory is already mounted. If it is, then no further action is required. If not, then mount the remote directory /home/username on laptop at /home/remote on my desktop.
 
@@ -30,4 +30,4 @@ My revised (and final solution) includes a check to see whether laptop is availa
 
 {{< highlight bash >}}
 (df | grep remote || ping -c1 laptop) && sshfs username@laptop:/home/username ~/remote/
-{{< / highlight >}}
+{{< /highlight >}}

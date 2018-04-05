@@ -24,7 +24,7 @@ To illustrate, first let's generate some sample data.
 +                  y1 = sin(x * pi / 10),
 +                  y2 = x**2
 +                  )
-{{< / highlight >}}
+{{< /highlight >}}
 
 Then we'll import a couple of libraries: ggplot2, of course, and gridExtra which will give us the stacking functionality.
 
@@ -32,25 +32,25 @@ Then we'll import a couple of libraries: ggplot2, of course, and gridExtra which
 > library(ggplot2)  
 > library(grid)
 > library(gridExtra)
-{{< / highlight >}}
+{{< /highlight >}}
 
 We'll generate the two plots.
 
 {{< highlight r >}}
 > p1 <- ggplot(data, aes(x = x)) + geom_line(aes(y = y1)) + theme_classic()
 > p2 <- ggplot(data, aes(x = x)) + geom_bar(aes(y = y2), stat = "identity") + theme_classic()
-{{< / highlight >}}
+{{< /highlight >}}
 
 We could just slap these plots onto a grid, which would produce an acceptable plot. But my inner perfectionist is not happy with the fact that the two vertical axes do not line up and, consequently, the horizontal scales are slightly different.
 
-<img src="{{ site.baseurl }}/static/img/2015/05/aligned-plot-naive.png">
+<img src="/img/2015/05/aligned-plot-naive.png">
 
 The first step towards fixing this small issue is to take the plots and convert them into gtables.
 
 {{< highlight r >}}
 > p1 <- ggplot_gtable(ggplot_build(p1))
 > p2 <- ggplot_gtable(ggplot_build(p2))
-{{< / highlight >}}
+{{< /highlight >}}
 
 Next the pivotal bit: find the widths of each of the plots, calculate the maximum and then apply it to each of them individually. This effectively applies a uniform layout to each of the plots.
 
@@ -59,12 +59,12 @@ Next the pivotal bit: find the widths of each of the plots, calculate the maximu
 >
 > p1$widths[2:3] <- maxWidth
 > p2$widths[2:3] <- maxWidth
-{{< / highlight >}}
+{{< /highlight >}}
 
 And the final result is a stacked plot with perfectly aligned vertical axes. Success!
 
 {{< highlight r >}}
 > grid.arrange(p1, p2, heights = c(3, 2))
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2015/05/aligned-plot.png">
+<img src="/img/2015/05/aligned-plot.png">

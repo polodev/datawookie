@@ -18,9 +18,9 @@ If you are feeling adventurous you could install `winehq-devel` or `winehq-stagi
 
 ### SketchUp
 
-{% comment %}
+{{< comment >}}
 https://appdb.winehq.org/objectManager.php?sClass=version&iId=34500
-{% endcomment %}
+{{< /comment >}}
 
 {% highlight bash %}
 export WINEARCH=win64

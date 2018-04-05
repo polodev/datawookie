@@ -37,11 +37,11 @@ Let's have a look at the ten most extreme negative splits from Comrades Marathon
 8  2013 e445f2d1        340.15    647.20 -0.097310
 9  2013 fed967de        338.67    647.77 -0.087303
 10 2013 553aeb62        364.02    697.90 -0.082780
-{{< / highlight >}}
+{{< /highlight >}}
 
 Below are the splits data for these runners (in the same order as the table above).
 
-<img src="{{ site.baseurl }}/static/img/2014/05/2013-missing-splits.png">
+<img src="/img/2014/05/2013-missing-splits.png">
 
 The top one you have seen before (it was presented in my [previous post](http://www.exegetic.biz/blog/2014/05/comrades-marathon-negative-splits-and-cheating/)). And, as previously noted, this runner's time was not captured by the mat at either Camperdown or Polly Shortts. But if we look at the runner with the next most extreme negative split (e22d8c74) we see that the same thing happened: mysteriously he too was missed by those timing mats. The mats must have been having a bad day. The next two major negative splits (5cd624eb and 4d5a86d7): same story, no times at either of those mats. The next runner (61fa6b5) was captured on all five timing mats. And if we look at his splits, he is getting progressively faster during the course of the race. I suspect that this guy actually just had a very well planned and executed race. But the following runner on the list (e5d6fa0e) has also managed to elude both the mats in the second half of the race. Very strange indeed. The final four runners all have splits registered for every timing mat. And, again, if you look at their pace for each of the legs, it is not too hard to believe that these runners were playing by the rules and just had a very good day on the road.
 

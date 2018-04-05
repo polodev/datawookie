@@ -14,7 +14,7 @@ url: /2013/04/16/locations-of-geosynchronous-satellites/
 
 A year or so ago I went to a talk which included the diagram below. It shows the locations of the Earth&#8217;s fleet of [geosynchronous satellites](http://en.wikipedia.org/wiki/Geosynchronous_satellite). According to the speaker, the information in this diagram was already quite dated: the satellites and their locations had changed.
 
-<img src="{{ site.baseurl }}/static/img/2013/04/geosynch-old.jpg" width="100%">
+<img src="/img/2013/04/geosynch-old.jpg" width="100%">
 
 I decided to update the diagram using the locations of satellites from the [list of geosynchronous satellites published](http://en.wikipedia.org/wiki/List_of_satellites_in_geosynchronous_orbit) on Wikipedia. Probably not the most definitive source of data on this subject, but it was a good starting point.
 
@@ -30,7 +30,7 @@ E = readHTMLTable("wiki-geosynchronous-satellites.html", which = 4, trim = TRUE,
 stringsAsFactors = FALSE)
 #
 geosat = rbind(W, E)
-{{< / highlight >}}
+{{< /highlight >}}
 
 The longitude column indicates whether the satellites are east (E) or west (W) of the prime meridian. It is going to be more convenient to convert these to numerical values and make the ones that are to the west negative.
 
@@ -39,7 +39,7 @@ index = grep("°W", geosat[,1])
 geosat[index, 1] = paste0("-", geosat[index, 1]) 
 #
 geosat[,1] = sub("°[WE]$", "", geosat[,1])
-{{< / highlight >}}
+{{< /highlight >}}
 
 After some housekeeping, converting the range of longitudes from [-180&deg;,180&deg;) to [0&deg;,360&deg;), and retaining only the necessary columns, we end up with data that looks like this:
 
@@ -52,7 +52,7 @@ After some housekeeping, converting the range of longitudes from [-180&deg;,180&
 4      225 Americom-10 Broadcast
 5      227   Galaxy-12 Broadcast
 6      229 Americom-11 Broadcast
-{{< / highlight >}}
+{{< /highlight >}}
 
 Well, that is really the tricky stuff. Generating the plots was quite straight forward. First I grouped the longitudes into bins. Then, for each bin
 
@@ -63,6 +63,6 @@ Well, that is really the tricky stuff. Generating the plots was quite straight f
 
 This is the result:
                 
-<img src="{{ site.baseurl }}/static/img/2013/04/geosynchronous-orbit.png" width="100%">
+<img src="/img/2013/04/geosynchronous-orbit.png" width="100%">
 
-Have a look at a higher resolution [pdf version]({{ site.baseurl }}/static/img/2013/04/geosynchronous-orbit.pdf).
+Have a look at a higher resolution [pdf version](/img/2013/04/geosynchronous-orbit.pdf).

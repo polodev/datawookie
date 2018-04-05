@@ -42,7 +42,7 @@ I'll be using the same data sets that I have discussed in [previous articles](ht
 4 10007cb6 2005 Ages 26 - 39   Male      Bronze           1 Finished  9.1589
 5 10007cb6 2006 Ages 30 - 39   Male  Bill Rowan           2 Finished  8.2564
 6 10007cb6 2007 Ages 30 - 39   Male  Bill Rowan           3 Finished  8.0344
-{{< / highlight >}}
+{{< /highlight >}}
 
 To satisfy our definition of novice we'll need to exclude the "did not start" (DNS) records.
 
@@ -56,14 +56,14 @@ To satisfy our definition of novice we'll need to exclude the "did not start" (D
 5 10007cb6 2006 Ages 30 - 39   Male  Bill Rowan           2 Finished  8.2564
 6 10007cb6 2007 Ages 30 - 39   Male  Bill Rowan           3 Finished  8.0344
 7 10007cb6 2008 Ages 30 - 39   Male  Bill Rowan           4 Finished  8.8514
-{{< / highlight >}}
+{{< /highlight >}}
 
 Some runners do not finish the race on their first attempt but they bravely come back to run the race again. We will retain only the first record for each runner, because the second time they attempt the race they are (according to our definition) no longer novices since already have some race experience.
 
 {{< highlight r >}}
 > novices <- novices[order(novices$year),]
 > novices <- novices[which(!duplicated(novices$key)),]
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Percentage of Novice Finishers
 
@@ -74,7 +74,7 @@ I suppose that the foremost question going through the minds of many Comrades no
 
 Finished      DNF 
   80.035   19.965 
-{{< / highlight >}}
+{{< /highlight >}}
 
 Well, there's some good news: around 80% of all novices finish the race. Those are quite compelling odds. Of course, a number of factors can influence the success of each individual, but if you have done the training and you run sensibly, then the odds are in your favour.
 
@@ -87,13 +87,13 @@ What medal is a novice most likely to receive?
 
          Gold Wally Hayward        Silver    Bill Rowan        Bronze   Vic Clapham 
     0.0829671     0.0051854     4.0264976     5.6469490    79.4708254    10.7675754
-{{< / highlight >}}
+{{< /highlight >}}
 
 The vast majority (again around 80%) claim a Bronze medal. There are also a significant proportion (just over 10%) who miss the eleven hour cutoff and get a Vic Clapham medal. Around 6% of novices achieve a Bill Rowan medal and a surprisingly large fraction, just over 4%, manage to finish in a Silver medal time of under seven and a half hours. There are very few Wally Hayward and Gold medals won by novices. The odds for a novice Gold medal are around one in 1200, all else being equal (which it very definitely isn't!).
 
 ## Distribution of Novice Finishing Times
 
-<img src="{{ site.baseurl }}/static/img/2014/05/novice-finish-times-hist.png">
+<img src="/img/2014/05/novice-finish-times-hist.png">
 
 As one would expect, the chart slopes up towards the right: progressively more runners come in later in the day. There is very clear evidence of clustering of runners just before the medal cutoffs at 07:30, 09:00, 11:00 and 12:00. There is also a peak before the psychological cutoff at 10:00.
 

@@ -43,14 +43,14 @@ The third of these is the most popular and actively developed.
 $ sudo apt-get install software-properties-common
 $ sudo add-apt-repository -y ppa:ethereum/ethereum
 $ sudo apt-get update
-{{< / highlight >}}
+{{< /highlight >}}
 
 {:start="2"}
 2. Install Geth.
 
 {{< highlight text >}}
 $ sudo apt-get install -y ethereum
-{{< / highlight >}}
+{{< /highlight >}}
 
 {:start="3"}
 3. Check the version.
@@ -67,7 +67,7 @@ Go Version: go1.9
 Operating System: linux
 GOPATH=
 GOROOT=/usr/lib/go-1.9
-{{< / highlight >}}
+{{< /highlight >}}
 
 New releases come out every few weeks, so it's not a bad idea to update from time to time.
 
@@ -89,7 +89,7 @@ Go Version: go1.9.2
 Operating System: linux
 GOPATH=
 GOROOT=/usr/local/go
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Solidity Compiler
 
@@ -109,7 +109,7 @@ On a Ubuntu machine there are a few options for installing the Solidity compiler
 
 {{< highlight bash >}}
 $ sudo apt-get install solc
-{{< / highlight >}}
+{{< /highlight >}}
 
 {:start="2"}
 2. Check the version.
@@ -118,7 +118,7 @@ $ sudo apt-get install solc
 $ solc --version
 solc, the solidity compiler commandline interface
 Version: 0.4.19+commit.c4cbbb05.Linux.g++
-{{< / highlight >}}
+{{< /highlight >}}
 
 ### Install the Docker Image
 
@@ -127,7 +127,7 @@ You can also take the Docker route.
 {{< highlight bash >}}
 $ docker run ethereum/solc:stable --version
 Version: 0.4.19+commit.c4cbbb05.Linux.g++
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Ganache Testing Client
 
@@ -142,20 +142,20 @@ If your version of Node is an antique then you'll need to update. First check wh
 {{< highlight text >}}
 $ node --version
 v6.12.2
-{{< / highlight >}}
+{{< /highlight >}}
 
 If that's less than 6.11.15 then run [the following](https://github.com/nodesource/distributions#installation-instructions) to update.
 
 {{< highlight bash >}}
 $ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 $ sudo apt-get install -y nodejs
-{{< / highlight >}}
+{{< /highlight >}}
 
 ### Install with NPM
 
 {{< highlight text >}}
 $ sudo npm install -g ganache-cli
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Truffle
 
@@ -165,7 +165,7 @@ $ sudo npm install -g ganache-cli
 
 {{< highlight bash >}}
 $ sudo npm install -g truffle@4.0.1
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Conclusion
 

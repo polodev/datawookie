@@ -9,9 +9,9 @@ tags:
   - Geocoding
 ---
 
-{% comment %}
+{{< comment >}}
 https://twitter.com/srsupp/status/931195234007973888?s=09
-{% endcomment %}
+{{< /comment >}}
 
 ## R Packages
 

@@ -10,9 +10,9 @@ tags:
   - Talk
 ---
 
-{% comment %}
+{{< comment >}}
 Idea: find the top 3/5/10 questions on StackOverflow relating to a particular tag. Dig into each of the questions, providing a succinct answer to each.
-{% endcomment %}
+{{< /comment >}}
 
 ## Most Popular Questions about R
 

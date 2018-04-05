@@ -34,7 +34,7 @@ Consider a dice game in which the player wins if the dice lands on six. The odds
 > (probability = 1 / odds.decimal)
      win    lose
  0.16667 0.83333
-{{< / highlight >}}
+{{< /highlight >}}
 
 The probability of winning is 1/6. Would a gambler expect to profit if he played this game many times?
 
@@ -42,7 +42,7 @@ The probability of winning is 1/6. Would a gambler expect to profit if he played
 > payout = c(5, -1)
 > sum(probability * payout)
 [1] 0.00
-{{< / highlight >}}
+{{< /highlight >}}
 
 No! In the long run neither the gambler nor the casino would make money on a game like this. It's a fair game: neither the house nor the gambler has any statistical advantage or "edge".
 
@@ -52,7 +52,7 @@ If, however, the house paid out only 4 times the wager then the player's expecte
 > payout = c(4, -1)
 > sum(probability * payout)
 [1] -0.16667
-{{< / highlight >}}
+{{< /highlight >}}
 
 Now the game is stacked in favour of the house, since on average the player would expect to lose around 17% of his stake. Of course, on any one game the gambler would either win 4 times his stake or lose the entire stake. However, if he played the game many times then on average he would lose 17% of his stake per game.
 
@@ -72,7 +72,7 @@ A European <a href="https://en.wikipedia.org/wiki/Roulette">Roulette</a> wheel h
 > (probability = 1 / odds.decimal)
      win    lose
  0.48649 0.51351
-{{< / highlight >}}
+{{< /highlight >}}
 
 The probability of winning is 18/(19+18) = 18/37 = 0.48649. So this is <em>almost</em> an even money game.
 
@@ -82,13 +82,13 @@ Based on a wager of 1 coin, a win would result in a net profit of 1 coin, while 
 > payout = c(1, -1)
 > sum(probability * payout)
 [1] -0.027027
-{{< / highlight >}}
+{{< /highlight >}}
 
 The house edge is 2.70%. On average a gambler would lose 2.7% of his stake per game. Of course, on any one game he would either win or lose, but this is the <em>long term</em> expectation. Another way of looking at this is to say that the Return To Player (RTP) is 97.3%, which means that on average a gambler would get back 97.3% of his stake on every game.
 
 Below are the results of a simulation of 100 gamblers betting on even numbers. Each starts with an initial capital of 100. The red line represents the average for the cohort. After 1000 games two gamblers have lost all of their money. Of the remaining 98 players, only 24 have made money while the rest have lost some portion of their initial capital.
 
-<img src="{{ site.baseurl }}/static/img/2016/08/roulette-odd-simulation.png" >
+<img src="/img/2016/08/roulette-odd-simulation.png" >
 
 The code for this simulation is available <a href="https://github.com/DataWookie/gambleR/blob/master/scripts/simulate-roulette.R">here</a>.
 
@@ -150,11 +150,11 @@ It's been suggested that football squad prices can influence Sportsbook odds. Of
 4     Bayern Munich Germany  2680     675
 5           Arsenal England  2020     524
 6   Manchester City England  1920     558
-{{< / highlight >}}
+{{< /highlight >}}
 
 Well, those tabular data are great, but a visualisation would be helpful to make complete sense of the relationship between team value and revenue.
 
-<img src="{{ site.baseurl }}/static/img/2016/07/football-club-values.png" >
+<img src="/img/2016/07/football-club-values.png" >
 
 It's apparent that Real Madrid, Barcelona, Manchester United and <a href="http://www.forbes.com/pictures/mli45fdkgi/11-bayern-munich/#6738eb7b2b4f">Bayern Munich</a> are the four most expensive teams. There's a general trend of increasing revenue with increasing value. Two conspicuous exceptions are Schalke 04 and Paris Saint-Germain, which produce revenues far higher than expected based on their values.
 
@@ -173,7 +173,7 @@ Real Madrid         5/1   5/1          4/1    9/2                9/2       9/2  
 Man City           12/1  12/1         11/1   10/1               10/1      12/1   12/1 12/1
 Juventus           12/1  14/1         12/1   12/1               10/1      14/1    8/1 12/1
 PSG                14/1  14/1         14/1   14/1               14/1      14/1   12/1 14/1
-{{< / highlight >}}
+{{< /highlight >}}
 
 According to the selection of bookmakers above, Barcelona, Bayern Munich and Real Madrid are the major contenders in this competition. Betfair Sportsbook has <a href="https://www.betfair.com/exchange/football">Barcelona edging the current champions Real Madrid</a> as favourites to win the competition. Bayern Munich and Real Madrid have slightly higher odds, with Bayern Munich perceived as the second most likely winner.
 
@@ -195,7 +195,7 @@ The decimal odds on offer at Betfair Sportsbook are
             501.0             501.0                NA                NA                NA 
          Salzburg 
                NA 
-{{< / highlight >}}
+{{< /highlight >}}
 
 The corresponding implied probabilities are
 
@@ -215,7 +215,7 @@ The corresponding implied probabilities are
         0.0019960         0.0019960                NA                NA                NA 
          Salzburg 
                NA
-{{< / highlight >}}
+{{< /highlight >}}
 
 These sum to 1.178, giving an over-round of 17.8%.
 
@@ -225,7 +225,7 @@ Let's focus on a football game between Anderlecht and Rostov. These are not majo
 
 The odds for the football match between Anderlecht and Rostov are shown below.
 
-<img src="{{ site.baseurl }}/static/img/2016/08/betfair-anderlecht-rostov.png" >
+<img src="/img/2016/08/betfair-anderlecht-rostov.png" >
 
 The match odds are 2.0 for a win by Anderlecht, 4.1 for a win by Rostov and 3.55 for a draw. Let's convert those to the corresponding implied probabilities:
 
@@ -234,20 +234,20 @@ The match odds are 2.0 for a win by Anderlecht, 4.1 for a win by Rostov and 3.55
 > 1 / decimal.odds
 anderlecht     rostov       draw 
    0.50000    0.24390    0.28169 
-{{< / highlight >}}
+{{< /highlight >}}
 
 According to those odds the implied probabilities of each of the outcomes are 50%, 24.4% and 28.2% respectively.
 
 {{< highlight r >}}
 > sum(1 / decimal.odds)
 [1] 1.0256
-{{< / highlight >}}
+{{< /highlight >}}
 
 Summing those probabilities gives an over-round of 2.6%, which is very competitive. However, including the 5% commission levied by Betfair, this increases to 7.6%.
 
 Although Anderlecht were the favourites to win this game, it turns out that Rostov had a convincing victory.
 
-<img src="{{ site.baseurl }}/static/img/2016/08/anderlecht-rostov-result.png" >
+<img src="/img/2016/08/anderlecht-rostov-result.png" >
 
 The same principles apply when there are many possible outcomes for an event.
 
@@ -271,7 +271,7 @@ Kims Ocean             28/1   25/1         25/1   21/1    22/1      25/1    28/1
 Rizal Park             80/1   66/1         50/1   82/1    80/1      66/1    50/1  66/1   66/1
 Chitas Gamble         250/1  200/1        100/1  387/1   250/1     125/1   125/1 150/1  150/1
 Irish Ranger          250/1  200/1        100/1  387/1   250/1     150/1   125/1 150/1  150/1
-{{< / highlight >}}
+{{< /highlight >}}
 
 The decimal odds on offer at Bet Victor are
 
@@ -283,7 +283,7 @@ Deauville Dancer  Cest Notre Gris       Ross Kitty   Amber Spyglass Venture Lage
            23.00            26.00            29.00            81.00           251.00 
     Irish Ranger 
           251.00 
-{{< / highlight >}}
+{{< /highlight >}}
 
 The corresponding implied probabilities are
 
@@ -295,7 +295,7 @@ Deauville Dancer  Cest Notre Gris       Ross Kitty   Amber Spyglass Venture Lage
        0.0434783        0.0384615        0.0344828        0.0123457        0.0039841 
     Irish Ranger 
        0.0039841 
-{{< / highlight >}}
+{{< /highlight >}}
 
 The total implied probability per bookmaker is
 
@@ -311,7 +311,7 @@ The total implied probability per bookmaker is
            1.1964            1.2003             1.2173            1.2229            1.2288 
           Betfred         Totesport          32Red Bet          888sport       Paddy Power 
            1.2303            1.2303             1.2392            1.2392            1.2636 
-{{< / highlight >}}
+{{< /highlight >}}
 
 It's obvious that there is a wide range of value being offered by various bookmakers, extending from the competitive Bet Victor and Betway with an over-round of around 14% to the substantial over-round of 26% at Paddy Power.
 

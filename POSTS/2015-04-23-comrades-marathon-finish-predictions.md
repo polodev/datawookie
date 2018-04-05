@@ -43,7 +43,7 @@ Riegel's formula is an empirical model: it's based on data. In order to reverse 
 
 I compiled my data for the last three years based on the records kept by my trusty Garmin 910XT. A plot of time versus distance is given below.
 
-<img src="{{ site.baseurl }}/static/img/2015/04/training-data-linear.png">
+<img src="/img/2015/04/training-data-linear.png">
 
 At first glance it looks like you could fit a straight line through those points. And you can, indeed, make a pretty decent linear fit.
 
@@ -69,16 +69,16 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 Residual standard error: 0.1394 on 442 degrees of freedom
 Multiple R-squared:  0.9687,	Adjusted R-squared:  0.9686 
 F-statistic: 1.367e+04 on 1 and 442 DF,  p-value: < 2.2e-16
-{{< / highlight >}}
+{{< /highlight >}}
 
 However, applying a logarithmic transform to both axes gives a more uniform distribution of the data, which also now looks more linear.
 
-<img src="{{ site.baseurl }}/static/img/2015/04/training-data-log.png">
+<img src="/img/2015/04/training-data-log.png">
 
 Riegel observed that data for a variety of disciplines (running, swimming, cycling and race walking) conformed to the same pattern. Figure 1 from this paper is included below.
 
 <figure>
-	<img src="{{ site.baseurl }}/static/img/2015/04/riegel-fig-1.png">
+	<img src="/img/2015/04/riegel-fig-1.png">
 	<figcaption>Figure 1 from Riegel's paper "Athletic Records and Human Endurance".</figcaption>
 </figure> 
 
@@ -120,11 +120,11 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 Residual standard error: 0.09424 on 442 degrees of freedom
 Multiple R-squared:  0.9729,	Adjusted R-squared:  0.9728 
 F-statistic: 1.584e+04 on 1 and 442 DF,  p-value: < 2.2e-16
-{{< / highlight >}}
+{{< /highlight >}}
 
 The fitted value for the exponent is 1.05 (rounding up), which is pretty close to the value in Riegel's formula. The fitted model is included in the logarithmic plot above as the solid line, with the 95% prediction confidence interval indicated by the coloured ribbon. The linear plot below shows the data points used for training the model, the fit and confidence interval as well as dotted lines for constant paces ranging from 04:00 per km to 07:00 per km.
 
-<img src="{{ site.baseurl }}/static/img/2015/04/training-data-linear-model.png">
+<img src="/img/2015/04/training-data-linear-model.png">
 
 Our model also provides us with an indication of the uncertainty in the fitted exponent: the 95% confidence interval extends from 1.029 to 1.062.
 
@@ -133,7 +133,7 @@ Our model also provides us with an indication of the uncertainty in the fitted e
                   2.5 %    97.5 %
 (Intercept)   -2.558264 -2.487074
 log(Distance)  1.029142  1.061794
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Estimating the Fatigue Factor
 
@@ -143,7 +143,7 @@ The problem with the fatigue factor estimate above, which was based on a single 
 
 To get around this problem, I employed a bootstrap technique, creating a large number of subsets from the data. In each subset I weighted the samples to ensure that there was a more even distribution of distances in the mix. I calculated the fatigue factor for each subset, resulting in a range of estimates. Their distribution is plotted below.
 
-<img src="{{ site.baseurl }}/static/img/2015/04/fatigue-factor-bootstrap.png">
+<img src="/img/2015/04/fatigue-factor-bootstrap.png">
 
 According to this analysis, my personal fatigue factor is around 1.07 (the median value indicated by the dashed line in the plot above). The Shapiro-Wilk test suggests that the data is sufficiently non-Normal to justify a non-parameteric estimate of the 95% confidence interval for the fatigue factor, which runs from 1.03 to 1.11.
 
@@ -160,12 +160,12 @@ W = 0.9824, p-value = 1.435e-12
 > quantile(fatigue.factor, c(0.025, 0.975))
     2.5%    97.5% 
 1.030617 1.107044 
-{{< / highlight >}}
+{{< /highlight >}}
 
 Riegel's analysis also lead to a range of values for the fatigue factor. As can be seen from the table below (extracted from his paper), the values range from 1.01 for Nordic skiing to 1.14 for roller skating. Values for running range from 1.05 to 1.08 depending on age group and gender.
 
 <figure>
-	<img src="{{ site.baseurl }}/static/img/2015/04/riegel-table-1.png">
+	<img src="/img/2015/04/riegel-table-1.png">
 	<figcaption>Table 1 from Riegel's paper "Athletic Records and Human Endurance".</figcaption>
 </figure> 
 
@@ -173,7 +173,7 @@ Riegel's analysis also lead to a range of values for the fatigue factor. As can 
 
 The rules mentioned above for predicting finishing times are generally applied to data for a single race (or a selection of three races). But, again, given that we have so much data on hand, would it not make sense to generate a larger set of predictions?
 
-<img src="{{ site.baseurl }}/static/img/2015/04/predictions-distribution.png">
+<img src="/img/2015/04/predictions-distribution.png">
 
 The distributions above indicate the predictions for this year's Comrades Marathon (which is apparently going to be 89 km) based on all of my training data this year and using both the default (1.06) and personalised (1.07) values for the fatigue factor. The distributions are interesting, but what we are really interested in is the _expected_ finish times, which are 08:59 and 09:18 depending on what value you use for the fatigue factor. I have a little more confidence in my personalised value, so I am going to be aiming for 09:18 this year.
 
@@ -183,4 +183,4 @@ Comrades is a long day and a variety of factors can affect your finish time. It'
 
 I repeated the analysis for one of my friends and colleagues. His fatigue factor also comes out as 1.07 although, interestingly, the distribution is bi-modal. I think I understand the reason for this though: his runs are divided clearly into two groups: training runs and short runs back and forth between work and the gym.
 
-<img src="{{ site.baseurl }}/static/img/2015/04/fatigue-factor-bootstrap-karl-wilhelm.png">
+<img src="/img/2015/04/fatigue-factor-bootstrap-karl-wilhelm.png">

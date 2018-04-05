@@ -18,4 +18,4 @@ On Friday I received my copy of The Official Results Brochure for the 2013 Comra
 
 <!--more-->
 
-<img src="{{ site.baseurl }}/static/img/2013/12/winners-scatterchart.png">
+<img src="/img/2013/12/winners-scatterchart.png">

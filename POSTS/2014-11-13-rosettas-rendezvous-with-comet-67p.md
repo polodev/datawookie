@@ -11,6 +11,6 @@ On 12 November 2014 the Philae lander from the [Rosetta](http://en.wikipedia.org
 
 <!--more-->
 
-[<img src="{{ site.baseurl }}/static/img/2014/11/oatmeal-comet.png">](http://theoatmeal.com/blog/comet)
+[<img src="/img/2014/11/oatmeal-comet.png">](http://theoatmeal.com/blog/comet)
 
-[<img src="{{ site.baseurl }}/static/img/2014/11/xkcd-comet.png">](http://xkcd.com/1446/)
+[<img src="/img/2014/11/xkcd-comet.png">](http://xkcd.com/1446/)

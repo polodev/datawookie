@@ -22,7 +22,7 @@ Now you will want to update all of the packages too, so launch R (as root) and t
 
 {{< highlight r >}}
 > update.packages(lib.loc = "/usr/local/lib/R/site-library", ask = FALSE)
-{{< / highlight >}}
+{{< /highlight >}}
 
 If you have packages installed in a user library, you should update those too.
 

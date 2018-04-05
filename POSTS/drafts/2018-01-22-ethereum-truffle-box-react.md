@@ -97,4 +97,4 @@ npm run start
 
 That will pop up a browser window directed at <http://localhost:3000/>.
 
-![]({{ site.baseurl }}/static/img/2017/11/truffle-react-front-end.png)
+![](/img/2017/11/truffle-react-front-end.png)

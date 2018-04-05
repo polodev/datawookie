@@ -33,7 +33,7 @@ In the end the probability that Busi wins is
   
 {{< highlight text >}}
 1/7 + (6/7 * 6/7) * 1/7 + (6/7 * 6/7)^2 * 1/7 + (6/7 * 6/7)^3 * 1/7 + …
-{{< / highlight >}}
+{{< /highlight >}}
   
 This is an infinite [geometric series](https://en.wikipedia.org/wiki/Geometric_series). We’ll simplify it a bit:
   
@@ -43,7 +43,7 @@ This is an infinite [geometric series](https://en.wikipedia.org/wiki/Geometric_s
 = 1/7 * [1 / (1-r)]
 = 1/7 * [49/13]
 = 0.5384615
-{{< / highlight >}}
+{{< /highlight >}}
   
 where r = 6/7 * 6/7 = 36/49.
 
@@ -54,7 +54,7 @@ What about the probability that Khanha wins? By similar reasoning this is
 = 6/7 * 1/7 * [1 + (6/7 * 6/7) + (6/7 * 6/7)^2 + (6/7 * 6/7)^3 + …]
 = 6/49 * [49/13]
 = 0.4615385
-{{< / highlight >}}
+{{< /highlight >}}
 
 Importantly those two probabilities sum to one: 0.5384615 + 0.4615385 = 1.
 

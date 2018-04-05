@@ -10,5 +10,5 @@ tags:
   - Talk
 ---
 
-{% comment %}
-{% endcomment %}
+{{< comment >}}
+{{< /comment >}}

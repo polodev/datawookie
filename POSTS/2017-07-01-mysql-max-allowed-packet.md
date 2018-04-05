@@ -28,20 +28,20 @@ mysql> SELECT @@max_allowed_packet;
 |             16777216 |
 +----------------------+
 1 row in set (0.00 sec)
-{{< / highlight >}}
+{{< /highlight >}}
 
 That's 16 Mb, but evidently not enough! It's a simple matter to increase this limit. Just edit `/etc/mysql/my.cnf` (you'll have to be `root` to do that!) and add the following:
 
 {{< highlight text >}}
 [mysqld]
 max_allowed_packet = 32M
-{{< / highlight >}}
+{{< /highlight >}}
 
 Then restart MySQL.
 
 {{< highlight text >}}
 # service mysql restart
-{{< / highlight >}}
+{{< /highlight >}}
 
 Check that the limit has increased.
 
@@ -53,6 +53,6 @@ mysql> SELECT @@max_allowed_packet;
 |             33554432 |
 +----------------------+
 1 row in set (0.00 sec)
-{{< / highlight >}}
+{{< /highlight >}}
 
 That solved the problem for me. If the problem persists then you might need to increase the limit further.

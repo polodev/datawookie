@@ -46,7 +46,7 @@ PriorityQueue <- setRefClass("PriorityQueue",
                                  callSuper()
                                })
 )
-{{< / highlight >}}
+{{< /highlight >}}
 
 We need to modify only two of the methods. The most important of these is insert(), which is where all of the important stuff happens! I've added an additional parameter, priority, which gives the relative importance of the item to be inserted (with larger values indicating greater importance). The items are sorted according to priority, where items of higher priority are shifted to the front of the queue. Amongst items which have the same priority, the order of insertion is retained. The pop() method also needs modification: when items are removed from the queue, the corresponding priority is also discarded.
 
@@ -61,7 +61,7 @@ We create an instance of the Priority Queue and then insert four items with vary
 > q4$push("second", 2)
 > q4$push("third", 1)
 > q4$push("fourth", 3)
-{{< / highlight >}}
+{{< /highlight >}}
 
 According to the logic outlined above, the item "fourth" should move to the front of the queue since it has the highest priority. It will be followed by "second" which has next highest priority. Finally we have "first" and "second", which have the same priority and thus retain the order in which they were inserted.
 
@@ -80,7 +80,7 @@ According to the logic outlined above, the item "fourth" should move to the fron
 
 [[4]]
 [1] "third"
-{{< / highlight >}}
+{{< /highlight >}}
 
 Next we can start extracting items from the queue. As expected, item "fourth" comes out first, followed in turn by "second", "first" and "third". The methods which were inherited without modification work as expected.
 
@@ -103,6 +103,6 @@ Next we can start extracting items from the queue. As expected, item "fourth" co
 numeric(0)
 > q4$poll()
 NULL
-{{< / highlight >}}
+{{< /highlight >}}
 
 This code is now published in the [liqueueR](https://github.com/DataWookie/liqueueR) package.

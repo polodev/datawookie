@@ -13,4 +13,4 @@ R has moved up three positions to 6th place on [IEEE Spectrum](http://spectrum.i
 
 <!--more-->
 
-<img src="{{ site.baseurl }}/static/img/2015/07/IEEE-Spectrum-2015.jpg">
+<img src="/img/2015/07/IEEE-Spectrum-2015.jpg">

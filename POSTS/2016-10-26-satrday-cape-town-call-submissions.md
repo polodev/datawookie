@@ -18,7 +18,7 @@ url: /2016/10/26/satrday-cape-town-call-submissions/
 
 <!--more-->
 
-<img src="{{ site.baseurl }}/static/img/2016/10/satRday-Cape-Town-banner.png" >
+<img src="/img/2016/10/satRday-Cape-Town-banner.png" >
 
 ## Keynotes and Workshops
 

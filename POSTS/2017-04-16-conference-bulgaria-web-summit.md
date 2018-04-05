@@ -13,7 +13,7 @@ url: /2017/04/16/conference-bulgaria-web-summit/
 
 The [Bulgaria Web Summit](https://bulgariawebsummit.com/) happened on 7 and 8 April 2017 at the Inter Expo Center in Sofia, Bulgaria.
 
-![]({{ site.baseurl }}/static/img/2017/04/logo-bulgaria-web-summit.png)
+![](/img/2017/04/logo-bulgaria-web-summit.png)
 
 <!--more-->
 

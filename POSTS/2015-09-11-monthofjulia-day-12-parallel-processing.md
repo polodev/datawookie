@@ -18,7 +18,7 @@ url: /2015/09/11/monthofjulia-day-12-parallel-processing/
 
 <!--more-->
 
-<img src="{{ site.baseurl }}/static/img/2015/09/Julia-Logo-Parallel.png" >
+<img src="/img/2015/09/Julia-Logo-Parallel.png" >
 
 As opposed to many other languages, where parallel computing is bolted on as an afterthought, Julia was designed from the start with parallel computing in mind. It has a number of native features which lend themselves to efficient implementation of parallel algorithms. It also has packages which facilitate cluster computing (using [MPI](https://github.com/JuliaParallel/MPI.jl), for example). We won't be looking at those, but focusing instead on coroutines, generic parallel processing and parallel loops.
 
@@ -43,7 +43,7 @@ julia> function lucas_producer(n)
            end
         end
 lucas_producer (generic function with 1 method)
-{{< / highlight >}}
+{{< /highlight >}}
   
 This function is then wrapped in a `Task`, which has state `:runnable`.
   
@@ -52,7 +52,7 @@ julia> lucas_task = Task(() -> lucas_producer(10))
 Task (runnable) @0x0000000005b5ee60
 julia> lucas_task.state
 :runnable
-{{< / highlight >}}
+{{< /highlight >}}
   
 Now we're ready to start consuming data from the `Task`. Data elements can be retrieved individually or via a loop (in which case the `Task` acts like an iterable object and no `consume()` is required).
   
@@ -73,7 +73,7 @@ julia> for n in lucas_task
 29
 47
 76
-{{< / highlight >}}
+{{< /highlight >}}
   
 Between invocations the `Task` is effectively asleep. The task temporarily springs to life every time data is requested, before becoming dormant once more.
 
@@ -85,7 +85,7 @@ Coroutines don't really feel like "parallel" processing because they are not wor
   
 {{< highlight text >}}
 $ julia -p 4
-{{< / highlight >}}
+{{< /highlight >}}
   
 There's always one more process than specified on the command line (we specified the number of worker processes; add one for the master process).
   
@@ -98,7 +98,7 @@ julia> workers() # Identifiers for the worker processes.
  3
  4
  5
-{{< / highlight >}}
+{{< /highlight >}}
   
 We can launch a job on one of the workers using `remotecall()`.
   
@@ -108,7 +108,7 @@ julia> P1 = remotecall(W1, x -> factorial(x), 20)
 RemoteRef(2,1,6)
 julia> fetch(P1)
 2432902008176640000
-{{< / highlight >}}
+{{< /highlight >}}
   
 `@spawn` and `@spawnat` are macros which launch jobs on individual workers. The `@everywhere` macro executes code across all processes (including the master).
   
@@ -120,7 +120,7 @@ ID 1: 0.686332 5
         From worker 5: ID 5: 0.136019 5
         From worker 2: ID 2: 0.145561 5
         From worker 3: ID 3: 0.670885 5
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Parallel Loop and Map
 
@@ -138,7 +138,7 @@ julia> function findpi(n)
            4 * inside / n
        end
 findpi (generic function with 1 method)
-{{< / highlight >}}
+{{< /highlight >}}
   
 The quality of the result as well as the execution time (and memory consumption!) depend directly on the number of samples.
   
@@ -152,7 +152,7 @@ elapsed time: 9.533291187 seconds (8800000096 bytes allocated, 42.97% gc time)
 julia> @time findpi(1000000000)
 elapsed time: 95.436185105 seconds (88000002112 bytes allocated, 43.14% gc time)
 3.141605352
-{{< / highlight >}}
+{{< /highlight >}}
   
 The parallel version is implemented using the `@parallel` macro, which takes a reduction operator (in this case `+`) as its first argument.
   
@@ -165,7 +165,7 @@ julia> function parallel_findpi(n)
            4 * inside / n
        end
 parallel_findpi (generic function with 1 method)
-{{< / highlight >}}
+{{< /highlight >}}
   
 There is some significant overhead associated with setting up the parallel jobs, so that the parallel version actually performs worse for a small number of samples. But when you run sufficient samples the speedup becomes readily apparent.
   
@@ -179,14 +179,14 @@ elapsed time: 3.870065625 seconds (154696 bytes allocated)
 julia> @time parallel_findpi(1000000000)
 elapsed time: 39.029650365 seconds (151080 bytes allocated)
 3.141653704
-{{< / highlight >}}
+{{< /highlight >}}
   
 For reference, these results were achieved with 4 worker processes on a DELL laptop with the following CPU:
   
 {{< highlight text >}}
 root@propane: #lshw | grep product | head -n 1
           product: Intel(R) Core(TM) i7-4600M CPU @ 2.90GHz
-{{< / highlight >}}
+{{< /highlight >}}
 
 More information on parallel computing facilities in Julia can be found in the [documentation](http://docs.julialang.org/en/stable/manual/parallel-computing/). As usual the code for today's Julia journey can be found on [github](https://github.com/DataWookie/MonthOfJulia).
 

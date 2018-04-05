@@ -19,7 +19,7 @@ I've just put together a [Wordpress](https://wordpress.com/) site for my older d
 
 The first thing that you need to do is [install Docker]({{ site.baseurl }}{% post_url 2017-09-14-installing-docker-ubuntu %}). With that in place it's a simple matter to instantiate a couple of images and the whole thing is up an running.
 
-![]({{ site.baseurl }}/static/img/logo/docker-logo.png)
+![](/img/logo/docker-logo.png)
 
 ## MySQL Docker Container
 
@@ -28,13 +28,13 @@ First create a folder for the database data.
 
 {{< highlight bash >}}
 mkdir ~/mysql-data
-{{< / highlight >}}
+{{< /highlight >}}
 
 Next create a (temporary) environment variable to store the MySQL `root` user password. This is not really necessary, but it made my life easier.
 
 {{< highlight bash >}}
 MYSQL_ROOT_PASSWORD="Perc!oreggIn2"
-{{< / highlight >}}
+{{< /highlight >}}
 
 Now launch an instance of the [MySQL Docker image](https://hub.docker.com/_/mysql/). Note that the folder created above is listed as a volume and linked to the folder `/var/lib/mysql` on the container.
 
@@ -43,7 +43,7 @@ docker run --name mysql \
   -v ~/mysql-data:/var/lib/mysql \
   -e MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD \
   -d mysql:latest
-{{< / highlight >}}
+{{< /highlight >}}
 
 Check that the container is up and running.
 
@@ -51,7 +51,7 @@ Check that the container is up and running.
 $ docker ps
 CONTAINER ID IMAGE            COMMAND                CREATED        STATUS        PORTS                NAMES
 7937133554d9 mysql:latest     "docker-entrypoint..." 15 minutes ago Up 15 minutes 3306/tcp             mysql
-{{< / highlight >}}
+{{< /highlight >}}
 
 We see that it's listening on the (default) port 3306.
 
@@ -61,7 +61,7 @@ Wordpress also stores content (templates, media etc.) in a folder. Again we want
 
 {{< highlight bash >}}
 mkdir ~/wp-content
-{{< / highlight >}}
+{{< /highlight >}}
 
 Then launch the [Wordpress Docker image](https://hub.docker.com/_/wordpress/). The folder created above is listed as a volume and linked to the folder `/var/www/html/wp-content` on the container. This container is also linked to the `mysql` container.
 
@@ -71,7 +71,7 @@ docker run --name wordpress \
   -p 8080:80 \
   -v ~/wp-content:/var/www/html/wp-content \
   -d wordpress:latest
-{{< / highlight >}}
+{{< /highlight >}}
 
 Again we check that the container is up and running.
 
@@ -80,17 +80,17 @@ $ docker ps
 CONTAINER ID IMAGE            COMMAND                CREATED        STATUS        PORTS                NAMES
 707fcaad12e4 wordpress:latest "docker-entrypoint..." 20 minutes ago Up 20 minutes 0.0.0.0:8080->80/tcp wordpress
 7937133554d9 mysql:latest     "docker-entrypoint..." 25 minutes ago Up 25 minutes 3306/tcp             mysql
-{{< / highlight >}}
+{{< /highlight >}}
 
 Looks good. At this point we can do a local test on the host. Since the site is not yet visible from the outside world we'll use `lynx` to open it.
 
 {{< highlight bash >}}
 lynx http://localhost/
-{{< / highlight >}}
+{{< /highlight >}}
 
 If you get something that looks like a (text mode) web page then you are in business.
 
-![]({{ site.baseurl }}/static/img/logo/logo-nginx.png)
+![](/img/logo/logo-nginx.png)
 
 ## Configuring NGINX
 
@@ -116,7 +116,7 @@ server {
                 proxy_pass http://wordpress;
         }
 }
-{{< / highlight >}}
+{{< /highlight >}}
 
 Restart NGINX and the site will be live.
 
@@ -126,7 +126,7 @@ I was so enthused by the ease of the above process (thank you, Docker!) that I d
 
 {{< highlight text >}}
         server_name blog.example.com;
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Conclusion
 

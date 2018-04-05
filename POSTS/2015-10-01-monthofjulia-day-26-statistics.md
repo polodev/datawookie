@@ -16,7 +16,7 @@ url: /2015/10/01/monthofjulia-day-26-statistics/
 
 <!--more-->
 
-<img src="{{ site.baseurl }}/static/img/2015/09/Julia-Logo-Statistics.png">
+<img src="/img/2015/09/Julia-Logo-Statistics.png">
 
 [JuliaStats](https://github.com/JuliaStats) is a meta-project which consolidates various packages related to statistics and machine learning in Julia. W
 {{< highlight julia >}}
@@ -25,13 +25,13 @@ julia> mean(x)
 0.5287191472784906
 julia> std(x)
 0.2885446536178459
-{{< / highlight >}}
+{{< /highlight >}}
 
 Julia already has some builtin support for statistical operations, so additional packages are not strictly necessary. However they do increase the scope and ease of possible operations (as we'll see below).Julia already has some builtin support for statistical operations. Let's kick off by loading all the packages that we'll be looking at today.
 
 {{< highlight julia >}}
 julia> using StatsBase, StatsFuns, StreamStats
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## StatsBase
 
@@ -48,7 +48,7 @@ Minimum: 0.064803
 Median: 0.529662
 3rd Quartile: 0.649787
 Maximum: 0.974760
-{{< / highlight >}}
+{{< /highlight >}}
 
 Weighted versions of the mean, variance and standard deviation are implemented. There're also geometric and harmonic means.
 
@@ -66,7 +66,7 @@ julia> kurtosis(x, w)
 -0.9210456851144664
 julia> mean_and_std(x, w)
 (0.48819933297961043,0.2881639067498738)
-{{< / highlight >}}
+{{< /highlight >}}
 
 There's a weighted median as well as functions for calculating quantiles.
 
@@ -95,7 +95,7 @@ julia> nquantile(x, 8)
  0.97476
 julia> iqr(x) # Inter-quartile range.
 0.3319677541313941
-{{< / highlight >}}
+{{< /highlight >}}
 
 Sampling from a population is also catered for, with a range of algorithms which can be applied to the sampling procedure.
 
@@ -119,7 +119,7 @@ julia> wsample(['T', 'F'], [5, 1], 10) 				# Weighted sampling (with replacement
  'T'
  'T'
  'T'
-{{< / highlight >}}
+{{< /highlight >}}
 
 There's also functionality for empirical estimation of distributions from histograms and a range of other interesting and useful goodies.
 
@@ -145,7 +145,7 @@ julia> softmax([1, 3, 2, 5, 3])
  0.0371886
  0.746952
  0.101089
-{{< / highlight >}}
+{{< /highlight >}}
 
 Finally there is a suite of functions relating to various statistical distributions. The functions for the Normal distribution are illustrated below, but there're functions for Beta and Binomial distribution, the Gamma and Hypergeometric distribution and many others. The function naming convention is consistent across all distributions.
 
@@ -160,7 +160,7 @@ julia> norminvcdf(0.5); 							# inverse-CDF
 julia> norminvccdf(0.99); 							# inverse-Complementary CDF
 julia> norminvlogcdf(-0.693147180559945); 			# inverse-log CDF
 julia> norminvlogccdf(-0.693147180559945); 			# inverse-log Complementary CDF
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## StreamStats
 
@@ -190,7 +190,7 @@ x = 0.760074: mean = 0.598 | variance = 0.099
 x = 0.328495: mean = 0.564 | variance = 0.094
 x = 0.303542: mean = 0.535 | variance = 0.090
 x = 0.492716: mean = 0.531 | variance = 0.080
-{{< / highlight >}}
+{{< /highlight >}}
 
 In addition to the mean and variance illustrated above, the package also supports online versions of min() and max(), and can be used to generate incremental confidence intervals for Bernoulli and Poisson processes.
 

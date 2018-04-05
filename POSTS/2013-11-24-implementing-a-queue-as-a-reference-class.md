@@ -66,7 +66,7 @@ Queue <- setRefClass(Class = "Queue",
                        }
                      )
 )
-{{< / highlight >}}
+{{< /highlight >}}
 
 # Methods of the Generator Function
 
@@ -79,7 +79,7 @@ Field "name":
 character(0)
 Field "data":
 list()
-{{< / highlight >}}
+{{< /highlight >}}
 
 Next we have methods() and fields() which, not surprisingly, return vectors of the names of the class's methods and data fields respectively.
 
@@ -91,7 +91,7 @@ Next we have methods() and fields() which, not surprisingly, return vectors of t
 > Queue$fields()
        name        data 
 "character"      "list" 
-{{< / highlight >}}
+{{< /highlight >}}
 
 Lastly the help() method which, by default, returns some general information about the class.
 
@@ -113,7 +113,7 @@ Class: character      list
 
  Reference Superclasses:  
     "envRefClass"
-{{< / highlight >}}
+{{< /highlight >}}
 
 However, if provided with a method name as an argument, it will provide a help string for the specifed method. These help strings are embedded in the class definition using a syntax which will be familiar to Python programmers.
 
@@ -124,7 +124,7 @@ $push(item)
 
 
 Inserts element at back of the queue.
-{{< / highlight >}}
+{{< /highlight >}}
 
 # Creating Objects (and some Reference Class Features)
 
@@ -142,14 +142,14 @@ Field "name":
 [1] "test queue"
 Field "data":
 list()
-{{< / highlight >}}
+{{< /highlight >}}
 
 ... or during the creation process.
 
 {{< highlight r >}}
 > q2 <- Queue$new(name = "another test") > q2$name
 [1] "another test"
-{{< / highlight >}}
+{{< /highlight >}}
 
 We have seen that the name field can be accessed using the dollar operator. We can also use the accessors() method for the generator function to create methods for reading and writing to the name field.
 
@@ -161,7 +161,7 @@ We have seen that the name field can be accessed using the dollar operator. We c
 > q2$setName("a new name")
 > q2$getName()
 [1] "a new name"
-{{< / highlight >}}
+{{< /highlight >}}
 
 # Standard Queue Functionality
 
@@ -173,7 +173,7 @@ Let's get down to the actual queue functionality. First we add elements to the q
 > q2$push("third item")
 > q2$size()
 [1] 3
-{{< / highlight >}}
+{{< /highlight >}}
 
 The queue now contains three items (two strings and a number). The items are stored in the data field. Ideally this should not be directly accessible, but the Reference Class implementation does not provide for private data. So you can access the items directly (but this defeats the object of a queue!).
 
@@ -185,7 +185,7 @@ The queue now contains three items (two strings and a number). The items are sto
 [1] 2
 [[3]]
 [1] "third item"
-{{< / highlight >}}
+{{< /highlight >}}
 
 Next we can start to access and remove items from the queue. The first way to do this uses pop(), which returns the item at the head of the queue and at the same time removes it from the queue.
 
@@ -196,7 +196,7 @@ Next we can start to access and remove items from the queue. The first way to do
 [1] 2
 > q2$size()
 [1] 1
-{{< / highlight >}}
+{{< /highlight >}}
 
 What if we just want to have a look at the first item in the queue but not remove it? Use peek().
 
@@ -206,7 +206,7 @@ What if we just want to have a look at the first item in the queue but not remov
 > q2$size()
 [1] 1
 
-{{< / highlight >}}
+{{< /highlight >}}
 
 Next we have poll(), which is very much like pop() in that it removes the first item from the queue. But, as we will see in a moment, it behaves differently when the queue is empty.
 
@@ -215,14 +215,14 @@ Next we have poll(), which is very much like pop() in that it removes the first 
 [1] "third item"
 > q2$size()
 [1] 0
-{{< / highlight >}}
+{{< /highlight >}}
 
 So we have ejected all three items from the queue and we should expect the behaviour of these functions to be a little different now. pop() generates an error message: obviously we cannot remove an item from the queue if it is empty!
 
 {{< highlight r >}}
 > try(q2$pop())
 Error in q2$pop() : queue is empty!
-{{< / highlight >}}
+{{< /highlight >}}
 
 This might not be the best behaviour for harmonious code, so peek() and poll() more elegantly indicate that that the queue is exhausted by returning NULL.
 
@@ -231,7 +231,7 @@ This might not be the best behaviour for harmonious code, so peek() and poll() m
 NULL
 > q2$poll()
 NULL
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Non-Standard Queue Functionality
 
@@ -245,14 +245,14 @@ a b c d e f g h i j k l m n o p q r s t u v w x y z
 >
 > q3$size()
 [1] 26
-{{< / highlight >}}
+{{< /highlight >}}
 
 As we have already seen, the default peek() behaviour is just to take a look at the item at the head of the queue.
 
 {{< highlight r >}}
 > q3$peek()
 [1] "a"
-{{< / highlight >}}
+{{< /highlight >}}
 
 But we can also choose items further down the queue as well as ranges of items.
 
@@ -268,14 +268,14 @@ But we can also choose items further down the queue as well as ranges of items.
 [1] "f"
 [[4]]
 [1] "g"
-{{< / highlight >}}
+{{< /highlight >}}
 
 If the requested range of locations extends beyond the end of the queue then the method returns NULL as before.
 
 {{< highlight r >}}
 > q3$peek(24:28)
 NULL
-{{< / highlight >}}
+{{< /highlight >}}
 
 # Conclusion
 

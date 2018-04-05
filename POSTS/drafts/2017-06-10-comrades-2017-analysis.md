@@ -22,8 +22,8 @@ Mark Dowdeswell (@mrdowdeswell) tweeted at 6:40 pm on Sat, Jun 10, 2017: So this
 
 I'll kick off with a couple of results from [Mark Dowdeswell](https://twitter.com/mrdowdeswell) as published in [this thread](https://twitter.com/mrdowdeswell/status/872544989166931968/photo/1). He notes that 8.5% of female finishers and 2.2% of male finishers ran negative splits.
 
-![@mrdowdeswell: 8.5% of female finishers and 2.2% of male finishers ran negative splits.]({{ site.baseurl }}/static/img/2017/06/dowdeswell-splits-gender.jpg)
+![@mrdowdeswell: 8.5% of female finishers and 2.2% of male finishers ran negative splits.](/img/2017/06/dowdeswell-splits-gender.jpg)
 
 @mrdowdeswell also observed that women are more likely than men to run a negative split, regardless of their finishing time.
 
-![@mrdowdeswell: As always, women more likely to run a negative split than men are, almost irrespective of finish time.]({{ site.baseurl }}/static/img/2017/06/dowdeswell-proportion-negative-split.jpg)
+![@mrdowdeswell: As always, women more likely to run a negative split than men are, almost irrespective of finish time.](/img/2017/06/dowdeswell-proportion-negative-split.jpg)

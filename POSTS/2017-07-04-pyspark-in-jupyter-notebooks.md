@@ -19,14 +19,14 @@ It'd be great to interact with PySpark from a Jupyter Notebook. This post descri
 1. Install the `findspark` package.
 {{< highlight bash >}}
 $ pip3 install findspark
-{{< / highlight >}}
+{{< /highlight >}}
 {:start="2"}
 2. Make sure that the `SPARK_HOME` environment variable is defined
 3. Launch a Jupyter Notebook.
 {{< highlight bash >}}
 $ jupyter notebook
-{{< / highlight >}}
+{{< /highlight >}}
 {:start="4"}
 4. Import the `findspark` package and then use `findspark.init()` to locate the Spark process and then load the `pyspark` module. See below for a simple example.
 
-![]({{ site.baseurl }}/static/img/2017/07/ubuntu-pyspark-test.png)
+![](/img/2017/07/ubuntu-pyspark-test.png)

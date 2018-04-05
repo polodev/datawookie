@@ -15,7 +15,7 @@ I've added mortality data to the [lifespan](https://github.com/DataWookie/lifesp
 
 <!--more-->
 
-<img src="{{ site.baseurl }}/static/img/2016/07/death-average-age.png">
+<img src="/img/2016/07/death-average-age.png">
 
 {{< highlight r >}}
 > library(lifespan)
@@ -24,10 +24,10 @@ I've added mortality data to the [lifespan](https://github.com/DataWookie/lifesp
 +   facet_wrap(~ sex) +
 +   labs(x = "", y = "Average Age at Death") +
 +   theme_minimal() + theme(legend.title = element_blank())
-{{< / highlight >}}
+{{< /highlight >}}
 
 The effect is more pronounced for men, rising from around 66.5 in 1994 to 70.0 in 2014. The corresponding values for women are 74.6 and 76.5 respectively. Good news for everyone.
 
 When do most deaths occur? It would seem that the peak lies in Winter, specifically January. There is a broad trough during the Summer months. Fractionally more women die in Winter, whereas slightly more men die during Summer.
 
-<img src="{{ site.baseurl }}/static/img/2016/07/deaths-per-day.png">
+<img src="/img/2016/07/deaths-per-day.png">

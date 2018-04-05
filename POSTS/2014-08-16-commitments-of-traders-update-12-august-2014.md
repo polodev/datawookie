@@ -16,4 +16,4 @@ url: /2014/08/16/commitments-of-traders-update-12-august-2014/
 
 <!--more-->
 
-<img src="{{ site.baseurl }}/static/img/2014/08/140812-weekly-change.png">
+<img src="/img/2014/08/140812-weekly-change.png">

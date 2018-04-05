@@ -24,7 +24,7 @@ The jobs died with a curt and rather uninformative message in the console:
 
 {{< highlight bash >}}
 Killed
-{{< / highlight >}}
+{{< /highlight >}}
 
 Hard to figure out the source of the problem. Luckily Ubuntu comes with a plethora of tools for debugging. I had a look at the output from `dmesg` and that immediately pointed me to the source of the problem.
 
@@ -58,7 +58,7 @@ The `dmesg` output is included below. I've edited out some of the irrelevant det
                 slab_reclaimable:8631 slab_unreclaimable:7256
                 mapped:815 shmem:293 pagetables:11188 bounce:0
                 free:32567 free_pcp:0 free_cma:0
-{{< / highlight >}}
+{{< /highlight >}}
 
 That's the first sign that something is going horribly wrong: `R invoked oom-killer`. The [OOM Killer](https://linux-mm.org/OOM_Killer) is responsible for killing tasks when the system is running out of memory.
 
@@ -73,7 +73,7 @@ That's the first sign that something is going horribly wrong: `R invoked oom-kil
 [84123.043672] 82279 pages reserved
 [84123.043672] 0 pages cma reserved
 [84123.043673] 0 pages hwpoisoned
-{{< / highlight >}}
+{{< /highlight >}}
 
 Some high level information on memory allocation. Note that all of the swap space has been used!
 
@@ -116,7 +116,7 @@ Then some details on memory allocation to individual processes.
 [84123.043720] [ 3077]  1000  3077   306739   243239     563       4     1820             0 R
 [84123.043721] [ 3086]  1000  3086   306174   242549     563       4     1874             0 R
 [84123.043722] [ 3095]  1000  3095   281520   218083     518       4     1784             0 R
-{{< / highlight >}}
+{{< /highlight >}}
 
 Note the final eight lines, which correspond to my optimisation job (it's running in parallel with seven worker threads). The biggest memory hog is PID 3026, which is the R master task.
 
@@ -125,7 +125,7 @@ Then the final *coup de grâce*: killing PID 3026, which in turn took down the r
 {{< highlight text >}}
 [84123.043724] Out of memory: Kill process 3026 (R) score 649 or sacrifice child
 [84123.046405] Killed process 3026 (R) total-vm:14158732kB, anon-rss:8590380kB, file-rss:1620kB
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Fixing the Problem
 
@@ -134,4 +134,4 @@ Obviously memory is the issue here. I thought that the available RAM and swap we
 1. upgrade to a larger instance (the `m4.2xlarge` also has 8 vCPUs but 32 GiB of RAM, although it's a *General Purpose* rather than a *Compute Optimised* instance); or
 2. add an EBS volume and create a wide swathe of swap space.
 
-![]({{ site.baseurl }}/static/img/2017/09/comic-oom-killer.png)
+![](/img/2017/09/comic-oom-killer.png)

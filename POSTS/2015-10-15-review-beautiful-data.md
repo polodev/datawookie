@@ -19,7 +19,7 @@ url: /2015/10/15/review-beautiful-data/
 
 I've just finished reading [Beautiful Data](http://shop.oreilly.com/product/9780596157128.do) (published by O'Reilly in 2009), a collection of essays edited by Toby Segaran and Jeff Hammerbacher. The 20 essays from 39 contributors address a diverse array of topics relating to data and how it's collected, analysed and interpreted.
 
-<img src="{{ site.baseurl }}/static/img/2015/09/beautiful-data-cover.png">
+<img src="/img/2015/09/beautiful-data-cover.png">
 
 Since this is a collection of essays, the writing style and level of technical detail varies considerably between chapters. To be honest, I didn't find every chapter absolutely riveting, but I generally came away from each of them having learned a thing or two. Below is a list of chapter titles with occasional comments.
 
@@ -59,7 +59,7 @@ This is probably the most technical chapter in the book. Peter Norvig gives a tu
 15. _Life in Data: The Story of DNA_
 {{< highlight c >}}
 char(3*10^9) human_genome;
-{{< / highlight >}}
+{{< /highlight >}}
 I'm not sure why, but that snippet of code really amused me. Great way of capturing an obscure biological fact in a form which resonates with my inner geek.
 
 {:start="16"}

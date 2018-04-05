@@ -15,7 +15,7 @@ Data Scientists are often among the best educated and most experienced on a team
 
 <!--more-->
 
-<img src="{{ site.baseurl }}/static/img/2015/10/respect.png">
+<img src="/img/2015/10/respect.png">
 
 In [Crushed it!](http://www.erinshellman.com/crushed-it-landing-a-data-science-job/), [@erinshellman](https://twitter.com/erinshellman) writes
 

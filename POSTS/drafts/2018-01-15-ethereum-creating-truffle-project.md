@@ -9,7 +9,7 @@ tags:
   - Ethereum
 ---
 
-{% comment %}
+{{< comment >}}
 General introductions:
 
   - https://medium.com/@ConsenSys/a-101-noob-intro-to-programming-smart-contracts-on-ethereum-695d15c1dab4
@@ -17,7 +17,7 @@ General introductions:
 This illustrates how to hook up a small web site to the contract:
 
   - https://medium.com/@mvmurthy/full-stack-hello-world-voting-ethereum-dapp-tutorial-part-1-40d2d0d807c2.
-{% endcomment %}
+{{< /comment >}}
 
 Truffle provides an environment in which you can compile and test smart contracts. Instructions for installing Truffle and other handy tools can be found in the [Ethereum Starter Kit]({{ site.baseurl }}{% post_url 2018-01-19-ethereum-diy-smart-contract %}) post. A good place to start is by taking a quick look at the [Truffle documentation](http://truffleframework.com/docs/). But after that you'll probably want to dive right in. That was certainly my experience.
 

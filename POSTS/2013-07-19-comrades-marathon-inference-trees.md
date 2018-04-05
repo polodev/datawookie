@@ -24,7 +24,7 @@ Just to recall what the data look like:
 2013-10031   Male        20-29      4.910833  10.94833 Finished      Bronze
 2013-10047   Male        50-59      5.076944  10.72778 Finished      Bronze
 2013-10049   Male        50-59      5.729444        NA      DNF        <NA>
-{{< / highlight >}}
+{{< /highlight >}}
 
 Here the drummond.time and finish.time fields are expressed in decimal hours and correspond to the time taken to reach the half-way mark and the finish respectively. The status field indicates whether a runner finished the race or did not finish (DNF).
 
@@ -91,17 +91,17 @@ Number of observations:  13917
         32)*  weights = 475 
     29) drummond.time > 5.940556
       33)*  weights = 694 
-{{< / highlight >}}
+{{< /highlight >}}
 
 There is a deluge of information in the textual representation of the model. Making sense of this is a lot easier with a plot.
 
 {{< highlight r >}}
 > plot(tree.status)
-{{< / highlight >}}
+{{< /highlight >}}
 
 The image below is a little small. You will want to click on it to bring up a larger version.
 
-<img src="{{ site.baseurl }}/static/img/2013/07/ctree-status-2013.png">
+<img src="/img/2013/07/ctree-status-2013.png">
 
 To interpret the tree, start at the top node (Node 1) labelled drummond.time, indicating that of the features considered, the most important variable in determining a successful outcome at the race is the time to the half-way mark. We are presented with two options: times that are either less than or greater than 5.669 hours. The cutoff time at Drummond is 6.167 hours (06:10:00), so runners reaching half-way after 5.669 hours are already getting quite close to the cutoff time. Suppose that we take the > 5.669 branch. The next node again depends on the half-way time, in this case dividing the population at 5.811 hours. If we take the left branch then we are considering runners who got to Drummond after 5.669 hours but before 5.811 hours. The next node depends on age category. The two branches here are for runners who are 39 and younger (left branch) and older runners (right branch). If we take the right branch then we reach the terminal node. There were 553 runners in this category and the spine plot indicates that around 35% of those runners successfully finished the race.
 
@@ -113,7 +113,7 @@ Constructing a model for medal allocation is done in a similar fashion.
 > splits.2013.finishers = subset(splits.2013, status == "Finished" & !is.na(medal))
 > #
 > levels(splits.2013.finishers$medal) <- c("G", "WH", "S", "BR", "B", "VC")
-{{< / highlight >}}
+{{< /highlight >}}
 
 Here I first extracted the subset of runners who finished the race (and for whom I have information on the medal allocated). Then, to make the plotting a little easier, the names of the levels in the medal factor are changed to a more compact representation.
 
@@ -183,17 +183,17 @@ Number of observations:  10221
           36)*  weights = 277 
       33) drummond.time > 5.409722
         37)*  weights = 1763 
-{{< / highlight >}}
+{{< /highlight >}}
 
 Apologies for the bit of information overload. A plot brings out the salient information though.
 
 {{< highlight r >}}
 > plot(tree.medal)
-{{< / highlight >}}
+{{< /highlight >}}
 
 Again you will want to click on the image below to make it legible.
 
-<img src="{{ site.baseurl }}/static/img/2013/07/ctree-medal-2013.png">
+<img src="/img/2013/07/ctree-medal-2013.png">
 
 Again the most important feature is the time at the half-way mark. If we look at the terminal node on the left (Node 3), which is the only one which contains athletes who received either Gold or Wally Hayward medals, then we see that they all passed through Drummond in a time of less than 3.439 hours. Almost all of the Silver medal athletes were also in this group, along with a good number of Bill Rowan runners. There are still a few Silver medal athletes in Node 6, which corresponds to runners who got to Drummond in less than 3.708 hours.
 

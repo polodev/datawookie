@@ -9,9 +9,9 @@ tags:
   - Bitcoin
 ---
 
-{% comment %}
+{{< comment >}}
 https://www.linuxbabe.com/ubuntu/install-bitcoin-core-wallet-ubuntu-16-04-16-10
-{% endcomment %}
+{{< /comment >}}
 
 ## Resources
 
@@ -39,4 +39,4 @@ The first thing you'll need to do will be to get a local copy of the bitcoin dat
 bitcoin-qt
 {% endhighlight %}
 
-![]({{ site.baseurl }}/static/img/2017/10/bitcoin-welcome.png)
+![](/img/2017/10/bitcoin-welcome.png)

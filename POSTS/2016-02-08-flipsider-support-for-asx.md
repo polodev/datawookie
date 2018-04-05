@@ -21,7 +21,7 @@ Installation is straightforward using devtools.
 {{< highlight r >}}
 > library(devtools)
 > install_github('DataWookie/flipsideR')
-{{< / highlight >}}
+{{< /highlight >}}
 
 You're ready to roll!
 
@@ -49,7 +49,7 @@ AAPL160205P00083000   83.0 0.01 -0.06 0.01 0.05  102  625
 AAPL160205P00085000   85.0 0.03 -0.07 0.03 0.04 1390 2999
 AAPL160205P00085500   85.5 0.05 -0.15 0.02 0.06   10  248
 > detach('package:quantmod', unload = TRUE)
-{{< / highlight >}}
+{{< /highlight >}}
 
 The data that you'll get with flipsideR is pretty similar. The major differences are:
 
@@ -77,18 +77,18 @@ Let's grab the AAPL data using flipsideR.
 1228   AAPL  Put 2018-01-19    170   73.35 72.50 77.00     NA          3022 2016-01-31 06:03:46
 1229   AAPL  Put 2018-01-19    175   66.55 77.30 81.35     NA            68 2016-01-31 06:03:46
 1230   AAPL  Put 2018-01-19    180   88.00 82.00 86.80     NA          1074 2016-01-31 06:03:46
-{{< / highlight >}}
+{{< /highlight >}}
 
 The AAPL data were retrieved from the default exchange, NASDAQ. However, it's also possible to specify an alternative exchange. For example, CVX data from the NYSE.
 
 {{< highlight r >}}
 > CVX = getOptionChain('CVX', 'NYSE')
-{{< / highlight >}}
+{{< /highlight >}}
 
 Finally, it's also now possible to grab data from ASX.
 
 {{< highlight r >}}
 > OZL = getOptionChain('OZL', 'ASX')
-{{< / highlight >}}
+{{< /highlight >}}
 
 <iframe width="100%" height="400" frameborder="0" scrolling="no" src="https://plot.ly/~collierab/453.embed"></iframe>

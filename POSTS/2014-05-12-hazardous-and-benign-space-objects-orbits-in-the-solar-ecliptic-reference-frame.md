@@ -50,7 +50,7 @@ But, before we can use this transformation, we need to move to Cartesian Coordin
 4  100926 (1998 MQ) 56800 1.7827 0.40777 0.422864 2.42053 3.8599 3.42868 1.0558 2.51 2.38 16.7 0.128731   AMO  FALSE 3.34594 3.2744 -2.47255 -0.33031 0
 5  101869 (1999 MM) 56800 1.6243 0.61071 0.083167 4.68848 1.9388 0.75843 0.6323 2.62 2.07 19.3 0.001741   APO   TRUE 1.35497 2.0445 -0.64413  1.25637 0
 6 101873 (1999 NC5) 56800 2.0295 0.39332 0.798850 5.15317 2.2489 5.65453 1.2312 2.83 2.89 16.3 0.437678   AMO  FALSE 5.33502 4.9613  0.38531 -1.51575 0
-{{< / highlight >}}
+{{< /highlight >}}
 
 Note that the $$ Z $$ component is zero for all of the orbits since this is the coordinate which is perpendicular to the orbital planes (and all of the orbits lie strictly within the fundamental plane of their respective coordinate systems).
 
@@ -72,7 +72,7 @@ Now we need to generate a transformation matrix for each orbit. We will wrap tha
 +   
 +   matrix(c(a11, a12, a13, a21, a22, a23, a31, a32, a33), nrow = 3, byrow = TRUE)
 + }
-{{< / highlight >}}
+{{< /highlight >}}
 
 First we will try this out for a single object.
 
@@ -93,7 +93,7 @@ First we will try this out for a single object.
 [1,] -1.65031
 [2,] -2.97006
 [3,]  0.28022
-{{< / highlight >}}
+{{< /highlight >}}
 
 That looks pretty reasonable. Now we need to do that systematically to all of the objects.
 
@@ -125,7 +125,7 @@ Loading required package: plyr
 4  100926 (1998 MQ) 56800 1.7827 0.40777 0.422864 2.42053 3.8599 3.42868 1.0558 2.51 2.38 16.7 0.128731   AMO  FALSE 3.34594 3.2744 -2.47255 -0.33031 0 -2.39321 -0.41532 -0.568055
 5  101869 (1999 MM) 56800 1.6243 0.61071 0.083167 4.68848 1.9388 0.75843 0.6323 2.62 2.07 19.3 0.001741   APO   TRUE 1.35497 2.0445 -0.64413  1.25637 0 -1.02820  0.96622  0.050998
 6 101873 (1999 NC5) 56800 2.0295 0.39332 0.798850 5.15317 2.2489 5.65453 1.2312 2.83 2.89 16.3 0.437678   AMO  FALSE 5.33502 4.9613  0.38531 -1.51575 0  1.29744 -0.50408 -0.713095
-{{< / highlight >}}
+{{< /highlight >}}
 
 Looks good. Time to generate some plots. First we will look at the distribution of objects in the solar-ecliptic plane. Most of them are clustered within a few AU of the Sun, but there are a few stragglers at much larger distances.
 
@@ -138,9 +138,9 @@ Looks good. Time to generate some plots. First we will look at the distribution 
 +   scale_x_continuous(limits = c(-35, 35)) + scale_y_continuous(limits = c(-55, 15)) +
 +   theme_classic() +
 +   theme(aspect.ratio = 1)
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2014/05/reference-frame-xy-full.png">
+<img src="/img/2014/05/reference-frame-xy-full.png">
 
 We can zoom in on the central region within 5 AU of the Sun. We will also produce a projection onto the $$ x-z $$ plane so that we can see how far these objects lie above or below the ecliptic plane.
 
@@ -167,15 +167,15 @@ Warning: Removed 17 rows containing missing values (geom_point).
 +   theme_classic() +
 +   theme(aspect.ratio = 1)
 Warning: Removed 7 rows containing missing values (geom_point).
-{{< / highlight >}}
+{{< /highlight >}}
 
 The dashed circle indicates the orbit of the Earth. Most of the objects are clustered around this orbit.
 
-<img src="{{ site.baseurl }}/static/img/2014/05/reference-frame-xy-zoom.png">
+<img src="/img/2014/05/reference-frame-xy-zoom.png">
 
 Although there are numerous objects which lie a few AU on either side of the ecliptic plane, the vast majority are (like the planets) very close to or on the plane itself.
 
-<img src="{{ site.baseurl }}/static/img/2014/05/reference-frame-xz-zoom.png">
+<img src="/img/2014/05/reference-frame-xz-zoom.png">
 
 Finally a three dimensional visualisation. I would have liked to rotate this plot to try and get a better perspective, but I could not manage that with scatterplot3d. It's probably not the right tool for that particular job. 
 
@@ -184,8 +184,8 @@ Finally a three dimensional visualisation. I would have liked to rotate this plo
 >
 > orbits.3d <- with(orbits, scatterplot3d(x, y, z, xlim = c(-5, 5), ylim = c(-5, 5), highlight.3d = TRUE))
 > orbits.3d$plane3d(c(0, 0, 0))
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2014/05/reference-frame-zoom-scatter-3d.png">
+<img src="/img/2014/05/reference-frame-zoom-scatter-3d.png">
 
 I have enjoyed working with these data. My original plan was to leave the project at this point. But, since the data are neatly classified according to two different schemes, it presents a good opportunity to try out some classification models. More on that shortly.

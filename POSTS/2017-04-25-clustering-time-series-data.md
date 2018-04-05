@@ -46,11 +46,11 @@ Since stock ticker data are not too dissimilar to the data that I am currently w
 > # Also need to transpose because diss() expects data to be along rows.
 > #
 > stocks = t(as.matrix(stocks))
-{{< / highlight >}}
+{{< /highlight >}}
 
 Just to get an idea of what these data look like, we can put together a compound time series plot.
 
-<img src="{{ site.baseurl }}/static/img/2015/03/facets-adj-close.png">
+<img src="/img/2015/03/facets-adj-close.png">
 
 No great similarities jump out at the naked eye, so let's see what a bit of Machine Learning has to offer.
 
@@ -67,11 +67,11 @@ Correlation is an obvious option when considering the degree of similarity betwe
 > summary(D1)
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
  0.3275  0.8860  1.2350  1.1890  1.5180  1.8940 
-{{< / highlight >}}
+{{< /highlight >}}
 
 Note that, since this is a measure of dissimilarity, the range of correlation has been shifted from [-1,1] to [0,2]. To get an idea of what the dissimilarity data look like, we'll look at a mosaic plot. There appear to be blocks of similar stocks. For example, INTC, LMT and MSFT are not too dissimilar to each other. They are also not dissimilar to CSCO, EXPE or FB. But they are very different to AMD and AMZN.
 
-<img src="{{ site.baseurl }}/static/img/2015/03/tile-COR.png">
+<img src="/img/2015/03/tile-COR.png">
 
 Which stocks present the most unique time series? It looks like AMZN, IBM and AMD differ consistently from most of the other stocks considered.
 
@@ -83,17 +83,17 @@ Which stocks present the most unique time series? It looks like AMZN, IBM and AM
 1.0058017 1.0941648 1.0961343 1.0967862 1.1144521 1.1701074 1.1894821 
      NFLX     GOOGL        BA       AMD       IBM      AMZN 
 1.2336638 1.2969912 1.3212228 1.4211540 1.4238809 1.4330921 
-{{< / highlight >}}
+{{< /highlight >}}
 
 Now let's use those data to do some hierarchical clustering.
 
 {{< highlight r >}}
 > C1 <- hclust(D1)
-{{< / highlight >}}
+{{< /highlight >}}
 
 Looking at the dendrogram below, it appears that a cut at a height of around 1.25 would divide the stocks into four groups. Not too surprisingly, INTC, LMT and MSFT end up in the same group along with CSCO, EXPE and FB.
 
-<img src="{{ site.baseurl }}/static/img/2015/03/tree-COR.png">
+<img src="/img/2015/03/tree-COR.png">
 
 ### Fréchet Distance
 
@@ -101,15 +101,15 @@ Next we'll try out the [Fréchet Distance](http://en.wikipedia.org/wiki/Fr%C3%A9
 
 {{< highlight r >}}
 > D2 <- diss(stocks, "FRECHET")
-{{< / highlight >}}
+{{< /highlight >}}
 
 The resulting dissimilarity matrix is profoundly different, with AMZN, GOOGL and NFLX standing out as significantly different to the other time series.
 
-<img src="{{ site.baseurl }}/static/img/2015/03/tile-FRECHET.png">
+<img src="/img/2015/03/tile-FRECHET.png">
 
 This results in a tree structure with essentially two branches: AMZN, GOOGL and NFLX on one branch and the rest of the stocks on the other branch. Within the second branch LMT, IBM and BA are also clustered together.
 
-<img src="{{ site.baseurl }}/static/img/2015/03/tree-FRECHET.png">
+<img src="/img/2015/03/tree-FRECHET.png">
 
 ### Dynamic Time Warping Distance
 
@@ -117,15 +117,15 @@ This results in a tree structure with essentially two branches: AMZN, GOOGL and 
 
 {{< highlight r >}}
 > D3 <- diss(stocks, "DTWARP")
-{{< / highlight >}}
+{{< /highlight >}}
 
 The Dynamic Time Warping dissimilarity matrix is reminiscent of the one we got from the Fréchet Distance, with AMZN, GOOGL and NFLX clearly differentiated.
 
-<img src="{{ site.baseurl }}/static/img/2015/03/tile-DTWARP.png">
+<img src="/img/2015/03/tile-DTWARP.png">
 
 Since the dissimilarity matrix is similar to one we've already looked at, we'll try a different approach to clustering, using the [Partitioning Around Medoids](http://en.wikipedia.org/wiki/K-medoids) (PAM) algorithm. Looking at the associated silhouette plot we can see that the high level structure is similar: AMZN, GOOGL and NFLX are clustered in one branch, while LMT, IBM and BA are in another.
 
-<img src="{{ site.baseurl }}/static/img/2015/03/tree-DTWARP.png">
+<img src="/img/2015/03/tree-DTWARP.png">
 
 ### Integrated Periodogram Distance
 
@@ -133,13 +133,13 @@ The integrated Periodogram is a variation of the [periodogram](http://en.wikiped
 
 {{< highlight r >}}
 > D4 <- diss(stocks, "INT.PER")
-{{< / highlight >}}
+{{< /highlight >}}
 
 The dissimilarity matrix paints yet another picture of the data. In this view MSFT stands out as being significantly different from most of the other stocks.
 
-<img src="{{ site.baseurl }}/static/img/2015/03/tile-INT.PER.png">
+<img src="/img/2015/03/tile-INT.PER.png">
 
-<img src="{{ site.baseurl }}/static/img/2015/03/tree-INT.PER.png">
+<img src="/img/2015/03/tree-INT.PER.png">
 
 ## Conclusion
 

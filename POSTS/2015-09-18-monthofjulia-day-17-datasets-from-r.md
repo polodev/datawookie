@@ -16,7 +16,7 @@ url: /2015/09/18/monthofjulia-day-17-datasets-from-r/
 
 <!--more-->
 
-<img src="{{ site.baseurl }}/static/img/2015/09/Julia-Logo-RDatasets.png" >
+<img src="/img/2015/09/Julia-Logo-RDatasets.png" >
 
 R has an extensive range of builtin datasets, which are useful for experimenting with the language. The `RDatasets` package makes many of these available within Julia. We'll see another way of accessing R's datasets in a couple of days' time too. In the meantime though, check out the [documentation](https://github.com/johnmyleswhite/RDatasets.jl) for `RDatasets` and then read on below.
 
@@ -24,7 +24,7 @@ As always, the first thing that we need to do is load the package.
 
 {{< highlight julia >}}
 julia> using RDatasets
-{{< / highlight >}}
+{{< /highlight >}}
 
 We can get a list of the R packages which are supported by `RDatasets`.
 
@@ -66,7 +66,7 @@ julia> RDatasets.packages()
 | 31  | "sem"          | "Structural Equation Models"                                              |
 | 32  | "survival"     | "Survival Analysis"                                                       |
 | 33  | "vcd"          | "Visualizing Categorical Data"                                            |
-{{< / highlight >}}
+{{< /highlight >}}
 
 Next we'll get a list of all datasets supported across all of those R packages. There are a lot of them! Also we see some specific statistics about the number of records and fields in each of them.
 
@@ -84,7 +84,7 @@ julia> head(sets)
 | 4   | "COUNT" | "badhealth" | "badhealth" | 1127 | 3       |
 | 5   | "COUNT" | "fasttrakg" | "fasttrakg" | 15   | 9       |
 | 6   | "COUNT" | "lbw"       | "lbw"       | 189  | 10      |
-{{< / highlight >}}
+{{< /highlight >}}
 
 Or we can find out what datasets are available from a particular R package.
 
@@ -124,7 +124,7 @@ julia> RDatasets.datasets("vcd")
 | 29  | "vcd"   | "VonBort"         | "Von Bortkiewicz Horse Kicks Data"         | 280   | 4       |
 | 30  | "vcd"   | "WeldonDice"      | "Weldon's Dice Data"                       | 11    | 2       |
 | 31  | "vcd"   | "WomenQueue"      | "Women in Queues"                          | 11    | 2       |
-{{< / highlight >}}
+{{< /highlight >}}
 
 Finally, the most interesting bit: accessing data from a particular dataset. Below we load up the `women` dataset from the `vcd` package.
 
@@ -148,7 +148,7 @@ julia> women = dataset("datasets", "women")
 | 13  | 70     | 154    |
 | 14  | 71     | 159    |
 | 15  | 72     | 164    |
-{{< / highlight >}}
+{{< /highlight >}}
 
 From these data we learn that the average mass of American women of height 66 inches is around 139 pounds. If you are from a country which uses the Metric system (like me!) then these numbers might seem a little mysterious. Come back in a couple of days and we'll see how Julia can convert pounds and inches in metres and kilograms.
 

@@ -17,7 +17,7 @@ url: /2015/09/09/monthofjulia-day-10-modules/
 
 <!--more-->
 
-<img src="{{ site.baseurl }}/static/img/2015/09/Julia-Logo-Module.png" >
+<img src="/img/2015/09/Julia-Logo-Module.png" >
 
 Modules allow you to encapsulate your code and variables. In the words of the Julia documentation:
 
@@ -40,7 +40,7 @@ julia> module ZuluModule
        greeting() = "Sawubona!"
        bonappetit() = "Thokoleza ukudla"
        end
-{{< / highlight >}}
+{{< /highlight >}}
   
 If an `__init__()` function is present in the module then it's executed when the module is defined. Is it my imagination or does the syntax for that function have an uncanny resemblance to something in another popular scripting language?
 
@@ -53,7 +53,7 @@ julia> AfrikaansModule.greeting()
 "Goeie môre!"
 julia> ZuluModule.greeting()
 "Sawubona!"
-{{< / highlight >}}
+{{< /highlight >}}
 
 The Afrikaans module exports the greeting() function, which becomes available in the global namespace once the module has been loaded.
   
@@ -61,7 +61,7 @@ The Afrikaans module exports the greeting() function, which becomes available in
 julia> using AfrikaansModule
 julia> greeting()
 "Goeie môre!"
-{{< / highlight >}}
+{{< /highlight >}}
 
 But it's still possible to import into the global namespace functions which have not been exported.
   
@@ -69,7 +69,7 @@ But it's still possible to import into the global namespace functions which have
 julia> import ZuluModule.bonappetit
 julia> bonappetit()
 "Thokoleza ukudla"
-{{< / highlight >}}
+{{< /highlight >}}
 
 In addition to functions, modules can obviously also encapsulate variables.
 

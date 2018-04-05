@@ -37,7 +37,7 @@ This is what the data look like:
 6 29.898 -94.071 125.458
 > attributes(W)$ndays
 [1] 1096
-{{< / highlight >}}
+{{< /highlight >}}
   
 I have already pre-processed the data quite extensively and use the geosphere package to add a column giving the distances from the centre of Houston to each lightning discharge. The ndays attribute indicates the number of days included in the data.
 
@@ -49,7 +49,7 @@ I want to plot the density of lightning on a map of the area around Houston. The
 > houston = c(lon = -95.36, lat = 29.76)
 >
 > houston.map = get_map(location = houston, zoom = 8, color = "bw")
-{{< / highlight >}}
+{{< /highlight >}}
 
 My initial attempt at creating the map used the following:
   
@@ -61,11 +61,11 @@ My initial attempt at creating the map used the following:
 +   scale_fill_gradient(low = "green", high = "red") +
 +   scale_alpha(range = c(0.00, 0.25), guide = FALSE) +
 +   theme(legend.position = "none", axis.title = element_blank(), text = element_text(size = 12))
-{{< / highlight >}}
+{{< /highlight >}}
 
 And this gave a rather pleasing result. But I was a little uneasy about those contours near the edges: there was no physical reason why they should be running more or less parallel to the boundaries of the plot.
 
-<img src="{{ site.baseurl }}/static/img/2013/12/plot-1.png" >
+<img src="/img/2013/12/plot-1.png" >
 
 It turns out that my suspicions were well founded. After some fiddling around I found that if I changed the extent argument then I got to see the bigger picture.
   
@@ -77,11 +77,11 @@ It turns out that my suspicions were well founded. After some fiddling around I 
 +   scale_fill_gradient(low = "green", high = "red") +
 +   scale_alpha(range = c(0.00, 0.25), guide = FALSE) +
 +   theme(legend.position = "none", axis.title = element_blank(), text = element_text(size = 12))
-{{< / highlight >}}
+{{< /highlight >}}
   
 You will also note here a different syntax for feeding the data into ggplot. The resulting plot shows that in my initial plot the data were being truncated at the boundaries of the plot.
 
-<img src="{{ site.baseurl }}/static/img/2013/12/plot-2.png" >
+<img src="/img/2013/12/plot-2.png" >
 
 Now at least I have more realistic densities and contours. But, of course, I didn't want all of that extra space around the map. Not a problem because we can crop the map once the contour and density layers have been added.
 
@@ -96,8 +96,8 @@ Now at least I have more realistic densities and contours. But, of course, I did
 +   xlim=c(attr(houston.map, "bb")$ll.lon, attr(houston.map, "bb")$ur.lon),
 +   ylim=c(attr(houston.map, "bb")$ll.lat, attr(houston.map, "bb")$ur.lat)) +
 +   theme(legend.position = "none", axis.title = element_blank(), text = element_text(size = 12))
-{{< / highlight >}}
+{{< /highlight >}}
 
 And this gives the final plot, which I think is very pleasing indeed!
 
-<img src="{{ site.baseurl }}/static/img/2013/12/plot-3.png" >
+<img src="/img/2013/12/plot-3.png" >

@@ -30,7 +30,7 @@ The LIS/OTD data are available as HDF4 files from <http://thunder.msfc.nasa.gov/
 
 {{< highlight bash >}}
 $ h5fromh4 -d lrfc LISOTD\_LRFC\_V2.3.2014.hdf
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Loading HDF5 in R
 
@@ -38,14 +38,14 @@ Support for HDF5 in R appears to have evolved appreciably in recent years. I ori
 
 {{< highlight bash >}}
 $ sudo apt-get install libhdf5-dev
-{{< / highlight >}}
+{{< /highlight >}}
 
 Then, back in R I installed and loaded the h5 package.
 
 {{< highlight r >}}
 > install.packages("h5")
 > library(h5)
-{{< / highlight >}}
+{{< /highlight >}}
 
 Ready to roll!
 
@@ -58,7 +58,7 @@ The next step was to interrogate the contents of one of the HDF files. A given f
 > dataset = list.datasets(file)
 > cat("datasets:", dataset, "\n")
 datasets: /lrfc
-{{< / highlight >}}
+{{< /highlight >}}
 
 Just a single data set, but that's by design: we only extracted one using h5fromh4 above. What are the characteristics of that data set?
 
@@ -68,7 +68,7 @@ DataSet 'lrfc' (72 x 144)
 type: numeric
 chunksize: NA
 maxdim: 72 x 144
-{{< / highlight >}}
+{{< /highlight >}}
 
 It contains numerical data and has dimensions 72 by 144, which means that it has been projected onto a latitude/longitude grid with 2.5&deg; resolution. We'll just go ahead and read in those data.
 
@@ -78,13 +78,13 @@ It contains numerical data and has dimensions 72 by 144, which means that it has
 [1] "matrix"
 > dim(lrfc)
 [1] 72 144
-{{< / highlight >}}
+{{< /highlight >}}
 
 That wasn't too hard. And it's not much more complicated if there are multiple data sets per file.
 
 Below is a ggplot showing the annualised distribution of lightning across the Earth's surface. It's apparent that most lightning occurs over land in the tropics, with the highest concentration in Central Africa. The units of the colour scale are flashes per square km per year. Higher resolution data can be found the HRFC file (High Resolution Full Climatology), but the LRFC is quite sufficient to get a flavour of the data.
 
-<img src="{{ site.baseurl }}/static/img/2016/02/lis-otd-flash-density.png" >
+<img src="/img/2016/02/lis-otd-flash-density.png" >
 
 ## Low Resolution Annual Climatology
 
@@ -96,13 +96,13 @@ The Low Resolution Annual Climatology (LRAC) data have the same spatial resoluti
 > lrac = readDataSet(file[dataset])
 > dim(lrac)
 [1] 72 144 365
-{{< / highlight >}}
+{{< /highlight >}}
 
 The data are now packed into a three dimensions array, where the first two dimensions are spatial (as for LRFC) and the third dimension corresponds to day of year.
 
 We'll look at two specific grid cells, one centred at 28.75&deg; S 28.75&deg; E (near the northern border of Lesotho, which according to the plot above is a region of relatively intense lightning activity) and the other at 31.25&deg; S 31.25&deg; E (in the Indian Ocean, just off the coast of Margate, South Africa). The annualised time series are plotted below. Lesotho has a clear annual cycle, with peak lightning activity during the Summer months but extending well into Spring and Autumn. There is very little lightning activity in Lesotho during Winter due to extremely dry and cold conditions. The cell over the Indian Ocean has a relatively high level of sustained lightning activity throughout the year. This is due to the presence of the warm Agulhas Current flowing down the east coast of South Africa. We wrote a paper about this, [Processes driving thunderstorms over the Agulhas Current](http://onlinelibrary.wiley.com/doi/10.1002/jgrd.50238/abstract). It's also open access, so go ahead and check it out.
 
-<img src="{{ site.baseurl }}/static/img/2016/02/lis-otd-time-series.png" >
+<img src="/img/2016/02/lis-otd-time-series.png" >
 
 Although the data in the plot above are rather jagged, with some aggregation and mild filtering they become pleasingly smooth and regular. We observed that you could actually fit the resulting curves rather well with just a pair of sinusoids. That work was documented in [A harmonic model for the temporal variation of lightning activity over Africa](http://onlinelibrary.wiley.com/doi/10.1029/2010JD014455/abstract). Like the other two papers, it's open access. Enjoy (if that sort of thing is your cup of tea).
 

@@ -17,4 +17,4 @@ A very cool visualisation. Find out more at [brainpickings.org](http://www.brain
 
 <!--more-->
 
-<img src="{{ site.baseurl }}/static/img/2015/03/nobel_large.jpg">
+<img src="/img/2015/03/nobel_large.jpg">

@@ -17,7 +17,7 @@ If your firewall blocks SSH then do the following in the command shell:
 
 {{< highlight bash >}}
 $ git config -global url."https://github.com/".insteadOf git@github.com:
-{{< / highlight >}}
+{{< /highlight >}}
   
 That'll tell git to use HTTPS rather than SSH.
 
@@ -27,7 +27,7 @@ I also had some issues with Julia installing packages onto a network drive. To e
 julia> ENV["HOMEDRIVE"] = "C:"
 julia> ENV["HOME"] = "C:\\Users\\userName";
 julia> Pkg.init()
-{{< / highlight >}}
+{{< /highlight >}}
   
 Obviously you need to substitute something appropriate for `userName`.
 

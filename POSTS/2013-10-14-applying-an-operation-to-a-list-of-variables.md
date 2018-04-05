@@ -19,7 +19,7 @@ To illustrate the procedure, I will use the simple example of squaring the numer
 > x = 1
 > y = 2
 > z = 3
-{{< / highlight >}}
+{{< /highlight >}}
 
 Then we loop over the variable names (as strings), creating a temporary copy of each one and applying the operation to the copy. Then the copy is assigned back to the original variable.
 
@@ -31,7 +31,7 @@ Then we loop over the variable names (as strings), creating a temporary copy of 
 +   #
 +   assign(n, v)
 + }
-{{< / highlight >}}
+{{< /highlight >}}
 
 Finally we check that the operation has been executed as expected.
 
@@ -42,7 +42,7 @@ Finally we check that the operation has been executed as expected.
 [1] 4
 > z
 [1] 9
-{{< / highlight >}}
+{{< /highlight >}}
 
 This is perhaps a little wasteful in terms of resources (creating the temporary variables), but does the job. Obviously in practice you would only implement this sort of solution if there were either a large number of variables to be transformed or the transformation required a relatively complicated set of operations.
 

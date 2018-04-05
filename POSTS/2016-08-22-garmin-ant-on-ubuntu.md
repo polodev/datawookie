@@ -14,7 +14,7 @@ url: /2016/08/22/garmin-ant-on-ubuntu/
 
 I finally got tired of booting up Windows to download data from my Garmin 910XT. I tried to get my old Ubuntu 15.04 system to recognise my ANT stick but failed. Now that I have a stable Ubuntu 16.04 system the time seems ripe.
 
-<img src="{{ site.baseurl }}/static/img/2016/08/garmin-tux.jpg" width="100%">
+<img src="/img/2016/08/garmin-tux.jpg" width="100%">
 
 ## openant
 
@@ -25,7 +25,7 @@ Install `openant`, a Python library for downloading and uploading files from ANT
 
 {{< highlight bash >}}
 $ sudo python setup.py install
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## antfs-cli
         
@@ -36,7 +36,7 @@ Install `antfs-cli`, which implements a Command Line Interface to ANT-FS.
 
 {{< highlight bash >}}
 $ sudo python setup.py install
-{{< / highlight >}}
+{{< /highlight >}}
 
 3. This will automatically install `pyusb` if necessary. </ol>
 
@@ -47,20 +47,20 @@ Connect your ANT stick and check that it is recognised by your system.
 {{< highlight bash >}}
 $ lsusb | grep Dynastream
 Bus 003 Device 030: ID 0fcf:1008 Dynastream Innovations, Inc. ANTUSB2 Stick
-{{< / highlight >}}
+{{< /highlight >}}
 
 The two hexadecimal numbers following `ID` in the output above are then used to load the appropriate kernel module.
 
 {{< highlight bash >}}
 $ sudo modprobe usbserial vendor=0x0fcf product=0x1008
-{{< / highlight >}}
+{{< /highlight >}}
 
 You can also check that the corresponding device has been created.
 
 {{< highlight bash >}}
 $ ls -l /dev/ttyANT2
 lrwxrwxrwx 1 root root 15 Aug 21 11:33 /dev/ttyANT2 -> bus/usb/003/030
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Pair and Enjoy
 
@@ -68,7 +68,7 @@ If the above has gone smoothly then you are ready to grab data from your device.
 
 {{< highlight bash >}}
 $ antfs-cli --pair
-{{< / highlight >}}
+{{< /highlight >}}
 
 You should find the resulting FIT files under a path like `~/.config/antfs-cli/3860872045/activities`. The numeric folder name is uniquely linked to your advice, so that part of the path with differ.
 

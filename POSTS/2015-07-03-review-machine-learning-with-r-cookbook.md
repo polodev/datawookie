@@ -15,7 +15,7 @@ url: /2015/07/03/review-machine-learning-with-r-cookbook/
 
 <!--more-->
 
-<img src="{{ site.baseurl }}/static/img/2015/07/Machine-Learning-With-R-Cookbook.png">
+<img src="/img/2015/07/Machine-Learning-With-R-Cookbook.png">
 
 "Machine Learning with R Cookbook" by Chiu Yu-Wei is nothing more or less than it purports to be: a collection of 110 recipes for applying Data Analysis and Machine Learning techniques in R. I was asked by the publishers to review this book and found it to be an interesting and informative read. It will not help you understand how Machine Learning works (that’s not the goal!) but it will help you quickly learn how to apply Machine Learning techniques to you own problems.
 

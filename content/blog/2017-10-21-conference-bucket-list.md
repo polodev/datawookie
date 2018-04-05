@@ -1,11 +1,7 @@
 ---
 author: Andrew B. Collier
-categories:
-- Conference
 date: 2017-10-21T08:30:00Z
-excerpt_separator: <!-- more -->
-tags:
-- Talk
+tags: ["Talk"]
 title: Speaking Bucket List
 url: /2017/10/21/conference-bucket-list/
 ---

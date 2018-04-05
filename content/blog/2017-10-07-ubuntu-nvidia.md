@@ -1,18 +1,14 @@
 ---
 author: Andrew B. Collier
 date: 2017-10-07T07:00:00Z
-excerpt_separator: <!-- more -->
-tags:
-- Ubuntu
-- NVIDIA
-- GPU
+tags: ["Ubuntu", "GPU"]
 title: Installing NVIDIA Graphics Driver on Ubuntu
 url: /2017/10/07/ubuntu-nvidia/
 ---
 
-{% comment %}
+{{< comment >}}
 https://linuxconfig.org/how-to-install-the-latest-nvidia-drivers-on-ubuntu-16-04-xenial-xerus
-{% endcomment %}
+{{< /endcomment >}}
 
 Recipe for installing the NVIDIA binary drivers on Ubuntu.
 
@@ -24,7 +20,7 @@ First check your hardware: which graphics card do you have?
 
 {{< highlight bash >}}
 $ sudo lshw -numeric -C display | grep -E "(product|vendor)"
-{{< / highlight >}}
+{{< /highlight >}}
 
 According to that I have a [GeForce 930MX](https://www.geforce.com/hardware/notebook-gpus/geforce-930mx) card.
 
@@ -33,17 +29,17 @@ According to that I have a [GeForce 930MX](https://www.geforce.com/hardware/note
        vendor: Intel Corporation [8086]
        product: GM108M [GeForce 930MX] [10DE:134E]
        vendor: NVIDIA Corporation [10DE]
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Driver Version
 
 Next head over to the [driver download page](http://www.nvidia.com/Download/index.aspx) on the NVIDIA site. Find your card and hit Search
 
-![]({{ site.baseurl }}/static/img/2017/10/nvidia-drivers.png)
+![](/img/2017/10/nvidia-drivers.png)
 
 The next page will tell you what driver version you should be running. You can download the driver from here but we are going to use the [PPA](https://help.launchpad.net/Packaging/PPA) instead.
 
-![]({{ site.baseurl }}/static/img/2017/10/nvidia-drivers-download.png)
+![](/img/2017/10/nvidia-drivers-download.png)
 
 ## Driver Download
 
@@ -52,20 +48,20 @@ First add the PPA.
 {{< highlight bash >}}
 $ sudo add-apt-repository ppa:graphics-drivers/ppa
 $ sudo apt update
-{{< / highlight >}}
+{{< /highlight >}}
 
 Then download and install.
 
 {{< highlight bash >}}
 $ sudo apt-get install nvidia-384
-{{< / highlight >}}
+{{< /highlight >}}
 
 After a reboot you'll be able to access the settings dialog.
 
 {{< highlight bash >}}
 $ nvidia-settings
-{{< / highlight >}}
+{{< /highlight >}}
 
-![]({{ site.baseurl }}/static/img/2017/10/nvidia-settings.png)
+![](/img/2017/10/nvidia-settings.png)
 
 Somewhat disappointingly, after I installed these drivers I had issues with suspending my laptop.

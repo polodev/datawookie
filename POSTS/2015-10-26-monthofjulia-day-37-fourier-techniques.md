@@ -19,7 +19,7 @@ url: /2015/10/26/monthofjulia-day-37-fourier-techniques/
 
 <!--more-->
 
-<img src="{{ site.baseurl }}/static/img/2015/10/Julia-Logo-Fourier.png" >
+<img src="/img/2015/10/Julia-Logo-Fourier.png" >
 
 The [Fourier Transform](https://en.wikipedia.org/wiki/Fourier_transform) is often applied to signal processing and other analyses. It allows a signal to be transformed between the [time domain](https://en.wikipedia.org/wiki/Time_domain) and the [frequency domain](https://en.wikipedia.org/wiki/Frequency_domain). The efficient [Fast Fourier Transform (FFT)](https://en.wikipedia.org/wiki/Fast_Fourier_transform) algorithm is implemented in Julia using the [FFTW](http://www.fftw.org/) library.
 
@@ -31,11 +31,11 @@ Let's start by looking at the Fourier Transform in one dimension. We'll create t
 julia> f = [abs(x) <= 1 ? 1 : 0 for x in -5:0.1:5];
 julia> length(f)
 101
-{{< / highlight >}}
+{{< /highlight >}}
   
 This is what the data look like:
 
-<img src="{{ site.baseurl }}/static/img/2015/10/signal-1D-time-domain.png" >
+<img src="/img/2015/10/signal-1D-time-domain.png" >
   
 We'll transform the data into the frequency domain using `fft()`.
   
@@ -46,15 +46,15 @@ Array{Complex{Float64},1}
 julia> length(F)
 101
 julia> F = fftshift(F);
-{{< / highlight >}}
+{{< /highlight >}}
   
 The frequency domain data are an array of `Complex` type with the same length as the time domain data. Since each Complex number consists of two parts (real and imaginary) it seems that we have somehow doubled the information content of our signal. This is not true because half of the frequency domain data are redundant. The `fftshift()` function conveniently rearranges the data in the frequency domain so that the negative frequencies are on the left.
 
 This is what the resulting amplitude and power spectra look like:
 
-<img src="{{ site.baseurl }}/static/img/2015/10/signal-1D-amplitude-spectrum-shifted.png" >
+<img src="/img/2015/10/signal-1D-amplitude-spectrum-shifted.png" >
 
-<img src="{{ site.baseurl }}/static/img/2015/10/signal-1D-power-spectrum-shifted.png" >
+<img src="/img/2015/10/signal-1D-power-spectrum-shifted.png" >
   
 The analytical Fourier Transform of the rectangle function is the [sinc function](https://en.wikipedia.org/wiki/Sinc_function), which agrees well with numerical data in the plots above.
 
@@ -70,11 +70,11 @@ julia> typeof(f)
 Array{Float64,2}
 julia> size(f)
 (97,97)
-{{< / highlight >}}
+{{< /highlight >}}
   
 It doesn't make sense to think about a two-dimensional function in the time domain. But the Fourier Transform is quite egalitarian: it's happy to work with a temporal signal or a spatial signal (or a signal in pretty much any other domain). So let's suppose that our two-dimensional data are in the spatial domain. This is what it looks like:
 
-<img src="{{ site.baseurl }}/static/img/2015/10/function-2D-sinc.png" >
+<img src="/img/2015/10/function-2D-sinc.png" >
 
 Generating the Fourier Transform is again a simple matter of applying `fft()`. No change in syntax: very nice indeed!
   
@@ -83,11 +83,11 @@ julia> F = fft(f);
 julia> typeof(F)
 Array{Complex{Float64},2}
 julia> F = fftshift(F);
-{{< / highlight >}}
+{{< /highlight >}}
   
 The power spectrum demonstrates that the result is the 2D analogue of the rectangle function.
 
-<img src="{{ site.baseurl }}/static/img/2015/10/power-2D-sinc.png" >
+<img src="/img/2015/10/power-2D-sinc.png" >
 
 ## Higher Dimensions and Beyond
 

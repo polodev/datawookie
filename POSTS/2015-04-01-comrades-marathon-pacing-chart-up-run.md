@@ -20,4 +20,4 @@ I've updated my Comrades Marathon pacing chart to include both the Up and Down r
 
 The use of the chart is explained in a [previous post](http://www.exegetic.biz/blog/2014/05/personalised-comrades-marathon-pacing-chart/). Any feedback on how this can be improved would be appreciated.
 
-<img src="{{ site.baseurl }}/static/img/2015/04/comrades-pacing-2015.png">
+<img src="/img/2015/04/comrades-pacing-2015.png">

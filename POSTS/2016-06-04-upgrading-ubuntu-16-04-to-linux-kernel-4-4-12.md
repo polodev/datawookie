@@ -22,12 +22,12 @@ Grab the headers and image.
 $ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.12-xenial/linux-headers-4.4.12-040412-generic\_4.4.12-040412.201606011712\_amd64.deb  
 $ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.12-xenial/linux-headers-4.4.12-040412\_4.4.12-040412.201606011712\_all.deb  
 $ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.12-xenial/linux-image-4.4.12-040412-generic\_4.4.12-040412.201606011712\_amd64.deb
-{{< / highlight >}}
+{{< /highlight >}}
   
 Then, become root and install the kernel.
   
 {{< highlight bash >}}
 # dpkg -i linux-headers-4.4\*.deb linux-image-4.4\*.deb
-{{< / highlight >}}
+{{< /highlight >}}
   
 All hardware snags resolved. Enjoy!

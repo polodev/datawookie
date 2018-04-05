@@ -14,6 +14,6 @@ You can get a free 30 day evaluation license. But perhaps you want to evaluate f
 
 {{< highlight text >}}
 rm -rf ~/.DataGrip2017.3/
-{{< / highlight >}}
+{{< /highlight >}}
 
 Enjoy!

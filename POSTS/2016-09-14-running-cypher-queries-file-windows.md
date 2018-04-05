@@ -17,7 +17,7 @@ Recent packages of Neo4j for Windows do not include `neo4j-shell`. The Neo4j bro
 
 <!--more-->
 
-<img src="{{ site.baseurl }}/static/img/2016/09/lazywebcypher.png" >
+<img src="/img/2016/09/lazywebcypher.png" >
 
 Have a look at [LazyWebCypher](http://www.lyonwj.com/) which will allow you to execute an arbitrary volume on Cypher code on your local Neo4j server.
 

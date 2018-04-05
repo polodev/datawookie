@@ -13,9 +13,9 @@ Some interesting projects that are making use of Ethereum blockchain technology:
 
 <!-- more -->
 
-{% comment %}
+{{< comment >}}
 https://www.cbinsights.com/research/industries-disrupted-blockchain/
-{% endcomment %}
+{{< /comment >}}
 
 - [Abra](https://www.abra.com/) (cryptocurrency wallet)
 - [Augur](http://augur.net/) (prediction market)

@@ -20,7 +20,7 @@ This procedure works on both my laptop and a fresh EC2 instance.
 
 {{< highlight bash >}}
 curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg | sudo apt-key add -
-{{< / highlight >}}
+{{< /highlight >}}
 
 {:start="2"}
 2. Add the details of the Docker repository.
@@ -29,28 +29,28 @@ curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gp
 OSNAME=$(. /etc/os-release; echo "$ID")
 OSVERS=$(lsb_release -cs)
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/$OSNAME $OSVERS stable"
-{{< / highlight >}}
+{{< /highlight >}}
 
 {:start="3"}
 3. Update the package index.
 
 {{< highlight bash >}}
 sudo apt update
-{{< / highlight >}}
+{{< /highlight >}}
 
 {:start="4"}
 4. Install the Community Edition package.
 
 {{< highlight bash >}}
 sudo apt install docker-ce
-{{< / highlight >}}
+{{< /highlight >}}
 
 {:start="5"}
 5. Test it.
 
 {{< highlight bash >}}
 sudo docker run hello-world
-{{< / highlight >}}
+{{< /highlight >}}
 
 The output from the test should look something like this:
 
@@ -80,13 +80,13 @@ Share images, automate workflows, and more with a free Docker ID:
 
 For more examples and ideas, visit:
  https://docs.docker.com/engine/userguide/
-{{< / highlight >}}
+{{< /highlight >}}
 
 Note that the `docker` command currently requires superuser privileges. To allow `docker` for mere mortals, add their accounts to the `docker` group.
 
 {{< highlight bash >}}
 sudo gpasswd -a ubuntu docker
-{{< / highlight >}}
+{{< /highlight >}}
 
 On that user's next login the `docker` group will be added to their profile and they will be able to launch `docker` jobs.
 

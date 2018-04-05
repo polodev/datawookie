@@ -14,7 +14,7 @@ url: /2016/09/15/deleting-nodes-relationships/
 
 Seems that I am doing this a lot: deleting my entire graph (all nodes and relationships) and rebuilding from scratch. I guess that this is part of the learning process.
 
-<img src="{{ site.baseurl }}/static/img/2016/09/sample-graph.png" >
+<img src="/img/2016/09/sample-graph.png" >
 
 ## Route 1: Delete Relationships then Nodes
 
@@ -24,17 +24,17 @@ Delete all relationships using either
   
 {{< highlight text >}}
 $ START r = RELATIONSHIP(*) DELETE r;
-{{< / highlight >}}
+{{< /highlight >}}
 or
 {{< highlight text >}}
 $ MATCH ()-[r]-() DELETE r;
-{{< / highlight >}}
+{{< /highlight >}}
   
 Then delete the nodes with
   
 {{< highlight text >}}
 $ MATCH (n) DELETE n;
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Route 2: Detach and Delete
 
@@ -42,7 +42,7 @@ Using `DETACH DELETE` it's possible to delete relationships and nodes at once.
   
 {{< highlight text >}}
 $ MATCH (n) DETACH DELETE n;
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Check
 
@@ -51,11 +51,11 @@ Confirm that all nodes and relationships have gone.
 {{< highlight text >}}
 $ MATCH (n) RETURN COUNT(n);
 $ MATCH ()-[r]->() RETURN COUNT(r);
-{{< / highlight >}}
+{{< /highlight >}}
   
 Or, alternatively:
   
 {{< highlight text >}}
 $ START n = NODE(*) return COUNT(n);  
 $ START r = RELATIONSHIP(*) return COUNT(r);
-{{< / highlight >}}
+{{< /highlight >}}

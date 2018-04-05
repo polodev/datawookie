@@ -32,7 +32,7 @@ We've seen anonymous functions before, but here's a quick reminder of the syntax
 {{< highlight julia >}}
 julia> x -> x^2
 (anonymous function)
-{{< / highlight >}}
+{{< /highlight >}}
 
 Let's start with `map()` which takes a function as its first argument followed by one or more collections. The function is then [mapped](https://en.wikipedia.org/wiki/Map_(higher-order_function)) onto each element of the collections. The first example below applies an anonymous function which squares its argument.
   
@@ -49,7 +49,7 @@ julia> map(/, [16, 9, 4], [8, 3, 2])
  2.0
  3.0
  2.0
-{{< / highlight >}}
+{{< /highlight >}}
   
 The analogues for this operation in Python and R are `map()` and `mapply()` or `Map()` respectively.
 
@@ -73,7 +73,7 @@ julia> filter(isprime, [1:50])
  41
  43
  47
-{{< / highlight >}}
+{{< /highlight >}}
   
 The equivalent operation in Python and R is carried out using `filter()` and `Filter()` respectively.
 
@@ -84,7 +84,7 @@ julia> reduce(/, 1:4)
 0.041666666666666664
 julia> ((1 / 2) / 3) / 4
 0.041666666666666664
-{{< / highlight >}}
+{{< /highlight >}}
   
 The fold operation is applied with `reduce()` and `Reduce()` in Python and R respectively.
 
@@ -95,6 +95,6 @@ julia> mapreduce(x -> x^2, +, [1:5])
 55
 julia> (((1^2 + 2^2) + 3^2) + 4^2) + 5^2
 55
-{{< / highlight >}}
+{{< /highlight >}}
 
 A few extra bits and pieces about Functional Programming with Julia can be found on [github](https://github.com/DataWookie/MonthOfJulia).

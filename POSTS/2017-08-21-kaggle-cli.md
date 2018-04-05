@@ -23,7 +23,7 @@ Installation is very simple.
 
 {{< highlight bash >}}
 sudo pip install kaggle-cli
-{{< / highlight >}}
+{{< /highlight >}}
 
 This will expose the `kg` shell command. You can use it interactively or via an selection of command line arguments.
 
@@ -48,7 +48,7 @@ Commands:
   help           print detailed help for another command
   submissions    List recent submissions.
   submit         Submit an entry to a specific competition.
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Downloading Data
 
@@ -70,7 +70,7 @@ optional arguments:
                         password
   -f FILENAME, --filename FILENAME
                         filename
-{{< / highlight >}}
+{{< /highlight >}}
 
 The minimum requirements for this to work are a username, password and competition identifier. You get the latter by simply visiting the competition page on [Kaggle](https://www.kaggle.com/) and grabbing the last part of the URL.
 
@@ -78,7 +78,7 @@ So, for instance, to get the data for the recently closed [Instacart Market Bask
 
 {{< highlight bash >}}
 kg download -u 'dvader@dstar.gov' -p '6%puZ$9_' -c 'instacart-market-basket-analysis'
-{{< / highlight >}}
+{{< /highlight >}}
 
 You can use the `-f` switch to grab just a single data file.
 

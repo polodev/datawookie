@@ -17,9 +17,9 @@ tags:
 
 *Propose, Prepare, Present* by [Alistair CrollVerified account](https://twitter.com/acroll)
 
-![]({{ site.baseurl }}/static/img/2017/11/propose-prepare-present.png)
+![](/img/2017/11/propose-prepare-present.png)
 
-![]({{ site.baseurl }}/static/img/2017/11/topic-information-arbitrage.png)
+![](/img/2017/11/topic-information-arbitrage.png)
 
 Croll mentions the concept of <em>information arbitrage</em> (see the figure above from his book): you need to strike the balance between the breadth of appeal and the value of the content. We'll forgive him for the spelling error.
 
@@ -27,7 +27,7 @@ Croll mentions the concept of <em>information arbitrage</em> (see the figure abo
 
 *slide:ology* by [Nancy Duarte](https://twitter.com/nancyduarte)
 
-![]({{ site.baseurl }}/static/img/2017/11/slideology.png)
+![](/img/2017/11/slideology.png)
 
 - **Chapter 1:** Creating a New Slide Ideology
 - **Chapter 2:** Creating Ideas, Not Slides
@@ -73,7 +73,7 @@ What's the value of breathing room?
 
 *Confessions of a Public Speaker* by [Scott Berkun](https://twitter.com/berkun)
 
-![]({{ site.baseurl }}/static/img/2017/11/confessions-of-a-public-speaker.png)
+![](/img/2017/11/confessions-of-a-public-speaker.png)
 
 A really entertaining read with lots of actionable suggestions. The author walks the walk: Berkun says that story telling is an integral part of entertainment and this book is packed with stories.
 
@@ -121,13 +121,13 @@ Not something that would have occurred to me, but the advice seems legit.
 
 HAVE COPY IN CALIBRE
 
-![]({{ site.baseurl }}/static/img/2017/11/talk-like-ted.png)
+![](/img/2017/11/talk-like-ted.png)
 
 ## TED Talks
 
 HAVE COPY IN CALIBRE
 
-![]({{ site.baseurl }}/static/img/2017/11/ted-talks.png)
+![](/img/2017/11/ted-talks.png)
 
 ## Lend Me Your Ears
 
@@ -137,13 +137,13 @@ IN MENDELEY
 
 HAVE COPY IN MENDELEY
 
-![]({{ site.baseurl }}/static/img/2017/11/the-naked-presenter.png)
+![](/img/2017/11/the-naked-presenter.png)
 
 ## Speake Like Churchill, Stand Like Lincoln
 
 HAVE COPY IN CALIBRE
 
-![]({{ site.baseurl }}/static/img/2017/11/speak-like-churchill-stand-like-lincoln.png)
+![](/img/2017/11/speak-like-churchill-stand-like-lincoln.png)
 
 ## Yes! 50 Scientifically Proven Ways to Be Persuasive
 

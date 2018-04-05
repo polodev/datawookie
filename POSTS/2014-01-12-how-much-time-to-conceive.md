@@ -25,7 +25,7 @@ First let's take a look at what these probabilities mean. If we adopt the first 
 > P1 = 0.25
 > 1 - P1
 [1] 0.75
-{{< / highlight >}}
+{{< /highlight >}}
 
 So, after the first month there is a 75% chance that conception will not have occurred. This seems pretty clear for the first month, but what about the second month? Well, all else being equal, the probability of conceiving in the second month should be just the same as that in the first month: 25%. However, this does not take into account the fact that the first month was not successful. The probability of only conceiving during the second month is the product of two probabilities: the probability of not conceiving in the first month and the probability of conceiving in any one month.
 
@@ -34,14 +34,14 @@ So, after the first month there is a 75% chance that conception will not have oc
 [1] 0.1875
 > (1 - P1) * (1 - P1)
 [1] 0.5625
-{{< / highlight >}}
+{{< /highlight >}}
 
 There is thus a 18.75% chance of only conceiving during the second month and a 56.25% chance of still not being pregnant by the end of the second month. However, the total probability of having conceived in either the first or second months has improved:
 
 {{< highlight r >}}
 > P1 + P2
 [1] 0.4375
-{{< / highlight >}}
+{{< /highlight >}}
 
 We can take this a step further: what about the third month? Here we need to take into account the probability of not conceiving in either of the first two months.
 
@@ -52,7 +52,7 @@ We can take this a step further: what about the third month? Here we need to tak
 [1] 0.57812
 > (1 - P1) \* (1 - P1) \* (1 - P1)
 [1] 0.42188
-{{< / highlight >}}
+{{< /highlight >}}
 
 The probability of only falling pregnant in the third month is thus just over 14%, but the chance of conception in any one of the first three months has risen to just less than 58%. So, already, the odds are looking pretty good.
 
@@ -79,7 +79,7 @@ The Negative binomial distribution describes the number of failures before a suc
 > #
 > dnbinom(2, size = 1, prob = 0.25)
 [1] 0.14062
-{{< / highlight >}}
+{{< /highlight >}}
 
 You'll see that these probabilities agree perfectly with those calculated somewhat more laboriously above. Now, with very little pain, we can calculate the probability of falling pregnant in any given month. Let's consider a two year period.
 
@@ -93,7 +93,7 @@ You'll see that these probabilities agree perfectly with those calculated somewh
 [8] 0.03337097 0.02502823 0.01877117 0.01407838 0.01055878 0.00791909 0.00593932
 [15] 0.00445449 0.00334087 0.00250565 0.00187924 0.00140943 0.00105707 0.00079280
 [22] 0.00059460 0.00044595 0.00033446 0.00025085
-{{< / highlight >}}
+{{< /highlight >}}
 
 This gives the probabilities for each of 25 successive months. We want to accumulate these values as well to get the total probability of falling pregnant within a given time period.
 
@@ -127,7 +127,7 @@ months       ptry    psum
 23     22 0.00044595 0.99866
 24     23 0.00033446 0.99900
 25     24 0.00025085 0.99925
-{{< / highlight >}}
+{{< /highlight >}}
 
 Here the ptry column gives the probability for any particular month and the psum column gives the total probability up to and including that month. After two years the probability is very close to one: almost certain success!
 
@@ -142,9 +142,9 @@ This seems like a good time for a plot.
 +   scale_y_continuous(labels = percent) +
 +   scale_x_continuous(breaks = seq(0, NMONTH, 3)) +
 +   theme_classic()
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2014/01/probability-month.png">
+<img src="/img/2014/01/probability-month.png">
 
 Here the solid line is the probability of conception in a particular month and the dashed line is the cumulative probability, which gets pretty close to one after about a year. Of course, this plot is based on the assumption that the probability in any given month is 25%. And, as mentioned before, this number is only approximate. It would be helpful to see how this basic probability affects the long term prospects.
 
@@ -159,7 +159,7 @@ First we will construct data corresponding to increasing probabilities in steps 
 >
 > pregnant = ddply(pregnant, .(pbase, months), summarize,
 +                  psum = sum(dnbinom(0:months, size = 1, prob = pbase)))
-{{< / highlight >}}
+{{< /highlight >}}
 
 Now we can take these data and produce a visualisation.
 
@@ -184,9 +184,9 @@ Now we can take these data and produce a visualisation.
 +   geom_hline(yintercept = 0.25, linetype = "dashed") +
 +   ylab("Probability") + xlab("Months") +
 +   theme_classic()
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2014/01/probability-month-variable.png">
+<img src="/img/2014/01/probability-month-variable.png">
 
 As before, months are plotted along the x-axis. Now, however, the y-axis reflects the probability of conception in any one month. The value of 25% that we have been using is indicated by the horizontal dashed line. The colour scale then shows the cumulative probability. Contours are superimposed at intervals of 10% extending from 10% up to 90%.
 

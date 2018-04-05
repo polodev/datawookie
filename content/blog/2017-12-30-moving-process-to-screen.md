@@ -19,7 +19,7 @@ For illustration purposes, let's kick off a long running job.
 
 {{< highlight text >}}
 $ tail -f /var/log/syslog
-{{< / highlight >}}
+{{< /highlight >}}
 
 That should start logging text to the terminal.
 
@@ -28,29 +28,29 @@ Now we need to find out the PID for that process.
 1. Suspend the process using <kbd>Ctrl</kbd>-<kbd>z</kbd>.
     {{< highlight text >}}
 [1]+  Stopped                 tail -f /var/log/syslog
-{{< / highlight >}}
+{{< /highlight >}}
 2. Find the PID using `jobs`.
     {{< highlight text >}}
 $ jobs -l
 [1]+ 20562 Stopped                 tail -f /var/log/syslog
-{{< / highlight >}}
+{{< /highlight >}}
 3. Right, so the PID is 20562. At this point we need to get around a small wrinkle, circumventing a minor security measure. Enable `ptrace`.
     {{< highlight text >}}
 $ echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
-{{< / highlight >}}
+{{< /highlight >}}
 4. Start a `screen` session.
     {{< highlight text >}}
 $ screen
-{{< / highlight >}}
+{{< /highlight >}}
 5. Use `reptyr` to reparent the process.
     {{< highlight text >}}
 $ reptyr 20562
-{{< / highlight >}}
+{{< /highlight >}}
 6. The suspended process will have resumed. Disconnect from the `screen` session.
 7. Disable `ptrace`.
     {{< highlight text >}}
 $ echo 1 | sudo tee /proc/sys/kernel/yama/ptrace_scope
-{{< / highlight >}}
+{{< /highlight >}}
 
 Done!
 

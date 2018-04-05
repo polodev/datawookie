@@ -152,7 +152,7 @@ Moving on to something more relevant: attrition. Of the 19903 _independent_ entr
 
 Let's break this down by gender. The figure below shows the proportion of athletes who did not start (DNS), did not finish (DNF), and who did actually finish the race as a function of gender. The DNS data are the categories "not yet started", "pre-race withdrawal" and "substituted". The DNF data also include "disqualified" and "started and running".
 
-<img src="{{ site.baseurl }}/static/img/2013/06/status-gender-spineplot1.png">
+<img src="/img/2013/06/status-gender-spineplot1.png">
 
 So what can we take away from this plot? Here are the main points:
 
@@ -169,7 +169,7 @@ I am not going to interpret these results any further. I know which side my brea
 
 Next we look at the same data but broken down according to age category. Here the 40-49 age group was the best for getting to the starting line. Obviously they (and I include myself here) have learned that if you don't start, then you certainly can't finish! Ahem. Moving on. Of those that did start, runners in the 20-29 age group fared the best with 81.3% finishing. Things got progressively worse from there with the percentage of finishers dropping from 79.6% in the 30-39 group, to 73.5% in the 40-49 group, 61.6% in the 50-59 group and only 45.1% in the 60 and older group. Still damn impressive for the senior runners, but the youngsters appear to have fared best on the day. Perhaps they are more tolerant to warm weather?
 
-<img src="{{ site.baseurl }}/static/img/2013/06/status-category-spineplot2.png">
+<img src="/img/2013/06/status-category-spineplot2.png">
 
 Now, let's put all of this together, looking at gender, age group and finishing status. There is a lot more information and it is a little difficult to make sense of all of it at once. But here are the salient points:
 
@@ -180,7 +180,7 @@ Now, let's put all of this together, looking at gender, age group and finishing 
 
 Looks like 30-39 is the prime time to be running the Comrades. That's not to say that I am past my prime. Hell no! Not at all.
 
-<img src="{{ site.baseurl }}/static/img/2013/06/status-category-gender-mosaicplot.png">
+<img src="/img/2013/06/status-category-gender-mosaicplot.png">
 
 Over the next few days I will look at the following questions:
 

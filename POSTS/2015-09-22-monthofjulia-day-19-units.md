@@ -18,7 +18,7 @@ url: /2015/09/22/monthofjulia-day-19-units/
 
 <!--more-->
 
-<img src="{{ site.baseurl }}/static/img/2015/09/Julia-Logo-SIUnits.png" >
+<img src="/img/2015/09/Julia-Logo-SIUnits.png" >
 
 The packages we'll be looking at today should bring joy to the hearts of all Physical Scientists. Actually they should make any flavour of Scientist happy.
 
@@ -34,7 +34,7 @@ The `SIUnits`[](https://github.com/Keno/SIUnits.jl) package provides unit-checke
 {{< highlight julia >}}
 julia> using SIUnits
 julia> using SIUnits.ShortUnits
-{{< / highlight >}}
+{{< /highlight >}}
 
 It supports both long and short forms of units and all the expected arithmetic operations.
 
@@ -45,7 +45,7 @@ julia> 4Meter - 2m
 2 m
 julia> 4m / 2s
 2.0 m s⁻¹
-{{< / highlight >}}
+{{< /highlight >}}
 
 Note that it only recognises the American spelling of "meter" and not the (IMHO correct) "metre"! But this is a small matter. And I don't want to engage in any religious wars.
 
@@ -61,7 +61,7 @@ julia> Angstrom = SIUnits.NonSIUnit{typeof(Meter),:Å}()
 Å
 julia> convert(::Type{SIUnits.SIQuantity},::typeof(Angstrom)) = Nano/10*Meter
 convert (generic function with 462 methods)
-{{< / highlight >}}
+{{< /highlight >}}
 
 And now we can freely use these new units in computations.
 
@@ -72,7 +72,7 @@ julia> 1Micron + 1m
 1000001//1000000 m
 julia> 5200Angstrom # Green light
 5200 Å
-{{< / highlight >}}
+{{< /highlight >}}
 
 Read on below to find out about the `Physical` package.
 
@@ -86,7 +86,7 @@ Let's kick off by loading the package.
 
 {{< highlight julia >}}
 using Physical
-{{< / highlight >}}
+{{< /highlight >}}
 
 There's a lot of functionality available, but we are going to focus on just one thing: converting pounds and inches into kilograms and metres. First we define a pair of derived units. To do this, of course, we need to know the appropriate conversion factors!
 
@@ -95,7 +95,7 @@ julia> Inch = DerivedUnit("in", 0.0254*Meter)
 1 in 
 julia> Pound = DerivedUnit("lb", 0.45359237*Kilogram)
 1 lb 
-{{< / highlight >}}
+{{< /highlight >}}
 
 We can then freely change the average heights and weights that we saw earlier from Imperial to Metric units.
 
@@ -104,7 +104,7 @@ julia> asbase(66Inch)
 1.6764 m 
 julia> asbase(139Pound)
 63.04933943 kg 
-{{< / highlight >}}
+{{< /highlight >}}
 
 On a related note I've just put together a package of [physical constants](https://github.com/DataWookie/PhysicalConstants.jl) for Julia.
 
@@ -114,11 +114,11 @@ julia> PhysicalConstants.MKS.SpeedOfLight
 2.99792458e8
 julia> PhysicalConstants.MKS.Teaspoon
 4.92892159375e-6
-{{< / highlight >}}
+{{< /highlight >}}
 
 Did you know that a teaspoon was 4.92892 millilitres? There I was, wallowing in my ignorance, thinking that it was 5 millilitres. Pfffft. Silly me. There are
 
-<img src="{{ site.baseurl }}/static/img/2015/09/teaspoon-volume.png" >
+<img src="/img/2015/09/teaspoon-volume.png" >
 
 Units can be a contentious issue. Watch the video below to see what Richard Feynman had to say about the profusion of units used by Physicists to measure energy. Also check out the full code for today along with the index to the entire series of [#MonthOfJulia](https://twitter.com/search?q=%23MonthOfJulia&src=typd) posts on [github](https://github.com/DataWookie/MonthOfJulia).
 

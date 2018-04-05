@@ -53,7 +53,7 @@ First we'll need a couple of helper functions to neatly generate labels for gene
 > 
 > make.generation(3, 5)
 [1] "G05/I01" "G05/I02" "G05/I03"
-{{< / highlight >}}
+{{< /highlight >}}
 
 Each indivual is identified by a label of the form "G05/I01", which gives the generation number and also the specific identifier within that generation.
 
@@ -86,7 +86,7 @@ Next we'll have a function to generate the random links between individuals in s
 8  G02/I01  G01/I01
 9  G02/I01  G01/I02
 10 G02/I02  G01/I02
-{{< / highlight >}}
+{{< /highlight >}}
 
 So, for example, the data generated above links the child node G00/I01 (individual 1 in generation 0) to two parent nodes, G01/I02 and G01/I01 (individuals 1 and 2 in generation 1).
 
@@ -115,11 +115,11 @@ Finally we'll wrap all of that up in a graph-like object.
 +   #
 +   net
 + }
-{{< / highlight >}}
+{{< /highlight >}}
 
 Let's give it a whirl on a graph consisting of 10 ancestor generations (11 generations including the current generation) and 8 individuals per generation. The result is plotted below with the oldest generation (G10) at the top and the current generation (G00) at the bottom. The edges indicate parent/progeny links.
 
-<img src="{{ site.baseurl }}/static/img/2015/05/sample-graph.png">
+<img src="/img/2015/05/sample-graph.png">
 
 Okay, so it looks like all of the infrastructure is in place. Now we need to put together the functionality for analysing the relationships between generations. We are really only interested in how any one of the ancestor generations relates to the current generation, which makes things a little simpler. First we write a function to calculate the number of steps from an arbitrary node (identified by label) to each of the nodes in the current generation. This is simplified by the fact that igraph already has a shortest.path() function.
 
@@ -129,7 +129,7 @@ Okay, so it looks like all of the infrastructure is in place. Now we need to put
 +   #
 +   shortest.paths(net, v = node, to = present.generation, mode = "out")
 + }
-{{< / highlight >}}
+{{< /highlight >}}
 
 Next a pair of helper functions which indicate whether a particular node is a CA of all nodes in the current generation or if it has gone extinct. Node G03/I08 in the above graph is an example of an extinct node since it has no child nodes.
 
@@ -141,7 +141,7 @@ Next a pair of helper functions which indicate whether a particular node is a CA
 > extinct <- function(net, node) {
 +   all(is.infinite(generation.descendants(net, node)))
 + }
-{{< / highlight >}}
+{{< /highlight >}}
 
 Let's test those. We'll generate another small graph for the test.
 
@@ -173,7 +173,7 @@ G02/I03       2     Inf       2
 G03/I01     Inf     Inf     Inf
 > extinct(net, "G03/I01")
 [1] TRUE
-{{< / highlight >}}
+{{< /highlight >}}
 
 It would also be handy to have a function which gives the distance from every node in a particular generation to each of the nodes in the current generation.
 
@@ -188,7 +188,7 @@ It would also be handy to have a function which gives the distance from every no
 G03/I01     Inf     Inf     Inf
 G03/I02       3       3       3
 G03/I03       3       3       3
-{{< / highlight >}}
+{{< /highlight >}}
 
 So here we see that G03/I02 and G03/I03 are both ancestors of each of the individuals in the current generation, while G03/I01 has gone extinct.
 
@@ -204,7 +204,7 @@ Finally we can pull all of this together with a single function that classifies 
 G03/I01 G03/I02 G03/I03 
 extinct  common  common 
 Levels: ancestor extinct common
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Results {#results}
 
@@ -212,7 +212,7 @@ First let's have a look at how the relationship between previous generations and
 
 The graph used to generate these data had 1000 individuals per generation. We can see that for the first 10 generations around 80% of the individuals were ancestors of one or more (but not all!) of the current generation. The remaining 20% or so were extinct. Then in generation 11 we have the first CA. This individual would be labelled the [Most Recent Common Ancestor](http://en.wikipedia.org/wiki/Most_recent_common_ancestor) (MRCA). Going further back in time the fraction of CAs increases while the proportion of mere ancestors declines until around generation 19 when all of the ancestors are CAs.
 
-<img src="{{ site.baseurl }}/static/img/2015/05/ancestor-evolution.png">
+<img src="/img/2015/05/ancestor-evolution.png">
 
 There are two important epochs to identify on the plot above:
 
@@ -223,7 +223,7 @@ Chang's paper gives asymptotic expressions for how these epochs vary as a functi
 
 Since we have all of the infrastructure in place, we can conduct an independent test of the relationships. Below is a boxplot generated from 100 realisations each of calculations with generations of size 10, 100 and 1000. The blue boxes reflect our estimates for $$ T_n $$, while the green boxes are the estimates of $$ U_n $$. The two dashed lines reflect the asymptotic relationships. There's pretty good agreement between the theoretical and experimental results, although our estimates for $$ U_n $$ appear to be consistently larger than expected. The sample size was limited though... Furthermore, these are _asymptotic_ relationships, so we really only expect them to hold exactly for large generation sizes.
 
-<img src="{{ site.baseurl }}/static/img/2015/05/Un-Tn-versus-N.png">
+<img src="/img/2015/05/Un-Tn-versus-N.png">
 
 When would our MRCA have been alive based on this simple model and the Earth's current population? Setting the generation size to the [Earth's current population](https://www.wolframalpha.com/input/?i=Earth%27s+population&dataset=) of around 7 billion people gives $$ T_n $$ at about 33 generations and a $$ U_n $$ of approximately 58 generations. I know, those 7 billion people are not from the same generation, but we are going for an estimate here...
 

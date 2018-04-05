@@ -13,9 +13,9 @@ As an aside for a Social Media Automation project I have constructed a bot which
 
 The images below are two examples of the lightning animations. You might need to open them in a separate tab or window to get them to animate. WordPress funkiness, I believe! If you would like to see these daily, follow [@DataWookie](https://twitter.com/DataWookie).
 
-<img src="{{ site.baseurl }}/static/img/2015/07/A20150704.gif">
+<img src="/img/2015/07/A20150704.gif">
 
-<img src="{{ site.baseurl }}/static/img/2015/07/A20150615.gif">
+<img src="/img/2015/07/A20150615.gif">
 
 ## Data Acquisition
 

@@ -39,7 +39,7 @@ Terms     1 2  3  4  5  6  7  8 9 10
   enter   0 7 12 11 10 10 14 87 4  6
   exeunt  0 3  8  8  5  4  7 49 1  4
   exit    0 6  8  5  6  5  3 31 3  2
-{{< / highlight >}}
+{{< /highlight >}}
 
 This matrix is first converted from a sparse data format into a conventional matrix.
 
@@ -47,13 +47,13 @@ This matrix is first converted from a sparse data format into a conventional mat
 > TDM.dense <- as.matrix(TDM.common)
 > dim(TDM.dense)
 [1] 71 182
-{{< / highlight >}}
+{{< /highlight >}}
 
 Next the TDM is normalised so that the rows sum to unity. Each entry in the normalised TDM then represents the number of times that a word occurs in a particular document relative to the number of occurrences across all of the documents.
 
 {{< highlight r >}}
 > TDM.scaled <- TDM.dense / rowSums(TDM.dense)
-{{< / highlight >}}
+{{< /highlight >}}
 
 # Clustering
 
@@ -61,7 +61,7 @@ We will be using a [hierarchical clustering](http://en.wikipedia.org/wiki/Hierar
 
 {{< highlight r >}}
 > TDM.dist = dist(TDM.scaled)
-{{< / highlight >}}
+{{< /highlight >}}
 
 Finally we perform agglomerative clustering using agnes() from the cluster package.
 
@@ -87,7 +87,7 @@ Height (summary):
 Available components:
 [1] "order"     "height"    "ac"        "merge"     "diss"      "call"
 [7] "method"    "order.lab"
-{{< / highlight >}}
+{{< /highlight >}}
 
 # Plotting a Dendrogram
 
@@ -95,9 +95,9 @@ Let's have a look at the results of our labours.
 
 {{< highlight r >}}
 plot(hclusters, which.plots = 2, main = "", sub = "", xlab = "")
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2013/09/shakespeare-common-word-clusters.png">
+<img src="/img/2013/09/shakespeare-common-word-clusters.png">
 
 This [dendrogram](http://en.wikipedia.org/wiki/Dendrogram)&nbsp;reflects the tree-like structure of the word clusters. We can see that the words "enter", "exeunt" and "scene" are clustered together, which makes sense since they are related to stage directions. Also "thee" and "thou" have similar usage. In the previous analysis we found that the occurrences of "love" and "eye" were highly correlated and consequently we find them clustered here too.
 

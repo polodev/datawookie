@@ -31,7 +31,7 @@ In general the largest positions are retained by Commercial traders who either p
 
 The reports are available in either [long](http://www.cftc.gov/files/dea/cotarchives/2014/futures/deacmelf050614.htm) or [short](http://www.cftc.gov/files/dea/cotarchives/2014/futures/deacmesf050614.htm) format from the [CFTC web site](http://www.cftc.gov/MarketReports/CommitmentsofTraders/HistoricalViewable/index.htm). Just select the date you are interested in and you will be taken through to a page where you can select from a range of reports. In addition to the viewable reports, you can also get the [data as a CSV or xls file](http://www.cftc.gov/MarketReports/CommitmentsofTraders/HistoricalCompressed/index.htm).
 
-<img src="{{ site.baseurl }}/static/img/2014/05/cftc-report-options.png">
+<img src="/img/2014/05/cftc-report-options.png">
 
 We will be focusing on FOREX, so we will be principally interested in the reports relating to the Chicago Mercantile Exchange.
 
@@ -39,7 +39,7 @@ We will be focusing on FOREX, so we will be principally interested in the report
 
 The plot below reflects the number of long (blue) and short (red) positions for a selection of currencies broken down into the three sectors mentioned above. All of these positions are traded against the USD. The superimposed black lines indicate the net number of long and short positions. Things to note here are that the Commercial and Non-Commercial sectors are generally trading in opposite directions and that the Non-Reportable sector constitutes much smaller volumes, but these account for the detailed balance between the Commercial and Non-Commercial trades.
 
-<img src="{{ site.baseurl }}/static/img/2014/05/140513-open-positions.png">
+<img src="/img/2014/05/140513-open-positions.png">
 
 In this plot USD is always treated as the counter currency. So, for JPY we are actually looking at positions on JPY/USD. Of course, the JPY is not quoted like this against the USD. So, for pairs like USD/CAD, USD/CHF and USD/JPY we need to reverse the sense of the positions above. This will be sorted out though below when we consider individual currency pairs.
 
@@ -47,23 +47,23 @@ In this plot USD is always treated as the counter currency. So, for JPY we are a
 
 Open Interest is the total number of current contracts. Since every long position is offset by a short position, the Open Interest is equal to the total number of either long or short positions. It shows the overall volume of contracts and is an indication of market interest. The black lines in the plot indicate the Open Interest for each currency and the red lines show the change from week to week.
 
-<img src="{{ site.baseurl }}/static/img/2014/05/140513-open-interest.png">
+<img src="/img/2014/05/140513-open-interest.png">
 
 These data become more interesting when we link them to the appropriate FOREX rates.
 
 ## EUR/USD
 
-<img src="{{ site.baseurl }}/static/img/2014/05/140513-EURUSD.png">
+<img src="/img/2014/05/140513-EURUSD.png">
 
 The top panel reflects the daily closing price for EUR/USD. The second panel shows the total open interest (black) and weekly change in open interest (red). The third panel shows the net number of positions held by each of the sectors. Here positive values indicate that a sector is net long, while negative values represent net short positions. The fourth panel is an indication of sentiment and reflects what portion of positions for each sector are either long or short. A completely bullish value indicates that a sector is 100% long, while a completely bearish value represents 100% short. A value close to 0% occurs when there is a balance between long and short positions.
 
 ## GBP/USD
 
-<img src="{{ site.baseurl }}/static/img/2014/05/140513-GBPUSD.png">
+<img src="/img/2014/05/140513-GBPUSD.png">
 
 ## USD/JPY
 
-<img src="{{ site.baseurl }}/static/img/2014/05/140513-USDJPY.png">
+<img src="/img/2014/05/140513-USDJPY.png">
 
 The fact that USD is the base currency and JPY is the counter currency has been taken into account by negating the data in the third and fourth panels.
 

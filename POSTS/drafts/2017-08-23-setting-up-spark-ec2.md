@@ -154,7 +154,7 @@ $SPARK_HOME/sbin/start-all.sh
 
 You should then be able to view the Spark dashboard on port 8080 using your browser.
 
-![]({{ site.baseurl }}/static/img/2017/08/aws-spark-dashboard.png)
+![](/img/2017/08/aws-spark-dashboard.png)
 
 ## Stop Spark
 

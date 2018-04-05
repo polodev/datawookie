@@ -34,13 +34,13 @@ You should undoubtedly read the papers in their entirety once the first wave of 
 
 I'm running Ubuntu 15.04, so this will be rather specific. Installation was extremely simple (handled entirely by the package manager) and it looks like other platforms are similarly straightforward (check the [Downloads](http://julialang.org/downloads/) page). I will be using Julia version 0.3.10.
 
-<img src="{{ site.baseurl }}/static/img/2015/08/julia-install.png" >
+<img src="/img/2015/08/julia-install.png" >
 
 I'm not quite sure why I was in the `Pictures` folder when I kicked off the install, but this is by no means a requirement!
 
 The Julia interpreter is launched by typing `julia` at the command prompt. At launch it displays a nice logo which, incidentally, can be reproduced at any time for your amusement and pleasure using `Base.banner()`.
 
-<img src="{{ site.baseurl }}/static/img/2015/08/julia-default-terminal.png" >
+<img src="/img/2015/08/julia-default-terminal.png" >
 
 The default colours in the interpreter are not going to work for me, so I tracked down the configuration file (`~/.juliarc.jl`) and made some changes. Ah, that's better.
 
@@ -53,11 +53,11 @@ The Julia [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_l
 * You activate the help system by typing `?` at the prompt or by using `help()`. 
 * You can also search through the help documents using `apropos()`.
 
-<img src="{{ site.baseurl }}/static/img/2015/08/julia-help-system.png" >
+<img src="/img/2015/08/julia-help-system.png" >
 
 * You can get immediate access to the system shell by typing `;` at the prompt.
 
-<img src="{{ site.baseurl }}/static/img/2015/08/julia-command-shell.png" >
+<img src="/img/2015/08/julia-command-shell.png" >
 
 * You can search back through your command history using the "normal" <kbd>Ctrl</kbd>-<kbd>r</kbd> shell binding. 
 * <kbd>Ctrl</kbd>-<kbd>l</kbd> will clear the contents of the console. 
@@ -68,13 +68,13 @@ If you're like me then you'll want to put your code into script files. Julia scr
 
 {{< highlight text >}}
 $ julia test-script.jl
-{{< / highlight >}}
+{{< /highlight >}}
 
 or from within the interpreter using
 
 {{< highlight text >}}
 julia> include('test-script.jl')
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Keeping Up to Date
 
@@ -84,7 +84,7 @@ To ensure that you have the most recent released version of Julia (not necessari
 $ sudo add-apt-repository ppa:staticfloat/juliareleases
 $ sudo add-apt-repository ppa:staticfloat/julia-deps
 $ sudo apt-get update
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Code Samples
 

@@ -21,7 +21,7 @@ There's a `ntp` package in the APT repository, so installation is simple.
 
 {{< highlight bash >}}
 sudo apt install ntp
-{{< / highlight >}}
+{{< /highlight >}}
 
 The `ntpd` will start running. It will communicate with the time servers and bring your clock in line with the correct time.
 
@@ -29,7 +29,7 @@ The `ntpd` will start running. It will communicate with the time servers and bri
 $ ps -fC ntpd
 UID        PID  PPID  C STIME TTY          TIME CMD
 ntp       2436     1  0 Jan10 ?        00:00:05 /usr/sbin/ntpd -p /var/run/ntpd.pid -g -u 126:136
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Configure
 
@@ -48,7 +48,7 @@ pool 3.ubuntu.pool.ntp.org iburst
 # Use the Ubuntu NTP server as a backup.
 #
 pool ntp.ubuntu.com
-{{< / highlight >}}
+{{< /highlight >}}
 
 You can find out about local servers by visiting the [NTP Pool Project](http://www.pool.ntp.org/en/) and selecting first your continent and then country.
 
@@ -69,7 +69,7 @@ ntp_adjtime() returns code 0 (OK)
   maximum error 454101 us, estimated error 706 us,
   status 0x2001 (PLL,NANO),
   time constant 10, precision 0.001 us, tolerance 500 ppm,
-{{< / highlight >}}
+{{< /highlight >}}
 
 Alternatively, head back to <https://time.is/> to confirm your clock's accuracy.
 

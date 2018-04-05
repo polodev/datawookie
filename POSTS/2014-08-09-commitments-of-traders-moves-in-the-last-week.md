@@ -29,7 +29,7 @@ The changes are normalised to the total number of positions (both long and short
       name       date     sector   long   shrt
 11842  JPY 2014-05-13 Commercial 125523 -35537
 11845  JPY 2014-05-20 Commercial 117310 -48851
-{{< / highlight >}}
+{{< /highlight >}}
 
 This indicates that the number of positions that are long relative to the JPY has decreased while the number of positions that are short on the JPY (given by a negative number) has increased. Both of these changes are consistent with the fact that traders are selling the JPY in favour of other currencies.
 
@@ -37,4 +37,4 @@ A synopsis of these data for a range of currencies is given in the plot below. T
 
 If anyone is interested in updated charts like this, please just let me know.
 
-<img src="{{ site.baseurl }}/static/img/2014/05/140520-weekly-change.png">
+<img src="/img/2014/05/140520-weekly-change.png">

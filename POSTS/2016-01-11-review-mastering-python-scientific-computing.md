@@ -16,7 +16,7 @@ url: /2016/01/11/review-mastering-python-scientific-computing/
 
 <!--more-->
 
-<img src="{{ site.baseurl }}/static/img/2015/12/mastering-python-scientific-computing-cover.png">
+<img src="/img/2015/12/mastering-python-scientific-computing-cover.png">
 
 I was asked to review "[Mastering Python Scientific Computing](https://www.packtpub.com/big-data-and-business-intelligence/mastering-python-scientific-computing)" (authored by Hemant Kumar Mehta and published in 2015 by Packt Publishing). I was disappointed by the book. The title lead me to believe that it would help me to achieve mastery. I don't feel that it brought me any closer to this goal. To be sure, the book contains a lot of useful information. But the way that it is written is a weird compromise between high level overview and low level details. And it's the middle ground in between, where explanations are given and a link is made between the details and the global picture, which I normally find most instructive.
 

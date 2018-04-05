@@ -9,9 +9,9 @@ title: Running OSRM with Docker
 url: /2017/10/07/osrm-with-docker/
 ---
 
-{% comment %}
+{{< comment >}}
 https://github.com/Project-OSRM/osrm-backend/issues/3161
-{% endcomment %}
+{{< /comment >}}
 
 I've now been through the process of [setting up OSRM]({{ site.baseurl }}{% post_url 2017-08-31-using-aws-cli %}) a few times. While it's not exactly taxing, it seemed like a prime candidate for automation.
 
@@ -25,7 +25,7 @@ To use, do as follows:
 
 {{< highlight bash >}}
 $ docker build -t osrm:latest .
-{{< / highlight >}}
+{{< /highlight >}}
 
 {:start="2"}
 2. Download map data. For the sake of illustration, we'll assume that the resulting file is called `map.xml`.
@@ -33,6 +33,6 @@ $ docker build -t osrm:latest .
 
 {{< highlight bash >}}
 $ docker run -p 5000:5000 -v `pwd`:/data osrm:latest map.xml
-{{< / highlight >}}
+{{< /highlight >}}
 
 The image exposes the service on port 5000, which is mapped to port 5000 on the host. Now go ahead an submit requests!

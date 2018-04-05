@@ -14,7 +14,7 @@ Bitcoin has become synonymous with "cryptocurrency". [Ethereum](https://www.ethe
 
 This post introduces the new [ether](https://github.com/DataWookie/ether) package for interacting with the Ethereum network from R. 
 
-![]({{ site.baseurl }}/static/img/2017/12/etherscan-transactions-addresses.png)
+![](/img/2017/12/etherscan-transactions-addresses.png)
 
 <!-- more -->
 
@@ -94,7 +94,7 @@ Ethereum operations have an associated execution fee which is expressed in units
 [1] 20
 {% endhighlight %}
 
-![]({{ site.baseurl }}/static/img/2017/12/etherscan-network-state.png)
+![](/img/2017/12/etherscan-network-state.png)
 
 What's the number of the most recent block?
 
@@ -176,7 +176,7 @@ We can delve into the details of a block.
 [1] "2017-12-02 09:38:00 UTC"
 {% endhighlight %}
 
-![]({{ site.baseurl }}/static/img/2017/12/etherscan-block-details.png)
+![](/img/2017/12/etherscan-block-details.png)
 
 Look at the table of transactions.
 

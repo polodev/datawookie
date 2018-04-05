@@ -27,7 +27,7 @@ To have something to work with, generate 1000 samples from a log-normal distribu
 > set.seed(37)
 > #
 > x <- rlnorm(N, meanlog = 0, sdlog = 0.5)
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Skewness-Kurtosis Plot
 
@@ -45,11 +45,11 @@ mean: 1.128276
 estimated sd: 0.6239416
 estimated skewness: 2.137708
 estimated kurtosis: 12.91741
-{{< / highlight >}}
+{{< /highlight >}}
 
 There's nothing magical in those summary statistics, but the plot is most revealing. The data are represented by the blue point. Various distributions are represented by symbols, lines and shaded areas.
 
-<img src="{{ site.baseurl }}/static/img/2016/10/cullen-frey-plot.png">
+<img src="/img/2016/10/cullen-frey-plot.png">
 
 We can see that our data point is close to the log-normal curve (no surprises there!), which indicates that it is the most likely distribution.
 
@@ -68,13 +68,13 @@ Parameters:
 meanlog -0.009199794 0.01606564
 sdlog    0.508040297 0.01135993
 > plot(fit.lnorm)
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2016/10/fitdist-lnorm.png">
+<img src="/img/2016/10/fitdist-lnorm.png">
 
 The quantile-quantile plot indicates that, as expected, a log-normal distribution gives a pretty good representation of our data. We can compare this to the results of fitting a normal distribution, where we see that there is significant divergence of the tails of the quantile-quantile plot.
 
-<img src="{{ site.baseurl }}/static/img/2016/10/fitdist-norm.png">
+<img src="/img/2016/10/fitdist-norm.png">
 
 ## Comparing Distributions
 
@@ -92,7 +92,7 @@ If we fit a selection of plausible distributions then we can objectively evaluat
 3 fit.lnorm 1469.088  -732.5442
 4 fit.logis 1737.104  -866.5520
 5  fit.norm 1897.480  -946.7398
-{{< / highlight >}}
+{{< /highlight >}}
 
 According to these data the log-normal distribution is the optimal fit: smallest AIC and largest log-likelihood.
 

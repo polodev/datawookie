@@ -19,23 +19,23 @@ There are many good reasons to use S3 (Simple Storage Service) storage. This is 
 
 To create a S3 bucket go to the S3 Management Console. Press the <kbd class="bg-primary nobreak">Create bucket</kbd> button.
 
-![]({{ site.baseurl }}/static/img/2017/09/aws-s3-management-console.png)
+![](/img/2017/09/aws-s3-management-console.png)
 
 Choose a name for the bucket and select a region. If you have existing EC2 instances then it makes sense to select the same location. Press the <kbd class="bg-primary nobreak">Next</kbd> button.
 
-![]({{ site.baseurl }}/static/img/2017/09/aws-s3-name.png)
+![](/img/2017/09/aws-s3-name.png)
 
 You can choose to apply Versioning, Logging or Tags to the bucket. But for the moment we'll just skip over those and press the <kbd class="bg-primary nobreak">Next</kbd> button.
 
-![]({{ site.baseurl }}/static/img/2017/09/aws-s3-properties.png)
+![](/img/2017/09/aws-s3-properties.png)
 
 You can also have rather fine grained control over access permissions. But, again, we'll accept the defaults and simply press the <kbd class="bg-primary nobreak">Next</kbd> button.
 
-![]({{ site.baseurl }}/static/img/2017/09/aws-s3-permissions.png)
+![](/img/2017/09/aws-s3-permissions.png)
 
 Finally review your choices and if everything is at it should be then press the <kbd class="bg-primary nobreak">Create bucket</kbd> button.
 
-![]({{ site.baseurl }}/static/img/2017/09/aws-s3-review.png)
+![](/img/2017/09/aws-s3-review.png)
 
 The newly created bucket should then appear on your bucket list (this is the *other* type of bucket list!).
 

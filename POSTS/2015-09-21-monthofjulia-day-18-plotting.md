@@ -21,7 +21,7 @@ url: /2015/09/21/monthofjulia-day-18-plotting/
 
 <!--more-->
 
-<img src="{{ site.baseurl }}/static/img/2015/09/Julia-Logo-Plotting.png">
+<img src="/img/2015/09/Julia-Logo-Plotting.png">
 
 There's a variety of options for [plotting in Julia](https://en.wikibooks.org/wiki/Introducing_Julia/Plotting). We'll focus on those provided by [`Gadfly`](http://www.gadflyjl.org/), [`Bokeh`](https://github.com/bokeh/Bokeh.jl) and [`Plotly`](http://github.com/plotly/Plotly.jl) and.
 
@@ -29,30 +29,30 @@ There's a variety of options for [plotting in Julia](https://en.wikibooks.org/wi
 
 Gadfly is the flavour of the month for plotting in Julia. It's based on the [Grammar of Graphics](http://www.springer.com/us/book/9780387245447), so users of [ggplot2](http://ggplot2.org/) should find it familiar.
 
-[<img src="{{ site.baseurl }}/static/img/2015/08/gadfly-logo.svg">](http://www.gadflyjl.org/)
+[<img src="/img/2015/08/gadfly-logo.svg">](http://www.gadflyjl.org/)
 
 To start using Gadfly we'll first need to load the package. To enable generation of PNG, PS, and PDF output we'll also want the [`Cairo`](http://github.com/JuliaLang/Cairo.jl) package.
 
 {{< highlight julia >}}
 julia> using Gadfly
 julia> using Cairo
-{{< / highlight >}}
+{{< /highlight >}}
 
 You can easily generate plots from data vectors or functions.
 
 {{< highlight julia >}}
 julia> plot(x = 1:100, y = cumsum(rand(100) - 0.5), Geom.point, Geom.smooth)
 julia> plot(x -> x^3 - 9x, -5, 5)
-{{< / highlight >}}
+{{< /highlight >}}
 
 Gadfly plots are by default rendered onto a new tab in your browser. These plots are mildly interactive: you can zoom and pan across the plot area. You can also save plots directly to files of various formats.
 
 {{< highlight julia >}}
 julia> dampedsin = plot([x -> sin(x) / x], 0, 50)
 julia> draw(PNG("damped-sin.png", 800px, 400px), dampedsin)
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2015/09/damped-sin.png">
+<img src="/img/2015/09/damped-sin.png">
 
 Let's load up some data from the `nlschools` dataset in R's `MASS` package and look at the relationship between language score test and IQ for pupils broken down according to whether or not they are in a mixed-grade class.
 
@@ -60,9 +60,9 @@ Let's load up some data from the `nlschools` dataset in R's `MASS` package and l
 julia> using RDatasets
 julia> plot(dataset("MASS", "nlschools"), x="IQ", y="Lang", color="COMB",
             Geom.point, Geom.smooth(method=:lm), Guide.colorkey("Multi-Grade"))
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2015/09/nlschools.png">
+<img src="/img/2015/09/nlschools.png">
 
 Those two examples just scratched the surface. Gadfly can produce histograms, boxplots, ribbon plots, contours and violin plots. There's detailed documentation with numerous examples on the [homepage](http://www.gadflyjl.org/).
 
@@ -78,7 +78,7 @@ The first thing you'll need to do is install the Bokeh library. If you already h
 
 {{< highlight julia >}}
 $ pip install bokeh
-{{< / highlight >}}
+{{< /highlight >}}
 
 Next load up the package and generate a simple plot.
 
@@ -89,11 +89,11 @@ julia> x = linspace(0, pi);
 julia> y = cos(2 * x);
 julia> plot(x, y, title = "Cosine")
 Plot("Cosine" with 1 datacolumns)
-{{< / highlight >}}
+{{< /highlight >}}
 
 The plot will be written to a file `bokeh_plot.html` in the working directory, which will in turn be opened by the browser. Use `plotfile()` to change the name of the file. The plot is interactive, with functionality to pan and zoom as well as resize the plot window.
 
-<img src="{{ site.baseurl }}/static/img/2015/09/bokeh-plot.png">
+<img src="/img/2015/09/bokeh-plot.png">
 
 ## Plotly
 
@@ -101,7 +101,7 @@ The [`Plotly`](https://plot.ly/julia/) package provides a complete interface to 
 
 {{< highlight julia >}}
 using Plotly
-{{< / highlight >}}
+{{< /highlight >}}
 
 Next you should set up your plot.ly credentials using `Plotly.set_credentials_file()`. You only need to do this once because the values will be cached.
 
@@ -111,7 +111,7 @@ Data series are stored in Julia dictionaries.
 julia> p1 = ["x" => 1:10, "y" => rand(0:20, 10), "type" => "scatter", "mode" => "markers"];
 julia> p2 = ["x" => 1:10, "y" => rand(0:20, 10), "type" => "scatter", "mode" => "lines"];
 julia> p3 = ["x" => 1:10, "y" => rand(0:20, 10), "type" => "scatter", "mode" => "lines+markers"];
-{{< / highlight >}}
+{{< /highlight >}}
 
 {{< highlight julia >}}
 julia> Plotly.plot([p1, p2, p3], ["filename" => "basic-line", "fileopt" => "overwrite"])
@@ -121,19 +121,19 @@ Dict{String,Any} with 5 entries:
   "warning"  => ""
   "filename" => "basic-line"
   "url"      => "https://plot.ly/~collierab/17"
-{{< / highlight >}}
+{{< /highlight >}}
 
 You can either open the URL provided in the result dictionary or do it programatically:
 
 {{< highlight julia >}}
 julia> Plotly.openurl(ans["url"])
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2015/09/plotly-scatter.png">
+<img src="/img/2015/09/plotly-scatter.png">
 
 By making small jumps through similar hoops it's possible to create some rather intricate visualisations like the 3D scatter plot below. For details of how that was done, check out my code on [github](https://github.com/DataWookie/MonthOfJulia).
 
-<img src="{{ site.baseurl }}/static/img/2015/09/plotly-3d-scatter.png">
+<img src="/img/2015/09/plotly-3d-scatter.png">
 
 That was a static version of the plot. However, one of the major perks of Plotly is that the plots are interactive. Plus you can embed them in your site and it will, in turn, benefit from the interactivity. Feel free to interact vigorously with the plot below.
 

@@ -25,7 +25,7 @@ There is already one categorical field in the data representing gender. However,
 7 41481      1  21  77.9  1.827 23.33782
 > unique(DS0012$gender)
 [1] 2 1
-{{< / highlight >}}
+{{< /highlight >}}
 
 Reference to the excellent codebook accompanying the data reveals that one should interpret 1 as male and 2 as female. We can make things a little more transparent by converting this field to a factor and introducing appropriate labels.
 
@@ -39,7 +39,7 @@ Reference to the excellent codebook accompanying the data reveals that one shoul
 5 41479      M  52  65.7  1.544 27.55946
 6 41480      M   6  27.0  1.227 17.93390
 7 41481      M  21  77.9  1.827 23.33782
-{{< / highlight >}}
+{{< /highlight >}}
 
 That's better! Next we introduce a new categorical field which indicates age group. The boundaries between these fields are somewhat arbitrary (and might be rather politically incorrect), but they more or less make sense. Note that respondents above the age of 80 had their ages simply coded as 80.
 
@@ -60,7 +60,7 @@ That's better! Next we introduce a new categorical field which indicates age gro
 5 41479      M  52  65.7  1.544 27.55946       mature
 6 41480      M   6  27.0  1.227 17.93390        child
 7 41481      M  21  77.9  1.827 23.33782        adult
-{{< / highlight >}}
+{{< /highlight >}}
 
 Finally we introduce [BMI](http://en.wikipedia.org/wiki/Body_mass_index) categories. These are rather broad categories, but will suffice for our analysis.
 
@@ -72,7 +72,7 @@ Finally we introduce [BMI](http://en.wikipedia.org/wiki/Body_mass_index) catego
 #
 DS0012$BMI.category <- cut(DS0012$BMI, breaks = c(0, 18.5, 25, 30, 100),
 labels = c("underweight", "normal", "overweight", "obese"))
-{{< / highlight >}}
+{{< /highlight >}}
 
 This is what the final data look like
 
@@ -85,6 +85,6 @@ This is what the final data look like
 5 41479      M  52  65.7  1.544 27.55946       mature   overweight
 6 41480      M   6  27.0  1.227 17.93390        child  underweight
 7 41481      M  21  77.9  1.827 23.33782        adult       normal
-{{< / highlight >}}
+{{< /highlight >}}
 
 Next installment: some descriptive statistics.

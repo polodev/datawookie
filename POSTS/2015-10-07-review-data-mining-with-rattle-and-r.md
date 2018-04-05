@@ -17,7 +17,7 @@ url: /2015/10/07/review-data-mining-with-rattle-and-r/
 
 <!--more-->
 
-<img src="{{ site.baseurl }}/static/img/2015/10/data-mining-with-rattle-and-R.jpg">
+<img src="/img/2015/10/data-mining-with-rattle-and-R.jpg">
 
 I read [Data Mining with Rattle and R](http://www.springer.com/us/book/9781441998897) by Graham Williams over a year ago. It's not a new book and I've just been tardy in writing up a review. That's not to say that I have not used the book in the interim: it's been on my desk at work ever since and I've dipped into it from time to time. As a reference for ongoing analyses it's an extremely helpful resource.
 
@@ -81,10 +81,10 @@ Rattle: A free graphical interface for data mining with R.
 Version 4.0.0 Copyright (c) 2006-2015 Togaware Pty Ltd.
 Type 'rattle()' to shake, rattle, and roll your data.
 > rattle()
-{{< / highlight >}}
+{{< /highlight >}}
 
 The GUI looks pretty sleek. I did have hassles with some of the functionality in the beta version, so if you are going to give this a try I'd advise you to just install the version available at <a href="http://cran.mirror.ac.za/">CRAN</a>.
 
-<img src="{{ site.baseurl }}/static/img/2015/10/rattle-gui.jpg">
+<img src="/img/2015/10/rattle-gui.jpg">
 
 Wrapping things up, <a href="http://www.springer.com/us/book/9781441998897">Data Mining with Rattle and R</a> is not just about how to use Rattle to solve Data Mining problems. It also digs quite deep into a number of Data Mining and Machine Learning algorithms. As such it's also a pretty handy reference. If you are looking at a way of transitioning from a point-and-click style analysis to R, then I think that installing Rattle and getting hold of a copy of this book would be a good place to start. I think that the key thing to consider with regards to this book is that it does not set out to be an encyclopaedia on Machine Learning. It's focus is on using Rattle (and in the process it provides the necessary background information).

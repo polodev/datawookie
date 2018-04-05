@@ -26,6 +26,6 @@ nrow = 26, dimnames = list(LETTERS, LETTERS))
 adj = ifelse(adj == 1, runif(26**2), 0)
 chordDiagram(adj, transparency = 0.4, grid.col = "midnightblue",
              col = colorRamp2(seq(0, 1, 0.2), brewer.pal(6, "Blues")))
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2015/05/chord-diagram.png">
+<img src="/img/2015/05/chord-diagram.png">

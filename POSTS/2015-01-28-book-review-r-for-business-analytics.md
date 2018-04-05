@@ -15,7 +15,7 @@ url: /2015/01/28/book-review-r-for-business-analytics/
 
 The book [R for Business Analytics](http://www.springer.com/statistics/book/978-1-4614-4342-1) by Ajay Ohri sets out to look at "some of the most common tasks performed by business analysts and helps the user navigate the wealth of information in R and its 4000 packages." In my opinion it succeeds in covering an extensive range of topics but fails to provide anything of substantial use to its intended audience. At least, not anything that could not be uncovered by a brief internet search.
 
-<img src="{{ site.baseurl }}/static/img/2015/01/R-for-Business-Analytics.jpg" >
+<img src="/img/2015/01/R-for-Business-Analytics.jpg" >
 
 There is little detailed treatment of any particular topic related to Business Analytics. It is, at best, a high level overview of many of the capabilities of R. There is scant logical flow and the book appears to have been cobbled together from information readily available on the Internet. The editing is questionable and the code examples are poorly formatted. I also found the use of eponymous variable names in many of the code examples a little disturbing: is this really good practice? I don't think so.
 

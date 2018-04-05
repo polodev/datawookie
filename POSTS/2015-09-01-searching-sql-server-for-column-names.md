@@ -26,4 +26,4 @@ ON
 				tables.OBJECT_ID = columns.OBJECT_ID
 WHERE
 				columns.name like '%Default%';
-{{< / highlight >}}
+{{< /highlight >}}

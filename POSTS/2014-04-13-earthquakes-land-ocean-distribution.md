@@ -29,22 +29,22 @@ The next stage in my earthquake analysis project is to partition the events into
 18537 pde20070825220549600_10    land
 4428  pde20110214102127320_34   water
 16914 pde20110521220626390_37    land
-{{< / highlight >}}
+{{< /highlight >}}
 
 These data were then merged into the existing catalog using the id field.
 
 A quick sanity check at this point would be good.
 
-<img src="{{ site.baseurl }}/static/img/2014/04/earthquake-map-surface.png">
+<img src="/img/2014/04/earthquake-map-surface.png">
 
 That looks about right: a clear distinction between land and ocean events.
 
 Do the magnitude and depth of earthquakes on land differ significantly from those which occur under water? Looking at the plots below suggests that there is no qualitative difference.
 
-<img src="{{ site.baseurl }}/static/img/2014/04/earthquake-magnitude-surface.png">
+<img src="/img/2014/04/earthquake-magnitude-surface.png">
 
-<img src="{{ site.baseurl }}/static/img/2014/04/earthquake-depth-surface.png">
+<img src="/img/2014/04/earthquake-depth-surface.png">
 
-<img src="{{ site.baseurl }}/static/img/2014/04/earthquake-magnitude-depth-surface.png">
+<img src="/img/2014/04/earthquake-magnitude-depth-surface.png">
 
 Certainly it seems reasonable that an event happening deep beneath the surface of the Earth should not be affected by whether or not there is a (quite) thin layer of water on top! However, for my analysis of _secondary_ effects it is probably going to be rather significant. But more on that later.

@@ -37,7 +37,7 @@ Loading the data into R is then simple. Some small transformations are required 
 + })
 >
 > catalog <- catalog[, c(12, 16, 17, 1, 2:5, 14)]
-{{< / highlight >}}
+{{< /highlight >}}
 
 This is what the resulting data frame looks like:
 
@@ -50,7 +50,7 @@ This is what the resulting data frame looks like:
 4 usc000luwe 2013 2013-12-31 2013-12-31 20:01:06  19.1181  120.2719 10.95 5.7 77km NNW of Burgos, Philippines
 5 usb000m2ub 2013 2013-12-31 2013-12-31 13:55:02 -17.6528 -173.6869 15.38 5.0      114km NNE of Neiafu, Tonga
 6 usc000lumu 2013 2013-12-31 2013-12-31 08:36:30 -15.6555 -172.9340 31.82 5.1       93km ENE of Hihifo, Tonga
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Making the Charts
 
@@ -79,17 +79,17 @@ Time to generate those charts. There are lots of ways to make maps in R, I chose
 +         legend.text = element_text(size = 6),
 +         legend.title = element_text(size = 8, face = "plain"),
 +         panel.background = element_rect(fill='#D6E7EF'))
-{{< / highlight >}}
+{{< /highlight >}}
 
 The resulting plot gives the location of the earthquakes as points, with magnitudes indicated by the sizes of the points and depths given by their colour.
 
-<img src="{{ site.baseurl }}/static/img/2014/04/earthquake-map.png">
+<img src="/img/2014/04/earthquake-map.png">
 
 The Earth's tectonic plates are well defined by the numerous interplate earthquakes, and there is a liberal sprinkling of intreplate events as well.
 
 I made another chart showing the distribution of earthquakes broken down by year.
 
-<img src="{{ site.baseurl }}/static/img/2014/04/earthquake-map-panels.png">
+<img src="/img/2014/04/earthquake-map-panels.png">
 
 ## Distribution of Earthquake Magnitudes
 
@@ -101,8 +101,8 @@ ggplot(catalog, aes(x = mag)) +
   stat_bin(drop = TRUE, binwidth = 0.25) +
   scale_y_log10(breaks = c(1, 10, 100, 1000)) +
   theme_classic()
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2014/04/earthquake-magnitude-histogram.png">
+<img src="/img/2014/04/earthquake-magnitude-histogram.png">
 
 Very nice: consistent with a power law, as described by the [Gutenberg–Richter law](http://en.wikipedia.org/wiki/Gutenberg%E2%80%93Richter_law).

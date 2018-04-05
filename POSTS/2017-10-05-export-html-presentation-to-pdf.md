@@ -28,7 +28,7 @@ If you have your presentation hosted online, say at `http://www.example.com/pres
 
 {{< highlight bash >}}
 $ docker run --rm -v `pwd`:/slides astefanutti/decktape http://www.example.com/presentation slides.pdf
-{{< / highlight >}}
+{{< /highlight >}}
 
 ### Presentation Hosted Locally
 
@@ -36,7 +36,7 @@ If you are hosting the presentation locally then you can also do this:
 
 {{< highlight bash >}}
 $ docker run --rm --net=host -v `pwd`:/slides astefanutti/decktape http://localhost:8000 slides.pdf
-{{< / highlight >}}
+{{< /highlight >}}
 
 But it will only work if *everything* is hosted locally (all of the CSS, Javascript etc.).
 
@@ -52,4 +52,4 @@ I initially found that some images would be misplaced in the resulting PDF. The 
 
 {{< highlight bash >}}
 $ docker run --rm -v `pwd`:/slides astefanutti/decktape -s 1920x1080 http://www.example.com/presentation slides.pdf
-{{< / highlight >}}
+{{< /highlight >}}

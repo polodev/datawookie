@@ -13,4 +13,4 @@ This infographic, which looks at the overlap between Web Dev and Data Science, a
 
 <!--more-->
 
-<img src="{{ site.baseurl }}/static/img/2017/05/web-dev-to-data-science.png">
+<img src="/img/2017/05/web-dev-to-data-science.png">

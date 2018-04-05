@@ -24,13 +24,13 @@ I have just been trying to import some data into R. The data were exported from 
 4    60B8AA536CFD26C5B5CF5BA6D7B7893C  7811
 5    5A3BA8589DCD62B31948DC2715CA3ED9 12850
 6    3552BF8AF58A58C794A43D4AA21F4FBA 13284
-{{< / highlight >}}
+{{< /highlight >}}
 
 Those weird characters in the first record... where did they come from? They don't show up in a text editor, so they're not easy to edit out.
 
 Googling ensued and revealed that those weird characters were in fact the [byte order mark (BOM)](http://en.wikipedia.org/wiki/Byte_order_mark), special characters which indicate the endianness of the file. This was quickly confirmed using [CYGWIN](https://www.cygwin.com/). (Yes, shamefully, I am working under Windows at the moment!)
 
-<img src="{{ site.baseurl }}/static/img/2015/03/cygwin-bom.png">
+<img src="/img/2015/03/cygwin-bom.png">
 
 The solution is remarkably simple: just specify the correct character encoding.
 
@@ -44,6 +44,6 @@ The solution is remarkably simple: just specify the correct character encoding.
 4 60B8AA536CFD26C5B5CF5BA6D7B7893C  7811
 5 5A3BA8589DCD62B31948DC2715CA3ED9 12850
 6 3552BF8AF58A58C794A43D4AA21F4FBA 13284
-{{< / highlight >}}
+{{< /highlight >}}
 
 Problem solved.

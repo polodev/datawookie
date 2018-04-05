@@ -48,7 +48,7 @@ Addresses can be represented as a number in base 58:
 
 The difficulty changes dynamically to ensure that a new block is only mined roughly every 13 seconds.
 
-<a href="https://etherscan.io/chart/blocktime"><img src="{{ site.baseurl }}/static/img/2017/12/ethereum-block-mining-time.png" /></a>
+<a href="https://etherscan.io/chart/blocktime"><img src="/img/2017/12/ethereum-block-mining-time.png" /></a>
 
 ## Resources
 

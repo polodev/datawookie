@@ -25,7 +25,7 @@ Create an `.Renviron` file with the following contents:
 {{< highlight r >}}
 R_LIBS_USER="H:/myCitrixFiles/Documents/R/win-library/3.2"
 R_USER="H:/myCitrixFiles/Documents"
-{{< / highlight >}}
+{{< /highlight >}}
 
 Your choice of folders might be slightly different (especially if you are using a different version of R!), but it should be essentially the same as that above.
 
@@ -36,7 +36,7 @@ Of course, it's important that RStudio can _find_ your `.Renviron` file. By defa
 {{< highlight r >}}
 > Sys.getenv("HOME")
 > Sys.getenv("R_USER")
-{{< / highlight >}}
+{{< /highlight >}}
 
 The result of both commands should be the same, probably a `Documents` folder on the `C:` drive. This is where you need to stash your `.Renviron` file.
 
@@ -48,4 +48,4 @@ To change your initial working folder to `H:`, your `.Rprofile` would look like 
 
 {{< highlight r >}}
 setwd("H:")
-{{< / highlight >}}
+{{< /highlight >}}

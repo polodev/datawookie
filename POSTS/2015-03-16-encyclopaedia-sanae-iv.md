@@ -11,7 +11,7 @@ url: /2015/03/16/encyclopaedia-sanae-iv/
 
 A contribution which I wrote for [Antarctica and the Arctic Circle: A Geographic Encyclopedia of the Earth's Polar Regions](http://www.amazon.com/gp/product/B00OD83J44/).
 
-<img src="{{ site.baseurl }}/static/img/2015/03/sanae-iv-A.jpg">
+<img src="/img/2015/03/sanae-iv-A.jpg">
 
 South Africa is one of the founding signatories of the Antarctic Treaty of 1959. In 1960, the first South African National Antarctic Expedition (SANAE) team overwintered at the Norwegian base on the Fimbul Ice Shelf. A new base, SANAE I, was constructed nearby (70° 18′S 2° 22′W) and opened in 1962. Later bases, SANAE II and SANAE III, were built on the same location (72° 40′ 22″S 2° 50′ 26″W) and commissioned in 1971 and 1979 respectively. SANAE I and II were simple wooden structures with a limited life span. SANAE III was more robust, housed in horizontal corrugated steel cylinders. However, as SANAE III disappeared beneath the accumulating snow, it was subjected to crushing pressure and ultimately abandoned in 1994. The current South African research station, SANAE IV (72° 40′ 22″S 2° 50′ 26″W), is located in the Norwegian territorial claim of Queen Maud Land, some 90 miles (150 km) from the edge of the ice shelf. In contrast to earlier bases, which were built on the ice shelf, SANAE IV is perched at an altitude of 2,800 ft. (850 m) above sea level on top of the sloping plateau of Vesleskarvet, an isolated nunatak on the edge of the Ahlmann mountain range.
 
@@ -23,7 +23,7 @@ The base is powered by three 250 kW diesel generators. The internal temperature 
 
 SANAE IV can accommodate around 80 people during the summer relief period and up to 18 overwintering team members. The overwintering team typically consists of two or three scientists, a meteorologist, two diesel mechanics, electronic, electrical and mechanical engineers, and a doctor.
 
-<img src="{{ site.baseurl }}/static/img/2015/03/sanae-iv-B.jpg">
+<img src="/img/2015/03/sanae-iv-B.jpg">
 
 It is possible to fly from Cape Town to a blue ice runway near SANAE IV, but the costs are prohibitively high. Personnel, supplies, and equipment normally reach SANAE IV by sea. The annual relief voyage departs from Cape Town around the beginning of December every year and returns toward the end of February the following year. The SA Agulhas, the ship that has serviced SANAE bases since 1978, was replaced by the new SA Agulhas II in 2012. Once the supply ship reaches the ice shelf, personnel and sensitive equipment are airlifted to the base by helicopter, while the remaining cargo is transported over land by caterpillar train.
 

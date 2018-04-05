@@ -21,7 +21,7 @@ Error:   Summary: UnknownError
    class: java.lang.OutOfMemoryError
    Further Details: run errorDetails method
 Execution halted
-{{< / highlight >}}
+{{< /highlight >}}
 
 Clearly Java a memory issue.
 
@@ -29,6 +29,6 @@ Since the Selenium server is being launched from within R, I did not have direct
 
 {{< highlight bash >}}
 $ export _JAVA_OPTIONS="-Xmx1g"
-{{< / highlight >}}
+{{< /highlight >}}
 
 The scraper is now chugging along happily and I'm moving on with my day.

@@ -17,7 +17,7 @@ url: /2015/09/15/monthofjulia-day-14-data/
 
 <!--more-->
 
-<img src="{{ site.baseurl }}/static/img/2015/09/Julia-Logo-DataFrame.png" >
+<img src="/img/2015/09/Julia-Logo-DataFrame.png" >
 
 ## DataFrames
 
@@ -27,7 +27,7 @@ I'm assuming that you've already installed the [DataFrames](http://dataframesjl.
 
 {{< highlight julia >}}
 julia> using DataFrames
-{{< / highlight >}}
+{{< /highlight >}}
 
 Next we can start assembling our data. A `DataFrame` can be built up one field at a time (as is done in the example below) or by passing all of the data at once to the constructor.
 
@@ -44,7 +44,7 @@ julia> people
 | 2   | "Claire" | 1      | 35  |
 | 3   | "Bob"    | 0      | 27  |
 | 4   | "Alice"  | 1      | 32  |
-{{< / highlight >}}
+{{< /highlight >}}
 
 `names()` and `eltypes()` provide a high level overview of the data, giving the names and data types respectively for each column.
 
@@ -59,7 +59,7 @@ julia> eltypes(people)
  ASCIIString
  Int64
  Int64
-{{< / highlight >}}
+{{< /highlight >}}
 
 You can dig deeper with `describe()`, which gives a simple statistical summary of each column. It does essentially the same thing as `summary()` in R.
 
@@ -85,7 +85,7 @@ julia> people[1,:]
 | Row | name     | gender | age |
 |-----|----------|--------|-----|
 | 1   | "Andrew" | 0      | 43  |
-{{< / highlight >}}
+{{< /highlight >}}
 
 You can apply a range of operations to columns. Note, however, that there is a subtle difference in syntax: while `==` is the normal equality operator, `.==` is the element-wise equality operator which must be applied to columns in order to make element-by-element comparisons. A similar syntax pertains to other operators like `.<=` and `.>`.
 
@@ -111,7 +111,7 @@ julia> people[:age] .<= 40
  true
  true
  true
-{{< / highlight >}}
+{{< /highlight >}}
 
 Of course you're not likely to construct any serious collection of data manually. It's more likely to come from a database or file. There are various ways to accomplish this. The simplest is reading from a delimited file.
 
@@ -128,7 +128,7 @@ julia> passwd[1:5,:]
 | 3   | "bin"    | "x"    | 2   | 2     | "bin"    | "/bin"      | "/usr/sbin/nologin" |
 | 4   | "sys"    | "x"    | 3   | 3     | "sys"    | "/dev"      | "/usr/sbin/nologin" |
 | 5   | "sync"   | "x"    | 4   | 65534 | "sync"   | "/bin"      | "/bin/sync"         |
-{{< / highlight >}}
+{{< /highlight >}}
 
 Note how `names!()` was used to alter the column names. There are other ways of loading data from a delimited text file that will handle column names more elegantly. We'll get to those in a few days time.
 
@@ -152,7 +152,7 @@ julia> x = @data([1, 2, 3, 4, NA, 6])
  4
  NA
  6
-{{< / highlight >}}
+{{< /highlight >}}
 
 Functions `anyna()` and `allna()` can be used to test whether any or all of the elements of a vector are missing.
 
@@ -174,7 +174,7 @@ julia> convert(Array, x, -1)
  4
  -1
  6
-{{< / highlight >}}
+{{< /highlight >}}
 
 Data frames have support for NAs already baked in.
 
@@ -192,7 +192,7 @@ julia> mean(people[:age])
 NA
 julia> mean(dropna(people[:age]))
 34.0
-{{< / highlight >}}
+{{< /highlight >}}
 
 Note how `dropna()` was used to calculate the mean of the non-missing data.
 
@@ -214,7 +214,7 @@ julia> @select(people, :gender)
 | 2   | 'F'    |
 | 3   | 'M'    |
 | 4   | 'F'    |
-{{< / highlight >}}
+{{< /highlight >}}
 
 Further examples can be found on the [github](https://github.com/DataWookie/MonthOfJulia) page for MonthOfJulia.
 

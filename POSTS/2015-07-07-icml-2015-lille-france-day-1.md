@@ -52,7 +52,7 @@ and
 
 Clearly for both examples the meaning of "it" in the second sentence depends on a deeper understanding of the situation being described and cannot be extracted from the text alone. The [Winograd Schema Challenge](https://en.wikipedia.org/wiki/Winograd_Schema_Challenge) is an alternative to the Turing Test which attempts to indentify machine intelligence based on the resolution of anaphora.
                 
-<img src="{{ site.baseurl }}/static/img/2015/07/dog_chasing_cat_up_tree.png" width="100%">
+<img src="/img/2015/07/dog_chasing_cat_up_tree.png" width="100%">
 
 Percy quoted John Rupert Firth:
 

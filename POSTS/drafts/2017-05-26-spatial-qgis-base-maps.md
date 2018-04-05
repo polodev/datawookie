@@ -16,7 +16,7 @@ One of the first questions I had when starting firing up QGIS was: How do I crea
 
 First grab a suitable basemap by selecting <span class="menu">Web | OpenLayers plugin | Google Maps | Google Streets</span>. You can equally well choose one of the other options from Google Maps or even a different provider of maps. Just get your hands on whatever map suits your needs. Then zoom in on the area of interest.
 
-<img src="{{ site.baseurl }}/static/img/2017/05/qgis-openlayers-basemap.png">
+<img src="/img/2017/05/qgis-openlayers-basemap.png">
 
 Now save using <span class="menu">Project | Save as Image</span>. Select a suitable name and image format. There's a host of options for the latter. If you are going to be creating just a single image then PNG might be a good option. However, if you are going to be creating multiple images with the possibility of merging them later, then you'll definitely want to go with TIFF.
 

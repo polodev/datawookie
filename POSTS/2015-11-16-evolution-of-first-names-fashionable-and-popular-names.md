@@ -23,15 +23,15 @@ Names like Fannie, Mabel, Clarence and Fred were in vogue at the end of the nine
 
 Some names fade regularly in and out of fashion, while others are popular for only a short interval before disappearing completely. These are likely to be rather good indicators of age. The plot below shows the number of times some names were assigned over the years from 1880 to the present day. The names considered were selected to illustrate how fickle naming fashions can be. For example, Ashley and Jessica became popular in the 1980s, but their popularity was short lived and by the late 1990s they were seldom used. Similarly, Jason was briefly a fashionable boys' name in the 1970s, while Brian enjoyed popularity for around three decades, reaching a peak in the 1970s.
 
-<img src="{{ site.baseurl }}/static/img/2015/11/flash-pan-names.png">
+<img src="/img/2015/11/flash-pan-names.png">
 
 Which names have been the most popular over the last century? John was consistently the leading boys' name from 1880 through to the early 1920s. Robert then rose to first place, reigning for more than a decade before James took over. James was followed by Michael from the 1960s until 1999, when it was replaced by Jacob. In 2013 Noah rose to the top of the heap.
 
-<img src="{{ site.baseurl }}/static/img/2015/11/name-year-heatmap-M.png">
+<img src="/img/2015/11/name-year-heatmap-M.png">
 
 Among girls' names, Mary reigned for even longer than John, occupying the top spot from 1880 until 1946, when it was supplanted by Linda. Linda was only on top for six years before Mary reclaimed first place until the early 1960s. Lisa, Jennifer, Jessica, Ashley, Emily, Isabella and Sophia in turn were subsequently the most popular girls' names. Emma, popular at the end of the nineteenth century, faded in popularity during the twentieth century, but has staged a resurgence over the last two decades. In the last few years Emma has been battling it out at the top with Isabella and Sophia.
 
-<img src="{{ site.baseurl }}/static/img/2015/11/name-year-heatmap-F.png">
+<img src="/img/2015/11/name-year-heatmap-F.png">
 
 So much for the popular names. What about the more unusual names? Rocket has been used for about 100 boys since the turn of the new millennium. The number of boys named Jedi now exceeds 50 and there have been a few boys named Thunder every year since the 1970s. There have been more than 2000 girls named Tequila and there are also now a smattering of girls named Leeloo. Nirvana, which is a niche girls name, has slowly been gathering popularity since the 1970s. Interestingly there was a handful of boys named Excel in 1922 (clearly not the same Excel!). Rogue, which was a rare boys name back in the 1930s, is now being used in increasing numbers for both genders. These are just a few that stand out. There are a horde of other esoteric names being used.
 
@@ -51,7 +51,7 @@ Names of precious gems and a few metals have also been used as given names. Ruby
 <a href="http://162.243.184.248/wp-content/uploads/2015/11/opulent-names-states.png"><img src="http://162.243.184.248/wp-content/uploads/2015/11/opulent-names-states-1024x939.png" alt="opulent-names-states" width="100%" class="aligncenter size-large wp-image-2854" srcset="http://162.243.184.248/wp-content/uploads/2015/11/opulent-names-states-1024x939.png 1024w, http://162.243.184.248/wp-content/uploads/2015/11/opulent-names-states-300x275.png 300w, http://162.243.184.248/wp-content/uploads/2015/11/opulent-names-states-768x704.png 768w, http://162.243.184.248/wp-content/uploads/2015/11/opulent-names-states-1200x1100.png 1200w, http://162.243.184.248/wp-content/uploads/2015/11/opulent-names-states.png 1440w" sizes="(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 1362px) 62vw, 840px" /></a>
 -->
 
-Deeper insight into the use of names of locations and valuables can be gained from the plots [here]({{ site.baseurl }}/static/img/2015/11/city-names-states.png) and [here]({{ site.baseurl }}/static/img/2015/11/opulent-names-states.png) respectively.
+Deeper insight into the use of names of locations and valuables can be gained from the plots [here](/img/2015/11/city-names-states.png) and [here]({{ site.baseurl }}/static/img/2015/11/opulent-names-states.png) respectively.
 
 Returning to the first plot in the article, you might have wondered why there is a flat line in the Male column for Ashley. Similarly, why is there a flat line in the Female column for Jason? This is rather interesting. At times, according to the data, these names have also been used for the “other” gender. Those lines are not entirely flat: the peaks are just rather small relative to the peaks for the “normal” gender. For example, Ashley has been used as a boys' name too, with usage extending from the 1970s to the 1990s and peaking at a count of around 750 in 1980. The timing of the peak is roughly the same as that for Female Ashleys, but around 75 times smaller. In 1934 there were 170 boys named Betty, while in 1989 there were 252 boys named Jessica. Quite surprising! Conversely, traditionally boys' names used for girls: there were 10 girls named Jason in 2010 and 174 named Donald in 1930. The data come with some caveats regarding names mistakenly assigned to the wrong gender. So it's quite possible that these anomalies are the results of data artefacts. On the other hand, given their relative prevalence, it's also possible that they are valid.
 

@@ -20,13 +20,13 @@ Well, suppose that it takes me 3 minutes from the gun to get across the starting
 
 I arrived at these figures using a [pacing spreadsheet](http://162.243.184.248/wp-content/uploads/2015/04/comrades-pacing.xlsx). To get an idea of your pace requirements you will need to specify your goal time, the number of minutes you anticipate losing before crossing the start line and an estimate of how much you think you will slow down during the course of the race. This is done by editing the blue fields indicated in the image below. The rest of the spreadsheet will update on the basis of your selections.
 
-<img src="{{ site.baseurl }}/static/img/2014/05/pace-calc-1.png" >
+<img src="/img/2014/05/pace-calc-1.png" >
 
 The spreadsheet uses a simple linear model which assumes that your pace will gradually decline at the rate you have specified. If you give 0% for your slowing down percentage then the calculations are performed on the basis of a uniform pace throughout the race. Of course, neither the linear model nor a uniform pace are truly realistic. We all know that our pace will vary continuously throughout the race as a function of congestion, topography, hydration, fatigue, motivation and all of the other factors which come into play. However, as noted by the eminent statistician [George Box](https://en.wikipedia.org/wiki/George_E._P._Box "George Box") "all models are wrong, but some are useful". In this case the linear model is a useful way to account for the effects of fatigue.
 
 The spreadsheet will give you an indication of the splits (both relative to the start of the race as well as time of day) and pace (instantaneous and average) required to achieve your goal time. There are also a pair of charts which will be updated with your projected timing and pace information.
 
-<img src="{{ site.baseurl }}/static/img/2014/05/pace-calc-2.png" >
+<img src="/img/2014/05/pace-calc-2.png" >
 
 My plan on race day is to run according to my average pace. This works well because it smooths out all the perturbations associated with tables and walking breaks.
 

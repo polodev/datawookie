@@ -38,7 +38,7 @@ The edges data frame consists of records with a "from" node (N1) and a "to" node
 7  B1 C2 2.8756
 9  C1 A2 4.5099
 10 C1 B2 4.1782
-{{< / highlight >}}
+{{< /highlight >}}
 
 The names of the nodes are then extracted from the edge data frame. Horizontal and vertical locations for the nodes are calculated based on the labels. These locations are not strictly necessary because the package will work out sensible default values for you.
 
@@ -57,7 +57,7 @@ C1 C1 1 2
 D1 D1 1 3
 A2 A2 2 0
 B2 B2 2 1
-{{< / highlight >}}
+{{< /highlight >}}
 
 Finally we construct a list of styles which will be applied to each node. It's important to choose suitable colours and introduce transparency for overlaps (which is done here by pasting "60" onto the RGB strings).
 
@@ -70,7 +70,7 @@ Finally we construct a list of styles which will be applied to each node. It's i
 +   list(col = palette[n+1], lty = 0, textcol = "black")
 + })
 > names(styles) = nodes$ID
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Constructing the riverplot Object
 
@@ -82,15 +82,15 @@ Now we are in a position to construct the riverplot object. We do this by joinin
 > rp <- list(nodes = nodes, edges = edges, styles = styles)
 > #
 > class(rp) <- c(class(rp), "riverplot")
-{{< / highlight >}}
+{{< /highlight >}}
 
 Producing the plot is then simple.
 
 {{< highlight r >}}
 > plot(rp, plot_area = 0.95, yscale=0.06)
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2014/08/riverplot-example.png">
+<img src="/img/2014/08/riverplot-example.png">
 
 ## Conclusion
 

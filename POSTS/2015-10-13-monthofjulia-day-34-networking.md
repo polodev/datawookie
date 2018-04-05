@@ -19,7 +19,7 @@ url: /2015/10/13/monthofjulia-day-34-networking/
 
 <!--more-->
 
-<img src="{{ site.baseurl }}/static/img/2015/09/Julia-Logo-Networking.png" >
+<img src="/img/2015/09/Julia-Logo-Networking.png" >
 
 Today's post is a mashup of various things relating to networking with Julia. We'll have a look at FTP transfers, HTTP requests and using the Twitter API.
 
@@ -44,7 +44,7 @@ Host:      ftp://speedtest.tele2.net/
 User:      anonymous
 Transfer:  passive mode
 Security:  None
-{{< / highlight >}}
+{{< /highlight >}}
 
 Grab a list of files available for download.
 
@@ -69,14 +69,14 @@ julia> readdir(ftp)
  "512KB.zip"
  "5MB.zip"
  "upload"
-{{< / highlight >}}
+{{< /highlight >}}
 
 This site (as its name would imply) has the sole purpose of conducting speed tests. So the content of those files is not too interesting. But that's not going to stop me from downloading one.
 
 {{< highlight julia >}}
 julia> binary(ftp) # Change transfer mode to BINARY
 julia> download(ftp, "1KB.zip", "local-1KB.zip");
-{{< / highlight >}}
+{{< /highlight >}}
 
 Generally anonymous FTP sites do not allow uploads, but this site is an exception. We'll test that out too.
 
@@ -84,14 +84,14 @@ Generally anonymous FTP sites do not allow uploads, but this site is an exceptio
 julia> cd(ftp, "upload")
 julia> ascii(ftp) # Change transfer mode to ASCII
 julia> upload(ftp, "papersize", open("/etc/papersize"));
-{{< / highlight >}}
+{{< /highlight >}}
 
 Close the connection when you're done.
 
 {{< highlight julia >}}
 julia> ftp_cleanup()
 julia> close(ftp);
-{{< / highlight >}}
+{{< /highlight >}}
 
 Okay, I'm over the historical reminiscences now. Onto something more current.
 
@@ -104,7 +104,7 @@ First we'll use a GET request to retrieve information from [Google Books](https:
 {{< highlight julia >}}
 julia> r1 = get("https://www.googleapis.com/books/v1/volumes";
                 query = {"q" => "isbn:178328479X"});
-{{< / highlight >}}
+{{< /highlight >}}
 
 We check that everything went well with the request: the status code of 200 indicates that it was successful. The request headers provide some additional metadata.
 
@@ -131,7 +131,7 @@ Dict{AbstractString,AbstractString} with 18 entries:
   "Content-Type" => "application/json; charset=UTF-8"
   "X-Frame-Options" => "SAMEORIGIN"
   "Content-Language" => "en"
-{{< / highlight >}}
+{{< /highlight >}}
 
 The actual content is found in the JSON payload which is stored as an array of unsigned bytes in the `data` field. We can have a look at the text content of the payload using `Requests.text()`, but accessing fields in these data is done via `Requests.json()`. Finding the data you're actually looking for in the resulting data structure may take a bit of trial and error.
 
@@ -157,7 +157,7 @@ Dict{AbstractString,Any} with 17 entries:
   "pageCount" => 214
   "authors" => Any["Ivo Balbaert"]
   "maturityRating" => "NOT_MATURE
-{{< / highlight >}}
+{{< /highlight >}}
 
 We see that the book in question was written by Ivo Balbaert and entitled "[Getting Started with Julia Programming Language](https://www.packtpub.com/application-development/getting-started-julia-programming)". It was published by Packt Publishing earlier this year. It's a pretty good book, well worth checking out.
 
@@ -167,7 +167,7 @@ If the payload is not JSON then we process the data differently. For example, af
 julia> URL = "https://www.quandl.com/api/v1/datasets/EPI/8.csv";
 julia> using DataFrames
 julia> population = readtable(IOBuffer(get(URL).data), separator = ',', header = true);
-{{< / highlight >}}
+{{< /highlight >}}
 
 {{< highlight julia >}}
 julia> names!(population, [symbol(i) for i in ["Year", "Industrial", "Developing"]]);
@@ -181,7 +181,7 @@ julia> head(population)
 | 4   | "2097-01-01" | 1331.54    | 8777.6     |
 | 5   | "2096-01-01" | 1330.43    | 8772.83    |
 | 6   | "2095-01-01" | 1329.32    | 8767.78    |
-{{< / highlight >}}
+{{< /highlight >}}
 
 Of course, as we saw on [Day 15](http://www.exegetic.biz/blog/2015/09/monthofjulia-day-15-time-series/), if you're going to access data from Quandl it would make more sense to use the [Quandl package](https://github.com/milktrader/Quandl.jl).
 
@@ -194,7 +194,7 @@ julia> Requests.json(r3)
 Dict{AbstractString,Any} with 2 entries:
   "count" => 2639
   "url" => "http://julialang.org/"
-{{< / highlight >}}
+{{< /highlight >}}
 
 The JSON payload has an element `count` which indicates that to date that URL has been included in 2639 distinct tweets.
 
@@ -209,7 +209,7 @@ julia> consumer_secret = ENV["CONSUMER_SECRET"];
 julia> oauth_token = ENV["OAUTH_TOKEN"];
 julia> oauth_secret = ENV["OAUTH_SECRET"];
 julia> twitterauth(consumer_key, consumer_secret, oauth_token, oauth_secret)
-{{< / highlight >}}
+{{< /highlight >}}
 
 I'll take this opportunity to pander to my own vanity, looking at which of my tweets have been retweeted. To make sense of the results, convert them to a `DataFrame`.
 
@@ -239,7 +239,7 @@ julia> retweets[:, [:created_at, :text]]
 | 18  | "Wed Oct 07 16:04:56 +0000 2015" | "#MonthOfJulia Day 30: Clustering http://t.co/dh6AUqSqKe #julialang"                                              |
 | 19  | "Wed Oct 07 15:01:04 +0000 2015" | "#MonthOfJulia Day 30: Clustering http://t.co/IEm60jRNYp http://t.co/tn9iZ65L4j"                                  |
 | 20  | "Wed Oct 07 00:34:48 +0000 2015" | "What is Hadoop? Great Infographics Explains How it Works http://t.co/36Cm2raL1w #visualization #infographics"    |
-{{< / highlight >}}
+{{< /highlight >}}
 
 You can have a lot of fun playing around with the features in the Twitter API. Trust me.
 

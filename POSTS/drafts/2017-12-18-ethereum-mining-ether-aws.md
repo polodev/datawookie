@@ -9,15 +9,15 @@ tags:
   - Ethereum
 ---
 
-{% comment %}
+{{< comment >}}
 https://hackernoon.com/how-to-mine-ethereum-in-5-min-3f3bc80d0c4b
-{% endcomment %}
+{{< /comment >}}
 
 A quick tutorial on setting up an Ether miner on AWS. It's not profitable, but it is an interesting exercise and lays a foundation for assembling a proper mining rig.
 
 <!-- more -->
 
-![]({{ site.baseurl }}/static/img/logo-ethereum.png)
+![](/img/logo-ethereum.png)
 
 ## Create a Wallet
 

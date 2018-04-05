@@ -14,4 +14,4 @@ url: /2016/09/21/xkcd-hand-sanitiser/
 
 <!--more-->
 
-<img src="{{ site.baseurl }}/static/img/2016/09/xkcd-1161-hand_sanitizer.png" >
+<img src="/img/2016/09/xkcd-1161-hand_sanitizer.png" >

@@ -41,7 +41,7 @@ Let's consider a simple implementation of a Log Loss function:
 + predicted = pmin(pmax(predicted, eps), 1-eps)
 + - (sum(actual * log(predicted) + (1 - actual) * log(1 - predicted))) / length(actual)
 + }
-{{< / highlight >}}
+{{< /highlight >}}
   
 Suppose that we are training a binary classifier and consider an instance which is known to belong to the target class. We'll have a look at the effect of various predictions for class membership probability.
 
@@ -52,7 +52,7 @@ Suppose that we are training a binary classifier and consider an instance which 
 [1] 0.10536  
 > LogLossBinary(1, c(0.1))  
 [1] 2.3026
-{{< / highlight >}}
+{{< /highlight >}}
   
 In the first case the classification is neutral: it assigns equal probability to both classes, resulting in a Log Loss of 0.69315. In the second case the classifier is relatively confident in the first class. Since this is the correct classification the Log Loss is reduced to 0.10536. The third case is an equally confident classification, but this time for the wrong class. The resulting Log Loss escalates to 2.3026. Relative to the neutral classification, being confident in the wrong class resulted in a far greater change in Log Loss. Obviously the amount by which Log Loss can decrease is constrained, while increases are unbounded.
 
@@ -60,7 +60,7 @@ In the first case the classification is neutral: it assigns equal probability to
 
 Let's take a closer look at this relationship. The plot below shows the Log Loss contribution from a single positive instance where the predicted probability ranges from 0 (the completely wrong prediction) to 1 (the correct prediction). It's apparent from the gentle downward slope towards the right that the Log Loss gradually declines as the predicted probability improves. Moving in the opposite direction though, the Log Loss ramps up very rapidly as the predicted probability approaches 0. That's the twist I mentioned earlier.
 
-<img src="{{ site.baseurl }}/static/img/2015/12/log-loss-curve.png" >
+<img src="/img/2015/12/log-loss-curve.png" >
 
 Log Loss heavily penalises classifiers that are confident about an incorrect classification. For example, if for a particular observation, the classifier assigns a very small probability to the correct class then the corresponding contribution to the Log Loss will be very large indeed. Naturally this is going to have a significant impact on the overall Log Loss for the classifier. The bottom line is that it's better to be somewhat wrong than emphatically wrong. Of course it's always better to be completely right, but that is seldom achievable in practice! There are at least two approaches to dealing with poor classifications:
 

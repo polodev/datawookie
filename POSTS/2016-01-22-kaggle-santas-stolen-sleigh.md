@@ -22,7 +22,7 @@ This seems like an opportune time to jot down some of my personal notes and also
 
 [Santa's Stolen Sleigh](https://www.kaggle.com/c/santas-stolen-sleigh) closed on 8 January 2016. At the top of the leaderboard:
 
-<img src="{{ site.baseurl }}/static/img/2016/01/kaggle-santas-sleigh-winners.png">
+<img src="/img/2016/01/kaggle-santas-sleigh-winners.png">
 
 Well done, what a phenomenal effort! Check out the interview with [Woshialex & Weezy](http://blog.kaggle.com/2016/01/28/santas-stolen-sleigh-winners-interview-2nd-place-woshialex-weezy/).
 
@@ -64,13 +64,13 @@ I could, however, readily calculate the distance between each gift and its neare
 > summary(gifts$dist_nearest)
      Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
    0.1424   11.6500   18.1300   19.6200   25.9400 2783.0000
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2015/12/hist-distance-to-nearest.png">
+<img src="/img/2015/12/hist-distance-to-nearest.png">
 
 Let's look at the most isolated locations. The red points on the map below indicate gift locations which are at least 150 km distant from any other locations. Some of these are on extremely isolated pieces of land like Saint Helena, Coronation Island and the French Southern and Antarctic Lands. In terms of clustering, these points were going to be a little tricky and probably best delivered en route to somewhere else.
 
-<img src="{{ site.baseurl }}/static/img/2015/12/map-isolated.png">
+<img src="/img/2015/12/map-isolated.png">
 
 ## Clustering and Sorting
 
@@ -94,11 +94,11 @@ My first approach to solving the problem involved a simple clustering scheme. My
 14  40247      2 51.18464 -100.77533  9.352351
 15  77396      2 51.27686 -100.77209  2.605262
 16   2600      2 50.82170  -99.46544  1.000000
-{{< / highlight >}}
+{{< /highlight >}}
 
 My submission based on simple clustering with GA optimisation was fairly decent but nothing to tweet about.
 
-<img src="{{ site.baseurl }}/static/img/2015/12/kaggle-santa-submission-04.jpg">
+<img src="/img/2015/12/kaggle-santa-submission-04.jpg">
 
 ## Great Circle Solution
 
@@ -108,11 +108,11 @@ Thinking further about the problem it occurred to me that it might be efficient 
 
 Putting this idea into practice and dividing the gifts up into longitudinal slices lead to an appreciable bump in my score.
 
-<img src="{{ site.baseurl }}/static/img/2015/12/kaggle-santa-submission-05.jpg">
+<img src="/img/2015/12/kaggle-santa-submission-05.jpg">
 
 My final innovation was to apply the same longitudinal slicing strategy but treat Antarctica separately. This again lead to an immediate improvement. I tried splitting off other areas of the globe, like Australia, but this didn't yield positive results.
 
-<img src="{{ site.baseurl }}/static/img/2015/12/kaggle-santa-submission-06.jpg">
+<img src="/img/2015/12/kaggle-santa-submission-06.jpg">
 
 So in the end my clustering had very little to do with gifts that were close together but instead grouped gifts which lay close to a meridional path originating at the North Pole. Definitely not the ideal approach, but one based on good physical principles and yielding a solution which was both robust and quick to compute.
 
@@ -123,16 +123,16 @@ Below are some of the delivery routes designed using this approach. The size of 
 <table>
     <tr>
         <td>
-        <img src="{{ site.baseurl }}/static/img/2015/12/crop-trip-plot-710.png">
+        <img src="/img/2015/12/crop-trip-plot-710.png">
         </td>
         <td>
-        <img src="{{ site.baseurl }}/static/img/2015/12/crop-trip-plot-3.png">
+        <img src="/img/2015/12/crop-trip-plot-3.png">
         </td>
         <td>
-        <img src="{{ site.baseurl }}/static/img/2015/12/crop-trip-plot-501.png">
+        <img src="/img/2015/12/crop-trip-plot-501.png">
         </td>
         <td>
-        <img src="{{ site.baseurl }}/static/img/2015/12/crop-trip-plot-971.png">
+        <img src="/img/2015/12/crop-trip-plot-971.png">
         </td>
     </tr>
 </table>
@@ -142,16 +142,16 @@ Here are some examples of delivery schedules for gifts going to Antarctica. The 
 <table>
     <tr>
         <td>
-        <img src="{{ site.baseurl }}/static/img/2015/12/crop-trip-plot-1449.png">
+        <img src="/img/2015/12/crop-trip-plot-1449.png">
         </td>
         <td>
-        <img src="{{ site.baseurl }}/static/img/2015/12/crop-trip-plot-1467.png">
+        <img src="/img/2015/12/crop-trip-plot-1467.png">
         </td>
         <td>
-        <img src="{{ site.baseurl }}/static/img/2015/12/crop-trip-plot-1492.png">
+        <img src="/img/2015/12/crop-trip-plot-1492.png">
         </td>
         <td>
-        <img src="{{ site.baseurl }}/static/img/2015/12/crop-trip-plot-1566.png">
+        <img src="/img/2015/12/crop-trip-plot-1566.png">
         </td>
     </tr>
 </table>

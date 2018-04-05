@@ -49,7 +49,7 @@ Data used in the context of Collaborative Filtering or Association Rules analyse
 
 We're going to retrieve a load of data from PLOS. But, just to set the scene, let's start by looking at a specific article, [Age and Sex Ratios in a High-Density Wild Red-Legged Partridge Population](http://journals.plos.org/plosone/article?id=info%3Adoi%2F10.1371%2Fjournal.pone.0159765), recently published in PLOS ONE. You'll notice that the article is in the public domain, so you can immediately download the PDF (no paywalls here!) and access a wide range of other data pertaining to the article. There's a list of subject keywords on the right. This is where we will be focusing most of our attention, although we'll also retrieve DOI, authors, publication date and journal information for good measure.
 
-<img src="{{ site.baseurl }}/static/img/2016/08/journal.pone_.0159765.png">
+<img src="/img/2016/08/journal.pone_.0159765.png">
 
 We'll be using the [rplos](https://cran.r-project.org/web/packages/rplos/index.html) package to access data via the PLOS API. A search through the PLOS catalog is initiated using `searchplos()`. To access the article above we'd just specify the appropriate DOI using the `q` (query) argument, while the fields in the result are determined by the `fl` argument.
 
@@ -57,7 +57,7 @@ We'll be using the [rplos](https://cran.r-project.org/web/packages/rplos/index.h
 > library(rplos)
 > partridge <- searchplos(q = "id:10.1371/journal.pone.0159765",
 +                         fl = 'id,author,publication_date,subject,journal')$data
-{{< / highlight >}}
+{{< /highlight >}}
 
 The journal, publication date and author data are easy to consume.
 
@@ -67,7 +67,7 @@ The journal, publication date and author data are easy to consume.
 > partridge[, 3:5]
    journal     publication_date                                       author
 1 PLOS ONE 2016-08-10T00:00:00Z Jesús Nadal; Carolina Ponz; Antoni Margalida
-{{< / highlight >}}
+{{< /highlight >}}
 
 The subject keywords are conflated into a single string, making them more difficult to digest.
 
@@ -82,7 +82,7 @@ The subject keywords are conflated into a single string, making them more diffic
 /Biology and life sciences/Population biology/Population metrics/Population density;
 /Biology and life sciences/Organisms/Animals/Vertebrates/Amniotes/Birds;
 /Biology and life sciences/Organisms/Animals/Vertebrates/Amniotes/Birds/Fowl/Gamefowl/Partridges
-{{< / highlight >}}
+{{< /highlight >}}
 
 Here's an extract from the [documentation about subject keywords](http://journals.plos.org/plosone/s/help-using-this-site#loc-subject-areas) which helps make sense of that.
 
@@ -103,7 +103,7 @@ We'll use the most specific terms in each of the subjects. It'd be handy to have
 +     summarise(count = n()) %>%
 +     ungroup
 + }
-{{< / highlight >}}
+{{< /highlight >}}
 
 So, for the article above we get the following subjects:
 
@@ -120,7 +120,7 @@ So, for the article above we get the following subjects:
 6            Predation     2
 7                 Rain     1
 8              Weather     1
-{{< / highlight >}}
+{{< /highlight >}}
 
 Those tie up well with what we saw on the home page for the article. We see that all of the terms except Predation appear only once. There are two entries for Predation, one in category "Ecology and environmental sciences" and the other in "Biology and life sciences". We can't really interpret these entries as ratings. They should rather be thought of as interactions. At some stage we might transform them into Boolean values, but for the moment we'll leave them as interaction counts.
 
@@ -136,7 +136,7 @@ We'll need a lot more data to do anything meaningful. So let's use the same infr
 {{< highlight r >}}
 > dim(articles)
 [1] 185984      5
-{{< / highlight >}}
+{{< /highlight >}}
 
 Parsing the `subject` column and aggregating the results we get a data frame with counts of the number of times a particular subject keyword is associated with each article.
 
@@ -150,7 +150,7 @@ Parsing the `subject` column and aggregating the results we get a data frame wit
 + )
 > dim(subjects)
 [1] 1433963       4
-{{< / highlight >}}
+{{< /highlight >}}
 
 Here are the specific data for the article above:
 
@@ -165,7 +165,7 @@ Here are the specific data for the article above:
 1425110 10.1371/journal.pone.0159765 PLOS ONE            Predation     2
 1425111 10.1371/journal.pone.0159765 PLOS ONE                 Rain     1
 1425112 10.1371/journal.pone.0159765 PLOS ONE              Weather     1
-{{< / highlight >}}
+{{< /highlight >}}
 
 Note that we've delayed the conversion of the `subject` column into a factor until all of the required levels were known. 
 

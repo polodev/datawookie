@@ -13,16 +13,16 @@ title: RStudio Environment on DigitalOcean with Docker
 url: /2017/07/11/rstudio-docker-digitalocean/
 ---
 
-{% comment %}
+{{< comment >}}
 Alternative deployment options:
 
 - AWS: http://www.win-vector.com/blog/2018/01/setting-up-rstudio-server-quickly-on-amazon-ec2/
 - Azure: http://blog.jumpingrivers.com/posts/2017/rstudio_azure_cloud_1/
-{% endcomment %}
+{{< /comment >}}
 
 I'll be running a training course in a few weeks which will use RStudio as the main computational tool. Since it's a short course I don't want to spend a lot of time sorting out technical issues. And with multiple operating systems (and *versions*) these issues can be numerous and pervasive. Setting up a RStudio server which everyone can access (and that requires no individual configuration!) makes a lot of sense.
 
-![]({{ site.baseurl }}/static/img/logo/docker-logo.png)
+![](/img/logo/docker-logo.png)
 
 These are some notes about how I got this all set up using a Docker container on DigitalOcean. <!--more--> This idea was inspired by [this article](https://itsalocke.com/r-training-environment/). I provide some additional details about the process.
 
@@ -43,19 +43,19 @@ Being my first serious foray into the world of Docker I spent some time getting 
 {{< highlight bash >}}
 $ docker -v
 Docker version 17.06.0-ce, build 02c1d87
-{{< / highlight >}}
+{{< /highlight >}}
 
 Check the current status of the Docker service. This should indicate that Docker is loaded, running and active.
 
 {{< highlight text >}}
 $ systemctl status docker
-{{< / highlight >}}
+{{< /highlight >}}
 
 To see further system information about Docker:
 
 {{< highlight text >}}
 $ docker info
-{{< / highlight >}}
+{{< /highlight >}}
 
 Finally run a quick test to ensure that Docker is able to download and launch images.
 
@@ -81,7 +81,7 @@ Share images, automate workflows, and more with a free Docker ID:
 
 For more examples and ideas, visit:
  https://docs.docker.com/engine/userguide/
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## RStudio Container
 
@@ -89,13 +89,13 @@ A selection of RStudio Docker containers are hosted by the [Rocker project](http
 
 {{< highlight text >}}
 $ docker pull rocker/verse
-{{< / highlight >}}
+{{< /highlight >}}
 
 That will download a load of content. Depending on the speed of your connection it might take a couple of minutes. Once the downloads are complete we can spin it up.
 
 {{< highlight text >}}
 $ docker run -d -p 80:8787 rocker/verse
-{{< / highlight >}}
+{{< /highlight >}}
 
 Now point your browser at <http://localhost:80/>. You should see a login dialog. Login with username `rstudio` and password `rstudio`.
 
@@ -103,13 +103,13 @@ Once you've satisfied yourself that the RStudio server is working properly, we'l
 
 {{< highlight text >}}
 $ docker ps
-{{< / highlight >}}
+{{< /highlight >}}
 
 The ID in the output from the previous command is used to stop the container.
 
 {{< highlight text >}}
 $ docker stop 487487fc346d
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Creating a New Container Image
 
@@ -127,7 +127,7 @@ We need to build the image before we can launch it. Navigate to the folder which
 
 {{< highlight text >}}
 $ docker build -t rstudio:latest .
-{{< / highlight >}}
+{{< /highlight >}}
 
 That will step through the instructions in the `Dockerfile`, building up the new image as a series of layers. We can get an idea of which components contributed the most to the resulting image.
 
@@ -158,13 +158,13 @@ a720b73666a2        4 hours ago          /bin/sh -c #(nop)  MAINTAINER Andrew Co
 <missing>           10 hours ago         /bin/sh -c #(nop)  LABEL org.label-schema....   0B                  
 <missing>           2 weeks ago          /bin/sh -c #(nop)  CMD ["bash"]                 0B                  
 <missing>           2 weeks ago          /bin/sh -c #(nop) ADD file:93a0dbb6973bc13...   100MB               
-{{< / highlight >}}
+{{< /highlight >}}
 
 We can now test the new container.
 
 {{< highlight text >}}
 $ docker run -d -p 80:8787 --name rstudio rstudio:latest
-{{< / highlight >}}
+{{< /highlight >}}
 
 Once you are satisfied that it works, stop the container.
 
@@ -176,7 +176,7 @@ We're now in a position to deploy the image on [DigitalOcean](http://digitalocea
 
 Once you've logged in to your DigitalOcean account, create a new Droplet and choose the Docker one-click app (I chose Docker 17.06.0-ce on 16.04). Make sure that you provide your SSH public key.
 
-![]({{ site.baseurl }}/static/img/2017/07/digital-ocean-one-click-apps.png)
+![](/img/2017/07/digital-ocean-one-click-apps.png)
 
 ### Connect as root
 
@@ -184,7 +184,7 @@ Once the Droplet is live (give it a moment or two, even after it claims to be "G
 
 {{< highlight bash >}}
 $ ssh -l root 104.236.93.95
-{{< / highlight >}}
+{{< /highlight >}}
 
 ### Swap Space
 
@@ -196,7 +196,7 @@ Create a `docker` user and add it to the `docker` group.
 
 {{< highlight text >}}
 # useradd -g users -G docker -m -s /bin/bash docker
-{{< / highlight >}}
+{{< /highlight >}}
 
 Add your SSH public key to `.ssh/authorized_keys` for the `docker` user. Terminate your `root` connection and reconnect as the `docker` user.
 
@@ -204,7 +204,7 @@ Add your SSH public key to `.ssh/authorized_keys` for the `docker` user. Termina
 $ ssh docker@104.236.73.164
 $ groups
 users docker
-{{< / highlight >}}
+{{< /highlight >}}
 
 ### Build the Container
 
@@ -212,21 +212,21 @@ Clone the [GitHub repository](https://github.com/DataWookie/docker-exegetic). Na
 
 {{< highlight text >}}
 $ docker build -t rstudio:latest .
-{{< / highlight >}}
+{{< /highlight >}}
 
 And then launch a container.
 
 {{< highlight text >}}
 $ docker run -d -p 80:8787 --name rstudio rstudio:latest
-{{< / highlight >}}
+{{< /highlight >}}
 
 Connect to the Droplet using the IP address from the DigitalOcean dashboard.
 
-![]({{ site.baseurl }}/static/img/2017/07/docker-rstudio-login.png)
+![](/img/2017/07/docker-rstudio-login.png)
 
 Sign in using the same credentials as before. Sweet: you're connected to an instance of RStudio running somewhere out in the cloud.
 
-![]({{ site.baseurl }}/static/img/2017/07/docker-rstudio-interface.png)
+![](/img/2017/07/docker-rstudio-interface.png)
 
 ### Accessing Usernames and Passwords
 
@@ -236,13 +236,13 @@ To accomplish all of this we'll need to connect to the running Docker container.
 
 {{< highlight text >}}
 $ docker exec -t -i df3a7a5af57e /bin/bash
-{{< / highlight >}}
+{{< /highlight >}}
 
 Delete the `rstudio` user.
 
 {{< highlight text >}}
 root@df3a7a5af57e:/# userdel rstudio
-{{< / highlight >}}
+{{< /highlight >}}
 
 Now create some new users using the `generate-users.sh` scripts packaged with the image. For example, to generate five new users:
 
@@ -253,7 +253,7 @@ U002,hhNk7FJl
 U003,RaH4EJYP
 U004,YBpMcl6n
 U005,9Rcl8gye
-{{< / highlight >}}
+{{< /highlight >}}
 
 This will create the user profiles and home folders. The usernames and passwords are dumped to the terminal in CSV formay. Record these and then assign a pair to each of the course delegates.
 

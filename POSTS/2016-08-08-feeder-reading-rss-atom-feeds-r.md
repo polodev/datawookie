@@ -24,7 +24,7 @@ The package is currently hosted on GitHub.
 {{< highlight r >}}
 > devtools::install_github("DataWookie/feedeR")
 > library(feedeR)
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Reading a RSS Feed
 
@@ -34,7 +34,7 @@ Although Atom is supposed to be a better format from a technical perspective, RS
 > rbloggers <- feed.extract("https://feeds.feedburner.com/RBloggers")
 > names(rbloggers)
 [1] "title" "link" "updated" "items"
-{{< / highlight >}}
+{{< /highlight >}}
 
 There are three metadata elements pertaining to the feed.
 
@@ -48,7 +48,7 @@ $link
 
 $updated
 [1] "2016-08-06 09:15:54 UTC"
-{{< / highlight >}}
+{{< /highlight >}}
 
 The actual entries on the feed are captured in the `items` element. For each entry the `title`, publication `date` and `link` are captured. There are often more fields available for each entry, but these three are generally present.
 
@@ -64,7 +64,7 @@ The actual entries on the feed are captured in the `items` element. For each ent
 1                                                       https://www.r-bloggers.com/readr-1-0-0/
 2 https://www.r-bloggers.com/map-the-life-expectancy-in-united-states-with-data-from-wikipedia/
 3 https://www.r-bloggers.com/creating-annotated-data-frames-from-geo-with-the-geoquery-package/
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Reading an Atom Feed
 
@@ -72,7 +72,7 @@ Atom feeds are definitely in the minority, but this format is still used by a nu
 
 {{< highlight r >}}
 > rjournal <- feed.extract("http://journal.r-project.org/rss.atom")
-{{< / highlight >}}
+{{< /highlight >}}
 
 The same three elements of metadata are present.
 
@@ -86,7 +86,7 @@ $link
 
 $updated
 [1] "2016-07-23 13:16:08 UTC"
-{{< / highlight >}}
+{{< /highlight >}}
 
 Atom feeds do not appear to consistently provide the date on which each of the entries was originally published. The `title` and `link` fields are always present though!
 
@@ -100,7 +100,7 @@ Atom feeds do not appear to consistently provide the date on which each of the e
 1  http://journal.r-project.org/archive/accepted/messner-mayr-zeileis.pdf
 2        http://journal.r-project.org/archive/accepted/joblin-mauerer.pdf
 3 http://journal.r-project.org/archive/accepted/linares-lopez-moliner.pdf
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Outlook
 

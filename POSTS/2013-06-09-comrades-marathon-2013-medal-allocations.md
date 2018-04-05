@@ -23,6 +23,6 @@ Following up on my [previous post](http://www.exegetic.biz/blog/2013/06/comrades
   * Vic Clapham medals to finishers before the final gun at 12:00.
 
 
-<img src="{{ site.baseurl }}/static/img/2013/06/medal-allocations.png" >
+<img src="/img/2013/06/medal-allocations.png" >
 
 This will be followed in a couple of days by an analysis of the relationship between running a negative split and finishing time.

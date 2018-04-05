@@ -19,7 +19,7 @@ In order to explore this idea I gathered data from <http://www.cdc.gov/> for bir
 {{< highlight r >}}
 > devtools::install_github("DataWookie/lifespan")
 > library(lifespan)
-{{< / highlight >}}
+{{< /highlight >}}
 
 Let's explore the hypothesis regarding non-uniform birth months.
 
@@ -42,7 +42,7 @@ Source: local data frame [12 x 2]
 10    Oct 7220646
 11    Nov 6813037
 12    Dec 7079453
-{{< / highlight >}}
+{{< /highlight >}}
   
 There is definitely significant non-uniformity:
 
@@ -54,15 +54,15 @@ There is definitely significant non-uniformity:
 
 data:  .Last.value$count
 X-squared = 77600, df = 11, p-value <2e-16
-{{< / highlight >}}
+{{< /highlight >}}
   
 We can dig into that a little deeper and see the total number of births between 1994 and 2014 broken down by month. The aggregate for August is certainly higher than any other month, but only marginally larger than that for July.
 
-<img src="{{ site.baseurl }}/static/img/2016/07/births-totals.png" >
+<img src="/img/2016/07/births-totals.png" >
   
 Delving still deeper we find that the monthly counts exhibit significant variation from year to year and that August has some appreciable outliers.
 
-<img src="{{ site.baseurl }}/static/img/2016/07/births-boxplot.png" >
+<img src="/img/2016/07/births-boxplot.png" >
   
 Specifically, August in 2006 and 2007 appear to have been bumper births months. Interesting!
 
@@ -84,6 +84,6 @@ Source: local data frame [252 x 3]
 9   2009    Jul 369117
 10  2008    Sep 368660
 ..   ...    ...    ...
-{{< / highlight >}}
+{{< /highlight >}}
 
 Of course, a peak in overall births in August does not mean that there's a direct causative link to the peak in professional baseball players' births. But the contribution cannot be ignored.

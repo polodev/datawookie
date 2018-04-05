@@ -42,7 +42,7 @@ More information on this work can be found at <http://www.lxu.me/projects/deepea
 
 The DRAW system analyses an image progressively, breaking it down into parts and then analysing each part in sequence. But it does more than that. It "imagines" new images, effectively generating novel image content. The constructed image initially starts out as fairly blurred, but it becomes sharper as the system works on it.
                 
-<img src="{{ site.baseurl }}/static/img/2015/07/DRAW-numbers.png" width="100%">
+<img src="/img/2015/07/DRAW-numbers.png" width="100%">
 
 ## Show, Attend and Tell: Neural Image Caption Generation with Visual Attention (Kelvin Xu, Jimmy Ba, Ryan Kiros, Kyunghyun Cho, Aaron Courville, Ruslan Salakhudinov, Rich Zemel, Yoshua Bengio)
 

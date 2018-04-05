@@ -23,7 +23,7 @@ Be extremely cautious with any sites that request information regarding your Eth
 
 Your address is synonymous with your "account number" and "public key". This is the piece of information required when sending Ether to your account. You can safely share this information.
 
-![]({{ site.baseurl }}/static/img/2017/12/myetherwallet-details.png)
+![](/img/2017/12/myetherwallet-details.png)
 
 ## Private Key and Passphrase
 
@@ -36,7 +36,7 @@ Make (at least!) one or more backup copies of your private key and passphrase. G
 
 These backup copies should be stored in physically separate, secure locations.
 
-![]({{ site.baseurl }}/static/img/2017/12/xkcd-password-strength.png)
+![](/img/2017/12/xkcd-password-strength.png)
 
 ## Ethereum Wallet
 

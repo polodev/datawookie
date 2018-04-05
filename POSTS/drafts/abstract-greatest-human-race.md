@@ -10,12 +10,12 @@ tags:
   - Talk
 ---
 
-{% comment %}
+{{< comment >}}
 In terms of code, we've learned that people don't all benefit from an entire talk consisting of only code demos. Some of us love it, but some think it's boring or hard to follow. Mixing it up with tips, architecture patterns, output examples, and links to futher programming resources makes a good, balanced technical proposal.
 
 In terms of code, we've learned that people don't all benefit from an entire talk consisting of only code demos. Some of us love it, but some think it's boring or hard to follow. Mixing it up with tips, architecture patterns, output examples, and links to futher programming resources makes a good, balanced technical proposal.In terms of code, we've learned that people don't all benefit from an entire talk consisting of only code demos. Some of us love it, but some think it's boring or hard to follow. Mixing it up with tips, architecture patterns, output examples, and links to futher programming resources makes a good, balanced technical proposal.
 In terms of code, we've learned that people don't all benefit from an entire talk consisting of only code demos. Some of us love it, but some think it's boring or hard to follow. Mixing it up with tips, architecture patterns, output examples, and links to futher programming resources makes a good, balanced technical proposal.
-{% endcomment %}
+{{< /comment >}}
 
 <div class="talk">
 	<div class="title">

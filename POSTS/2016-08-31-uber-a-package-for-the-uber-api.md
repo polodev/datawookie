@@ -22,7 +22,7 @@ The package is currently hosted on GitHub. Installation is simple using the `dev
 {{< highlight r >}}
 > devtools::install_github("DataWookie/ubeR")
 > library(ubeR)
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Authentication
 
@@ -37,7 +37,7 @@ With the resulting Client ID and Client Secret you'll be ready to authenticate. 
 > UBER_CLIENTSECRET = Sys.getenv("UBER_CLIENTSECRET")
 >
 > uber_oauth(UBER_CLIENTID, UBER_CLIENTSECRET)
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Identity
 
@@ -52,7 +52,7 @@ We can immediately use `uber_me()` to retrieve information about the authenticat
 [1] "Andrew"
 > identity$picture
 [1] "https://d1w2poirtb3as9.cloudfront.net/default.jpeg"
-{{< / highlight >}}
+{{< /highlight >}}
 
 Clearly I haven't made enough effort in personalising my Uber account.
 
@@ -70,7 +70,7 @@ $address
 > uber_places_get("work")
 $address
 [1] "Dock Rd, V & A Waterfront, Cape Town, 8002, South Africa"
-{{< / highlight >}}
+{{< /highlight >}}
 
 These addresses can be modified using `uber_places_put()`.
 
@@ -83,7 +83,7 @@ You can access data for recent rides using `uber_history()`.
 > names(history)
  [1] "status"       "distance"     "request_time" "start_time"   "end_time"     "request_id"  
  [7] "product_id"   "latitude"     "display_name" "longitude"
-{{< / highlight >}}
+{{< /highlight >}}
 
 The response includes a wide range of fields, we'll just pick out just a few of them for closer inspection.
 
@@ -96,7 +96,7 @@ The response includes a wide range of fields, we'll just pick out just a few of 
 4   3.2354 2016-08-10 19:28:41 2016-08-10 19:38:07     Cape Town
 5   7.3413 2016-08-10 16:37:30 2016-08-10 17:21:16     Cape Town
 6   4.3294 2016-08-10 13:38:49 2016-08-10 13:59:00     Cape Town
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Product Descriptions
 
@@ -113,7 +113,7 @@ We can get a list of cars near to a specified location using `uber_products()`.
 1        4 91901472-f30d-4614-8ba7-9fcc937cebf5             uberX
 2        6 419f6bdc-7307-4ea8-9bb0-2c7d852b616a            uberXL
 3        4 1dd39914-a689-4b27-a59d-a74e9be559a4         UberBLACK
-{{< / highlight >}}
+{{< /highlight >}}
 
 Information for a particular car can also be accessed.
 
@@ -147,13 +147,13 @@ $cancellation_fee
 
 $currency_code
 [1] "ZAR"
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Estimates
 
 It's good to have a rough idea of how much a ride is going to cost you. What about a trip from Mouille Point to the Old Biscuit Mill?
 
-<img src="{{ site.baseurl }}/static/img/2016/08/old-biscuit-mill.png">
+<img src="/img/2016/08/old-biscuit-mill.png">
 
 {{< highlight r >}}
 > estimate <- uber_requests_estimate(start_latitude = -33.899656, start_longitude = 18.407663,
@@ -175,7 +175,7 @@ $distance_estimate
 1        5.00           5.00    Base Fare       5.00                1           ZAR
 2       56.12    42.15-56.12     Distance      42.15                1           ZAR
 3        8.30      6.23-8.30         Time       6.23                1           ZAR
-{{< / highlight >}}
+{{< /highlight >}}
 
 Not quite sure why the API is returning the distance in such obscure units. (Note to self: convert those to metric equivalent in next release!) The data above are based on the car nearest to the start location. What about prices for a selection of other cars?
 
@@ -191,7 +191,7 @@ Not quite sure why the API is returning the distance in such obscure units. (Not
 1                  uberX  ZAR53-69
 2                 uberXL  ZAR68-84
 3              uberBLACK ZAR97-125
-{{< / highlight >}}
+{{< /highlight >}}
 
 The time of arrival for each of those cars can be accessed via `uber_estimate_time()`.
 
@@ -201,7 +201,7 @@ The time of arrival for each of those cars can be accessed via `uber_estimate_ti
 1                  uberX      180        uberX 91901472-f30d-4614-8ba7-9fcc937cebf5
 2                 uberXL      420       uberXL 419f6bdc-7307-4ea8-9bb0-2c7d852b616a
 3              uberBLACK      300    uberBLACK 1dd39914-a689-4b27-a59d-a74e9be559a4
-{{< / highlight >}}
+{{< /highlight >}}
 
 So, for example, the uberXL would be expected to arrive in 7 minutes, while the uberX would pick you up in only 3 minutes.
 
@@ -214,7 +214,7 @@ A new ride is requested using `uber_requests()`.
 {{< highlight r >}}
 > ride <- uber_requests(start_address = "37 Beach Road, Mouille Point, Cape Town",
 +                       end_address = "100 St Georges Mall, Cape Town City Centre, Cape Town")
-{{< / highlight >}}
+{{< /highlight >}}
 
 Let's find out the details of the result.
 
@@ -235,13 +235,13 @@ $latitude
 
 $longitude
 [1] 18.42
-{{< / highlight >}}
+{{< /highlight >}}
 
 Information about the currently requested ride can be accessed using `uber_requests_current()`. If we decide to walk instead, then it's also possible to cancel the pickup.
 
 {{< highlight r >}}
 > uber_requests_current_delete()
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Future
 

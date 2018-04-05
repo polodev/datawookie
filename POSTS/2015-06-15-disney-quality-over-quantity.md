@@ -19,4 +19,4 @@ I read an interesting article in the 10 June 2015 edition of The Wall Street Jou
 
 Quality over quantity for enhanced overall profit. Makes sense to me.
 
-<img src="{{ site.baseurl }}/static/img/2015/06/disney-movies.png">
+<img src="/img/2015/06/disney-movies.png">

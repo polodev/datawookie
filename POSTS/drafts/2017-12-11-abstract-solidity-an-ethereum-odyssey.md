@@ -12,18 +12,18 @@ tags:
   - Ethereum
 ---
 
-{% comment %}
+{{< comment >}}
 2017: A Blockchain Odyssey
 Singing in the Blockchain
 A Blockchain Named Ethereum
 Citizen Blockchain
-{% endcomment %}
+{{< /comment >}}
 
-{% comment %}
+{{< comment >}}
 Thoughts on building this talk:
 
 - associate each section with one of the monsters on Homer's Odyssey (Cyclops, Sirens, Scylla and Charybdis)
-{% endcomment %}
+{{< /comment >}}
 
 I have three versions of the proposal for this talk. I like the rambling versions because they make greater use of the Odyssey theme, but I'm using the concise version for the moment because the others still need to polished.
 

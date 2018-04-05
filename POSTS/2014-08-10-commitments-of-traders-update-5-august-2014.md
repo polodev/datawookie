@@ -18,4 +18,4 @@ Here are the data I distilled from the most recent [CFTC](http://www.cftc.gov/in
 
 <!--more-->
 
-<img src="{{ site.baseurl }}/static/img/2014/08/140805-weekly-change.png">
+<img src="/img/2014/08/140805-weekly-change.png">

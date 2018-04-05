@@ -39,7 +39,7 @@ ab59fc97        304.62    643.67
 89d3e09b        270.32    646.78
 fc728816        211.27    492.95
 7b761740        274.60    584.37
-{{< / highlight >}}
+{{< /highlight >}}
 
 Next we calculate the "distance" (this is a distance in time and not in space) between runners, which is effectively the squared difference between the halfway and finish times for each pair of runners. This yields a rather large matrix with rows and columns labelled by runner key. These data are then transformed into a format where each row represents a pair of runners.
 
@@ -55,13 +55,13 @@ Next we calculate the "distance" (this is a distance in time and not in space) b
 4 89d3e09b 4bdcb291  82.408
 5 fc728816 4bdcb291 244.992
 6 7b761740 4bdcb291 135.910
-{{< / highlight >}}
+{{< /highlight >}}
 
 We can immediately see that there are some redundant entries. We need to remove the matrix diagonal (obviously the times match when a runner is compared to himself!) and keep only one half of the matrix.
 
 {{< highlight r >}}
 > simultaneous = subset(simultaneous, as.character(Var1) < as.character(Var2))
-{{< / highlight >}}
+{{< /highlight >}}
 
 Finally we retain only the records for those pairs of runners who crossed both mats simultaneously (in retrospect, this could have been done earlier!).
 
@@ -75,7 +75,7 @@ Finally we retain only the records for those pairs of runners who crossed both m
 2464116 5f18d86f 9a1697ff     0
 2467712 63033429 9a1697ff     0
 3538608 54a92b96 f574be97     0
-{{< / highlight >}}
+{{< /highlight >}}
 
 We can then merge in the data for race numbers and names, leaving us with an (anonymised) data set that looks like this:
 
@@ -97,7 +97,7 @@ We can then merge in the data for race numbers and names, leaving us with an (an
 38         53354         53352  11:56:56
 28         19268         59916  11:57:49
 20         22499         40754  11:58:26
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Twins {#twins}
 
@@ -109,11 +109,11 @@ Although there were relatively many Comrades twins, there were only two tripods.
 
 The members of the first tripod all belong to the same running club, two of them are in the 30-39 age category and the third is in the 60+ group. There's a clear family resemblance, so I'm guessing that they are father and sons. Dad had gathered 9 medals, while the sons had 2 and 3 medals respectively. What a day they must have had together!
 
-<img src="{{ site.baseurl }}/static/img/2014/06/tripod-11832.png">
+<img src="/img/2014/06/tripod-11832.png">
 
 The second tripod also consisted of three runners from the same club. Based on gender and age groups, I suspect that they are Mom, Dad and son. The parents had collected 8 medals each, while junior had 3. What a privilege to run the race with your folks! Lucky guy.
 
-<img src="{{ site.baseurl }}/static/img/2014/06/tripod-53713.png">
+<img src="/img/2014/06/tripod-53713.png">
 
 And now things get more interesting...
 
@@ -121,21 +121,21 @@ And now things get more interesting...
 
 The runner with race number 26132 appears to have run all the way from Durban to Pietermaritzburg with runner 23470! Check out the splits below.
 
-<img src="{{ site.baseurl }}/static/img/2014/06/splits-26132.png">
+<img src="/img/2014/06/splits-26132.png">
 
-<img src="{{ site.baseurl }}/static/img/2014/06/splits-23470.png">
+<img src="/img/2014/06/splits-23470.png">
 
 Not only did they pass through halfway and the finish at the same time, but they crossed _every_ mat along the route at _precisely_ the same time. Yet, somewhat mysteriously, there is no sign of 23470 in the race photographs...
 
-<img src="{{ site.baseurl }}/static/img/2014/06/phantom-26132-A.png">
+<img src="/img/2014/06/phantom-26132-A.png">
 
-<img src="{{ site.baseurl }}/static/img/2014/06/phantom-26132-B.png">
+<img src="/img/2014/06/phantom-26132-B.png">
 
-<img src="{{ site.baseurl }}/static/img/2014/06/phantom-26132-C.png">
+<img src="/img/2014/06/phantom-26132-C.png">
 
 You might notice that there is another runner with 26132 in all three of the images above. That's not 23470. He has race number 28151 and he is not the phantom! His splits below show that he only started running with 26132 somewhere between Camperdown and Polly Shortts.
 
-<img src="{{ site.baseurl }}/static/img/2014/06/splits-28151.png">
+<img src="/img/2014/06/splits-28151.png">
 
 If you [search the race photographs](http://www.jetlineactionphoto.com/) for the phantom's race number (23470), you will find that there are no pictures of him at all! That's right, nineteen photographs of 26132 and not a single photograph of 23470.
 
@@ -143,19 +143,19 @@ If you [search the race photographs](http://www.jetlineactionphoto.com/) for the
 
 The runner with race number 53367 was also accompanied by a phantom with race number 27587. Again, as can be seen from the splits below, these two crossed every mat on the course at _precisely_ the same time.
 
-<img src="{{ site.baseurl }}/static/img/2014/06/splits-53367.png">
+<img src="/img/2014/06/splits-53367.png">
 
-<img src="{{ site.baseurl }}/static/img/2014/06/splits-27587.png">
+<img src="/img/2014/06/splits-27587.png">
 
 Yet, despite the fact that 53367 is quite evident in the race photos, there is no sign of 27587.
 
-<img src="{{ site.baseurl }}/static/img/2014/06/phantom-53367-B.png">
+<img src="/img/2014/06/phantom-53367-B.png">
 
-<img src="{{ site.baseurl }}/static/img/2014/06/phantom-53367-C.png">
+<img src="/img/2014/06/phantom-53367-C.png">
 
-<img src="{{ site.baseurl }}/static/img/2014/06/phantom-53367-D.png">
+<img src="/img/2014/06/phantom-53367-D.png">
 
-<img src="{{ site.baseurl }}/static/img/2014/06/phantom-53367-A.png">
+<img src="/img/2014/06/phantom-53367-A.png">
 
 I would have expected to see a photograph of 53367 embracing his running mate at the finish, yet we find him pictured with two other runners. In fact, if you [search the race photographs](http://www.jetlineactionphoto.com/) for 27587 you will find that there are no photographs of him at all. You will, however, find twelve photographs of 53367.
 

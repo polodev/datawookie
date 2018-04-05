@@ -24,6 +24,6 @@ edges$col = sample(palette, size = nrow(edges), replace = TRUE)
 edges$edgecol <- "col"
 river <- makeRiver(nodes, edges)
 style <- list(nodestyle= "invisible")
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2015/04/riverplot-example-constant-edge.png">
+<img src="/img/2015/04/riverplot-example-constant-edge.png">

@@ -25,7 +25,7 @@ On your local machine install a couple of packages from GitHub.
 {{< highlight r >}}
 > devtools::install_github("trestletech/plumber")
 > devtools::install_github("sckott/analogsea")
-{{< / highlight >}}
+{{< /highlight >}}
 
 In RStudio open a new script and create a single, simple API endpoint which will return today's date. Create a new folder (I'll call mine `api`) and save the script in that folder as `plumber.R`.
 
@@ -34,7 +34,7 @@ In RStudio open a new script and create a single, simple API endpoint which will
 function() {
   Sys.Date()
 }
-{{< / highlight >}}
+{{< /highlight >}}
 
 Then in the RStudio console, start the API on port 8000.
 
@@ -44,18 +44,18 @@ Then in the RStudio console, start the API on port 8000.
 > r$run(port = 8000)
 Starting server to listen on port 8000
 Running the swagger UI at http://127.0.0.1:8000/__swagger__/
-{{< / highlight >}}
+{{< /highlight >}}
 
 You should then be able to access two endpoints via your browser:
 
 - `http://127.0.0.1:8000/__swagger__/`: the [Swagger](http://swagger.io/) interface for your API and
 - `http://127.0.0.1:8000/date`: the date endpoint defined above.
 
-![]({{ site.baseurl }}/static/img/2017/06/plumber-date-swagger.png)
+![](/img/2017/06/plumber-date-swagger.png)
 
 In the image below you'll see the result returned from a GET request to that endpoint.
 
-![]({{ site.baseurl }}/static/img/2017/06/plumber-date-get.png)
+![](/img/2017/06/plumber-date-get.png)
 
 If you have the above working then all of the local development is done. It's time to deploy.
 
@@ -63,7 +63,7 @@ If you have the above working then all of the local development is done. It's ti
 
 Creat an account on [DigitalOcean](https://www.digitalocean.com/).
 
-![]({{ site.baseurl }}/static/img/2017/06/digitalocean-account.png)
+![](/img/2017/06/digitalocean-account.png)
 
 ## Provision a Test Droplet
 
@@ -79,7 +79,7 @@ The process of setting up a Droplet on DigitalOcean is made very simple with som
   Image:     16.04.2 x64
   Size:      512mb
   Volumes:
-{{< / highlight >}}
+{{< /highlight >}}
 
 This will do a number of things:
 
@@ -113,7 +113,7 @@ $BolderCommissioner
   Image:     16.04.2 x64
   Size:      512mb
   Volumes:   
-{{< / highlight >}}
+{{< /highlight >}}
 
 Here we see another way to get information on your instances using `analogsea::droplets()`.
 
@@ -123,9 +123,9 @@ It's now a simple matter to deploy our date API to this instance.
 
 {{< highlight r >}}
 > do_deploy_api(id, "date", "./api/", 8000)
-{{< / highlight >}}
+{{< /highlight >}}
 
-![]({{ site.baseurl }}/static/img/2017/06/plumber-date-deployed.png)
+![](/img/2017/06/plumber-date-deployed.png)
 
 If you make changes to the code for the API they can be redeployed by simply running `do_deploy_api()` again.
 

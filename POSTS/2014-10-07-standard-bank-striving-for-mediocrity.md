@@ -16,7 +16,7 @@ Recently I was in my local Standard Bank branch. After finally reaching the fron
 
 And then I was handed this abomination:
 
-<img src="{{ site.baseurl }}/static/img/2014/10/standard-bank-survey.png">
+<img src="/img/2014/10/standard-bank-survey.png">
 
 So, if I was deliriously satisfied with the service that I had received, then I would award them a 10. If I was neither impressed nor dismayed, I would give them a 9. But if I was not happy at all, then I would give them an 8.
 

@@ -19,15 +19,15 @@ Allocation of spot instances is managed by a bidding system. You stipulate the m
 
 The current spot prices for various instances can be found [here](https://aws.amazon.com/ec2/spot/pricing/). An extract from that page is given below. The two columns of prices reflect the Linux/UNIX (left) and Windows (right) usage. It's readily apparent that the prices are very competitive relative to [prices for on-demand instances](https://aws.amazon.com/ec2/pricing/on-demand/). For example, at the same time a `c3.large` Linux on-demand instances cost $0.105 per hour, more than six times as much as the equivalent spot instance.
 
-![]({{ site.baseurl }}/static/img/2017/09/aws-spot-price-example.png)
+![](/img/2017/09/aws-spot-price-example.png)
 
 You can make an informed decision relating to bid price by using the [Spot Bid Advisor](https://aws.amazon.com/ec2/spot/bid-advisor/). As a starting point you'd probably want to choose a bid price that would result in a low probability of being outbid.
 
-![]({{ site.baseurl }}/static/img/2017/09/aws-spot-bid-advisor.png)
+![](/img/2017/09/aws-spot-bid-advisor.png)
 
 A source of concern can be the level of variability of spot pricing. Fortunately you can access Pricing History from the Spot Requests console. Here's an example.
 
-![]({{ site.baseurl }}/static/img/2017/09/aws-spot-price-history.png)
+![](/img/2017/09/aws-spot-price-history.png)
 
 The spot price does spike up to the on-demand price from time to time, but it's only for short periods. Generally it's consistently low. It's also worthwhile toggling the availability zones. If you toggle off us-east-1e then you find that none of the other zones came anywhere near the on-demand price.
 
@@ -53,7 +53,7 @@ I chose the "Canonical, Ubuntu" AMI but any of the other Linux images would work
 
 Press the <kbd class="bg-primary nobreak">Next</kbd> button.
 
-![]({{ site.baseurl }}/static/img/2017/09/aws-spot-launch-wizard-step-1.png)
+![](/img/2017/09/aws-spot-launch-wizard-step-1.png)
 
 ### Step 2
 
@@ -63,13 +63,13 @@ Another thing worth considering in this step is adding tags. This might be helpf
 
 Press the <kbd class="bg-primary nobreak">Review</kbd> button.
 
-![]({{ site.baseurl }}/static/img/2017/09/aws-spot-launch-wizard-step-2.png)
+![](/img/2017/09/aws-spot-launch-wizard-step-2.png)
 
 ### Step 3
 
 In Step 3 you are presented with a summary of your request. If everything is in otder then press the <kbd class="bg-primary nobreak">Launch</kbd> button.
 
-![]({{ site.baseurl }}/static/img/2017/09/aws-spot-launch-wizard-step-3.png)
+![](/img/2017/09/aws-spot-launch-wizard-step-3.png)
 
 ## Monitoring Launch
 

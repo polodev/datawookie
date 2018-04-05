@@ -86,7 +86,7 @@ The Crusaders are playing the Hurricanes at the AMI Stadium. A bookmaker is offe
 > (probability = 1 / odds)
  Crusaders Hurricanes 
    0.66667    0.33333 
-{{< / highlight >}}
+{{< /highlight >}}
 
 The Crusaders are perceived as being twice as likely to win. Since they are clearly the favourites for this match it stands to reason that there would be more wagers placed on the Crusaders than on the Hurricanes. In fact, on the basis of the odds we would expect there to be roughly twice as much money placed on the Crusaders.
 
@@ -99,7 +99,7 @@ Crusaders Hurricanes
 > odds * 10                                                # Gross Win
 Crusaders Hurricanes 
 15         30 
-{{< / highlight >}}
+{{< /highlight >}}
 
 In keeping with the reasoning above, suppose that a total of 2000 was wagered on the Crusaders and 1000 was wagered on the Hurricanes. In the event of a win by the Crusaders the bookmaker would keep the 1000 wagered on the Hurricanes, but pay out 1000 on the Crusaders wagers, leaving no net profit. Similarly, if the Hurricanes won then the bookmaker would pocket the 2000 wagered on the Crusaders but pay out 2000 on the Hurricanes wagers, again leaving no net profit. The bookmaker's expected profit based on either outcome is zero. This does not represent a very lucrative scenario for a bookmaker. But, after all, this is a fair game.
 
@@ -120,7 +120,7 @@ win    lose
 > payout = c(win = 2, lose = -1)
 > sum(probability * payout)
 [1] 0
-{{< / highlight >}}
+{{< /highlight >}}
 
 Again this is because the odds represent a fair game.
 
@@ -130,7 +130,7 @@ Most games of chance are not fair, so the situation above represents a special (
 
 The odds below are from an <a href="https://sport.netbet.co.uk/">online betting website</a> for the tennis match between Madison Keys and Venus Williams. These are real, live odds and the implications for the player and the bookmaker are slightly different.
 
-<img src="{{ site.baseurl }}/static/img/2016/07/odds-tennis-women.png" >
+<img src="/img/2016/07/odds-tennis-women.png" >
 
 We'll focus our attention on the overall winner, for which the decimal odds on Madison Keys are 1.83, while those on Venus Williams are 2.00.
 
@@ -141,7 +141,7 @@ Madison   Venus
 > (probability = 1 / odds)
 Madison   Venus 
 0.54645 0.50000 
-{{< / highlight >}}
+{{< /highlight >}}
 
 The first thing that you've observed is that the implied probabilities do not sum to 1. We'll return to this point in the <a href="http://www.exegetic.biz/blog/2016/08/sportsbook-bookmakers-odds/">next article</a>.
 
@@ -149,7 +149,7 @@ The odds quoted for each player very similar, which implies that the bookmaker c
 
 Let's look at another match. Below are the odds from the same <a href="https://sport.netbet.co.uk/">online betting website</a> for the game between Novak Djokovic and Radek Stepanek.
 
-<img src="{{ site.baseurl }}/static/img/2016/07/odds-tennis-men.png" >
+<img src="/img/2016/07/odds-tennis-men.png" >
 
 The odds for this game are profoundly different to those for the ladies match above.
 
@@ -160,7 +160,7 @@ Novak Radek
 > (probability = 1 / odds)
   Novak   Radek 
 0.97087 0.06250 
-{{< / highlight >}}
+{{< /highlight >}}
 
 Novak Djokovic is considered to be the almost certain winner. A wager on him thus has the potential to produce only 3% winnings. Radek Stepanek, on the other hand, is a rank outsider in this match. His perceived chance of winning is low. As a result, the potential returns should he win are large.
 

@@ -20,7 +20,7 @@ In my previous post about estimating the [Percolation Threshold on a square latt
 
 Malarz and Galam (2005) considered the problem of percolation on a square lattice for various ranges of neighbor links. Below is their illustration of (a) nearest neighbour "NN" and (b) next-nearest neighbour "NNN" links.
 
-<img src="{{ site.baseurl }}/static/img/2013/10/malarz-neighbours.png">
+<img src="/img/2013/10/malarz-neighbours.png">
 
 # Implementing Next-Nearest Neighbours
 
@@ -62,7 +62,7 @@ There were at least two options for modifying the flow function to accommodate d
 +   
 +   g
 + }
-{{< / highlight >}}
+{{< /highlight >}}
 
 We will add a third example grid to illustrate the effect.
 
@@ -71,7 +71,7 @@ We will add a third example grid to illustrate the effect.
 > g1 = create.grid(12, 0.6)
 > g2 = create.grid(12, 0.4)
 > g3 = create.grid(12, 0.5)
-{{< / highlight >}}
+{{< /highlight >}}
 
 Generating the compound plot with two different values of the global variable required a little thought. But fortunately the scoping rules in R allow for a rather nice implementation.
 
@@ -80,11 +80,11 @@ Generating the compound plot with two different values of the global variable re
 +   {neighbours = c("NN"); visualise.grid(flow(g3))},
 +   {neighbours = c("NN", "NNN"); visualise.grid(flow(g3))},
 +   ncol = 2)
-{{< / highlight >}}
+{{< /highlight >}}
 
 Here we have two plots for the same grid showing (left) NN and (right) NN+NNN percolation. Including the possibility of "diagonal" percolation extends the range of cells that are reachable and this grid, which does not percolate with just NN, does support percolation with NN+NNN.
 
-<img src="{{ site.baseurl }}/static/img/2013/10/grids-NN-NNN-flow.png">
+<img src="/img/2013/10/grids-NN-NNN-flow.png">
 
 No modifications are required to the percolation function.
 
@@ -106,7 +106,7 @@ No modifications are required to the percolation function.
 [1] TRUE
 > percolates(g3)
 [1] TRUE
-{{< / highlight >}}
+{{< /highlight >}}
 
 # Effect on Percolation Threshold
 
@@ -119,11 +119,11 @@ Finally we can see the effect of including next-nearest neighbours on the percol
 > 1-pcrit
 (Intercept) 
     0.40893
-{{< / highlight >}}
+{{< /highlight >}}
 
 This agrees well with the result for NN+NNN from Table 1 in Malarz and Galam (2005).
 
-<img src="{{ site.baseurl }}/static/img/2013/10/percolation-probability-threshold-NN-NNN.png">
+<img src="/img/2013/10/percolation-probability-threshold-NN-NNN.png">
 
 # A Larger Lattice
 
@@ -136,9 +136,9 @@ Finally, let's look at a larger lattice at the percolation threshold.
 >
 > percolates(g4)
 [1] TRUE
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2013/11/grid-100-NN-NNN-flow.png">
+<img src="/img/2013/11/grid-100-NN-NNN-flow.png">
 
 # References
 

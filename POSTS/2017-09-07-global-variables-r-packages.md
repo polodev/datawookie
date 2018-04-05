@@ -26,7 +26,7 @@ data_path = "data"
 set_data_path <- function(path) {
   data_path <<- path
 }
-{{< / highlight >}}
+{{< /highlight >}}
 
 It seems perfectly reasonable. And, in fact, would work... were in not in a package. However, building the package and giving a try yielded an error.
 
@@ -34,7 +34,7 @@ It seems perfectly reasonable. And, in fact, would work... were in not in a pack
 > set_data_path("/tmp")
 Error in set_data_path("/tmp") : 
   cannot change value of locked binding for 'data_path'
-{{< / highlight >}}
+{{< /highlight >}}
 
 While investigating the problem I learned about `unlockBinding()`, which is good to know.
 
@@ -50,6 +50,6 @@ pkg.globals$data_path <- "data"
 set_data_path <- function(path) {
   pkg.globals$data_path <- path
 }
-{{< / highlight >}}
+{{< /highlight >}}
 
 It's slightly more verbose, but it works!

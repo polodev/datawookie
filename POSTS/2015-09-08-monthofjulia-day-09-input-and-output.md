@@ -19,7 +19,7 @@ url: /2015/09/08/monthofjulia-day-09-input-and-output/
 
 Your code won't be terribly interesting without ways of getting data in and out. Ways to do that with Julia will be the subject of today's post.
 
-<img src="{{ site.baseurl }}/static/img/2015/09/Julia-Logo-IO.png" >
+<img src="/img/2015/09/Julia-Logo-IO.png" >
 
 ## Console IO
 
@@ -30,7 +30,7 @@ julia> print(3, " blind "); print("mice!\n")
 3 blind mice!
 julia> println("Hello World!")
 Hello World!
-{{< / highlight >}}
+{{< /highlight >}}
   
 Terminal input is something that I never do, but it's certainly possible. `readline()` will read keyboard input until the first newline.
   
@@ -39,7 +39,7 @@ julia> response = readline();
 Yo!
 julia> response
 "Yo!\n"
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Reading and Writing with a Stream
 
@@ -50,7 +50,7 @@ filename = tempname()
 fid = open(filename, "w")
 write(fid, "Some temporary text...")
 close(fid)
-{{< / highlight >}}
+{{< /highlight >}}
   
 `print()` and `println()` can also be used in the same way as `write()` for sending data to a stream. `STDIN`, `STDOUT` and `STDERR` are three predefined constants for standard console streams.
 
@@ -66,7 +66,7 @@ julia> open("/etc/passwd") do fid
  "bin:x:2:2:bin:/bin:/usr/sbin/nologin\n"
  "sys:x:3:3:sys:/dev:/usr/sbin/nologin\n"
  "sync:x:4:65534:sync:/bin:/bin/sync\n"
-{{< / highlight >}}
+{{< /highlight >}}
   
 Here `readlines()` returns the entire contents of the file as an array, where each element corresponds to a line of content. `readall()` would return everything in a single string. A somewhat different approach would be to use `eachline()` which creates an iterator allowing you to process each line of the file individually.
 
@@ -79,7 +79,7 @@ julia> passwd = readdlm("/etc/passwd", ':');
 julia> passwd[1,:]
 1x7 Array{Any,2}:
  "root" "x" 0.0 0.0 "root" "/root" "/bin/bash"
-{{< / highlight >}}
+{{< /highlight >}}
   
 The analogues `writedlm()` and `writcecsv()` are used for writing delimited data.
 

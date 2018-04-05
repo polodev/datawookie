@@ -37,14 +37,14 @@ julia> x = 3
 3
 julia> x^2
 9
-{{< / highlight >}}
+{{< /highlight >}}
 
 Julia supports Unicode, so ß, Ɛ and Ȁ are perfectly legitimate (although possibly not too sensible) variable names.
 
 {{< highlight julia >}}
 julia> ß = 3; 2ß
 6
-{{< / highlight >}}
+{{< /highlight >}}
 
 Chained and simultaneous assignments are possible.
 
@@ -53,7 +53,7 @@ julia> a = b = c = 5
 5
 julia> d, e = 3, 5
 (3,5)
-{{< / highlight >}}
+{{< /highlight >}}
 
 Multiple expressions can be combined into a single compound expression. Julia supports both verbose and compact syntax.
 
@@ -66,13 +66,13 @@ julia> x = begin
 5
 julia> x = (p = 2; q = 3; p + q)
 5
-{{< / highlight >}}
+{{< /highlight >}}
 
 Constants, declared as `const`, are immutable variables (forgive the horrendous contradiction, but I trust that you know what I mean!).
 
 {{< highlight julia >}}
 julia> const SPEED_OF_LIGHT = 299792458;
-{{< / highlight >}}
+{{< /highlight >}}
 
 Somewhat disconcertingly it is possible to change the value of a constant. You just can't change its type. This restriction has more to do with performance than anything else.
 
@@ -85,7 +85,7 @@ julia> e
 e = 2.7182818284590...
 julia> VERSION
 v"0.3.10"
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Data Types
 
@@ -103,7 +103,7 @@ Float64
 julia> x = "I am a string";
 julia> typeof(x)
 ASCIIString (constructor with 2 methods)
-{{< / highlight >}}
+{{< /highlight >}}
 
 There are various other functions for probing the type hierarchy. For example, you can use `isa()` to check whether a variable or constant is of a particular type.
 
@@ -116,7 +116,7 @@ julia> isa(8, Number)
 true
 julia> isa(8, ASCIIString)
 false
-{{< / highlight >}}
+{{< /highlight >}}
 
 So we see that 8 is both a `In64` and a `Number`. Not only does that make mathematical sense, it also suggests that there is a relationship between the `In64` and `Number` data types. In fact `Int64` is a subtype of `Signed`, which derives from `Integer`, which is a subtype of `Real`, which derives from `Number`...
 
@@ -129,14 +129,14 @@ julia> super(Integer)
 Real
 julia> super(Real)
 Number
-{{< / highlight >}}
+{{< /highlight >}}
 
 Formally this can be written as
 
 {{< highlight julia >}} 
 julia> Int64 <: Signed <: Integer <: Real <: Number
 true
-{{< / highlight >}}
+{{< /highlight >}}
 
 where `<:` is the "derived from" operator. We can explore the hierarchy in the opposite direction too, where `subtypes()` descends one level in the type hierarchy.
 
@@ -148,7 +148,7 @@ julia> subtypes(Integer)
  Char
  Signed
  Unsigned
-{{< / highlight >}}
+{{< /highlight >}}
 
 ### Numeric Types
 
@@ -161,7 +161,7 @@ julia> typeof(1.23f-1)
 Float32
 julia> typeof(1.23e-1)
 Float64
-{{< / highlight >}}
+{{< /highlight >}}
 
 In Julia complex and rational numbers are parametric types, for example `Complex{Float32}` and `Rational{Int64}`. More information on complex and rational numbers in Julia can be found in the [documentation](http://julia.readthedocs.org/en/latest/manual/complex-and-rational-numbers/).
 
@@ -174,7 +174,7 @@ julia> typeof(3.0+4im)
 Complex{Float64} (constructor with 1 method)
 julia> typeof(3//4)
 Rational{Int64} (constructor with 1 method)
-{{< / highlight >}}
+{{< /highlight >}}
 
 An encyclopaedic selection of [mathematical operations](http://docs.julialang.org/en/stable/manual/mathematical-operations/) is supported on numeric types.
 
@@ -187,7 +187,7 @@ julia> div(5, 3), 5 % 3
 (1,2)
 julia> sqrt(2)
 1.4142135623730951
-{{< / highlight >}}
+{{< /highlight >}}
 
 ### Characters and Strings
 
@@ -204,7 +204,7 @@ julia> length(name)
 5
 julia> "My name is $name and I'm $(2015-2012) years old."
 "My name is Julia and I'm 3 years old."
-{{< / highlight >}}
+{{< /highlight >}}
 
 There is a lot of functionality attached to the String class. To get an idea of the range, have a look at the output from `methodswith(String)`.
 
@@ -224,9 +224,9 @@ julia> m.match
 "#c900b5"
 julia> m.offset
 18
-{{< / highlight >}}
+{{< /highlight >}}
 
-[<img src="{{ site.baseurl }}/static/img/2015/09/consecutive_vowels.png">](http://imgs.xkcd.com/comics/consecutive_vowels.png)
+[<img src="/img/2015/09/consecutive_vowels.png">](http://imgs.xkcd.com/comics/consecutive_vowels.png)
 
 Explicit type conversion works either by using `convert()` or the lower-case type name as a function.
 
@@ -239,7 +239,7 @@ julia> int64(2.5)
 3
 julia> string(2.5)
 "2.5"
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Type Specifications
 

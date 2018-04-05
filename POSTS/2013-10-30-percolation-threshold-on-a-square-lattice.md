@@ -34,7 +34,7 @@ First we will load a few handy libraries and set up some constants.
 > EMPTY    = 0
 > OCCUPIED = 1
 > FLOW     = 2
-{{< / highlight >}}
+{{< /highlight >}}
 
 Next a function to generate and populate a lattice, which takes as arguments the width of the lattice and the occupation probability.
 
@@ -50,7 +50,7 @@ Next a function to generate and populate a lattice, which takes as arguments the
 > set.seed(1)
 > g1 = create.grid(12, 0.6)
 > g2 = create.grid(12, 0.4)
-{{< / highlight >}}
+{{< /highlight >}}
 
 # Visualising the Lattice
 
@@ -69,7 +69,7 @@ Next a function to generate and populate a lattice, which takes as arguments the
 [10,]    1    1    1    0    1    0    0    0    1     1     1     0
 [11,]    1    0    0    1    0    1    1    0    1     1     1     1
 [12,]    1    1    0    1    1    0    1    0    1     0     1     1
-{{< / highlight >}}
+{{< /highlight >}}
 
 In the text representation of the lattice the occuppied sites are represented by a 1, while a 0 indicates a vacant site.
 
@@ -97,11 +97,11 @@ In the text representation of the lattice the occuppied sites are represented by
 > require(gridExtra)
 > 
 > grid.arrange(visualise.grid(g1), visualise.grid(g2), ncol = 2)
-{{< / highlight >}}
+{{< /highlight >}}
 
 A graphical representation makes things a lot clearer.
 
-<img src="{{ site.baseurl }}/static/img/2013/10/grids-empty.png">
+<img src="/img/2013/10/grids-empty.png">
 
 # Flow Through the Lattice
 
@@ -133,15 +133,15 @@ Now we need to check for flow through the lattice. We will use a recursive depth
 +   
 +   g
 + }
-{{< / highlight >}}
+{{< /highlight >}}
 
 The flow path can then be visualised.
 
 {{< highlight r >}}
 > grid.arrange(visualise.grid(flow(g1)), visualise.grid(flow(g2)), ncol = 2)
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2013/10/grids-flow.png">
+<img src="/img/2013/10/grids-flow.png">
 
 The grid on the left does not percolate while the one on the right does.
 
@@ -164,7 +164,7 @@ Finally we can determine whether a given grid percolates by checking whether or 
 [1] FALSE
 > percolates(g2)
 [1] TRUE
-{{< / highlight >}}
+{{< /highlight >}}
 
 # Finding the Percolation Threshold
 
@@ -175,14 +175,14 @@ Finding the percolation threshold is a little numerically intensive, so it makes
 > library(doMC)
 >
 > registerDoMC(cores=4)
-{{< / highlight >}}
+{{< /highlight >}}
 
 We define some parameters for the calculation: the dimensions of the lattice and the number of replicates for each value of the occupation probability, p.
 
 {{< highlight r >}}
 > N = 25
 > REPLICATES = 1000
-{{< / highlight >}}
+{{< /highlight >}}
 
 Although we will be considering the full range of possible values for p, it makes sense to focus our attention on those values closer to the threshold. For each value of p we randomly generate a number of grids and check whether or not each one percolates.
 
@@ -192,7 +192,7 @@ Although we will be considering the full range of possible values for p, it make
 > perc.occp = foreach(p = pseq, .combine=rbind) %dopar% {
 +   data.frame(p, percolates = replicate(REPLICATES, percolates(create.grid(N, p))))
 + }
-{{< / highlight >}}
+{{< /highlight >}}
 
 Summary statistics are then compiled to give the percolation probability as a function of p.
 
@@ -201,7 +201,7 @@ Summary statistics are then compiled to give the percolation probability as a fu
 +   mean = mean(percolates),
 +   sd = sd(percolates) / sqrt(length(percolates))
 + )
-{{< / highlight >}}
+{{< /highlight >}}
 
 A logistic model is fitted to these data and the threshold value for p is estimated.
 
@@ -216,7 +216,7 @@ A logistic model is fitted to these data and the threshold value for p is estima
 > 1-pcrit
 (Intercept) 
     0.58974
-{{< / highlight >}}
+{{< /highlight >}}
 
 That compares pretty well with the [reference results](http://en.wikipedia.org/wiki/Percolation_threshold) for the 4<sup>4</sup> square lattice.
 
@@ -232,6 +232,6 @@ Finally, all of this is put together in a plot.
 +   scale_y_continuous(breaks = seq(0, 1, 0.2)) +
 +   ylab("Percolation Probability") +
 +   theme_classic()
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2013/10/percolation-probability-threshold.png">
+<img src="/img/2013/10/percolation-probability-threshold.png">

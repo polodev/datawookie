@@ -27,7 +27,7 @@ Plotting the events as a series of points along a linear axis would therefore ma
 
 # First Iteration
 
-<img src="{{ site.baseurl }}/static/img/2013/10/spiral-non-uniform.png">
+<img src="/img/2013/10/spiral-non-uniform.png">
 
 Here time runs along the spiral and points indicate the times at which events occurred. In this case I have 21 events occurring at uniform intervals. Although it looks okay, there is one major flaw: the angular separation of the points is uniform but this is not consistent with the idea of a spiral axis. The points should be distributed uniformly in terms of arc length along the spiral!
 
@@ -39,11 +39,11 @@ I needed to calculate the arc length along the spiral. Since I was not concerned
 spiral.length <- function(phi) {
     phi * sqrt(1 + phi**2) + log(phi + sqrt(1 + phi**2))
 }
-{{< / highlight >}}
+{{< /highlight >}}
 
 Then I could interpolate to find the correct location of the events.
 
-<img src="{{ site.baseurl }}/static/img/2013/10/spiral-uniform.png">
+<img src="/img/2013/10/spiral-uniform.png">
 
 Now the events, which are distributed uniformly in time, appear at uniform intervals along the spiral axis. Mission accomplished.
 
@@ -78,7 +78,7 @@ spiral.plot <- function(t, nturn = 5, colour = "black") {
               panel.grid.major = element_blank(),
               panel.grid.minor = element_blank())
 }
-{{< / highlight >}}
+{{< /highlight >}}
 
 It is unfortunate that I had to transform the data to Cartesian Coordinates in order to plot it. Although ggplot2 does has the capability to generate polar plots, it does not allow polar angles exceeding a single revolution. If anybody has other ideas on how to deal with this more elegantly, I would be very happy to hear from them.
 
@@ -95,8 +95,8 @@ What about applying it to a more realistic scenario? If we simulate a radioactiv
 > 
 > decay = data.frame(delay, time = cumsum(delay))
 > spiral.plot(decay$time, 20)
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2013/10/spiral-plot-large.png">
+<img src="/img/2013/10/spiral-plot-large.png">
 
 As discussed by O’Hara and Kotze, the distribution of events in clumps of varying sizes separated by intervals without events is readily apparent.

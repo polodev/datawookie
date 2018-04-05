@@ -20,19 +20,19 @@ The package has just been listed on CRAN. You can find it [here](https://cran.r-
 
 {{< highlight r >}}
 > install.packages("ether")
-{{< / highlight >}}
+{{< /highlight >}}
 
 Alternatively, to access more recent code, install from GitHub using [devtools](https://cran.r-project.org/web/packages/devtools/index.html).
 
 {{< highlight r >}}
 > devtools::install_github("DataWookie/ether")
-{{< / highlight >}}
+{{< /highlight >}}
 
 Now load the package.
 
 {{< highlight r >}}
 > library(ether)
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Connecting to the Ethereum Network
 
@@ -44,20 +44,20 @@ To run a local node you'll need to install [Geth](https://geth.ethereum.org/down
 
 {{< highlight text >}}
 $ geth --fast
-{{< / highlight >}}
+{{< /highlight >}}
 
 It'll take some time (and space!) to download all of those blocks. Once you are synchronised you can stop Geth and restart it with RPC enabled.
 
 {{< highlight text >}}
 $ geth --rpc
-{{< / highlight >}}
+{{< /highlight >}}
 
 By default the ethereum package will connect to port 8545 on localhost.
 
 {{< highlight r >}}
 > get_rpc_address()
 [1] "http://localhost:8545"
-{{< / highlight >}}
+{{< /highlight >}}
 
 ### Public Node
 
@@ -69,7 +69,7 @@ If you're impatient or just want to give this a quick try, then you might find t
 > set_rpc_address("https://mainnet.infura.io/", key = "9BvO3Cqze3p7EpinabXf")
 > get_rpc_address()
 [1] "https://mainnet.infura.io/9BvO3Cqze3p7EpinabXf"
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Interact with the Ethereum Blockchain
 
@@ -78,7 +78,7 @@ We can validate our connection by checking the protocol version.
 {{< highlight r >}}
 > eth_protocolVersion()
 [1] 63
-{{< / highlight >}}
+{{< /highlight >}}
 
 Ethereum operations have an associated execution fee which is expressed in units of gas. Gas, in turn, translates into Ether. What is the current gas price?
 
@@ -88,7 +88,7 @@ Ethereum operations have an associated execution fee which is expressed in units
 # Or in more sensible units.
 > as.gwei(eth_gasPrice())
 [1] 20
-{{< / highlight >}}
+{{< /highlight >}}
 
 ![](/img/2017/12/etherscan-network-state.png)
 
@@ -97,7 +97,7 @@ What's the number of the most recent block?
 {{< highlight r >}}
 > eth_blockNumber()
 [1] 4811795
-{{< / highlight >}}
+{{< /highlight >}}
 
 Check against [Etherscan](https://etherscan.io/). Yup! That looks right.
 
@@ -106,14 +106,14 @@ Check if your node is mining.
 {{< highlight r >}}
 > eth_mining()
 [1] TRUE
-{{< / highlight >}}
+{{< /highlight >}}
 
 This will only be `TRUE` if you're running a local node and you've started mining. If you are mining then you'll also have set a coinbase address.
 
 {{< highlight r >}}
 > eth_coinbase()
 [1] "0xda20137332ce9d8f6795c40682f5f77b8b32a5fa"
-{{< / highlight >}}
+{{< /highlight >}}
 
 ### Analysing Accounts
 
@@ -122,7 +122,7 @@ If you're running a local node and you've created an account then you should be 
 {{< highlight r >}}
 > eth_accounts()
 [1] "0xda20137332ce9d8f6795c40682f5f77b8b32a5fa"
-{{< / highlight >}}
+{{< /highlight >}}
 
 If you are using Infura then you won't see any accounts.
 
@@ -134,14 +134,14 @@ However, due to the open nature of Ethereum, we are able to check the balance in
 # Or in more sensible units.
 > as.ether(eth_getBalance("0xD34DA389374CAAD1A048FBDC4569AAE33fD5a375"))
 [1] 0.19427424853050314908
-{{< / highlight >}}
+{{< /highlight >}}
 
 How many transactions have been initiated from this address?
 
 {{< highlight r >}}
 > eth_getTransactionCount("0xD34DA389374CAAD1A048FBDC4569AAE33fD5a375")
 [1] 1150417
-{{< / highlight >}}
+{{< /highlight >}}
 
 ### Burrowing into Blocks
 
@@ -152,7 +152,7 @@ How many transactions are there in a specific block? There are two ways of addre
 [1] 137
 > eth_getBlockTransactionCountByNumber("0x4720FF")
 [1] 137
-{{< / highlight >}}
+{{< /highlight >}}
 
 We can delve into the details of a block.
 
@@ -170,7 +170,7 @@ We can delve into the details of a block.
 [1] 21106
 > block$timestamp
 [1] "2017-12-02 09:38:00 UTC"
-{{< / highlight >}}
+{{< /highlight >}}
 
 ![](/img/2017/12/etherscan-block-details.png)
 
@@ -188,7 +188,7 @@ Look at the table of transactions.
 4   0x3 0x353bd0ac47f6427b7835b38201f5250213fb97f9 0x75e7f640bf6968b6f32c47a3cd82c3c2c9dcae68   0x18699135dd7adc0
 5   0x4 0x0f157ab6519263cba006db8b11b57ed18a530550 0x9d2faffdb77979c60f99906b01691f0e63be0e11 0x1927483ad6276cc80
 6   0x5 0xa9683612ef7c5279b8942fbe4f4de33654f66636 0x75e7f640bf6968b6f32c47a3cd82c3c2c9dcae68   0x2ab03b628fd5400
-{{< / highlight >}}
+{{< /highlight >}}
 
 ### Tampering with Transactions
 
@@ -237,7 +237,7 @@ $r
 
 $s
 [1] "0x138a8f88c5790591b44a1a0c9fecdaab734b73e5ef899532df75de30788cd3a8"
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Breaking Down the Blockchain
 
@@ -250,7 +250,7 @@ Let's go all the way back to the beginning and take a look at the first block in
 
 {{< highlight r >}}
 > blocks <- get_blocks("0x0", count = 5)
-{{< / highlight >}}
+{{< /highlight >}}
 
 Taking a look at selected fields for those blocks we see that each has a number, where the Genesis block is assigned the number 0x0 and subsequent blocks are numbered sequentially. Each block has a time stamp. The Genesis block has a `NA` time stamp because it was created synthetically rather than being mined. Importantly, each block has a unique `hash`.
 
@@ -263,7 +263,7 @@ Taking a look at selected fields for those blocks we see that each has a number,
 3    0x2 2015-07-30 15:26:57 0xb495a1d7e6663152ae92708da4843337b958146015a2802f4193a410044698c9
 4    0x3 2015-07-30 15:27:28 0x3d6122660cc824376f11ee842f83addc3525e2dd6756b9bcf0affa6aa88cf741
 5    0x4 2015-07-30 15:27:57 0x23adf5a3be0f5235b36941bcb29b62504278ec5b9cdfa277b992ba4a7a3cd3a2
-{{< / highlight >}}
+{{< /highlight >}}
 
 Each block also has a `parentHash`. This is what links the blocks together. See, for example, that block number 0x1 has a `parentHash` which corresponds to the `hash` for block number 0x0. Similarly, block number 0x2 has a `parentHash` which corresponds to the `hash` for block number 0x1.
 
@@ -276,7 +276,7 @@ Each block also has a `parentHash`. This is what links the blocks together. See,
 3    0x2 0x88e96d4537bea4d9c05d12549907b32561d3bf31f45aae734cdc119f13406cb6
 4    0x3 0xb495a1d7e6663152ae92708da4843337b958146015a2802f4193a410044698c9
 5    0x4 0x3d6122660cc824376f11ee842f83addc3525e2dd6756b9bcf0affa6aa88cf741
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Future Plans
 

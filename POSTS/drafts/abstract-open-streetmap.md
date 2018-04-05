@@ -10,11 +10,11 @@ tags:
   - Talk
 ---
 
-{% comment %}
+{{< comment >}}
 https://opensource.com/article/17/8/openstreetmap
 
 Mark Padgham (@bikesRdata) has developed some great osm R pkgs and gave an interesting talk at the useR 17.
-{% endcomment %}
+{{< /comment >}}
 
 <div class="talk">
 	<div class="title">

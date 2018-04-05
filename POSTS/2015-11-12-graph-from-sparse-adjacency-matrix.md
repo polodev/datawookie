@@ -29,7 +29,7 @@ I spent a decent chunk of my morning trying to figure out how to construct a spa
  [8,] . . . . . . . . . .
  [9,] . . . . . . . . . .
 [10,] . | . . . . . . . .
-{{< / highlight >}}
+{{< /highlight >}}
 
 Of course, the error message I was encountering didn't point me to this fact. No, that would have been far too simple! The solution is highlighted in the sample code below: you need to specify the symbol used for the occupied sites in the sparse matrix.
 
@@ -46,7 +46,7 @@ Of course, the error message I was encountering didn't point me to this fact. No
 +                          dims = rep(20, 2),
 +                          use.last.ij = TRUE
 + )
-{{< / highlight >}}
+{{< /highlight >}}
 
 The resulting adjacency matrix then looks like this:
 
@@ -64,13 +64,13 @@ The resulting adjacency matrix then looks like this:
  [8,] . . . . . . . . . .
  [9,] . . . . . . . . . .
 [10,] . 1 . . . . . . . .
-{{< / highlight >}}
+{{< /highlight >}}
 
 And can be passed into `graph.adjacency()` without any further issues.
 
 {{< highlight r >}}
 > library(igraph)
 > graph = graph.adjacency(adjacency, mode = 'undirected')
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2015/11/simple-graph.png">
+<img src="/img/2015/11/simple-graph.png">

@@ -35,7 +35,7 @@ julia> if (n > 7) # The parentheses are optional.
            println("medium")
        end
 high
-{{< / highlight >}}
+{{< /highlight >}}
 
 The [ternary conditional operator](https://en.wikipedia.org/wiki/Ternary_operation) provides a compact syntax for a conditional returning one of two possible values.
   
@@ -44,7 +44,7 @@ julia> if n > 3 0 else 1 end # Conditional.
 0 
 julia> n > 3 ? 0 : 1 # Ternary conditional.
 0 
-{{< / highlight >}}
+{{< /highlight >}}
   
 I'm still a little gutted that R does not have a ternary operator. Kudos to Python for at least having [something similar](http://pythoncentral.io/one-line-if-statement-in-python-ternary-conditional-operator/), even if the syntax is somewhat convoluted.
 
@@ -66,7 +66,7 @@ number 7.
 number 8.
 number 9.
 number 10.
-{{< / highlight >}}
+{{< /highlight >}}
 
 In the code above we used the range operator, `:`, to construct an iterable sequence of integers between 1 and 10. This might be a good place to take a moment to look at ranges, which might not work in quite the way you'd expect. To get the range to actually expand into an array you need to enclose it in `[]`, otherwise it remains a `Range` object.
   
@@ -86,7 +86,7 @@ julia> [1:7]
  5
  6
  7
-{{< / highlight >}}
+{{< /highlight >}}
 
 A `for` loop can iterate over any iterable object, including strings and dictionaries. Using `enumerate()` in conjunction with a for loop gives a compact way to number items in a collection.
 
@@ -103,7 +103,7 @@ ERROR: DomainError
  in factorial at combinatorics.jl:35
 julia> super(DomainError)
 Exception
-{{< / highlight >}}
+{{< /highlight >}}
   
 All exceptions are derived from the `Exception` base class.
 
@@ -125,7 +125,7 @@ julia> try
            println("Well, that did't work!")
        end
 Well, that did't work!
-{{< / highlight >}}
+{{< /highlight >}}
 
 Exceptional conditions can be flagged by the `error()` function. Somewhat less aggressive are `warn()` and `info()`.
 

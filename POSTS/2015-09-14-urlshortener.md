@@ -23,7 +23,7 @@ shortener_authenticate("86368629146-2ag2qh1j4c26mf5dtm5p7gi85esn3i.apps.googleus
 [1] "http://goo.gl/MYyLu2"
 > expand.google("http://goo.gl/MYyLu2")
 [1] "http://www.google.com/"
-{{< / highlight >}}
+{{< /highlight >}}
 
 And then doing the same thing with bitly:
 
@@ -34,4 +34,4 @@ And then doing the same thing with bitly:
 [1] "http://bit.ly/1Qho4Y5"
 > expand.bitly("http://bit.ly/1Qho4Y5")
 [1] "http://www.google.com/"
-{{< / highlight >}}
+{{< /highlight >}}

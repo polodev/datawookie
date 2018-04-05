@@ -17,7 +17,7 @@ url: /2013/08/08/finding-your-metatrader-log-files/
 
 Debugging an indicator or expert advisor (EA) can be a tricky business. Especially when you are doing the debugging remotely. So I write my MQL code to include copious amounts of debugging information to log files. The contents of these log files can be used to diagnose any problems. This articles tells you where you can find those files.
 
-<img src="{{ site.baseurl }}/static/img/2013/08/metatrader-folder-structure.png" >
+<img src="/img/2013/08/metatrader-folder-structure.png" >
 
 # Testing Logs
 

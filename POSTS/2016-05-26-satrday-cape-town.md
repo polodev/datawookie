@@ -13,7 +13,7 @@ url: /2016/05/26/satrday-cape-town/
 
 We are planning to host one of the three inaugural [satRday](https://github.com/stephlocke/RSaturday-proposal) conferences in Cape Town during 2017. The \[R Consortium\](https://www.r-consortium.org/) has committed to funding three of these events: one will be in Hungary, another will be somewhere in the USA and the third will be at an international destination. At present Cape Town is dicing it out with Monterrey (Mexico) for the third location. We just need your [votes](http://app.doopoll.co/poll/ZznsEGPnmbFafim2c) to make Cape Town's plans a reality.
 
-<img src="{{ site.baseurl }}/static/img/2016/05/cape-town-aerial-logo.jpg">
+<img src="/img/2016/05/cape-town-aerial-logo.jpg">
 
 <!--more-->
 
@@ -36,7 +36,7 @@ Did I mention the wine and Table Mountain? Ah, yes, I did.
 
 This is what the weather looked like in Cape Town at the end of February 2016: temperatures around 20 to 25 °C (70 to 80 Fahrenheit), light breezes and zero precipitation.
 
-<img src="{{ site.baseurl }}/static/img/2016/05/cape-town-weather-brief.png">
+<img src="/img/2016/05/cape-town-weather-brief.png">
 
 ## For International Tourists
 
@@ -44,7 +44,7 @@ Cape Town is well connected with the rest of the World. There are direct flights
 
 The exchange rate is extremely favourable (see below), making South Africa rather affordable for the international traveller. A healthy meal will cost you around 100 ZAR and a great bottle of wine can be had for about the same price. Decent [accommodation](https://www.airbnb.com/s/Cape-Town--South-Africa) with sweeping views of the sea or mountain costs between 700 and 1000 ZAR per night, but you can find more affordable (or more lavish) options.
 
-<img src="{{ site.baseurl }}/static/img/2016/05/zar-exchange-rates.png">
+<img src="/img/2016/05/zar-exchange-rates.png">
 
 Public transport is a little sparse, but [Uber](https://www.uber.com/) will take you anywhere you need to go.
 
@@ -57,6 +57,6 @@ For useRs from the USA, Cape Town is somewhat further away than Monterrey, but i
 
 We look forward to hosting you next year at satRday in Cape Town, the Mother City. Please [vote](http://app.doopoll.co/poll/ZznsEGPnmbFafim2c) for Cape Town now.
 
-<img src="{{ site.baseurl }}/static/img/2016/05/cape-town-university.jpg">
+<img src="/img/2016/05/cape-town-university.jpg">
 
-<img src="{{ site.baseurl }}/static/img/2016/05/cape-town-penguins.jpg">
+<img src="/img/2016/05/cape-town-penguins.jpg">

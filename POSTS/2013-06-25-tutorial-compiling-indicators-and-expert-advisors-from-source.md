@@ -45,23 +45,23 @@ How do you differentiate between expert advisor and indicator .mq4 files? Quite 
 
 {{< highlight text >}}
 #property indicator_separate_window
-{{< / highlight >}}
+{{< /highlight >}}
 
 or
 
 {{< highlight text >}}  
 #property indicator_chart_window
-{{< / highlight >}}
+{{< /highlight >}}
 
 near to the top of the file.
 
-<img src="{{ site.baseurl }}/static/img/2013/06/Windows-7-Running-Oracle-VM-VirtualBox_071.png">
+<img src="/img/2013/06/Windows-7-Running-Oracle-VM-VirtualBox_071.png">
 
 ## Compiling the Source Code
 
 Once everything is in the right place, all that remains is to compile the source code. Open the MetaEditor (you can do this by pressing MetaEditor button in the task bar of the MetaTrader terminal). Now use the file browser on the right of the window to find the .ma4 file that you are interested in. Open the file and then press the Compile button (yellow oval in window below).
 
-<img src="{{ site.baseurl }}/static/img/2013/06/Windows-7-Running-Oracle-VM-VirtualBox_070.png">
+<img src="/img/2013/06/Windows-7-Running-Oracle-VM-VirtualBox_070.png">
 
 Check the Errors tab in the bottom panel of the window. If all goes according to plan (no errors and not too many warnings!) then you will find that the freshly compiled expert advisor or indicator is now available to run from the MetaTrader terminal.
 

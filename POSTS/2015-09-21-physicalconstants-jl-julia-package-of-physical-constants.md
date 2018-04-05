@@ -22,7 +22,7 @@ The package can be installed directly from its [github repository](https://githu
 
 {{< highlight julia >}}
 Pkg.clone("https://github.com/DataWookie/PhysicalConstants.jl")
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Usage
 
@@ -30,25 +30,25 @@ Usage is pretty straightforward. Start off by loading the package.
 
 {{< highlight julia >}}
 julia> using PhysicalConstants
-{{< / highlight >}}
+{{< /highlight >}}
 
 Now, for example, access Earth's gravitational acceleration in MKS units.
 
 {{< highlight julia >}}
 julia> PhysicalConstants.MKS.GravAccel
 9.80665
-{{< / highlight >}}
+{{< /highlight >}}
   
 Or in CGS units.
 
 {{< highlight julia >}}
 julia> PhysicalConstants.CGS.GravAccel
 980.665
-{{< / highlight >}}
+{{< /highlight >}}
   
 Or, finally, in Imperial units.
 
 {{< highlight julia >}}
 julia> PhysicalConstants.Imperial.GravAccel
 32.174049
-{{< / highlight >}}
+{{< /highlight >}}

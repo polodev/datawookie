@@ -26,7 +26,7 @@ The iterators package is written and maintained by [Revolution Analytics](http:/
 
 {{< highlight r >}}
 > library(iterators)
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Iterating over a Vector
 
@@ -44,14 +44,14 @@ The iter() function transforms a container into an iterator. Using it we can mak
 [1] "Jack"
 > nextElem(iname)
 [1] "Jane"
-{{< / highlight >}}
+{{< /highlight >}}
 
 Here iteration is performed manually by calling nextElem(): each call yields the next element in the vector. And when we fall off the end of the vector, we get a StopIteration error.
 
 {{< highlight r >}}
 > nextElem(iname)
 Error: StopIteration
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Iterating over Data Frames and Matrices
 
@@ -64,7 +64,7 @@ Similarly, we can make an iterator from a data frame.
 2 Mary   23      F
 3 Jack   41      M
 4 Jane   19      F
-{{< / highlight >}}
+{{< /highlight >}}
 
 We can iterate over the data frame by column (the default behaviour)...
 
@@ -78,7 +78,7 @@ Levels: Bob Jack Jane Mary
 > nextElem(ipeople)
 [1] M F M F
 Levels: F M
-{{< / highlight >}}
+{{< /highlight >}}
 
 ... or by row.
 
@@ -96,7 +96,7 @@ Levels: F M
 > nextElem(ipeople)
   name ages gender
 4 Jane   19      F
-{{< / highlight >}}
+{{< /highlight >}}
 
 To my mind iterating by row is likely to be the most common application, so I am a little puzzled by the fact that it is not the default. No doubt the creators had a solid reason for this design choice though!
 
@@ -107,7 +107,7 @@ Not surprisingly, we can iterate through the rows and columns of a matrix as wel
 > #
 > library(doMC)
 > registerDoMC(cores=4)
-{{< / highlight >}}
+{{< /highlight >}}
 
 Then, for illustration purposes, we create a matrix of normally distributed random numbers. Our parallel loop will use an iterator to run through the matrix, computing the mean for every row. Of course, there are other ways of accomplishing the same task, but this syntax is rather neat and intuitive.
 
@@ -129,7 +129,7 @@ Then, for illustration purposes, we create a matrix of normally distributed rand
  [85]  0.0036712 -0.0375137  0.0817137  0.0092214  0.0068116 -0.0887101 -0.0623266
  [92] -0.1580448  0.0870227 -0.0517170  0.1160297 -0.2065726 -0.0517491 -0.0312476
  [99] -0.0363837 -0.1619014
-{{< / highlight >}}
+{{< /highlight >}}
 
 Another way of slicing up a matrix uses iapply(), which is analogous to the native apply() function. First, let's create a small and orderly matrix.
 
@@ -146,7 +146,7 @@ Another way of slicing up a matrix uses iapply(), which is analogous to the nati
  [8,]    8   18   28   38   48   58   68   78   88    98
  [9,]    9   19   29   39   49   59   69   79   89    99
 [10,]   10   20   30   40   50   60   70   80   90   100
-{{< / highlight >}}
+{{< /highlight >}}
 
 Choosing margin = 1 gives us the rows, while margin = 2 yields the columns.
 
@@ -161,7 +161,7 @@ Choosing margin = 1 gives us the rows, while margin = 2 yields the columns.
 [1] 1 2 3 4 5 6 7 8 9 10
 > nextElem(icol)
 [1] 11 12 13 14 15 16 17 18 19 20
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Iterating through a File
 
@@ -175,7 +175,7 @@ An iterator to read lines from a file is extremely useful. This is certainly the
 [1] "daemon:x:1:1:daemon:/usr/sbin:/bin/sh"
 > nextElem(ifile)
 [1] "bin:x:2:2:bin:/bin:/bin/sh"
-{{< / highlight >}}
+{{< /highlight >}}
 
 Each call to nextElem() returns a new line from the file. We can put this into a loop and traverse the entire file.
 
@@ -195,7 +195,7 @@ Each call to nextElem() returns a new line from the file. We can put this into a
 [1] "ntp:x:121:129::/home/ntp:/bin/false"
 [1] "nx:x:122:1010::/var/NX/nx:/etc/NX/nxserver"
 Error : StopIteration
-{{< / highlight >}}
+{{< /highlight >}}
 
 Hmmmm. The code for the loop is a little clunky and it ends in a rather undignified fashion. Surely there is a better way to do this? Indeed there is! More on that later.
 
@@ -205,7 +205,7 @@ iter() allows you to specify a filter function which can be used to select parti
 
 {{< highlight r >}}
 > library(gmp)
-{{< / highlight >}}
+{{< /highlight >}}
 
 First we'll look at the basic functionality of isprime().
 
@@ -216,7 +216,7 @@ First we'll look at the basic functionality of isprime().
 [1] 0
 > isprime(2147483647)
 [1] 1
-{{< / highlight >}}
+{{< /highlight >}}
 
 A return value of 2 indicates that a number is definitely prime, while 0 indicates a composite number. For small numbers these are the only two options, however, for larger numbers the [Miller-Rabin primality test](http://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test) is applied, in which case a return value of 1 indicates that a number is _probably_ prime.
 
@@ -232,7 +232,7 @@ So, here we go, grabbing the first four primes:
 [1] 5
 > nextElem(iprime)
 [1] 7
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## An Iterable Version of split()
 
@@ -260,7 +260,7 @@ $key[[1]]
 > p$value
 [1] Bob  Jack
 Levels: Bob Jack Jane Mary
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Functions as Iterators
 
@@ -276,7 +276,7 @@ It is also possible to have a function packaged as an iterator. The function is 
 [1] "Mary"
 > nextElem(ifunc)
 [1] "Jack"
-{{< / highlight >}}
+{{< /highlight >}}
 
 Here each succesive element returned by the iterator is generated by a call to an anonymous function which extracts a single sample from our list of names. I am not quite sure how I would use this facility in a practical situation (why is this superior to simply calling the function?), but I am sure that a good application will reveal itself in due course.
 
@@ -293,7 +293,7 @@ def fibonacci():
 
 for n in fibonacci():
     print(n)
-{{< / highlight >}}
+{{< /highlight >}}
 
 An analogous iterator can be implemented in R. Perhaps the syntax is not quite as succinct, but it certainly does the job.
 
@@ -308,7 +308,7 @@ An analogous iterator can be implemented in R. Perhaps the syntax is not quite a
 +   class(obj) <- c('fibonacci', 'abstractiter', 'iter')
 +   obj
 + }
-{{< / highlight >}}
+{{< /highlight >}}
 
 Now we can instantiate a Fibonacci iterator and start generating terms...
 
@@ -329,7 +329,7 @@ Now we can instantiate a Fibonacci iterator and start generating terms...
 > #
 > unlist(as.list(ifib, n = 10))
 [1] 13 21 34 55 89 144 233 377 610 987
-{{< / highlight >}}
+{{< /highlight >}}
 
 Again, you might be wondering what advantages this provides over simply having a function which generates the sequence. Consider a situation where you need to have two independent sequences. Certainly the state of each sequence could be stored and passed as an argument. An object oriented solution would be natural. However, iterators will do the job very nicely too.
 
@@ -340,7 +340,7 @@ Again, you might be wondering what advantages this provides over simply having a
 [1] 1 1 2 3 5 8 13
 > unlist(as.list(i2, n = 10))
 [1] 1 1 2 3 5 8 13 21 34 55
-{{< / highlight >}}
+{{< /highlight >}}
 
 We have generated some terms from each of the iterators. Not surprisingly, when we return to generate further terms, we find that each of the iterators picks up at just the right position in the sequence.
 
@@ -349,7 +349,7 @@ We have generated some terms from each of the iterators. Not surprisingly, when 
 [1] 21 34 55 89 144 233 377
 > unlist(as.list(i2, n = 10))
 [1] 89 144 233 377 610 987 1597 2584 4181 6765
-{{< / highlight >}}
+{{< /highlight >}}
 
 # itertools Package
 
@@ -357,7 +357,7 @@ The itertools package is written and maintained by Steve Weston (Yale University
 
 {{< highlight r >}}
 > library(itertools)
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Stop When You Reach the End
 
@@ -379,7 +379,7 @@ The Fibonacci iterator implemented above will keep on generating terms indefinit
 +   class(obj) <- c('fibonacci', 'abstractiter', 'iter')
 +   obj
 + }
-{{< / highlight >}}
+{{< /highlight >}}
 
 In practice this works fine...
 
@@ -398,7 +398,7 @@ In practice this works fine...
  
  Rerun with Debug
  Error in obj$nextElem() : StopIteration
-{{< / highlight >}}
+{{< /highlight >}}
 
 ... but it generates a rather rude error message if you try to iterate beyond the prescribed number of terms. How can we handle this more elegantly? Enter the ihasNext() wrapper which enables a hasNext() function for an iterator.
 
@@ -411,7 +411,7 @@ In practice this works fine...
 [1] 1
 [1] 2
 [1] 3
-{{< / highlight >}}
+{{< /highlight >}}
 
 So, instead of blindly trying to proceed to the next item, we first check whether there are still items available in the iterator. This pattern can be applied to any situation where the iterator has only a finite number of terms. Iterating through the lines in a file would be a prime example!
 
@@ -428,7 +428,7 @@ So, instead of blindly trying to proceed to the next item, we first check whethe
 #
 [1] "ntp:x:121:129::/home/ntp:/bin/false"
 [1] "nx:x:122:1010::/var/NX/nx:/etc/NX/nxserver"
-{{< / highlight >}}
+{{< /highlight >}}
 
 That's much better!
 
@@ -440,7 +440,7 @@ Adapting our Fibonacci iterator to stop after a finite number of terms was a bit
 > ifib <- ilimit(fibonacci(), 12)
 > unlist(as.list(ifib))
 [1] 1 1 2 3 5 8 13 21 34 55 89 144
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Recycle Everything
 
@@ -460,7 +460,7 @@ We have seen how to truncate an effectively infinite series of iterates. How abo
 [1] 2
 > nextElem(irec)
 [1] 3
-{{< / highlight >}}
+{{< /highlight >}}
 
 Next we generate the first six terms from the Fibonacci sequence and repeat them twice.
 
@@ -468,7 +468,7 @@ Next we generate the first six terms from the Fibonacci sequence and repeat them
 > irec <- recycle(ilimit(fibonacci(), 6), 2)
 > unlist(as.list(irec))
 [1] 1 1 2 3 5 8 1 1 2 3 5 8
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Enumerating
 
@@ -482,7 +482,7 @@ The enumerate() function returns an iterator which returns each element of the i
 2 -> Mary
 3 -> Jack
 4 -> Jane
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Zip Them Up!
 
@@ -498,7 +498,7 @@ c -> 2
 d -> 3
 e -> 5
 f -> 8
-{{< / highlight >}}
+{{< /highlight >}}
 
 Naturally, we can use this to replicate the functionality of enumerate().
 
@@ -509,7 +509,7 @@ Naturally, we can use this to replicate the functionality of enumerate().
 2 -> Mary
 3 -> Jack
 4 -> Jane
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Getting Chunky!
 
@@ -523,7 +523,7 @@ What about returning groups of values from an iterator? The ichunk() wrapper tak
 [1] 3 5 8
 > unlist(nextElem(ifib))
 [1] 13 21 34
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Until I Say "Stop!"
 
@@ -532,7 +532,7 @@ Finally, an iterator which continues to generate terms until a time limit is rea
 {{< highlight r >}}
 > length(as.list(timeout(fibonacci(), 0.1)))
 [1] 701
-{{< / highlight >}}
+{{< /highlight >}}
 
 # Conclusion
 

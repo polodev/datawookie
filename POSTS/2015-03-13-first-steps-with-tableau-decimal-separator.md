@@ -21,4 +21,4 @@ This confused me.
 
 Fortunately there is an easy fix. From the Worksheet view, select File then Workbook Locale. Neither the Automatic not the English (South Africa) gave me the correct results. But selecting English (United Kingdom) sorted the problem.
 
-<img src="{{ site.baseurl }}/static/img/2015/03/tableau-menu-locale.png">
+<img src="/img/2015/03/tableau-menu-locale.png">

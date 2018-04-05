@@ -27,7 +27,7 @@ $ zip foo.zip foo.txt
   adding: foo.txt (deflated 62%)
 $ ls -l foo.zip
 -rw-rw-r- 1 user user 1031 Jul 8 14:06 foo.zip
-{{< / highlight >}}
+{{< /highlight >}}
 
 Then extract the single file to standard output using `funzip` and pipe the results through `bzip2`.
 
@@ -35,12 +35,12 @@ Then extract the single file to standard output using `funzip` and pipe the resu
 $ funzip foo.zip | bzip2 >foo.bz2
 $ ls -l foo.bz2
 -rw-rw-r- 1 user user 924 Jul 8 14:06 foo.bz2
-{{< / highlight >}}
+{{< /highlight >}}
 
 Another, more robust, approach is to simply use `unzip` with `-c` (extract to stdout) and `-qq` (be super quiet).
 
 {{< highlight bash >}}
 unzip -qq -c foo.zip | bzip2 >foo.bz2
-{{< / highlight >}}
+{{< /highlight >}}
 
 Voila!

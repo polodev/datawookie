@@ -19,7 +19,7 @@ It's not my personal choice, but I have to spend a lot of my time working under 
 1. [Download](https://www.mongodb.org/downloads) the installation. This will be an MSI installer package with a name like `mongodb-win32-x86_64-2008plus-ssl-3.2.0-signed.msi`. 
 2. Run the installer with a deft double-click.
 
-<img src="{{ site.baseurl }}/static/img/2016/01/MongoDB-install-dialog.png" >
+<img src="/img/2016/01/MongoDB-install-dialog.png" >
 
 3. Accept the License Agreement. 
 4. Select the Complete installation type and click Install. 
@@ -30,7 +30,7 @@ It's not my personal choice, but I have to spend a lot of my time working under 
 9. Create a folder for the log files. By default this will be `C:\data\log`. 
 10. Open a command prompt, change the working directory to `C:\Program Files\MongoDB\Server\3.2\bin` and start the database server, `mongod.exe`.
 
-<img src="{{ site.baseurl }}/static/img/2016/01/MongoDB-starting-server.png" >
+<img src="/img/2016/01/MongoDB-starting-server.png" >
 
 At this stage you should be ready to roll. Open another command prompt and start the database client, `mongo.exe` which you'll find in the same folder as `mongod.exe`.
 
@@ -44,16 +44,16 @@ systemLog:
     path: c:\data\log\mongod.log
 storage:
     dbPath: c:\data\db
-{{< / highlight >}}
+{{< /highlight >}}
 2. Install MongoDB as a service by running
 {{< highlight text >}}
 mongod.exe -config "C:\Program Files\MongoDB\Server\3.2\mongod.cfg" -install
-{{< / highlight >}}
+{{< /highlight >}}
 3. The service can then be launched with
 {{< highlight text >}}
 net start MongoDB
-{{< / highlight >}}
+{{< /highlight >}}
 And stopping the service is as simple as
 {{< highlight text >}}
 net stop MongoDB
-{{< / highlight >}}
+{{< /highlight >}}

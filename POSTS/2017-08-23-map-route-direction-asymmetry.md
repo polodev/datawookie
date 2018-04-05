@@ -24,13 +24,13 @@ To use those locations as the origin and destination arguments for `gmapsdistanc
 {{< highlight r >}}
 > A = gsub(" ", "+", "115 St Andrew's Drive, Durban North, 4051, South Africa")
 > B = gsub(" ", "+", "25 Gainsborough Drive, Athlone, Durban North, 4051, South Africa")
-{{< / highlight >}}
+{{< /highlight >}}
 
 For reproducibility we'll stipulate a specific date and time (this only has any effect if you've provided a Google Maps API key, otherwise it will be silently ignored).
 
 {{< highlight r >}}
 > DEPARTURE = as.integer(as.POSIXct("2017-08-23 18:00:00"))
-{{< / highlight >}}
+{{< /highlight >}}
 
 Now we can calculate the distances and times for trips in either direction. First look at the trip from A to B.
 
@@ -45,7 +45,7 @@ $Distance
 
 $Status
 [1] "OK"
-{{< / highlight >}}
+{{< /highlight >}}
 
 Then the trip in the opposite direction, from B to A.
 
@@ -59,7 +59,7 @@ $Distance
 
 $Status
 [1] "OK"
-{{< / highlight >}}
+{{< /highlight >}}
 
 We see that the distance in both cases is the same (which stands to reason if the same route was taken in both directions) but that the times are different: 6:45 (405 seconds) from A to B and 6:52 (412 seconds) from B to A.
 
@@ -94,10 +94,10 @@ The difference is more pronounced if we consider different levels of congestion 
 
 To gain further insight into these results I took a look at the routes considered by Google Maps. For the trip from A to B the recommended route passes through some congested areas but looks good for the most part.
 
-![]({{ site.baseurl }}/static/img/2017/08/maps-route-a-to-b.png)
+![](/img/2017/08/maps-route-a-to-b.png)
 
 The recommended course from B to A travels along the same route in reverse, but now we see that there are more extended congested segments. This would account for the slightly longer travel time.
 
-![]({{ site.baseurl }}/static/img/2017/08/maps-route-b-to-a.png)
+![](/img/2017/08/maps-route-b-to-a.png)
 
 This exercise has given me a lot of confidence in the result returned by `gmapsdistance` and confirmed my previous thinking about Google Maps: damn clever technology!

@@ -24,19 +24,19 @@ First become root and then make some swap files. I am in favour of creating a fe
 # dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
 # dd if=/dev/zero of=/var/swap.2 bs=1M count=1024
 # dd if=/dev/zero of=/var/swap.3 bs=1M count=1024
-{{< / highlight >}}
+{{< /highlight >}}
 
 Another way to create swap files is by using `fallocate`, which actually provides a more intuitive interface.
 
 {{< highlight bash >}}
 # fallocate -l 1G /var/swap.1
-{{< / highlight >}}
+{{< /highlight >}}
 
 To make sure that these files are secure, change the access permissions.
 
 {{< highlight bash >}}
 # chmod 600 /var/swap.[123]
-{{< / highlight >}}
+{{< /highlight >}}
 
 Next you'll set up a swap area on each of these files.
 
@@ -44,13 +44,13 @@ Next you'll set up a swap area on each of these files.
 # /sbin/mkswap /var/swap.1
 # /sbin/mkswap /var/swap.2
 # /sbin/mkswap /var/swap.3
-{{< / highlight >}}
+{{< /highlight >}}
 
 Finally activate as many of the swap files as you require to give you sufficient virtual memory. I just needed one for starters.
 
 {{< highlight bash >}}
 # /sbin/swapon /var/swap.1
-{{< / highlight >}}
+{{< /highlight >}}
 
 If you want the swap space to be activated again after reboot then you will need to add an entry to `/etc/fstab`. More information can be found [here](http://danielgriff.in/2014/add-swap-space-to-ec2-to-increase-performance-and-mitigate-failure/).
 
@@ -60,7 +60,7 @@ When you are done with the memory intensive operations you might want to disable
 
 {{< highlight bash >}}
 # /sbin/swapoff /var/swap.1
-{{< / highlight >}}
+{{< /highlight >}}
 
 Here's everything in a Gist (using just a single swap file and setting its size from an environment variable).
 

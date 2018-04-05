@@ -9,11 +9,11 @@ tags:
   - Ethereum
 ---
 
-{% comment %}
+{{< comment >}}
 This illustrates how to deploy a contract onto the Ropsten (test) blockchain:
 
   - https://medium.com/@mvmurthy/full-stack-hello-world-voting-ethereum-dapp-tutorial-part-2-30b3d335aa1f.
-{% endcomment %}
+{{< /comment >}}
 
 How to create accounts on the Ropsten (test) blockchain.
 
@@ -23,13 +23,13 @@ How to create accounts on the Ropsten (test) blockchain.
 
 ## Synchronise
 
-{% comment %}
+{{< comment >}}
 This will only be necessary if you had sycnchronised previously and now it won't work. Do this first to clear up any lurking data.
 
 {% highlight bash %}
 geth --testnet removedb
 {% endhighlight %}
-{% endcomment %}
+{{< /comment >}}
 
 Before we can create an account we'll need to launch a local Ethereum node and synchronise with the Ethereum Blockchain.
 
@@ -56,7 +56,7 @@ Every record reflects some statistics for a new segment in the blockchain. Speci
 
 You can tell that your node is synchronised when the block number, `blocks`, is the same as the block height listed on the [Ropsten Testnet Pool](http://pool.ropsten.ethereum.org/).
 
-![]({{ site.baseurl }}/static/img/2017/11/ropsten-network-status.png)
+![](/img/2017/11/ropsten-network-status.png)
 
 ## Enable RPC
 
@@ -66,9 +66,9 @@ The node will now also be listening on port 8545 for RPC connections. This is th
 
 ## Create an Account via geth
 
-{% comment %}
+{{< comment >}}
 https://ethereum.gitbooks.io/frontier-guide/content/managing_accounts.html
-{% endcomment %}
+{{< /comment >}}
 
 Open another terminal and create a new account.
 
@@ -132,7 +132,7 @@ Note that the other accounts created above are not visible. We'll talk about thi
 
 To verify that this account has been created on Ropsten, head over to <https://ropsten.etherscan.io/> and search for the account hash.
 
-![]({{ site.baseurl }}/static/img/2017/11/ropsten-account-empty.png)
+![](/img/2017/11/ropsten-account-empty.png)
 
 The account exists but there are no transactions on it.
 

@@ -13,7 +13,7 @@ url: /2017/09/15/google-analytics-redundant-hostnames/
 
 <p>While poring over my Google Analytics data I noticed the notification below.</p>
 
-![]({{ site.baseurl }}/static/img/2017/09/google-analytics-redundant-hostnames.png)
+![](/img/2017/09/google-analytics-redundant-hostnames.png)
 
 <p>Obviously this is not a train smash, but it is compromising the quality of my data. And it also offends my OCD. This is what I did to fix the problem.</p>
 
@@ -45,7 +45,7 @@ server {
 	#
 	# Rest of configuration goes here.
 }
-{{< / highlight >}}
+{{< /highlight >}}
 
 This maps `http://racently.com` and `http://www.racently.com` (first `server` block) as well as `https://racently.com` (second `server` block) onto `https://www.racently.com`.
 
@@ -60,7 +60,7 @@ Content-Type: text/html
 Content-Length: 178
 Connection: keep-alive
 Location: https://www.racently.com/
-{{< / highlight >}}
+{{< /highlight >}}
 
 {{< highlight bash >}}
 $ curl -I http://www.racently.com
@@ -71,7 +71,7 @@ Content-Type: text/html
 Content-Length: 178
 Connection: keep-alive
 Location: https://www.racently.com/
-{{< / highlight >}}
+{{< /highlight >}}
 
 {{< highlight bash >}}
 $ curl -I https://racently.com
@@ -82,7 +82,7 @@ Content-Type: text/html
 Content-Length: 178
 Connection: keep-alive
 Location: https://www.racently.com/
-{{< / highlight >}}
+{{< /highlight >}}
 
 In each case we're looking at the `Location` entry, which should be `https://www.racently.com/`. The [301 redirects](https://en.wikipedia.org/wiki/HTTP_301) all work fine. Finally check that `https://www.racently.com` still works.
 
@@ -100,6 +100,6 @@ Set-Cookie: csrftoken=QeEg7drRUxhyeMvxJ7o68UK6j3PIJOw5; expires=Fri, 14-Sep-2018
 Strict-Transport-Security: max-age=63072000; includeSubdomains
 X-Frame-Options: DENY
 X-Content-Type-Options: nosniff
-{{< / highlight >}}
+{{< /highlight >}}
 
 Yes! That all looks good. Minor problem resolved.

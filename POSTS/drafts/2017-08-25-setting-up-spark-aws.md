@@ -16,7 +16,7 @@ A step-by-step tutorial on setting up a Spark cluster on AWS. This is stil a wor
 
 <!-- more -->
 
-![]({{ site.baseurl }}/static/img/logo/logo-spark.png)
+![](/img/logo/logo-spark.png)
 
 <!-- http://holowczak.com/getting-started-with-apache-spark-on-aws/ -->
 
@@ -35,7 +35,7 @@ From the Service dropdown select S3. Click the Create Bucket button.
 3. Keep the default permissions for the moment.
 4. On the Review tab press the Create bucket button.
 
-![]({{ site.baseurl }}/static/img/2017/07/aws-s3-bucket.png)
+![](/img/2017/07/aws-s3-bucket.png)
 
 ## Create Folders in the S3 Storage Bucket
 
@@ -45,7 +45,7 @@ Select the newly created bucket.
 2. Name the new folder "data" and press Save.
 3. Create folders named "output" and "logs".
 
-![]({{ site.baseurl }}/static/img/2017/07/aws-s3-folders.png)
+![](/img/2017/07/aws-s3-folders.png)
 
 ## Upload data
 
@@ -55,7 +55,7 @@ Select the newly created bucket.
 
 These data are now stored on HDFS.
 
-![]({{ site.baseurl }}/static/img/2017/07/aws-s3-iris.png)
+![](/img/2017/07/aws-s3-iris.png)
 
 ## Elastic MapReduce
 
@@ -63,7 +63,7 @@ These data are now stored on HDFS.
 
 From the Service dropdown select EMR.
 
-![]({{ site.baseurl }}/static/img/2017/07/aws-emr-create-cluster-quick-options.png)
+![](/img/2017/07/aws-emr-create-cluster-quick-options.png)
 
 1. Click the <kbd class="bg-primary">Create cluster</kbd> button.
 2. Give it an appropriate name.
@@ -100,7 +100,7 @@ You might also want to customise your hardware configuration. By default you'll 
 
 Wait for all of the nodes to be marked as <span style="color: green;">Running</span>.
 
-![]({{ site.baseurl }}/static/img/2017/07/aws-emr-status.png)
+![](/img/2017/07/aws-emr-status.png)
 
 ### Connecting
 

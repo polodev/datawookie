@@ -32,7 +32,7 @@ Let's create some test data: a list consisting of 100 000 elements, each of whic
 > data[[1]]
   index char        z
 1     1    t 0.221784
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## The Naive Solution
 
@@ -47,7 +47,7 @@ My naive solution to the problem was to use a combination of `do.call()` and `rb
 4     4    h 0.04587779
 5     5    o 0.08608656
 6     6    l 0.26410506
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Alternative Solutions #1 and #2
 
@@ -72,7 +72,7 @@ The plyr package presents two options.
 4     4    h 0.04587779
 5     5    o 0.08608656
 6     6    l 0.26410506
-{{< / highlight >}}
+{{< /highlight >}}
 
 Both of these also do the job nicely.
 
@@ -93,7 +93,7 @@ The revised package dplyr provides some alternative solutions.
 6     6    v 0.51332403
 Warning message:
 In rbind_all(data) : Unequal factor levels: coercing to character
-{{< / highlight >}}
+{{< /highlight >}}
 
 A second function, `rbind_list()`, takes individual elements to be concatenated as arguments (rather than a single list).
 
@@ -114,7 +114,7 @@ Finally, a solution from the data.table package.
 4:     4    h 0.04587779
 5:     5    o 0.08608656
 6:     6    l 0.26410506
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Benchmarking
 
@@ -130,7 +130,7 @@ All of these alternatives produce the correct result. The solution of choice wil
 3     rbind.fill(data)          100  4836.31  155.558   1936.55     0.37         NA        NA
 4      rbind_all(data)          100  1627.84   52.359    111.79     0.10         NA        NA
 5      rbindlist(data)          100    31.09    1.000     12.53     0.12         NA        NA
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Thoughts on Performance
 

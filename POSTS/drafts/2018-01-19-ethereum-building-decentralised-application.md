@@ -9,9 +9,9 @@ tags:
   - Ethereum
 ---
 
-{% comment %}
+{{< comment >}}
 https://blockgeeks.com/guides/solidity/
-{% endcomment %}
+{{< /comment >}}
 
 https://cdn-images-1.medium.com/max/800/1*y7Cdz1uGBGLxZ3ekIE13RA.png
 
@@ -56,16 +56,16 @@ https://github.com/pipermerriam/web3.py
 
 
 
-{% comment %}
+{{< comment >}}
 https://blockgeeks.com/guides/how-to-learn-solidity/
-{% endcomment %}
+{{< /comment >}}
 
 
-{% comment %}
+{{< comment >}}
 https://www.stateofthedapps.com/
 
 https://medium.com/@mvmurthy/full-stack-hello-world-voting-ethereum-dapp-tutorial-part-2-30b3d335aa1f.
-{% endcomment %}
+{{< /comment >}}
 
 A decentralised application will most likely provide the capability to either
 
@@ -87,7 +87,7 @@ Creating a New Den
 
 Provide a password. Then you'll see something like this:
 
-![]({{ site.baseurl }}/static/img/2017/11/metamask-words.png)
+![](/img/2017/11/metamask-words.png)
 
 Keep a copy of those words somewhere safe.
 

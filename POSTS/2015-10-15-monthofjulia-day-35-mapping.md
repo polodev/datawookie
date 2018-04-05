@@ -17,7 +17,7 @@ url: /2015/10/15/monthofjulia-day-35-mapping/
 
 <!--more-->
 
-<img src="{{ site.baseurl }}/static/img/2015/09/Julia-Logo-OpenStreetMap.png" >
+<img src="/img/2015/09/Julia-Logo-OpenStreetMap.png" >
 
 A lot of my data reflects events happening at different geographic locations (and, incidentally, at different times, but that's another story). So it's not surprising that I'm interested in mapping those data. Julia has an [OpenStreetMap](http://github.com/tedsteiner/OpenStreetMap.jl) package which presents an interface to the [OpenStreetMap](https://www.openstreetmap.org/) service. The package is [well documented](http://openstreetmapjl.readthedocs.org/en/stable/) and has an extensive range of functionality. As with a number of previous posts in this series, I'm just going to skim the surface of what's available.
 
@@ -26,7 +26,7 @@ We'll need to load up the Requests package to retrieve the map data and the Open
 {{< highlight julia >}}
 julia> using Requests
 julia> using OpenStreetMap
-{{< / highlight >}}
+{{< /highlight >}}
 
 As far as I can see the OpenStreetMap package doesn't implement functionality for downloading the map data. So we do this directly through an HTTP request. We'll specify a map area by giving the latitude and longitude of the bottom-left and top-right corners.
 
@@ -36,7 +36,7 @@ julia> minLon = 30.8821;
 julia> maxLon = minLon + 0.05;
 julia> minLat = -29.8429;
 julia> maxLat = minLat + 0.05;
-{{< / highlight >}}
+{{< /highlight >}}
 We then build the query URL using Julia's convenient string interpolation and execute a GET request against the OpenStreetMap API.
 {{< highlight julia >}}
 julia> URL = "http://overpass-api.de/api/map?bbox=$(minLon),$(minLat),$(maxLon),$(maxLat)"
@@ -45,14 +45,14 @@ julia> osm = get(URL)
 Response(200 OK, 10 headers, 1958494 bytes in body)
 julia> save(osm, MAPFILE)
 "map.osm"
-{{< / highlight >}}
+{{< /highlight >}}
 
 Save the resulting data (it's just a large blob of XML) to a file. Feel free to open this file in an editor and browse around. Although there is currently no official schema for the OpenStreetMap XML, the [documentation](http://wiki.openstreetmap.org/wiki/OSM_XML) gives a solid overview of the format.
 
 {{< highlight text >}}
 $ file map.osm
 map.osm: OpenStreetMap XML data
-{{< / highlight >}}
+{{< /highlight >}}
 
 We process the contents of the XML file using `getOSMData()`.
 
@@ -66,7 +66,7 @@ julia> println("Number of buildings: $(length(buildings))")
 Number of buildings: 5
 julia> println("Number of features: $(length(features))")
 Number of features: 12
-{{< / highlight >}}
+{{< /highlight >}}
 
 The call to `getOSMData()` returns all of the data required to build a map. Amongst these you'll find a dictionary of features broken down by `:class`, `:detail` and `:name`. It's always handy to know where the nearest Woolworths is, and this area has two of them.
 
@@ -90,7 +90,7 @@ julia> fieldnames(OpenStreetMap.Feature)
  :class
  :detail
  :name
-{{< / highlight >}}
+{{< /highlight >}}
 
 There are other dictionarys which list the highways and buildings in the area.
 
@@ -99,7 +99,7 @@ Although we specified the latitudinal and longitudinal extremes of the map origi
 {{< highlight julia >}}
 julia> bounds = getBounds(parseMapXML(MAPFILE))
 Geodesy.Bounds{Geodesy.LLA}(-29.8429,-29.7929,30.8821,30.9321)
-{{< / highlight >}}
+{{< /highlight >}}
 
 We're ready to take a look at the map using `plotMap()`.
 
@@ -112,11 +112,11 @@ julia> plotMap(nodes,
                bounds = bounds,
                width = WIDTH,
                roadways = roads)
-{{< / highlight >}}
+{{< /highlight >}}
 
 And here's what it looks like. There are ways to further customise the look and feel of the map.
 
-<img src="{{ site.baseurl }}/static/img/2015/10/map.png" >
+<img src="/img/2015/10/map.png" >
 
 Plotting maps is just the beginning. You can use `findIntersections()` to fing highway intersections; generate a transportation network using `createGraph()`; and find the shortest and fastest routes between locations using `shortestRoute()` and `fastestRoute()`. The package is literally a trove of cool and useful things.
 

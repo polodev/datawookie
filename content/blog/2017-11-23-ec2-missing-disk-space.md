@@ -22,7 +22,7 @@ tmpfs            15G     0   15G   0% /dev/shm
 tmpfs           5.0M     0  5.0M   0% /run/lock
 tmpfs            15G     0   15G   0% /sys/fs/cgroup
 tmpfs           3.0G     0  3.0G   0% /run/user/1000
-{{< / highlight >}}
+{{< /highlight >}}
 
 Swathes of shared memory, but that wasn't going to help. Mulling this over for a moment, it occurred to me that perhaps the remaining space had simply not been mounted.
 
@@ -32,7 +32,7 @@ NAME    MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
 xvda    202:0    0   8G  0 disk 
 └─xvda1 202:1    0   8G  0 part /
 xvdb    202:16   0  75G  0 disk
-{{< / highlight >}}
+{{< /highlight >}}
 
 Indeed, `/dev/xvdb/` had masses of untapped space!
 
@@ -40,7 +40,7 @@ I used `fdisk` to create a partition.
 
 {{< highlight bash >}}
 $ sudo fdisk /dev/xvdb
-{{< / highlight >}}
+{{< /highlight >}}
 
 Just follow the steps in the `fdisk` menu to create a new primary partition. When you're done use `lsblk` to check that all is well.
 
@@ -51,7 +51,7 @@ xvda    202:0    0   8G  0 disk
 └─xvda1 202:1    0   8G  0 part /
 xvdb    202:16   0  75G  0 disk 
 └─xvdb1 202:17   0  75G  0 part
-{{< / highlight >}}
+{{< /highlight >}}
 
 We see that there is a new partition at `/dev/xvdb1` but that it is currently not mounted.
 
@@ -70,7 +70,7 @@ tmpfs           5.0M     0  5.0M   0% /run/lock
 tmpfs            15G     0   15G   0% /sys/fs/cgroup
 tmpfs           3.0G     0  3.0G   0% /run/user/1000
 /dev/xvdb1       74G   52M   70G   1% /mnt
-{{< / highlight >}}
+{{< /highlight >}}
 
 Boom! Space issues resolved.
 

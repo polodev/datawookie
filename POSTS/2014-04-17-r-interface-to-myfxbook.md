@@ -37,7 +37,7 @@ Field "debug":
 [1] FALSE
 Field "session":
 [1] "Xuq0yAJBOrCu9PfI2EWC186040"
-{{< / highlight >}}
+{{< /highlight >}}
 
 We can get the details for the accounts which we have linked to the system. I have just hooked up a single demo account for the purposes of this article.
 
@@ -51,7 +51,7 @@ We can get the details for the accounts which we have linked to the system. I ha
 2 TRUE 04/15/2014 05:55 04/15/2014 02:45 04/14/2014 00:00        0     0
   commission currency profitFactor pips invitationUrl    server
 2          0      USD            0    0               Alpari UK
-{{< / highlight >}}
+{{< /highlight >}}
 
 And we can also see the status of other accounts which we are watching.
 
@@ -62,7 +62,7 @@ And we can also see the status of other accounts which we are watching.
 21        berezhnoi 3708.64    42.01 FALSE 3708.64
 3  Forex Growth Bot  272.39    93.13 FALSE  243.41
 4        WallStreet  455.67    27.95 FALSE  455.67
-{{< / highlight >}}
+{{< /highlight >}}
 
 There is an interface to the [community outlook](http://www.myfxbook.com/community/outlook) data, which gives an indication of the number and volume of trades as a function of currency pair.
 
@@ -78,7 +78,7 @@ There is an interface to the [community outlook](http://www.myfxbook.com/communi
 4   GBPJPY              55             44      642.58     520.81          1376           1798           1163      167.0348     171.1947
 5   USDCAD              50             49     1176.98    1138.17          3631           4135           2315        1.0875       1.1046
 6   EURAUD              41             58      220.25     314.09           988            822            534        1.4332       1.4994
-{{< / highlight >}}
+{{< /highlight >}}
 
 To get a feeling for the relative proportion of long and short trades across all currencies we can put together an informative plot. It requires a little leg work first though to get the data into a workable format:
 
@@ -108,9 +108,9 @@ To get a feeling for the relative proportion of long and short trades across all
 +   scale_fill_brewer(name = "", palette="BuGn") +
 +   theme_classic() +
 +   theme(axis.text.x = element_text(angle = 45, vjust = 0.5))
-{{< / highlight >}}
+{{< /highlight >}}
 
-<img src="{{ site.baseurl }}/static/img/2014/04/long-short-proportion-pairs.png">
+<img src="/img/2014/04/long-short-proportion-pairs.png">
 
 The outlook data can also be broken down by country for a single currency pair.
 
@@ -126,11 +126,11 @@ The outlook data can also be broken down by country for a single currency pair.
 4       ANGUILLA   AI       0.00        0.00             0              0
 5         BHUTAN   BT       0.00        0.00             0              0
 6          JAPAN   JP      19.10       28.03            86            132
-{{< / highlight >}}
+{{< /highlight >}}
 
 As before, making sense of this is aided by a visualisation. Below is a plot showing the number of long and short positions on EURUSD for a range of countries. We can see that overall the most trades have originated in Spain and Russia and that the majority of these positions are shorts.
 
-<img src="{{ site.baseurl }}/static/img/2014/04/long-short-positions-country.png">
+<img src="/img/2014/04/long-short-positions-country.png">
 
 We can also get a list of our open trades and pending orders.
 
@@ -145,11 +145,11 @@ We can also get a list of our open trades and pending orders.
 > fx$open.orders(893887)
           openTime symbol    action openPrice tp sl size.type size.value
 1 04/15/2014 05:47 USDJPY Buy Limit     101.3  0  0      lots       0.25
-{{< / highlight >}}
+{{< /highlight >}}
 
 Here the argument is a Myfxbook account number, which is either found on your dashboard (see image below) or from the id field in the output from my.accounts() above.
 
-<img src="{{ site.baseurl }}/static/img/2014/04/Selection_001.png">
+<img src="/img/2014/04/Selection_001.png">
 
 Daily changes in the account balance can also be retrieved.
 
@@ -159,7 +159,7 @@ Daily changes in the account balance can also be retrieved.
 2  04/14/2014   0.0   0.00
 21 04/15/2014  -1.1 -55.16
 22 04/16/2014   2.9 200.00
-{{< / highlight >}}
+{{< /highlight >}}
 
 And full details of all transactions can be obtained as a history.
 
@@ -170,7 +170,7 @@ And full details of all transactions can be obtained as a history.
 2 04/15/2014 08:03 04/15/2014 15:25 AUDUSD     Buy   0.93931    0.93731 0.94181 0.93731  -20  -50.00        0          0      lots       0.25    <NA>
 3 04/15/2014 13:28 04/15/2014 13:28 USDJPY     Buy 101.84000  101.82000 0.00000 0.00000   -2   -5.16        0          0      lots       0.25    <NA>
 4 04/14/2014 13:40 04/14/2014 13:40        Deposit   0.00000    0.00000      NA      NA    0 5000.00        0          0      lots            Deposit
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Conclusion
 

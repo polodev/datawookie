@@ -19,7 +19,7 @@ Word clouds have become a bit cliché, but I still think that they have a place 
 
 <!--more-->
 
-<img src="{{ site.baseurl }}/static/img/2015/07/word-cloud.png">
+<img src="/img/2015/07/word-cloud.png">
 
 1. Extract the hyperlinks to the PDFs of all of the papers from the [Conference Programme](http://icml.cc/2015/?page_id=825) web site using a pipeline of grep and uniq. 
 2. In R, extract the text from each of these PDFs using the Rpoppler package. 
@@ -37,9 +37,9 @@ Word clouds have become a bit cliché, but I still think that they have a place 
 4      data  5687 254
 5     model  4956 242
 6       set  4040 269
-{{< / highlight >}}
+{{< /highlight >}}
 8. Finally, construct a word cloud with the tagcloud package using the word count to weight the word size and the document count to determine grey scale.
 
 The first cloud above contains the top 300 words. The larger cloud below is the top 1000 words.
 
-<img src="{{ site.baseurl }}/static/img/2015/07/word-cloud-large.png">
+<img src="/img/2015/07/word-cloud-large.png">

@@ -24,7 +24,7 @@ Python has issues. One of the biggest is the Global Interpreter Lock (GIL), whic
 
 [Dask](http://dask.pydata.org/en/latest/) falls around the middle of the implementation continuum for parallel programming, somewhere between high and low levels of abstraction. It has an interface which mimics that of Numpy. Dask arrays are like Numpy arrays but are divided into chunks to facilitate parallel computation. Any operations on the Dask array are automatically done in parallel (across all available cores). The image below is an animated GIF produced by Dask illustrating the execution of a parallel job.
                 
-<img src="{{ site.baseurl }}/static/img/2015/07/embarrassing.gif" width="100%">
+<img src="/img/2015/07/embarrassing.gif" width="100%">
 
 ## Collaborative Filtering via Matrix Decomposition in mlpack (Ryan R. Curtin)
 
@@ -39,7 +39,7 @@ mlpack comes with a simple command line tool which does Collaborative Filtering.
 
 {{< highlight bash >}}
 $ cf -i MovieLens-100k.csv -R 10 -q query.csv -a RegSVD -n 10
-{{< / highlight >}}
+{{< /highlight >}}
 
 Of course, under the hood this tool is implemented using the mlpack library.
 
@@ -78,7 +78,7 @@ More information on the language can be found at [Julia: A fresh approach to num
 
 [Caffe](http://caffe.berkeleyvision.org/) is an Open Source framework for Deep Learning. Somewhat ironically the "hard" problem in the xkcd comic below was [solved](http://code.flickr.net/2014/10/20/introducing-flickr-park-or-bird/) quite rapidly using Caffe.
                 
-<img src="{{ site.baseurl }}/static/img/2015/07/tasks.png">
+<img src="/img/2015/07/tasks.png">
 
 Caffe is written in C++ but has command line, MATLAB and Python interfaces. It runs on both CPU and GPU.
 
@@ -113,4 +113,4 @@ And that was the end of my conference!
 
 Below is a word cloud that I put together from the PDFs of the conference papers. The details of its construction can be found [here](http://wp.me/p3pzmk-qs).
                 
-<img src="{{ site.baseurl }}/static/img/2015/07/word-cloud.png" width="100%">
+<img src="/img/2015/07/word-cloud.png" width="100%">

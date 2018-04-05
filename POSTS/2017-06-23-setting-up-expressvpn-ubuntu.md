@@ -13,7 +13,7 @@ title: Setting up ExpressVPN on Ubuntu
 url: /2017/06/23/setting-up-expressvpn-ubuntu/
 ---
 
-![]({{ site.baseurl }}/static/img/2017/06/expressvpn-logo.jpg)
+![](/img/2017/06/expressvpn-logo.jpg)
 
 I've been meaning to set up a VPN and this morning seemed like a good time to tick it off the bucket list. This is a quick outline of my experience, which included one minor hiccup.
 
@@ -31,7 +31,7 @@ Click the button to download the client. Then install.
 $ ls -l *.deb
 -rw-rw-r-- 1 colliera colliera  9419912 Jun 24 07:07 expressvpn_1.2.0_amd64.deb
 $ sudo dpkg -i expressvpn_1.2.0_amd64.deb
-{{< / highlight >}}
+{{< /highlight >}}
 
 The install went flawlessly for me.
 
@@ -44,7 +44,7 @@ $ expressvpn activate
 Enter activation code: 
 
 Activated.
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Connecting (First Attempt)
 
@@ -61,7 +61,7 @@ To connect, please try the following:
    - Check that your Internet connection is working and try to connect again.
    - Try connect to another VPN location.
    - Switch to another protocol
-{{< / highlight >}}
+{{< /highlight >}}
 
 Well, that's no good! Luckily it's easy to get some diagnostics.
 
@@ -76,13 +76,13 @@ Sat Jun 24 07:19:37 2017 /sbin/ifconfig tun0 10.107.47.42 pointopoint 10.107.47.
 Sat Jun 24 07:19:37 2017 Linux ifconfig failed: could not execute external program
 Sat Jun 24 07:19:37 2017 Exiting due to fatal error
 Disconnected with error: vpn process terminated unexpectedly
-{{< / highlight >}}
+{{< /highlight >}}
 
 That's unexpected: unable to execute `ifconfig`. I'm working on a fresh Ubuntu install, so evidently I haven't yet installed all of the usual tools. Easily remedied.
 
 {{< highlight bash >}}
 $ sudo apt install net-tools
-{{< / highlight >}}
+{{< /highlight >}}
 
 ## Connecting (Second Attempt)
 
@@ -94,11 +94,11 @@ Connecting to Smart Location...
 Connecting to UK - Berkshire...	100.0%
 
 Connected.
-{{< / highlight >}}
+{{< /highlight >}}
 
 Bingo! Check your [IP address location](https://www.expressvpn.com/what-is-my-ip).
 
-![]({{ site.baseurl }}/static/img/2017/06/expressvpn-ip-berkshire.png)
+![](/img/2017/06/expressvpn-ip-berkshire.png)
 
 So I've automatically been connected to a VPN server in Berkshire. Let's disconnect and see what other server locations are available.
 
@@ -128,7 +128,7 @@ bt1	Bhutan (BT)				Bhutan
 bnbr	Brunei Darussalam (BN)			Brunei
 $ expressvpn list | grep Africa
 za1	South Africa (ZA)			South Africa			Y
-{{< / highlight >}}
+{{< /highlight >}}
 
 So there's a server located in South Africa. It's interesting to browse the full list of locations with ExpressVPN servers. Obviously the choice of server will be dictated by your reason for using the VPN. There's a handy [guide](https://www.expressvpn.com/support/troubleshooting/server-locations/) to the various considerations in choosing a server location.
 
@@ -139,8 +139,8 @@ $ expressvpn connect za1
 Connecting to South Africa...	100.0%
 
 Connected.
-{{< / highlight >}}
+{{< /highlight >}}
 
-![]({{ site.baseurl }}/static/img/2017/06/expressvpn-ip-pretoria.png)
+![](/img/2017/06/expressvpn-ip-pretoria.png)
 
 I feel like I've just started to scratch the surface with this technology, but it's been a pleasant experience so far. Looking forward to delving deeper.

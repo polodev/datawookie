@@ -29,7 +29,7 @@ First we'll put together some test data.
 > data = transform(data,
 +                  row = factor(row),
 +                  col = factor(col))
-{{< / highlight >}}
+{{< /highlight >}}
 
 It's just a data.frame with two fields which will be transformed into the rows and columns of the matrix and a third field which gives the values to be stored in the matrix.
 
@@ -46,7 +46,7 @@ It's just a data.frame with two fields which will be transformed into the rows a
 8    1   I     1
 9    3   E     1
 10   1   M     2
-{{< / highlight >}}
+{{< /highlight >}}
 
 Doing the cast is pretty easy using `sparseMatrix()` because you specify the row and column for every entry inserted into the matrix. Multiple entries for a single cell (like the highlighted records above) are simply summed, which is generally the behaviour that I am after anyway.
 
@@ -57,7 +57,7 @@ Doing the cast is pretty easy using `sparseMatrix()` because you specify the row
 >
 > colnames(data.sparse) = levels(data$col)
 > rownames(data.sparse) = levels(data$row)
-{{< / highlight >}}
+{{< /highlight >}}
 
 And here's the result:
 
@@ -68,4 +68,4 @@ And here's the result:
 1 1 1 3 4 . 1 2 .
 2 . . . . . . . 2
 3 1 . . . 2 . . .
-{{< / highlight >}}
+{{< /highlight >}}
