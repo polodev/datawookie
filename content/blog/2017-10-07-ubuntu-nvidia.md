@@ -8,7 +8,7 @@ url: /2017/10/07/ubuntu-nvidia/
 
 {{< comment >}}
 https://linuxconfig.org/how-to-install-the-latest-nvidia-drivers-on-ubuntu-16-04-xenial-xerus
-{{< /endcomment >}}
+{{< /comment >}}
 
 Recipe for installing the NVIDIA binary drivers on Ubuntu.
 

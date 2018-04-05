@@ -23,15 +23,14 @@ To use, do as follows:
 
 1. Build the image.
 
-{{< highlight bash >}}
+	{{< highlight bash >}}
 $ docker build -t osrm:latest .
 {{< /highlight >}}
 
-{:start="2"}
 2. Download map data. For the sake of illustration, we'll assume that the resulting file is called `map.xml`.
 3. Launch a container.
 
-{{< highlight bash >}}
+	{{< highlight bash >}}
 $ docker run -p 5000:5000 -v `pwd`:/data osrm:latest map.xml
 {{< /highlight >}}
 

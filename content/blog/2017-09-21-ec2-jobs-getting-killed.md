@@ -1,13 +1,7 @@
 ---
 author: Andrew B. Collier
-categories:
-- Cloud
 date: 2017-09-21T08:30:00Z
-excerpt_separator: <!-- more -->
-tags:
-- AWS
-- EC2
-- Ubuntu
+tags: ["Ubuntu", "AWS"]
 title: Diagnosing Killed Jobs on EC2
 url: /2017/09/21/ec2-jobs-getting-killed/
 ---

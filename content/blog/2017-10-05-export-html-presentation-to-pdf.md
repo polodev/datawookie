@@ -1,13 +1,7 @@
 ---
 author: Andrew B. Collier
-categories:
-- Presentation
 date: 2017-10-05T07:00:00Z
-excerpt_separator: <!-- more -->
-tags:
-- PDF
-- reveal.js
-- HTML5
+tags: ["Talk"]
 title: Exporting HTML Presentations to PDF
 url: /2017/10/05/export-html-presentation-to-pdf/
 ---
