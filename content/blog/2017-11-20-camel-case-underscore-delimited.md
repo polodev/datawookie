@@ -1,10 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2017-11-20T04:30:00Z
-excerpt_separator: <!-- more -->
-tags:
-- '#rstats'
-- R Recipe
+tags: ["R"]
 title: 'Variable Names: Camel Case to Underscore Delimited'
 url: /2017/11/20/camel-case-underscore-delimited/
 ---
@@ -21,6 +18,6 @@ I'm sure that there are a variety of ways to attack this problem, but this is a 
 
 {{< highlight r >}}
 data %>% setNames(names(.) %>% str_replace_all("(?<!^)([A-Z]+)", "_\\1") %>% str_to_lower())
-{{< / highlight >}}
+{{< /highlight >}}
 
 My first attempt matched `"(?<!^)([A-Z])"` but I changed this to `"(?<!^)([A-Z]+)"` in order to deal with column names like `GroupID`.

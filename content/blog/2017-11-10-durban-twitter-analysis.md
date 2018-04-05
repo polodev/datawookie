@@ -1,10 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2017-11-10T12:00:00Z
-excerpt_separator: <!-- more -->
-tags:
-- '#rstats'
-- Sentiment
+tags: ["R", "sentiment"]
 title: Durban Twitter Analysis
 url: /2017/11/10/durban-twitter-analysis/
 ---
@@ -13,7 +10,7 @@ I was invited to give a talk at [Digifest](http://digifest.dut.ac.za/) (Durban U
 
 To be honest, I was pleased to be invited, but when I sat down to consider what I would talk about, I found myself at a loss. I'm not *currently* engaged in anything that ticks many of those boxes.
 
-But I am loathe to turn down an opportunity to speak. So I made a plan. In retrospect it was not a terribly good plan. But it was workable. I decided to speak about gauging sentiment relating to the city of Durban using data from Twitter. You can find my talk outline [here]({{ site.baseurl }}{% post_url 2017-11-10-abstract-hello-durban %}). This post touches on some of my results.
+But I am loathe to turn down an opportunity to speak. So I made a plan. In retrospect it was not a terribly good plan. But it was workable. I decided to speak about gauging sentiment relating to the city of Durban using data from Twitter. You can find my talk outline [here]({{< relref "2017-11-10-abstract-hello-durban" >}}). This post touches on some of my results.
 
 <!--more-->
 
@@ -29,11 +26,11 @@ I am not going to present all of them here, but I'll show some of the (limited) 
 
 When do people express their thoughts about Durban on Twitter? The time series below shows the limited extent of my data. However, it's clear that there's a well formed diurnal cycle with significant variability from day to day.
 
-![]({{ site.baseurl }}/static/img/2017/11/durban-tweet-time-series.png)
+![](/img/2017/11/durban-tweet-time-series.png)
 
 Aggregating the data by hour and splitting out week days from the weekend resulted in the plot below. In broad strokes the diurnal pattern is similar during the week and over the weekends. But there are also some very clear differences. The number of tweets per hour picks up steadily during the morning on week days, but on weekends there's a dramatic jump at around 07:00. This might be an artifact of my limited data. Another observation (which I believe is definitely *not* an artifact!) is the significant jump in the number of tweets at lunch time on week days.
 
-![]({{ site.baseurl }}/static/img/2017/11/durban-tweet-time-weekday-time.png)
+![](/img/2017/11/durban-tweet-time-weekday-time.png)
 
 ## Zipf's Law
 
@@ -41,23 +38,23 @@ Aggregating the data by hour and splitting out week days from the weekend result
 
 Do the Twitter data conform to Zipf's Law? The plot below suggests that they do. Certainly for words of intermediate rank there is a clear inverse proportionality between rank and frequency (the dashed line reflects the relationship expected from Zipf's Law). The deviations at low and high rank are not surprising, and in these extremes the observed frequency of words is commonly less than predicted. The first few lowest ranked terms also deviate from expectations because of the inherent biase in our sample: we have specifically chosen tweets that include the words "Durban" and "Ethekwini", so we should expect their frequency to be elevated.
 
-![]({{ site.baseurl }}/static/img/2017/11/durban-tweet-zipf-law.png)
+![](/img/2017/11/durban-tweet-zipf-law.png)
 
 ## Sentiment
 
 Finally, using the NRC lexicon to get an indication of sentiment yielded the results below. It's pleasing to see that positive sentiments are in the ascendancy. However there is certainly not an insignificant proportion of negative sentiment.
 
-![]({{ site.baseurl }}/static/img/2017/11/durban-tweet-nrc-sentiment.png)
+![](/img/2017/11/durban-tweet-nrc-sentiment.png)
 
 For the first time I used [Mentimeter](https://www.mentimeter.com/) to get some audience response. Despite the fact that the engagement was low, I was really impressed with this tool and how easy it was to integrate into my presentation.
 
-![]({{ site.baseurl }}/static/img/2017/11/durban-tweet-mentimeter.png)
+![](/img/2017/11/durban-tweet-mentimeter.png)
 
 ## Word Cloud
 
 Of course, no Twitter analysis would be complete without the obligatory cliché of a word cloud.
 
-![]({{ site.baseurl }}/static/img/2017/11/durban-tweet-wordcloud.png) 
+![](/img/2017/11/durban-tweet-wordcloud.png) 
 
 ## Question Time
 

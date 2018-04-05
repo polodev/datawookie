@@ -10,17 +10,14 @@ title: Hello Durban, tell me how you're doing!
 url: /2017/11/10/abstract-hello-durban/
 ---
 
-{% comment %}
+{{< comment >}}
 The title is a knock-off from the Dr Alban song "Hello Africa!".
-{% endcomment %}
+{{< /comment >}}
 
-<div class="talk">
-	<div class="title">
-	Hello Durban, tell me how you're doing!
-	</div>
-	<div class="abstract">
+{{< abstract title="Hello Durban, tell me how you're doing!" >}}
+	{{< abstract-short >}}
 	Everybody speaks their mind on Social Media. So, what are people saying about Durban? I'll harvest the Twitter stream to answer this question, making use of some simple analytics, sentiment analysis and machine learning.
-	</div>
-</div>
+	{{< /abstract-short >}}
+{{< /abstract >}}
 
 This talk was presented at [Digifest](http://digifest.dut.ac.za/) (Durban University of Technology) on 10 November 2017.
