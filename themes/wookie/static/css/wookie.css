@@ -1,5 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
-@import url('https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i|Open+Sans:400,400i,600,600i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700|Oswald|Open+Sans:400,400i,600,600i,700,700i');
 
 html,
 body {
@@ -106,10 +105,14 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Lora', serif;
+  font-family: 'Oswald', sans-serif;
   font-weight: 400;
   margin-bottom: 5px;
   margin-top: 5px;
+}
+
+h3 {
+  font-size: 1.5rem;
 }
 
 h2.resume {
@@ -213,11 +216,12 @@ ul.pagination {
   text-decoration: none;
 }
 
-table.experience {
+table.experience, table.education {
   width: 100%;
 }
 
-table.experience td.duration {
+table.experience td.duration,
+table.education td.duration {
   padding-left: 10px;
   text-align: right;
 }

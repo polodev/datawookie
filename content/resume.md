@@ -31,7 +31,7 @@ Could add: * List of students supervised.
 
 <h2 class="resume">Education</h2>
 
-<table>
+<table class="education">
 <tr><td>PhD</td><td>Space Physics</td><td>Royal Institute of Technology, Stockholm</td> <td class="duration">2006</td></tr>
 <tr><td></td><td colspan="3"><em>Thesis: <a href="https://www.researchgate.net/publication/235672270_VLF_and_ULF_Waves_Associated_with_Magnetospheric_Substorms">VLF and ULF Waves Associated with Magnetospheric Substorms</a></em></td></tr>
 <tr><td>Licentiate</td><td>Space Physics</td><td>Royal Institute of Technology, Stockholm</td> <td class="duration">2004</td></tr>

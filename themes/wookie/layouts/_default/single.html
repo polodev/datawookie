@@ -1,10 +1,17 @@
 {{ partial "header.html" . }}
 <h1>{{ .Title }}</h1>
 {{ if hasPrefix .URL "/blog/" }}
-<p class="timestamp">{{ .Date.Format "2006-01-02" }}</p>
+<p>
+	<span class="timestamp">{{ .Date.Format "2006-01-02" }}</span>
+	{{ if .Params.tags }}
+	{{ partial "tags" .Params.tags }}
+	{{ end }}
+	{{ if .Params.author }}
+	{{ .Params.author }}
+	{{ end }}
+</p>
 {{ end }}
 {{ .Content }}
-{{ if .Params.tags }}
-  {{ partial "tags" .Params.tags }}
-{{ end }}
 {{ partial "footer.html" . }}
+
+
