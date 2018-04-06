@@ -8,7 +8,6 @@ tags:
 - Jupyter
 - Spark
 title: Accessing PySpark from a Jupyter Notebook
-url: /2017/07/04/pyspark-in-jupyter-notebooks/
 ---
 
 It'd be great to interact with PySpark from a Jupyter Notebook. This post describes how to get that set up. <!--more--> It assumes that you've installed Spark like [this]({{ site.baseurl }}{% post_url 2017-07-04-installing-spark-ubuntu %}).

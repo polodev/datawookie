@@ -9,7 +9,6 @@ tags:
 - Teaching
 - TED Talk
 title: 'Conrad Wolfram: Teaching kids real math with computers'
-url: /2016/07/25/teaching-kids-real-math-computers/
 ---
 
 [Conrad Wolfram](https://twitter.com/conradwolfram) gives a thought provoking talk on a different way to teach Mathematics in schools.

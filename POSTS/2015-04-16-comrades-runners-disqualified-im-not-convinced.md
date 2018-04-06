@@ -8,7 +8,6 @@ id: 1349
 tags:
 - Comrades Marathon
 title: 'Comrades Runners Disqualified: I''m Not Convinced'
-url: /2015/04/16/comrades-runners-disqualified-im-not-convinced/
 ---
 
 Apparently [14 runners have been disqualified](http://allathletics.co.za/2015/04/14-comrades-runners-disqualified/) for failing to complete the full distance at the 2012 and 2013 Comrades Marathons.

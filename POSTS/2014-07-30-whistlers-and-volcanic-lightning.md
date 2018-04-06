@@ -12,7 +12,6 @@ tags:
 - Volcano
 - Whistler
 title: Whistlers and Volcanic Lightning
-url: /2014/07/30/whistlers-and-volcanic-lightning/
 ---
 
 A paper authored with my very talented student, Claire Antel, entitled "[Investigating Dunedin whistlers using volcanic lightning](http://onlinelibrary.wiley.com/doi/10.1002/2014GL060332/abstract)" has just been published in Geophysical Research Letters. The paper looks at electromagnetic signals ("whistlers") received at Dunedin, New Zealand, caused by lightning over volcanoes thousands of km away near the Aleutian Chain.

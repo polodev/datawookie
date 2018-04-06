@@ -6,7 +6,6 @@ tags:
 - Docker
 - OSRM
 title: Running OSRM with Docker
-url: /2017/10/07/osrm-with-docker/
 ---
 
 {{< comment >}}

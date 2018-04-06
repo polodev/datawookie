@@ -11,7 +11,6 @@ tags:
 - funzip
 - Linux
 title: Streaming from zip to bz2
-url: /2016/07/08/streaming-from-zip-to-bz2/
 ---
 
 I've got a massive bunch of zip archives, each of which contains only a single file. And the name of the enclosed file varies. Dealing with these data is painful.

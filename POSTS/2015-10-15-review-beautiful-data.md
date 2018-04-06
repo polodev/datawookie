@@ -12,7 +12,6 @@ tags:
 - Data
 - Python
 title: 'Review: Beautiful Data'
-url: /2015/10/15/review-beautiful-data/
 ---
 
 <!--more-->

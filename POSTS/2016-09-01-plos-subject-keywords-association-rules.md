@@ -10,7 +10,6 @@ tags:
 - Association Rules
 - Eclat
 title: 'PLOS Subject Keywords: Association Rules'
-url: /2016/09/01/plos-subject-keywords-association-rules/
 ---
 
 <!-- http://www.rdatamining.com/examples/association-rules -->

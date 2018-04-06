@@ -11,7 +11,6 @@ tags:
 - COT
 - FOREX
 title: 'Commitments of Traders: Update 5 August 2014'
-url: /2014/08/10/commitments-of-traders-update-5-august-2014/
 ---
 
 Here are the data I distilled from the most recent [CFTC](http://www.cftc.gov/index.htm) Commitments of Traders report. Relatively large changes in CHF and JPY.

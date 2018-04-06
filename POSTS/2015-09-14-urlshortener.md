@@ -7,7 +7,6 @@ tags:
 - '#rstats'
 - URL Shortener
 title: 'urlshorteneR: A package for shortening URLs'
-url: /2015/09/14/urlshortener/
 ---
 
 This is a small package I put together quickly to satisfy an immediate need: generating abbreviated URLs in R. As it happens I require this functionality in a couple of projects, so it made sense to have a package to handle the details. It's not perfect but it does the job. The code is available from [github](https://github.com/DataWookie/urlshorteneR) along with vague usage information.

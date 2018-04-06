@@ -9,7 +9,6 @@ tags:
 - '#rstats'
 - Web Scraping
 title: Top 250 Movies at IMDb
-url: /2013/10/03/top-250-movies-at-imdb/
 ---
 
 Some years ago I allowed myself to accept a challenge to read the [Top 100 Novels of All Time](http://entertainment.time.com/2005/10/16/all-time-100-novels/) (complete list [here](http://entertainment.time.com/2005/10/16/all-time-100-novels/slide/all/)). This list was put together by Richard Lacayo and Lev Grossman at Time Magazine.

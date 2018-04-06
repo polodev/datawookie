@@ -8,7 +8,6 @@ tags:
 - riverplot
 - Sankey Plot
 title: Plotting Flows with riverplot
-url: /2014/08/14/plotting-flows-with-riverplot/
 ---
 
 I have been looking for an intuitive way to plot flows or connections between states in a process. An obvious choice is a [Sankey Plot](https://en.wikipedia.org/wiki/Sankey_diagram), but I could not find a satisfactory implementation in R... until I read the [riverplot](http://logfc.wordpress.com/2014/02/27/riverplot/) post by January Weiner. His riverplot package does precisely what I am need.

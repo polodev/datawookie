@@ -10,7 +10,6 @@ tags:
 - Reference Class
 - simulation
 title: Deriving a Priority Queue from a Plain Vanilla Queue
-url: /2013/11/26/deriving-a-priority-queue/
 ---
 
 Following up on my recent post about [implementing a queue as a reference class](http://www.exegetic.biz/blog/2013/11/implementing-a-queue-as-a-reference-class/), I am going to derive a [Priority Queue](https://en.wikipedia.org/wiki/Priority_queue) class.

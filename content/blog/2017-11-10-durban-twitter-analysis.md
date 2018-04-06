@@ -3,7 +3,6 @@ author: Andrew B. Collier
 date: 2017-11-10T12:00:00Z
 tags: ["R", "sentiment"]
 title: Durban Twitter Analysis
-url: /2017/11/10/durban-twitter-analysis/
 ---
 
 I was invited to give a talk at [Digifest](http://digifest.dut.ac.za/) (Durban University of Technology) on 10 November 2017. Looking at the other speakers and talks on the programme I realised that my normal range of topics would not be suitable. I needed to do something more in line with their mission to "celebrate the creative spirit through multimedia projects from disciplines such as visual and performing arts" and to promote "collaboration across art, science and technology". Definitely outside my current domain, but consistent with many of the things that I have been aspiring to.

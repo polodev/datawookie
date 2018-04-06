@@ -13,7 +13,6 @@ tags:
 - SI
 - Units
 title: '#MonthOfJulia Day 19: Units'
-url: /2015/09/22/monthofjulia-day-19-units/
 ---
 
 <!--more-->

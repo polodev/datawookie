@@ -7,7 +7,6 @@ tags:
 - '#rstats'
 - satRday
 title: R Saturday [satRday] in Cape Town
-url: /2016/05/12/r-saturday-satrday-in-cape-town/
 ---
 
 <!--more-->

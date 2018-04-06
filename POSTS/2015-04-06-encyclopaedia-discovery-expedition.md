@@ -6,7 +6,6 @@ date: 2015-04-06T09:00:22Z
 excerpt_separator: <!-- more -->
 id: 1215
 title: 'Encyclopaedia: Discovery Expedition'
-url: /2015/04/06/encyclopaedia-discovery-expedition/
 ---
 
 A contribution which Claire and I wrote for [Antarctica and the Arctic Circle: A Geographic Encyclopedia of the Earth's Polar Regions](http://www.amazon.com/gp/product/B00OD83J44/).

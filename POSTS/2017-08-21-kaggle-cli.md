@@ -8,7 +8,6 @@ tags:
 - EC2
 - CLI
 title: Retrieving Kaggle Data from the Command Line
-url: /2017/08/21/kaggle-cli/
 ---
 
 We've been building some models for Kaggle competitions using an EC2 instance for compute. I initially downloaded the data locally and then pushed it onto EC2 using SCP. But there had to be a more efficient way to do this, especially given the blazing fast bandwidth available on AWS.

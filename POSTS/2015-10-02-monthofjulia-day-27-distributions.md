@@ -13,7 +13,6 @@ tags:
 - Julia
 - Normal Distribution
 title: '#MonthOfJulia Day 27: Distributions'
-url: /2015/10/02/monthofjulia-day-27-distributions/
 ---
 
 <!--more-->

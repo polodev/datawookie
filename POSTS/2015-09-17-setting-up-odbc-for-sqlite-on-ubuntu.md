@@ -12,7 +12,6 @@ tags:
 - SQLite
 - Ubuntu
 title: Setting up ODBC for SQLite on Ubuntu
-url: /2015/09/17/setting-up-odbc-for-sqlite-on-ubuntu/
 ---
 
 First install the SQLiteODBC and unixODBC packages. Have a quick look at the documentation for [unixODBC](http://www.unixodbc.org/odbcinst.html) and [SQLiteODBC](http://ch-werner.de/sqliteodbc/html/index.html).

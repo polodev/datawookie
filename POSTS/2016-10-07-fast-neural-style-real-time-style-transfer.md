@@ -8,7 +8,6 @@ id: 4441
 tags:
 - Neural Network
 title: 'fast-neural-style: Real-Time Style Transfer'
-url: /2016/10/07/fast-neural-style-real-time-style-transfer/
 ---
 
 I followed up a reference to [fast-neural-style](https://github.com/jcjohnson/fast-neural-style) from Twitter and spent a glorious hour experimenting with this code. Very cool stuff indeed. It's documented in [Perceptual Losses for Real-Time Style Transfer and Super-Resolution](http://cs.stanford.edu/people/jcjohns/eccv16/) by Justin Johnson, Alexandre Alahi and Fei-Fei Li.

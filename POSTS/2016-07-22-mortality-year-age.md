@@ -8,7 +8,6 @@ tags:
 - mortality
 - '#rstats'
 title: Mortality by Year and Age
-url: /2016/07/22/mortality-year-age/
 ---
 
 <!--more-->

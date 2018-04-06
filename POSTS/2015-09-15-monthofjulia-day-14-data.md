@@ -12,7 +12,6 @@ tags:
 - data.frame
 - Julia
 title: '#MonthOfJulia Day 14: Data'
-url: /2015/09/15/monthofjulia-day-14-data/
 ---
 
 <!--more-->

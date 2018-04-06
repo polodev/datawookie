@@ -14,7 +14,6 @@ tags:
 - '#rstats'
 - shell
 title: Processing EXIF Data
-url: /2013/12/16/processing-exif-data/
 ---
 
 I got quite inspired by the [EXIF with R](http://timelyportfolio.blogspot.com/2013/11/exif-with-r-rcharts-catcorrjs-exiftool.html) post on the [Timely Portfolio](http://timelyportfolio.blogspot.com/) blog and decided to do a similar analysis with my photographic database.

@@ -8,7 +8,6 @@ tags:
 - ggplot2
 - '#rstats'
 title: How Much Time to Conceive?
-url: /2014/01/12/how-much-time-to-conceive/
 ---
 
 This morning my wife presented me with a rather interesting statistic: a healthy couple has a 25% chance of conception every month [1], and that this should result in a 75% to 85% chance of conception after a year. This sounded rather interesting and it occurred to me that it really can't be that simple. There are surely a lot of variables which influence this probability. Certainly age should be a factor and, after a short search, I found some more age-specific information which indicated that for a woman in her thirties, the probability is only around 15% [2,3].

@@ -12,7 +12,6 @@ tags:
 - Julia
 - Linear Regression
 title: '#MonthOfJulia Day 31: Regression'
-url: /2015/10/08/monthofjulia-day-31-regression/
 ---
 
 <!--more-->

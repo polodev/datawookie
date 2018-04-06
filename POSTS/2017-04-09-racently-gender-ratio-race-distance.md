@@ -7,7 +7,6 @@ excerpt_separator: <!-- more -->
 tags:
 - '#rstats'
 title: Relationship between Race Distance and Gender Ratio
-url: /2017/04/09/racently-gender-ratio-race-distance/
 ---
 
 <!--more-->

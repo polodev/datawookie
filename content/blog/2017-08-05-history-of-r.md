@@ -3,7 +3,6 @@ author: Andrew B. Collier
 date: 2017-08-05T01:00:00Z
 tags: ["R"]
 title: A Timeline History of R
-url: /2017/08/05/history-of-r/
 ---
 
 A record of some more or less important events in the history of [R](https://www.r-project.org/).

@@ -8,7 +8,6 @@ tags:
 - MatchIt
 - '#rstats'
 title: 'Package MatchIt: Balancing experimental data'
-url: /2013/05/23/package-matchit-balanced-experimental-data/
 ---
 
 A balanced [experimental design](http://en.wikipedia.org/wiki/Design_of_experiments) is one in which the distribution of the covariates is the same in both the control and treatment groups. However, although achievable in an experimental scenario, for observational data this ideal is seldom attained. The MatchIt package provides a means of pre-processing data so that the treated and control groups are as similar as possible, minimising the dependence between the treatment variable and the other covariates.

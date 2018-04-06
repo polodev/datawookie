@@ -10,7 +10,6 @@ tags:
 - Teaching
 - TED Talk
 title: 'Arthur Benjamin: Teach statistics before calculus!'
-url: /2016/07/29/arthur-benjamin-teach-statistics-calculus/
 ---
 
 [Arthur Benjamin](https://en.wikipedia.org/wiki/Arthur_T._Benjamin) thinks that the end goal of teaching Mathematics at school should be Statistics rather than Calculus. He has a point: in terms of understanding things in the real world, Statistics is definitely more powerful. These ideas are quite compatible with those of Conrad Wolfram, who thinks that we should be [using computers more extensively](http://www.exegetic.biz/blog/2016/07/teaching-kids-real-math-computers/) in Mathematics education.

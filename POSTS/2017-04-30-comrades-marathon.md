@@ -3,7 +3,6 @@ author: Andrew B. Collier
 date: 2017-04-30T08:00:00Z
 excerpt_separator: <!-- more -->
 title: Comrades Marathon 2017
-url: /2017/04/30/comrades-marathon/
 ---
 
 <img src="/img/2017/04/comrades-nothing-will-seem-impossible.png" width="100%">

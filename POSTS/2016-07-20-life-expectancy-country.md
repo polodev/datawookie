@@ -11,7 +11,6 @@ tags:
 - Plotly
 - '#rstats'
 title: Life Expectancy by Country
-url: /2016/07/20/life-expectancy-country/
 ---
 
 <!--more-->

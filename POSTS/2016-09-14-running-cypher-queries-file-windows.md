@@ -10,7 +10,6 @@ tags:
 - Cypher
 - Neo4j
 title: Running Cypher Queries from File on Windows
-url: /2016/09/14/running-cypher-queries-file-windows/
 ---
 
 Recent packages of Neo4j for Windows do not include `neo4j-shell`. The Neo4j browser will only accept one statement at a time, making scripts consisting of multiple Cypher commands a problem.

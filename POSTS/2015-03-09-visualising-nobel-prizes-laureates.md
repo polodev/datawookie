@@ -10,7 +10,6 @@ tags:
 - Nobel Prize
 - Visualisation
 title: Visualising Nobel Prizes and Laureates
-url: /2015/03/09/visualising-nobel-prizes-laureates/
 ---
 
 A very cool visualisation. Find out more at [brainpickings.org](http://www.brainpickings.org/2012/11/29/giorgia-lupi-noble-prizes-visualization/).

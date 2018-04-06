@@ -14,7 +14,6 @@ tags:
 - Julia
 - Manhattan Distance
 title: '#MonthOfJulia Day 29: Distances'
-url: /2015/10/06/monthofjulia-day-29-distances/
 ---
 
 <!--more-->

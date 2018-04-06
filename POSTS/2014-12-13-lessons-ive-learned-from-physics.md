@@ -13,7 +13,6 @@ tags:
 - Presentation
 - Software Development
 title: Lessons I've Learned from Physics
-url: /2014/12/13/lessons-ive-learned-from-physics/
 ---
 
 <!--more-->

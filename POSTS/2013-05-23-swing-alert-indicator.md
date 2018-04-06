@@ -12,7 +12,6 @@ tags:
 - Indicator
 - MQL4
 title: Swing Alert Indicator
-url: /2013/05/23/swing-alert-indicator/
 ---
 
 I've just finished coding a swing alert indicator for a client. The rules are rather straightforward and it all depends on two simple moving averages (by default with periods of 25 and 5). <!--more--> The indicator generates alerts via

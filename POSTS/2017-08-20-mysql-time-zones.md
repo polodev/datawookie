@@ -9,7 +9,6 @@ tags:
 - Django
 - Time Zone
 title: Setting Up Time Zones in MySQL
-url: /2017/08/20/mysql-time-zones/
 ---
 
 I'm in the process of setting up a [Zinnia](https://github.com/Fantomas42/django-blog-zinnia) blog on one of my Django sites. After putting all of the necessary plumbing in place I got the following message on first visiting the blog URL:

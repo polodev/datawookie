@@ -10,7 +10,6 @@ tags:
 - Ubuntu
 - SSH
 title: Adding Users to an EC2 Ubuntu Instance
-url: /2017/07/24/adding-users-ec2-ubuntu/
 ---
 
 By default an EC2 instance has only a single user other than `root`. For example, on a Ubuntu instance, that user is `ubuntu`. If there will be multiple people accessing the instance then it's generally necessary for each of them to have their own account. Setting this up is pretty simple, it just requires sorting out some authentication details.

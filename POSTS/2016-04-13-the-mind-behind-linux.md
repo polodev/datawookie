@@ -8,7 +8,6 @@ id: 3458
 tags:
 - Linux
 title: The Mind Behind Linux
-url: /2016/04/13/the-mind-behind-linux/
 ---
 
 <!--more-->

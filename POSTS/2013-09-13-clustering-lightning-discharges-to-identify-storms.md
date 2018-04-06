@@ -12,7 +12,6 @@ tags:
 - Lightning
 - '#rstats'
 title: Clustering Lightning Discharges to Identify Storms
-url: /2013/09/13/clustering-lightning-discharges-to-identify-storms/
 ---
 
 A [short talk](https://speakerdeck.com/exegetic/clustering-lightning-into-storms) that I gave at the LIGHTS 2013 Conference (Johannesburg, 12 September 2013). The slides are relatively devoid of text because I like the audience to hear the content rather than read it. The central message of the presentation is that clustering lightning discharges into storms is not a trivial task, but still a worthwhile challenge because it can lead to some very interesting science!

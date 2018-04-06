@@ -7,7 +7,6 @@ tags:
 - '#rstats'
 - ggplot2
 title: A ggplot2 oddity
-url: /2015/09/10/ggplot2-oddity/
 ---
 
 <!--more-->

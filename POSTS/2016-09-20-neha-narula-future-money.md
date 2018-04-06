@@ -10,7 +10,6 @@ tags:
 - Bitcoin
 - TED Talk
 title: 'Neha Narula: The future of money'
-url: /2016/09/20/neha-narula-future-money/
 ---
 
 <!--more-->

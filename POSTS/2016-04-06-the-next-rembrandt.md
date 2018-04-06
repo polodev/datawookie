@@ -7,7 +7,6 @@ tags:
 - Data Analysis
 - Machine Learning
 title: The Next Rembrandt
-url: /2016/04/06/the-next-rembrandt/
 ---
 
 Creating [The Next Rembrandt](https://www.nextrembrandt.com/): using data to touch the human soul. How a team from ING, Microsoft, TU Delft, [Mauritshuis](http://www.mauritshuis.nl/en/) and Rembrandthuis used technology to synthesise a painting in the style of the Dutch master, [Rembrandt](https://en.wikipedia.org/wiki/Rembrandt), almost 350 years after his death.

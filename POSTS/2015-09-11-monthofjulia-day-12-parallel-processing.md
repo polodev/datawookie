@@ -13,7 +13,6 @@ tags:
 - Julia
 - parallel
 title: '#MonthOfJulia Day 12: Parallel Processing'
-url: /2015/09/11/monthofjulia-day-12-parallel-processing/
 ---
 
 <!--more-->

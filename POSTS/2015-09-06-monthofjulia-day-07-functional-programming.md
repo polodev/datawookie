@@ -15,7 +15,6 @@ tags:
 - map
 - reduce
 title: '#MonthOfJulia Day 7: Functional Programming'
-url: /2015/09/06/monthofjulia-day-07-functional-programming/
 ---
 
 <!--more-->

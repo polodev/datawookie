@@ -12,7 +12,6 @@ tags:
 - Julia
 - Module
 title: '#MonthOfJulia Day 10: Modules'
-url: /2015/09/09/monthofjulia-day-10-modules/
 ---
 
 <!--more-->

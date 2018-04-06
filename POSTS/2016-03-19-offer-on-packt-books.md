@@ -4,7 +4,6 @@ date: 2016-03-19T04:31:59Z
 excerpt_separator: <!-- more -->
 id: 3390
 title: Discount on Packt Books
-url: /2016/03/19/offer-on-packt-books/
 ---
 
 <!--more-->

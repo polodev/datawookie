@@ -8,7 +8,6 @@ id: 2816
 tags:
 - names
 title: 'Evolution of First Names: Changes over the Last Century'
-url: /2015/11/09/evolution-of-first-names-changes-over-the-last-century/
 ---
 
 In light of recent developments, a bit of work that I did almost two years ago has become rather relevant.

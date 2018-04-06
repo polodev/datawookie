@@ -10,7 +10,6 @@ tags:
 - Neo4j
 - Windows
 title: Remote Access to Neo4j on Windows
-url: /2016/09/13/remote-access-to-neo4j-on-windows/
 ---
 
 <!--more-->

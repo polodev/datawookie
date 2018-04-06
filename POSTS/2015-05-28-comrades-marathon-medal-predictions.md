@@ -12,7 +12,6 @@ tags:
 - Random Forest
 - Shiny
 title: Comrades Marathon Medal Predictions
-url: /2015/05/28/comrades-marathon-medal-predictions/
 ---
 
 <!--more-->

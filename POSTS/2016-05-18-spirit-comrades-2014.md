@@ -8,7 +8,6 @@ id: 3520
 tags:
 - Comrades Marathon
 title: Spirit of the Comrades
-url: /2016/05/18/spirit-comrades-2014/
 ---
 
 Great video bringing back some good memories.

@@ -4,7 +4,6 @@ date: 2015-07-10T09:38:57Z
 guid: http://www.exegetic.biz/blog/?p=1638
 id: 1638
 title: 'ICML 2015 (Lille, France): Day 4'
-url: /2015/07/10/icml-2015-lille-france-day-4/
 ---
 
 Sundry notes from the fourth day of the International Conference for Machine Learning (ICML 2015) in Lille, France. Some of this might not be entirely accurate. Caveat emptor.

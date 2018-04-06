@@ -11,7 +11,6 @@ tags:
 - Machine Learning
 - TED Talk
 title: 'Zeynep Tufekci: Machine intelligence and human morals'
-url: /2016/10/24/zeynep-tufekci-machine-intelligence-makes-human-morals-important/
 ---
 
 <!--more-->

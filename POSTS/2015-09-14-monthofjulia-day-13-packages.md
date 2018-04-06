@@ -12,7 +12,6 @@ tags:
 - Julia
 - Packages
 title: '#MonthOfJulia Day 13: Packages'
-url: /2015/09/14/monthofjulia-day-13-packages/
 ---
 
 <!--more-->

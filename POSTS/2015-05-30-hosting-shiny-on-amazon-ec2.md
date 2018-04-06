@@ -9,7 +9,6 @@ tags:
 - '#rstats'
 - Shiny
 title: Hosting Shiny on Amazon EC2
-url: /2015/05/30/hosting-shiny-on-amazon-ec2/
 ---
 
 <!--

@@ -14,7 +14,6 @@ tags:
 - Iterator
 - Julia
 title: '#MonthOfJulia Day 8: Iteration, Conditionals and Exceptions'
-url: /2015/09/07/monthofjulia-day-08-iteration-and-control/
 ---
 
 <!--more-->

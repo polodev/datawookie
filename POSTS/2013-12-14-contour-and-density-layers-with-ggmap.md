@@ -13,7 +13,6 @@ tags:
 - Lightning
 - '#rstats'
 title: Contour and Density Layers with ggmap
-url: /2013/12/14/contour-and-density-layers-with-ggmap/
 ---
 
 <!--more-->

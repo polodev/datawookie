@@ -6,7 +6,6 @@ date: 2015-03-23T09:00:14Z
 excerpt_separator: <!-- more -->
 id: 1213
 title: 'Encyclopaedia: Scottish National Antarctic Expedition'
-url: /2015/03/23/encyclopaedia-scottish-national-antarctic-expedition/
 ---
 
 A contribution which Claire and I wrote for [Antarctica and the Arctic Circle: A Geographic Encyclopedia of the Earth's Polar Regions](http://www.amazon.com/gp/product/B00OD83J44/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00OD83J44&linkCode=as2&tag=exegetanalyt-20&linkId=2TV5WJPYICQMVBVQ)

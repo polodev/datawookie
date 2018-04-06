@@ -8,7 +8,6 @@ tags:
 - '#rstats'
 - uncertainty
 title: 'Finding Correlations in Data with Uncertainty: Classical Solution'
-url: /2013/08/13/finding-correlations-in-data-with-uncertainty-classical/
 ---
 
 Following up on my [previous post](http://www.exegetic.biz/blog/2013/08/finding-correlations-in-data-with-uncertainty-bootstrap/) as a result of an excellent suggestion from Andrej Spiess. The data are indeed very [heteroscedastic](http://en.wikipedia.org/wiki/Heteroscedasticity)! Andrej suggested that an alternative way to attack this problem would be to use weighted correlation with weights being the inverse of the measurement variance.

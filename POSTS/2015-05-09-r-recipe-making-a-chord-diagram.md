@@ -11,7 +11,6 @@ tags:
 - Chord Diagram
 - Visualisation
 title: 'R Recipe: Making a Chord Diagram'
-url: /2015/05/09/r-recipe-making-a-chord-diagram/
 ---
 
 With the [circlize](http://cran.mirror.ac.za/web/packages/circlize/index.html) package, putting together a Chord Diagram is simple. 

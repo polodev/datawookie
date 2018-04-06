@@ -15,7 +15,6 @@ tags:
 - Python
 - '#rstats'
 title: '#MonthOfJulia Day 25: Interfacing with Other Languages'
-url: /2015/09/30/monthofjulia-day-25-other-languages/
 ---
 
 <!--more-->

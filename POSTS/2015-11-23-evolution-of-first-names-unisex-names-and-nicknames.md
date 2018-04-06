@@ -8,7 +8,6 @@ id: 2824
 tags:
 - names
 title: 'Evolution of First Names: Unisex Names and Nicknames'
-url: /2015/11/23/evolution-of-first-names-unisex-names-and-nicknames/
 ---
 
 <!--more-->

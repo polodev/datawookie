@@ -11,7 +11,6 @@ tags:
 - parallel
 - '#rstats'
 title: The Wonders of foreach
-url: /2013/08/25/the-wonders-of-foreach/
 ---
 
 Writing code from scratch to do parallel computations can be rather tricky. However, the packages providing parallel facilities in R make it remarkably easy. One such package is foreach. I am going to document my trail of discovery with foreach, which began some time ago, but has really come into fruition over the last few weeks.

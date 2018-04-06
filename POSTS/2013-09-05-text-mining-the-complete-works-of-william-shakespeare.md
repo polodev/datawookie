@@ -12,7 +12,6 @@ tags:
 - text mining
 - word cloud
 title: Text Mining the Complete Works of William Shakespeare
-url: /2013/09/05/text-mining-the-complete-works-of-william-shakespeare/
 ---
 
 I am starting a new project that will require some serious text mining. So, in the interests of bringing myself up to speed on the tm package, I thought I would apply it to the Complete Works of William Shakespeare and just see what falls out.

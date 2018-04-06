@@ -16,7 +16,6 @@ tags:
 - Plotly
 - Pyplot
 title: '#MonthOfJulia Day 18: Plotting'
-url: /2015/09/21/monthofjulia-day-18-plotting/
 ---
 
 <!--more-->

@@ -3,7 +3,6 @@ author: Andrew B. Collier
 date: 2018-02-05T08:00:00Z
 excerpt_separator: <!-- more -->
 title: SQL Server from Ubuntu
-url: /2018/02/05/sql-server-from-ubuntu/
 draft: false
 tags: ["SQL", "Ubuntu"]
 ---

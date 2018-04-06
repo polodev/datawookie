@@ -15,7 +15,6 @@ tags:
 - MQL4
 - '#rstats'
 title: Analysis of Cable Morning Trade Strategy
-url: /2013/05/29/analysis-of-cable-morning-trade-strategy/
 ---
 
 A couple of years ago I implemented an automated trading algorithm for a strategy called the "Cable Morning Trade". The basis of the strategy is the range of GBPUSD during the interval 05:00 to 09:00 London time. Two buy stop orders are placed 5 points above the highest high for this period; two sell stop orders are placed 5 points below the lowest low. All orders have a protective stop at 40 points. When either the buy or sell orders are filled, the other orders are cancelled. Of the filled orders, one exits at a profit equal to the stop loss, while the other is left to run until the close of the London session.

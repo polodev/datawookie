@@ -8,7 +8,6 @@ tags:
 - Machine Learning
 - TED Talk
 title: 'Anthony Goldbloom: The jobs we''ll lose to machines'
-url: /2016/08/22/anthony-goldbloom-jobs-well-lose-machines/
 ---
 
 <!--more-->

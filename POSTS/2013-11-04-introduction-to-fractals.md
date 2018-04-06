@@ -9,7 +9,6 @@ tags:
 - Mandelbrot Set
 - '#rstats'
 title: Introduction to Fractals
-url: /2013/11/04/introduction-to-fractals/
 ---
 
 A short while ago I was contracted to write a short piece entitled "Introduction to Fractals". The article can be found [here](http://162.243.184.248/wp-content/uploads/2013/11/fractals-introduction.pdf). Admittedly it is hard to do justice to the topic in less than 1000 words. <!--more--> Both of the illustrations were created with R.

@@ -3,7 +3,6 @@ author: Andrew B. Collier
 date: 2017-11-20T04:30:00Z
 tags: ["R"]
 title: 'Variable Names: Camel Case to Underscore Delimited'
-url: /2017/11/20/camel-case-underscore-delimited/
 ---
 
 A project I'm working on has a bunch of different data sources. Some of them have column names in Camel Case. Others are underscore delimited. My OCD rebels at this disarray and demands either one or the other.

@@ -9,7 +9,6 @@ tags:
 - '#rstats'
 - text mining
 title: Clustering the Words of William Shakespeare
-url: /2013/09/10/clustering-the-words-of-william-shakespeare/
 ---
 
 In my [previous post](http://www.exegetic.biz/blog/2013/09/text-mining-the-complete-works-of-william-shakespeare/)&nbsp;I used the tm package to do some simple text mining on the Complete Works of William Shakespeare. Today I am taking some of those results and using them to generate word clusters.

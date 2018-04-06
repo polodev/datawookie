@@ -13,7 +13,6 @@ tags:
 - '#rstats'
 - Reference Class
 title: R Interface to Myfxbook
-url: /2014/04/17/r-interface-to-myfxbook/
 ---
 
 [Myfxbook](https://www.myfxbook.com/ "Myfxbook") provides an interface to your FOREX trading accounts as well as an active trading community. <!--more--> It has a broad range of functionality including

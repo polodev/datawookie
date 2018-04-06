@@ -14,7 +14,6 @@ tags:
 - k-means clustering
 - k-medoids clustering
 title: '#MonthOfJulia Day 30: Clustering'
-url: /2015/10/07/monthofjulia-day-30-clustering/
 ---
 
 <!--more-->

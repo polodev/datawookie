@@ -6,7 +6,6 @@ id: 1573
 tags:
 - Excel
 title: 'Excel: Copying with Relative Links'
-url: /2015/06/26/excel-copying-with-relative-links/
 ---
 
 <!--more-->

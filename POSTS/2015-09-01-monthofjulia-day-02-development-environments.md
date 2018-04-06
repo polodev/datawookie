@@ -14,7 +14,6 @@ tags:
 - Juno
 - RStudio
 title: '#MonthOfJulia Day 2: Development Environments'
-url: /2015/09/01/monthofjulia-day-02-development-environments/
 ---
 
 <!--more-->

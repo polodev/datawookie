@@ -11,7 +11,6 @@ tags:
 - scatter plot
 - Visualisation
 title: xkcd Style Bubble Plot
-url: /2013/05/23/xkcd-style-bubble-plot/
 ---
 
 A [package](http://cran.r-project.org/web/packages/xkcd/index.html) was recently released to generate plots in the style of [xkcd](http://xkcd.com/) using R. Being a big fan of the cartoon, I could not resist trying it out. So I set out to produce something like one of [Hans Rosling's](http://en.wikipedia.org/wiki/Hans_Rosling) bubble plots.

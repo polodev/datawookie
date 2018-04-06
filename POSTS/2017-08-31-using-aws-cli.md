@@ -10,7 +10,6 @@ tags:
 - EMR
 - CLI
 title: Driving AWS from the Command Line
-url: /2017/08/31/using-aws-cli/
 ---
 
 Although it's very handy (and easy) to set up some cloud resources using the AWS Management Console, once you know what you need it makes a lot of sense to automate the process. Fortunately there's a handy little command line tools, `aws`, which makes this eminently possible. The [AWS CLI Command Reference](http://docs.aws.amazon.com/cli/latest/index.html) is the definitive resource for this tool. There's a mind boggling array of possibilities. We'll take a look at a small selection of them.

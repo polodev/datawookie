@@ -3,7 +3,6 @@ author: Andrew B. Collier
 date: 2017-10-21T08:30:00Z
 tags: ["Talk"]
 title: Speaking Bucket List
-url: /2017/10/21/conference-bucket-list/
 ---
 
 A list of conferences and meetups I'd like to speak at in the next few years.

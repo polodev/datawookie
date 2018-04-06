@@ -9,7 +9,6 @@ tags:
 - DigitalOcean
 - API
 title: Deploying a Minimal API using plumber on DigitalOcean
-url: /2017/06/21/deploying-minimal-plumber-api-digitalocean/
 ---
 
 <!--more-->

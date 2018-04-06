@@ -7,7 +7,6 @@ tags:
 - gmapsdistance
 - Spatial
 title: Route Asymmetry in Google Maps
-url: /2017/08/23/map-route-direction-asymmetry/
 ---
 
 I have been retrieving some route information using [Rodrigo Azuero](https://twitter.com/razuero)'s [`gmapsdistance`](https://github.com/rodazuero/gmapsdistance) package and noted that there was some asymmetry in the results: the time and distance for the trip from A to B was not necessarily always the same as the time and distance for the trip from B to A. Although in retrospect this seems self-evident, it merited further investigation.

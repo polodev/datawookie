@@ -7,7 +7,6 @@ tags:
 - automation
 - Windows
 title: Automating R scripts under Windows
-url: /2016/02/11/automating-r-scripts-under-windows/
 ---
 
 Setting up an automated job under Linux is a cinch thanks to [cron](https://en.wikipedia.org/wiki/Cron). Doing the same under Windows is a little more tricky, but still eminently doable.

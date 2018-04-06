@@ -9,7 +9,6 @@ tags:
 - Data Science
 - Team
 title: Data Science Teams
-url: /2015/10/16/data-science-teams/
 ---
 
 <blockquote>

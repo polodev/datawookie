@@ -11,7 +11,6 @@ tags:
 - '#rstats'
 - Ultramarathon
 title: Race Statistics for Comrades Marathon Novice Runners
-url: /2014/05/16/race-statistics-for-comrades-marathon-novice-runners/
 ---
 
 Most novice Comrades Marathon runners finish the race on their first attempt and the majority of them walk (shuffle, crawl?) away with Bronze medals.

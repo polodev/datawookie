@@ -11,7 +11,6 @@ tags:
 - ggplot2
 - '#rstats'
 title: 'Earthquakes: Land / Ocean Distribution'
-url: /2014/04/13/earthquakes-land-ocean-distribution/
 ---
 
 The next stage in my earthquake analysis project is to partition the events into groups with epicentre over land or water. <!--more--> Since our existing catalog contains the latitude and longitude for the epicentres, it was a relatively simple matter to pipe these into [gmtselect](http://www.soest.hawaii.edu/gmt/gmt/html/man/gmtselect.html "gmtselect") and label the events accordingly. The resulting data when sucked into R looks like this:

@@ -9,7 +9,6 @@ tags:
 - Visualisation
 - Web Scraping
 title: Locations of Geosynchronous Satellites
-url: /2013/04/16/locations-of-geosynchronous-satellites/
 ---
 
 A year or so ago I went to a talk which included the diagram below. It shows the locations of the Earth&#8217;s fleet of [geosynchronous satellites](http://en.wikipedia.org/wiki/Geosynchronous_satellite). According to the speaker, the information in this diagram was already quite dated: the satellites and their locations had changed.

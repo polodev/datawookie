@@ -12,7 +12,6 @@ tags:
 - Genetic Algorithm
 - Julia
 title: '#MonthOfJulia Day 33: Evolutionary Algorithms'
-url: /2015/10/12/monthofjulia-day-33-evolutionary-algorithms/
 ---
 
 <!--more-->

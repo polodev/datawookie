@@ -10,7 +10,6 @@ id: 924
 tags:
 - YouTube
 title: Charting culture
-url: /2014/08/06/charting-culture/
 ---
 
 This is well worth watching. Good idea. Great presentation. Effective use of the media to publicise a scientific paper.

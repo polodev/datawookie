@@ -11,7 +11,6 @@ tags:
 - Volcanic Explosivity Index
 - Volcano
 title: Largest Volcanoes in Recorded History (and other statistics)
-url: /2014/04/11/largest-volcanoes-in-recorded-history-and-other-statistics/
 ---
 
 Around 199 years ago the largest volcano in recorded history, [Mount Tambora](http://en.wikipedia.org/wiki/Mount_Tambora "Mount Tambora"), erupted, spewing an enormous volume of molten rock and ash into the atmosphere and onto the surrounding land.

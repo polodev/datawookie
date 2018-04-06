@@ -8,7 +8,6 @@ tags:
 - AWS
 - EC2
 title: Remote Desktop on an Ubuntu EC2 Instance
-url: /2017/08/08/remote-desktop-ec2/
 ---
 
 A couple of options for remote access to desktop applications on a EC2 host.

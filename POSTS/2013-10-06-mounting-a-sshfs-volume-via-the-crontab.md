@@ -9,7 +9,6 @@ tags:
 - Linux
 - sshfs
 title: Mounting a sshfs volume via the crontab
-url: /2013/10/06/mounting-a-sshfs-volume-via-the-crontab/
 ---
 
 I need to mount a directory from my laptop on my desktop machine using sshfs. At first I was not making the mount terribly regularly, so I did it manually each time that I needed it. However, the frequency increased over time and I was eventually mounting it every day (or multiple times during the course of a day!). This was a perfect opportunity to employ some automation.

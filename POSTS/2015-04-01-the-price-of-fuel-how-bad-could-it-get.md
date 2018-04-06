@@ -14,7 +14,6 @@ tags:
 - '#rstats'
 - South Africa
 title: 'The Price of Fuel: How Bad Could It Get?'
-url: /2015/04/01/the-price-of-fuel-how-bad-could-it-get/
 ---
 
 The cost of fuel in South Africa (and I imagine pretty much everywhere else) is a contentious topic. It varies from month to month and, although it is clearly related to the price of crude oil and the exchange rate, various other forces play an influential role.

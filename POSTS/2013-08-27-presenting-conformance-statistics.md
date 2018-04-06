@@ -12,7 +12,6 @@ tags:
 - subset
 - transform
 title: Presenting Conformance Statistics
-url: /2013/08/27/presenting-conformance-statistics/
 ---
 
 A client came to me with some conformance data. She was having a hard time making sense of it in a spreadsheet. I had a look at a couple of ways of presenting it that would bring out the important points.

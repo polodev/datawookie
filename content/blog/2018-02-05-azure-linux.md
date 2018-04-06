@@ -3,7 +3,6 @@ author: Andrew B. Collier
 date: 2018-02-05T07:00:00Z
 tags: ["Azure", "Linux"]
 title: Linux VM on Azure
-url: /2018/02/05/azure-linux/
 ---
 
 A quick tutorial on how to create a Linux VM on Azure.

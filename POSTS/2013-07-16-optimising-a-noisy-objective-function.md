@@ -11,7 +11,6 @@ tags:
 - '#rstats'
 - simulated annealing
 title: Optimising a Noisy Objective Function
-url: /2013/07/16/optimising-a-noisy-objective-function/
 ---
 
 I am busy with a project where I need to calibrate the [Heston Model](http://en.wikipedia.org/wiki/Heston_model)&nbsp;to some Asian options data. The model has been implemented as a function which executes a [Monte Carlo](https://en.wikipedia.org/wiki/Monte_Carlo_method)&nbsp;(MC) simulation. As a result, the objective function is rather noisy. There are a number of algorithms for dealing with this sort of problem, and here I simply give a brief overview of some of them.

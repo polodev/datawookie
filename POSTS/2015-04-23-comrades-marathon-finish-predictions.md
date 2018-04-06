@@ -12,7 +12,6 @@ tags:
 - prediction
 - '#rstats'
 title: Comrades Marathon Finish Predictions
-url: /2015/04/23/comrades-marathon-finish-predictions/
 ---
 
 <!--more-->

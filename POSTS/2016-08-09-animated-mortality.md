@@ -15,7 +15,6 @@ tags:
 - life expectancy
 - mortality
 title: Animated Mortality
-url: /2016/08/09/animated-mortality/
 ---
 
 <!--more-->

@@ -10,7 +10,6 @@ tags:
 - Security
 - Networking
 title: Setting up ExpressVPN on Ubuntu
-url: /2017/06/23/setting-up-expressvpn-ubuntu/
 ---
 
 ![](/img/2017/06/expressvpn-logo.jpg)

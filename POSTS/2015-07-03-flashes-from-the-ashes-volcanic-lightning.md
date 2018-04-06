@@ -12,7 +12,6 @@ tags:
 - Volcano
 - Whistler
 title: 'Flashes from the Ashes: Volcanic Lightning'
-url: /2015/07/03/flashes-from-the-ashes-volcanic-lightning/
 ---
 
 <!--more-->

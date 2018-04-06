@@ -3,7 +3,6 @@ author: Andrew B. Collier
 date: 2017-09-13T08:30:00Z
 tags: ["AWS"]
 title: Creating an AWS Spot Instance
-url: /2017/09/13/aws-spot-instance/
 ---
 
 EC2 Spot Instances can provide very affordable computing on EC2 by allowing access to unused capacity at significant discounts.

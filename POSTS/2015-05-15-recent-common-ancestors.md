@@ -15,7 +15,6 @@ tags:
 - '#rstats'
 - simulation
 title: 'Recent Common Ancestors: Simple Model'
-url: /2015/05/15/recent-common-ancestors/
 ---
 
 An interesting paper ([Modelling the recent common ancestry of all living humans](http://www.nature.com/nature/journal/v431/n7008/full/nature02842.html), Nature, 431, 562–566, 2004) by Rohde, Olson and Chang concludes with the words:

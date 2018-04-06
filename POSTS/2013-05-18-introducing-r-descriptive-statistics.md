@@ -8,7 +8,6 @@ tags:
 - contingency table
 - '#rstats'
 title: 'Introducing R: Descriptive Statistics'
-url: /2013/05/18/introducing-r-descriptive-statistics/
 ---
 
 <!--more-->

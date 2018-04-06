@@ -10,7 +10,6 @@ tags:
 - party
 - '#rstats'
 title: 'Package party: Conditional Inference Trees'
-url: /2013/05/21/package-party-conditional-inference-trees/
 ---
 
 I am going to be using the [party](http://cran.rstudio.com/web/packages/party/index.html) package for one of my projects, so I spent some time today familiarising myself with it. The details of the package are described in Hothorn, T., Hornik, K., & Zeileis, A. (1999). "party: A Laboratory for Recursive Partytioning" which is [available from CRAN](http://cran.r-project.org/web/packages/party/vignettes/party.pdf).

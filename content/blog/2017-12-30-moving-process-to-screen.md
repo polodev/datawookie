@@ -4,7 +4,6 @@ date: 2017-12-30T04:00:00Z
 excerpt_separator: <!-- more -->
 tags: ["Linux"]
 title: Moving a Running Process to screen
-url: /2017/12/30/moving-process-to-screen/
 ---
 
 I am not sure how many times this has happened to me, but it's not infrequent. I'm working on a remote session and I start a long running job. Then some time later I want to disconnect from the session but realise that if I do then the job will be killed.

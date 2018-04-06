@@ -11,7 +11,6 @@ tags:
 - Stock Prices
 - Times Series Clustering
 title: Clustering Time Series Data
-url: /2017/04/25/clustering-time-series-data/
 ---
 
 I have been looking at methods for clustering time domain data and recently read [TSclust: An R Package for Time Series Clustering](http://www.jstatsoft.org/v62/i01/paper) by Pablo Montero and José Vilar. Here are the results of my initial experiments with the TSclust package.

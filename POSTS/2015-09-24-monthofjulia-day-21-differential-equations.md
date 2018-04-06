@@ -16,7 +16,6 @@ tags:
 - Oscillator
 - sundials
 title: '#MonthOfJulia Day 21: Differential Equations'
-url: /2015/09/24/monthofjulia-day-21-differential-equations/
 ---
 
 <!--more-->

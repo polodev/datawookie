@@ -7,7 +7,6 @@ tags:
 - '#rstats'
 - R Recipe
 title: 'R Recipe: RStudio and UNC Paths'
-url: /2015/06/04/r-recipe-rstudio-and-unc-paths/
 ---
 
 <!-- https://support.rstudio.com/hc/en-us/community/posts/200657076-Also-load-the-user-s-Rprofile-when-opening-a-project-with-a-project-specific-Rprofile -->

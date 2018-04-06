@@ -3,7 +3,6 @@ author: Andrew B. Collier
 date: 2018-03-17T05:30:00Z
 tags: ["Abstract"]
 title: Productivity Hacks for R
-url: /2018/03/17/abstract-productivity-hacks-r/
 ---
 
 {{< abstract title="Data Science Productivity Hacks" >}}

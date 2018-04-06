@@ -2,7 +2,6 @@
 author: Andrew B. Collier
 tags: ["AWS", "R", "Plumber"]
 title: Hosting a Plumber API on AWS
-url: /2017/09/14/plumber-api-on-aws/
 ---
 
 <!-- Other notes on hosting at https://www.rplumber.io/docs/hosting.html. -->

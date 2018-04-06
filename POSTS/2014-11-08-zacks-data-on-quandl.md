@@ -10,7 +10,6 @@ tags:
 - '#rstats'
 - Trading
 title: Zacks Data on Quandl
-url: /2014/11/08/zacks-data-on-quandl/
 ---
 
 <img src="/img/2014/11/zacks-logo.png">

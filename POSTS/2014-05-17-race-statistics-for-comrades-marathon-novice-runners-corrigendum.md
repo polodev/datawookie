@@ -9,7 +9,6 @@ tags:
 - Comrades Marathon
 - Ultramarathon
 title: 'Race Statistics for Comrades Marathon Novice Runners: Corrigendum'
-url: /2014/05/17/race-statistics-for-comrades-marathon-novice-runners-corrigendum/
 ---
 
 There was some significant bias in the histogram from my previous post: the data from all years were lumped together. This is important because as of 2003 (when the Vic Clapham medal was introduced) the final cutoff for the Comrades Marathon was extended from 11:00 to 12:00. In 2000 they also applied an extended cutoff.

@@ -8,7 +8,6 @@ tags:
 - AWS
 - EC2
 title: Adding a Volume to an Ubuntu EC2 Instance
-url: /2017/08/10/adding-volume-ec2/
 ---
 
 Some quick notes on adding a storage volume to an EC2 instance.

@@ -10,7 +10,6 @@ tags:
 - ggplot2
 - '#rstats'
 title: 'Comrades Marathon: Negative Splits and Cheating'
-url: /2014/05/06/comrades-marathon-negative-splits-and-cheating/
 ---
 
 With this year's Comrades Marathon just less than a month away, I was reminded of a [story](http://www.iol.co.za/dailynews/news/comrades-cheats-bust-1.1645765#.U1oXdx8s05K) from earlier in the year. Mark Dowdeswell, a statistician at Wits University, found evidence of cheating by some middle and back of the pack Comrades runners. He identified a group of 20 athletes who had suspicious negative splits: they ran _much_ faster in the second half of the race. There was one runner in particular whose splits were just too good to be true. When the story was publicised, this particular runner claimed that it was a [conspiracy](http://www.iol.co.za/dailynews/news/it-s-a-plot-to-get-me-1.1646305#.U1oXgB8s05I).

@@ -12,7 +12,6 @@ tags:
 - Quandl
 - '#rstats'
 title: Daylight Saving Effect on Financial Indices
-url: /2014/04/01/daylight-saving-effect-on-sp500-and-ftse100/
 ---
 
 Does the transition to and from Daylight Saving Time (DST) have a (significant) effect on the stock market?

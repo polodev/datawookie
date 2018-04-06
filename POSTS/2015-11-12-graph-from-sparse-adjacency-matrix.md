@@ -8,7 +8,6 @@ tags:
 - '#rstats'
 - sparse matrix
 title: Graph from Sparse Adjacency Matrix
-url: /2015/11/12/graph-from-sparse-adjacency-matrix/
 ---
 
 I spent a decent chunk of my morning trying to figure out how to construct a sparse adjacency matrix for use with `graph.adjacency()`. I'd have thought that this would be rather straight forward, but I tripped over a few subtle issues with the Matrix package. My biggest problem (which in retrospect seems rather trivial) was that elements in my adjacency matrix were occupied by the pipe symbol.

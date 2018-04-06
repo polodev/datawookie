@@ -3,7 +3,6 @@ author: Andrew B. Collier
 date: 2017-06-23T05:00:00Z
 tags: ["Jupyter", "Ubuntu"]
 title: Setting up Jupyter with Python 3 on Ubuntu
-url: /2017/06/23/setting-up-jupyter-ubuntu-xenial/
 ---
 
 ![](/img/2017/06/jupyter-test-notebook.png)

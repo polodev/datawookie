@@ -12,7 +12,6 @@ tags:
 - Indicator
 - MQL4
 title: Support &#038; Resistance Indicator
-url: /2013/05/06/support-resistance-indicator/
 ---
 
 I was recently browsing through the variety of of [MetaTrader](http://www.metatrader4.com/) indicators for [support and resistance](http://en.wikipedia.org/wiki/Support_and_resistance) levels. None of them ticked all of my boxes. Either they were not aesthetically pleasing (making a mess of my pristine charts) or they failed to produce what I consider to be reasonable levels. So, embracing my pioneering spirit, I set out to fashion my own indicator, one which will ultimately tick all of my boxes!

@@ -11,7 +11,6 @@ tags:
 - Plotly
 - '#rstats'
 title: 'Kaggle: Santa''s Stolen Sleigh'
-url: /2016/01/22/kaggle-santas-stolen-sleigh/
 ---
 
 This morning I read Wendy Kan's interesting post on [Creating Santa's Stolen Sleigh](http://blog.kaggle.com/2016/01/19/creating-santas-stolen-sleigh-kaggles-annual-optimization-competition/). I hadn't really thought too much about the process of constructing an optimisation competition, but Wendy gave some interesting insights on the considerations involved in designing a competition which was both fun and challenging but still computationally feasible without military grade hardware.

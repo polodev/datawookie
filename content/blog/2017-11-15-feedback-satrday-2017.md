@@ -3,7 +3,6 @@ author: Andrew B. Collier
 date: 2017-11-15T03:30:00Z
 tags: ["R", "satRday", "Conference"]
 title: Analysis of Feedback from satRday [Cape Town] 2017
-url: /2017/11/15/feedback-satrday-2017/
 ---
 
 We recently announced the second [satRday (Cape Town)](http://capetown2018.satrdays.org) conference scheduled to take place on 17 March 2018. Obviously we want this to be bigger and better than this year's event, so we are paying careful attention to the feedback that we received from the [first event](http://capetown2017.satrdays.org).

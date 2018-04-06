@@ -11,7 +11,6 @@ tags:
 - Machine Learning
 - Open Source
 title: 'ICML 2015 (Lille, France): Day 5 (Workshops)'
-url: /2015/07/10/icml-2015-lille-france-day-5-workshops/
 ---
 
 <!--more-->

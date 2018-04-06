@@ -3,7 +3,6 @@ author: Andrew B. Collier
 date: 2018-01-07T08:00:00Z
 tags: ["Ethereum"]
 title: An Ethereum Package for R
-url: /2018/01/07/ethereum-r-package/
 ---
 
 Bitcoin has become synonymous with "cryptocurrency". [Ethereum](https://www.ethereum.org/) is another cryptocurrency which, although not as hyped at Bitcoin, presents some attractive characteristics. The foremost of these is the ability to create sophisticated [smart contracts](https://en.wikipedia.org/wiki/Smart_contract).

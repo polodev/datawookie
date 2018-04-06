@@ -10,7 +10,6 @@ tags:
 - EC2
 - Jupyter
 title: Deploying Jupyer on AWS using Docker
-url: /2017/07/18/jupyter-docker-aws/
 ---
 
 <!--

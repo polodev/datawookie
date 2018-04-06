@@ -10,7 +10,6 @@ tags:
 - riverplot
 - Sankey Plot
 title: A Sankey Plot with Uniform Coloured Edges
-url: /2015/04/07/a-sankey-plot-with-uniform-coloured-edges/
 ---
 
 Following up on my [previous post](http://www.exegetic.biz/blog/2014/08/plotting-flows-with-riverplot/) about generating Sankey plots with the riverplot package. It's also possible to generate plots which have constant coloured edges.

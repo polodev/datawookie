@@ -10,7 +10,6 @@ tags:
 - Docker
 - DigitalOcean
 title: RStudio Environment on DigitalOcean with Docker
-url: /2017/07/11/rstudio-docker-digitalocean/
 ---
 
 {{< comment >}}

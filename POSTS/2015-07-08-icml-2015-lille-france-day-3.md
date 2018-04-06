@@ -10,7 +10,6 @@ tags:
 - ICML2015
 - Machine Learning
 title: 'ICML 2015 (Lille, France): Day 3'
-url: /2015/07/08/icml-2015-lille-france-day-3/
 ---
 
 Selected scribblings from the third day at the International Conference for Machine Learning (ICML 2015) in Lille, France. I'm going out on a limb with some of this, since the more talks I attend, the more acutely aware I become of my limited knowledge of the cutting edge of Machine Learning. Caveat emptor.

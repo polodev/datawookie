@@ -12,7 +12,6 @@ tags:
 - Julia
 - markdown
 title: '#MonthOfJulia Day 36: Markdown'
-url: /2015/10/19/monthofjulia-day-36-markdown/
 ---
 
 <!--more-->

@@ -9,7 +9,6 @@ tags:
 - Cypher
 - Neo4j
 title: Deleting All Nodes and Relationships
-url: /2016/09/15/deleting-nodes-relationships/
 ---
 
 Seems that I am doing this a lot: deleting my entire graph (all nodes and relationships) and rebuilding from scratch. I guess that this is part of the learning process.

@@ -12,7 +12,6 @@ tags:
 - Hypothesis Test
 - Julia
 title: '#MonthOfJulia Day 28: Hypothesis Tests'
-url: /2015/10/05/monthofjulia-day-28-hypothesis-tests/
 ---
 
 <!--more-->

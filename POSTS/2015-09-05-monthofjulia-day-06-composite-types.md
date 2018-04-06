@@ -11,7 +11,6 @@ tags:
 - '#MonthOfJulia'
 - Julia
 title: '#MonthOfJulia Day 6: Composite Types'
-url: /2015/09/05/monthofjulia-day-06-composite-types/
 ---
 
 <!--more-->

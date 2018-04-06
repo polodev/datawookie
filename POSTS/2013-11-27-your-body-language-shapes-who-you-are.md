@@ -8,7 +8,6 @@ id: 620
 tags:
 - TED Talk
 title: 'Amy Cuddy: Your body language shapes who you are...'
-url: /2013/11/27/your-body-language-shapes-who-you-are/
 ---
 
 ... but be careful with your plots: they might be misinterpreted.

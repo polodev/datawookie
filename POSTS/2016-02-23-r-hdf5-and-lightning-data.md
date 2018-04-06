@@ -11,7 +11,6 @@ tags:
 - HDF
 - Lightning
 title: R, HDF5 Data and Lightning
-url: /2016/02/23/r-hdf5-and-lightning-data/
 ---
 
 I used to spend an inordinate amount of time digging through lightning data. These data came from a number of sources, the [World Wide Lightning Location Network](http://wwlln.net/) (WWLLN) and LIS/OTD being the most common. I recently needed to work with some [Hierarchical Data Format (HDF)](https://en.wikipedia.org/wiki/Hierarchical_Data_Format) data. HDF is something of a niche format and, since that was the format used for the LIS/OTD data, I went to review those old scripts. It was very pleasant rediscovering work I did some time ago.

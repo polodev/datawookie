@@ -4,7 +4,6 @@ date: 2013-07-29T07:29:17Z
 excerpt_separator: <!-- more -->
 id: 345
 title: Modelling the Age of the Oldest Person You Know
-url: /2013/07/29/modelling-the-oldest-person-you-know/
 ---
 
 The blog post [How old is the oldest person you know?](http://freakonometrics.hypotheses.org/7079)&nbsp;by Arthur Charpentier was inspired by Prudential's&nbsp;[stickers campaign](http://www.youtube.com/watch?v=axofdNHh9DQ)&nbsp;which asks you to record the age of the oldest person you know by placing a blue sticker on a number line. The result is a histogram of ages. The original experiment was carried out using 400 real stickers in a park in Austin.

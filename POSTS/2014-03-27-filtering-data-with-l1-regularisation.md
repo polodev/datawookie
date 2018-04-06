@@ -13,7 +13,6 @@ tags:
 - '#rstats'
 - regularisation
 title: Filtering Data with L1 Regularisation
-url: /2014/03/27/filtering-data-with-l1-regularisation/
 ---
 
 A few days ago I posted about [Filtering Data with L2 Regularisation](http://www.exegetic.biz/blog/2014/03/filtering-data-with-l2-regularisation/). Today I am going to explore the other filtering technique described in the [paper](http://arxiv.org/abs/1403.4069) by Tung-Lam Dao. <!--more--> This is similar to the filter discussed in my previous post, but uses a slightly different objective function:

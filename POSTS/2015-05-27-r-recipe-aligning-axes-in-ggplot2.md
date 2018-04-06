@@ -8,7 +8,6 @@ tags:
 - '#rstats'
 - R Recipe
 title: 'R Recipe: Aligning Axes in ggplot2'
-url: /2015/05/27/r-recipe-aligning-axes-in-ggplot2/
 ---
 
 Faceted plots in ggplot2 are phenomenal. They give you a simple way to break down an array of plots according to the values of one or more categorical variables. But what if you want to stack plots of different variables? Not quite so simple. But certainly possible. I gathered together this solution from a variety of sources on [stackoverflow](http://stackoverflow.com/), notably [this one](http://stackoverflow.com/questions/30402930/align-x-axes-of-box-plot-and-line-plot-using-ggplot/30403574) and [this other one](http://stackoverflow.com/questions/13656642/r-align-plot-areas-in-ggplot/13657460). A similar issue for vertical alignment is addressed [here](http://stackoverflow.com/questions/24188986/r-ggplot2-make-two-geom-tile-plots-have-equal-height/24189239).

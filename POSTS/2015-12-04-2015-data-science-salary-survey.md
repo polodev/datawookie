@@ -10,7 +10,6 @@ tags:
 - Data Science
 - '#rstats'
 title: 2015 Data Science Salary Survey
-url: /2015/12/04/2015-data-science-salary-survey/
 ---
 
 The recently published [2015 Data Science Salary Survey](https://www.oreilly.com/ideas/2015-data-science-salary-survey) conducted by O'Reilly takes a look at the salaries received, tools used and other interesting facts about Data Scientists around the World. It's based on a survey of over 600 respondents from a variety of industries. The entire report is well worth a read, but I've picked out some highlights below.

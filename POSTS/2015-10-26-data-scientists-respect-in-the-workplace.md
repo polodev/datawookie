@@ -8,7 +8,6 @@ id: 2756
 tags:
 - Data Science
 title: 'Data Scientists: Respect in the Workplace?'
-url: /2015/10/26/data-scientists-respect-in-the-workplace/
 ---
 
 Data Scientists are often among the best educated and most experienced on a team. Are you getting the respect you deserve?

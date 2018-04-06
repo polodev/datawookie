@@ -8,7 +8,6 @@ tags:
 - '#rstats'
 - Visualisation
 title: Medal Allocations at the Comrades Marathon
-url: /2013/06/09/comrades-marathon-2013-medal-allocations/
 ---
 
 <!--more-->

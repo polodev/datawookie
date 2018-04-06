@@ -8,7 +8,6 @@ tags:
 - API
 - Uber
 title: 'ubeR: A Package for the Uber API'
-url: /2016/08/31/uber-a-package-for-the-uber-api/
 ---
 
 Uber exposes an extensive API for interacting with their service. [ubeR](https://github.com/DataWookie/ubeR) is a R package for working with that API which Arthur Wu and I put together during a Hackathon at iXperience.

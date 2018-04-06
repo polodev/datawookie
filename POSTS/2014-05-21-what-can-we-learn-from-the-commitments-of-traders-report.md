@@ -12,7 +12,6 @@ tags:
 - FOREX
 - ggplot2
 title: What Can We Learn from the Commitments of Traders Report?
-url: /2014/05/21/what-can-we-learn-from-the-commitments-of-traders-report/
 ---
 
 The Commitments of Traders (COT) report is issued weekly by the Commodity Futures Trading Commission (CFTC). It reflects the level of activity in the futures markets. The report, which is issued every Friday, contains the data from the previous Tuesday.

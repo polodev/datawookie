@@ -10,7 +10,6 @@ tags:
 - Machine Learning
 - '#rstats'
 title: 'Review: Machine Learning with R Cookbook'
-url: /2015/07/03/review-machine-learning-with-r-cookbook/
 ---
 
 <!--more-->

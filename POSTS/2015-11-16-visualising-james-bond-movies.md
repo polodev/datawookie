@@ -4,7 +4,6 @@ date: 2015-11-16T06:30:21Z
 excerpt_separator: <!-- more -->
 id: 2888
 title: Visualising James Bond movies
-url: /2015/11/16/visualising-james-bond-movies/
 ---
 
 <!--more-->

@@ -9,7 +9,6 @@ id: 4317
 tags:
 - xkcd
 title: 'xkcd: Hand Sanitiser'
-url: /2016/09/21/xkcd-hand-sanitiser/
 ---
 
 <!--more-->

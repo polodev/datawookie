@@ -10,7 +10,6 @@ tags:
 - conversation agent
 - UX
 title: Talks about Bots
-url: /2016/10/04/talks-about-bots/
 ---
 
 Seth Juarez and Matt Winkler having an informal chat about bots.

@@ -6,7 +6,6 @@ id: 3238
 tags:
 - Artificial Intelligence
 title: Can a computer write poetry?
-url: /2016/01/25/can-computer-write-poetry/
 ---
 
 <!--more-->

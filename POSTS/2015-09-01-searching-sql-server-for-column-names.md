@@ -9,7 +9,6 @@ tags:
 - SQL
 - SQL Server
 title: Searching Database for Column Names
-url: /2015/09/01/searching-sql-server-for-column-names/
 ---
 
 <!--more-->

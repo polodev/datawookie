@@ -5,7 +5,6 @@ excerpt_separator: <!-- more -->
 guid: http://www.exegetic.biz/blog/?p=4576
 id: 4576
 title: Google Quick, Draw!
-url: /2016/11/17/google-quick-draw/
 ---
 
 Spent a very diverting few minutes playing with [Quick, Draw!](https://quickdraw.withgoogle.com/) this morning, which is one of the cool [AI Experiments](https://aiexperiments.withgoogle.com/) hosted by Google.

@@ -11,7 +11,6 @@ tags:
 - Python
 - Scientific Computing
 title: 'Review: Mastering Python Scientific Computing'
-url: /2016/01/11/review-mastering-python-scientific-computing/
 ---
 
 <!--more-->

@@ -9,7 +9,6 @@ tags:
 - optimisation
 - '#rstats'
 title: Fitting a Model by Maximum Likelihood
-url: /2013/08/18/fitting-a-model-by-maximum-likelihood/
 ---
 
 [Maximum-Likelihood Estimation](http://en.wikipedia.org/wiki/Maximum_likelihood) (MLE) is a statistical technique for estimating model parameters. It basically sets out to answer the question: what model parameters are most likely to characterise a given set of data? First you need to select a model for the data. And the model must have one or more (unknown) parameters. As the name implies, MLE proceeds to maximise a likelihood function, which in turn maximises the agreement between the model and the data.

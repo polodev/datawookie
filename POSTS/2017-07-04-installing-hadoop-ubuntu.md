@@ -7,7 +7,6 @@ tags:
 - Ubuntu
 - Hadoop
 title: Installing Hadoop on Ubuntu
-url: /2017/07/04/installing-hadoop-ubuntu/
 ---
 
 This is what I did to set up Hadoop on my Ubuntu machine.

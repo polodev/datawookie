@@ -6,7 +6,6 @@ date: 2016-11-15T13:21:02Z
 guid: http://www.exegetic.biz/blog/?p=4565
 id: 4565
 title: Simple School Maths Problem
-url: /2016/11/15/simple-school-maths-problem/
 ---
 
 A simple problem sent through to me by one of my running friends:

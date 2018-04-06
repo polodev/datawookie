@@ -6,7 +6,6 @@ tags:
 - '#rstats'
 - mortality
 title: Mortality Rate by Age
-url: /2016/07/19/mortality-by-age/
 ---
 
 <!--more-->

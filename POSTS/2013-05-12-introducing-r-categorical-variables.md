@@ -7,7 +7,6 @@ tags:
 - Categorical Data
 - '#rstats'
 title: 'Introducing R: Categorical Variables'
-url: /2013/05/12/introducing-r-categorical-variables/
 ---
 
 In the [previous installment](http://www.exegetic.biz/blog/2013/05/introducing-r-loading-data/) we sucked some data from the National Health and Nutrition Examination Survey into R and did some preliminary work: selecting only the fields of interest, renaming columns and removing missing data. Now we are going to play with some categorical data.

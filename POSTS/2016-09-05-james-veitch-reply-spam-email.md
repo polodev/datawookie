@@ -10,7 +10,6 @@ tags:
 - TED Talk
 - Humour
 title: 'James Veitch: When you reply to spam email'
-url: /2016/09/05/james-veitch-reply-spam-email/
 ---
 
 <!--more-->

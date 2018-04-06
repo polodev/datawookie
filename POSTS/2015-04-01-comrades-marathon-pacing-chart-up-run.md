@@ -11,7 +11,6 @@ tags:
 - Pacing Chart
 - Spreadsheet
 title: 'Comrades Marathon Pacing Chart: Up Run'
-url: /2015/04/01/comrades-marathon-pacing-chart-up-run/
 ---
 
 I've updated my Comrades Marathon pacing chart to include both the Up and Down runs. You can grab it [here](http://162.243.184.248/wp-content/uploads/2015/04/comrades-pacing.xlsx). The data for this year's race are not yet finalised (I _think_ we will be running 87 km), but you can make changes when it's all confirmed.

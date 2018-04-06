@@ -3,7 +3,6 @@ author: Andrew B. Collier
 date: 2017-09-22T11:00:00Z
 tags: ["Docker", "Wordpress", "Ubuntu", "MySQL"]
 title: Quick Wordpress Install with Docker
-url: /2017/09/22/wordpress-docker-ubuntu/
 ---
 
 I've just put together a [Wordpress](https://wordpress.com/) site for my older daughter. It's hosted on [DigitalOcean](https://www.digitalocean.com/) and all of the infrastructure is handled with Docker. This post describes the steps in the (easy) install process.

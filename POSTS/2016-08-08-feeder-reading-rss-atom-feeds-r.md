@@ -8,7 +8,6 @@ tags:
 - Atom
 - RSS
 title: 'feedeR: Reading RSS and Atom Feeds from R'
-url: /2016/08/08/feeder-reading-rss-atom-feeds-r/
 ---
 
 I'm working on a project in which I need to systematically parse a number of [RSS](https://en.wikipedia.org/wiki/RSS) and [Atom](https://en.wikipedia.org/wiki/Atom_(standard)) feeds from within R. I was somewhat surprised to find that no package currently exists on CRAN to handle this task. So this presented the opportunity for a bit of DIY.

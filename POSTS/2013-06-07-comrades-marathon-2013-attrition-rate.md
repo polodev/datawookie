@@ -10,7 +10,6 @@ tags:
 - spine plot
 - Visualisation
 title: Comrades Marathon Attrition Rate
-url: /2013/06/07/comrades-marathon-2013-attrition-rate/
 ---
 
 It is a bit of a mission to get the complete data set for this year's [Comrades Marathon](http://www.comrades.com). The full results are easily accessible, but come as an HTML file. Embedded in this file are links to the splits for individual athletes. So with a bit of scripting wizardry it is also possible to download the HTML files for each of the individual athletes. Parsing all of these yields the complete result set, which is the starting point for this analysis.

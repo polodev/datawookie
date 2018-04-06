@@ -11,7 +11,6 @@ tags:
 - Random Number Generator
 - RNG
 title: Random Number Generators
-url: /2014/12/19/random-number-generators/
 ---
 
 <!--more-->

@@ -8,7 +8,6 @@ id: 2823
 tags:
 - names
 title: 'Evolution of First Names: Fashionable and Popular Names'
-url: /2015/11/16/evolution-of-first-names-fashionable-and-popular-names/
 ---
 
 [Last week](http://wp.me/p3pzmk-Jq) I took a high level look at the trends in children's names over the last century. Today I'll dig a little deeper and examine the ebb and flow in popularity of some specific names.

@@ -11,7 +11,6 @@ tags:
 - scatter plot
 - Visualisation
 title: 'Introducing R: Plotting numerical variables'
-url: /2013/05/18/introducing-r-plots-of-numerical-variables/
 ---
 
 In the [previous installment](http://www.exegetic.biz/blog/2013/05/introducing-r-descriptive-statistics/) we generated some simple descriptive statistics for the National Health and Nutrition Examination Survey data. Now we are going to move on to an area in which R really excels: making plots and visualisations. <!--more--> There are a variety of systems for plotting in R, but we will start off with base graphics.

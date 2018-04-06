@@ -6,7 +6,6 @@ id: 1764
 tags:
 - '#rstats'
 title: IEEE Spectrum Puts R in 6th Place
-url: /2015/07/27/ieee-spectrum-puts-r-in-6th-place/
 ---
 
 R has moved up three positions to 6th place on [IEEE Spectrum](http://spectrum.ieee.org/computing/software/the-2015-top-ten-programming-languages) ranking. How long will it be before Julia is on the list?

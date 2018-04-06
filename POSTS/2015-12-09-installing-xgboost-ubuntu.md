@@ -9,7 +9,6 @@ tags:
 - '#rstats'
 - XGBoost
 title: Installing XGBoost on Ubuntu
-url: /2015/12/09/installing-xgboost-ubuntu/
 ---
 
 <!--more-->

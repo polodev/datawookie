@@ -12,7 +12,6 @@ tags:
 - Near Earth Object
 - '#rstats'
 title: 'Hazardous and Benign Space Objects: Solving Kepler''s Equation'
-url: /2014/05/08/hazardous-and-benign-space-objects-solving-keplers-equation/
 ---
 
 Following on from my [previous post](http://www.exegetic.biz/blog/2014/04/hazardous-and-benign-space-objects-getting-the-data/) about Near Earth Objects, today we are going to solve [Kepler's Equation](http://en.wikipedia.org/wiki/Kepler%27s_equation) to find the eccentric anomaly, which is the next step towards plotting the positions of these NEOs relative to Earth.

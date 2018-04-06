@@ -8,7 +8,6 @@ tags:
 - EC2
 - '#rstats'
 title: 'Amazon EC2: Upgrading R'
-url: /2015/06/19/amazon-ec2-upgrading-r/
 ---
 
 After installing R and Shiny on my EC2 instance I discovered that the default version of R was a little dated and I wanted to update to R 3.2.0. It's not terribly complicated, but here are the steps I took.

@@ -12,7 +12,6 @@ tags:
 - Near Earth Object
 - '#rstats'
 title: 'Hazardous and Benign Space Objects: Getting the Data'
-url: /2014/04/28/hazardous-and-benign-space-objects-getting-the-data/
 ---
 
 The recent story about a [skydiver nearly being hit by falling meteor](http://www.universetoday.com/110963/norwegian-skydiver-almost-gets-hit-by-falling-meteor-and-captures-it-on-film/ "Norwegian Skydiver Almost Gets Hit by Falling Meteor") got me thinking about all the pieces of rock floating around in near-Earth space. Despite the fact that the supposed meteor was [probably just a chunk of rock mistakenly packed in with a parachute](http://www.universetoday.com/111076/follow-up-on-skydiving-meteorite-crowdsourcing-concludes-it-was-just-a-rock/ "Follow-Up on Skydiving Meteorite: Crowdsourcing Concludes it Was Just a Rock"), the fact that something like that _could_ actually happen is quite intriguing. And not a little frightening.

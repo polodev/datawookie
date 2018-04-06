@@ -7,7 +7,6 @@ excerpt_separator: <!-- more -->
 tags:
 - Talk
 title: Hello Durban, tell me how you're doing!
-url: /2017/11/10/abstract-hello-durban/
 ---
 
 {{< comment >}}

@@ -4,7 +4,6 @@ date: 2016-02-08T10:28:58Z
 excerpt_separator: <!-- more -->
 id: 3284
 title: 'Linda Liukas: Teaching Kids About Computers'
-url: /2016/02/08/linda-liukas-teaching-kids-about-computers/
 ---
 
 <!--more-->

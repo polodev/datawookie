@@ -11,7 +11,6 @@ tags:
 - Julia
 - '#rstats'
 title: '#MonthOfJulia Day 17: Datasets from R'
-url: /2015/09/18/monthofjulia-day-17-datasets-from-r/
 ---
 
 <!--more-->

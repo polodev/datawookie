@@ -11,7 +11,6 @@ tags:
 - Expert Advisor
 - FOREX
 title: Algorithmic Trading Status [May 2013]
-url: /2013/06/06/algorithmic-trading-status-may-2013/
 ---
 
 Well, we can't expect every month to be a good one. [Last month's results](http://www.exegetic.biz/blog/2013/05/algorithmic-trading-in-april-2013/) from my automated trading were pretty encouraging. Things during May 2013 were not quite as rosy. However, looking at the big picture, it's not that bad. This month I will add in results from a second trading account. The monthly profit for each of these accounts since the beginning of the year is

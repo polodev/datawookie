@@ -10,7 +10,6 @@ tags:
 - '#rstats'
 - Buffon's Needle
 title: Calculating Pi using Buffon's Needle
-url: /2016/07/26/calculating-pi-using-buffons-needle/
 ---
 
 <!--more-->

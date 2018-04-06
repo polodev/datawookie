@@ -11,7 +11,6 @@ tags:
 - Julia
 - optimisation
 title: '#MonthOfJulia Day 22: Optimisation'
-url: /2015/09/25/monthofjulia-day-22-optimisation/
 ---
 
 <!--more-->

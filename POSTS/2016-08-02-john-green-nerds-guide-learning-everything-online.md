@@ -9,7 +9,6 @@ tags:
 - Teaching
 - TED Talk
 title: 'John Green: The Nerd''s Guide to Learning Everything Online'
-url: /2016/08/02/john-green-nerds-guide-learning-everything-online/
 ---
 
 99% of my learning in the last decade has happened online, so this resonates with me.

@@ -15,7 +15,6 @@ tags:
 - MetaTrader
 - MQL4
 title: Kagi Chart Indicator
-url: /2013/06/14/kagi-chart-indicator/
 ---
 
 In addition to a range of [data analysis services](http://www.exegetic.biz/services.html), [Exegetic Analytics](http://www.exegetic.biz/) also implements algorithms for automated FOREX trading. I am currently developing an expert advisor (EA) for a client. The strategy was developed on the ProRealTime charting software using [Kagi Charts](http://en.wikipedia.org/wiki/Kagi_chart). My client wants to automate the strategy and implement it in MQL on the MetaTrader platform. One snag: Kagi Charts are independent of time. Or, more accurately, they do not have a uniform time axis. Charts in MetaTrader are of the classical variety with a nice linear time axis. So my first problem was to implement something analogous to the Kagi Chart under MetaTrader.

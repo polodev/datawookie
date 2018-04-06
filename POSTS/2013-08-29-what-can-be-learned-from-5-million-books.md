@@ -6,7 +6,6 @@ date: 2013-08-29T10:39:40Z
 excerpt_separator: <!-- more -->
 id: 429
 title: What can be learned from 5 million books
-url: /2013/08/29/what-can-be-learned-from-5-million-books/
 ---
 
 This talk by Jean-Baptiste Michel and Erez Lieberman Aiden is phenomenal. The associated article is also well worth checking out: Michel, J.-B., et al. (2011). Quantitative Analysis of Culture Using Millions of Digitized Books. _Science_, _331_, 176–182.

@@ -11,7 +11,6 @@ tags:
 - rvest
 - Web Scraping
 title: Web Scraping and "invalid multibyte string"
-url: /2016/08/02/web-scraping-invalid-multibyte-string/
 ---
 
 A couple of my collaborators have had trouble using `read_html()` from the [xml2 package](https://cran.r-project.org/web/packages/xml2/index.html) to access [this Wikipedia page](https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations)). <!--more--> Specifically they have been getting errors like this:

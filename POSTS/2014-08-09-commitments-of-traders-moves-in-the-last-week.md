@@ -13,7 +13,6 @@ tags:
 - ggplot2
 - '#rstats'
 title: 'Commitments of Traders: Moves in the Last Week'
-url: /2014/08/09/commitments-of-traders-moves-in-the-last-week/
 ---
 
 In my [previous post](http://www.exegetic.biz/blog/2014/05/what-can-we-learn-from-the-commitments-of-traders-report/) I gave some background information on the Commitments of Traders report along with a selection of summary plots.

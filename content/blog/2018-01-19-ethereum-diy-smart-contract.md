@@ -4,7 +4,6 @@ date: 2018-01-19T03:30:00Z
 excerpt_separator: <!-- more -->
 tags: ["Ethereum"]
 title: 'Ethereum: DIY Tools for Smart Contracts'
-url: /2018/01/19/ethereum-diy-smart-contract/
 ---
 
 What tools do you need to start working with Ethereum smart contracts?

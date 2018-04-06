@@ -13,7 +13,6 @@ tags:
 - lm
 - '#rstats'
 title: 'Comrades Marathon: A Race for Geriatrics?'
-url: /2014/07/22/comrades-marathon-a-race-for-geriatrics/
 ---
 
 It has been suggested that the average Comrades Marathon runner is gradually getting older. As an "average runner" myself, I will not deny that I am personally getting older. But, what I really mean is that the average age of _all_ runners taking part in this great event is gradually increasing. This is not just an idle hypothesis: it is supported by the data. If you're interested in the technical details of the analysis, these are included [at the end](#analysis), otherwise read on for the results.

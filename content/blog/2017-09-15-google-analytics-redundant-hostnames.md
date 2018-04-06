@@ -3,7 +3,6 @@ author: Andrew B. Collier
 date: 2017-09-15T09:00:00Z
 tags: ["NGINX"]
 title: Removing Redundant Hostnames with NGINX
-url: /2017/09/15/google-analytics-redundant-hostnames/
 ---
 
 <p>While poring over my Google Analytics data I noticed the notification below.</p>

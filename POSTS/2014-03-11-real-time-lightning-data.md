@@ -8,7 +8,6 @@ id: 677
 tags:
 - Lightning
 title: Real Time Lightning Data
-url: /2014/03/11/real-time-lightning-data/
 ---
 
 A map of real time lightning data from the World Wide Lightning Location Network (WWLLN) is now available [here](http://wwlln.net/new/map/lightning_map.html "WWLLN Real Time Map"). <!--more--> The map is best viewed in Google Chrome. Try selecting the _Cloud Overlay_ and _Stroke Density_ options.

@@ -3,7 +3,6 @@ author: Andrew B. Collier
 date: 2018-02-16T10:00:00Z
 tags: ["SQL", "Ubuntu"]
 title: Extending DataGrip Evaluation
-url: /2018/02/16/extending-datagrip-evaluation/
 ---
 
 [DataGrip](https://www.jetbrains.com/datagrip/) is a great tool for accessing a wide range of databases.

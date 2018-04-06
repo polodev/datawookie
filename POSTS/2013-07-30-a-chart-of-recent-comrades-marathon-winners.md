@@ -8,7 +8,6 @@ tags:
 - '#rstats'
 - scatter plot
 title: A Chart of Recent Comrades Marathon Winners
-url: /2013/07/30/a-chart-of-recent-comrades-marathon-winners/
 ---
 
 Continuing on my [quest to document the Comrades Marathon results](http://www.exegetic.biz/blog/tag/comrades-marathon/), today I have put together a chart showing the winners of both the men and ladies races since 1980. Click on the image below to see a larger version.

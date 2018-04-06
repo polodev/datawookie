@@ -12,7 +12,6 @@ tags:
 - '#rstats'
 - word cloud
 title: Constructing a Word Cloud for ICML 2015
-url: /2015/07/10/constructing-word-cloud-for-icml-2015/
 ---
 
 Word clouds have become a bit cliché, but I still think that they have a place in giving a high level overview of the content of a corpus. Here are the steps I took in putting together the word cloud for the International Conference on Machine Learning (2015).

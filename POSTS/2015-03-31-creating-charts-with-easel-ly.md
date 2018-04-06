@@ -10,7 +10,6 @@ tags:
 - easel.ly
 - Presentation
 title: Creating Charts with Easel.ly
-url: /2015/03/31/creating-charts-with-easel-ly/
 ---
 
 <!--more-->

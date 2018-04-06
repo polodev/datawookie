@@ -12,7 +12,6 @@ tags:
 - probability
 - Sportsbook
 title: 'Sportsbook Betting (Part 1): Odds'
-url: /2016/08/01/sportsbook-odds/
 ---
 
 <!--

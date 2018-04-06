@@ -10,7 +10,6 @@ tags:
 - Distribution
 - fitdistrplus
 title: Fitting a Statistical Distribution to Sampled Data
-url: /2016/10/05/fitting-a-distribution/
 ---
 
 I'm generally not too interested in fitting analytical distributions to my data. With large enough samples (which I am normally fortunate enough to have!) I can safely assume normality for most statistics of interest.

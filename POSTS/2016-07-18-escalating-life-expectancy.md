@@ -8,7 +8,6 @@ tags:
 - life expectancy
 - '#rstats'
 title: Escalating Life Expectancy
-url: /2016/07/18/escalating-life-expectancy/
 ---
 
 I've added mortality data to the [lifespan](https://github.com/DataWookie/lifespan) package. A result that immediately emerges from these data is that average life expectancy is steadily climbing.

@@ -3,7 +3,6 @@ author: Andrew B. Collier
 date: 2017-09-21T08:30:00Z
 tags: ["Ubuntu", "AWS"]
 title: Diagnosing Killed Jobs on EC2
-url: /2017/09/21/ec2-jobs-getting-killed/
 ---
 
 I've got a long running optimisation problem on a EC2 instance. Yesterday it was mysteriously killed. I shrugged it off as an anomaly and restarted the job. However, this morning it was killed again. Definitely not a coincidence! So I investigated. This is what I found and how I am resolving the problem.

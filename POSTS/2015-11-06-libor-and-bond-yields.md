@@ -9,7 +9,6 @@ tags:
 - Plotly
 - '#rstats'
 title: LIBOR and Bond Yields
-url: /2015/11/06/libor-and-bond-yields/
 ---
 
 I've just been looking at the historical relationship between the [London Interbank Offered Rate (LIBOR)](https://en.wikipedia.org/wiki/Libor) and government bond yields. LIBOR data can be found at [Quandl](https://www.quandl.com/data/FRED/USD6MTD156N-6-Month-London-Interbank-Offered-Rate-LIBOR-based-on-U-S-Dollar) and comes in CSV format, so it's pretty simple to digest. The bond data can be sourced from the [US Department of the Treasury](http://www.treasury.gov/resource-center/data-chart-center/interest-rates/Pages/TextView.aspx?data=yieldYear&year=2015). It comes as XML and requires a little more work.

@@ -11,7 +11,6 @@ tags:
 - POST
 - Web Scraping
 title: View POST Data using Chrome Developer Tools
-url: /2016/09/19/viewing-post-data/
 ---
 
 When figuring out how to formulate the contents of a POST request it's often useful to see the "typical" fields submitted directly from a web form.

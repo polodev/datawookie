@@ -8,7 +8,6 @@ tags:
 - '#rstats'
 - satRday
 title: satRday in Cape Town
-url: /2016/05/26/satrday-cape-town/
 ---
 
 We are planning to host one of the three inaugural [satRday](https://github.com/stephlocke/RSaturday-proposal) conferences in Cape Town during 2017. The \[R Consortium\](https://www.r-consortium.org/) has committed to funding three of these events: one will be in Hungary, another will be somewhere in the USA and the third will be at an international destination. At present Cape Town is dicing it out with Monterrey (Mexico) for the third location. We just need your [votes](http://app.doopoll.co/poll/ZznsEGPnmbFafim2c) to make Cape Town's plans a reality.

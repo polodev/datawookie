@@ -8,7 +8,6 @@ tags:
 - DigitalOcean
 - PhantomJS
 title: RSelenium and Java Heap Space
-url: /2017/06/09/rselenium-java-heap-space/
 ---
 
 I'm in the process of deploying a scraper on a DigitalOcean instance. The scraper uses [RSelenium](http://ropensci.github.io/RSelenium/) with the [PhantomJS](http://phantomjs.org/) browser. I ran into a problem though. Although it worked flawlessly on my local machine, on the remote instance it broke with the following error:

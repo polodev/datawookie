@@ -11,7 +11,6 @@ tags:
 - '#MonthOfJulia'
 - Julia
 title: '#MonthOfJulia Day 4: Functions'
-url: /2015/09/03/monthofjulia-day-04-functions/
 ---
 
 <!--more-->

@@ -12,7 +12,6 @@ tags:
 - IO
 - Julia
 title: '#MonthOfJulia Day 9: Input/Output'
-url: /2015/09/08/monthofjulia-day-09-input-and-output/
 ---
 
 <!--more-->

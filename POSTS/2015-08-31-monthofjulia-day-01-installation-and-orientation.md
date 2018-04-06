@@ -10,7 +10,6 @@ tags:
 - '#MonthOfJulia'
 - Julia
 title: '#MonthOfJulia Day 1: Installation and Orientation'
-url: /2015/08/31/monthofjulia-day-01-installation-and-orientation/
 ---
 
 <!--more-->

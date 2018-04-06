@@ -11,7 +11,6 @@ tags:
 - Linux
 - Ubuntu
 title: Upgrading Ubuntu 16.04 to Linux Kernel 4.4.12
-url: /2016/06/04/upgrading-ubuntu-16-04-to-linux-kernel-4-4-12/
 ---
 
 I've had a few minor hardware issues with the default kernel in Ubuntu 16.04. For example, hibernate does not work on my laptop. So, in an effort to resolve these problems, I upgraded from the 4.4.0 version of the kernel to 4.4.12. Nothing tricky involved, but here's the process.

@@ -7,7 +7,6 @@ tags:
 - AWS
 - EC2
 title: 'Amazon EC2: Adding Swap'
-url: /2015/06/19/amazon-ec2-adding-swap/
 ---
 
 So, after [upgrading to R 3.2.0](http://www.exegetic.biz/blog/2015/06/amazon-ec2-upgrading-r/) on my EC2 instance, I was installing newer versions of various packages and I ran into a problem with dplyr: virtual memory exhausted!

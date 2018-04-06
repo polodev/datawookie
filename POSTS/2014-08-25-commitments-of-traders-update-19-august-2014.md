@@ -11,7 +11,6 @@ tags:
 - COT
 - FOREX
 title: 'Commitments of Traders: Update 19 August 2014'
-url: /2014/08/25/commitments-of-traders-update-19-august-2014/
 ---
 
 <!--more-->

@@ -11,7 +11,6 @@ tags:
 - prime numbers
 - '#rstats'
 title: Iterators in R
-url: /2013/11/14/iterators-in-r/
 ---
 
 According to [Wikipedia](http://en.wikipedia.org/wiki/Iterator), an iterator is "an object that enables a programmer to traverse a container". A collection of items (stashed in a container) can be thought of as being "iterable" if there is a logical progression from one element to the next (so a list is iterable, while a set is not). An iterator is then an object for moving through the container, one item at a time.

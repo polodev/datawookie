@@ -3,7 +3,6 @@ author: Andrew B. Collier
 date: 2018-01-19T03:30:00Z
 tags: ["Ethereum"]
 title: 'Ethereum: Running a Node'
-url: /2018/01/19/ethereum-running-node/
 ---
 
 Once you've [installed Geth]({{ site.baseurl }}{% post_url 2018-01-19-ethereum-diy-smart-contract %}) you're ready to run your own Ethereum node.

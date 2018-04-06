@@ -11,7 +11,6 @@ tags:
 - Image
 - Julia
 title: '#MonthOfJulia Day 38: Imaging'
-url: /2015/10/30/monthofjulia-day-38-imaging/
 ---
 
 <!--more-->

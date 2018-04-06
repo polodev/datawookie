@@ -3,7 +3,6 @@ author: Andrew B. Collier
 categories: ["AWS"]
 date: 2017-11-23T07:30:00Z
 title: EC2 Missing Disk Space
-url: /2017/11/23/ec2-missing-disk-space/
 ---
 
 This morning I created a `r3.xlarge` spot instance on EC2. The job I'm planning on running requires a good wad of data to be uploaded, which is why I chose the `r3.xlarge` instance: it's cost effective and, according to AWS, has 80 Gb of SSD storage.

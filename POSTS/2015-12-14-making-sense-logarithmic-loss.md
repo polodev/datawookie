@@ -13,7 +13,6 @@ tags:
 - '#rstats'
 - XGBoost
 title: Making Sense of Logarithmic Loss
-url: /2015/12/14/making-sense-logarithmic-loss/
 ---
 
 Logarithmic Loss, or simply Log Loss, is a [classification loss function](https://en.wikipedia.org/wiki/Loss_functions_for_classification) often used as an evaluation metric in [kaggle](https://www.kaggle.com/wiki/MultiClassLogLoss) competitions. Since success in these competitions hinges on effectively minimising the Log Loss, it makes sense to have some understanding of how this metric is calculated and how it should be interpreted.

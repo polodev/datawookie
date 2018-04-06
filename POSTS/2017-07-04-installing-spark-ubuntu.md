@@ -8,7 +8,6 @@ tags:
 - Ubuntu
 - Spark
 title: Installing Spark on Ubuntu
-url: /2017/07/04/installing-spark-ubuntu/
 ---
 
 I'm busy experimenting with Spark. This is what I did to set up a local cluster on my Ubuntu machine. Before you embark on this you should first [set up Hadoop]({{ site.baseurl }}{% post_url 2017-07-04-installing-hadoop-ubuntu %}).

@@ -9,7 +9,6 @@ id: 3170
 tags:
 - MongoDB
 title: 'MongoDB: Installing on Windows 7'
-url: /2016/01/13/installing-mongodb-3-2-on-windows-7/
 ---
 
 It's not my personal choice, but I have to spend a lot of my time working under Windows. Installing MongoDB under Ubuntu is a snap. Getting it going under Windows seems to require jumping through a few more hoops. Here are my notes. I hope that somebody will find them useful.

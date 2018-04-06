@@ -13,7 +13,6 @@ tags:
 - scatter plot
 - uncertainty
 title: 'Finding Correlations in Data with Uncertainty: Bootstrap Solution'
-url: /2013/08/11/finding-correlations-in-data-with-uncertainty-bootstrap/
 ---
 
 A week or so ago a colleague of mine asked if I knew how to calculate correlations for data with uncertainties. Now, if we are going to be honest, then all data should have some level of experimental or measurement error. However, I suspect that in the majority of cases these uncertainties are ignored when considering correlations. To what degree are uncertainties important? A moment's thought would suggest that if the uncertainties are large enough then they should have a rather significant effect on correlation, or more properly, the uncertainty measure associated with the correlation. So, what is the best (or at least correct) way to proceed? Somewhat surprisingly a quick Google search did not turn up anything too helpful.

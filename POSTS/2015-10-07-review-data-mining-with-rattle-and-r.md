@@ -12,7 +12,6 @@ tags:
 - '#rstats'
 - Rattle
 title: 'Review: Data Mining with Rattle and R'
-url: /2015/10/07/review-data-mining-with-rattle-and-r/
 ---
 
 <!--more-->

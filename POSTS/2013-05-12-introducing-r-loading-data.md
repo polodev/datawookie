@@ -6,7 +6,6 @@ id: 74
 tags:
 - '#rstats'
 title: 'Introducing R: Loading Data'
-url: /2013/05/12/introducing-r-loading-data/
 ---
 
 I have just started preparing a series of talks aimed at introducing the use of R to a rather broad audience consisting of physicists, chemists, statisticians, biologists and computer scientists (plus a few other disciplines thrown in for good measure). I want to use a single consistent set of data throughout the talks. Finding something that would resonate with such a disparate set of people was quite a challenge. After playing around with a couple of options, I settled on using data for age, height and mass. These are things that we can all identify with. The next challenge was to actually find a suitable data set, which was surprisingly difficult. Eventually I stumbled upon the data from the National Health and Nutrition Examination Survey (NHANES), The data from the survey are available [here](http://www.icpsr.umich.edu/icpsrweb/DSDR/studies/25505). These data have been divided into a number of sets, each of which has been excellently curated and has a detailed codebook.

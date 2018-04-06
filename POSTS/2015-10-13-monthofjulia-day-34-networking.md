@@ -14,7 +14,6 @@ tags:
 - Julia
 - POST
 title: '#MonthOfJulia Day 34: Networking'
-url: /2015/10/13/monthofjulia-day-34-networking/
 ---
 
 <!--more-->

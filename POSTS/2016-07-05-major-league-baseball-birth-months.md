@@ -8,7 +8,6 @@ tags:
 - ggplot2
 - '#rstats'
 title: Major League Baseball Birth Months
-url: /2016/07/05/major-league-baseball-birth-months/
 ---
 
 <!--more-->

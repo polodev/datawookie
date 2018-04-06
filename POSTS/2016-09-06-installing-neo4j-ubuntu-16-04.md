@@ -9,7 +9,6 @@ tags:
 - Neo4j
 - Ubuntu
 title: Installing Neo4j on Ubuntu 16.04
-url: /2016/09/06/installing-neo4j-ubuntu-16-04/
 ---
 
 Some instructions for installing Neo4j on Ubuntu 16.04. More for my own benefit than anything else.

@@ -7,7 +7,6 @@ tags:
 - OSRM
 - Spatial
 title: Building a Local OSRM Instance
-url: /2017/09/11/building-osrm-instance/
 ---
 
 The [Open Source Routing Machine (OSRM)](http://project-osrm.org/) is a library for calculating routes, distances and travel times between spatial locations. It can be accessed via either an HTTP or C++ API. Since it's open source you can also install locally, download appropriate map data and start making efficient travel calculations.

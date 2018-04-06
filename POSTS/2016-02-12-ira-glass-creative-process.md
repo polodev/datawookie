@@ -7,7 +7,6 @@ tags:
 - creativity
 - Ira Glass
 title: Ira Glass on the Creative Process
-url: /2016/02/12/ira-glass-creative-process/
 ---
 
 <!--more-->

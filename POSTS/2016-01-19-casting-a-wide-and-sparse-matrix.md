@@ -7,7 +7,6 @@ tags:
 - reshape2
 - sparse matrix
 title: Casting a Wide (and Sparse) Matrix in R
-url: /2016/01/19/casting-a-wide-and-sparse-matrix/
 ---
 
 I routinely use `melt()` and `cast()` from the reshape2 package as part of my data munging workflow. Recently I've noticed that the data frames I've been casting are often extremely sparse. Stashing these in a dense data structure just feels wasteful. And the dismal drone of page thrashing is unpleasant.

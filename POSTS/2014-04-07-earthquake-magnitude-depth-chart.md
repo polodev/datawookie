@@ -12,7 +12,6 @@ tags:
 - Gutenberg–Richter law
 - '#rstats'
 title: 'Earthquakes: Magnitude / Depth Chart'
-url: /2014/04/07/earthquake-magnitude-depth-chart/
 ---
 
 I am working on a project related to secondary effects of earthquakes. To guide me in the analysis I need a chart showing the location, magnitude and depth of recent earthquakes. There are a host of such charts available already, but since I had the required data on hand, it seemed like a good idea to take a stab at it myself.

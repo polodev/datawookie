@@ -11,7 +11,6 @@ tags:
 - ggplot2
 - '#rstats'
 title: Simulating Intricate Branching Patterns with DLA
-url: /2014/12/16/simulating-intricate-branching-patterns-with-dla/
 ---
 
 Manfred Schroeder's book [Fractals, Chaos, Power Laws: Minutes from an Infinite Paradise](http://www.amazon.com/gp/product/0486472043/) is a fruitful source of interesting topics and projects. He gives a thorough description of [Diffusion-Limited Aggregation](https://en.wikipedia.org/wiki/Diffusion-limited_aggregation) (DLA) as a technique for simulating physical processes which produce intricate branching structures. Examples, as illustrated below, include Lichtenberg Figures, dielectric breakdown, electrodeposition and Hele-Shaw flow.

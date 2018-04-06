@@ -9,7 +9,6 @@ tags:
 - Data Science
 - Quotation
 title: Data Science and Selling Shoes
-url: /2015/07/09/data-science-and-selling-shoes/
 ---
 
 <!--more-->

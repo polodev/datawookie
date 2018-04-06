@@ -16,7 +16,6 @@ tags:
 - MetaTrader
 - MQL4
 title: 'Tutorial: Compiling Indicators and Expert Advisors from Source'
-url: /2013/06/25/tutorial-compiling-indicators-and-expert-advisors-from-source/
 ---
 
 When you receive the code for an expert advisor or indidator which we have developed for you, it will come in a package consisting of include files (with a .mqh extension) and source code files (with a .mq4 extension). So, what do you do with them?

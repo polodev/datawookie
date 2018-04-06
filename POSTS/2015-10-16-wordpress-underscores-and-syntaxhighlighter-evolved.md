@@ -4,7 +4,6 @@ date: 2015-10-16T11:55:44Z
 excerpt_separator: <!-- more -->
 id: 2698
 title: 'WordPress: Underscores and SyntaxHighlighter Evolved'
-url: /2015/10/16/wordpress-underscores-and-syntaxhighlighter-evolved/
 ---
 
 The underscores are invisible in the code that I'm displaying on WordPress using the SyntaxHighlighter Evolved. After a bit of research I found that this was due to the line height being set too small.

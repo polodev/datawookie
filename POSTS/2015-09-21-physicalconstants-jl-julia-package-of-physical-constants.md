@@ -9,7 +9,6 @@ tags:
 - '#julialang'
 - Julia
 title: 'PhysicalConstants.jl: Julia Package of Physical Constants'
-url: /2015/09/21/physicalconstants-jl-julia-package-of-physical-constants/
 ---
 
 PhysicalConstants is a Julia package which has the values of a range of physical constants. Currently MKS and CGS units are supported.

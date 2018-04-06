@@ -12,7 +12,6 @@ tags:
 - '#rstats'
 - Visualisation
 title: Creating More Effective Graphs
-url: /2014/11/04/creating-more-effective-graphs/
 ---
 
 A few years ago I ordered a copy of the 2005 edition of [Creating More Effective Graphs](http://www.amazon.com/gp/product/0985911123/) by [Naomi Robbins](http://www.nbr-graphs.com/ "Naomi Robbins"). Somewhat shamefully I admit that the book got buried beneath a deluge of papers and other books and never received the attention it was due. Having recently discovered the [R Graph Catalog](http://www.showmeshiny.com/r-graph-catalog/ "R Graph Catalog"), which implements many of the plots from the book using ggplot2, I had to dig it out and give it some serious attention.

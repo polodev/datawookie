@@ -7,7 +7,6 @@ tags:
 - Market Research
 - Standard Bank
 title: 'Standard Bank: Striving for Mediocrity'
-url: /2014/10/07/standard-bank-striving-for-mediocrity/
 ---
 
 Recently I was in my local Standard Bank branch. After finally reaching the front of the queue and being helped by a reasonably courteous young man, I was asked if I would mind filling out a survey. Sure. No problem. I had been in the bank for 30 minutes, I could probably afford another 30 seconds.

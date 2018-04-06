@@ -10,7 +10,6 @@ tags:
 - '#rstats'
 - Shiny
 title: 'Review: Learning Shiny'
-url: /2016/01/05/review-learning-shiny/
 ---
 
 I was asked to review [_Learning Shiny_](https://www.packtpub.com/application-development/learning-shiny) (Hernán G. Resnizky, Packt Publishing, 2015). I found the book to be useful, motivating and generally easy to read. I'd already spent some time dabbling with Shiny, but the book helped me graduate from paddling in the shallows to wading out into the Shiny sea.

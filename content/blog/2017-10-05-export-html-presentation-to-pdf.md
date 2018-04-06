@@ -3,7 +3,6 @@ author: Andrew B. Collier
 date: 2017-10-05T07:00:00Z
 tags: ["Talk"]
 title: Exporting HTML Presentations to PDF
-url: /2017/10/05/export-html-presentation-to-pdf/
 ---
 
 Building a presentation with [reveal.js](http://lab.hakim.se/reveal-js/) is such a pleasure. And the results looks so good. Seriously doubt that I will ever use anything like PowerPoint again. Although it's possible to export a presentation directly to PDF using a [style sheet](https://github.com/hakimel/reveal.js#pdf-export), this doesn't always work perfectly (IMHO).

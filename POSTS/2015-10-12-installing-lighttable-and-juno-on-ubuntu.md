@@ -10,7 +10,6 @@ tags:
 - Julia
 - Juno
 title: Installing LightTable and Juno on Ubuntu
-url: /2015/10/12/installing-lighttable-and-juno-on-ubuntu/
 ---
 
 The recipe below works for Light Table v. 0.7.2 and Julia v. 0.4.0. It might work for other versions too, but these are the ones I can vouch for.

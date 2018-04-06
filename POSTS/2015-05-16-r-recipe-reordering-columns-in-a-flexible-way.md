@@ -10,7 +10,6 @@ tags:
 - '#rstats'
 - R Recipe
 title: 'R Recipe: Reordering Columns in a Flexible Way'
-url: /2015/05/16/r-recipe-reordering-columns-in-a-flexible-way/
 ---
 
 <!--more-->

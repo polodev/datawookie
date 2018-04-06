@@ -11,7 +11,6 @@ tags:
 - Science
 - Scientific Method
 title: Rafal Lukawiecki - Putting Science into the Business of Data Science
-url: /2016/09/30/rafal-lukawiecki-putting-science-business-data-science/
 ---
 
 A talk by Rafal Lukawiecki at the [Microsoft Machine Learning & Data Science Summit (2016)](https://channel9.msdn.com/Events/Machine-Learning-and-Data-Sciences-Conference/Data-Science-Summit-2016).

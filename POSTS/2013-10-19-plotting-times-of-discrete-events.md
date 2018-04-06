@@ -11,7 +11,6 @@ tags:
 - '#rstats'
 - Spiral Plot
 title: Plotting Times of Discrete Events
-url: /2013/10/19/plotting-times-of-discrete-events/
 ---
 
 I recently enjoyed reading <blockquote>O’Hara, R. B., & Kotze, D. J. (2010). _Do not log-transform count data_. Methods in Ecology and Evolution, 1(2), 118–122. doi:10.1111/j.2041-210X.2010.00021.x.</blockquote>

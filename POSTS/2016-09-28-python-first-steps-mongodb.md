@@ -10,7 +10,6 @@ tags:
 - MongoDB
 - Python
 title: 'Python: First Steps with MongoDB'
-url: /2016/09/28/python-first-steps-mongodb/
 ---
 
 I'm busy working my way through Kyle Banker's [MongoDB in Action](https://www.manning.com/books/mongodb-in-action). Much of the example code in the book is given in Ruby. Despite the fact that I'd love to learn more about Ruby, for the moment it makes more sense for me to follow along with Python.

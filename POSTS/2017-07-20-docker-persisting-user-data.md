@@ -7,7 +7,6 @@ excerpt_separator: <!-- more -->
 tags:
 - Docker
 title: 'Docker: Persisting User Data'
-url: /2017/07/20/docker-persisting-user-data/
 ---
 
 I'm busy putting together a Docker image for a multi-user Jupyter Notebook installation. I am to have an independent login for each of the users and each of them should also have their own storage space. That space should exist elsewhere from on the container though, so that even if the container stops, the data lives on. This should mitigate user rage.

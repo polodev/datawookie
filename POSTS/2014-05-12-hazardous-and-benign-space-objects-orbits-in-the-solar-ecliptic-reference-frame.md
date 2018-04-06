@@ -13,7 +13,6 @@ tags:
 - '#rstats'
 title: 'Hazardous and Benign Space Objects: Orbits in the Solar-Ecliptic Reference
   Frame'
-url: /2014/05/12/hazardous-and-benign-space-objects-orbits-in-the-solar-ecliptic-reference-frame/
 ---
 
 In two previous posts in this series I have [wrangled NEO orbital data into R](http://www.exegetic.biz/blog/2014/04/hazardous-and-benign-space-objects-getting-the-data/) and then [solved Kepler's Equation](http://www.exegetic.biz/blog/2014/05/hazardous-and-benign-space-objects-solving-keplers-equation/) to get the eccentric anomaly for each NEO. The final stage in the visualisation of the NEO orbits will be the transformation of locations from the respective orbital planes into a single reference frame.

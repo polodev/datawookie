@@ -10,7 +10,6 @@ tags:
 - Fonts
 - Presentation
 title: 'Font Awesome in Presentations: Notes'
-url: /2015/03/22/font-awesome-in-presentations-notes/
 ---
 
 I've used various icons from [Font Awesome](http://fortawesome.github.io/Font-Awesome/) in my last few presentations and I've been very pleased with the results. <!--more--> Using them is pretty straight forward, but here are a couple of things that I picked up:

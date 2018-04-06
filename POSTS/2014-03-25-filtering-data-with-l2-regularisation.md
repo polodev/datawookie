@@ -13,7 +13,6 @@ tags:
 - '#rstats'
 - regularisation
 title: Filtering Data with L2 Regularisation
-url: /2014/03/25/filtering-data-with-l2-regularisation/
 ---
 
 I have just finished reading [Momentum Strategies with L1 Filter](http://arxiv.org/abs/1403.4069) by Tung-Lam Dao. The smoothing results presented in this paper are interesting and I thought it would be cool to implement the L1 and L2 filtering schemes in R. We'll start with the L2 scheme here because it has an exact solution and I will follow up with the L1 scheme later on.

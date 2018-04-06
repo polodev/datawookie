@@ -7,7 +7,6 @@ tags:
 - Option Chain
 - '#rstats'
 title: 'flipsideR: Support for ASX Option Chain Data'
-url: /2016/02/08/flipsider-support-for-asx/
 ---
 
 I [previously](http://www.exegetic.biz/blog/2015/01/download-option-chain-from-google-finance-in-r-an-update/) wrote about some ad hoc R code for downloading Option Chain data from Google Finance. I finally wrapped it up into a package called flipsideR, which is now available via [GitHub](https://github.com/DataWookie/flipsideR). Since I last wrote on this topic I've also added support for downloading option data from the [Australian Securities Exchange](http://www.asx.com.au/) (ASX).

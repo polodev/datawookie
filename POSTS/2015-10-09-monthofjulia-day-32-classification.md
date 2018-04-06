@@ -14,7 +14,6 @@ tags:
 - Julia
 - Random Forest
 title: '#MonthOfJulia Day 32: Classification'
-url: /2015/10/09/monthofjulia-day-32-classification/
 ---
 
 <!--more-->

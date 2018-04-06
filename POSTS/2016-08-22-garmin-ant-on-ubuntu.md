@@ -9,7 +9,6 @@ id: 4061
 tags:
 - Garmin
 title: Garmin ANT on Ubuntu
-url: /2016/08/22/garmin-ant-on-ubuntu/
 ---
 
 I finally got tired of booting up Windows to download data from my Garmin 910XT. I tried to get my old Ubuntu 15.04 system to recognise my ANT stick but failed. Now that I have a stable Ubuntu 16.04 system the time seems ripe.

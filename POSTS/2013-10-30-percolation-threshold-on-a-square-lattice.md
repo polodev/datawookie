@@ -11,7 +11,6 @@ tags:
 - Percolation
 - '#rstats'
 title: Percolation Threshold on a Square Lattice
-url: /2013/10/30/percolation-threshold-on-a-square-lattice/
 ---
 
 Manfred Schroeder touches on the topic of [percolation](http://en.wikipedia.org/wiki/Percolation_theory) a number of times in his encyclopaedic book on fractals (Schroeder, M. (1991) [Fractals, Chaos, Power Laws: Minutes from an Infinite Paradise](http://www.amazon.com/gp/product/0486472043/). Percolation has numerous practical applications, the most interesting of which (from my perspective) is the flow of hot water through ground coffee! The problem of percolation can be posed as follows: suppose that a liquid is poured onto a solid block of some substance. If the substance is porous then it is possible for the liquid to seep through the pores and make it all the way to the bottom of the block. Whether or not this happens is determined by the connectivity of the pores within the substance. If it is extremely porous then it is very likely that there will be an open path of pores connecting the top to the bottom and the liquid will flow freely. If, on the other hand, the porosity is low then such a path may not exist. Evidently there is a critical porosity threshold which divides these two regimes.

@@ -9,7 +9,6 @@ tags:
 - Comrades Marathon
 - '#rstats'
 title: Twins, Tripods and Phantoms at the Comrades Marathon
-url: /2014/06/12/twins-tripods-and-phantoms-at-the-comrades-marathon/
 ---
 
 Having picked up a viral infection days before this year's Comrades Marathon, on 1 June I was left with time on my hands and somewhat desperate for any distraction. So I spent some time looking at my archive of Comrades data and considering some new questions. For example, what are the chances of two runners passing through halfway and the finish line at exactly the same time? How likely is it that three runners achieve the same feat?

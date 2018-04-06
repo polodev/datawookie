@@ -11,7 +11,6 @@ tags:
 - Plotly
 - '#rstats'
 title: 'Kaggle: Walmart Trip Type Classification'
-url: /2016/01/15/kaggle-walmart-trip-type-classification/
 ---
 
 [Walmart Trip Type Classification](https://www.kaggle.com/c/walmart-recruiting-trip-type-classification) was my first real foray into the world of [Kaggle](https://www.kaggle.com/) and I'm hooked. I previously dabbled in [What's Cooking](https://www.kaggle.com/c/whats-cooking) but that was as part of a team and the team didn't work out particularly well. As a learning experience the competition was second to none. My final entry put me at position 155 out of 1061 entries which, although not a stellar performance by any means, is just inside the top 15% and I'm pretty happy with that. Below are a few notes on the competition.

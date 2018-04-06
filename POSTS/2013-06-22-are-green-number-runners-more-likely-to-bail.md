@@ -10,7 +10,6 @@ tags:
 - Comrades Marathon
 - '#rstats'
 title: Are Green Number Runners More Likely to Bail?
-url: /2013/06/22/are-green-number-runners-more-likely-to-bail/
 ---
 
 Comrades Marathon runners are awarded a permanent green race number once they have completed 10 journeys between Durban and Pietermaritzburg. For many runners, once they have completed the race a few times, achieving a green number becomes a possibility. And once the idea takes hold, it can become something of a compulsion. I can testify to this: I am thoroughly compelled! For runners with this goal in mind, every finish is one step closer to a green number. They are slowly chipping away, year after year and the idea of bailing is anathema. However, once the green number is in the bag, does the imperative to complete the race fade?

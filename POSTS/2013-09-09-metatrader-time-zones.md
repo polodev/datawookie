@@ -11,7 +11,6 @@ tags:
 - MQL4
 - time zone
 title: MetaTrader Time Zones
-url: /2013/09/09/metatrader-time-zones/
 ---
 
 Time zones on MetaTrader can be slightly confusing. There are two important time zones:

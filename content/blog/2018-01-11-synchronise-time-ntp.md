@@ -4,7 +4,6 @@ date: 2018-01-11T04:30:00Z
 excerpt_separator: <!-- more -->
 tags: ["NTP"]
 title: 'NTP: Synchronise Your Watches'
-url: /2018/01/11/synchronise-time-ntp/
 ---
 
 Just like an old fashioned grandfather clock, time time on your computer's clock can slowly drift. You can quickly verify the accuracy of your clock by comparing it to <https://time.is/>. It's not unusual for it to be anything from a few seconds to a couple of minutes out. For most purposes this is not a major issue, but there are some applications which are very time sensitive.

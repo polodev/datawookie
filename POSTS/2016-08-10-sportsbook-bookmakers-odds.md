@@ -11,7 +11,6 @@ tags:
 - probability
 - Sportsbook
 title: 'Sportsbook Betting (Part 2): Bookmakers'' Odds'
-url: /2016/08/10/sportsbook-bookmakers-odds/
 ---
 
 In the [first instalment](http://www.exegetic.biz/blog/2016/08/sportsbook-odds/) of this series we gained an understanding of the various types of odds used in Sportsbook betting and the link between those odds and implied probabilities. We noted that the implied probabilities for all possible outcomes in an event may sum to more than 100%. At first sight these seems a bit odd. It certainly appears to violate the basic principles of statistics. However, this anomaly is the mechanism by which bookmakers assure their profits. A similar principle applies in a casino.

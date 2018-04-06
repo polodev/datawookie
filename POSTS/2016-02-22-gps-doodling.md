@@ -9,7 +9,6 @@ tags:
 - GPS
 - TED Talk
 title: GPS Doodling
-url: /2016/02/22/gps-doodling/
 ---
 
 Stephen Lund combines two of my passions: technology and exercise. Awesome. Durban Doodles coming soon.

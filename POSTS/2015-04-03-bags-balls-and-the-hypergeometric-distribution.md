@@ -13,7 +13,6 @@ tags:
 - Statistics
 - Urn
 title: Bags, Balls and the Hypergeometric Distribution
-url: /2015/04/03/bags-balls-and-the-hypergeometric-distribution/
 ---
 
 <!--more-->

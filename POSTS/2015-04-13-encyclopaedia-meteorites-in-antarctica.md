@@ -6,7 +6,6 @@ date: 2015-04-13T09:00:26Z
 excerpt_separator: <!-- more -->
 id: 1216
 title: 'Encyclopaedia: Meteorites in Antarctica'
-url: /2015/04/13/encyclopaedia-meteorites-in-antarctica/
 ---
 
 A contribution which I wrote for [Antarctica and the Arctic Circle: A Geographic Encyclopedia of the Earth's Polar Regions](http://www.amazon.com/gp/product/B00OD83J44/).

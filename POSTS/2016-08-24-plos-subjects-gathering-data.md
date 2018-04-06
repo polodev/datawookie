@@ -10,7 +10,6 @@ tags:
 - PLOS
 - rplos
 title: 'PLOS Subject Keywords: Gathering Data'
-url: /2016/08/24/plos-subjects-gathering-data/
 ---
 
 I'm putting together a couple of articles on Collaborative Filtering and Association Rules. Naturally, the first step is finding suitable data for illustrative purposes.

@@ -12,7 +12,6 @@ tags:
 - Plotly
 - '#rstats'
 title: International Open Data Day
-url: /2016/03/05/international-open-data-day/
 ---
 
 As part of [International Open Data Day](http://opendataday.org/) we spent the morning with a bunch of like minded people poring over some open Census South Africa data. Excellent initiative, [@opendatadurban](https://twitter.com/opendatadurban), I'm very excited to see where this is all going and look forward to contributing to the journey!

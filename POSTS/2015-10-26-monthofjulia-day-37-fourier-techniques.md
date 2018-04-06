@@ -14,7 +14,6 @@ tags:
 - Fourier Transform
 - Julia
 title: '#MonthOfJulia Day 37: Fourier Techniques'
-url: /2015/10/26/monthofjulia-day-37-fourier-techniques/
 ---
 
 <!--more-->

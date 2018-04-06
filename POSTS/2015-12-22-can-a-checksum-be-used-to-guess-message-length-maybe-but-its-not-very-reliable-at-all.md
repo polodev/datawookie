@@ -8,7 +8,6 @@ tags:
 - '#rstats'
 - simulation
 title: 'Using Checksum to Guess Message Length: Not a Good Idea!'
-url: /2015/12/22/can-a-checksum-be-used-to-guess-message-length-maybe-but-its-not-very-reliable-at-all/
 ---
 
 A question posed by one of my colleagues: can a checksum be used to guess message length? My immediate response was negative and, as it turns out, a simple simulation supported this knee-jerk reaction.

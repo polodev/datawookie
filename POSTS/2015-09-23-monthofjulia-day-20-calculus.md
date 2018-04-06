@@ -14,7 +14,6 @@ tags:
 - Integration
 - Julia
 title: '#MonthOfJulia Day 20: Calculus'
-url: /2015/09/23/monthofjulia-day-20-calculus/
 ---
 
 <!--more-->

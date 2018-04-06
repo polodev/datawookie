@@ -8,7 +8,6 @@ tags:
 - plyr
 - '#rstats'
 title: Concatenating a list of data frames
-url: /2014/06/06/concatenating-a-list-of-data-frames/
 ---
 
 It's something that I do surprisingly often: concatenating a list of data frames into a single (possibly quite enormous) data frame. Until now my naive solution worked pretty well. However, today I needed to deal with a list of over 6 million elements. The result was hours of page thrashing before my R session finally surrendered. I suppose I should be happy that my hard disk survived.

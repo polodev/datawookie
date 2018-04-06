@@ -11,7 +11,6 @@ tags:
 - Teaching
 - Docker
 title: Favourite Talks from useR 2017
-url: /2017/07/23/favourite-talks-user-2017/
 ---
 
 <!--more-->

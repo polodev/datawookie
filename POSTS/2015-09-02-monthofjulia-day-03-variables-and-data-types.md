@@ -11,7 +11,6 @@ tags:
 - '#MonthOfJulia'
 - Julia
 title: '#MonthOfJulia Day 3: Variables and Data Types'
-url: /2015/09/02/monthofjulia-day-03-variables-and-data-types/
 ---
 
 <!--more-->

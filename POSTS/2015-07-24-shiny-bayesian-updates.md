@@ -7,7 +7,6 @@ tags:
 - Bayesian Statistics
 - '#rstats'
 title: Shiny Bayesian Updates
-url: /2015/07/24/shiny-bayesian-updates/
 ---
 
 Reading [Bayesian Computation with R](http://www.springer.com/us/book/9780387922973) by Jim Albert (Springer, 2009) inspired a fit of enthusiasm. Admittedly, I was on a plane coming back from Amsterdam and looking for distractions. I decided to put together a Shiny app to illustrate successive Bayesian updates. I had not yet seen anything that did this to my satisfaction. I like to think that my results come pretty close.

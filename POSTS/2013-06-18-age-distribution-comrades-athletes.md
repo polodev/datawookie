@@ -9,7 +9,6 @@ tags:
 - mosaic plot
 - spine plot
 title: Age Distribution of Comrades Marathon Athletes
-url: /2013/06/18/age-distribution-comrades-athletes/
 ---
 
 I can clearly remember watching the end of the 1989 Comrades Marathon on television and seeing Wally Hayward coming in just before the final gun, completing the epic race at the age of 80! I was in awe.

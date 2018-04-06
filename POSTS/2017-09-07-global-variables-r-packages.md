@@ -5,7 +5,6 @@ excerpt_separator: <!-- more -->
 tags:
 - '#rstats'
 title: Global Variables in R Packages
-url: /2017/09/07/global-variables-r-packages/
 ---
 
 I know that global variables are from the Devil, but sometimes you just can't get around them.

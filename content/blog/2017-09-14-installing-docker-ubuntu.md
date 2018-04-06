@@ -3,7 +3,6 @@ author: Andrew B. Collier
 date: 2017-09-14T05:00:00Z
 tags: ["Docker", "Ubuntu"]
 title: Installing Docker on Ubuntu
-url: /2017/09/14/installing-docker-ubuntu/
 ---
 
 This procedure works on both my laptop and a fresh EC2 instance.

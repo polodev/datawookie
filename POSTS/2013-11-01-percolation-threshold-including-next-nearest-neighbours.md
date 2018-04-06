@@ -13,7 +13,6 @@ tags:
 - Percolation
 - '#rstats'
 title: 'Percolation Threshold: Including Next-Nearest Neighbours'
-url: /2013/11/01/percolation-threshold-including-next-nearest-neighbours/
 ---
 
 In my previous post about estimating the [Percolation Threshold on a square lattice](http://www.exegetic.biz/blog/2013/10/percolation-threshold-on-a-square-lattice/), I only considered flow from a given cell to its four nearest neighbours. It is a relatively simple matter to extend the recursive flow algorithm to include other configurations as well.

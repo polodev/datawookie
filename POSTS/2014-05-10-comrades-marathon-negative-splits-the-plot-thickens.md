@@ -10,7 +10,6 @@ tags:
 - ggplot2
 - '#rstats'
 title: 'Comrades Marathon Negative Splits: The Plot Thickens'
-url: /2014/05/10/comrades-marathon-negative-splits-the-plot-thickens/
 ---
 
 I have been thinking a little more about those [mysterious negative splits](http://www.exegetic.biz/blog/2014/05/comrades-marathon-negative-splits-and-cheating/). Not too surprisingly, this thinking happened while I was out running along the Durban beachfront this morning.

@@ -9,7 +9,6 @@ tags:
 - Durban R User Group
 - Meetup
 title: 'Durban R Users Group Meetup: 24 February 2016 @ The Green Door'
-url: /2016/02/10/durban-r-users-group-meetup-february-2016/
 ---
 
 <!--more-->

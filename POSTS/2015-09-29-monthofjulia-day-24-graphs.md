@@ -13,7 +13,6 @@ tags:
 - Graph Theory
 - Julia
 title: '#MonthOfJulia Day 24: Graphs'
-url: /2015/09/29/monthofjulia-day-24-graphs/
 ---
 
 <!--more-->

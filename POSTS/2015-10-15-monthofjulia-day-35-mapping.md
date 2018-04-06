@@ -12,7 +12,6 @@ tags:
 - Julia
 - OpenStreetMap
 title: '#MonthOfJulia Day 35: Mapping'
-url: /2015/10/15/monthofjulia-day-35-mapping/
 ---
 
 <!--more-->

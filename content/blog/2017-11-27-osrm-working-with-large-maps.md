@@ -3,7 +3,6 @@ author: Andrew B. Collier
 date: 2017-11-27T07:00:00Z
 tags: ["OSRM"]
 title: Using Large Maps with OSRM
-url: /2017/11/27/osrm-working-with-large-maps/
 ---
 
 How to deal with large data sets in OSRM? Some quick notes on processing monster PBF files and getting them ready to serve with OSRM.

@@ -15,7 +15,6 @@ tags:
 - Set
 - tuple
 title: '#MonthOfJulia Day 5: Collections'
-url: /2015/09/04/monthofjulia-day-05-collections/
 ---
 
 <!--more-->

@@ -9,7 +9,6 @@ tags:
 - Git
 - Gitflow
 title: 'Gitflow: A successful Git branching model'
-url: /2015/10/20/gitflow-a-successful-git-branching-model/
 ---
 
 <!--more-->

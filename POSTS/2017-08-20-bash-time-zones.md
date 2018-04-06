@@ -8,7 +8,6 @@ tags:
 - BASH
 - Time Zone
 title: Setting Up Time Zones in BASH
-url: /2017/08/20/bash-time-zones/
 ---
 
 Ensuring that your account is configured to run with appropriate time zone information can make your life a lot easier.

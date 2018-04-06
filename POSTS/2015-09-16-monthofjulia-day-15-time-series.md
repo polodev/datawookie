@@ -11,7 +11,6 @@ tags:
 - Julia
 - Time Series
 title: '#MonthOfJulia Day 15: Time Series'
-url: /2015/09/16/monthofjulia-day-15-time-series/
 ---
 
 <!--more-->

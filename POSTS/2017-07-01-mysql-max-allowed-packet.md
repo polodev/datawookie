@@ -8,7 +8,6 @@ tags:
 - MySQL
 - Django
 title: Increasing MySQL Packet Maximum Size
-url: /2017/07/01/mysql-max-allowed-packet/
 ---
 
 In the process of uploading a massive CSV file to my Django application my session data are getting pretty big. As a the result I'm getting these errors:

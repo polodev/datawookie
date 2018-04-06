@@ -14,7 +14,6 @@ tags:
 - MQL4
 - optimisation
 title: Optimisation of Cable Morning Trade Strategy on the EURUSD
-url: /2013/05/31/optimisation-of-cable-morning-trade-strategy-on-the-eurusd/
 ---
 
 As promised, I optimised the Cable Morning Trade strategy on the EURUSD. I varied only the trading times (ostensible the open and close of the market) to start with.

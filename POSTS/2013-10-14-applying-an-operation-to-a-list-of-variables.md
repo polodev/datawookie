@@ -6,7 +6,6 @@ id: 514
 tags:
 - '#rstats'
 title: Applying the Same Operation to a Number of Variables
-url: /2013/10/14/applying-an-operation-to-a-list-of-variables/
 ---
 
 Just a quick note on a short hack that I cobbled together this morning. I have an analysis where I need to perform the same set of operations to a list of variables. In order to do this in a compact and robust way, I wanted to write a loop that would run through the variables and apply the operations to each of them in turn. This can be done using get() and assign().

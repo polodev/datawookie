@@ -15,7 +15,6 @@ tags:
 - queue
 - stack
 title: '#MonthOfJulia Day 23: Data Structures'
-url: /2015/09/28/monthofjulia-day-23-data-structures/
 ---
 
 <!--more-->

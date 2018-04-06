@@ -12,7 +12,6 @@ tags:
 - life table
 - mortality
 title: Building a Life Table
-url: /2016/07/28/building-life-table/
 ---
 
 <!--more-->

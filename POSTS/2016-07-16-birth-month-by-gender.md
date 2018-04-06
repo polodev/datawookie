@@ -7,7 +7,6 @@ tags:
 - birth statistics
 - '#rstats'
 title: Birth Month by Gender
-url: /2016/07/16/birth-month-by-gender/
 ---
 
 Based on some feedback to a [previous post](http://www.exegetic.biz/blog/2016/07/most-probable-birth-month/) I normalised the birth counts by the (average) number of days in each month. As pointed out by a reader, the results indicate a gradual increase in the number of conceptions during (northern hemisphere) Autumn and Winter, roughly up to the end of December. Normalising the data to give births per day also shifts the peak from August to September.

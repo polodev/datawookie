@@ -3,7 +3,6 @@ author: Andrew B. Collier
 date: 2017-09-13T09:30:00Z
 tags: ["Talk"]
 title: Web Scraping Workshop
-url: /2017/09/13/abstract-workshop-python-web-scraping/
 ---
 
 In a little under a month [PyCon 2017](https://za.pycon.org/) will be happening in Cape Town. I'm really looking forward to the conference and rather excited about giving a workshop on Web Scraping in Python. This is the abstract for the workshop.

@@ -7,7 +7,6 @@ tags:
 - Byte Order Mark
 - '#rstats'
 title: Dealing with a Byte Order Mark (BOM)
-url: /2015/03/11/dealing-byte-order-mark-bom/
 ---
 
 I have just been trying to import some data into R. The data were exported from a SQL Server client in tab-separated value (TSV) format. However, reading the data into R the "usual" way produced unexpected results:

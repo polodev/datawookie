@@ -16,7 +16,6 @@ tags:
 - ODBC
 - SQLite
 title: '#MonthOfJulia Day 16: Databases'
-url: /2015/09/17/monthofjulia-day-16-databases/
 ---
 
 <!--more-->

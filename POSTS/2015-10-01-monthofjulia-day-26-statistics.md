@@ -11,7 +11,6 @@ tags:
 - Julia
 - Statistics
 title: '#MonthOfJulia Day 26: Statistics'
-url: /2015/10/01/monthofjulia-day-26-statistics/
 ---
 
 <!--more-->

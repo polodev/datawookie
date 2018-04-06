@@ -11,7 +11,6 @@ tags:
 - Pacing Chart
 - Spreadsheet
 title: 'Comrades Marathon Pacing Chart: Down Run'
-url: /2014/05/28/personalised-comrades-marathon-pacing-chart/
 ---
 
 Although I have been thinking vaguely about my _Plan A_ goal of a Bill Rowan medal at the Comrades Marathon this year, I have not really put a rigorous pacing plan in place. I know from previous experience that I am likely to be quite a bit slower towards the end of the race. I also know that I am going to lose a few minutes at the start. So how fast does this mean I need to run in order to get from Pietermaritzburg to Durban in under 9 hours?

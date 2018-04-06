@@ -15,7 +15,6 @@ tags:
 - Metaprogramming
 - Symbol
 title: '#MonthOfJulia Day 11: Metaprogramming'
-url: /2015/09/10/monthofjulia-day-11-metaprogramming/
 ---
 
 <!--more-->

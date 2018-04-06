@@ -7,7 +7,6 @@ tags:
 - birth statistics
 - '#rstats'
 title: Most Probable Birth Month
-url: /2016/07/15/most-probable-birth-month/
 ---
 
 In a [previous post](http://www.exegetic.biz/blog/2016/07/major-league-baseball-birth-months/) I showed that the data from [www.baseball-reference.com](http://www.baseball-reference.com/) support Malcolm Gladwell's contention that more professional baseball players are born in August than any other month. Although this might be explained by the 31 July cutoff for admission to baseball leagues, it was suggested that it could also be linked to a [larger proportion of babies being born in August](http://www.livescience.com/32728-baby-month-is-almost-here-.html).

@@ -9,7 +9,6 @@ tags:
 - Blockchain
 - TED Talk
 title: Talks about the Blockchain
-url: /2016/08/29/blockchain-talks/
 ---
 
 Finally educating myself about the [blockchain](https://en.wikipedia.org/wiki/Blockchain_(database)). These videos are a good place to start.

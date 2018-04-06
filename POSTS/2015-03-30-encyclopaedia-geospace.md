@@ -6,7 +6,6 @@ date: 2015-03-30T09:00:01Z
 excerpt_separator: <!-- more -->
 id: 1214
 title: 'Encyclopaedia: Geospace'
-url: /2015/03/30/encyclopaedia-geospace/
 ---
 
 A contribution which I wrote for [Antarctica and the Arctic Circle: A Geographic Encyclopedia of the Earth's Polar Regions](http://www.amazon.com/gp/product/B00OD83J44/). As a side note, I am normally quite pedantic about "Earth" and "Sun" being capitalised but the editor of the Encyclopaedia evidently had different views on this point.

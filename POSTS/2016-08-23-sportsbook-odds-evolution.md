@@ -11,7 +11,6 @@ tags:
 - probability
 - Sportsbook
 title: 'Sportsbook Betting (Part 3): Evolving Odds'
-url: /2016/08/23/sportsbook-odds-evolution/
 ---
 
 <!--more-->

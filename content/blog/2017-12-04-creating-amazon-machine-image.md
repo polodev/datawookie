@@ -3,7 +3,6 @@ author: Andrew B. Collier
 date: 2017-12-04T03:00:00Z
 tags: ["AWS"]
 title: Creating an Amazon Machine Image
-url: /2017/12/04/creating-amazon-machine-image/
 ---
 
 Creating an Amazon Machine Image (AMI) makes it quick and simple to rebuild a specific EC2 setup. This post illustrates the process by creating an AMI with `ethminer` and NVIDIA GPU drivers. Of course you'd never use this for mining Ether because the hardware costs are still too high!
