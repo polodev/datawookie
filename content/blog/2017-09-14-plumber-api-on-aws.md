@@ -16,13 +16,13 @@ url: /2017/09/14/plumber-api-on-aws/
 
 <!-- Other notes on hosting at https://www.rplumber.io/docs/hosting.html. -->
 
-<img src="/img/logo/logo-plumber.png" style="float: right; margin-right: 10px;" />
+<img src="/img/logo/logo-plumber.png" style="float: right; margin-left: 10px;" />
 
 I've been putting together a small proof-of-concept API using R and [plumber](https://github.com/trestletech/plumber). It works flawlessly on my local machine and I was planning on deploying it on an EC2 instance to demo it for a client. However, I ran into a snag: despite opening the required port in my Security Group I was not able to access the API. This is what I needed to do to get it working.
 
 <!--more-->
 
-<div style="clear: both;"></div>
+<!-- <div style="clear: both;"></div> -->
 
 ## This Didn't Work
 

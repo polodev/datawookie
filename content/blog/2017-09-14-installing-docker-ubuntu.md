@@ -18,43 +18,39 @@ This procedure works on both my laptop and a fresh EC2 instance.
 
 1. Add the GPG key for Docker.
 
-{{< highlight bash >}}
+	{{< highlight bash >}}
 curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg | sudo apt-key add -
 {{< /highlight >}}
 
-{:start="2"}
 2. Add the details of the Docker repository.
 
-{{< highlight bash >}}
+	{{< highlight bash >}}
 OSNAME=$(. /etc/os-release; echo "$ID")
 OSVERS=$(lsb_release -cs)
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/$OSNAME $OSVERS stable"
 {{< /highlight >}}
 
-{:start="3"}
 3. Update the package index.
 
-{{< highlight bash >}}
+	{{< highlight bash >}}
 sudo apt update
 {{< /highlight >}}
 
-{:start="4"}
 4. Install the Community Edition package.
 
-{{< highlight bash >}}
+	{{< highlight bash >}}
 sudo apt install docker-ce
 {{< /highlight >}}
 
-{:start="5"}
 5. Test it.
 
-{{< highlight bash >}}
+	{{< highlight bash >}}
 sudo docker run hello-world
 {{< /highlight >}}
 
 The output from the test should look something like this:
 
-{{< highlight text >}}
+	{{< highlight text >}}
 Unable to find image 'hello-world:latest' locally
 latest: Pulling from library/hello-world
 5b0f327be733: Pull complete 
