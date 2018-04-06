@@ -1,11 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2017-08-23T04:00:00Z
-excerpt_separator: <!-- more -->
-tags:
-- '#rstats'
-- gmapsdistance
-- Spatial
+tags: ["R"]
 title: Route Asymmetry in Google Maps
 ---
 

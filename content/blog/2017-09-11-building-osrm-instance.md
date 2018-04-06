@@ -1,11 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2017-09-11T08:30:00Z
-excerpt_separator: <!-- more -->
-tags:
-- '#rstats'
-- OSRM
-- Spatial
+tags: ["R", "OSRM"]
 title: Building a Local OSRM Instance
 ---
 

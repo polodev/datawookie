@@ -1,14 +1,7 @@
 ---
 author: Andrew B. Collier
-categories:
-- Cloud
 date: 2017-08-31T11:00:00Z
-excerpt_separator: <!-- more -->
-tags:
-- AWS
-- EC2
-- EMR
-- CLI
+tags: ["AWS"]
 title: Driving AWS from the Command Line
 ---
 

@@ -1,12 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2017-08-21T11:00:00Z
-excerpt_separator: <!-- more -->
-tags:
-- Kaggle
-- AWS
-- EC2
-- CLI
+tags: ["Kaggle", "AWS"]
 title: Retrieving Kaggle Data from the Command Line
 ---
 

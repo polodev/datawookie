@@ -1,13 +1,7 @@
 ---
 author: Andrew B. Collier
-categories:
-- DB
 date: 2017-08-20T05:00:00Z
-excerpt_separator: <!-- more -->
-tags:
-- MySQL
-- Django
-- Time Zone
+tags: ["MySQL", "Django"]
 title: Setting Up Time Zones in MySQL
 ---
 

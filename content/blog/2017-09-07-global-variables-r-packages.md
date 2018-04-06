@@ -1,9 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2017-09-07T14:30:00Z
-excerpt_separator: <!-- more -->
-tags:
-- '#rstats'
+tags: ["R"]
 title: Global Variables in R Packages
 ---
 
