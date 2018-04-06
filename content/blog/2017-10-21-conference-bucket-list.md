@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2017-10-21T08:30:00Z
-tags: ["Talk"]
+tags: ["Speaking"]
 title: Speaking Bucket List
 ---
 

@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2018-04-06T07:30:00Z
-tags: ["Talk", "R"]
+tags: ["Speaking", "R"]
 title: Tips for Lightning Talks
 ---
 

@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2017-10-05T07:00:00Z
-tags: ["Talk"]
+tags: ["Speaking"]
 title: Exporting HTML Presentations to PDF
 ---
 
