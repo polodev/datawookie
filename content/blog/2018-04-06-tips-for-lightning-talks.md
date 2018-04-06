@@ -24,4 +24,4 @@ At the recent [satRday conference in Cape Town](http://capetown2018.satrdays.org
 - **Think of your slides as resources.** Provide links which people can follow to find out more.
 - **Clear contact details.** Make sure that your contact details are conspiciously evident on your first and last slides. Make it easy for people will want to contact you. A Twitter or GitHub handle works best.
 
-Thanks to Andrew Clark, Neil Watson, Jasen Mackie, Hanjo Odendaal, Vishalin Pillay and Sean Soutar for contributing their tips.
+Thanks to <a href="https://twitter.com/pssguy">Andrew Clark</a>, <a href="https://twitter.com/rugbystatsguy">Neil Watson</a>, <a href="https://twitter.com/OpenSourceQuant">Jasen Mackie</a>, <a href="https://twitter.com/UbuntR314">Hanjo Odendaal</a>, <a href="https://www.linkedin.com/in/vishalin-pillay-49ba92112/">Vishalin Pillay</a> and <a href="https://github.com/Stochastic-Squirrel">Sean Soutar</a> for contributing their tips.
