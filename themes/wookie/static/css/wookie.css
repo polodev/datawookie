@@ -116,6 +116,10 @@ h2.resume {
   border-bottom: 1px solid #ccc;
 }
 
+strong, b {
+  font-weight: bold;
+}
+
 ol {
   padding-left: 0px;
   // list-style-position: inside;
