@@ -1,15 +1,6 @@
 ---
 author: Andrew B. Collier
-categories:
-- Cloud
-date: 2017-09-14T09:00:00Z
-excerpt_separator: <!-- more -->
-tags:
-- AWS
-- EC2
-- '#rstats'
-- Rx
-- plumber
+tags: ["AWS", "R", "Plumber"]
 title: Hosting a Plumber API on AWS
 url: /2017/09/14/plumber-api-on-aws/
 ---

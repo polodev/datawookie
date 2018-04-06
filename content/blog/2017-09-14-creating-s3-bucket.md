@@ -1,12 +1,7 @@
 ---
 author: Andrew B. Collier
-categories:
-- Cloud
 date: 2017-09-14T05:00:00Z
-excerpt_separator: <!-- more -->
-tags:
-- AWS
-- S3
+tags: ["AWS"]
 title: Creating a S3 Bucket
 url: /2017/09/14/creating-s3-bucket/
 ---

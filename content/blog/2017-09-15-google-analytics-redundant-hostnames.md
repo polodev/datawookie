@@ -1,12 +1,7 @@
 ---
 author: Andrew B. Collier
-categories:
-- Web
 date: 2017-09-15T09:00:00Z
-excerpt_separator: <!-- more -->
-tags:
-- NGINX
-- curl
+tags: ["NGINX"]
 title: Removing Redundant Hostnames with NGINX
 url: /2017/09/15/google-analytics-redundant-hostnames/
 ---

@@ -1,13 +1,7 @@
 ---
 author: Andrew B. Collier
-categories:
-- Cloud
 date: 2017-09-14T05:00:00Z
-excerpt_separator: <!-- more -->
-tags:
-- Docker
-- Ubuntu
-- EC2
+tags: ["Docker", "Ubuntu"]
 title: Installing Docker on Ubuntu
 url: /2017/09/14/installing-docker-ubuntu/
 ---

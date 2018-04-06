@@ -1,12 +1,7 @@
 ---
 author: Andrew B. Collier
-categories:
-- Cloud
 date: 2017-09-13T08:30:00Z
-excerpt_separator: <!-- more -->
-tags:
-- AWS
-- EC2
+tags: ["AWS"]
 title: Creating an AWS Spot Instance
 url: /2017/09/13/aws-spot-instance/
 ---
@@ -32,8 +27,6 @@ A source of concern can be the level of variability of spot pricing. Fortunately
 The spot price does spike up to the on-demand price from time to time, but it's only for short periods. Generally it's consistently low. It's also worthwhile toggling the availability zones. If you toggle off us-east-1e then you find that none of the other zones came anywhere near the on-demand price.
 
 This sounds pretty good. How does one get started?
-
-<!--more-->
 
 ## Requesting a Spot Instance
 

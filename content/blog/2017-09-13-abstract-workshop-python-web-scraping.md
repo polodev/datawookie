@@ -1,12 +1,8 @@
 ---
 author: Andrew B. Collier
-categories:
-- Conference
 date: 2017-09-13T09:30:00Z
-excerpt_separator: <!-- more -->
-tags:
-- Talk
-title: Web Scraping Workshop at PyCon 2017 (Cape Town)
+tags: ["Talk"]
+title: Web Scraping Workshop
 url: /2017/09/13/abstract-workshop-python-web-scraping/
 ---
 
@@ -18,9 +14,8 @@ In a little under a month [PyCon 2017](https://za.pycon.org/) will be happening 
 PITCH: Web scraping is a handy weapon for every developer to have in his arsenal. This is especially true now, where the ability to gather data from a variety of sources is becoming very important.
 -->
 
-<div class="talk">
-  <div class="title">Web Scraping: Unleash your Internet Viking</div>
-  <div class="abstract">
+{{< abstract title="Web Scraping: Unleash your Internet Viking" >}}
+  {{< abstract-long >}}
     <p>Often the data you want is available somewhere on the internet. It might all be on one page (if you're lucky!) or distributed across many pages (possibly hundreds or thousands of pages!).</p>
 
     <p>But you want those data consolidated locally. Not on a server in some distant land, but right here on your hardware. And in a convenient format. CSV or JSON, perhaps? Certainly not HTML!</p>
@@ -43,7 +38,7 @@ PITCH: Web scraping is a handy weapon for every developer to have in his arsenal
     <p>Come along and make Ragnar proud. Tyr! Odin owns you all!</p>
 
     <p>This tutorial will be suitable for Vikings with low to moderate levels of Python experience. We'll be working from a VirtualBox image to ensure that everybody has the same infrastructure and (hopefully) avoid most technical issues.</p>
-  </div>
-</div>
+  {{< /abstract-long >}}
+{{< /abstract >}}
 
 There's a copy of the slides [here](https://www.slideshare.net/andrewbcollier/pyconza-2017-web-scraping-unleash-your-internet-viking). I'll also be working with a brace of Jupyter notebooks and Python scripts.
