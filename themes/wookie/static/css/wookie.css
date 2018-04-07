@@ -137,6 +137,17 @@ ol {
   font-style: italic;
   font-size: 1.05em;
   line-height: 1.5em;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#article blockquote cite {
+  display: block;
+  font-style: normal;
+  text-align: left;
+}
+#article blockquote cite:before {
+  content: "\2014 \2009 ";
 }
 
 #article dl dt {
