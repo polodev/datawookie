@@ -1,14 +1,7 @@
 ---
 author: Andrew B. Collier
-categories:
-- Cloud
 date: 2017-07-24T01:00:00Z
-excerpt_separator: <!-- more -->
-tags:
-- AWS
-- EC2
-- Ubuntu
-- SSH
+tags: ["AWS", "Ubuntu", "SSH"]
 title: Adding Users to an EC2 Ubuntu Instance
 ---
 

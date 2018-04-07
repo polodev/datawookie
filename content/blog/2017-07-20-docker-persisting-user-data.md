@@ -1,11 +1,7 @@
 ---
 author: Andrew B. Collier
-categories:
-- Cloud
 date: 2017-07-20T03:30:00Z
-excerpt_separator: <!-- more -->
-tags:
-- Docker
+tags: ["Docker"]
 title: 'Docker: Persisting User Data'
 ---
 

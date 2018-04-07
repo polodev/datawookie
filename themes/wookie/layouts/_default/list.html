@@ -1,5 +1,8 @@
 {{ partial "header.html" . }}
 {{ if hasPrefix .URL "/blog/" }}
+  <div>
+  {{ partial "pagination.html" . }}
+  </div>
   {{ range sort .Paginator.Pages }}
     <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
     <p>
@@ -15,6 +18,8 @@
     {{ end }}
     </div>
   {{ end }}
+  <div>
   {{ partial "pagination.html" . }}
+  </div>
 {{ end }}
 {{ partial "footer.html" . }}

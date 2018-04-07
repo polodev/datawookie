@@ -1,15 +1,7 @@
 ---
 author: Andrew B. Collier
-categories:
-- Talks
 date: 2017-07-23T04:00:00Z
-excerpt_separator: <!-- more -->
-tags:
-- '#rstats'
-- QGIS
-- Web Scraping
-- Teaching
-- Docker
+tags: ["R", "web scraping", "Docker", "Teaching", "QGIS"]
 title: Favourite Talks from useR 2017
 ---
 

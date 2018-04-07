@@ -1,12 +1,7 @@
 ---
 author: Andrew B. Collier
-categories:
-- DB
 date: 2017-08-20T05:00:00Z
-excerpt_separator: <!-- more -->
-tags:
-- BASH
-- Time Zone
+tags: ["BASH"]
 title: Setting Up Time Zones in BASH
 ---
 

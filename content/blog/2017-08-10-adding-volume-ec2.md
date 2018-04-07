@@ -1,12 +1,7 @@
 ---
 author: Andrew B. Collier
-categories:
-- Cloud
 date: 2017-08-10T03:00:00Z
-excerpt_separator: <!-- more -->
-tags:
-- AWS
-- EC2
+tags: ["AWS"]
 title: Adding a Volume to an Ubuntu EC2 Instance
 ---
 
@@ -28,7 +23,6 @@ A short while ago I put together a `m4.2xlarge` EC2 instance. My initial thought
 
 ![](/img/2017/08/aws-ec2-create-volume.png)
 
-{:start="4"}
 4. Press the <kbd class="bg-primary">Create</kbd> button.
 5. After a short delay the new volume will appear in the list of available volumes. (I have found that I occasionally need to refesh the page to get the new volume to show up!)
 6. Select the newly created volume and press the <kbd>Actions</kbd> button. Choose Attach Volume.
@@ -69,5 +63,4 @@ Create a file system on the raw device.
 sudo mkfs -t ext4 /dev/xvdf
 {{< /highlight >}}
 
-{:start="4"}
-4. Go ahead and mount `/dev/xvdf` at a suitable location in your file hierarchy.
+Go ahead and mount `/dev/xvdf` at a suitable location in your file hierarchy.

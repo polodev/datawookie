@@ -198,10 +198,17 @@ table {
 ul.pagination {
   padding: 0;
   list-style-type: none;
+  float: right;
+  margin-bottom: 5px;
 }
 
 .pagination li {
   display: inline-block;
+}
+
+.pagination li a {
+  padding: 5px;
+  transition: background-color .3s;
 }
 
 .pagination .active a:link,
@@ -212,8 +219,17 @@ ul.pagination {
 .pagination .disabled a:active,
 .pagination .disabled a:visited,
 .pagination .disabled a:hover {
-  color: #555;
   text-decoration: none;
+  border-radius: 5px;
+}
+
+.pagination .active a {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.pagination li:not(.active) a:hover {
+  background-color: #ddd;
 }
 
 table.experience, table.education {
