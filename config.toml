@@ -36,8 +36,3 @@ url = "/resume/"
 weight = 3
 name = "Blog"
 url = "/blog/"
-
-[[menu.main]]
-weight = 4
-name = "Contact"
-url = "/contact/"

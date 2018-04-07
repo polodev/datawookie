@@ -1,6 +1,6 @@
 <span class="tags">
   <i class="fa fa-tags" style="vertical-align: middle; line-height: inherit;"></i>
   {{ range . }}
-  <a href="{{ "/tags/" | absURL }}{{ . | urlize | lower }}" class="btn btn-warning btn-sm">{{ . }}</a>
+  <a href="{{ "/tags/" | absURL }}{{ . | urlize | lower }}" class="bg-warning tag">{{ . }}</a>
   {{ end }}
 </span>
