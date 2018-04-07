@@ -1,14 +1,7 @@
 ---
 author: Andrew B. Collier
-categories:
-- R
 date: 2017-07-11T04:00:00Z
-excerpt_separator: <!-- more -->
-tags:
-- RStudio
-- '#rstats'
-- Docker
-- DigitalOcean
+tags: ["R", "Docker"]
 title: RStudio Environment on DigitalOcean with Docker
 ---
 

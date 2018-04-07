@@ -1,5 +1,6 @@
 ---
 author: Andrew B. Collier
+date: 2017-09-14T04:00:00Z
 tags: ["AWS", "R", "Plumber"]
 title: Hosting a Plumber API on AWS
 ---

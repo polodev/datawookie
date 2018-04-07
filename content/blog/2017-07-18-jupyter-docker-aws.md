@@ -1,14 +1,7 @@
 ---
 author: Andrew B. Collier
-categories:
-- Cloud
 date: 2017-07-18T04:00:00Z
-excerpt_separator: <!-- more -->
-tags:
-- Docker
-- AWS
-- EC2
-- Jupyter
+tags: ["Jupyter", "Docker", "AWS"]
 title: Deploying Jupyer on AWS using Docker
 ---
 

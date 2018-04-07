@@ -1,11 +1,7 @@
 ---
 author: Andrew B. Collier
-categories: Linux
 date: 2017-07-04T09:30:00Z
-excerpt_separator: <!-- more -->
-tags:
-- Ubuntu
-- Hadoop
+tags: ["Ubuntu", "Hadoop"]
 title: Installing Hadoop on Ubuntu
 ---
 
@@ -16,32 +12,27 @@ This is what I did to set up Hadoop on my Ubuntu machine.
 <!-- https://www.digitalocean.com/community/tutorials/how-to-install-hadoop-in-stand-alone-mode-on-ubuntu-16-04 -->
 
 1. Install the Java Development Kit.
-{{< highlight bash >}}
+	{{< highlight bash >}}
 $ sudo apt-get install default-jdk
 {{< /highlight >}}
-{:start="2"}
 2. Download the latest release of Hadoop [here](http://hadoop.apache.org/releases.html).
 3. Unpack the archive.
-{{< highlight bash >}}
+	{{< highlight bash >}}
 $ tar -xvf hadoop-2.8.0.tar.gz
 {{< /highlight >}}
-{:start="4"}
 4. Move the resulting folder.
-{{< highlight bash >}}
+	{{< highlight bash >}}
 $ sudo mv hadoop-2.8.0 /usr/local/hadoop
 {{< /highlight >}}
-{:start="5"}
 5. Find the location of the Java package.
-{{< highlight bash >}}
+	{{< highlight bash >}}
 $ readlink -f /usr/bin/java | sed "s#bin/java##"
 /usr/lib/jvm/java-8-openjdk-amd64/jre/
 {{< /highlight >}}
-{:start="6"}
 6. Edit the Hadoop configuration file at `/usr/local/hadoop/etc/hadoop/hadoop-env.sh` and set `JAVA_HOME`.
-{{< highlight text >}}
+	{{< highlight text >}}
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre/
 {{< /highlight >}}
-{:start="7"}
 7. Test.
 {{< highlight bash >}}
 $ /usr/local/hadoop/bin/hadoop version
