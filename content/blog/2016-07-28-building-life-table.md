@@ -1,16 +1,7 @@
 ---
 author: Andrew B. Collier
-categories:
-- Statistics
 date: 2016-07-28T15:00:26Z
-excerpt_separator: <!-- more -->
-guid: http://www.exegetic.biz/blog/?p=3793
-id: 3793
-tags:
-- '#rstats'
-- death statistics
-- life table
-- mortality
+tags: ["R"]
 title: Building a Life Table
 ---
 

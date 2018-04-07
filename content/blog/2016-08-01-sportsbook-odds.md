@@ -1,16 +1,7 @@
 ---
 author: Andrew B. Collier
-categories:
-- Statistics
 date: 2016-08-01T15:00:34Z
-excerpt_separator: <!-- more -->
-id: 3570
-tags:
-- '#rstats'
-- gambling
-- odds
-- probability
-- Sportsbook
+tags: ["R", "Gambling"]
 title: 'Sportsbook Betting (Part 1): Odds'
 ---
 

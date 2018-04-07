@@ -1,14 +1,7 @@
 ---
 author: Andrew B. Collier
-categories:
-- Statistics
-- Teaching
 date: 2016-07-29T15:00:06Z
-excerpt_separator: <!-- more -->
-id: 3783
-tags:
-- Teaching
-- TED Talk
+tags: ["TED Talk", "Teaching"]
 title: 'Arthur Benjamin: Teach statistics before calculus!'
 ---
 

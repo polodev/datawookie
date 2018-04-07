@@ -1,13 +1,7 @@
 ---
 author: Andrew B. Collier
-categories:
-- Teaching
 date: 2016-07-25T15:00:49Z
-excerpt_separator: <!-- more -->
-id: 3779
-tags:
-- Teaching
-- TED Talk
+tags: ["TED Talk", "Teaching"]
 title: 'Conrad Wolfram: Teaching kids real math with computers'
 ---
 
