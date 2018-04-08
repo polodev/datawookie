@@ -17,9 +17,16 @@ description = ""
 author = "Andrew B. Collier"
 # logoimage = "images/logo.jpg"
 # copyright = "foo"
+twitterAuthor = "@datawookie"
+# twitterSite = "@invalid_input"
 
 [permalinks]
 blog  = "/blog/:year/:month/:day/:title/"
+
+[sitemap]
+changefreq = "monthly"
+priority = 0.5
+filename = "sitemap.xml"
 
 [taxonomies]
 tags = "tags"
