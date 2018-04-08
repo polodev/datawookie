@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2015-09-03T06:01:48Z
-tags: ["Julia", "#MonthOfJulia"]
+tags: ["Julia"]
 title: 'MonthOfJulia Day 4: Functions'
 ---
 

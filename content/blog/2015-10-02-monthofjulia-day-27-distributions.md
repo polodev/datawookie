@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2015-10-02T15:00:27Z
-tags: ["Julia", "#MonthOfJulia"]
+tags: ["Julia"]
 title: 'MonthOfJulia Day 27: Distributions'
 ---
 

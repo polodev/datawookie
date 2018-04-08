@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2015-09-29T15:00:28Z
-tags: ["Julia", "#MonthOfJulia"]
+tags: ["Julia"]
 title: 'MonthOfJulia Day 24: Graphs'
 ---
 

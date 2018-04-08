@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2015-09-18T15:56:43Z
-tags: ["Julia", "#MonthOfJulia", "R"]
+tags: ["Julia", "R"]
 title: 'MonthOfJulia Day 17: Datasets from R'
 ---
 

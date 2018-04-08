@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2015-10-13T15:00:25Z
-tags: ["Julia", "#MonthOfJulia"]
+tags: ["Julia"]
 title: 'MonthOfJulia Day 34: Networking'
 ---
 

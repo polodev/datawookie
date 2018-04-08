@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2015-10-19T15:00:58Z
-tags: ["Julia", "#MonthOfJulia"]
+tags: ["Julia"]
 title: 'MonthOfJulia Day 36: Markdown'
 ---
 

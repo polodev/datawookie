@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2015-09-04T08:23:56Z
-tags: ["Julia", "#MonthOfJulia"]
+tags: ["Julia"]
 title: 'MonthOfJulia Day 5: Collections'
 ---
 

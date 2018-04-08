@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2015-09-05T04:10:04Z
-tags: ["Julia", "#MonthOfJulia"]
+tags: ["Julia"]
 title: 'MonthOfJulia Day 6: Composite Types'
 ---
 

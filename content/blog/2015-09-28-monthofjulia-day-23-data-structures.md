@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2015-09-28T15:00:02Z
-tags: ["Julia", "#MonthOfJulia"]
+tags: ["Julia"]
 title: 'MonthOfJulia Day 23: Data Structures'
 ---
 

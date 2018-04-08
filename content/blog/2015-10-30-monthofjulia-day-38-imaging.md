@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2015-10-30T15:00:44Z
-tags: ["Julia", "#MonthOfJulia"]
+tags: ["Julia"]
 title: 'MonthOfJulia Day 38: Imaging'
 ---
 

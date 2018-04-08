@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2015-09-11T13:00:43Z
-tags: ["Julia", "#MonthOfJulia"]
+tags: ["Julia"]
 title: 'MonthOfJulia Day 12: Parallel Processing'
 ---
 

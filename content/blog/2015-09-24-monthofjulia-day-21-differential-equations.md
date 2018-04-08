@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2015-09-24T16:00:13Z
-tags: ["Julia", "#MonthOfJulia"]
+tags: ["Julia"]
 title: 'MonthOfJulia Day 21: Differential Equations'
 ---
 

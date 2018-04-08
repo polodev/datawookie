@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2015-09-14T13:00:17Z
-tags: ["Julia", "#MonthOfJulia"]
+tags: ["Julia"]
 title: 'MonthOfJulia Day 13: Packages'
 ---
 

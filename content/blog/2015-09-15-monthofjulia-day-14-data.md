@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2015-09-15T13:00:23Z
-tags: ["Julia", "#MonthOfJulia"]
+tags: ["Julia"]
 title: 'MonthOfJulia Day 14: Data'
 ---
 

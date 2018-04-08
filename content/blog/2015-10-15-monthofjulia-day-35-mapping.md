@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2015-10-15T15:00:42Z
-tags: ["Julia", "#MonthOfJulia"]
+tags: ["Julia"]
 title: 'MonthOfJulia Day 35: Mapping'
 ---
 

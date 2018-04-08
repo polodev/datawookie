@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2015-09-30T15:00:56Z
-tags: ["Julia", "#MonthOfJulia", "R", "Python"]
+tags: ["Julia", "R", "Python"]
 title: 'MonthOfJulia Day 25: Interfacing with Other Languages'
 ---
 

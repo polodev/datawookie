@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2015-08-31T07:32:57Z
-tags: ["Julia", "#MonthOfJulia"]
+tags: ["Julia"]
 title: 'MonthOfJulia Day 1: Installation and Orientation'
 ---
 

@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2015-09-02T02:44:27Z
-tags: ["Julia", "#MonthOfJulia"]
+tags: ["Julia"]
 title: 'MonthOfJulia Day 3: Variables and Data Types'
 ---
 

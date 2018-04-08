@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2015-09-21T16:00:12Z
-tags: ["Julia", "#MonthOfJulia"]
+tags: ["Julia"]
 title: 'MonthOfJulia Day 18: Plotting'
 ---
 

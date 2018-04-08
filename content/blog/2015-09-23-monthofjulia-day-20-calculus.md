@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2015-09-23T14:00:57Z
-tags: ["Julia", "#MonthOfJulia"]
+tags: ["Julia"]
 title: 'MonthOfJulia Day 20: Calculus'
 ---
 

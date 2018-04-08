@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2015-09-17T16:00:55Z
-tags: ["Julia", "#MonthOfJulia"]
+tags: ["Julia"]
 title: 'MonthOfJulia Day 16: Databases'
 ---
 

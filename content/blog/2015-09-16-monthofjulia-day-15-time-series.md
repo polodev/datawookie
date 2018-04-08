@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2015-09-16T14:00:26Z
-tags: ["Julia", "#MonthOfJulia"]
+tags: ["Julia"]
 title: 'MonthOfJulia Day 15: Time Series'
 ---
 

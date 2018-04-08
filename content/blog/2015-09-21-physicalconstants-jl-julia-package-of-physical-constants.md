@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2015-09-21T15:00:04Z
-tags: ["Julia", "#MonthOfJulia"]
+tags: ["Julia"]
 title: 'PhysicalConstants.jl: Julia Package of Physical Constants'
 ---
 

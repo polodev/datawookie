@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2015-10-26T15:00:47Z
-tags: ["Julia", "#MonthOfJulia"]
+tags: ["Julia"]
 title: 'MonthOfJulia Day 37: Fourier Techniques'
 ---
 

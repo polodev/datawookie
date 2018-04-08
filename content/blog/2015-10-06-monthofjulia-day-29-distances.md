@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2015-10-06T15:00:36Z
-tags: ["Julia", "#MonthOfJulia"]
+tags: ["Julia"]
 title: 'MonthOfJulia Day 29: Distances'
 ---
 

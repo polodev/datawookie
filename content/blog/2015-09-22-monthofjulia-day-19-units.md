@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2015-09-22T16:00:07Z
-tags: ["Julia", "#MonthOfJulia"]
+tags: ["Julia"]
 title: 'MonthOfJulia Day 19: Units'
 ---
 

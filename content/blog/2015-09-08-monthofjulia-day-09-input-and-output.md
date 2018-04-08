@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2015-09-08T05:30:12Z
-tags: ["Julia", "#MonthOfJulia"]
+tags: ["Julia"]
 title: 'MonthOfJulia Day 9: Input/Output'
 ---
 

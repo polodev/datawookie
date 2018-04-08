@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2015-09-06T02:06:29Z
-tags: ["Julia", "#MonthOfJulia"]
+tags: ["Julia"]
 title: 'MonthOfJulia Day 7: Functional Programming'
 ---
 

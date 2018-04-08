@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2015-10-05T15:00:35Z
-tags: ["Julia", "#MonthOfJulia"]
+tags: ["Julia"]
 title: 'MonthOfJulia Day 28: Hypothesis Tests'
 ---
 

@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2015-10-12T15:00:20Z
-tags: ["Julia", "#MonthOfJulia"]
+tags: ["Julia"]
 title: 'MonthOfJulia Day 33: Evolutionary Algorithms'
 ---
 

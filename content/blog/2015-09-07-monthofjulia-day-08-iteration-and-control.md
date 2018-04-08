@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2015-09-07T05:29:04Z
-tags: ["Julia", "#MonthOfJulia"]
+tags: ["Julia"]
 title: 'MonthOfJulia Day 8: Iteration, Conditionals and Exceptions'
 ---
 

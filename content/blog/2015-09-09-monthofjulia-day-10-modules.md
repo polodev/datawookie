@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2015-09-09T13:00:13Z
-tags: ["Julia", "#MonthOfJulia"]
+tags: ["Julia"]
 title: 'MonthOfJulia Day 10: Modules'
 ---
 
