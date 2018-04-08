@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2018-02-16T10:00:00Z
-tags: ["SQL", "Ubuntu"]
+tags: ["SQL", "Linux"]
 title: Extending DataGrip Evaluation
 ---
 

@@ -4,7 +4,7 @@ date: 2018-02-05T08:00:00Z
 excerpt_separator: <!-- more -->
 title: SQL Server from Ubuntu
 draft: false
-tags: ["SQL", "Ubuntu"]
+tags: ["SQL", "Linux"]
 ---
 
 Setting up the requisites to access a SQL Server database from Ubuntu.

@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2017-06-23T05:00:00Z
-tags: ["Jupyter", "Ubuntu"]
+tags: ["Jupyter", "Linux"]
 title: Setting up Jupyter with Python 3 on Ubuntu
 ---
 

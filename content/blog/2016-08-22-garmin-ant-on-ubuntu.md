@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2016-08-22T15:00:53Z
-tags: ["Ubuntu"]
+tags: ["Linux"]
 title: Garmin ANT on Ubuntu
 ---
 

@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2017-06-23T07:00:00Z
-tags: ["Ubuntu"]
+tags: ["Linux"]
 title: Setting up ExpressVPN on Ubuntu
 ---
 

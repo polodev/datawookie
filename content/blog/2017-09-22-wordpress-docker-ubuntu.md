@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2017-09-22T11:00:00Z
-tags: ["Docker", "Wordpress", "Ubuntu", "MySQL"]
+tags: ["Docker", "Wordpress", "Linux", "MySQL"]
 title: Quick Wordpress Install with Docker
 ---
 

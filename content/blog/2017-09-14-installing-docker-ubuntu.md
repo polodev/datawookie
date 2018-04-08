@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2017-09-14T05:00:00Z
-tags: ["Docker", "Ubuntu"]
+tags: ["Docker", "Linux"]
 title: Installing Docker on Ubuntu
 ---
 

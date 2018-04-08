@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2017-07-04T09:30:00Z
-tags: ["Ubuntu", "Spark"]
+tags: ["Linux", "Spark"]
 title: Installing Spark on Ubuntu
 ---
 

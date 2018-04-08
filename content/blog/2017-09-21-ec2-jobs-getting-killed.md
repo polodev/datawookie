@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2017-09-21T08:30:00Z
-tags: ["Ubuntu", "AWS"]
+tags: ["Linux", "AWS"]
 title: Diagnosing Killed Jobs on EC2
 ---
 

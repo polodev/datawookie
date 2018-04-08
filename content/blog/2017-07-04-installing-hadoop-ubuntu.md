@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2017-07-04T09:30:00Z
-tags: ["Ubuntu", "Hadoop"]
+tags: ["Linux", "Hadoop"]
 title: Installing Hadoop on Ubuntu
 ---
 

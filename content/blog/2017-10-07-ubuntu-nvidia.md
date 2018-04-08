@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2017-10-07T07:00:00Z
-tags: ["Ubuntu", "GPU"]
+tags: ["Linux", "GPU"]
 title: Installing NVIDIA Graphics Driver on Ubuntu
 ---
 

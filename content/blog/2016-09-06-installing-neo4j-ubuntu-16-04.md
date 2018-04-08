@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2016-09-06T15:00:34Z
-tags: ["Neo4j", "Ubuntu"]
+tags: ["Neo4j", "Linux"]
 title: Installing Neo4j on Ubuntu 16.04
 ---
 
