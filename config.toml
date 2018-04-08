@@ -3,6 +3,8 @@ title = "datawookie"
 theme = "wookie"
 baseurl = "https://datawookie.netlify.com/"
 
+paginate = 30
+
 # Limit number of entries in RSS feeds.
 #
 rssLimit = 20

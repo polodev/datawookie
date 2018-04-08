@@ -1,10 +1,6 @@
 ---
 author: Andrew B. Collier
-categories:
-- Teaching
 date: 2016-08-02T14:58:01Z
-guid: http://www.exegetic.biz/blog/?p=3902
-id: 3902
 tags: ["TED Talk"]
 title: 'John Green: The Nerd''s Guide to Learning Everything Online'
 ---

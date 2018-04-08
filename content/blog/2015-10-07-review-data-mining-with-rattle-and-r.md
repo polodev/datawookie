@@ -77,6 +77,6 @@ Type 'rattle()' to shake, rattle, and roll your data.
 
 The GUI looks pretty sleek. I did have hassles with some of the functionality in the beta version, so if you are going to give this a try I'd advise you to just install the version available at <a href="http://cran.mirror.ac.za/">CRAN</a>.
 
-<img src="/img/2015/10/rattle-gui.jpg">
+<img src="/img/2015/10/rattle-gui.jpg" width="100%">
 
 Wrapping things up, <a href="http://www.springer.com/us/book/9781441998897">Data Mining with Rattle and R</a> is not just about how to use Rattle to solve Data Mining problems. It also digs quite deep into a number of Data Mining and Machine Learning algorithms. As such it's also a pretty handy reference. If you are looking at a way of transitioning from a point-and-click style analysis to R, then I think that installing Rattle and getting hold of a copy of this book would be a good place to start. I think that the key thing to consider with regards to this book is that it does not set out to be an encyclopaedia on Machine Learning. It's focus is on using Rattle (and in the process it provides the necessary background information).

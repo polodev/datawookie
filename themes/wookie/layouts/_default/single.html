@@ -12,6 +12,14 @@
 </p>
 {{ end }}
 {{ .Content }}
+<div>
+{{ with .NextInSection }}
+  Next: <a href="{{ .Permalink }}">{{ .Title }}</a>.<br>
+{{ end }}
+{{ with .PrevInSection }}
+  Previous: <a href="{{ .Permalink }}">{{ .Title }}</a>.
+{{ end }}
+</div>
 {{ partial "footer.html" . }}
 
 
