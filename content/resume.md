@@ -138,6 +138,7 @@ My interests include (but are not limited to): R, data, web development, running
   <li>A. B. Collier, "Innovation and Invention," Derivco Brown Bag, 12 March 2015.</li>
   <li>A. B. Collier, "RNG: From Trinity to Table Games," Derivco Brown Bag, 30 September 2014.</li>
   <li>A. B. Collier, "Lightning Activity Predictions for Single Buoy Moorings," in <em>58th Annual Conference of the South African Institute of Physics</em>, Richard's Bay, South Africa, 2013.</li>
+  <li>A. B. Collier, "Clustering Lightning Discharges to Identify Storms", LIGHTS 2013 Conference, Johannesburg, 2013.</li>
   <li>A. B. Collier, "Global Lightning Detection with WWLLN," in <em>NASSP Colloquim</em>, University of Cape Town, Cape Town, 2012.</li>
   <li>A. B. Collier, J. Lichtenberger, C. J. Rodger, M. A. Clilverd, and B. Delport, "Possible Whistler Source Lightning from Correlations," in <em>PLASMON Workshop</em>, Hermanus, South Africa, 2012.</li>
   <li>A. B. Collier, C. J. Rodger, M. A. Clilverd, and B. Delport, "Narrowband VLF Observations as Validation of Plasmaspheric Model," in <em>5th VERSIM Workshop</em>, São Paulo, Brazil, 2012.</li>
