@@ -36,10 +36,21 @@ Now grab the source directly from the repository on GitHub.
 git clone https://github.com/Project-OSRM/osrm-backend.git
 {{< /highlight >}}
 
-Move into the source folder, create a `build` folder and then run `cmake` to generate Makefiles.
+Move into the source folder.
 
 {{< highlight bash >}}
 cd osrm-backend/
+{{< /highlight >}}
+
+Although you could probably just build from the current state of the repository, it might make sense to choose the most recent [release](https://github.com/Project-OSRM/osrm-backend/releases). So, for example, to checkout version v5.16.4:
+
+{{< highlight bash >}}
+git checkout v5.16.4
+{{< /highlight >}}
+
+Create a `build` folder and then run `cmake` to generate Makefiles.
+
+{{< highlight bash >}}
 mkdir build
 cd build/
 cmake ..
