@@ -24,9 +24,9 @@ When the above downloads complete you'll find that the PBF file is 8 Gb while th
 
 ## Extract
 
-So how to make use of the PDF file? Well, the PBF files (and the XML files too, actually!) contain a vast array of data, much of which is irrelevant to routing. The `osrm-extract` tool will extract only the salient data, which turns out to be a relatively small subset of the original.
+So how to make use of the PBF file? These files (and the XML files too, actually!) contain a vast array of data, much of which is irrelevant to routing. The `osrm-extract` tool will extract only the salient data, which turns out to be a relatively small subset of the original.
 
-This operation is going to consume memory like a beast! So unless you 're running on a machine with a hefty chunk of RAM you'll need to ensure that you have plenty of [swap space]({{ site.baseurl }}{% post_url 2015-06-19-amazon-ec2-adding-swap %}) available. For reference I did this on an EC2 instance with 30 Gb RAM and added another 45 Gb of swap. It's possible that the swap was overkill but I didn't want memory allocation to be a problem on a long job.
+This operation is going to consume memory like a beast! So unless you're running on a machine with a hefty chunk of RAM you'll need to ensure that you have plenty of [swap space]({{< relref "2015-06-19-amazon-ec2-adding-swap.md" >}}) available. For reference I did this on an EC2 instance with 30 Gb RAM and added another 45 Gb of swap. It's possible that the swap was overkill but I didn't want memory allocation to be a problem on a long job.
 
 {{< highlight bash >}}
 osrm-extract north-america-latest.osm.pbf
