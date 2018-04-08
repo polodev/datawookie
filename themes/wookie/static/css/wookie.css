@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700|Oswald|Open+Sans:400,400i,600,600i,700,700i');
 
+/* Options for name on main page. */
+@import url('https://fonts.googleapis.com/css?family=Dosis|Gugi|Montserrat+Alternates|Nixie+One|Orbitron|Philosopher');
+
 html,
 body {
   background: #fff;
@@ -7,6 +10,13 @@ body {
   font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-size: 14px;
+}
+
+.handle {
+  font-family: Orbitron;
+  font-size: 12rem;
+  /*padding-bottom: 18rem;*/
+  padding-top: 18rem;
 }
 
 #header {
@@ -86,13 +96,13 @@ nav a:hover {
 }
 
 #header {
-  border-bottom: 1px dashed #aaa;
+  /*border-bottom: 1px dashed #aaa;*/
 }
 
 /*#content,*/
 #footer,
 hr {
-  border-top: 1px dashed #aaa;
+  /*border-top: 1px dashed #aaa;*/
 }
 
 #content {

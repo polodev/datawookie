@@ -32,7 +32,7 @@ This operation is going to consume memory like a beast! So unless you're running
 osrm-extract north-america-latest.osm.pbf
 {{< /highlight >}}
 
-And, yes, it's also going to take some time. So get busy doing something else. Waiting will be frustrating.
+And, yes, it's also going to take some time (especially if the job is too big to fit into RAM and it starts swapping). So get busy doing something else. Waiting will be frustrating.
 
 ## Contract
 
