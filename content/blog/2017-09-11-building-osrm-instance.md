@@ -149,7 +149,7 @@ Next the distance and time between two locations.
 curl "http://127.0.0.1:5000/route/v1/driving/31.043515,-29.778562;31.029080,-29.795506" | jq
 {{< /highlight >}}
 
-{{< highlight bash >}}
+{{< highlight text >}}
 {
   "code": "Ok",
   "routes": [
