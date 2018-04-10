@@ -25,7 +25,7 @@ mkdir ~/mysql-data
 Next create a (temporary) environment variable to store the MySQL `root` user password. This is not really necessary, but it made my life easier.
 
 {{< highlight bash >}}
-MYSQL_ROOT_PASSWORD="Perc!oreggIn2"
+MYSQL_ROOT_PASSWORD="PercoreggIn2"
 {{< /highlight >}}
 
 Now launch an instance of the [MySQL Docker image](https://hub.docker.com/_/mysql/). Note that the folder created above is listed as a volume and linked to the folder `/var/lib/mysql` on the container.
