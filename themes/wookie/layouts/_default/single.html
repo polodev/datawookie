@@ -1,5 +1,8 @@
 {{ partial "header.html" . }}
 <h1>{{ .Title }}</h1>
+{{ with .Params.subtitle }}
+<h2 class="subtitle">{{.}}</h2>
+{{ end }}
 {{ if hasPrefix .URL "/blog/" }}
 <p>
 	<span class="timestamp">{{ .Date.Format "2006-01-02" }}</span>

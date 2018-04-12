@@ -255,6 +255,10 @@ ul.pagination {
   background-color: #ddd;
 }
 
+th, td {
+  vertical-align: baseline;
+}
+
 table.experience, table.education {
   width: 100%;
 }
