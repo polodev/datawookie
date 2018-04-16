@@ -45,11 +45,11 @@ See <a href="#programme">programme</a> below for further details.
 	</tr>
 </table>
 
-<a class="btn btn-success btn-sm" href="https://www.quicket.co.za/events/44467-web-scraping-with-r/" role="button">Register</a>
-
 There are just 20 seats available. A 10% discount is available for groups of 4 or more people from a single organisation attending both days.
 
 Email <a href="mailto:training@exegetic.biz?subject=Web Scraping Workshop (Cape Town) 14-15 June 2018">training@exegetic.biz</a> if you have any questions about the workshop.
+
+<a class="btn btn-success btn-sm" href="https://www.quicket.co.za/events/44467-web-scraping-with-r/" role="button"><i class="fa fa-rocket"></i> Register</a>
 
 ## Programme
 
@@ -90,4 +90,4 @@ Email <a href="mailto:training@exegetic.biz?subject=Web Scraping Workshop (Cape 
     - Headless browsers
     - Automation with cron
 
-<a class="btn btn-success btn-sm" href="https://www.quicket.co.za/events/44467-web-scraping-with-r/" role="button">Register</a>
+<a class="btn btn-success btn-sm" href="https://www.quicket.co.za/events/44467-web-scraping-with-r/" role="button"><i class="fa fa-rocket"></i> Register</a>
