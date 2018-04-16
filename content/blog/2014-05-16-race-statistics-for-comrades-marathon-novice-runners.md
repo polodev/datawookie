@@ -21,7 +21,7 @@ For the purposes of this article I will be adopting the first definition. This i
 
 ## Identifying a Novice
 
-I'll be using the same data sets that I have discussed in [previous articles](http://www.exegetic.biz/blog/tag/comrades-marathon/). Before we focus on the data for the novices we'll start by just retaining the fields of interest.
+I'll be using the same data sets that I have discussed in [previous articles](https://datawookie.netlify.com/tags/running/). Before we focus on the data for the novices we'll start by just retaining the fields of interest.
 
 {{< highlight r >}}
 > novices = results[, c("key", "year", "category", "gender", "medal", "medal.count", "status", "ftime")]
@@ -103,7 +103,7 @@ How can you help ensure that you have a successful race? Here are some of the th
 
 See you in Pietermaritzburg at 05:30 on 1 June!
 
-**Note:** There's an error in this post which is corrected [here]({{ site.baseurl }}/blog/2014/05/race-statistics-for-comrades-marathon-novice-runners-corrigendum/).
+**Note:** There's an error in this post which is corrected [here]({{< relref "2014-05-17-race-statistics-for-comrades-marathon-novice-runners-corrigendum.md" >}}).
 
 ### Acknowledgement
 

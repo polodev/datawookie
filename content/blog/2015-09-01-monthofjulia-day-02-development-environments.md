@@ -29,7 +29,7 @@ You can produce inline plots and the same click-and-drag mechanism mentioned abo
 
 ## IJulia Notebooks
 
-You can run Julia code directly in your browser using the IJulia notebooks at [JuliaBox.org](https://www.juliabox.org/). These notebooks are based on functionality from [IPython](http://ipython.org/). You can read more about how they work [here](http://ipython.org/notebook.html).
+You can run Julia code directly in your browser using the IJulia notebooks at [JuliaBox.org](https://www.juliabox.com/). These notebooks are based on functionality from [IPython](http://ipython.org/). You can read more about how they work [here](http://ipython.org/notebook.html).
 
 Sign in using your Google identity. Everybody has one of those, right?
 

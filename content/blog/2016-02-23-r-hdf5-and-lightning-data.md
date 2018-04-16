@@ -11,13 +11,13 @@ I used to spend an inordinate amount of time digging through lightning data. The
 
 ## LIS and OTD
 
-The [Optical Transient Detector](http://thunder.msfc.nasa.gov/otd/) (OTD) and [Lightning Imaging Sensor](http://thunder.msfc.nasa.gov/lis/overview_lis_instrument.html) (LIS) were instruments for detecting lightning discharges from Low Earth Orbit. OTD was launched in 1995 on the MicroLab-1 satellite into a near polar orbit with inclination 70&deg;. OTD achieved global (spatial) coverage for the period May 1995 to April 2000 with roughly 60% uptime. LIS was an instrument on the [TRMM](https://en.wikipedia.org/wiki/Tropical_Rainfall_Measuring_Mission) satellite, launched into a 35&deg; inclination orbit during 1997. Data from LIS were thus confined to more tropical latitudes. The TRMM mission only ended in April 2015.
+The [Optical Transient Detector](https://lightning.nsstc.nasa.gov/otd/) (OTD) and [Lightning Imaging Sensor](https://lightning.nsstc.nasa.gov/lis/overview_lis_instrument.html) (LIS) were instruments for detecting lightning discharges from Low Earth Orbit. OTD was launched in 1995 on the MicroLab-1 satellite into a near polar orbit with inclination 70&deg;. OTD achieved global (spatial) coverage for the period May 1995 to April 2000 with roughly 60% uptime. LIS was an instrument on the [TRMM](https://en.wikipedia.org/wiki/Tropical_Rainfall_Measuring_Mission) satellite, launched into a 35&deg; inclination orbit during 1997. Data from LIS were thus confined to more tropical latitudes. The TRMM mission only ended in April 2015.
 
 The seminal work using data from OTD, [Global frequency and distribution of lightning as observed from space by the Optical Transient Detector](http://onlinelibrary.wiley.com/doi/10.1029/2002JD002347/abstract), was published by Hugh Christian and his collaborators in 2003. It's open access and well worth a read if you are interested in where and when lightning happens across the Earth's surface.
 
 ## Preprocessing HDF4 to HDF5
 
-The LIS/OTD data are available as HDF4 files from <http://thunder.msfc.nasa.gov/data/>. To load them into R I first converted to HDF5 using a tool from the h5utils suite:
+The LIS/OTD data are available as HDF4 files from <https://lightning.nsstc.nasa.gov/data/>. To load them into R I first converted to HDF5 using a tool from the h5utils suite:
 
 {{< highlight bash >}}
 $ h5fromh4 -d lrfc LISOTD\_LRFC\_V2.3.2014.hdf

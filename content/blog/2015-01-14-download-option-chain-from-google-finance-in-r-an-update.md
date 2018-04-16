@@ -5,7 +5,7 @@ tags: ["R"]
 title: 'Downloading Options Data in R: An Update'
 ---
 
-I recently read an [article](http://mktstk.wordpress.com/2014/12/29/start-trading-like-a-quant-download-option-chains-from-google-finance-in-r/) which showed how to download Option Chain data from [Google Finance](https://www.google.com/finance) using R. Interestingly, that article appears to be a close adaption of [another article](http://www.drtomstarke.com/index.php/option-chains-from-google-finance-api) which does the same thing using Python.
+I recently read an [article](http://mktstk.wordpress.com/2014/12/29/start-trading-like-a-quant-download-option-chains-from-google-finance-in-r/) which showed how to download Option Chain data from [Google Finance](https://www.google.com/finance) using R. <!-- Interestingly, that article appears to be a close adaption of [another article](http://www.drtomstarke.com/index.php/option-chains-from-google-finance-api) which does the same thing using Python. -->
 
 <!--more-->
 

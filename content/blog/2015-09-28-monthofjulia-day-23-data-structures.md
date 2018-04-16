@@ -99,7 +99,7 @@ julia> cnt["mouse"] # But we still have a handful of mice.
 5
 {{< /highlight >}}
 
-I've just finished reading through the second early access version of [Julia in Action](https://www.manning.com/books/julia-in-action) by Chris von Csefalvay. In the chapter on Strings the author present a nice example in which he counts the times each character speaks in Shakespeare's Hamlet. I couldn't help but think that this would've been even more elegant using an `Accumulator`.
+I've just finished reading through the second early access version of [Julia in Action](https://www.manning.com/books/julia-in-action-cx1-cx) by Chris von Csefalvay. In the chapter on Strings the author present a nice example in which he counts the times each character speaks in Shakespeare's Hamlet. I couldn't help but think that this would've been even more elegant using an `Accumulator`.
 
 Tomorrow we'll take a look at an extremely useful data structure: a graph. Until then, feel free to check out the full code for today on [github](https://github.com/DataWookie/MonthOfJulia).
 

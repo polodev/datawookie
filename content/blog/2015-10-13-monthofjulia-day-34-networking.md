@@ -233,7 +233,7 @@ You can have a lot of fun playing around with the features in the Twitter API. T
 
 ## HTTP Servers
 
-The [HttpServer](https://github.com/JuliaWeb/HttpServer.jl) package provides low level functionality for implementing a HTTP server in Julia. The [Mux](https://github.com/one-more-minute/Mux.jl) package implements a higher level of abstraction. There are undoubtedly easier ways of serving your HTTP content, but being able to do it from the ground up in Julia is cool if nothing else! Case in point: [Sudoku-as-a-Service](http://iaindunning.com/blog/sudoku-as-a-service.html) is hosted using the HttpServer package. The code is available on the [project page](https://github.com/IainNZ/SudokuService) and serves as an excellent illustration of why you might want to use Julia to serve your content directly.
+The [HttpServer](https://github.com/JuliaWeb/HttpServer.jl) package provides low level functionality for implementing a HTTP server in Julia. The [Mux](https://github.com/one-more-minute/Mux.jl) package implements a higher level of abstraction. There are undoubtedly easier ways of serving your HTTP content, but being able to do it from the ground up in Julia is cool if nothing else! <!-- Case in point: [Sudoku-as-a-Service](http://iaindunning.com/blog/sudoku-as-a-service.html) is hosted using the HttpServer package. The code is available on the [project page](https://github.com/IainNZ/SudokuService) and serves as an excellent illustration of why you might want to use Julia to serve your content directly. -->
 
 That's it for today. I realise that I have already broken through the "month" boundary. I still have a few more topics that I want to cover. It might end up being something more like "A Month and a Week of Julia".
 

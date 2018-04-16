@@ -5,7 +5,7 @@ tags: ["R"]
 title: Implementing a Queue as a Reference Class
 ---
 
-I am working on a simulation for an [Automatic Repeat-reQuest (ARQ)](https://en.wikipedia.org/wiki/Automatic_repeat_request) algorithm. After trying various options, I concluded that I would need an implementation of a [queue](https://en.wikipedia.org/wiki/Queue_(abstract_data_type)) to make this problem tractable. R does not have a native queue data structure, so this seemed like a good opportunity to implement one and learn something about [Reference Classes](http://www.inside-r.org/r-doc/methods/ReferenceClasses) in the process.
+I am working on a simulation for an [Automatic Repeat-reQuest (ARQ)](https://en.wikipedia.org/wiki/Automatic_repeat_request) algorithm. After trying various options, I concluded that I would need an implementation of a [queue](https://en.wikipedia.org/wiki/Queue_(abstract_data_type)) to make this problem tractable. R does not have a native queue data structure, so this seemed like a good opportunity to implement one and learn something about Reference Classes in the process.
 
 # The Implementation
 

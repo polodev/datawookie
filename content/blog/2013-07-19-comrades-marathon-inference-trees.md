@@ -5,7 +5,7 @@ tags: ["R", "running"]
 title: Comrades Marathon Inference Trees
 ---
 
-Following up on my [previous posts](http://www.exegetic.biz/blog/tag/comrades-marathon/)&nbsp;regarding the results of the [Comrades Marathon](http://www.comrades.com/), I was planning on putting together a set of models which would predict likelihood to finish and probable finishing time. Along the way I got distracted by something else that is just as interesting and which produces results which readily yield to qualitative interpretation: Conditional Inference Trees as implemented in the R package [party](http://www.inside-r.org/packages/cran/party/docs/ctree).
+Following up on my [previous posts](https://datawookie.netlify.com/tags/running/) regarding the results of the [Comrades Marathon](http://www.comrades.com/), I was planning on putting together a set of models which would predict likelihood to finish and probable finishing time. Along the way I got distracted by something else that is just as interesting and which produces results which readily yield to qualitative interpretation: Conditional Inference Trees as implemented in the R package [party](https://cran.r-project.org/web/packages/party/index.html).
 
 Just to recall what the data look like:
 

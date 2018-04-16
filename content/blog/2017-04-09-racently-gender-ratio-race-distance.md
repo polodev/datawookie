@@ -17,7 +17,7 @@ However, I'm able to explore a similar gender related question using the racentl
 
 ## What's Happening in America
 
-But first let's take a look at some results published by [Running USA](http://www.runningusa.org/statistics).
+But first let's take a look at some results published by [Running USA](http://www.runningusa.org/).
 
 <img src="/img/2017/04/running-usa-count-year-gender.png" >
 

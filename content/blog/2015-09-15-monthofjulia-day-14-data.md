@@ -13,7 +13,7 @@ title: 'MonthOfJulia Day 14: Data'
 
 The `DataFrame` type in Julia is not dissimilar to the analogous types in R and Python/[pandas](http://pandas.pydata.org/). It provides a way of grouping data which is convenient for analysis and reminiscent of a database table.
 
-I'm assuming that you've already installed the [DataFrames](http://dataframesjl.readthedocs.org/en/latest/) package. If not, take a look at [yesterday's post](http://www.exegetic.biz/blog/2015/09/monthofjulia-day-13-packages/). The first step is then to load it up:
+I'm assuming that you've already installed the [DataFrames](http://juliadata.github.io/DataFrames.jl/latest/) package. If not, take a look at [yesterday's post](http://www.exegetic.biz/blog/2015/09/monthofjulia-day-13-packages/). The first step is then to load it up:
 
 {{< highlight julia >}}
 julia> using DataFrames

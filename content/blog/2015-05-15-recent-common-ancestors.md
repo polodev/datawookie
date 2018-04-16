@@ -19,7 +19,7 @@ It would be interesting to replicate some of those results.
 
 ## An Even Simpler Model
 
-In an earlier paper, [Recent common ancestors of all present-day individuals](http://projecteuclid.org/euclid.aap/1029955256), Chang considered a simpler model which he described as follows:
+In an earlier paper, [Recent common ancestors of all present-day individuals](https://www.jstor.org/stable/1428340), Chang considered a simpler model which he described as follows:
 
 <blockquote>
 We assume the population size is constant at n. Generations are discrete and non-overlapping. The genealogy is formed by this random process: in each generation, each individual chooses two parents at random from the previous generation. The choices are made just as in the standard Wright–Fisher model (randomly and equally likely over the n possibilities) the only difference being that here each individual chooses twice instead of once. All choices are made independently. Thus, for example, it is possible that when an individual chooses his two parents, he chooses the same individual twice, so that in fact he ends up with just one parent; this happens with probability 1/n.

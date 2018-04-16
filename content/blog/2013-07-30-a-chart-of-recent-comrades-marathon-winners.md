@@ -5,7 +5,7 @@ tags: ["R", "running"]
 title: A Chart of Recent Comrades Marathon Winners
 ---
 
-Continuing on my [quest to document the Comrades Marathon results](http://www.exegetic.biz/blog/tag/comrades-marathon/), today I have put together a chart showing the winners of both the men and ladies races since 1980. Click on the image below to see a larger version.
+Continuing on my [quest to document the Comrades Marathon results](https://datawookie.netlify.com/tags/running/), today I have put together a chart showing the winners of both the men and ladies races since 1980. Click on the image below to see a larger version.
 
 <img src="/img/2013/07/winners-scatterchart.png" >
 

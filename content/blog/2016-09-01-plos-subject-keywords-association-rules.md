@@ -9,7 +9,7 @@ title: 'PLOS Subject Keywords: Association Rules'
 
 In a [previous post](http://www.exegetic.biz/blog/2016/08/plos-subjects-gathering-data/) I detailed the process of compiling data on subject keywords used in articles published in PLOS journals. In this instalment I'll be using those data to mine Association Rules with the [arules](http://lyle.smu.edu/IDA/arules/) package. Good references on the topic of Association Rules are
 
-* Section 14.2 of [The Elements of Statistical Learning](http://statweb.stanford.edu/~tibs/ElemStatLearn/) (2009) by Hastie, Tibshirani and Friedman; and 
+* Section 14.2 of [The Elements of Statistical Learning](https://web.stanford.edu/~hastie/ElemStatLearn/) (2009) by Hastie, Tibshirani and Friedman; and 
 * [Introduction to arules](https://cran.r-project.org/web/packages/arules/vignettes/arules.pdf) by Hahsler, Grün, Hornik and Buchta.
 
 <img src="/img/2016/08/association-rule-image.png">

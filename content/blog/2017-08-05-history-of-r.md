@@ -184,7 +184,7 @@ This is a work in progress. The information is cobbled together from a range of 
 	- R released as Open-Source Software
 - 1993:
 	- Started as a research project (Auckland, New Zealand)
-	- Initial work announced on the [<code>s-news</code>](http://www.biostat.wustl.edu/s-news/) mailing list
+	- Initial work announced on the <code>s-news</code> mailing list
 
 ### Sources
 

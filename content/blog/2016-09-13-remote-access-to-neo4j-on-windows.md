@@ -31,6 +31,6 @@ dbms.connector.http.enabled=true
 dbms.connector.http.address=0.0.0.0:7474
 {{< /highlight >}}
 
-Your server will now be available to other machines via port 7474. From the local machine it'll still be at `http://localhost:7474/`.
+Your server will now be available to other machines via port 7474. From the local machine it'll still be at http://localhost:7474/.
 
 The above solution works (at least) for Neo4j 3.0.4.

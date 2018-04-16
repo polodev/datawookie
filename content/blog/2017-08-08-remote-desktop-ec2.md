@@ -76,7 +76,7 @@ sudo apt install -y xfce4 xfce4-goodies
 echo xfce4-session >~/.xsession
 {{< /highlight >}}
 
-- [Unity](https://unity.ubuntu.com/)
+- Unity
 
 {{< highlight bash >}}
 echo unity >~/.xsession

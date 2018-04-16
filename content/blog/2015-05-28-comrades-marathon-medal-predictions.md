@@ -25,7 +25,7 @@ I'm not going to delve too deeply into the details, but if you really don't have
 
 ## Raw Data
 
-The data for this analysis were compiled from a variety of sources. I scraped the medal results off the [Comrades Marathon Results Archive](http://results.ultimate.dk/comrades/resultshistory/front/index.php). Times for other distances were cobbled together from [Two Oceans Marathon Results](http://admin.twooceansmarathon.org.za/HistorySearch.aspx), [RaceTec Results](http://www.racetecresults.com/startpage.aspx?CId=35) and the home pages of some well organised running clubs.
+The data for this analysis were compiled from a variety of sources. I scraped the medal results off the [Comrades Marathon Results Archive](http://results.ultimate.dk/comrades/resultshistory/front/index.php). Times for other distances were cobbled together from [Two Oceans Marathon Results](http://www.twooceansmarathon.org.za/events/info/results), [RaceTec Results](http://www.racetecresults.com/startpage.aspx?CId=35) and the home pages of some well organised running clubs.
 
 The distribution of the data is broken down below as a function of gender, Comrades Marathon medal and other distances for which I have data. For instance, I have data for 45 female runners who got a Bronze medal and for whom a 32 km race time was available.
 

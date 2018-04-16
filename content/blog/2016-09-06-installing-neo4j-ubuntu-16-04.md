@@ -65,6 +65,6 @@ sudo service neo4j start
 
 ## Accessing Neo4j
 
-You should now be able to access the database server via <http://localhost:7474/browser/>.
+You should now be able to access the database server via http://localhost:7474/browser/.
 
 I had some problems logging in with the default username and password (`neo4j` and `neo4j`), but this was easily resolved by deleting the file `/var/lib/neo4j/data/dbms/auth` and restarting the server.

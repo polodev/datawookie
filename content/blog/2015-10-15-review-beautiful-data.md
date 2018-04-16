@@ -14,7 +14,7 @@ I've just finished reading [Beautiful Data](http://shop.oreilly.com/product/9780
 Since this is a collection of essays, the writing style and level of technical detail varies considerably between chapters. To be honest, I didn't find every chapter absolutely riveting, but I generally came away from each of them having learned a thing or two. Below is a list of chapter titles with occasional comments.
 
 1. _Seeing Your Life in Data_   
-Nathan Yau writes about personal data collection, highlighting [your.flowingdata](http://your.flowingdata.com/) which is a Twitter app for gathering personal data. Although I am keenly interested in the data logged by my Garmin 910XT, I don't think that I have the discipline to tweet every time I go out for a run. Regardless though, it's a cool idea.
+Nathan Yau writes about personal data collection, highlighting [your.flowingdata](https://flowingdata.com/) which is a Twitter app for gathering personal data. Although I am keenly interested in the data logged by my Garmin 910XT, I don't think that I have the discipline to tweet every time I go out for a run. Regardless though, it's a cool idea.
 2. _The Beautiful People: Keeping Users in Mind When Designing Data Collection Methods_ 
 3. _Embedded Image Data Processing on Mars_   
 Instruments on planetary probes operate under significant technological constraints. So it's fascinating to learn the details behind the imaging system on the Phoenix Mars lander.

@@ -5,7 +5,7 @@ tags: ["R"]
 title: 'Plotting categorical variables'
 ---
 
-In the [previous installment]({{ site.baseurl }}/blog/2013/05/introducing-r-plots-of-numerical-variables/) we generated a few plots using numerical data straight out of the National Health and Nutrition Examination Survey. This time we are going to incorporate some of the categorical variables into the plots. Although going from raw numerical data to categorical data bins (like we did for age and BMI) does give you less precision, it can make drawing conclusions from plots a lot easier.
+In the [previous installment]({{< relref "2013-05-18-plotting-numerical-variables.md" >}}) we generated a few plots using numerical data straight out of the National Health and Nutrition Examination Survey. This time we are going to incorporate some of the categorical variables into the plots. Although going from raw numerical data to categorical data bins (like we did for age and BMI) does give you less precision, it can make drawing conclusions from plots a lot easier.
 
 We will start off with a simple plot of two numerical variables: age against BMI.
 

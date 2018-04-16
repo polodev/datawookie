@@ -82,7 +82,7 @@ v"0.3.10"
 
 <blockquote>
 The practical implications of picking number types are pretty important. Efficient programming requires you to use the least amount of memory.
-<cite><a href="https://manning.com/books/julia-in-action">Julia in Action</a> by Chris von Csefalvay</cite> 
+<cite><a href="https://www.manning.com/books/julia-in-action-cx1-cx">Julia in Action</a> by Chris von Csefalvay</cite> 
 </blockquote>
 
 Julia has an extensive [type hierachy](http://sidekick.windforwings.com/2013/03/print-julia-type-tree-with-juliatypesjl.html) with its root at the universal `Any` type. You can query the current data type for a variable using `typeof()`. As mentioned above, this is dynamic and a variable can readily be reassigned a value with a different type.

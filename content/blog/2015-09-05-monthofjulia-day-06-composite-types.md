@@ -83,6 +83,6 @@ Cow()
 
 The `immutable` keyword will create a type where the attributes cannot be modified after instantiation.
 
-Additional ramblings and examples of composite types can be found on [github](https://github.com/DataWookie/MonthOfJulia). Also I've just received an advance copy of [Julia in Action](https://www.manning.com/books/julia-in-action) by Chris von Csefalvay which I'll be reviewing over the next week or so.
+Additional ramblings and examples of composite types can be found on [github](https://github.com/DataWookie/MonthOfJulia). Also I've just received an advance copy of [Julia in Action](https://www.manning.com/books/julia-in-action-cx1-cx) by Chris von Csefalvay which I'll be reviewing over the next week or so.
 
 <img src="/img/2015/09/Learn_Julia_meap.jpg" >

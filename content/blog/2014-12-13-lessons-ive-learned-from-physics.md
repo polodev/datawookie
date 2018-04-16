@@ -9,7 +9,7 @@ title: Lessons I've Learned from Physics
 
 <iframe src="//www.slideshare.net/slideshow/embed_code/key/fS3YAp43ihxMa3" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/andrewbcollier/lessons-fromphysics" title="Lessons I've Learned from Physics" target="_blank">Lessons I've Learned from Physics</a> </strong> from <strong><a target="_blank" href="https://www.slideshare.net/andrewbcollier">Andrew Collier</a></strong> </div>
 
-These are the slides from a short talk that I gave to a group of developers at [DERIVCO Dev](http://www.derivcodev.com/) night. The title of the talk seemed a little pompous in retrospect and I considered retitling it _The Physics of Cats and Mayonnaise_. One of my colleagues came up with the title _Levers and Gravity and Shit_, which I rather like too.
+These are the slides from a short talk that I gave to a group of developers at a [DERIVCO](http://www.derivcodev.com/) Dev Night. The title of the talk seemed a little pompous in retrospect and I considered retitling it _The Physics of Cats and Mayonnaise_. One of my colleagues came up with the title _Levers and Gravity and Shit_, which I rather like too.
 
 The content of the talk is a little hard to follow from the slides alone, but the general gist of it is that there are some broad principles in Physics which can be interpreted (tenuously extended?) to the world of software development.
 

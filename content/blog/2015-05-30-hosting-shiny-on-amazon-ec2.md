@@ -17,7 +17,7 @@ I recently finished some work on a Shiny application which incorporated a Random
 
 Bummer.
 
-I looked around for alternatives and found that [Amazon Elastic Compute Cloud (EC2)](http://en.wikipedia.org/wiki/Amazon_Elastic_Compute_Cloud) was very viable indeed. I just needed to get it suitably configured. A [helpful article](http://www.numbrcrunch.com/blog/how-to-host-your-shiny-app-on-amazon-ec2-for-mac-osx) documented the process from an OSX perspective. This is the analogous Ubuntu view (which really only pertains to the last few steps of connecting via SSH and uploading your code).
+I looked around for alternatives and found that [Amazon Elastic Compute Cloud (EC2)](http://en.wikipedia.org/wiki/Amazon_Elastic_Compute_Cloud) was very viable indeed. I just needed to get it suitably configured. <!-- A [helpful article](http://www.numbrcrunch.com/blog/how-to-host-your-shiny-app-on-amazon-ec2-for-mac-osx) documented the process from an OSX perspective. This is the analogous Ubuntu view (which really only pertains to the last few steps of connecting via SSH and uploading your code). -->
 
 Before embarking on this adventure it might be worthwhile reading some of the material about [Getting Started with AWS](http://aws.amazon.com/documentation/gettingstarted/).
 
@@ -98,7 +98,7 @@ Further information about configuring and running the Shiny server can be found 
 
 ## Installing and Testing your Applications
 
-Transfer your applications across to the remote instance using sftp or scp. Then move them to a location under `/srv/shiny-server/`. You should now be ready to roll. You access the Shiny server on port 3838. So assuming for example, your application resides in a sub-folder called medal-predictions, then you would browse to <http://ec2-52-24-93-52.us-west-2.compute.amazonaws.com:3838/medal-predictions/>.
+Transfer your applications across to the remote instance using sftp or scp. Then move them to a location under `/srv/shiny-server/`. You should now be ready to roll. You access the Shiny server on port 3838. So assuming for example, your application resides in a sub-folder called medal-predictions, then you would browse to http://ec2-52-24-93-52.us-west-2.compute.amazonaws.com:3838/medal-predictions/.
 
 The structure of the `/srv/shiny-server/` should be something like this:
 

@@ -163,7 +163,7 @@ CONTAINER ID        IMAGE                   COMMAND             CREATED         
 03ca8788b0c8        jupyterhub/jupyterhub   "jupyterhub"        5 seconds ago       Up 5 seconds        0.0.0.0:80->8000/tcp   fervent_ramanujan
 {{< /highlight >}}
 
-You should now be able to visit <http://ec2-34-201-235-59.compute-1.amazonaws.com/> in your browser and find a Jupyter login dialog.
+You should now be able to visit http://ec2-34-201-235-59.compute-1.amazonaws.com/ in your browser and find a Jupyter login dialog.
 
 If you get a `500 : Internal Server Error` then check the Docker logs. It's very likely that you'll find `PAM Authentication failed` which indicates that there is a problem with the user account that you are trying to use to login.
 

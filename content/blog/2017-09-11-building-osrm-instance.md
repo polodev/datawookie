@@ -18,7 +18,7 @@ https://github.com/Project-OSRM/osrm-backend/wiki/Running-OSRM
 
 ## Setup
 
-Building OSRM is memory intensive, so unless you are installing on a machine with a good chunk of RAM, you'll want to ensure that there's around 4 Gb of [swap space](/blog/2015/06/amazon-ec2-adding-swap/) available.
+Building OSRM is memory intensive, so unless you are installing on a machine with a good chunk of RAM, you'll want to ensure that there's around 4 Gb of [swap space]({{< relref "2015-06-19-amazon-ec2-adding-swap.md" >}}) available.
 
 ## Building OSRM
 
@@ -89,10 +89,6 @@ The resulting download will be a (possibly rather large) XML file. Move it to th
 ### Data from Geofabrik
 
 You can also download the OpenStreetMap data in a variety of formats from [Geofabrik](http://download.geofabrik.de/).
-
-### OSM on AWS
-
-Another good option if you are going to run your OSRM instance on AWS is to use [OpenStreetMap on AWS](https://aws.amazon.com/public-datasets/osm/).
 
 ## Extracting the Map
 
@@ -268,3 +264,14 @@ Calculate the optimal route between two locations.
 The units are now minutes for `duration` and kilometres for `distance`.
 
 I've been using the `gmapsdistance` package until now. It has worked brilliantly but I've had to manage it carefully to avoid overstepping API limits. With a local OSRM I'll be making the calculations unconstrained!
+
+## OSRM on AWS
+
+An AWS instance is a good option for running an OSRM instance.
+
+A few things to consider:
+
+- potentially use [OpenStreetMap on AWS](https://aws.amazon.com/public-datasets/osm/) as a data source;
+- make sure that port 5000 is open in the security group applied to your instance.
+
+![](/img/2017/09/security-group-port-5000.png)

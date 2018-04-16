@@ -4,7 +4,7 @@ date: 2014-03-11T07:18:43Z
 title: Real Time Lightning Data
 ---
 
-A map of real time lightning data from the World Wide Lightning Location Network (WWLLN) is now available [here](http://wwlln.net/new/map/lightning_map.html "WWLLN Real Time Map"). <!--more--> The map is best viewed in Google Chrome. Try selecting the _Cloud Overlay_ and _Stroke Density_ options.
+A map of real time lightning data from the World Wide Lightning Location Network (WWLLN) is now available [here](http://wwlln.net/new/map/lightning_map.html). <!--more--> The map is best viewed in Google Chrome. Try selecting the _Cloud Overlay_ and _Stroke Density_ options.
 
 <img src="/img/2014/03/wwlln-real-time-map.png">
 

@@ -9,7 +9,7 @@ title: 'MonthOfJulia Day 18: Plotting'
 
 <img src="/img/2015/09/Julia-Logo-Plotting.png">
 
-There's a variety of options for [plotting in Julia](https://en.wikibooks.org/wiki/Introducing_Julia/Plotting). We'll focus on those provided by [`Gadfly`](http://www.gadflyjl.org/), [`Bokeh`](https://github.com/bokeh/Bokeh.jl) and [`Plotly`](http://github.com/plotly/Plotly.jl) and.
+There's a variety of options for [plotting in Julia](https://en.wikibooks.org/wiki/Introducing_Julia/Plotting). We'll focus on those provided by [`Gadfly`](http://www.gadflyjl.org/) and [`Plotly`](http://github.com/plotly/Plotly.jl) and.
 
 ## Gadfly
 
@@ -52,34 +52,9 @@ julia> plot(dataset("MASS", "nlschools"), x="IQ", y="Lang", color="COMB",
 
 Those two examples just scratched the surface. Gadfly can produce histograms, boxplots, ribbon plots, contours and violin plots. There's detailed documentation with numerous examples on the [homepage](http://www.gadflyjl.org/).
 
-Watch the video below (Daniel Jones at JuliaCon 2014) then read on about Bokeh and Plotly.
+Watch the video below (Daniel Jones at JuliaCon 2014) then read on about Plotly.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Wsn5SZDkMeI" frameborder="0" allowfullscreen></iframe>
-
-## Bokeh
-
-Bokeh is a visualisation library for Python. Bokeh, like D3, renders plots as Javascript, which is viewable in a web browser. In addition to the examples on the [library homepage](http://bokeh.pydata.org/en/latest/), more can be found on the [homepage for Julia's Bokeh package](http://bokeh.github.io/Bokeh.jl/).
-
-The first thing you'll need to do is install the Bokeh library. If you already have a working Python installation then this is easily done from the command line:
-
-{{< highlight julia >}}
-$ pip install bokeh
-{{< /highlight >}}
-
-Next load up the package and generate a simple plot.
-
-{{< highlight julia >}}
-julia> using Bokeh
-julia> autoopen(true);
-julia> x = linspace(0, pi);
-julia> y = cos(2 * x);
-julia> plot(x, y, title = "Cosine")
-Plot("Cosine" with 1 datacolumns)
-{{< /highlight >}}
-
-The plot will be written to a file `bokeh_plot.html` in the working directory, which will in turn be opened by the browser. Use `plotfile()` to change the name of the file. The plot is interactive, with functionality to pan and zoom as well as resize the plot window.
-
-<img src="/img/2015/09/bokeh-plot.png">
 
 ## Plotly
 
@@ -127,9 +102,7 @@ That was a static version of the plot. However, one of the major perks of Plotly
 
 ## Google Charts
 
-There's also a fledgling interface to [Google Charts](https://developers.google.com/chart/?hl=en). I'm not going to present any code here, but you can find out how to generate a simple interactive plot like the one below on the [github page](https://github.com/DataWookie/MonthOfJulia) for this series.
-
-[iframe src="http://162.243.184.248/wp-content/uploads/2015/09/google-chart-scatter.html" width="750" height="600" scrolling="no"]
+There's also a fledgling interface to [Google Charts](https://developers.google.com/chart/?hl=en).
 
 Obviously plotting and visualisation in Julia are hot topics. Other plotting packages worth checking out are [`PyPlot`](https://github.com/stevengj/PyPlot.jl), [`Winston`](http://github.com/nolta/Winston.jl) and [`Gaston`](http://github.com/mbaz/Gaston.jl). Come back tomorrow when we'll take a look at using physical units in Julia.
 

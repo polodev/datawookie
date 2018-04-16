@@ -125,7 +125,7 @@ julia> recall(ROC)
 
 A true positive rate of 87.5% and true negative rate of 100% is not too bad at all!
 
-You can find a more extensive introduction to using decision trees with Julia [here](http://bensadeghi.com/decision-trees-julia/). The DecisionTree package also implements [random forest](https://en.wikipedia.org/wiki/Random_forest) and boosting models. Other related packages are:
+The DecisionTree package also implements [random forest](https://en.wikipedia.org/wiki/Random_forest) and boosting models. Other related packages are:
 
 * [SVM](https://github.com/JuliaStats/SVM.jl) ([support vector machines](https://en.wikipedia.org/wiki/Support_vector_machine)); 
 * [kNN](https://github.com/johnmyleswhite/kNN.jl) ([k-nearest neighbours](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm)); 

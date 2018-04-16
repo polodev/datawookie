@@ -5,7 +5,7 @@ tags: ["R", "Conference"]
 title: 'satRday Cape Town: Call for Submissions'
 ---
 
-[satRday Cape Town](http://satrdays.org/capetown2017/) will happen on 18 February 2017 at [Workshop 17](http://open.co.za/workshop17.html), Victoria & Alfred Waterfront, Cape Town, South Africa.
+[satRday Cape Town](http://capetown2017.satrdays.org/) will happen on 18 February 2017 at [Workshop 17](http://workshop17.co.za/), Victoria & Alfred Waterfront, Cape Town, South Africa.
 
 <!--more-->
 

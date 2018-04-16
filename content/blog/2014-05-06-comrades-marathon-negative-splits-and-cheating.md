@@ -15,7 +15,7 @@ There was quite a fuss.
 
 And then everything went quiet. The suspected runners were instructed to attend disciplinary hearings, but the outcomes of these hearings have not been publicised nor have the names of the suspected runners been released.
 
-I have done some [previous analyses](http://www.exegetic.biz/blog/tag/comrades-marathon/) using on Comrades Marathon data. Here I am going to use the same data set to explore these suspicious negative splits.
+I have done some [previous analyses](https://datawookie.netlify.com/tags/running/) using on Comrades Marathon data. Here I am going to use the same data set to explore these suspicious negative splits.
 
 ## Data Preparation
 
@@ -226,6 +226,6 @@ So he was not recorded by either of the timing mats at Camperdown or Polly Short
 
 I wonder what happened with those disciplinary hearings?
 
-## Other Links to This Story
+<!-- ## Other Links to This Story
 
-Mark Dowdeswell had something to say about this in an [interview on Run Talk SA](http://www.talkfeed.co.za/runtalksa/cheats-exposed-at-the-comrades-marathon-you-decide-run-talk-sa-episode-32/).
+Mark Dowdeswell had something to say about this in an [interview on Run Talk SA](http://www.talkfeed.co.za/runtalksa/cheats-exposed-at-the-comrades-marathon-you-decide-run-talk-sa-episode-32/). -->

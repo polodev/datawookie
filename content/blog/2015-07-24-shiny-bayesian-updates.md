@@ -9,7 +9,7 @@ Reading [Bayesian Computation with R](http://www.springer.com/us/book/9780387922
 
 <!--more-->
 
-You can find the app [here](https://datawookie.shinyapps.io/Bayesian-Beta/). Below is a screenshot.
+Below is a screenshot.
 
 <img src="/img/2015/07/bayesian-beta.png" width="100%">
 

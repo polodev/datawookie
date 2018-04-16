@@ -201,6 +201,6 @@ Oh, and one last thing: as I mentioned before, the analysis above is based on th
   2013    10278  3643  5986
 {{< /highlight >}}
 
-Certainly something is deeply wrong in 1984! In the early years it does not make any sense to discriminate between DNF and DNS since there were no independent records kept: we simply know whether or not an athlete finished. The introduction of the ChampionChip timing devices improved the quality of the data dramatically. These chips have been [used by all Comrades Marathon runners since 1997](http://www.runnersworld.co.za/motivation/20-running-breakthroughs-from-the-last-20-years/) although there is a delayed effect on the quality of the data.
+Certainly something is deeply wrong in 1984! In the early years it does not make any sense to discriminate between DNF and DNS since there were no independent records kept: we simply know whether or not an athlete finished. The introduction of the ChampionChip timing devices improved the quality of the data dramatically. These chips have been used by all Comrades Marathon runners since 1997] although there is a delayed effect on the quality of the data.
 
 Despite these issues, the conclusions of the analysis above remain essentially unchanged if you simply lump the DNF and DNS data together (because we cannot always make a meaningful divide between them!).
