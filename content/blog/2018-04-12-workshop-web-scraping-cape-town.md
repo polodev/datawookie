@@ -6,7 +6,7 @@ title: "Workshop: Web Scraping with R"
 subtitle: "Cape Town (14-15 June 2018)"
 ---
 
-Join Andrew Collier and Hanjo Odendaal for a workshop on using R for Web Scraping. Register <a href="https://www.quicket.co.za/events/44467-web-scraping-with-r/">here</a>.
+Join Andrew Collier and Hanjo Odendaal for a workshop on using R for Web Scraping.
 
 ## Who should attend?
 
@@ -45,7 +45,9 @@ See <a href="#programme">programme</a> below for further details.
 	</tr>
 </table>
 
-There are just 20 seats available. A discount is available for groups of 4 or more attendees from a single organisation. Register <a href="https://www.quicket.co.za/events/44467-web-scraping-with-r/">here</a>.
+<a class="btn btn-success btn-sm" href="https://www.quicket.co.za/events/44467-web-scraping-with-r/" role="button">Register</a>
+
+There are just 20 seats available. A 10% discount is available for groups of 4 or more people from a single organisation attending both days.
 
 Email <a href="mailto:training@exegetic.biz?subject=Web Scraping Workshop (Cape Town) 14-15 June 2018">training@exegetic.biz</a> if you have any questions about the workshop.
 
@@ -87,3 +89,5 @@ Email <a href="mailto:training@exegetic.biz?subject=Web Scraping Workshop (Cape 
     - Launching and connecting to an EC2 instance
     - Headless browsers
     - Automation with cron
+
+<a class="btn btn-success btn-sm" href="https://www.quicket.co.za/events/44467-web-scraping-with-r/" role="button">Register</a>
