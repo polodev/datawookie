@@ -269,6 +269,10 @@ table.education td.duration {
   text-align: right;
 }
 
+a.btn {
+  color: white;
+}
+
 @media (min-width: 768px) {
 }
 
