@@ -6,7 +6,7 @@ title: "Workshop: Web Scraping with R"
 subtitle: "Cape Town (14-15 June 2018)"
 ---
 
-Join Andrew Collier and Hanjo Odendaal for a workshop on using R for Web Scraping.
+Join [Andrew Collier](https://twitter.com/DataWookie) and [Hanjo Odendaal](https://twitter.com/UbuntR314) for a workshop on using R for Web Scraping.
 
 ## Who should attend?
 
