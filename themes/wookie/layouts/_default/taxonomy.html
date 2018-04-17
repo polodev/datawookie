@@ -17,7 +17,7 @@
 		<div class="col-md-4">
 			<p>Other tags:</p>
 			<ul>
-			{{ range $.Site.Taxonomies.tags.ByCount }}
+			{{ range $.Site.Taxonomies.tags.Alphabetical }}
 			{{ if gt .Count 1 }}
 			  <li>
 			    <a href="/tags/{{ .Name }}"> {{ .Name }} <small>({{ .Count }})</small></a>

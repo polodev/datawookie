@@ -175,8 +175,15 @@ ol {
 #article .tags a:visited,
 #article .tags a:hover {
   color: #555;
-  padding: 5px;
-  border-radius: 5px;
+  font-size: 85%;
+  /*padding: 5px;*/
+  padding: .25em .4em;
+  /*border-radius: 5px;*/
+  border-radius: .25rem;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
 }
 
 hr {
@@ -226,24 +233,24 @@ ul.pagination {
 }
 
 .pagination li {
-  display: inline-block;
+  display: list-item;
 }
 
 .pagination li a {
-  padding: 5px;
+  /*padding: 5px;*/
+  border: 1px solid #dee2e6;
   transition: background-color .3s;
+  margin-left: -1px;
+  padding: .4rem .6rem;
 }
 
-.pagination .active a:link,
-.pagination .active a:active,
-.pagination .active a:visited,
-.pagination .active a:hover,
-.pagination .disabled a:link,
-.pagination .disabled a:active,
-.pagination .disabled a:visited,
-.pagination .disabled a:hover {
+.pagination a {
   text-decoration: none;
-  border-radius: 5px;
+}
+
+.pagination .disabled a {
+  pointer-events: none;
+  color: grey;
 }
 
 .pagination .active a {

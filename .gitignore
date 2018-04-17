@@ -1,3 +1,5 @@
 themes/introduction/
+themes/hugo-fresh/
 public/
 *.bak
+*sublime*
