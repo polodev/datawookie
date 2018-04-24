@@ -76,6 +76,7 @@ Could add: * List of students supervised.
 <li> Julia, C, C++ and FORTRAN.
 </ul>
 
+<div class="notprint">
 <h2 class="resume">Certifications</h2>
 
 ### Technical
@@ -118,15 +119,21 @@ Project Management Programme; <!-- Peakford Management Consultants  -->
 Toastmasters International Speechcraft Course; <!-- Toastmasters  -->
 Derivco Leadership Code;
 How to Start and Run a Successful Freelancing Business. <!-- Pluralsight  -->
+</div>
 
+<div class="notprint">
 <h2 class="resume">Interests</h2>
 
 My interests include (but are not limited to): R, data, web development, running (road and trail), photography, gardening, food (especially garlic, capers and red wine).
+</div>
 
+<div class="notprint">
 <h2 class="resume">Presentations</h2>
 
 <ul>
-  <li>A. B. Collier, "3 Simple Ways to get Involved with the R Community", eConversations, 20 April 2018.
+  <li>A. B. Collier, "Getting Involved with the R Community", RCCP eConversations, 20 April 2018.
+  <!-- RCCP = Rural Campus Connectivity Project -->
+  <!-- https://twitter.com/aneldavdw/status/987267618531893248 -->
   <li>A. B. Collier, Moderator for <a href="https://www.crowdcast.io/e/future-of-icos">The Future of ICOs</a> panel discussion hosted by Toptal, 11 April 2018.
   <li>A. B. Collier, "Data Science Productivity Hacks." <a href="http://capetown2018.satrdays.org/">satRday</a>, Cape Town, South Africa, 17 March 2018. [<a href="https://datawookie-talks.github.io/productivity-hacks-r/">slides</a>] [<a href="https://youtu.be/fkN1ZmBz5CU">video</a>]</li>
   <li>A. B. Collier, "Running an Ethereum Node." <a href="https://www.meetup.com/Durban-Ethereum-Meetup/events/246648015/">Durban Ethereum Meetup</a>, Derivco, Durban, South Africa, 31 January 2018.</li>
@@ -168,7 +175,9 @@ My interests include (but are not limited to): R, data, web development, running
   <li>A. B. Collier, "Sampling Distance to Collision in Quasi-Monte Carlo Neutral Particle Transport," in <em>Proceedings of the Joint International Conference on Mathematical Methods and Supercomputing for Nuclear Applications</em>, Saratoga Springs, New York, 1997.</li>
   <li>A. B. Collier, "The Marion Island Conjugate Experiment," in <em>39th Annual Conference of the South African Institute of Physics</em>, (University of Bophuthatswana), 1994.</li>
 </ul>
+</div>
 
+<div class="notprint">
 <h2 class="resume">Publications</h2>
 
 <ul>
@@ -218,3 +227,8 @@ My interests include (but are not limited to): R, data, web development, running
   <li>A. B. Collier and A. R. W. Hughes, "Digital VLF Recording and Analysis System for SANAE–IV," <em>South African Journal of Science</em>, vol. 98, no. 11, pp. 547–550, 2002. [<a href="http://reference.sabinet.co.za/document/EJC97429">http</a>]</li>
   <li>L. A. Balona, J. B. Hearnshaw, C. Koen, A. B. Collier, I. Machi, M. Mkhosi, and C. Steenberg, "Photometry and line profile variations of the peculiar variable γ Doradus," <em>Monthly Notices of the Royal Astronomical Society</em>, vol. 267, pp. 103–110, 1994. [<a href="http://dx.doi.org/10.1093/mnras/267.1.103">DOI</a>]</li>
 </ul>
+</div>
+
+<div class="onlyprint">
+  A more detailed version of this document can be found at <a href="{{< ref "resume.md" >}}">{{< ref "resume.md" >}}</a>.
+</div>

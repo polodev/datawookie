@@ -208,7 +208,7 @@ img.left {
 }
 
 table {
-  border-collapse: collapse;
+  /*border-collapse: collapse;*/
   margin-top: 5px;
   margin-bottom: 5px;
 }
@@ -330,4 +330,23 @@ a.btn {
   nav ul.third li a {
     padding: 0.75em 1em;
   }
+}
+
+
+@media not print {
+  .onlyprint {
+    display: none;
+  }
+}
+
+@media print {
+  .notprint {
+    display: none;
+  }
+header nav, footer {
+  display: none;
+}
+@page {
+margin: 0.5cm;
+}
 }
