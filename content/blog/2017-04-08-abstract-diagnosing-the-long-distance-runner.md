@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2017-04-08T09:30:00Z
-tags: ["Talk"]
+tags: ["talk: standard"]
 title: Diagnosing the Long Distance Runner with Django, D3 and R
 subtitle: Building @racently
 ---

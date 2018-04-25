@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2018-03-17T05:30:00Z
-tags: ["Abstract"]
+tags: ["talk: standard"]
 title: "Getting Involved with the R Community: (Slightly more than) 3 Simple Ways"
 ---
 

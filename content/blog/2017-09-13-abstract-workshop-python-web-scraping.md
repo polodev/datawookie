@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2017-09-13T09:30:00Z
-tags: ["Talk"]
+tags: ["talk: workshop"]
 title: Web Scraping Workshop
 ---
 

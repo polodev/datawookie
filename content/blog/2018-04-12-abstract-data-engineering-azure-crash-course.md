@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2018-04-12T01:00:00Z
-tags: ["Abstract"]
+tags: ["talk: standard"]
 title: "Data Engineering with Azure: Crash Course"
 draft: true
 ---

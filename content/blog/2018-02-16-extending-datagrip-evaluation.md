@@ -15,4 +15,6 @@ You can get a free 30 day evaluation license. But perhaps you want to evaluate f
 rm -rf ~/.DataGrip2017.3/
 {{< /highlight >}}
 
+If you are using a newer version of DataGrip then just replace the configuration folder name as appropriate.
+
 Enjoy!

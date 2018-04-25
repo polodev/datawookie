@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2014-12-19T04:00:11Z
-tags: ["Talk"]
+tags: ["talk: standard"]
 title: Random Number Generators
 ---
 

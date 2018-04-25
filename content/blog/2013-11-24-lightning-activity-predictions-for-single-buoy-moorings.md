@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2013-11-24T03:25:57Z
-tags: ["Talk"]
+tags: ["talk: standard"]
 title: Lightning Activity Predictions For Single Buoy Moorings
 ---
 

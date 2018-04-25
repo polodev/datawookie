@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2014-12-13T04:03:23Z
-tags: ["Talk"]
+tags: ["talk: standard"]
 title: Lessons I've Learned from Physics
 ---
 

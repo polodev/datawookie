@@ -1,11 +1,9 @@
 ---
 author: Andrew B. Collier
-categories:
 - Conference
 date: 2017-11-10T12:00:00Z
 excerpt_separator: <!-- more -->
-tags:
-- Talk
+tags: ["talk: standard"]
 title: Hello Durban, tell me how you're doing!
 ---
 

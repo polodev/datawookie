@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2018-04-21T01:00:00Z
-tags: ["Abstract"]
+tags: ["talk: training", "talk: workshop"]
 title: "Introduction to Python for Data Science"
 draft: true
 ---

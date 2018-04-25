@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2013-09-13T07:09:59Z
-tags: ["Talk"]
+tags: ["talk: standard"]
 title: Clustering Lightning Discharges to Identify Storms
 ---
 

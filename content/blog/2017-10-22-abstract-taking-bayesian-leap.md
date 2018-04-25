@@ -2,59 +2,45 @@
 title: 'Taking the Bayesian Leap'
 date: 2017-10-22T09:30:00+00:00
 author: Andrew B. Collier
-excerpt_separator: <!-- more -->
-layout: post
-categories:
-  - Conference
-tags:
-  - Talk
+tags: ["talk: standard"]
+draft: true
 ---
 
-Bayesian techniques can seem challenging and esoteric. However, they promise a powerful alternative to frequentist statistics, with the possibility of extracting even more useful information from your data.
+At first sight Bayesian techniques can seem challenging and esoteric. However, they present a powerful alternative to frequentist statistics, with the promise of extracting more useful information from your data while, at the same time, making fewer (sometimes shaky) assumptions.
 
-This talk will help you get started with Bayesian analyses.
+{{< abstract title="Taking the Bayesian Leap (with R)" >}}
+	{{% abstract-long %}}
+Bayesian techniques present a compelling alternative to the frequentist view of statistics, providing a flexible approach to extracting a swathe of meaningful information from your data. The learning curve is somewhat steep, but the benefits of adding Bayesian techniques to your tool suite are enormous!
 
-<div class="talk">
-	<div class="title">
-	Taking the Bayesian Leap (with R)
-	</div>
-	<div class="abstract">
-What are the minimum things you need to know to start applying Bayesian techniques in R? This talk will provide an entry level discussion covering the following topics:
+What are the bare essentials that you need to know to start applying Bayesian techniques? This talk will provide an entry level discussion covering the following topics:
 
-- What can Bayes do for me? (A brief introduction to Bayesian methods)
-- What is [Stan](http://mc-stan.org/)? (Writing models in Stan)
-- Using Stan in R. (Using the [rstan](https://cran.r-project.org/web/packages/rstan/vignettes/rstan.html) package)
-
-The talk will be peppered with useful tips for dealing with the initial challenges of using Stan.
-	</div>
-</div>
-
-<div class="talk">
-	<div class="title">
-	Taking the Bayesian Leap (with Python)
-	</div>
-	<div class="abstract">
-What are the minimum things you need to know to start applying Bayesian techniques in Python? This talk will provide an entry level discussion covering the following topics:
+<b>R Version</b>
 
 - What can Bayes do for me? (A brief introduction to Bayesian methods)
+- Understanding Markov Chain Monte Carlo. (MCMC is what happens behind the scenes)
 - What is [Stan](http://mc-stan.org/)? (Writing models in Stan)
-- Using Stan in Python. (Using the [PyStan](https://pystan.readthedocs.io/en/latest/) package)
+- Using Stan in R. (The [rstan](https://cran.r-project.org/web/packages/rstan/vignettes/rstan.html) package)
 
-The talk will be peppered with useful tips for dealing with the initial challenges of using Stan.
-	</div>
-</div>
+The talk will be peppered with useful tips for dealing with the initial challenges of using Stan with R.
 
-<div class="talk">
-	<div class="title">
-	Taking the Bayesian Leap (with Julia)
-	</div>
-	<div class="abstract">
-What are the minimum things you need to know to start applying Bayesian techniques in Julia? This talk will provide an entry level discussion covering the following topics:
+<b>Python Version</b>
 
 - What can Bayes do for me? (A brief introduction to Bayesian methods)
+- Understanding Markov Chain Monte Carlo. (MCMC is what happens behind the scenes)
 - What is [Stan](http://mc-stan.org/)? (Writing models in Stan)
-- Using Stan in Julia. (Using the [Stan.jl](https://github.com/goedman/Stan.jl) package)
+- Using Stan in Python. (The [PyStan](https://pystan.readthedocs.io/en/latest/) package)
 
-The talk will be peppered with useful tips for dealing with the initial challenges of using Stan.
-	</div>
-</div>
+The talk will be peppered with useful tips for dealing with the initial challenges of using Stan with Python.
+
+<b>Julia Version</b>
+
+- What can Bayes do for me? (A brief introduction to Bayesian methods)
+- Understanding Markov Chain Monte Carlo. (MCMC is what happens behind the scenes)
+- What is [Stan](http://mc-stan.org/)? (Writing models in Stan)
+- Using Stan in Julia. (The [Stan.jl](https://github.com/goedman/Stan.jl) package)
+
+The talk will be peppered with useful tips for dealing with the initial challenges of using Stan with Julia.
+	{{% /abstract-long %}}
+{{< /abstract >}}
+
+The talk with assume that the audience has basic understanding of the programming language and basic mathematical capabilities. I will explain the required statistical background in simple terms.

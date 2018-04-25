@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2018-04-12T01:00:00Z
-tags: ["Abstract"]
+tags: ["talk: standard"]
 title: "Getting Started with Stream Analytics"
 draft: true
 ---

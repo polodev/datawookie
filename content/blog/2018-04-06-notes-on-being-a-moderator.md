@@ -8,6 +8,8 @@ draft: true
 
 I was recently invited to moderate an online panel discussion entitled "The Future of ICOs". It's the first time that I have been in this role, so I did some research to find out what was expected of me. These are notes from my research mixed in with my personal observations.
 
+CHECK SPELLING
+
 ## Preparation
 
 There are a number of things that you need to do before the event to make sure that you are prepared.
@@ -31,3 +33,4 @@ There are a number of things that you need to do before the event to make sure t
 - Your role as time keeper. Ensure that the discussion starts and ends at the advertised time (although if the discussion is particularly animated, you might let it run a little over time). Ensure that each item on the programme gets its due slice of the time.
 - To draw the event to a close you can say something like "Our time is almost up. Here's a quick summary of what we've talked about...".
 - Share the panellists contact details.
+- Depending on the platform that you are using it might be necessary to ask people to mute their microphones.

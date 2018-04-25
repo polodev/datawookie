@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2018-04-21T01:00:00Z
-tags: ["Abstract"]
+tags: ["talk: standard"]
 title: "R vs Python: Can't we all just get along?"
 draft: true
 ---

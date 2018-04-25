@@ -1,7 +1,7 @@
 ---
 author: Andrew B. Collier
 date: 2018-04-12T01:00:00Z
-tags: ["Training"]
+tags: ["talk: training", "talk: workshop"]
 title: "Workshop: Web Scraping with R"
 subtitle: "Cape Town (14-15 June 2018)"
 ---
