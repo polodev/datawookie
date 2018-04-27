@@ -23,7 +23,7 @@ twitterAuthor = "@datawookie"
 # twitterSite = "@invalid_input"
 
 [permalinks]
-blog  = "/blog/:year/:month/:day/:title/"
+blog  = "/blog/:year/:month/:slug/"
 
 [sitemap]
 changefreq = "monthly"
