@@ -79,7 +79,7 @@ Could add: * List of students supervised.
 <div class="notprint">
 <h2 class="resume">Certifications</h2>
 
-### Technical
+<h3>Technical</h3>
 
 <p><a href="https://software-carpentry.org/">Software Carpentry</a> Instructor.</p>
 
@@ -106,7 +106,7 @@ Introduction to C# Programming;  <!-- Microsoft  -->
 Computational Photography;  <!-- Georgia Institute of Technology  -->
 Computational Investing.
 
-### Soft Skills
+<h3>Soft Skills</h3>
 
 <p>Certified ScrumMaster.</p>
 
