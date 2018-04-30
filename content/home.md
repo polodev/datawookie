@@ -4,6 +4,9 @@ title = "Home"
 draft = false
 +++
 
-<div class="handle text-center">
+<div class="wookie-handle text-center">
 	datawookie
+</div>
+<div>
+	<img class="wookie-logo" src="/img/logo/logo-datawookie.svg">
 </div>

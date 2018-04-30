@@ -12,11 +12,17 @@ body {
   font-size: 14px;
 }
 
-.handle {
+.wookie-handle {
   font-family: Orbitron;
   font-size: 12rem;
   /*padding-bottom: 18rem;*/
   padding-top: 18rem;
+}
+
+.wookie-logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #header {
