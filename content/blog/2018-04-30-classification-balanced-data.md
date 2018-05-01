@@ -106,7 +106,7 @@ Let's take a look at the resulting data.
 
 ## Classifier with Unbalanced Data
 
-At this point it looks like we are ready to build a classifier. We'll partition the data into training and testing sets in a 80:20 proportion.
+At this point it looks like we are ready to build a classifier. We'll partition the data into training and testing sets in 80:20 proportion.
 
 {{< highlight r >}}
 set.seed(13)
@@ -116,7 +116,7 @@ train <- appointments[train_index,]
 test  <- appointments[-train_index,]
 {{< /highlight >}}
 
-We will use the `caret` to build the classifier. Set up some parameters of the model training process.
+We will use the `caret` package to build the classifier. Set up some parameters for the model training process.
 
 {{< highlight r >}}
 control = trainControl(
@@ -124,10 +124,10 @@ control = trainControl(
   number = 10,
   classProbs = TRUE,
   summaryFunction = twoClassSummary
-  )
+)
 {{< /highlight >}}
 
-By default the classifier will be optimised to achieve maximal accuracy. This is not an ideal metric to assessing model performance, especially if we are primarily interested in predicting no show events. So instead we will aim to achieve optimal sensitivity.
+By default the classifier will be optimised to achieve maximal accuracy. This is not an ideal metric, especially if we are primarily interested in predicting no show events (the positive outcome). So instead we will aim to achieve optimal sensitivity.
 
 {{< highlight r >}}
 xgb <- train(no_show ~ .,
@@ -138,7 +138,7 @@ xgb <- train(no_show ~ .,
 )
 {{< /highlight >}}
 
-Let's see how well that performs on the testing data.
+Let's see how that performs on the test data.
 
 {{< highlight r >}}
 confusionMatrix(predict(xgb, test), test$no_show)
@@ -172,9 +172,7 @@ Prediction   Yes    No
        'Positive' Class : Yes
 {{< /highlight >}}
 
-Overall this looks pretty decent: an accuracy of close to 80%. But if we look at a little closer then we see that the classifier is good at predicting the negative class (with a specificity of nearly 99%), but not very effective at identifying the positive class (with a sensitivity of just over 4%).
-
-Clearly this model is no good at all for predicting the positive class.
+Overall that looks pretty decent, with an accuracy of close to 80%. But if we look a little closer then we see that the classifier is good at predicting the negative class (with a specificity of nearly 99%), but not very effective at identifying the positive class (with a sensitivity of just over 4%).
 
 ## Balancing the Data
 
@@ -188,11 +186,11 @@ table(train$no_show)
 17856 70567
 {{< /highlight >}}
 
-The data is strongly biased in favour of the negative class: only 20% of the records represent the situation which we are actually trying to predict.
+The data is strongly biased in favour of the negative class: only 20% of the records represent the situation we're actually trying to predict.
 
-In the confusion matrix above we see that the vast majority of predictions are being assigned the negative class. Since the negative class is far more common in the data, this prediction is correct more often than not. So the model naturally ends up being better at predicting the class that is most prevalent in the data.
+In the confusion matrix above we see that the vast majority of predictions are being assigned the negative class. Since the negative class is far more common in the data, this prediction is correct more often than not. The model naturally ends up being better at predicting the class that is most prevalent in the data.
 
-There are a number of ways that one can address this imbalance. We're going to use `SMOTE()` from the `DMwR` package. [SMOTE](https://jair.org/index.php/jair/article/view/10302) ("Synthetic Minority Over-sampling Technique") is an algorithm which generates balanced data by under-sampling the majority class and over-sampling the minority class. Under-sampling is easy. Over-sampling is more subtle. SMOTE uses nearest neighbour information to synthetically generate new (but representative!) datafor the minority class.
+There are a number of ways that one can address the class imbalance. We're going to use `SMOTE()` from the `DMwR` package. [SMOTE](https://jair.org/index.php/jair/article/view/10302) ("Synthetic Minority Over-sampling Technique") is an algorithm which generates balanced data by under-sampling the majority class and over-sampling the minority class. Under-sampling is easy. Over-sampling is more subtle. SMOTE uses nearest neighbour information to synthetically generate new (but representative!) data for the minority class.
 
 {{< highlight r >}}
 library(DMwR)
@@ -259,9 +257,9 @@ Prediction   Yes    No
        'Positive' Class : Yes
 {{< /highlight >}}
 
-Significantly better! The overall accuracy of the classifier has dropped, but the sensitivity has increased dramatically. The specificity has dropped, but that was inevitable: there's always going to be a compromise between sensitivity and specificity!
+Significantly better! The overall accuracy of the classifier has dropped, but the sensitivity has increased dramatically. The specificity has also declined, but that was inevitable: there's always going to be a compromise between sensitivity and specificity!
 
-Moral: unbalanced data can yield sub-optimal models but simple rebalancing can improve model performance appreciably.
+Moral: unbalanced data can yield sub-optimal models, but simple rebalancing can improve model performance appreciably.
 
 <!--
 <iframe width="560" height="315" src="https://www.youtube.com/embed/JtswlY4WflI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
