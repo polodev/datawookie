@@ -7,10 +7,10 @@ title: Andrew B. Collier
 
 <table class="experience">
 <tr><td><a href="http://www.exegetic.biz/">Exegetic Analytics</a></td><td class="position">Founder & Consulting Data Scientist</td><td class="duration">2008 - present</td></tr>
-<tr><td><a href="http://capetown2018.satrdays.org/">#satRdayCapeTown</a></td><td class="position">Conference Organiser</td><td class="duration">2018</td></tr>
+<tr><td><a href="http://capetown2018.satrdays.org/">#satRday (CapeTown)</a></td><td class="position">Conference Organiser</td><td class="duration">2018</td></tr>
 <tr><td><a href="https://www.toptal.com/">Toptal</a></td><td class="position">Freelance Data Scientist</td><td class="duration">2016 - present</td></tr>
 <tr><td><a href="http://www.ixperience.co.za">iXperience</a></td><td class="position">Head Teacher (Data Science)</td><td class="duration">2017</td></tr>
-<tr><td><a href="http://capetown2017.satrdays.org/">#satRdayCapeTown</a></td><td class="position">Conference Organiser</td><td class="duration">2017</td></tr>
+<tr><td><a href="http://capetown2017.satrdays.org/">#satRday (CapeTown)</a></td><td class="position">Conference Organiser</td><td class="duration">2017</td></tr>
 <tr><td><a href="http://www.derivco.com/">Derivco</a></td><td class="position">Senior Data Scientist</td><td class="duration">2013 - 2017</td></tr>
 <tr><td><a href="http://www.ixperience.co.za">iXperience</a></td><td class="position">Head Teacher (Data Science)</td><td class="duration">2016</td></tr>
 <tr><td><a href="https://birkeland.uib.no/">University of Bergen</a> (Norway)</td><td class="position">Researcher</td><td class="duration">2013 - 2014</td></tr>
@@ -183,6 +183,8 @@ My interests include (but are not limited to): R, data, web development, running
 <ul>
   <li>T. Gjesteland, N. Østgaard, S. Laviola, M. M. Miglietta, E. Arnone, M. Marisaldi, F. Fuschino, A. B. Collier, F. Fabro, and J. Montanya, "Observation of intrinsically bright Terrestrial Gamma ray Flashes from the Mediterranean basin," <em>Journal of Geophysical Research: Atmospheres</em>, vol. 120, no. 23, 2015. [<a href="http://dx.doi.org/10.1002/2015JD023704">DOI</a>]</li>
   <li>N. Østgaard, K. H. Albrecthsen, T. Gjesteland, and A. B. Collier, "A new population of Terrestrial Gamma-ray Flashes in the RHESSI data," <em> Geophysical Research Letters</em>, 2015. [<a href="http://dx.doi.org/10.1002/2015GL067064">DOI</a>]</li>
+  <li>Collier, A. B. "Geospace" in Antarctica and the Arctic Circle, pp. 301–303, 2014.</li>
+  <li>Collier, A. B., and Collier, C. M. "Discovery Expedition (1901-1904)" in Antarctica and the Arctic Circle, pp. 226–229, 2014.</li>
   <li>C. Antel, A. B. Collier, J. Lichtenberger, and C. J. Rodger, "Investigating Dunedin whistlers using volcanic lightning," <em>Geophysical Research Letters</em>, vol. 41, 2014. [<a href="http://dx.doi.org/10.1002/2014GL060332">DOI</a>]</li>
   <li>E. J. Koen, A. B. Collier, and S. K. Maharaj, "A particle-in-cell approach to obliquely propagating electrostatic waves," <em>Physics of Plasmas</em>, vol. 21, 2014. [<a href="http://dx.doi.org/10.1063/1.4894529">DOI</a>]</li>
   <li>E. J. Koen, A. B. Collier, S. K. Maharaj, and M. A. Hellberg, "Particle-In-Cell simulations of ion-acoustic waves with application to Saturn's magnetosphere," <em>Physics of Plasmas</em>, vol. 21, 2014. [<a href="http://dx.doi.org/10.1063/1.4891320">DOI</a>]</li>
