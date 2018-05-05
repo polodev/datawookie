@@ -51,29 +51,33 @@ Could add: * List of students supervised.
 ### Fluent
 
 <ul>
-<li> R. <!-- Packages on CRAN: <a href="https://cran.r-project.org/web/packages/feedeR/index.html">feedeR</a>, <a href="https://cran.r-project.org/web/packages/liqueueR/index.html">liqueueR</a> and <a href="https://cran.r-project.org/web/packages/ubeR/index.html">ubeR</a>. -->
-<li> SQL.
-<li> Data Science; Data Analysis; Machine Learning; Web Scraping.
-<li> Linux, bash (and associated shell tools), regular expressions.
-<li> Version Control and Git.
-<li> Training and mentoring.
-<li> Explaining complex topics to expert and lay audiences.
+  <li> R. <!-- Packages on CRAN: <a href="https://cran.r-project.org/web/packages/feedeR/index.html">feedeR</a>, <a href="https://cran.r-project.org/web/packages/liqueueR/index.html">liqueueR</a> and <a href="https://cran.r-project.org/web/packages/ubeR/index.html">ubeR</a>. -->
+  <li> SQL.
+  <li> Data Science; Data Analysis; Machine Learning; Web Scraping.
+  <li> Linux, bash (and associated shell tools), regular expressions.
+  <li> Amazon Web Services (AWS) and Azure.
+  <li> Version Control and Git.
+  <li> Training and mentoring.
+  <li> Explaining complex topics to expert and lay audiences.
 </ul>
 
 ### Competent
 
 <ul>
-<li> Python.
-<li> Django, Jekyll, Bootstrap, HTML, CSS and SASS.
-<li> JavaScript and D3.
-<li> JSON and XML.
-<li> Docker.
-<li> Continuous Integration.
-<li> QGIS.
+  <li> Python.
+  <li> Django, Jekyll, Bootstrap, HTML, CSS and SASS.
+  <li> JavaScript and D3.
+  <li> JSON and XML.
+  <li> Docker.
+  <li> Continuous Integration.
+  <li> QGIS.
 </ul>
-<h3>Conversant</h3>
+
+### Conversant
+
 <ul>
-<li> Julia, C, C++ and FORTRAN.
+  <li> Julia, C, C++ and FORTRAN.
+  <li> Tableau.
 </ul>
 
 <div class="notprint">
