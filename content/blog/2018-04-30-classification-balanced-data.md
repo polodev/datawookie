@@ -5,6 +5,10 @@ tags: ["R", "machine learning"]
 title: "Classification: Get the Balance Right"
 ---
 
+<!--
+  Presentation on balancing data within caret. https://hanjostudy.github.io/Presentations/Class_of_its_own/Class_of_its_own.html
+-->
+
 <!-- Image: Depeche Mode 'Get the Balance Right' -->
 ![](/img/2018/04/get-the-balance-right.png)
 
