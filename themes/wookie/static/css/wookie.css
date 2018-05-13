@@ -353,10 +353,9 @@ a.btn {
     display: none;
   }
   @page {
-  margin: 0.5cm;
+    margin: 0.5cm;
   }
   a {
-    text-decoration: none;
-    border-bottom-style: none;
+    text-decoration: none !important;;
   }
 }
