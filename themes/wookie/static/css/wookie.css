@@ -349,10 +349,14 @@ a.btn {
   .notprint {
     display: none;
   }
-header nav, footer {
-  display: none;
-}
-@page {
-margin: 0.5cm;
-}
+  header nav, footer {
+    display: none;
+  }
+  @page {
+  margin: 0.5cm;
+  }
+  a {
+    text-decoration: none;
+    border-bottom-style: none;
+  }
 }
