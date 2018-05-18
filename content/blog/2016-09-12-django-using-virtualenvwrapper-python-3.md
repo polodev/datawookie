@@ -1,16 +1,11 @@
 ---
-title: '#MonthOfDjango Day KKK: Using virtualenvwrapper with Python 3'
-author: andrew
-type: post
-date: 2016-09-12T15:00:57+00:00
-categories:
-  - Python
-tags:
-  - Python
-  - virtualenv
-  - virtualenvwrapper
-
+author: Andrew B. Collier
+date: 2016-09-12T15:00:00Z
+tags: ["python"]
+title: "Using virtualenvwrapper with Python 3"
+draft: true
 ---
+
 <!-- SURVEY FOR CONTENT!!! -->
 
 

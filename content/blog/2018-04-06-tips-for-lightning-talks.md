@@ -5,6 +5,11 @@ tags: ["Speaking", "R"]
 title: Tips for Lightning Talks
 ---
 
+<!--
+	https://www.quora.com/What-are-some-tips-for-giving-a-lightning-talk-at-a-conference
+	https://hackernoon.com/how-to-start-lightning-talks-304b673b412f
+-->
+
 It seems a little counter-intuitive, but a 5 minute lightning talk is far more difficult to prepare (and present!) than a standard 20 minute or longer talk. The principle challenge is fitting everything that you want to say into the allotted time, while still maintaining an engaging narrative.
 
 At the recent [satRday conference in Cape Town](http://capetown2018.satrdays.org/) (17 March 2018) we had a number of great lightning talks.  A few of the speakers gave us their tips on creating a brilliant lightning talk.

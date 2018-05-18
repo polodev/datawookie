@@ -1,13 +1,9 @@
 ---
 title: 'Conferences: Building a Talk'
-date: 2017-09-13T09:30:00+00:00
+date: 2018-01-01T09:30:00+00:00
 author: Andrew B. Collier
-excerpt_separator: <!-- more -->
-layout: post
-categories:
-  - Conference
-tags:
-  - Talk
+tags: ["speaking", "conference"]
+draft: true
 ---
 
 It all starts with planning.

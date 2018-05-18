@@ -1,5 +1,5 @@
 ---
-title: 'Taking the Bayesian Leap'
+title: 'First Steps with Stan'
 date: 2017-10-22T09:30:00+00:00
 author: Andrew B. Collier
 tags: ["talk: standard"]
@@ -8,7 +8,7 @@ draft: true
 
 At first sight Bayesian techniques can seem challenging and esoteric. However, they present a powerful alternative to frequentist statistics, with the promise of extracting more useful information from your data while, at the same time, making fewer (sometimes shaky) assumptions.
 
-{{< abstract title="Taking the Bayesian Leap (with R)" >}}
+{{< abstract title="First Steps with Stan" >}}
 	{{% abstract-long %}}
 Bayesian techniques present a compelling alternative to the frequentist view of statistics, providing a flexible approach to extracting a swathe of meaningful information from your data. The learning curve is somewhat steep, but the benefits of adding Bayesian techniques to your tool suite are enormous!
 
@@ -43,4 +43,8 @@ The talk will be peppered with useful tips for dealing with the initial challeng
 	{{% /abstract-long %}}
 {{< /abstract >}}
 
-The talk with assume that the audience has basic understanding of the programming language and basic mathematical capabilities. I will explain the required statistical background in simple terms.
+This talk has been presented at:
+
+- [eRum (2018, Budapest)](https://2018.erum.io/)
+
+The talk assumes that the audience has basic understanding of the programming language and basic mathematical capabilities. I will explain the required statistical background in simple terms.
