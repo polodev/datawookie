@@ -135,6 +135,7 @@ My interests include (but are not limited to): R, data, web development, running
 <h2 class="resume">Presentations</h2>
 
 <ul>
+  <li>A. B. Collier, "Taking the Bayesian Leap", <a href="https://2018.erum.io/">eRum</a>, Budapest, Hungary, 15 May 2018. [<a href="https://datawookie.github.io/talk-first-steps-with-stan/">slides</a>]
   <li>A. B. Collier, "Getting Involved with the R Community", RCCP eConversations, 20 April 2018.
   <!-- RCCP = Rural Campus Connectivity Project -->
   <!-- https://twitter.com/aneldavdw/status/987267618531893248 -->
