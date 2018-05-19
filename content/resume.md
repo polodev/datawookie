@@ -135,17 +135,17 @@ My interests include (but are not limited to): R, data, web development, running
 <h2 class="resume">Presentations</h2>
 
 <ul>
-  <li>A. B. Collier, "Taking the Bayesian Leap", <a href="https://2018.erum.io/">eRum</a>, Budapest, Hungary, 15 May 2018. [<a href="https://datawookie.github.io/talk-first-steps-with-stan/">slides</a>]
+  <li>A. B. Collier, "Taking the Bayesian Leap", <a href="https://2018.erum.io/">eRum</a>, Budapest, Hungary, 15 May 2018. [<a href="https://datawookie.github.io/talk-first-steps-with-stan/">slides</a>] <a href="https://youtu.be/kr_pAPS_oyM" target="_blank"><i class="fab fa-youtube"></i></a></li>
   <li>A. B. Collier, "Getting Involved with the R Community", RCCP eConversations, 20 April 2018.
   <!-- RCCP = Rural Campus Connectivity Project -->
   <!-- https://twitter.com/aneldavdw/status/987267618531893248 -->
   <li>A. B. Collier, Moderator for <a href="https://www.crowdcast.io/e/future-of-icos">The Future of ICOs</a> panel discussion hosted by Toptal, 11 April 2018.
-  <li>A. B. Collier, "Data Science Productivity Hacks." <a href="http://capetown2018.satrdays.org/">satRday</a>, Cape Town, South Africa, 17 March 2018. [<a href="https://datawookie-talks.github.io/productivity-hacks-r/">slides</a>] [<a href="https://youtu.be/fkN1ZmBz5CU">video</a>]</li>
+  <li>A. B. Collier, "Data Science Productivity Hacks." <a href="http://capetown2018.satrdays.org/">satRday</a>, Cape Town, South Africa, 17 March 2018. [<a href="https://datawookie-talks.github.io/productivity-hacks-r/">slides</a>] <a href="https://youtu.be/Q7FEbgPljEs" target="_blank"><i class="fab fa-youtube"></i></a></li>
   <li>A. B. Collier, "Running an Ethereum Node." <a href="https://www.meetup.com/Durban-Ethereum-Meetup/events/246648015/">Durban Ethereum Meetup</a>, Derivco, Durban, South Africa, 31 January 2018.</li>
   <li>A. B. Collier, "Hello Durban, tell me how you're doing!" <a href="http://digifest.dut.ac.za/">Digifest</a>, Durban University of Technology, Durban, South Africa, 2017.</li>
   <li>A. B. Collier, and K. Tirok, "Introduction to R." (1 day workshop) Department of Public Health, University of KwaZulu-Natal, Durban, South Africa, 2017.</li>
   <li>A. B. Collier, "Web Scraping: Unleash your Internet Viking." (4 hour workshop) <a href="https://za.pycon.org/">PyConZA</a>, Cape Town, South Africa, 2017.</li>
-  <li>A. B. Collier, "Diagnosing the Long Distance Runner with Django, D3 and R." <a href="https://bulgariawebsummit.com/">Bulgaria Web Summit</a>, Sofia, Bulgaria, 2017. [<a href="https://youtu.be/oSTkrXn2S_c">video</a>]</li>
+  <li>A. B. Collier, "Diagnosing the Long Distance Runner with Django, D3 and R." <a href="https://bulgariawebsummit.com/">Bulgaria Web Summit</a>, Sofia, Bulgaria, 2017. <a href="https://youtu.be/oSTkrXn2S_c" target="_blank"><i class="fab fa-youtube"></i></a></li>
   <li>A. B. Collier, and P. Oxborrow, "Wordpress by Dummies," Derivco Brown Bag, 26 October 2016.</li>
   <li>A. B. Collier, "#PredictiveAnalytics," Derivco Brown Bag, 25 May 2016.</li>
   <li>A. B. Collier, and W. van Deventer, "Jungle Jim and the Hypergeometric Animations," Derivco Brown Bag, 10 April 2015.</li>
