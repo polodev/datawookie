@@ -180,7 +180,7 @@ $ ssh -l root 104.236.93.95
 
 ### Swap Space
 
-Docker containers use the kernel, memory and swap from the host. So if you've created a relatively small Droplet then you might want to [add swap space]({{ site.baseurl }}{% post_url 2015-06-19-amazon-ec2-adding-swap %}).
+Docker containers use the kernel, memory and swap from the host. So if you've created a relatively small Droplet then you might want to [add swap space]({{< relref "2015-06-19-amazon-ec2-adding-swap.md" >}}).
 
 ### Create a `docker` User
 
@@ -251,7 +251,7 @@ This will create the user profiles and home folders. The usernames and passwords
 
 ## Persisting User Data
 
-You'll probably want to use a mechanism for persisting user data. There are a couple of options for doing this. A simple technique which I have found helpful is documented [here]({{ site.baseurl }}{% post_url 2017-07-20-docker-persisting-user-data %}).
+You'll probably want to use a mechanism for persisting user data. There are a couple of options for doing this. A simple technique which I have found helpful is documented [here]({{< relref "2017-07-20-docker-persisting-user-data.md" >}}).
 
 ## Finish and Klaar
 

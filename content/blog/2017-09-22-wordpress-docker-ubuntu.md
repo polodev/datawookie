@@ -9,7 +9,7 @@ I've just put together a [Wordpress](https://wordpress.com/) site for my older d
 
 <!--more-->
 
-The first thing that you need to do is [install Docker]({{ site.baseurl }}{% post_url 2017-09-14-installing-docker-ubuntu %}). With that in place it's a simple matter to instantiate a couple of images and the whole thing is up an running.
+The first thing that you need to do is [install Docker]({{< relref "2017-09-14-installing-docker-ubuntu.md" >}}). With that in place it's a simple matter to instantiate a couple of images and the whole thing is up an running.
 
 ![](/img/logo/docker-logo.png)
 

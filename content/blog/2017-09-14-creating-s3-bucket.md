@@ -33,4 +33,4 @@ Finally review your choices and if everything is at it should be then press the 
 
 The newly created bucket should then appear on your bucket list (this is the *other* type of bucket list!).
 
-You can also create the bucket using the [AWS CLI interface]({{ site.baseurl }}{% post_url 2017-08-31-using-aws-cli %}).
+You can also create the bucket using the [AWS CLI interface]({{< relref "2017-08-31-using-aws-cli.md" >}}).

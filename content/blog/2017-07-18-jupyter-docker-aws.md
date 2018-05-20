@@ -169,4 +169,4 @@ If you get a `500 : Internal Server Error` then check the Docker logs. It's very
 
 ## Persisting User Data
 
-You'll probably want to use a mechanism for persisting user data. There are a couple of options for doing this. A simple technique which I have found helpful is documented [here]({{ site.baseurl }}{% post_url 2017-07-20-docker-persisting-user-data %}).
+You'll probably want to use a mechanism for persisting user data. There are a couple of options for doing this. A simple technique which I have found helpful is documented [here]({{< relref "2017-07-20-docker-persisting-user-data.md" >}}).

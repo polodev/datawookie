@@ -1,10 +1,21 @@
 ---
-title: 'Conferences: Building a Talk'
+title: 'Building a Talk'
 date: 2018-01-01T09:30:00+00:00
 author: Andrew B. Collier
 tags: ["speaking", "conference"]
 draft: true
 ---
+
+## Choosing a Topic
+
+Talk about something that
+
+- matters to you;
+- pleases you;
+- interests you; or
+- angers or irritates you.
+
+Try to use a personal story.
 
 It all starts with planning.
 
@@ -16,6 +27,29 @@ It all starts with planning.
 </blockquote>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Iwpi1Lm6dFo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+## Golden Thread
+
+Try to have a single narrative that runs through the entire talk. If you can articulate this idea as a short snappy sentence then you can say it a couple of times during the talk. You can also include it in the abstract.
+
+The Golden Thread will help you to maintain focus.
+
+## Structure Templates
+
+### Problem to be Solved
+
+1. Describe the problem.
+2. Illustrative anecdote or story.
+3. What's been done about this previously?
+4. What's the big new idea?
+5. Why will this make a difference?
+6. How will this change the future?
+
+DO SAME FOR OTHER GENERAL TOPIC IDEAS
+
+## Know the Audience
+
+It's very unlikely that you will be able to please the *whole* audience. But aim to address the main body of the distribution. The tails can be very hard to satisfy.
 
 ## The Process
 
@@ -48,6 +82,15 @@ https://en.m.wikipedia.org/wiki/Takahashi_method
 A good approach to planning is to sketch out ideas for your talk on paper. A mind map or a flow chart is a good structure. But you don't need to be that rigorous.
 
 A problem with mind maps and complicated flow charts are that they are inherently non-linear. However, basic Physics dictates that your talk needs to be linear. So you need to work out a sequence for the various items that you want to talk about.
+
+## Introduction
+
+Here are some ways to kick off a talk:
+
+- a (short) story;
+- a provocative statement;
+- a question (or a string of relayed questions); or
+- an image, video or sound.
 
 ## Start with Why
 
@@ -190,11 +233,23 @@ The idea of telling a story is not one that comes naturally to me. When I try to
 
 ## Closing
 
+End on a high note!
+
 Options for closing a talk:
 
 - Give a short summary by highlighting your (three is a good number!) main points.
 - Present a call to action. What do you want the audience to do now?
 - Refer back to the opening. Did you tell a story, state a fact, give a quote or ask a question? Then refer back to it now.
+
+Try to incorporate a call to action.
+
+Make sure that your contact details are repeated on the final slide.
+
+Suggest engaging on Twitter and mention a hashtag.
+
+Examples of powerful endings:
+
+- "Every kid needs a champion" (Rita Pierson). Thanks to Asian Lindsay for bringing this to my attention.
 
 ## Depth or Breadth?
 
@@ -207,3 +262,7 @@ Your audience will only be able to absorb so much.
 You can go deep on a single well defined topic. The scope needs to be narrow and you will need to leave things out to maintain focus.
 
 You can go wide (but shallow) across a range of (preferably related) topics. You need to show how the topics are related (because the audience will be trying to figure this out!) and you still need to limit yourself on the number of topics. Three or five topics work well.
+
+## Speakers to Watch for Inspiration
+
+- Bryan Stevenson

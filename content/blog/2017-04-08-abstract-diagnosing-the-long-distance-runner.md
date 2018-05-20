@@ -6,7 +6,7 @@ title: Diagnosing the Long Distance Runner with Django, D3 and R
 subtitle: Building @racently
 ---
 
-This was the talk that I presented at the [Bulgaria Web Summit]({{ site.baseurl }}{% post_url 2017-04-16-conference-bulgaria-web-summit %}).
+This was the talk that I presented at the [Bulgaria Web Summit]({{< relref "2017-04-16-conference-bulgaria-web-summit.md" >}}).
 
 <!--more-->
 

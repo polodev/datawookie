@@ -5,7 +5,7 @@ tags: ["Ethereum"]
 title: 'Ethereum: Running a Node'
 ---
 
-Once you've [installed Geth]({{ site.baseurl }}{% post_url 2018-01-19-ethereum-diy-smart-contract %}) you're ready to run your own Ethereum node.
+Once you've [installed Geth]({{< relref "2018-01-19-ethereum-diy-smart-contract.md" >}}) you're ready to run your own Ethereum node.
 
 <!--more-->
 

@@ -1,7 +1,6 @@
 ---
 author: Andrew B. Collier
 date: 2018-01-19T03:30:00Z
-excerpt_separator: <!-- more -->
 tags: ["Ethereum"]
 title: 'Ethereum: DIY Tools for Smart Contracts'
 ---
@@ -20,7 +19,7 @@ Since I'm just feeling my way into this new domain, I'm not sure to what degree 
 
 Accurate time is important. Probably not critical to have nanosecond or microsecond accuracy. But you want your computer's clock to be correct to within a few milliseconds.
 
-An owner of a grandfather clock needs to regularly wind it and check its time. That's fine for an antique heirloom. But you don't want to have to do the same for your shiny computing machine, do you? Hell no! Nothing sexy about that. Rather ensure that you have [NTP running]({{ site.baseurl }}{% post_url 2018-01-11-synchronise-time-ntp %}). NTP will take care of timekeeping tasks, adjusting your clock's time and offseting any inherent drift.
+An owner of a grandfather clock needs to regularly wind it and check its time. That's fine for an antique heirloom. But you don't want to have to do the same for your shiny computing machine, do you? Hell no! Nothing sexy about that. Rather ensure that you have [NTP running]({{< relref "2018-01-11-synchronise-time-ntp.md" >}}). NTP will take care of timekeeping tasks, adjusting your clock's time and offseting any inherent drift.
 
 ## Command Line Client
 
@@ -70,7 +69,7 @@ GOROOT=/usr/lib/go-1.9
 
 New releases come out every few weeks, so it's not a bad idea to update from time to time.
 
-This is a good time to [synchronise with the blockchain]({{ site.baseurl }}{% post_url 2018-01-19-ethereum-running-node %}).
+This is a good time to [synchronise with the blockchain]({{< relref "2018-01-19-ethereum-running-node.md" >}}).
 
 ### Install the Docker Image
 

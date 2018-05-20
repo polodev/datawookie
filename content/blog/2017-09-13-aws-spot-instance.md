@@ -59,7 +59,7 @@ Press the <kbd class="bg-primary nobreak">Review</kbd> button.
 
 ### Step 3
 
-In Step 3 you are presented with a summary of your request. If everything is in otder then press the <kbd class="bg-primary nobreak">Launch</kbd> button.
+In Step 3 you are presented with a summary of your request. If everything is in order then press the <kbd class="bg-primary nobreak">Launch</kbd> button.
 
 ![](/img/2017/09/aws-spot-launch-wizard-step-3.png)
 
@@ -73,4 +73,4 @@ You can see the result on the Instances page, where you'll find the Public DNS e
 
 Since the spot price changes, it's possible that your instance might be unexpectedly terminated. It'd be a shame if all your data were lost.
 
-To ensure that your data are persisted in the event of your instance being terminated [add a volume]({{ site.baseurl }}{% post_url 2017-08-10-adding-volume-ec2 %}), mount it on your instance and use it to store the data. Even if the instance is lost the extra volume will still be there (with all your precious data on it!).
+To ensure that your data are persisted in the event of your instance being terminated [add a volume]({{< relref "2017-08-10-adding-volume-ec2.md" >}}), mount it on your instance and use it to store the data. Even if the instance is lost the extra volume will still be there (with all your precious data on it!).

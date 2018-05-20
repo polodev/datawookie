@@ -12,7 +12,7 @@ title: Running OSRM with Docker
 https://github.com/Project-OSRM/osrm-backend/issues/3161
 {{< /comment >}}
 
-I've now been through the process of [setting up OSRM]({{ site.baseurl }}{% post_url 2017-08-31-using-aws-cli %}) a few times. While it's not exactly taxing, it seemed like a prime candidate for automation.
+I've now been through the process of [setting up OSRM]({{< relref "2017-08-31-using-aws-cli.md" >}}) a few times. While it's not exactly taxing, it seemed like a prime candidate for automation.
 
 <!--more-->
 
