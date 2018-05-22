@@ -1,13 +1,7 @@
 ---
-title: 'Revising Riegel's Formula: A Bayesian Approach'
+title: "Revising Riegel's Formula: A Bayesian Approach"
 date: 2017-09-13T09:30:00+00:00
 author: Andrew B. Collier
-excerpt_separator: <!-- more -->
-layout: post
-categories:
-  - Conference
-tags:
-  - Talk
 ---
 
 <!--

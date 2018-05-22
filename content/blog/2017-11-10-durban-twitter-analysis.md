@@ -9,7 +9,7 @@ I was invited to give a talk at [Digifest](http://digifest.dut.ac.za/) (Durban U
 
 To be honest, I was pleased to be invited, but when I sat down to consider what I would talk about, I found myself at a loss. I'm not *currently* engaged in anything that ticks many of those boxes.
 
-But I am loathe to turn down an opportunity to speak. So I made a plan. In retrospect it was not a terribly good plan. But it was workable. I decided to speak about gauging sentiment relating to the city of Durban using data from Twitter. You can find my talk outline [here]({{< relref "2017-11-10-abstract-hello-durban" >}}). This post touches on some of my results.
+But I am loathe to turn down an opportunity to speak. So I made a plan. In retrospect it was not a terribly good plan. But it was workable. I decided to speak about gauging sentiment relating to the city of Durban using data from Twitter. This post touches on some of my results.
 
 <!--more-->
 
