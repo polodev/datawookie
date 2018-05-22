@@ -338,7 +338,6 @@ a.btn {
   }
 }
 
-
 @media not print {
   .onlyprint {
     display: none;
