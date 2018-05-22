@@ -1,3 +1,7 @@
+DISK ACTIVITY
+
+sudo iotop --only
+
 FINDING CONTENTS OF PACKAGE:
 
 apt-file list <package-name>
