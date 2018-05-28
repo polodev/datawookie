@@ -7,7 +7,6 @@ categories:
   - Django
   - R
 tags:
-  - '#rstats'
   - Django
   - Heroku
   - R

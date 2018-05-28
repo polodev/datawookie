@@ -6,7 +6,7 @@ date: 2017-02-26T08:22:26+00:00
 categories:
   - R
 tags:
-  - '#rstats'
+  - R
   - gambling
   - odds
   - probability

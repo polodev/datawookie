@@ -7,7 +7,7 @@ layout: post
 tags:
   - Blockchain
   - Ethereum
-  - #rstats
+  - R
 ---
 
 Bitcoin has become synonymous with "cryptocurrency". [Ethereum](https://www.ethereum.org/) is another cryptocurrency which, although not as hyped at Bitcoin, presents some attractive characteristics. The foremost of these is the ability to create sophisticated [smart contracts](https://en.wikipedia.org/wiki/Smart_contract).

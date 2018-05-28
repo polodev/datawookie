@@ -6,7 +6,7 @@ date: 2017-02-26T08:21:59+00:00
 categories:
   - R
 tags:
-  - '#rstats'
+  - R
   - Association Rules
   - Collaborative Filtering
   - PLOS
