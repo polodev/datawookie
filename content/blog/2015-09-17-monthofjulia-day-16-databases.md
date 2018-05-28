@@ -140,6 +140,6 @@ Again, when we're done, we close the database connection.
 julia> disconnect(db)
 {{< /highlight >}}
 
-We're now covered a number of means for getting data into Julia. Over the next few days we'll be looking at Julia's capabilities for analysing data. Stay tuned. In the meantime you can check out the code for today (and previous days) on [github](https://github.com/DataWookie/MonthOfJulia). Also take a look at the talk below.
+We're now covered a number of means for getting data into Julia. Over the next few days we'll be looking at Julia's capabilities for analysing data. Stay tuned. In the meantime you can check out the code for today (and previous days) on [github](https://github.com/DataWookie/MonthOfJulia). Take a look at the talk below. Also, there's a great [tutorial on working with SQLite](https://www.guru99.com/sqlite-tutorial.html), which is well worth looking at.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/IvOFVQgLDgg" frameborder="0" allowfullscreen></iframe>
