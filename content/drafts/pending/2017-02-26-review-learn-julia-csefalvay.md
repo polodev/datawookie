@@ -6,11 +6,6 @@ date: 2017-02-26T08:23:04+00:00
 categories:
   - Book Review
   - Review
-tags:
-  - '#julialang'
-  - Julia
-  - Manning Publications
-
 ---
 Original review request was from slaven.sekuljica@yahoo.com.
 
