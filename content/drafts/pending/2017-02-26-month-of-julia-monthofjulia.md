@@ -3,13 +3,6 @@ title: 'Month of Julia (#MonthOfJulia)'
 author: andrew
 type: post
 date: 2017-02-26T08:23:22+00:00
-categories:
-  - Julia
-tags:
-  - '#julialang'
-  - '#MonthOfJulia'
-  - Julia
-
 ---
 In a nutshell, my impression of Julia is a platform for applying Functional Programming principles to statistical and scientific problems.
 
