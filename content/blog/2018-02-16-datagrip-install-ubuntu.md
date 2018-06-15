@@ -5,6 +5,8 @@ tags: ["SQL", "Linux"]
 title: Installing DataGrip on Ubuntu
 ---
 
+![](/img/logo/logo-datagrip.png)
+
 1. [Download](https://www.jetbrains.com/datagrip/download/download-thanks.html) the DataGrip archive.
 2. Unpack the archive.
 
