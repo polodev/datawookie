@@ -11,7 +11,8 @@ draft: false
 Things to talk about while the machines are chugging away:
 
 - SSH and key pairs
-- Spot instances
+- Spot instances [https://aws.amazon.com/ec2/spot/pricing/]
+- Docker
 
 ## EC2 from the Dashboard (On Demand Instance)
 
