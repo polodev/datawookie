@@ -144,6 +144,18 @@ ol {
   // list-style-position: inside;
 }
 
+li > p {
+  margin-bottom: 0;
+}
+li > div > pre {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+li > ul, li > ol {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 #article p, #article ol li, #article ul li {
   text-align: justify;
 }
