@@ -7,6 +7,7 @@ title: Andrew B. Collier
 
 <table class="experience">
 <tr><td><a href="http://www.exegetic.biz/">Exegetic Analytics</a></td><td class="position">Founder & Consulting Data Scientist</td><td class="duration">2008 - present</td></tr>
+<tr><td><a href="http://www.ixperience.co.za">iXperience</a></td><td class="position">Head Teacher (Data Science)</td><td class="duration">2018</td></tr>
 <tr><td><a href="http://capetown2018.satrdays.org/">#satRday (CapeTown)</a></td><td class="position">Conference Organiser</td><td class="duration">2018</td></tr>
 <tr><td><a href="https://www.toptal.com/">Toptal</a></td><td class="position">Freelance Data Scientist</td><td class="duration">2016 - present</td></tr>
 <tr><td><a href="http://www.ixperience.co.za">iXperience</a></td><td class="position">Head Teacher (Data Science)</td><td class="duration">2017</td></tr>
@@ -27,7 +28,7 @@ Could add: * List of students supervised.
 <tr><td><a href="https://www.environment.gov.za/">Department of Environmental Affairs</a></td><td class="position">Antarctic Expedition Member</td><td class="duration">1994 - 1995</td></tr>
 </table>
 
-<p>More details on each of these positions can be found on <a target="_blank" href="http://www.linkedin.com/in/datawookie">LinkedIn</a>.</p>
+<p>More details of these positions can be found on <a target="_blank" href="http://www.linkedin.com/in/datawookie">LinkedIn</a>.</p>
 
 <h2 class="resume">Education</h2>
 
@@ -135,6 +136,7 @@ My interests include (but are not limited to): R, data, web development, running
 <h2 class="resume">Presentations</h2>
 
 <ul>
+  <li>A. B. Collier, "Data Science in the Cloud: Getting Started", <a href="https://www.meetup.com/Berlin-R-Users-Group/events/251963888/">Berlin R Users Group</a>, 10 July 2018.</li>
   <li>A. B. Collier, "Data Science in the Cloud: Getting Started", <a href="https://www.meetup.com/en-AU/rladies-cape-town/">R-Ladies Cape Town</a>, 19 June 2018.</li>
   <li>A. B. Collier, "Taking the Bayesian Leap", <a href="https://2018.erum.io/">eRum</a>, Budapest, Hungary, 15 May 2018. [<a href="https://datawookie.github.io/talk-first-steps-with-stan/">slides</a>] <a href="https://youtu.be/kr_pAPS_oyM" target="_blank"><i class="fab fa-youtube"></i></a></li>
   <li>A. B. Collier, "Getting Involved with the R Community", RCCP eConversations, 20 April 2018.
