@@ -133,7 +133,7 @@ My interests include (but are not limited to): R, data, web development, running
 </div>
 
 <div class="notprint">
-<h2 class="resume">Presentations</h2>
+<h2 class="resume" id="presentations">Presentations</h2>
 
 <ul>
   <li>A. B. Collier, "Data Science in the Cloud: Getting Started", <a href="https://www.meetup.com/Berlin-R-Users-Group/events/251963888/">Berlin R Users Group</a>, 10 July 2018.</li>
