@@ -136,7 +136,9 @@ My interests include (but are not limited to): R, data, web development, running
 <h2 class="resume" id="presentations">Presentations</h2>
 
 <ul>
+  <li>A. B. Collier, "Getting Started with Bayesian Techniques in Julia", <a href="http://juliacon.org/2018/">JuliaCon</a>, 9 August 2018.</li>
   <li>A. B. Collier, "Data Science in the Cloud: Getting Started", <a href="https://www.meetup.com/Berlin-R-Users-Group/events/251963888/">Berlin R Users Group</a>, 10 July 2018.</li>
+  <li>A. B. Collier, "Interfacing R and Python", <a href="https://pydata.org/berlin2018/">PyData (Berlin)</a>, 8 July 2018.</li>
   <li>A. B. Collier, "Data Science in the Cloud: Getting Started", <a href="https://www.meetup.com/en-AU/rladies-cape-town/">R-Ladies Cape Town</a>, 19 June 2018.</li>
   <li>A. B. Collier, "Taking the Bayesian Leap", <a href="https://2018.erum.io/">eRum</a>, Budapest, Hungary, 15 May 2018. [<a href="https://datawookie.github.io/talk-first-steps-with-stan/">slides</a>] <a href="https://youtu.be/kr_pAPS_oyM" target="_blank"><i class="fab fa-youtube"></i></a></li>
   <li>A. B. Collier, "Getting Involved with the R Community", RCCP eConversations, 20 April 2018.
