@@ -47,6 +47,13 @@ The Golden Thread will help you to maintain focus.
 
 DO SAME FOR OTHER GENERAL TOPIC IDEAS
 
+1-What is your question?
+2-Why significant?
+3-Overview of what is known and gaps in knowledge
+4-Approach
+5-Progress or challenges
+6-Future plans
+
 ## Know the Audience
 
 It's very unlikely that you will be able to please the *whole* audience. But aim to address the main body of the distribution. The tails can be very hard to satisfy.
@@ -266,3 +273,10 @@ You can go wide (but shallow) across a range of (preferably related) topics. You
 ## Speakers to Watch for Inspiration
 
 - Bryan Stevenson
+
+## Live Tweeting Slide
+
+Encourage the audience to live tweet your talk by providing a slide with your Twitter handle and some suggested hastags.
+
+https://twitter.com/jtrnyc/status/1007398843422576640/photo/1
+

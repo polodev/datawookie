@@ -20,7 +20,9 @@ This is a work in progress. The information is cobbled together from a range of 
 - 2019:
 	- [useR!](http://www.user2019.fr/) (Toulouse, France)
 - 2018:
+    - <kbd class="bg-primary">RStudio-1.1.453</kbd> (2018-05-16)
     - <kbd>R-3.5.0</kbd> "Joy in Playing" (2018-04-23)
+    - <kbd class="bg-primary">RStudio-1.1.447</kbd> (2018-04-18)
     - <kbd>R-3.4.4</kbd> "Someone to Lean On" (2018-03-15)
     - <kbd class="bg-primary">RStudio-1.1.442</kbd> (2018-03-12)
     - <kbd class="bg-primary">RStudio-1.1.423</kbd> (2018-02-07)

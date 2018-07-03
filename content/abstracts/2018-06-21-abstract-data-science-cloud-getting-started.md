@@ -1,20 +1,18 @@
 ---
-title: 'R in the Cloud with Docker'
-date: 2017-10-22T09:30:00+00:00
+title: 'Data Science in the Cloud: Getting Started'
+date: 2018-06-21T04:30:00+00:00
 author: Andrew B. Collier
-excerpt_separator: <!-- more -->
 layout: post
-categories:
-  - Conference
-tags:
-  - Talk
+tags: ["talk: training", "talk", "Docker", "AWS"]
 ---
+
+An example layout for this talk is given in 2018-06-18-data-science-cloud-getting-started.md.
 
 <div class="talk">
 	<div class="title">
-	R in the Cloud with Docker
+	Data Science in the Cloud: Getting Started
 	</div>
 	<div class="abstract">
-HOW TO SET UP A DOCKER IMAGE WITH ALL PACKAGES REQUIRED TO RUN AN ANALYSIS. THIS ALLOWS YOU TO AVOID HAVING TO MAKE ALL OF THE SETUP MANUALLY. IF YOU LAUNCH MULTIPLE CLOUD INSTANCES FOR SAME JOB (PERHAPS RUNNING THE JOB ON MULTIPLE DAYS) THEN THIS CAN BE A MASSIVE TIME SAVER.
+		Have you ever felt frustrated by your desktop or laptop computer? Too few CPUs? Not enough RAM? In this talk I will show how some of the features of AWS can help you get around these limitations, opening the doors to running bigger jobs more quickly and efficiently.
 	</div>
 </div>

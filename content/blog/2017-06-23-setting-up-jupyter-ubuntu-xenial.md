@@ -52,3 +52,11 @@ $ jupyter notebook
 
 That will open up a new Jupyter browser tab. From there you'll be able to browse to find existing notebooks or create a new notebook by pressing the `New` dropdown and selecting the notebook type.
 
+## Python 2 Kernel
+
+The above instructions will give you a Python 3 kernel in Jupyter. What if you want to have Python 2 as another option? No problem!
+
+{{< highlight bash >}}
+$ python2 -m pip install ipykernel
+$ python2 -m ipykernel install --user
+{{< /highlight >}}

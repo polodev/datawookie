@@ -138,3 +138,9 @@ There are some constraints which are often not explicit but are just common sens
 - 
 - 
 - Use your network.
+
+## Tools
+
+Here are a couple of useful tools to make the process easier and more efficient:
+
+- The [Hemingway Editor](http://www.hemingwayapp.com/) can help you write tighter text.

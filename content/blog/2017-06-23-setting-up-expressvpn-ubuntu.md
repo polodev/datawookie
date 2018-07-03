@@ -21,8 +21,8 @@ Click the button to download the client. Then install.
 
 {{< highlight bash >}}
 $ ls -l *.deb
--rw-rw-r-- 1 colliera colliera  9419912 Jun 24 07:07 expressvpn_1.2.0_amd64.deb
-$ sudo dpkg -i expressvpn_1.2.0_amd64.deb
+-rw-rw-r-- 1 colliera colliera 13440578 Jun 29 05:49 expressvpn_1.4.3_amd64.deb
+$ sudo dpkg -i expressvpn_1.4.3_amd64.deb
 {{< /highlight >}}
 
 The install went flawlessly for me.

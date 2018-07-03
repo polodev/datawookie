@@ -35,7 +35,7 @@ $ sudo apt install -y r-base-core mysql-client-core-5.7
 2. Use the following details:
 
 	- DB instance identifier: crypto
-	- Master username: scraper
+	- Master username: andrew
 	- Master password: gAf1Q8Qcu3lL
 	- Database name: crypto
 

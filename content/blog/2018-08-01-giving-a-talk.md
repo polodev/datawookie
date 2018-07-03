@@ -94,3 +94,16 @@ What do you want the people in the audience to do immediately after you finish g
 ### Solicit Feedback
 
 Provide contact details at the end of your talk and encourage them to contact you with feedback or to learn more about the topic.
+
+## Other Stuff
+
+Introduce one concept at a time (think of placing blocks on top of each other).
+
+Be aware that you might be an expert in a topic, but there will be some people in the audience who are completely unfamiliar with the content. You need to cater for them.
+
+If you want to change people's minds then you need to break down their existing ideas and then replace them with new ideas.
+
+Techniques to arguing a point:
+
+- reductio ad absurbum (???)
+- process of elimination (eliminate all other plausible arguments)

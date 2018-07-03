@@ -27,5 +27,6 @@ sudo R CMD javareconf
     {{< highlight r >}}
 > install.packages("rJava")
 {{< /highlight >}}
+5. If you have a RStudio session open, then exit and restart it. This is important (a running RStudio session will not pick up these changes!).
 
 Sorted!

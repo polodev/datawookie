@@ -7,13 +7,8 @@ title: Andrew B. Collier
 
 <table class="experience">
 <tr><td><a href="http://www.exegetic.biz/">Exegetic Analytics</a></td><td class="position">Founder & Consulting Data Scientist</td><td class="duration">2008 - present</td></tr>
-<tr><td><a href="http://www.ixperience.co.za">iXperience</a></td><td class="position">Head Teacher (Data Science)</td><td class="duration">2018</td></tr>
-<tr><td><a href="http://capetown2018.satrdays.org/">#satRday (CapeTown)</a></td><td class="position">Conference Organiser</td><td class="duration">2018</td></tr>
 <tr><td><a href="https://www.toptal.com/">Toptal</a></td><td class="position">Freelance Data Scientist</td><td class="duration">2016 - present</td></tr>
-<tr><td><a href="http://www.ixperience.co.za">iXperience</a></td><td class="position">Head Teacher (Data Science)</td><td class="duration">2017</td></tr>
-<tr><td><a href="http://capetown2017.satrdays.org/">#satRday (CapeTown)</a></td><td class="position">Conference Organiser</td><td class="duration">2017</td></tr>
 <tr><td><a href="http://www.derivco.com/">Derivco</a></td><td class="position">Senior Data Scientist</td><td class="duration">2013 - 2017</td></tr>
-<tr><td><a href="http://www.ixperience.co.za">iXperience</a></td><td class="position">Head Teacher (Data Science)</td><td class="duration">2016</td></tr>
 <tr><td><a href="https://birkeland.uib.no/">University of Bergen</a> (Norway)</td><td class="position">Researcher</td><td class="duration">2013 - 2014</td></tr>
 <tr><td><a href="http://scp.ukzn.ac.za/">University of KwaZulu-Natal</a> (UKZN)</td><td class="position">Honorary Senior Lecturer</td><td class="duration">2004 - 2015</td></tr>
 <!--
@@ -28,7 +23,20 @@ Could add: * List of students supervised.
 <tr><td><a href="https://www.environment.gov.za/">Department of Environmental Affairs</a></td><td class="position">Antarctic Expedition Member</td><td class="duration">1994 - 1995</td></tr>
 </table>
 
-<p>More details of these positions can be found on <a target="_blank" href="http://www.linkedin.com/in/datawookie">LinkedIn</a>.</p>
+A selection of training courses that I have given:
+<ul>
+  <li> Data Science with R: Beginners' Course, Investec (Johannesburg), 25-29 July 2018.
+  <li> Web Scraping with R, Rise (Cape Town), 14-15 June 2018.
+  <li> Data Science (Head Teacher) , <a href="http://www.ixperience.co.za">iXperience</a>, 2016, 2017 and 2018.
+</ul>
+
+Conferences that I have organised:
+<ul>
+  <li> <a href="http://capetown2018.satrdays.org/">#satRday (CapeTown)</a> (2018).
+  <li> <a href="http://capetown2017.satrdays.org/">#satRday (CapeTown)</a> (2017).
+</ul>
+
+<p>More details of these positions can be found on my <a target="_blank" href="http://www.linkedin.com/in/datawookie">LinkedIn profile</a>.</p>
 
 <h2 class="resume">Education</h2>
 

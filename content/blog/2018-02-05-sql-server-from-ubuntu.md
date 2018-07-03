@@ -19,16 +19,29 @@ curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add 
 {{< /highlight >}}
 2. Add the location of the repository.
     {{< highlight text >}}
+# For Ubuntu 16.04.
+#
 curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list | sudo tee /etc/apt/sources.list.d/mssql-tools.list
+#
+# For Ubuntu 17.10.
+#
+curl https://packages.microsoft.com/config/ubuntu/17.10/prod.list | sudo tee /etc/apt/sources.list.d/mssql-release.list
 {{< /highlight >}}
 3. Update the package list.
     {{< highlight text >}}
 sudo apt-get update
 {{< /highlight >}}
-4. Install the `mssql-tools` and `unixodbc-dev` packages.
+4. Install packages.
     {{< highlight text >}}
-sudo ACCEPT_EULA=Y apt-get install -y mssql-tools
 sudo apt-get install -y unixodbc-dev
+#
+# For Ubuntu 16.04.
+#
+sudo ACCEPT_EULA=Y apt-get install -y mssql-tools
+#
+# For Ubuntu 17.10.
+#
+sudo ACCEPT_EULA=Y apt-get install -y msodbcsql17
 {{< /highlight >}}
 5. Add `PATH=$PATH:/opt/mssql-tools/bin` as the last line of `/etc/bash.bashrc`.
 

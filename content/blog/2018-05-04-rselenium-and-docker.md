@@ -22,8 +22,6 @@ draft: true
 # - docker run -d -p 4445:4444 selenium/standalone-firefox:3.11
 # - docker ps
 
-I am glad we are getting some responses in. I heard back from UCT and although they wont be able to help students fund entries, they are willing to post an ad for us on their Vula site. So lets hope that helps. I also mentioned that if they can get a group together, they must contact us for special academic pricing.
-
 In terms of browsing, the easiest is to use the XXX-debug docker images + TightVNC and expose the correct ports on 0.0.0.0. You then 'SSH' into the container and voila, easy to then pickup why things aren't working. This is my go to:
 
 

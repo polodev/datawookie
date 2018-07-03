@@ -79,6 +79,10 @@ sudo gpasswd -a ubuntu docker
 
 On that user's next login the `docker` group will be added to their profile and they will be able to launch `docker` jobs.
 
-I've wrapped the installation up in a very simple Gist.
+I've wrapped the installation up in a very simple Gist. You can source the gist and install using
+
+	{{< highlight text >}}
+$ wget -q -O - https://bit.ly/2JGrYR2 | /bin/bash
+{{< /highlight >}}
 
 <script src="https://gist.github.com/DataWookie/9f29795059e6bccf9892bc85ed285337.js"></script>

@@ -31,7 +31,7 @@ Install `antfs-cli`, which implements a Command Line Interface to ANT-FS.
 $ sudo python setup.py install
 {{< /highlight >}}
 
-3. This will automatically install `pyusb` if necessary. </ol>
+3. This will automatically install `pyusb` if necessary.
 
 ## Connect Device
 
