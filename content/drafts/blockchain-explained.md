@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "Blockchain Explained"
 date: 2017-11-12T08:00:00+00:00
 author: Andrew B. Collier

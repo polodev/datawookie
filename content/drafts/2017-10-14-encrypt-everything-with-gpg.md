@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Encrypt Everything with GPG'
 date: 2017-10-14T07:00:00+00:00
 author: Andrew B. Collier

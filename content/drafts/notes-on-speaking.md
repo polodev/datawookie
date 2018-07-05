@@ -1,4 +1,5 @@
 Focus on "3 things" or "5 things".
+draft: true
 
 Cultivate curiosity in the audience. Ask (rhetorical) questions.
 

@@ -9,6 +9,7 @@ categories:
 tags:
   - Spark
   - EC2
+draft: true
 ---
 
 A step-by-step tutorial on setting up a Spark cluster on an AWS EC2 instance. This is stil a work in progress and I'll be adding in additional details as and when I get more time to play with this.

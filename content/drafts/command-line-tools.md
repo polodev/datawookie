@@ -1,4 +1,5 @@
 ## Terminal
+draft: true
 
 ### screen
 

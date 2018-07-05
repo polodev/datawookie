@@ -1,4 +1,5 @@
 http://dbaontap.com/2017/04/16/removing-docker-containers-images/
+draft: true
 
 ## Pushing to the Cloud
 

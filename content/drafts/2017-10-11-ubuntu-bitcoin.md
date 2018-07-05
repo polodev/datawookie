@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "Bitcoin: A Beginner's Journey"
 date: 2017-10-07T07:00:00+00:00
 author: Andrew B. Collier

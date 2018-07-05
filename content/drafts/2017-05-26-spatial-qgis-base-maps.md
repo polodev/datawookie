@@ -8,6 +8,7 @@ categories:
   - GIS
 tags:
   - QGIS
+draft: true
 ---
 
 One of the first questions I had when starting firing up QGIS was: How do I create a [basemap](https://www.gislounge.com/basemaps-defined/) image? With the [OpenLayers](https://openlayers.org/) plugin this is actually very simple. <!-- more -->

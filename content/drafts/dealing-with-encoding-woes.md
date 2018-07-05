@@ -1,4 +1,5 @@
 https://rstudio-pubs-static.s3.amazonaws.com/279354_f552c4c41852439f910ad620763960b6.html
+draft: true
 
 THIS HAS A USEFUL SECTION ON ENCODINGS: https://medium.com/@peterjgensler/functions-with-r-and-rvest-a-laymens-guide-acda42325a77
 

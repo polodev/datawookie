@@ -1,4 +1,5 @@
 tesseract can be used from the command line to perform OCR.
+draft: true
 
 There is also a Python package.
 

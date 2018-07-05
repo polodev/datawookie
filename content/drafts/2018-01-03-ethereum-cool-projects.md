@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "Ethereum: Cool Projects"
 date: 2018-01-03T08:00:00+00:00
 author: Andrew B. Collier

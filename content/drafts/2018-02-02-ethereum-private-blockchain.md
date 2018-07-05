@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "Ethereum: Creating a Private Blockchain"
 date: 2018-02-02T04:00:00+00:00
 author: Andrew B. Collier

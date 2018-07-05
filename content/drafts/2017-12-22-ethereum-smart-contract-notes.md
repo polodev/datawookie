@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "Ethereum: Notes on Smart Contracts"
 date: 2017-12-22T08:00:00+00:00
 author: Andrew B. Collier

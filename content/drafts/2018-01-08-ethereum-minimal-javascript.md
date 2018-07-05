@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "Ethereum: Minimal JavaScript for Smart Contracts"
 date: 2018-01-08T08:00:00+00:00
 author: Andrew B. Collier

@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "Ethereum: The Standard Token Contract"
 date: 2018-01-17T08:00:00+00:00
 author: Andrew B. Collier

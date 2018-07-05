@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "Ethereum: A Simple Truffle Project"
 date: 2018-01-15T08:00:00+00:00
 author: Andrew B. Collier

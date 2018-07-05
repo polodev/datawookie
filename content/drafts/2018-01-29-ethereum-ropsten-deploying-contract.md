@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "Ethereum: Deploying a Smart Contract on Ropsten"
 date: 2018-01-29T04:00:00+00:00
 author: Andrew B. Collier

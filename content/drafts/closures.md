@@ -1,4 +1,5 @@
 Here's an example. Make something simpler for illustration.
+draft: true
 
 movement_models <- function(method = c("ets", "arima")) {
   # Build a closure which has all of the data.

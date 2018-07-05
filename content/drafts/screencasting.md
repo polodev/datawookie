@@ -1,4 +1,5 @@
 ## Shell Prompt
+draft: true
 
 export PS1="\[\e[32m\]\W\n\[\e[m\]\[\e[34m\]\\$\[\e[m\] "
 

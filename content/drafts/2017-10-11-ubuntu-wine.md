@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Running Applications with Wine on Ubuntu'
 date: 2017-10-11T07:00:00+00:00
 author: Andrew B. Collier

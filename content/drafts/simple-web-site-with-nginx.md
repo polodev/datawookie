@@ -1,4 +1,5 @@
 Allow access on port.
+draft: true
 
 iptables -I INPUT -p tcp --dport 82 -j ACCEPT
 

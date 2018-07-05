@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "Ethereum: Mining on AWS"
 date: 2017-12-18T03:00:00+00:00
 author: Andrew B. Collier

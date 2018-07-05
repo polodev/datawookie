@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "Truffle Box React"
 date: 2018-01-22T08:00:00+00:00
 author: Andrew B. Collier

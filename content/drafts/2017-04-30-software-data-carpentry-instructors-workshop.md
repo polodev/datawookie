@@ -7,6 +7,7 @@ excerpt_separator: <!-- more -->
 tags:
   - 'Software Carpentry'
   - 'Data Carpentry'
+draft: true
 ---
 
 USE THE ETHERPAD

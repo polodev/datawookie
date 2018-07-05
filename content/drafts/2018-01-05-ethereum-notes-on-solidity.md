@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "Ethereum: Notes on Solidity"
 date: 2018-01-05T08:00:00+00:00
 author: Andrew B. Collier

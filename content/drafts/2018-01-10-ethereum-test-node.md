@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "Ethereum: Creating a Test Node"
 date: 2018-01-10T08:00:00+00:00
 author: Andrew B. Collier
