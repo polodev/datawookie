@@ -30,6 +30,8 @@ deb https://cloud.r-project.org/bin/linux/ubuntu trusty-cran35/
 
 ## Update and Install
 
+Once you've updated the list of repositories it's time to refresh your local package list and then install the latest version of R.
+
 {{< highlight bash >}}
 sudo apt-get update
 sudo apt-get install r-base r-base-dev
@@ -49,7 +51,7 @@ sudo apt-get remove -y 'r-cran-*'
 
 ## Update Packages
 
-Start the R interpreter and then update all installed packages. That will take a while, depending on the number of packages you have installed.
+Start the R interpreter. Note that the version number has been bumped. Now update all installed packages. That can take a while, depending on the number of packages you have installed.
 
 {{< highlight R >}}
 update.packages(ask = FALSE)
