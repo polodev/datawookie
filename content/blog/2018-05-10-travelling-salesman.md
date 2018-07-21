@@ -87,3 +87,5 @@ The length of the optimal tour is 68.4 km.
 Finally I used `ggmap::route()` to build a route between the locations in the order specified by `tour` and plotted.
 
 ![](/img/2018/05/travelling-salesman-durban.png)
+
+The code for this is available [here](https://github.com/DataWookie/travelling-salesman-map).
