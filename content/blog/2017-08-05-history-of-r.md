@@ -20,6 +20,8 @@ This is a work in progress. The information is cobbled together from a range of 
 - 2019:
 	- [useR!](http://www.user2019.fr/) (Toulouse, France)
 - 2018:
+    - <kbd class="bg-primary">RStudio-1.1.456</kbd> (2018-07-19)
+    - <kbd>R-3.5.1</kbd> "Feather Spray" (2018-07-02)
     - <kbd class="bg-primary">RStudio-1.1.453</kbd> (2018-05-16)
     - <kbd>R-3.5.0</kbd> "Joy in Playing" (2018-04-23)
     - <kbd class="bg-primary">RStudio-1.1.447</kbd> (2018-04-18)
@@ -31,6 +33,8 @@ This is a work in progress. The information is cobbled together from a range of 
     - [useR!](https://user2018.R-project.org/) (Brisbane, Australia)
     - [R/Finance](http://www.rinfinance.com/) (Chicago, IL, USA)
     - [satRday](http://capetown2018.satrdays.org/) (Cape Town, South Africa)
+    - [satRday](http://cardiff2018.satrdays.org/) (Cardiff, Wales)
+    - [satRday](http://belgrade2018.satrdays.org/) (Belgrade, Serbia)
     - [rstudio::conf](https://www.rstudio.com/conference/) (San Diego, CA, USA)
 - 2017:
     - <kbd>R-3.4.3</kbd> "Kite-Eating Tree" (2017-11-30)
