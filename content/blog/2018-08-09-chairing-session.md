@@ -1,10 +1,11 @@
 ---
 author: Andrew B. Collier
-date: 2018-06-01T07:00:00Z
+date: 2018-08-09T02:00:00Z
 tags: ["speaking"]
 title: "Chairing a Conference Session"
-draft: true
 ---
+
+![](/img/2018/08/being-the-chair.jpg)
 
 There are many factors which can determine the success of a conference: the location, the venue, the catering, the speakers, the social programme, the contents of the swag bag... However, in my opinion, one of the most important components of an enjoyable conference is a collection of competent chairpersons, for they will ensure that all aspects of the sessions (the very core of a conference!) run smoothly.
 
