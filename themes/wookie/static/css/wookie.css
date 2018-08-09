@@ -139,31 +139,14 @@ strong, b {
   font-weight: bold;
 }
 
-ol {
-  padding-left: 0px;
-  // list-style-position: inside;
-}
-
-li > p {
-  margin-bottom: 0;
-}
-li > div > pre {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-li > ul, li > ol {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
 #article p, #article ol li, #article ul li {
   text-align: justify;
 }
 
 #article blockquote {
-  font-family: 'Lora', serif;
+  /*font-family: 'Lora', serif;*/
   font-style: italic;
-  font-size: 1.05em;
+  /*font-size: 1.05em;*/
   line-height: 1.5em;
   padding-left: 30px;
   padding-right: 30px;
@@ -297,6 +280,45 @@ table.education td.duration {
 a.btn {
   color: white;
 }
+
+/* LISTS ------------------------------------------------------------------- */
+
+ol {
+  // padding-left: 0px;
+  // list-style-position: inside;
+}
+
+li > p {
+  margin-bottom: 0;
+}
+li > div > pre {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+li > ul, li > ol {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* GIST -------------------------------------------------------------------- */
+
+.gist .gist-file {
+  border-style: dashed !important;
+  border-color: black !important;
+  border-width: 1px;
+}
+
+.gist .gist-file > .gist-data article {
+  font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.gist .gist-file > .gist-data .markdown-body h2 {
+  border-bottom: none;
+}
+
+/* MEDIA ------------------------------------------------------------------- */
 
 @media (min-width: 768px) {
 }
