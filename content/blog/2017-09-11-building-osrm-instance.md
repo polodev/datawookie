@@ -79,7 +79,7 @@ Go to the [export page](http://www.openstreetmap.org/export) on OpenStreetMap. Z
 I'm installing on a remote instance, so I used `wget` to do the download.
 
 {{< highlight bash >}}
-wget -O map.xml http://overpass-api.de/api/map?bbox=29.7668,-30.1160,31.2616,-29.3882
+wget -O map.xml http://overpass-api.de/api/map?bbox=29.5,-30.5,31.5,-29.0
 {{< /highlight >}}
 
 The resulting download will be a (possibly rather large) XML file. Move it to the `osrm-backend` folder created above.

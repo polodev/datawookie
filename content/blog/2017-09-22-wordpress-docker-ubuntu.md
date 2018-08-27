@@ -63,8 +63,13 @@ docker run --name wordpress \
   --link mysql:mysql \
   -p 8080:80 \
   -v ~/wp-content:/var/www/html/wp-content \
-  -d wordpress:latest
+  -e WORDPRESS_DB_NAME=wordpress \
+  -d --rm wordpress:latest
 {{< /highlight >}}
+
+Notes:
+
+- It's not necessary to specify the `WORDPRESS_DB_NAME` environment variable, but handy to know what's possible. There are a few other useful environment variables too.
 
 Again we check that the container is up and running.
 
@@ -88,7 +93,6 @@ If you get something that looks like a (text mode) web page then you are in busi
 A simpler way to set this all up is to use `docker-compose`. You just need to create a YAML file which defines the services.
 
 <script src="https://gist.github.com/DataWookie/22fbb485d6d9af1582c4a2add42f041f.js"></script>
-
 
 ## Configuring NGINX
 

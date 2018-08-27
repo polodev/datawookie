@@ -247,7 +247,7 @@ U004,YBpMcl6n
 U005,9Rcl8gye
 {{< /highlight >}}
 
-This will create the user profiles and home folders. The usernames and passwords are dumped to the terminal in CSV formay. Record these and then assign a pair to each of the course delegates.
+This will create the user profiles and home folders. The usernames and passwords are dumped to the terminal in CSV format. Record these and then assign a pair to each of the course delegates.
 
 ## Persisting User Data
 

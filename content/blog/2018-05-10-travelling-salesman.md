@@ -5,7 +5,7 @@ tags: ["R"]
 title: Travelling Salesman with ggmap
 ---
 
-I've been testing out some ideas around the [Travelling Salesman Problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem) using [TSP](https://cran.r-project.org/web/packages/TSP/) and [ggmap](https://cran.r-project.org/web/packages/ggmap/). For illustration I'll find the optimal route between the following addresses:
+I've been testing out some ideas around the [Travelling Salesman Problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem) using [TSP](https://cran.r-project.org/web/packages/TSP/) and [ggmap](https://cran.r-project.org/web/packages/ggmap/). <!--more--> For illustration I'll find the optimal route between the following addresses:
 
 {{< highlight r >}}
 ADDRESSES = c(

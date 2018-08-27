@@ -73,6 +73,8 @@ $ alias ijulia='ipython notebook -profile julia'
 $ ijulia
 {{< /highlight >}}
 
+**Update (2018/07/22):** Once you've installed the `IJulia` package you'll find that there is also a Julia kernel available in Jupyter.
+
 ## Editor Support
 
 There is good support for Julia in various editors. Among the ones I use ([vim](https://github.com/JuliaLang/julia-vim), gedit, Notepad++, [emacs](https://github.com/emacs-ess/ESS/wiki/Julia) and Sublime Text) all have Julia capabilities.

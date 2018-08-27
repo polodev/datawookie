@@ -136,3 +136,7 @@ Connected.
 ![](/img/2017/06/expressvpn-ip-pretoria.png)
 
 I feel like I've just started to scratch the surface with this technology, but it's been a pleasant experience so far. Looking forward to delving deeper.
+
+Some alternatives to ExpressVPN:
+
+- [NordVPN](https://nordvpn.com/) (uses OpenVPN) 

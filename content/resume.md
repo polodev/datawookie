@@ -25,7 +25,9 @@ Could add: * List of students supervised.
 
 A selection of training courses that I have given:
 <ul>
-  <li> Data Science with R: Beginners' Course, Investec (Johannesburg), 25-29 July 2018.
+  <li> Automated Reporting with R: Essentials, [Thermo Fisher](https://www.brahms.de/) (Hennigsdorf, Germany), 10 July 2018.
+  <li> Building Packages with R: Essentials, [Thermo Fisher](https://www.brahms.de/) (Hennigsdorf, Germany), 10 July 2018.
+  <li> Data Science with R: Beginners' Course, Investec (Johannesburg), 25-29 June 2018.
   <li> Web Scraping with R, Rise (Cape Town), 14-15 June 2018.
   <li> Data Science (Head Teacher) , <a href="http://www.ixperience.co.za">iXperience</a>, 2016, 2017 and 2018.
 </ul>
@@ -96,6 +98,8 @@ Conferences that I have organised:
 
 <p><a href="https://software-carpentry.org/">Software Carpentry</a> Instructor.</p>
 
+
+Introduction to Apache Spark and AWS;
 Data Science Specialisation <!-- Johns Hopkins University  --> (The Data Scientist’s Toolbox; R Programming; Getting and Cleaning Data; Exploratory Data Analysis; Reproducible Research; Statistical Inference; Regression Models; Developing Data Products; Practical Machine Learning);
 Data Analysis; <!-- Johns Hopkins University  -->
 Machine Learning;  <!-- Stanford Online  -->
@@ -143,10 +147,21 @@ My interests include (but are not limited to): R, data, web development, running
 <div class="notprint">
 <h2 class="resume" id="presentations">Presentations</h2>
 
+
+<!--
+Session chairs:
+
+- JuliaCon (2018)
+-->
+
 <ul>
+  <li>A. B. Collier, "First Steps with Stan", Derivco Brown Bag, 24 August 2018.</li>
   <li>A. B. Collier, "Getting Started with Bayesian Techniques in Julia" (poster), <a href="http://juliacon.org/2018/">JuliaCon</a>, 9 August 2018.</li>
+  <li>A. B. Collier, "Getting Started with Bayesian Techniques in Julia", <a href="http://juliacon.org/2018/">JuliaCon</a>, 9 August 2018.</li>
+  <li>A. B. Collier, Moderator for <a href="https://www.crowdcast.io/e/storytelling-with-data-science/">Storytelling With Data Science</a> panel discussion hosted by Toptal, 26 July 2018.
+  <li>A. B. Collier, and E. F. Collier, "Setting up WordPress with AWS", <a href="https://www.meetup.com/WordPress-Joburg/events/fmbwmpyxkbwb/">WordPress Jo'burg</a>, 17 July 2018.</li>
   <li>A. B. Collier, "Data Science in the Cloud: Getting Started", <a href="https://www.meetup.com/Berlin-R-Users-Group/events/251963888/">Berlin R Users Group</a>, 10 July 2018.</li>
-  <li>A. B. Collier, "Interfacing R and Python", <a href="https://pydata.org/berlin2018/">PyData (Berlin)</a>, 8 July 2018.</li>
+  <li>A. B. Collier, "Interfacing R and Python", <a href="https://pydata.org/berlin2018/">PyData (Berlin)</a>, 8 July 2018. [<a href="https://datawookie.github.io/talk-mixed-python-r/">slides</a>] <a href="https://www.youtube.com/watch?v=pjDGB9i7kyI" target="_blank"><i class="fab fa-youtube"></i></a></li>
   <li>A. B. Collier, "Data Science in the Cloud: Getting Started", <a href="https://www.meetup.com/en-AU/rladies-cape-town/">R-Ladies Cape Town</a>, 19 June 2018.</li>
   <li>A. B. Collier, "Taking the Bayesian Leap", <a href="https://2018.erum.io/">eRum</a>, Budapest, Hungary, 15 May 2018. [<a href="https://datawookie.github.io/talk-first-steps-with-stan/">slides</a>] <a href="https://youtu.be/kr_pAPS_oyM" target="_blank"><i class="fab fa-youtube"></i></a></li>
   <li>A. B. Collier, "Getting Involved with the R Community", RCCP eConversations, 20 April 2018.

@@ -26,6 +26,10 @@ curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list | sudo tee /et
 # For Ubuntu 17.10.
 #
 curl https://packages.microsoft.com/config/ubuntu/17.10/prod.list | sudo tee /etc/apt/sources.list.d/mssql-release.list
+#
+# For Ubuntu 18.04.
+#
+curl https://packages.microsoft.com/config/ubuntu/18.04/prod.list | sudo tee /etc/apt/sources.list.d/mssql-release.list
 {{< /highlight >}}
 3. Update the package list.
     {{< highlight text >}}
@@ -39,7 +43,7 @@ sudo apt-get install -y unixodbc-dev
 #
 sudo ACCEPT_EULA=Y apt-get install -y mssql-tools
 #
-# For Ubuntu 17.10.
+# For Ubuntu 17.10 & 18.04.
 #
 sudo ACCEPT_EULA=Y apt-get install -y msodbcsql17
 {{< /highlight >}}

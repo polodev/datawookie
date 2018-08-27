@@ -1,8 +1,7 @@
 ---
-title: "Spark: A Padawan's Journey"
+title: "Spark: A Gentle Introduction"
 date: 2018-02-24T09:30:00+00:00
 author: Andrew B. Collier
-excerpt_separator: <!-- more -->
 layout: post
 categories:
   - Conference
@@ -13,18 +12,17 @@ tags:
 
 <div class="talk">
 	<div class="title">
-	Spark: A Padawan's Journey
+	Spark: A Gentle Introduction
 	</div>
 	<div class="abstract">
-	<p>Spark is a powerful compute engine. It provides a fault-tolerant, high level interface to handle parallel tasks involving large volumes of data across entire clusters.</p>
-	<p>This talk follows my journey as a Spark Padawan. There are trials and tribulations. There are also moments of triumph and glory.</p>
-	<p>There will be a broad introduction to the following core topics:</p>
+	<p>Spark is a cluster-computing framework for processing large volumes of data. In this talk I will give a broad introduction to Spark, covering the following core topics:</p>
 	<ul>
-		<li> Resilient Distributed Datasets (RDDs);</li>
-		<li> DataFrames and Datasets;</li>
-		<li> using the Machine Learning Library (MLlib); and</li>
-		<li> accessing Spark from Python and R.</li>
+		<li> Spark versus MapReduce;</li>
+		<li> RDDs, DataFrames and Datasets;</li>
+		<li> installation and setup;</li>
+		<li> access from Python or R; and</li>
+		<li> using the Machine Learning Library.</li>
 	</ul>
-	<p>I'll be sharing tips, insights and resources which will be helpful for other Padawans on their own Spark journey.</p>
+	<p>I won't promise to make you an expert, but I'll be sharing tips and resources which will help you get started.</p>
 	</div>
 </div>

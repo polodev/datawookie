@@ -6,6 +6,23 @@ title: "Wading into Stream Analytics"
 draft: true
 ---
 
+
+https://twitter.com/unspiced/status/1017417780864454657/photo/1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {{< abstract title="Wading into Stream Analytics" >}}
 	{{< abstract-short >}}
 Setting up analytics on streaming data in real time.

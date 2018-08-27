@@ -7,6 +7,8 @@ title: Updating R on Ubuntu
 
 Today I finally got around to updating my R to 3.5 (or, more specifically, 3.5.1). The complete instructions for doing the update on Ubuntu are available [here](https://cran.r-project.org/bin/linux/ubuntu/). I've paraphrased them below.
 
+<!--more-->
+
 ## Authentication Key
 
 To ensure the integrity of files, add the appropriate public key to your system. You may have already done this, in which case you can skip this step.
@@ -48,6 +50,8 @@ You will probably have some packages that were previously installed with using A
 {{< highlight bash >}}
 sudo apt-get remove -y 'r-cran-*'
 {{< /highlight >}}
+
+You might have manually installed some packages into `/usr/local/lib/R/site-library` as well, so it's probably worthwhile removing those now too.
 
 ## Update Packages
 

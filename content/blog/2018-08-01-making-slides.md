@@ -7,6 +7,9 @@ tags: ["speaking"]
 ---
 
 https://speakerdeck.com/mseckington/the-art-of-slide-design
+https://kieranhealy.org/blog/archives/2018/03/24/making-slides/
+
+Reference Duarte's book slide:ology.
 
 ## Slide Deluge
 

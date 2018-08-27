@@ -68,7 +68,7 @@ Go for something that's short and punchy. It can incorporate humour. But make su
 Here are some examples:
 
 - "Suicidal wasps, zombie roaches and other parasite tales" (Ed Yong)
-- 
+- "10 tips on how to build better binaries; you won't believe #8!" (Elliot Saba, JuliaCon 2018)
 - 
 - 
 - "The history of our world in 18 minutes" (David Christian)

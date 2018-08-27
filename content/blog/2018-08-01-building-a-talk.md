@@ -6,6 +6,8 @@ tags: ["speaking", "conference"]
 draft: true
 ---
 
+IDEA: The other thing I would suggest to your mentee is to pull out a handful of messages the audience should definitely understand by listening to her talk. They could be the purpose of each of the sections or a series of facts that support her main argument. As long as she accomplishes communicating these few things, it's fine if she forgets or miscommunicates the rest. Helps take away some of the pressure
+
 ## Choosing a Topic
 
 Talk about something that
@@ -53,6 +55,12 @@ DO SAME FOR OTHER GENERAL TOPIC IDEAS
 4-Approach
 5-Progress or challenges
 6-Future plans
+
+1. Your problem
+2. The deeper problem.
+3. A solution found elsewhere (perhaps in another field?)
+4. How you can apply this solution
+5. How this will work in practice (how effective will it be?)
 
 ## Know the Audience
 

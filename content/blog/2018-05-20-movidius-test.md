@@ -8,7 +8,7 @@ draft: true
 
 I'm testing a Neural Compute Stick (NCS) from [Intel/Movidius](https://www.movidius.com/).
 
-![]("/img/2018/05/movidius-neural-compute-stick.jpg")
+![](/img/2018/05/movidius-neural-compute-stick.jpg)
 
 > The Intel® Movidius™ Neural Compute Stick (NCS) is a tiny fanless deep learning device that you can use to learn AI programming at the edge. NCS is powered by the same low power high performance Intel Movidius Vision Processing Unit (VPU) that can be found in millions of smart security cameras, gesture controlled drones, industrial machine vision equipment, and more.
 

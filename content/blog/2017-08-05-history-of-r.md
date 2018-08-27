@@ -193,6 +193,8 @@ This is a work in progress. The information is cobbled together from a range of 
 	- Started as a research project (Auckland, New Zealand)
 	- Initial work announced on the <code>s-news</code> mailing list
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/z1vTSdRolgI?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ### Sources
 
 - [Over 16 years of R Project history](http://blog.revolutionanalytics.com/2016/03/16-years-of-r-history.html)

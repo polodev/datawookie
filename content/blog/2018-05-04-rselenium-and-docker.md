@@ -22,6 +22,12 @@ draft: true
 # - docker run -d -p 4445:4444 selenium/standalone-firefox:3.11
 # - docker ps
 
+SEE UPDATE INSTRUCTIONS FOR LAUNCHING CONTAINER FROM NOTES ON WEB SCRAPING (R VERSION)
+
+docker run -d --name selenium -v /dev/shm:/dev/shm -p 4444:4444 -p 5900:5900 selenium/standalone-chrome-debug:3.12
+
+THE /DEV/SHM SEEMS TO BE IMPORTANT!!
+
 In terms of browsing, the easiest is to use the XXX-debug docker images + TightVNC and expose the correct ports on 0.0.0.0. You then 'SSH' into the container and voila, easy to then pickup why things aren't working. This is my go to:
 
 

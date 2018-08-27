@@ -7,7 +7,7 @@ title: eRum (2018) Top Twenty
 
 <img src="/img/2018/05/budapest-hdr-pictures.png" width="100%">
 
-My Top 20 highlights about [eRum (2018)](https://2018.erum.io/) in Budapest. In no particular order:
+My Top 20 highlights about [eRum (2018)](https://2018.erum.io/) in Budapest. <!--more--> In no particular order:
 
 1. Returning to my favourite European city after so many years.
 8. Discovering the cheap and efficient bus 100E, which shuttles back and forth between the airport and city. I have previously only made this trip by car.

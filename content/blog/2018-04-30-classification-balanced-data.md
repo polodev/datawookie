@@ -14,7 +14,7 @@ title: "Classification: Get the Balance Right"
 
 For classification problems the positive class (which is what you're normally trying to predict) is often sparsely represented in the data. Unless you do something to address this imbalance then your classifier is likely to be rather underwhelming.
 
-Achieving a reasonable balance in the proportions of the target classes is seldom emphasised. Perhaps it's not very sexy. But it can have a massive effect on a model.
+Achieving a reasonable balance in the proportions of the target classes is seldom emphasised. Perhaps it's not very sexy. But it can have a massive effect on a model. <!--more-->
 
 You've got to get the balance right!
 

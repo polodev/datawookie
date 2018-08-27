@@ -36,6 +36,29 @@ The Julia interpreter is launched by typing `julia` at the command prompt. At la
 
 The default colours in the interpreter are not going to work for me, so I tracked down the configuration file (`~/.juliarc.jl`) and made some changes. Ah, that's better.
 
+**Update (2018/07/21):** The above approach will not work with contemporary Ubuntu. Here's what you should do instead:
+
+1. Go to <https://julialang.org/downloads/> and download a generic Linux binary appropriate for your machine. In my case this was an archive named `julia-0.6.4-linux-x86_64.tar.gz`.
+2. Extract the archive.
+
+    {{< highlight bash >}}
+$ cd /opt/
+$ sudo tar -zxvf ~/Downloads/julia-0.6.4-linux-x86_64.tar.gz
+{{< /highlight >}}
+
+3. Link the resulting executable into the `PATH`. The path to the Julia executable will likely be different depending on the version.
+
+    {{< highlight bash >}}
+$ cd /usr/bin/
+$ sudo ln -s /opt/julia-9d11f62bcb/bin/julia
+{{< /highlight >}}
+
+4. Start Julia.
+
+    {{< highlight bash >}}
+$ julia
+{{< /highlight >}}
+
 ## Interacting with the Julia Interpreter
 
 The Julia [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop) is designed for interaction. I will pick out a few of the key features (you can find further details [here](http://docs.julialang.org/en/stable/manual/interacting-with-julia/)).
@@ -49,7 +72,7 @@ The Julia [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_l
 
 * You can get immediate access to the system shell by typing `;` at the prompt.
 
-<img src="/img/2015/08/julia-command-shell.png" >
+![](/img/2015/08/julia-command-shell.jpg)
 
 * You can search back through your command history using the "normal" <kbd>Ctrl</kbd>-<kbd>r</kbd> shell binding. 
 * <kbd>Ctrl</kbd>-<kbd>l</kbd> will clear the contents of the console. 
