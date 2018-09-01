@@ -6,22 +6,11 @@ title: "Wading into Stream Analytics"
 draft: true
 ---
 
-
 https://twitter.com/unspiced/status/1017417780864454657/photo/1
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!-- ========================================================================================== -->
+<!-- OPTION 1: AZURE                                                                            -->
+<!-- ========================================================================================== -->
 
 {{< abstract title="Wading into Stream Analytics" >}}
 	{{< abstract-short >}}
@@ -54,3 +43,74 @@ This talk can be based on either of the following technologies:
 - [Azure Databricks](https://databricks.com/product/azure)
 	{{% /abstract-long %}}
 {{< /abstract >}}
+
+<!-- ========================================================================================== -->
+<!-- OPTION 2: AWS/SPARK/KAFKA                                                                  -->
+<!-- ========================================================================================== -->
+
+{{< abstract title="Wading into Stream Analytics" >}}
+	{{< abstract-short >}}
+	{{< /abstract-short >}}
+	{{% abstract-long %}}
+{{< /abstract >}}
+
+<!-- ========================================================================================== -->
+<!-- OUTLINE: AZURE                                                                             -->
+<!-- ========================================================================================== -->
+
+<!-- ========================================================================================== -->
+<!-- OUTLINE: AWS/SPARK/KAFKA                                                                   -->
+<!-- ========================================================================================== -->
+
+These are some notes for a talk on getting started with streaming data. The talk takes the form of a demonstration using [Kafka](https://kafka.apache.org/) and [Spark](https://spark.apache.org/) on [Amazon Web Services](https://aws.amazon.com/) (AWS) with some [Docker](https://www.docker.com/), Python and [Jupyter](http://jupyter.org/) thrown in for good measure.
+
+## AWS Overview
+
+A quick, high level overview of AWS. How to launch a remote instance and connect via SSH.
+
+## Spark Cluster
+
+There are a couple of ways to launch a Spark cluster on AWS. I'll be using [Flintrock](https://github.com/nchammas/flintrock).
+
+1. Look at configuration file.
+2. Create a cluster.
+
+	{{< highlight bash >}}
+flintrock launch spark
+{{< /highlight >}}
+
+3. Use EC2 console to confirm that instances have been launched.
+4. Take a look at the Security Groups.
+5. Open the Spark UI (port 8080 on the master).
+6. Install Python and missing JARs on cluster.
+7. Install Docker.
+8. Pull and run PySpark notebook. Pulling the image will take a little time, so we can set up Kafka in the meantime.
+
+	{{< highlight bash >}}
+docker pull datawookie/pyspark-notebook
+docker run -d --name jupyter --net=host --user 500 -v $PWD:/home/jovyan/ datawookie/pyspark-notebook
+docker logs jupyter
+{{< /highlight >}}
+
+9. Ensure that port 8888 is open. Browse to the Jupyter URL.
+
+## Kafka
+
+1. Launch an EC2 instance (a `t2.micro` with Ubuntu 16.04 will be fine).
+2. Ensure that port 9092 is open.
+3. Install the Java Developmen Kit (JDK).
+4. Download Kafka distribution.
+5. Unpack.
+6. Change logging level and tweak configuration.
+7. Start ZooKeeper and Kafka servers.
+8. Create a topic.
+9. Launch `tmux` and demonstrate producer and consumer in terminal.
+10. Exit producer.
+
+## Streaming Tweets
+
+1. Script to stream tweets.
+2. Script to push tweet contents to Kafka. Check consumer in terminal.
+3. Notebooks for consuming tweet content. Sentiment analysis.
+4. Script to push tweets as JSON to Kafka.
+5. Notebook for consuming tweet JSON.
