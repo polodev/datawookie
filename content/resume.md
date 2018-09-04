@@ -25,10 +25,11 @@ Could add: * List of students supervised.
 
 A selection of training courses that I have given:
 <ul>
-  <li> Automated Reporting with R: Essentials, [Thermo Fisher](https://www.brahms.de/) (Hennigsdorf, Germany), 10 July 2018.
-  <li> Building Packages with R: Essentials, [Thermo Fisher](https://www.brahms.de/) (Hennigsdorf, Germany), 10 July 2018.
-  <li> Data Science with R: Beginners' Course, Investec (Johannesburg), 25-29 June 2018.
-  <li> Web Scraping with R, Rise (Cape Town), 14-15 June 2018.
+  <li> Introduction to Spark, [Vantage Data](https://www.vantagedata.co.za/), September 2018.
+  <li> Automated Reporting with R: Essentials, [Thermo Fisher](https://www.brahms.de/) (Hennigsdorf, Germany), July 2018.
+  <li> Building Packages with R: Essentials, [Thermo Fisher](https://www.brahms.de/) (Hennigsdorf, Germany), July 2018.
+  <li> Data Science with R: Beginners' Course, Investec (Johannesburg), June 2018.
+  <li> Web Scraping with R, Rise (Cape Town), June 2018.
   <li> Data Science (Head Teacher) , <a href="http://www.ixperience.co.za">iXperience</a>, 2016, 2017 and 2018.
 </ul>
 
@@ -76,6 +77,7 @@ Conferences that I have organised:
 
 <ul>
   <li> Python.
+  <li> Spark.
   <li> Django, Jekyll, Bootstrap, HTML, CSS and SASS.
   <li> JavaScript and D3.
   <li> JSON and XML.
@@ -157,7 +159,6 @@ Session chairs:
 <ul>
   <li>A. B. Collier, "First Steps with Stan", Derivco Brown Bag, 24 August 2018.</li>
   <li>A. B. Collier, "Getting Started with Bayesian Techniques in Julia" (poster), <a href="http://juliacon.org/2018/">JuliaCon</a>, 9 August 2018.</li>
-  <li>A. B. Collier, "Getting Started with Bayesian Techniques in Julia", <a href="http://juliacon.org/2018/">JuliaCon</a>, 9 August 2018.</li>
   <li>A. B. Collier, Moderator for <a href="https://www.crowdcast.io/e/storytelling-with-data-science/">Storytelling With Data Science</a> panel discussion hosted by Toptal, 26 July 2018.
   <li>A. B. Collier, and E. F. Collier, "Setting up WordPress with AWS", <a href="https://www.meetup.com/WordPress-Joburg/events/fmbwmpyxkbwb/">WordPress Jo'burg</a>, 17 July 2018.</li>
   <li>A. B. Collier, "Data Science in the Cloud: Getting Started", <a href="https://www.meetup.com/Berlin-R-Users-Group/events/251963888/">Berlin R Users Group</a>, 10 July 2018.</li>
